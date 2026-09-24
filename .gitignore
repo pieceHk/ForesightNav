@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+Exp/runs/*
+!Exp/runs/.gitignore
+Exp/runtime.local.toml
+
+# Runtime-generated engine artifacts (source stays tracked)
+Mapping/runtime/embodied_splat/cache/
+Mapping/runtime/embodied_splat/log/
+Mapping/runtime/embodied_splat/outputs_*/
+Navigation/runtime/lagmemo/data/images/
+Navigation/runtime/lagmemo/datadump/*
+!Navigation/runtime/lagmemo/datadump/.gitkeep
