@@ -1,0 +1,15 @@
+[runtime]
+owner = "Navigation"
+engine = "lagmemo"
+upstream_revision = "df48cfca2d0c5646ea012c72bc006da279512898"
+entrypoints = ["evaluators/goat/entrypoint.py", "evaluators/hm3dv1/entrypoint.py"]
+generated_paths = ["lagmemo/data/images", "lagmemo/datadump", "**/__pycache__"]
+
+[third_party]
+detectron2 = "vendored source; package root selected explicitly by the adapter"
+habitat_lab = "vendored source used by the Habitat evaluator"
+mobileclip = "vendored source; checkpoint resolves through Exp/assets/weights"
+seem = "vendored source; code root is third_party/seem/src and assets resolve internally"
+
+[patches]
+local = ["entrypoints derive TDONAV_ROOT and TDONAV_LAGMEMO_ROOT", "adapter selects named internal evaluator only"]

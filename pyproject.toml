@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "3donav"
+version = "0.1.0"
+requires-python = ">=3.9"
+dependencies = ["numpy>=1.23", "tomli>=2; python_version<'3.11'"]
+
+[tool.pytest.ini_options]
+pythonpath = ["Mapping/src", "Navigation/src"]
+testpaths = ["Mapping/tests", "Navigation/tests", "Exp/tests"]
+cache_dir = "Exp/runs/.pytest_cache"
