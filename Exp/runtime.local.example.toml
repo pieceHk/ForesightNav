@@ -1,0 +1,11 @@
+# Only machine-level interpreter paths belong here. Every project path is internal.
+[python]
+mapping = "/path/to/embodiedsplat/bin/python"
+navigation = "/path/to/lagmemo/bin/python"
+
+[datasets]
+goat_val_seen = "${TDONAV_ROOT}/Exp/assets/datasets/GOATbench_object_valseen_36scenes"
+hm3dv1_objectnav_val = "${TDONAV_ROOT}/Exp/assets/datasets/HM3Dv1_objectnav_val_20scenes"
+
+[shared]
+hf_home = "${TDONAV_ROOT}/Exp/assets/weights/hf_home"

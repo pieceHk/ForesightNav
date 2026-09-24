@@ -1,0 +1,13 @@
+[runtime]
+owner = "Mapping"
+entrypoint = "server/es_mapper_server.py"
+engine = "embodied_splat"
+upstream_revision = "b5e1e90fc9917fbfe34231684b823725b7e1e948"
+source_scope = ["assets", "config", "dataset", "modules", "scripts", "src", "sr_utils", "static"]
+generated_paths = ["embodied_splat/cache", "embodied_splat/log", "embodied_splat/outputs_*"]
+
+[assets]
+contract = "pretrained resolves to Exp/assets/weights through an internal symlink"
+
+[patches]
+local = ["server root/HF defaults resolve through TDONAV_ROOT"]
