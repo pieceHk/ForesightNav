@@ -36,7 +36,7 @@ python Exp/scripts/run_goat.py --runtime Exp/runtime.local.toml   --profile Exp/
 ```
 GPU order is mapping,navigation. Use the corresponding profile and tag for 2/4-MON. Run records are generated under ignored `Exp/runs/`. Output provenance will contain the new export commit; SOURCE_MANIFEST.json connects it to the historical source commit.
 
-Baseline: use a matching captured profile from `Exp/release/experiment_profiles/baseline_*mon_*.toml` with the corresponding Baseline tag. Do not silently substitute the older generic `semantic_source=auto` profile for the captured Detic/no-GT experiment profile. Full PBSP captured profiles are also retained there for comparison; the frozen Full PBSP provenance logic requires the tracked `Exp/profiles` path, so launch with the tracked profiles above.
+Baseline: use a matching captured profile from `Exp/release/experiment_profiles/baseline_*mon_*.toml` with the corresponding Baseline tag. Do not silently substitute the older generic `semantic_source=auto` profile for the captured experiment profile. The Baseline archive explicitly records `semantic_source = "disabled"`; preserve this field rather than relabeling it as the Full PBSP Detic control. Full PBSP captured profiles are also retained there for comparison; the frozen Full PBSP provenance logic requires the tracked `Exp/profiles` path, so launch with the tracked profiles above.
 
 All captured profiles are exported byte-for-byte with SHA256 verification. The historical Baseline 3-MON result combines earlier and later source versions; selecting one tag for a fresh full run does not reproduce that mixed recovery history exactly. Similarly, Baseline 4-MON includes runtime-fix stages.
 
