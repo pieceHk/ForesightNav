@@ -1,0 +1,92 @@
+import ast
+from pathlib import Path
+
+
+def test_cross_dataset_visualization_contract_is_enabled():
+    root = Path(__file__).resolve().parents[2]
+    for profile_name in ("goat_val_seen.toml", "hm3dv1_objectnav_val.toml"):
+        profile = (root / "Exp/profiles" / profile_name).read_text()
+        assert "[visualization]" in profile
+        assert "per_keyframe_snapshots = true" in profile
+
+
+def test_runners_and_visualizer_share_the_snapshot_contract():
+    root = Path(__file__).resolve().parents[2]
+    hm_runner = (root / "Exp/scripts/run_hm3dv1_objectnav.py").read_text()
+    goat_runner = (root / "Exp/scripts/run_goat.py").read_text()
+    visualizer = (
+        root
+        / "Navigation/runtime/lagmemo/src/lagmemo/lagmemo/agent/imagenav_agent/visualizer.py"
+    ).read_text()
+    goat_entrypoint = (root / "Navigation/runtime/evaluators/goat/entrypoint.py").read_text()
+    glue_agent = (
+        root / "Navigation/runtime/lagmemo/src/lagmemo/lagmemo/agent/lagmemo_agent/glue_agent.py"
+    ).read_text()
+
+    assert 'command.append("--print-images")' in hm_runner
+    assert '"--print-images"' in goat_runner
+    assert '"--no-print-images"' in goat_runner
+    assert "CELL_W = 480" in visualizer
+    assert "CELL_H = 450" in visualizer
+    assert "(480, 480)" not in visualizer
+    assert 'name = f"snapshot_{timestep}_{i}.png"' in visualizer
+    assert "make_goal_placeholder(goal_category)" in visualizer
+    assert "_append_status_footer(frame, goal_text)" in visualizer
+    assert "import pdb; pdb.set_trace()" not in visualizer
+    assert "* frame_w / obstacle_map.shape" in visualizer
+    assert "* frame_h / obstacle_map.shape" in visualizer
+    assert "info['goal_text'] = goal_text_desc" in glue_agent
+    assert "pdb.set_trace" not in glue_agent
+    assert "ipdb.set_trace" not in glue_agent
+    assert "except:" not in glue_agent
+    assert "ES_LagMemo_Integration" not in goat_entrypoint
+
+
+def test_reachable_evaluator_modules_do_not_enter_an_interactive_debugger():
+    root = Path(__file__).resolve().parents[2]
+    agent_root = root / "Navigation/runtime/lagmemo/src/lagmemo/lagmemo/agent/lagmemo_agent"
+    for name in ("glue_agent.py", "lagmemo_matching.py", "frontier_agent_module.py"):
+        tree = ast.parse((agent_root / name).read_text())
+        debugger_calls = [
+            node
+            for node in ast.walk(tree)
+            if isinstance(node, ast.Call)
+            and isinstance(node.func, ast.Attribute)
+            and node.func.attr == "set_trace"
+        ]
+        assert not debugger_calls, f"interactive debugger in evaluator dependency: {name}"
+
+
+def test_nonvisual_mode_keeps_algorithmic_planner_maps_available():
+    root = Path(__file__).resolve().parents[2]
+    glue_agent = (
+        root
+        / "Navigation/runtime/lagmemo/src/lagmemo/lagmemo/agent/lagmemo_agent/glue_agent.py"
+    ).read_text()
+    tree = ast.parse(glue_agent)
+    prepare = next(
+        node
+        for node in ast.walk(tree)
+        if isinstance(node, ast.FunctionDef) and node.name == "prepare_planner_inputs"
+    )
+    visualize_gate = next(
+        node
+        for node in prepare.body
+        if isinstance(node, ast.If)
+        and isinstance(node.test, ast.Attribute)
+        and node.test.attr == "visualize"
+    )
+    vis_assignment = next(
+        node
+        for node in prepare.body
+        if isinstance(node, ast.Assign)
+        and any(isinstance(target, ast.Name) and target.id == "vis_inputs" for target in node.targets)
+    )
+
+    assert vis_assignment.lineno < visualize_gate.lineno
+    keys = {
+        key.value
+        for key in vis_assignment.value.elt.keys
+        if isinstance(key, ast.Constant)
+    }
+    assert {"explored_map", "been_close_map", "frontiers"} <= keys
