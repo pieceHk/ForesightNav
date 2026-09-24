@@ -1,0 +1,54 @@
+[goat_val_seen]
+benchmark = "GOAT-Bench"
+split = "val_seen"
+unit = "multi-subtask episode"
+required_modalities = ["object"]
+
+[hm3dv1_objectnav_val]
+benchmark = "HM3D-v1 ObjectNav"
+split = "val"
+unit = "single-target episode"
+categories = ["chair", "sofa", "plant", "bed", "toilet", "tv_monitor"]
+
+[hm3dv1_mon_val]
+benchmark = "HM3D-v1 MON"
+split = "val"
+unit = "three-object episode"
+scene_count = 20
+episode_count = 400
+subtask_count = 1200
+categories = ["chair", "sofa", "plant", "bed", "toilet", "tv_monitor"]
+
+[hm3dv1_mon_val_no_plant]
+benchmark = "HM3D-v1 MON"
+split = "val"
+unit = "three-object episode"
+scene_count = 20
+episode_count = 400
+subtask_count = 1200
+categories = ["chair", "sofa", "bed", "toilet", "tv_monitor"]
+
+[hm3dv1_mon_smoke]
+benchmark = "HM3D-v1 MON"
+split = "val smoke"
+unit = "three-object episode"
+scene_count = 1
+episode_count = 3
+subtask_count = 9
+
+[hm3dv2_objectnav_val]
+benchmark = "HM3D-v2 ObjectNav"
+split = "val"
+unit = "single-target episode"
+scene_count = 36
+episode_count = 1000
+categories = ["chair", "sofa", "plant", "bed", "toilet", "tv_monitor"]
+
+[hm3dv2_mon_val]
+benchmark = "HM3D-v2 MON"
+split = "val"
+unit = "three-object episode"
+scene_count = 36
+episode_count = 400
+subtask_count = 1200
+categories = ["chair", "sofa", "plant", "bed", "toilet", "tv_monitor"]

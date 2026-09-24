@@ -1,0 +1,58 @@
+name = "hm3dv1_mon_val_query_candidate"
+dataset = "hm3dv1_mon_val"
+semantic_source = "auto"
+max_steps_per_subtask = 500
+
+[mapping]
+top_k = 10
+keyframe_threshold = 0.30
+pixel_delta = 0.15
+warmup_keyframes = 10
+rebuild_interval = 10
+query_similarity = 0.18
+query_support_radius_m = 0.35
+query_minimum_support = 3
+query_nms_radius_m = 1.0
+query_pool_size = 2000
+query_support_rerank_weight = 0.0025
+raw_frame_buffer = 2
+
+[navigation]
+projection_tolerance_m = 1.5
+candidate_merge_radius_m = 0.25
+candidate_track_radius_m = 1.0
+candidate_blacklist_radius_m = 1.5
+candidate_evidence_radius_m = 0.75
+candidate_promotion_margin = 2
+candidate_evidence_ranking = true
+query_action_rerank_enabled = true
+query_w_semantic = 1.0
+query_w_support = 0.35
+query_w_recurrence = 0.30
+query_w_travel = 0.35
+query_w_novelty = 0.15
+query_w_revisit = 0.80
+query_w_failure = 1.0
+query_switch_margin = 0.15
+frontier_rerank_enabled = false
+trapped_warmup_steps = 30
+trapped_window_steps = 25
+trapped_radius_m = 0.05
+recovery_history_size = 8
+recovery_novelty_weight = 0.65
+two_stage_verification = true
+verification_window_steps = 6
+verification_min_confirmations = 2
+verification_pose_radius_m = 1.5
+verification_min_peak_seem = 1.15
+verification_dual_score_gate = true
+verification_strong_peak_seem = 1.35
+verification_min_peak_clip = 0.12
+verification_min_observer_translation_m = 0.0
+verification_min_observer_yaw_deg = 0.0
+approach_ring = false
+candidate_exhaustion_exploration = false
+verify_es_agreement = false
+
+[visualization]
+per_keyframe_snapshots = true
