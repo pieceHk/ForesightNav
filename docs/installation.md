@@ -1,6 +1,6 @@
 # Environment and model preparation
 
-The current Linux validation uses two provisioned environments. Fresh-environment installation and CUDA-extension builds are still being validated.
+Mapping has a locked installation with source-built CUDA extensions, verified in an independent Linux environment. Navigation currently uses a provisioned environment; its independent installation is still being validated.
 
 | Runtime | Python | PyTorch | torchvision | NumPy |
 | --- | --- | --- | --- | --- |
@@ -17,6 +17,8 @@ Install the project in each prepared environment:
 /path/to/mapping-env/bin/python -m pip install -e .
 /path/to/navigation-env/bin/python -m pip install -e .
 ```
+
+To create the mapping environment from scratch, use the [mapping installer](mapping_installation.md). It supports online preparation and an offline cache, and installs PBSP as part of the build.
 
 ## Model assets
 
@@ -74,7 +76,7 @@ python scripts/prepare_runtime.py \
 
 This writes `runtime.local.yaml` with absolute data, weight, output and interpreter paths. It copies the two required Kornia checkpoints into the selected weights directory. Omit `--torch-home-source` when they are already present there. GPU defaults are mapping `0`, navigation `1`; change them in this YAML or supply `--mapping-gpu` and `--navigation-gpu` during preparation.
 
-The current model constructors still use several vendor-relative auxiliary paths. The native precheck verifies that those paths resolve to the selected weights. Consolidating that resource setup and validating an independent installation remain unfinished.
+The current model constructors still use several vendor-relative auxiliary paths. The native precheck verifies that those paths resolve to the selected weights. Consolidating that resource setup and validating the independent navigation installation remain unfinished.
 
 ## Verify
 

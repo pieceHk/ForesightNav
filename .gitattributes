@@ -1,3 +1,4 @@
 # Preserve upstream vendor formatting; local 3DONav code remains whitespace-checked.
 Mapping/runtime/** -whitespace
 Navigation/runtime/** -whitespace
+third_party/licenses/** -whitespace

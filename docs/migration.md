@@ -6,6 +6,8 @@
 
 ## 当前代码
 
+Mapping 的独立离线安装已通过验证。安装器校验 42 个 Conda 包、122 个 Python 包输入和固定扩展源码，在新目录中创建环境并构建四个 CUDA 扩展；安装后依赖、扩展导入和 CUDA 检查均通过。真实推理补齐了 FastSAM 延迟导入的 pandas 依赖，最终锁定文件又在第二个空环境中完整执行。12 帧 RGB-D 重放的 50 个地图及增量状态张量与原环境逐项相同，候选和公开状态也一致。新增 13 项安装检查后，Linux 完整测试为 572 项通过。导航环境独立安装及完整 split 评测仍待完成。详见[安装指南](mapping_installation.md)和[安装验证](validation/phase21_mapping_install_results.json)。
+
 默认建图路径的可选依赖已按后端加载。FastSAM/MaskAdapter 构造时不再导入 TensorFlow、MinkowskiEngine 或 SAM；OpenSeg 的设备设置在首次使用时执行。配置转换函数已独立，推理读取配置时不再连带导入训练模型封装。真实模型在禁止导入上述可选包的进程中成功加载；同一组 12 帧 RGB-D 的冻结对照中，50 个地图及增量状态张量逐项相同，候选和公开状态也一致。Linux 完整测试为 559 项通过。两个独立 Conda 基础环境已创建，GPU 依赖下载和源码构建仍在进行，尚未完成独立环境的完整实验验证。详见[依赖隔离结果](validation/phase20_dependencies_results.json)。
 
 候选证据、候选排序、类别冷却、有序后缀规划及建图策略位于 `pbsp/`，所有调用方已使用这些实现。语义检索位于 `pbsp/query/engine.py`，包含特征加权、支持度重排、空间 NMS、单类别及批量查询；`service.py` 通过独立的文本编码器和索引读取器组装查询。完整 episode 循环位于 `experiments/runner.py`，规划事件的计算、重查和记录桥接位于 `experiments/planning.py`。指标计算和决策格式分别位于 `experiments/metrics.py`、`experiments/telemetry.py`。Provider 快照记录、规划回退和分派结果的构造、距离摘要及耗时 CSV 位于 `experiments/recorder.py`。规划决策 JSONL 的写入及写入失败处理也由 Recorder 完成。

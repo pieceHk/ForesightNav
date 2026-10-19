@@ -47,6 +47,9 @@ implementations.
 
 Upstream license texts are retained unchanged:
 
+- `third_party/licenses/clip/LICENSE`
+- `third_party/licenses/gaussian_rasterizer/LICENSE.md`
+- `third_party/licenses/gaussian_rasterizer/glm-copying.txt`
 - `Mapping/runtime/embodied_splat/src/third_party/MinkowskiEngine/LICENSE`
 - `Mapping/runtime/embodied_splat/src/third_party/langsplat-rasterization/LICENSE.md`
 - `Mapping/runtime/embodied_splat/src/third_party/langsplat-rasterization/third_party/glm/copying.txt`
@@ -60,6 +63,13 @@ Upstream license texts are retained unchanged:
 - `Navigation/runtime/lagmemo/src/third_party/ml-mobileclip/LICENSE`
 - `Navigation/runtime/lagmemo/src/third_party/ml-mobileclip/LICENSE_weights_data`
 - `Navigation/runtime/lagmemo/src/third_party/seem/LICENSE`
+
+The mapping installer builds [OpenAI CLIP](https://github.com/openai/CLIP/tree/d05afc436d78f1c48dc0dbf8e5980a9d471f35f6)
+and the [depth rasterizer](https://github.com/JonathonLuiten/diff-gaussian-rasterization-w-depth/tree/cb65e4b86bc3bd8ed42174b72a62e8d3a3a71110)
+from pinned source archives. Their license texts above are copied byte for byte
+from those archives. The depth rasterizer retains the Gaussian-Splatting license;
+PBSP's MIT license applies to PBSP-authored code. Versions, artifact checksums and
+tracked extension source hashes are recorded in [the mapping lock](envs/mapping/linux-64.lock.json).
 
 The semantic pooling/codebook operations now live in `pbsp/semantics/features.py`;
 `pbsp/mapping/features.py` retains a compatibility import. The same EmbodiedSplat
