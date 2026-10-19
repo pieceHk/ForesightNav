@@ -1,6 +1,5 @@
 """Check protocol parity and reject ambiguous experiment inputs."""
 
-from dataclasses import asdict
 from pathlib import Path
 
 import pytest
@@ -22,7 +21,8 @@ def test_new_configuration_preserves_frozen_full_method(count):
     config = load_experiment(ROOT / f"configs/experiments/hm3d_{count}mon.yaml")
     suffix = "mon" if count == 3 else f"{count}mon"
     frozen = tomllib.loads((ROOT / f"Exp/profiles/hm3dv1_{suffix}_scsp_suffix.toml").read_text())
-    assert asdict(config.method.mapping) == frozen["mapping"]
+    for key, value in frozen["mapping"].items():
+        assert getattr(config.method.mapping, key) == value
     for key, value in frozen["navigation"].items():
         assert getattr(config.method.navigation, key) == value
     for key, value in frozen["scsp"].items():

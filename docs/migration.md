@@ -12,7 +12,9 @@
 
 `scripts/prepare_data.py` 验证三组固定版本数据的 manifest、内容和 source trace 校验值，在 `data/` 中建立资源链接，并为全部 episode 生成统一身份索引。清单使用 `assets/datasets.json`，以便数据准备只依赖 Python 标准库。
 
-在线模型、Mapper 工作线程和导航动作循环仍使用原运行目录；接下来的两个阶段将迁移其实际实现。当前可运行的复现入口为 `Exp/scripts/run_full_pbsp.py`。
+在线 Mapper 的实际状态管理、关键帧接纳、后台融合及地图发布已迁入 `pbsp/mapping/mapper.py`，模型输入和推理调用位于 `model.py`。模型构造由 `adapters/embodied_splat.py` 完成，实验图像由 `experiments/visualization.py` 写入。神经编码器与融合网络、导航动作循环仍使用原运行目录。当前复现入口为 `Exp/scripts/run_full_pbsp.py`。
+
+阅读建图代码可从 `mapper.py` 的 `add_live_frame()`、`_rebuild_worker()` 和 `query_batch_with_records()` 开始。`reset_episode()` 清理整张地图；同一 episode 的任务切换保留地图。原运行目录中的 Mapper 文件只保留兼容入口。
 
 ## 阶段交付
 
@@ -20,7 +22,7 @@
 | --- | --- | --- |
 | 固定基准 | 原始数据身份、复现工具、设计文档及完整测试 | 已提交 `422cb8e` |
 | 迁移纯算法 | 浅层包、共享配置、完整数据身份索引和原有调用方 | 已验证，253 项测试通过 |
-| 拆分建图 | 实际在线 Mapper、编码、融合、检索和快照发布 | 检索已迁移，其余实现待拆分 |
+| 拆分建图 | 实际在线 Mapper、编码、融合、检索和快照发布 | Mapper、模型调用、检索及图像记录已迁移，编码与融合网络待拆分 |
 | 拆分导航 | Agent、候选规划、导航执行、验证、恢复及评测循环 | 待实施 |
 | 接入入口与安装 | `run.py`、工作进程、模型资源、环境脚本和离线流程 | 待实施 |
 | 验证完整流程 | 记录重放、2/3/4-MON 集成实验、全新 Linux 安装和完整选定 split | 待实施 |
@@ -43,3 +45,7 @@
 纯算法迁移对比了 17 个模块，除导入语句外，其可执行定义和常量与基准一致。服务器完整测试为 253 项通过。三组数据共 1,300 个 episode 的全部有序身份与原记录一致，数据准备重复运行的结果相同。详见[源码对比](validation/phase1_source_parity.json)及[阶段结果](validation/phase1_results.json)。
 
 语义检索迁移使用 8 组直接从基准代码记录的输入与输出，验证阈值边界、支持度重排、NMS、第二候选池和分数相同的情况。另验证批量查询去重、地图版本记录及显式参数隔离。服务器完整测试为 264 项通过；详见[检索迁移结果](validation/phase2_query_results.json)。
+
+Mapper 迁移后，服务器完整测试为 271 项通过。固定 RGB-D 序列与基准实现的状态、查询结果和全部模型输入张量逐项相同；测试同时覆盖关键帧上限、高斯上限、待执行重建、重置和关闭。真实 Habitat 场景的 12 帧观测在 GPU 上生成 287,475 个高斯点，并完成语义查询和 episode 重置。此项验证覆盖建图调用，不包含导航 SR/SPL；详见[Mapper 迁移结果](validation/phase3_mapper_results.json)。
+
+相机参数中保留了一个需要注意的基准行为：原 Mapper 总是使用 640×480、79° HFOV 对应的固定内参。兼容工厂显式传入同一矩阵，保持当前实验一致；核心预处理函数使用调用方提供的内参。

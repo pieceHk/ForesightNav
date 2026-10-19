@@ -1,0 +1,61 @@
+{
+  "stage": "online_mapper_lifecycle_extraction",
+  "baseline_commit": "422cb8e",
+  "core": [
+    "pbsp/mapping/mapper.py",
+    "pbsp/mapping/model.py",
+    "pbsp/mapping/memory.py",
+    "pbsp/mapping/keyframes.py"
+  ],
+  "integration": {
+    "network_factory": "adapters/embodied_splat.py",
+    "experiment_images": "experiments/visualization.py",
+    "frozen_launcher_translation": "runtime/legacy_mapping.py"
+  },
+  "behavior_comparison": {
+    "input": "six fixed RGB-D observations with forced flush after each observation",
+    "variants": ["full defaults", "keyframe cap", "Gaussian cap"],
+    "public_status_and_queries": "exact",
+    "all_encoder_input_tensors": "bit exact, rtol=0 and atol=0",
+    "resume_state_sequence": "exact",
+    "additional_checks": [
+      "new observations during active inference schedule a subsequent incremental update",
+      "raw frame buffer remains bounded and keyframes stay on CPU",
+      "episode reset clears map, frame history and encoder resume state",
+      "close joins the worker and drops the model",
+      "explicit controls preserve frozen environment defaults",
+      "checkpoint encoder and decoder prefixes load correctly",
+      "core preprocessing preserves the supplied intrinsic matrix"
+    ]
+  },
+  "tests": {"passed": 271, "warnings": 3},
+  "gpu_probe": {
+    "status": "passed",
+    "scope": "mapping integration only; no navigation performance claim",
+    "scene": "00877-4ok3usBNeis",
+    "episode_id": "0",
+    "torch": "2.7.1+cu118",
+    "cuda": "11.8",
+    "device": "NVIDIA A40",
+    "source": "12 real Habitat RGB-D observations, 480 by 640, captured over 11 turn actions",
+    "warmup_keyframes": 10,
+    "fused_keyframes": 12,
+    "gaussians": 287475,
+    "candidate_counts": {"chair": 2, "bed": 6},
+    "candidate_map_revision": 12,
+    "episode_reset": "empty map and resume state",
+    "model_closed": true,
+    "cuda_allocated_mib_after_close": 32.0,
+    "server_artifacts": "Exp/runs/refactor/mapper_gpu_probe"
+  },
+  "camera_compatibility": {
+    "frozen_behavior": "fixed normalized intrinsics derived from 640 by 480 and HFOV 79 degrees",
+    "preservation": "the compatibility factory passes this matrix explicitly",
+    "native_behavior": "the core preprocessing function uses the supplied matrix"
+  },
+  "remaining": [
+    "neural encoder and fusion network extraction",
+    "navigation execution extraction",
+    "native launcher and complete experiment validation"
+  ]
+}

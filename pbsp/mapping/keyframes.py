@@ -6,6 +6,19 @@ from typing import Optional
 import numpy as np
 
 
+def tensor_frame_change_ratio(image, reference, *, settings) -> float:
+    """Use the online model's area-sampled tensor comparison."""
+    import torch
+    import torch.nn.functional as F
+
+    sampled = F.interpolate(
+        torch.stack((image, reference)),
+        size=(settings.frame_compare_height, settings.frame_compare_width), mode="area",
+    )
+    changed = (sampled[0] - sampled[1]).abs().mean(dim=0) >= settings.pixel_delta
+    return float(changed.float().mean().item())
+
+
 def _area_downsample(image: np.ndarray, height: int, width: int) -> np.ndarray:
     src_h, src_w = image.shape[:2]
     ys = np.linspace(0, src_h, height + 1, dtype=int)

@@ -1,0 +1,9 @@
+input:
+  image_height: 384
+  image_width: 512
+  near: 0.5
+  far: 15.0
+camera:
+  height: 480
+  width: 640
+  hfov_degrees: 79.0

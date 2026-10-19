@@ -13,6 +13,12 @@ mapping:
   query_pool_size: 2000
   query_support_rerank_weight: 0.0025
   raw_frame_buffer: 2
+  frame_compare_height: 48
+  frame_compare_width: 64
+  max_gaussians: 0
+  max_keyframes: 0
+  offload_fastsam_after_rebuild: false
+  clip_coverage_diagnostic: false
 navigation:
   semantic_source: detic
   projection_tolerance_m: 1.5

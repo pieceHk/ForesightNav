@@ -39,10 +39,17 @@ class MappingSettings:
     query_pool_size: int
     query_support_rerank_weight: float
     raw_frame_buffer: int
+    frame_compare_height: int
+    frame_compare_width: int
+    max_gaussians: int
+    max_keyframes: int
+    offload_fastsam_after_rebuild: bool
+    clip_coverage_diagnostic: bool
 
     def __post_init__(self):
         _validate_scalars(self)
-        if min(self.top_k, self.warmup_keyframes, self.rebuild_interval, self.query_pool_size) < 1:
+        if min(self.top_k, self.warmup_keyframes, self.rebuild_interval, self.query_pool_size,
+               self.frame_compare_height, self.frame_compare_width) < 1:
             raise ValueError("Mapping counts must be positive")
         if self.keyframe_threshold > 1 or self.pixel_delta > 1:
             raise ValueError("Frame-change thresholds must be within [0, 1]")

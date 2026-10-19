@@ -137,6 +137,7 @@ def validate_core_boundaries() -> None:
         "pbsp/types.py", "pbsp/settings.py", "pbsp/navigation/suffix.py",
         "pbsp/navigation/ranking.py", "pbsp/navigation/evidence.py",
         "pbsp/mapping/query.py", "pbsp/mapping/keyframes.py",
+        "pbsp/mapping/mapper.py", "pbsp/mapping/model.py", "pbsp/mapping/memory.py",
         "experiments/metrics.py", "runtime/config.py",
     )
     for name in required:
