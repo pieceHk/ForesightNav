@@ -6,7 +6,7 @@
 
 Online spatial memory and planning for ordered multi-object navigation.
 
-[Data](#1-data) · [Installation](#2-installation) · [Run](#3-run) · [Components](docs/components.md) · [Validation](docs/migration.md)
+[Data](#1-data) · [Installation](#2-installation) · [Run](#3-run) · [Components](docs/components.md) · [Runtime](docs/runtime.md) · [Validation](docs/migration.md)
 
 [![License: MIT](https://img.shields.io/badge/PBSP-MIT-blue.svg)](LICENSE)
 

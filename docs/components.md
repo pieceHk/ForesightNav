@@ -105,7 +105,7 @@ These adapters are not bundled or evaluated yet. VLFM's full exploration policy 
 
 `RunSettings` supplies the episode range, step budget, timing flag and query cadence. `PlanningRunSettings` supplies planning mode, identity records and provenance. `RunArtifacts` holds run metrics, timing, mapping status and the distance cache. The [PlanningBridge](../experiments/planning.py) binds projection, strict geodesic distance and a clock around the planning core and Recorder.
 
-The retained launcher assembles these objects and calls this Runner. Root CLI and worker assembly are still being migrated. A replacement backend uses the same loop and evaluation protocol.
+The retained launcher assembles these objects and calls this Runner. Mapping now runs through the [native client, protocol and worker](runtime.md). Root CLI and navigation worker assembly are still being migrated. A replacement backend uses the same loop and evaluation protocol.
 
 ## Verify a replacement
 

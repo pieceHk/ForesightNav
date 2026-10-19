@@ -1,0 +1,129 @@
+{
+  "stage": "native_mapping_client_protocol_and_worker",
+  "source_commit": "d7b7b25b573a5d4dd8dda1ccf72c1ec1a91fcabb",
+  "reference_commit": "01c65baa2acfdc67dd8f33cbaf2421da204b7f6a",
+  "canonical_modules": {
+    "client": "runtime/mapping_client.py",
+    "protocol": "runtime/protocol.py",
+    "worker": "runtime/mapping_worker.py",
+    "dataset_reader": "experiments/dataset.py",
+    "thread_controls": "runtime/bootstrap.py"
+  },
+  "scope": [
+    "Move the actual stateful mapping client and seven service handlers into runtime modules.",
+    "Inject the task reader into MappingClient and the prepared mapping backend into MappingServer.",
+    "Use a shared versioned newline-JSON protocol with legacy unversioned request compatibility.",
+    "Launch runtime.mapping_worker directly from the existing experiment launcher.",
+    "Release client connections, wait for request handlers and close the mapper through normal shutdown.",
+    "Record the mapping worker command, PID and return code; fail an otherwise completed experiment on worker error."
+  ],
+  "source_comparison": {
+    "baseline_commit": "01c65ba",
+    "client_methods": {
+      "invalidate_cache": "65fb6af9bb93335dd31097464d43243b48f2e060d9907e95857e1cf298310abf",
+      "reset_episode": "b8c7e2daab4a3583f60cda395d5759698ffe852d1edf14417a3cbbd577fa3af4",
+      "push_live_frame": "db6aba664e3fdf9e66b4d860de4aaefd55029f2c6119da66b29c94f7f05adda8",
+      "get_goals": "bfa8f82bdd6620316309850f335495b65b38205795cb86bfea28fe3a5e372a79",
+      "_task_category": "3b65677c678af6cb6b472ee8e014022b3bb686d9bf019fea06be8bdc55692f27",
+      "get_all_goals": "36f4bfe595e16aab84b1c7063bd1884adb957200e01b2dca9693f2344c2aa331",
+      "_is_record_sequence": "9a920a5bfd957d9e1d66ece50e789e99e46d282a745e4801d689d4f2ad45fe48",
+      "_is_candidate_sequence": "ec1a304c406abf53b56656833d4c3d0faf3553ed7c2b550e2247e9b8f4897552",
+      "_nonnegative_int": "e2d0ffff68e88143203afb18efcd0c4b3258aeba8122f6eabea154e2b09e332e",
+      "_status_view": "4b9e7f08fd1e2579a723c6788afbabe448bf46d36d48f24bbf610f1da5a201cb",
+      "_read_status_view": "86ab6528f28e17c4448797240fdabb86718653724bf74e642e008e8a3d60e3f9",
+      "_capture_status_view": "a181ee03835d973d7a5493641a4f5472958586a015b3c649c4485169fa97895f",
+      "_validate_status_identity": "7977ab02fbc2f95d03e4af14d4fc5a560540cc5d19a356c50cd2962836b89e1e",
+      "_invalid_candidate_batch": "786a6667c59c13b440d6e4d070e0761b52e68dec9d38232856b4b4295fe28825",
+      "_publish_candidate_batch": "5bd412f75ee8dc05ea413630d3b67f9b1ad5cb89271daf5a8df294b827662689",
+      "get_all_candidate_records": "ab6f299050f4dece988bf34b74bfa6b532adfc206b747ce5338fcb29c212f6e8",
+      "get_candidate_batch": "f33ab09da281c5f9916d4ea7d16a369280b0725fb78b946592b1c5704dd766ec",
+      "get_ordered_categories": "ced57b98bece34f85c85451ed042c59cdd2f11aa6c19614cbfcd03549fa51654",
+      "query_serial": "72fcab55c933aea83ec80fd028236d7ac147008260547b5b2b02783d3d518dd1",
+      "last_fused_keyframes": "e717ba5abf219fdb101a97b7c098db3637425846aca715550007400fb40a1834",
+      "check_candidate_batch_status": "a54c092f30d7a4e63a4d8da77dc5c1d7a60306622860756456b201aa2ef6504a",
+      "get_last_version_gate": "b5c4e16ea415bda9e7819f8d6e478d3446889158e18c1c1921a145aca5aaff33",
+      "_get_all_goals_sequential": "772a65a897ce46f3ba390a732ba22e3d69453784c026b742fbd41085d979113e",
+      "push_frame": "a0b8a64c06284f3e2faf0c9471ce49bdedb25140e19ff0e39e09a8625bf94935",
+      "status": "076c41d31f9312e609c844ea07fb521ad078cc77a0c289327c677cb1d5c7097a",
+      "flush_episode": "e31a4d20d16f434e3656ac8553fc52e8fe9fbfb36afdb281b9c4c4d64094585c",
+      "close": "17c4b8df2a47c5d5480993321edd79692a833a65898de25778194d8374f6e9cb"
+    },
+    "server_handlers": {
+      "handle_reset_episode": "b8fe6463cdaab5ea8dcea4d1a2dcb7940043fec7150b7121500ccbc6180a5fa3",
+      "handle_push_frame": "0842957393e973bb64cf0f1288379a25ae61405b4e73f12a36c601f14ec45b5b",
+      "handle_push_live_frame": "12b950266a4b35f82e5b9f7bca682c9bb6695e3b4d343d8b86977922629aa416",
+      "handle_query": "4d6ec0eea2b0e4d500429bf94bf244a203a13f8cde55b413980e5b900a3263f5",
+      "handle_batch_query": "584ce66da5684fbabe8afe78b01509ec65c2308f05cbf2e59d497c427ff0e7e4",
+      "handle_status": "e02a69af2694ef3c5f09c27e395a6efddcbfd7bf92708548d105cf5f8e61f95c",
+      "handle_flush": "b26cc451dbdd6c27f04ea9864671ec7128947e174234ee15addcb9fdaac5d395"
+    },
+    "task_reader": "d8b600577156ac5e43e1017add4e9f3ce09c3a838181cd3a71e1eec5d3dd1f58",
+    "normalization": [
+      "documentation strings excluded",
+      "server numpy import is local",
+      "dataset root supplied as a function parameter"
+    ]
+  },
+  "frozen_payload_replay": {
+    "cases": 3,
+    "comparison": [
+      "JPEG quality-92 bytes",
+      "float32 depth bytes and shape",
+      "pose and axis conversion",
+      "intrinsics",
+      "frame counters and timestamps"
+    ],
+    "equal": true,
+    "note": "The existing pose conversion is preserved, including its current quaternion handling."
+  },
+  "handler_replay": {
+    "cases": 8,
+    "comparison": [
+      "response payloads",
+      "mapping backend inputs"
+    ],
+    "equal": true
+  },
+  "new_checks": {
+    "count": 31,
+    "coverage": [
+      "Actual AF_UNIX native client/server round trip",
+      "Fragmented and pipelined requests",
+      "Duplicate-category batching, sequential fallback and stale revision rejection",
+      "Unversioned requests and invalid versions/JSON",
+      "Binary base64, list, tuple and bytes payloads",
+      "Preserve regular files and active listeners; reuse stale sockets",
+      "External stop, subprocess SIGTERM, mapper close and socket removal",
+      "Attempt both backend closes and close only once",
+      "Release refused client sockets",
+      "Import without model runtimes or environment changes",
+      "Task reader reindex priority vs frozen source"
+    ]
+  },
+  "linux_complete_suite": {
+    "passed": 491,
+    "warnings": 17,
+    "elapsed_seconds": 16.09
+  },
+  "local_complete_suite": {
+    "passed": 488,
+    "failed": 3,
+    "skipped": 0,
+    "elapsed_seconds": 9.88,
+    "failures": [
+      "Temporary runtime fixture points at server-only datasets.",
+      "Two macOS OpenCV thread-limit cases report 10 threads after requesting 8."
+    ],
+    "note": "Assertions retained; all three pass on Linux. Temporary local runtime file removed; architecture validation passed."
+  },
+  "integration": "phase17_integration_results.json",
+  "remaining": [
+    "Native root CLI and navigation worker assembly",
+    "Explicit model/perception resources and dependency preparation",
+    "Fresh Linux installation and complete selected-split evaluation"
+  ],
+  "optional_future_integrations": [
+    "VLFM navigation adapter and evaluation",
+    "ApexNav navigation adapter and evaluation"
+  ]
+}
