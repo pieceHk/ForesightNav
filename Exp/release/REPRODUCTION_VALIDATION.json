@@ -1,0 +1,117 @@
+{
+  "algorithm_and_profile_edits": false,
+  "dataset_manifest_sha256": "e1e93c34fd5cadcf3d001f9d5e68f4bbc4dec69ba5df88ad230885b319c4e892",
+  "environment": {
+    "initial_episode_habitat_source": "existing clean installation of the same pinned fork",
+    "isolated_habitat_reset_and_action_probe": "passed",
+    "isolated_launcher_habitat_revision": "8df2661e5b2203c0ddc47798d5da0132d5686bbe",
+    "reused_existing_conda_environments": true,
+    "selected_launcher_python_sources_inside_checkout": true
+  },
+  "export_commit": "6f55d74c3f1715d92e60ce90d0e47646ba3d028c",
+  "original_files_without_relocation": 4255,
+  "original_source_commit": "7f232ca714f3f77e516489fb8af07af8ef580751",
+  "planning_audit": {
+    "all_episode_identities_complete": true,
+    "decisions": 204,
+    "dispatch_sources": {
+      "idea1_fallback": 57,
+      "suffix": 147
+    },
+    "ordered_categories": [
+      "toilet",
+      "bed",
+      "tv",
+      "toilet"
+    ],
+    "source_episode_ids": [
+      "13",
+      "67",
+      "61",
+      "58"
+    ],
+    "stale_suffix_dispatches": 0,
+    "strict_geodesic": true,
+    "suffix_interventions": 18,
+    "task_counts": {
+      "0": 51,
+      "1": 51,
+      "2": 51,
+      "3": 51
+    }
+  },
+  "profile_sha256": "cc86a4d946e775929d3078a9ace8ddae6724a6f5e83bcd333ec51843a14a0970",
+  "repository": "https://github.com/pieceHk/PBSP",
+  "resource_placeholder_relocation": {
+    "from": "Navigation/runtime/lagmemo/data/scene_datasets/.gitkeep",
+    "original_content_preserved": true,
+    "to": "Exp/release/placeholders/scene_datasets.gitkeep"
+  },
+  "retained_source_blobs_verified": 4256,
+  "scope": {
+    "fresh_environment_installation": "not_run",
+    "full_dataset_evaluation": "not_run",
+    "historical_metric_comparison": "not_run"
+  },
+  "smoke": {
+    "actions_per_subtask": [
+      500,
+      500,
+      500,
+      500
+    ],
+    "completed_episodes": 1,
+    "completed_subtasks": 4,
+    "metrics": {
+      "pespl": 0.0,
+      "pespl_denominator": 4,
+      "pespl_numerator": 0.0,
+      "psr": 0.0,
+      "psr_by_category": {
+        "bed": {
+          "psr_contribution": 0.0,
+          "success_rate": 0.0,
+          "successes": 0,
+          "targets": 1
+        },
+        "toilet": {
+          "psr_contribution": 0.0,
+          "success_rate": 0.0,
+          "successes": 0,
+          "targets": 2
+        },
+        "tv": {
+          "psr_contribution": 0.0,
+          "success_rate": 0.0,
+          "successes": 0,
+          "targets": 1
+        }
+      },
+      "psr_denominator": 4,
+      "psr_numerator": 0,
+      "spl": 0.0,
+      "sr": 0.0
+    },
+    "run_path": "Exp/runs/20261019_143353_hm3dv1_4mon_scsp_reproduction_smoke_aligned",
+    "runtime_episode_id": "0",
+    "scene": "4ok3usBNeis",
+    "status": "completed",
+    "stop_reasons": [
+      "max_steps",
+      "max_steps",
+      "max_steps",
+      "max_steps"
+    ],
+    "successful_subtasks": 0,
+    "total_actions": 2000
+  },
+  "source_branch": "full-pbsp",
+  "tests": {
+    "log": "Exp/runs/reproduction_setup/pytest_final.log",
+    "passed": 231,
+    "skipped": 0,
+    "warnings": 3
+  },
+  "validation_date": "2026-10-19",
+  "working_branch": "repro/full-pbsp"
+}
