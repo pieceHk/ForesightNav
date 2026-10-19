@@ -201,12 +201,12 @@
     }
   },
   "remaining": [
-    "full latest suite on synchronized source",
     "real Habitat integration of the extracted Navigator",
     "candidate planning coordinator",
     "native experiment runner and launcher",
     "third-party dependencies and clean installation",
-    "complete selected-split evaluation"
+    "complete selected-split evaluation",
+    "Habitat integration of the new navigation and planning code; running on the stated source commit"
   ],
   "artifact_check": {
     "test": "test_matching_visualization_writes_a_readable_image",
@@ -240,5 +240,13 @@
     },
     "package_dependency_check": "passed",
     "note": "CPU replay validates numerical and state behavior. This is not a Linux installation or a Habitat integration run."
+  },
+  "subsequent_linux_validation": {
+    "source_commit": "a10e7e08511a32742467cb24aecae06b8e9962db",
+    "platform": "Linux navigation environment, Python 3.9",
+    "passed": 362,
+    "warnings": 17,
+    "elapsed_seconds": 14.25,
+    "scope": "Complete suite after navigation, candidate planning and refresh-transaction extraction; includes the previously unavailable local checks."
   }
 }

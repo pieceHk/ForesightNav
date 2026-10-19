@@ -143,7 +143,7 @@ def validate_core_boundaries() -> None:
         "pbsp/mapping/mapper.py", "pbsp/mapping/model.py", "pbsp/mapping/memory.py",
         "pbsp/mapping/fusion.py", "pbsp/mapping/gaussians.py",
         "pbsp/mapping/encoder.py", "pbsp/mapping/features.py",
-        "experiments/metrics.py", "runtime/config.py",
+        "experiments/metrics.py", "experiments/recorder.py", "runtime/config.py",
     )
     for name in required:
         assert (ROOT / name).is_file(), f"canonical implementation missing: {name}"

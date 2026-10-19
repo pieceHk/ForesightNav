@@ -446,12 +446,38 @@ GOAT_ENTRYPOINT = (
 
 
 def _function_source(path, function_name):
+    recorders = {
+        "_record_scsp_provider_event": "record_provider_event",
+        "_scsp_shadow_fallback_event": "planning_fallback_event",
+        "_finalize_scsp_dispatch_event": "finalize_dispatch_event",
+        "_finite_metric_summary": "finite_metric_summary",
+        "_write_timing_rows": "write_timing_rows",
+        "_print_timing_summary": "print_timing_summary",
+    }
+    canonical = path == GOAT_ENTRYPOINT and function_name in recorders
+    target_name = recorders[function_name] if canonical else function_name
+    if canonical:
+        path = ROOT / "experiments/recorder.py"
     source = path.read_text(encoding="utf-8")
     tree = ast.parse(source)
     for node in tree.body:
         if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef)) and (
-            node.name == function_name
+            node.name == target_name
         ):
+            if canonical:
+                # Keep isolated fault-injection fixtures bound to the canonical
+                # function body while retaining their compatibility names.
+                names = {value: key for key, value in recorders.items()}
+                names["TIMING_THRESHOLDS"] = "_THRESHOLDS"
+
+                class CompatibilityNames(ast.NodeTransformer):
+                    def visit_Name(self, item):
+                        item.id = names.get(item.id, item.id)
+                        return item
+
+                node = CompatibilityNames().visit(node)
+                node.name = function_name
+                return ast.unparse(node)
             return ast.get_source_segment(source, node)
     raise AssertionError(f"missing function {function_name}")
 

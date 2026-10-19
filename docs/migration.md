@@ -6,7 +6,7 @@
 
 ## 当前代码
 
-候选证据、候选排序、类别冷却、有序后缀规划及建图策略位于 `pbsp/`，所有调用方已使用这些实现。实际语义检索也已迁入 `pbsp/mapping/query.py`，包含特征加权、支持度重排、空间 NMS、单类别及批量查询。指标计算和决策记录分别位于 `experiments/metrics.py`、`experiments/telemetry.py`。
+候选证据、候选排序、类别冷却、有序后缀规划及建图策略位于 `pbsp/`，所有调用方已使用这些实现。实际语义检索也已迁入 `pbsp/mapping/query.py`，包含特征加权、支持度重排、空间 NMS、单类别及批量查询。指标计算和决策格式分别位于 `experiments/metrics.py`、`experiments/telemetry.py`。Provider 快照记录、规划回退和分派结果的构造、距离摘要及耗时 CSV 位于 `experiments/recorder.py`。规划决策 JSONL 的持久化逻辑和实验主循环仍在旧入口，后续继续拆分。
 
 `configs/experiments/hm3d_2mon.yaml`、`hm3d_3mon.yaml`、`hm3d_4mon.yaml` 引用同一个完整方法配置。`runtime/config.py` 读取配置并检查字段、数值、资源版本和引用路径。
 
@@ -67,3 +67,7 @@ Mapper 迁移后，服务器完整测试为 271 项通过。固定 RGB-D 序列�
 候选规划与几何迁移增加了 19 项基准重放，覆盖距离状态、缓存失效、重复类别任务身份、分派顺序及恢复采样的楼层和岛屿约束；11 个函数通过可执行定义对比。本机完整测试为 335 项通过、3 项环境相关失败，与上一阶段一致。旧评测入口调用上述实现，完整刷新事务仍保留在入口中。详见[规划迁移结果](validation/phase8_planning_results.json)。
 
 规划事务迁移增加了 24 项基准重放，逐项比较完整规划事件、确定性计时、缓存和排序器状态，以及重查与异常路径的全部调用顺序；规划重放合计 43 项通过。后缀计算、刷新控制流和最终版本检查的源码对比也通过。本机完整测试为 359 项通过、3 项环境相关失败；服务器验证等待内网连接恢复。详见[规划事务结果](validation/phase9_planning_transaction_results.json)。
+
+内网恢复后，本机、服务器和 GitHub 同步到 `a10e7e0`。服务器 Linux 环境完整测试为 362 项通过；此前本机的 3 项环境限制已补验通过。该提交的真实 4-MON 单 episode 集成正在运行。
+
+实验记录模块已迁出 6 个实际函数及耗时阈值常量，其可执行定义与基准一致。101 项相关检查通过，包含输出失败时保留有效版本语义、异常记录和过期分派拒绝。详见[记录模块结果](validation/phase10_recorder_results.json)。
