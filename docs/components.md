@@ -75,6 +75,10 @@ An entirely different retrieval method can implement `QueryBackend.query()` and 
 
 The frame excludes evaluation labels and the ground-truth top-down map. `NavigationPlan` returns a simulator action, optional local-plan diagnostics and an error. PBSP keeps its verified-target and task-budget STOP rules.
 
+[HabitatEnvironment](../adapters/habitat.py) translates sensor frames and task queries before they reach the Agent. It receives explicit observation settings, categories, segmentation construction and action IDs. Importing the adapter does not load Habitat or perception models. Detic and disabled modes do not read the semantic sensor or scene annotations.
+
+[GoatEvaluator](../experiments/evaluator.py) reads success and path measurements after an action and before task reset. The experiment visualization observer reads its top-down map separately. Navigator updates its previous position from GPS even when evaluation visualization is absent. The legacy environment name remains an assembly boundary; the active experiment uses the evaluator directly.
+
 `LocalPlannerBackend` adapts the current planner with unchanged arguments. To replace waypoint following while retaining exploration before a memory goal exists:
 
 ```python

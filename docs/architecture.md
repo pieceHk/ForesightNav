@@ -268,10 +268,11 @@ expected_tasks_per_episode: 4
 ```yaml
 name: full_pbsp
 mapping:
-  top_k: 10
   keyframe_threshold: 0.30
   warmup_keyframes: 10
   rebuild_interval: 10
+query:
+  top_k: 10
 navigation:
   semantic_source: detic
   query_refresh_cadence_steps: 10
