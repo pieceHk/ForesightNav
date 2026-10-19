@@ -653,3 +653,15 @@ def test_legacy_geometry_controls_are_bound_once_per_instance(monkeypatch):
     pathfinder = SimpleNamespace(snap_point=lambda point: np.asarray(point) + [1.0, 0.0, 0.0])
     assert strict.project_goals({0: [[0.0, 0.0, 0.0]]}, pathfinder) == {0: []}
     assert relaxed.project_goals({0: [[0.0, 0.0, 0.0]]}, pathfinder) == {0: [[1.0, 0.0, 0.0]]}
+
+
+def test_planning_fallback_uses_the_injected_clock_without_a_global_patch():
+    bridge = PlanningBridge(project_goals=None, geodesic=None, clock=Clock())
+    event = bridge.compute_decision(
+        phase="fixture", arm="ordered_suffix_mvp", provider_event={}, candidate_batch=None,
+        projected_goals={}, projected_indices={}, current_task=0, origin=[0., 0., 0.],
+        pathfinder=None, agent=None, reranker=None, distance_cache={}, candidate_cap=5,
+        suffix_weight=.35, idea1_config={}, provenance={}, episode_identity=None,
+    )
+    assert event["fallback_reason"] == "invalid_candidate_batch"
+    assert event["total_shadow_latency_ms"] == pytest.approx(1.)

@@ -23,6 +23,9 @@ class PlanningBridge:
         self.geodesic = geodesic
         self.clock = clock
 
+    def _fallback_event(self, **kwargs):
+        return _scsp_shadow_fallback_event(clock=self.clock.perf_counter, **kwargs)
+
     def compute_decision(
         self,
         *,
@@ -48,7 +51,7 @@ class PlanningBridge:
         started_at = self.clock.perf_counter()
         version_gate = dict(provider_event.get('version_gate', {}))
         if candidate_batch is None:
-            return _scsp_shadow_fallback_event(
+            return self._fallback_event(
                 phase=phase,
                 arm=arm,
                 current_task=current_task,
@@ -65,7 +68,7 @@ class PlanningBridge:
                 episode_identity=episode_identity,
             )
         if version_gate.get('would_invalidate', True):
-            return _scsp_shadow_fallback_event(
+            return self._fallback_event(
                 phase=phase,
                 arm=arm,
                 current_task=current_task,
@@ -131,7 +134,7 @@ class PlanningBridge:
                 if isinstance(exc, SCSPContractError)
                 else FallbackReason.PLANNER_ERROR.value
             )
-            return _scsp_shadow_fallback_event(
+            return self._fallback_event(
                 phase=phase,
                 arm=arm,
                 current_task=current_task,
@@ -162,7 +165,7 @@ class PlanningBridge:
                 event = self.compute_decision(**compute_kwargs)
         except Exception as exc:
             try:
-                event = _scsp_shadow_fallback_event(
+                event = self._fallback_event(
                     phase=kwargs.get('phase', 'unknown'),
                     arm=kwargs.get('arm', 'unknown'),
                     current_task=kwargs.get('current_task', 0),
@@ -267,7 +270,7 @@ class PlanningBridge:
             return (projected, decision, gate)
 
         def make_fallback(exc):
-            return _scsp_shadow_fallback_event(
+            return self._fallback_event(
                 phase=phase,
                 arm=arm,
                 current_task=current_task,

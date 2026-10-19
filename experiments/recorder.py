@@ -123,6 +123,7 @@ def planning_fallback_event(
     suffix_weight=None,
     idea1_config=None,
     episode_identity=None,
+    clock=None,
 ):
     event = {
         "schema_version": SHADOW_SCHEMA_VERSION,
@@ -138,7 +139,9 @@ def planning_fallback_event(
         "version_gate": dict(version_gate or {}),
         "candidate_batch": candidate_batch,
         "origin_position": [float(value) for value in origin],
-        "total_shadow_latency_ms": (time.perf_counter() - started_at) * 1000.0,
+        "total_shadow_latency_ms": (
+            (time.perf_counter if clock is None else clock)() - started_at
+        ) * 1000.0,
     }
     if isinstance(provenance, dict):
         event.update(

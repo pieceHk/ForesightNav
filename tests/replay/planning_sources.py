@@ -24,6 +24,7 @@ def planning_function_source(function_name):
     names.update(
         project_goals="_project_goals_to_navigable",
         geodesic="_strict_geodesic_distance",
+        _fallback_event="_scsp_shadow_fallback_event",
         clock="time",
     )
 
