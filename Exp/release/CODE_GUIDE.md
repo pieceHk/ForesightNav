@@ -13,7 +13,7 @@ under `Exp/` while the model runtimes and action loop are migrated. See
 
 | Directory | Responsibility | Start reading here |
 | --- | --- | --- |
-| `pbsp/mapping/` | Observation, coordinate, keyframe, query and resource policies | `types.py`, `geometry.py`, `query.py` |
+| `pbsp/mapping/` | Observation, coordinates, keyframes, semantic/spatial retrieval and resource policies | `types.py`, `geometry.py`, `query.py` |
 | `Mapping/runtime/server/` | Live RGB-D input, Gaussian reconstruction and semantic candidate retrieval | `online_es_mapper.py`, `es_mapper_server.py` |
 | `Mapping/runtime/embodied_splat/` | Neural mapping engine and its dependencies | Enter through the server adapter |
 | `pbsp/navigation/` | Candidate evidence, ranking and ordered suffix planning | Reading order below |
@@ -37,10 +37,10 @@ under `Exp/` while the model runtimes and action loop are migrated. See
 5. Read `experiments/telemetry.py` and `metrics.py` to connect a decision to the
    recorded episode identity and the SR, SPL, PeSPL and PSR computations.
 
-`pbsp/mapping/` currently provides interfaces and small policies. The actual
-online neural mapper lives under `Mapping/runtime/server/` and
-`Mapping/runtime/embodied_splat/`; reading only the interface package does not
-cover the mapping implementation.
+`pbsp/mapping/query.py` implements semantic scoring and candidate retrieval.
+The online mapper lifecycle and neural model still live under
+`Mapping/runtime/server/` and `Mapping/runtime/embodied_splat/` while they are
+being extracted.
 
 ## Experiment flow
 
