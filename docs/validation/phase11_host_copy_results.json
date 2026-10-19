@@ -1,0 +1,74 @@
+{
+  "stage": "complete_cpu_map_publication",
+  "fix_commit": "0a7c779926c6679879d94824e8ed07d40e956eaf",
+  "observed_run": "phase9_integration_results.json",
+  "problem": "Recursive state movement used non_blocking CUDA-to-CPU copies and returned before host reads were safe. The rebuild counter was read before completion, while the final BEV read the completed state.",
+  "evidence": {
+    "logged_point_count": 3081037,
+    "completed_bev_point_count": 3088415,
+    "final_bev_header_exact_pixel_match": true
+  },
+  "change": "Enqueue the nested copies, then synchronize each source CUDA stream once before returning CPU state. CPU-only moves initialize no CUDA stream, and host-to-device movement retains its prior behavior.",
+  "reference": "https://docs.pytorch.org/tutorials/intermediate/pinmem_nonblock.html",
+  "changed_source_sha256": "6e8e85aab37b74357957a05b9693bcfff6d9599efbc91662d904198e85279da4",
+  "gpu_negative_control": {
+    "torch": "2.7.1+cu118",
+    "device": "NVIDIA A40",
+    "cases": [
+      {
+        "source_value": 7.0,
+        "expected_sum": 14000000.0,
+        "baseline_early_sum": 0.0,
+        "baseline_was_incomplete": true,
+        "fixed_sum": 14000000.0
+      },
+      {
+        "source_value": 11.0,
+        "expected_sum": 22000000.0,
+        "baseline_early_sum": 0.0,
+        "baseline_was_incomplete": true,
+        "fixed_sum": 22000000.0
+      },
+      {
+        "source_value": 13.0,
+        "expected_sum": 26000000.0,
+        "baseline_early_sum": 14000000.0,
+        "baseline_was_incomplete": true,
+        "fixed_sum": 26000000.0
+      }
+    ]
+  },
+  "real_rgbd_replay": {
+    "status": "passed",
+    "frames": 12,
+    "phase_counts": [
+      {
+        "keyframes": 10,
+        "reported": 267374,
+        "actual": 267374
+      },
+      {
+        "keyframes": 12,
+        "reported": 287475,
+        "actual": 287475
+      }
+    ],
+    "candidate_counts": {
+      "chair": 2,
+      "bed": 6
+    },
+    "reset_empty": true,
+    "closed": true,
+    "elapsed_seconds": 25.497
+  },
+  "regression_tests": [
+    "nested transfers complete before returning; one wait per source stream; alias identity preserved",
+    "CPU state uses no CUDA stream"
+  ],
+  "linux_full_suite": {
+    "passed": 364,
+    "warnings": 17,
+    "elapsed_seconds": 13.58
+  },
+  "scope": "Correct CPU-state readiness and its counters. Encoder arithmetic is unchanged. The 12-frame replay validates mapper publication; full selected-split evaluation and a clean installation remain pending."
+}

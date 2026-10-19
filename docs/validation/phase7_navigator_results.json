@@ -201,12 +201,10 @@
     }
   },
   "remaining": [
-    "real Habitat integration of the extracted Navigator",
-    "candidate planning coordinator",
+    "native PBSPAgent assembly",
     "native experiment runner and launcher",
     "third-party dependencies and clean installation",
-    "complete selected-split evaluation",
-    "Habitat integration of the new navigation and planning code; running on the stated source commit"
+    "complete selected-split evaluation"
   ],
   "artifact_check": {
     "test": "test_matching_visualization_writes_a_readable_image",
@@ -248,5 +246,6 @@
     "warnings": 17,
     "elapsed_seconds": 14.25,
     "scope": "Complete suite after navigation, candidate planning and refresh-transaction extraction; includes the previously unavailable local checks."
-  }
+  },
+  "completed_navigation_integration": "phase9_integration_results.json"
 }

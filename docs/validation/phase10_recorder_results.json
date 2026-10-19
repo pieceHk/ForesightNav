@@ -51,7 +51,6 @@
   "remaining": [
     "planning decision JSONL persistence and experiment main loop",
     "native Agent, runner and process assembly",
-    "server verification after the active a10e7e0 integration job completes",
     "resource cleanup, clean Linux installation and full selected-split evaluation"
   ],
   "local_complete_suite": {
@@ -59,5 +58,12 @@
     "failed": 3,
     "elapsed_seconds": 8.46,
     "failure_details": "The same local missing-dataset and macOS OpenCV-thread limitations; the parent a10e7e0 complete suite passed all 362 tests on Linux."
+  },
+  "completed_navigation_integration": "phase9_integration_results.json",
+  "linux_complete_suite": {
+    "source_commit": "737bf48587cac690f791320c34e1cfa22cbfa05e",
+    "passed": 362,
+    "warnings": 17,
+    "elapsed_seconds": 13.53
   }
 }

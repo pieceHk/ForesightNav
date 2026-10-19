@@ -89,11 +89,10 @@
     "architecture_boundaries": "passed"
   },
   "remaining": [
-    "native suffix computation and refresh/version transaction assembly",
+    "native PBSPAgent assembly",
     "experiment runner, evaluator and recorder",
     "native launch and IPC lifecycle",
-    "third-party resources, clean Linux installation and complete selected-split evaluation",
-    "Habitat integration of the new navigation and planning code; running on the stated source commit"
+    "third-party resources, clean Linux installation and complete selected-split evaluation"
   ],
   "subsequent_linux_validation": {
     "source_commit": "a10e7e08511a32742467cb24aecae06b8e9962db",
@@ -102,5 +101,6 @@
     "warnings": 17,
     "elapsed_seconds": 14.25,
     "scope": "Complete suite after navigation, candidate planning and refresh-transaction extraction; includes the previously unavailable local checks."
-  }
+  },
+  "completed_navigation_integration": "phase9_integration_results.json"
 }
