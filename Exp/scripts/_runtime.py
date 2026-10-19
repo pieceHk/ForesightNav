@@ -21,6 +21,8 @@ except ImportError:
 
 
 ROOT = Path(__file__).resolve().parents[2]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
 os.environ.setdefault("TDONAV_ROOT", str(ROOT))
 MAPPING_ENGINE = ROOT / "Mapping" / "runtime" / "embodied_splat"
 NAVIGATION_ENGINE = ROOT / "Navigation" / "runtime" / "lagmemo"
