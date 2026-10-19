@@ -77,7 +77,7 @@ The frame excludes evaluation labels and the ground-truth top-down map. `Navigat
 
 [HabitatEnvironment](../adapters/habitat.py) translates sensor frames and task queries before they reach the Agent. It receives explicit observation settings, categories, segmentation construction and action IDs. Importing the adapter does not load Habitat or perception models. Detic and disabled modes do not read the semantic sensor or scene annotations.
 
-[GoatEvaluator](../experiments/evaluator.py) reads success and path measurements after an action and before task reset. The experiment visualization observer reads its top-down map separately. Navigator updates its previous position from GPS even when evaluation visualization is absent. The legacy environment name remains an assembly boundary; the active experiment uses the evaluator directly.
+[GoatEvaluator](../experiments/evaluator.py) reads success and path measurements after an action and before task reset. The experiment visualization observer reads its top-down map separately. Navigator updates its previous position from GPS even when evaluation visualization is absent. The native factory wires these adapters to explicit resources; the active experiment uses the evaluator directly.
 
 `LocalPlannerBackend` adapts the current planner with unchanged arguments. To replace waypoint following while retaining exploration before a memory goal exists:
 
@@ -105,7 +105,7 @@ These adapters are not bundled or evaluated yet. VLFM's full exploration policy 
 
 `RunSettings` supplies the episode range, step budget, timing flag and query cadence. `PlanningRunSettings` supplies planning mode, identity records and provenance. `RunArtifacts` holds run metrics, timing, mapping status and the distance cache. The [PlanningBridge](../experiments/planning.py) binds projection, strict geodesic distance and a clock around the planning core and Recorder.
 
-The retained launcher assembles these objects and calls this Runner. Mapping now runs through the [native client, protocol and worker](runtime.md). Root CLI and navigation worker assembly are still being migrated. A replacement backend uses the same loop and evaluation protocol.
+The retained launcher starts the [native mapping and navigation workers](runtime.md). Navigation service assembly receives an explicit request and resources, constructs these objects and calls this Runner. The root CLI and complete resource preparation are still being migrated. A replacement backend uses the same loop and evaluation protocol.
 
 ## Verify a replacement
 
