@@ -157,6 +157,7 @@ def run_worker(server, socket_path, *, stop_event=None, on_ready=None):
 
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--run-plan", type=Path)
     parser.add_argument("--socket_path", default="/tmp/es_mapper.sock")
     parser.add_argument("--device", default="cuda")
     parser.add_argument("--top_k", type=int, default=10)
@@ -165,17 +166,25 @@ def main(argv=None):
     parser.add_argument("--bev_dir", default=None)
     args = parser.parse_args(argv)
 
-    root = Path(__file__).resolve().parents[1]
-    os.environ.setdefault("TDONAV_ROOT", str(root))
-    os.environ.setdefault("ES_ROOT", str(root / "Mapping/runtime/embodied_splat"))
-    os.environ.setdefault("HF_HOME", str(root / "Exp/assets/weights/hf_home"))
-    os.environ.setdefault("HF_HUB_CACHE", str(Path(os.environ["HF_HOME"]) / "hub"))
-    os.environ.setdefault("HF_HUB_OFFLINE", "1")
-    configure_runtime_threads()
-
-    from runtime.legacy_mapping import create_mapper
-
-    mapper = create_mapper(device=args.device, top_k=args.top_k, bev_dir=args.bev_dir)
+    if args.run_plan is not None:
+        from runtime.plan import load_plan
+        from runtime.bootstrap import configure_run_process
+        from runtime.factories import create_mapper
+        plan = load_plan(args.run_plan)
+        configure_run_process(plan, "mapping")
+        mapper = create_mapper(plan, device=args.device)
+        args.socket_path = str(plan.socket_path)
+        args.top_k = plan.experiment.method.query.top_k
+    else:
+        root = Path(__file__).resolve().parents[1]
+        os.environ.setdefault("TDONAV_ROOT", str(root))
+        os.environ.setdefault("ES_ROOT", str(root / "Mapping/runtime/embodied_splat"))
+        os.environ.setdefault("HF_HOME", str(root / "Exp/assets/weights/hf_home"))
+        os.environ.setdefault("HF_HUB_CACHE", str(Path(os.environ["HF_HOME"]) / "hub"))
+        os.environ.setdefault("HF_HUB_OFFLINE", "1")
+        configure_runtime_threads()
+        from runtime.legacy_mapping import create_mapper
+        mapper = create_mapper(device=args.device, top_k=args.top_k, bev_dir=args.bev_dir)
     server = MappingServer(mapper, top_k=args.top_k)
     stopped = threading.Event()
     previous = {}

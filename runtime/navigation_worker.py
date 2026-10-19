@@ -28,6 +28,8 @@ class NavigationResources:
     mobileclip_checkpoint: Path
     detic_config: Optional[Path] = None
     detic_checkpoint: Optional[Path] = None
+    scene_directory: Optional[Path] = None
+    scene_dataset: Optional[Path] = None
 
 
 @dataclass(frozen=True)
@@ -48,6 +50,9 @@ class NavigationRequest:
     settings: NavigationSettings
     category_cooldowns: Mapping[str, int]
     planning_settings: PlanningRunSettings
+    episode_ids: Optional[tuple[str, ...]] = None
+    seed: Optional[int] = None
+    record_decisions: bool = True
     max_vertical_delta: float = 0.35
     navmesh_samples: int = 32
     escape_radius_m: float = 3.0
@@ -72,6 +77,20 @@ class NavigationRequest:
             raise ValueError(
                 "category cooldown requires query_action_rerank_enabled=true"
             )
+
+        if self.episode_ids is not None:
+            if (
+                not self.episode_ids
+                or len(set(self.episode_ids)) != len(self.episode_ids)
+                or any(
+                    not isinstance(item, str) or not item for item in self.episode_ids
+                )
+            ):
+                raise ValueError("Episode IDs must be distinct non-empty strings")
+            if self.episode_start != 0 or self.episode_end is not None:
+                raise ValueError("Select episodes by IDs or by index range")
+        if self.seed is not None and (type(self.seed) is not int or self.seed < 0):
+            raise ValueError("Seed must be a non-negative integer")
 
 
 @dataclass
@@ -115,6 +134,13 @@ def configure_experiment(config, request):
     config.habitat.environment.iterator_options.shuffle = False
     config.DUMP_LOCATION = str(request.output)
     config.habitat.dataset.data_path = str(request.dataset / "val_seen.json.gz")
+    if request.resources.scene_directory is not None:
+        config.habitat.dataset.scenes_dir = str(request.resources.scene_directory)
+    if request.resources.scene_dataset is not None:
+        config.habitat.simulator.scene_dataset = str(request.resources.scene_dataset)
+    if request.seed is not None:
+        config.seed = request.seed
+        config.habitat.seed = request.seed
     all_scenes = sorted(
         path.name.removesuffix(".json.gz")
         for path in (request.dataset / "content").glob("*.json.gz")
@@ -157,15 +183,8 @@ def build_services(request, stack):
     )
     habitat_env = Env(config)
     stack.callback(habitat_env.close)
-    total_episodes = len(habitat_env.episodes)
-    episode_end = total_episodes if request.episode_end is None else request.episode_end
-    if not 0 <= request.episode_start < episode_end <= total_episodes:
-        raise ValueError(
-            f"invalid episode range [{request.episode_start}, {episode_end}) for {total_episodes} episodes"
-        )
-    habitat_env.episode_iterator = iter(
-        habitat_env.episodes[request.episode_start : episode_end]
-    )
+    selected, episode_end = select_habitat_episodes(habitat_env.episodes, request)
+    habitat_env.episode_iterator = iter(selected)
     env = create_environment(
         habitat_env,
         config=config,
@@ -198,6 +217,21 @@ def build_services(request, stack):
         config,
         episode_end,
     )
+
+
+def select_habitat_episodes(episodes, request):
+    if request.episode_ids is not None:
+        by_id = {str(item.episode_id): item for item in episodes}
+        if len(by_id) != len(episodes) or not set(request.episode_ids) <= set(by_id):
+            raise ValueError("Selected episode IDs are missing or ambiguous in Habitat")
+        return [by_id[key] for key in request.episode_ids], len(request.episode_ids)
+    total = len(episodes)
+    end = total if request.episode_end is None else request.episode_end
+    if not 0 <= request.episode_start < end <= total:
+        raise ValueError(
+            f"invalid episode range [{request.episode_start}, {end}) for {total} episodes"
+        )
+    return episodes[request.episode_start : end], end
 
 
 def run_navigation(request, *, services_factory=build_services):
@@ -269,6 +303,7 @@ def run_navigation(request, *, services_factory=build_services):
                 services.config.AGENT.max_steps,
                 request.enable_timing,
                 settings.query_refresh_cadence_steps,
+                record_decisions=request.record_decisions,
             ),
             planning_settings=request.planning_settings,
             artifacts=artifacts,
@@ -283,9 +318,27 @@ def run_navigation(request, *, services_factory=build_services):
 def main(argv=None):
     # The retained flags are resolved once at this process boundary. The native
     # request and service assembly above do not read environment controls.
-    from runtime.legacy_navigation_run import prepare_request
+    import sys
 
-    request = prepare_request(argv)
+    argv = sys.argv[1:] if argv is None else argv
+    if any(item.split("=", 1)[0] == "--run-plan" for item in argv):
+        import argparse
+
+        parser = argparse.ArgumentParser(description=__doc__)
+        parser.add_argument("--run-plan", type=Path, required=True)
+        parser.add_argument("--scene", required=True)
+        args = parser.parse_args(argv)
+        from runtime.plan import load_plan
+        from runtime.bootstrap import configure_run_process
+        from runtime.factories import navigation_request
+
+        plan = load_plan(args.run_plan)
+        configure_run_process(plan, "navigation")
+        request = navigation_request(plan, args.scene)
+    else:
+        from runtime.legacy_navigation_run import prepare_request
+
+        request = prepare_request(argv)
     import signal
 
     print(

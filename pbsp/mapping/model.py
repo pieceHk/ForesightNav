@@ -2,30 +2,14 @@
 
 from __future__ import annotations
 
-from dataclasses import dataclass
 from pathlib import Path
-import math
 
 import numpy as np
 import torch
 import torch.nn.functional as F
 
 
-@dataclass(frozen=True)
-class ModelInputSpec:
-    image_height: int
-    image_width: int
-    near: float
-    far: float
-
-    def __post_init__(self):
-        for value in (self.image_height, self.image_width):
-            if type(value) is not int or value < 2 or value % 2:
-                raise ValueError("Model image dimensions must be positive even integers")
-        if (type(self.near) not in (int, float) or type(self.far) not in (int, float)
-                or not math.isfinite(self.near) or not math.isfinite(self.far)
-                or not 0 < self.near < self.far):
-            raise ValueError("Model bounds require finite 0 < near < far")
+from .spec import ModelInputSpec
 
 
 def preprocess_frame(rgb, depth, c2w, intrinsic, *, input_spec: ModelInputSpec, device="cpu"):

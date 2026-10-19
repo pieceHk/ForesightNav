@@ -9,7 +9,13 @@ from typing import Mapping, Optional
 
 import yaml
 
-from pbsp.settings import MappingSettings, MethodSettings, NavigationSettings, QuerySettings, SuffixSettings
+from pbsp.settings import (
+    MappingSettings,
+    MethodSettings,
+    NavigationSettings,
+    QuerySettings,
+    SuffixSettings,
+)
 
 
 class ConfigError(ValueError):
@@ -80,17 +86,31 @@ class DatasetConfig:
     expected_scenes: int
 
     def __post_init__(self):
-        for name in ("name", "split", "root", "manifest", "identities", "manifest_sha256", "source_trace_sha256"):
+        for name in (
+            "name",
+            "split",
+            "root",
+            "manifest",
+            "identities",
+            "manifest_sha256",
+            "source_trace_sha256",
+        ):
             _text(getattr(self, name), name)
         for name in ("root", "manifest", "identities"):
             path = Path(getattr(self, name))
             if path.is_absolute() or ".." in path.parts:
-                raise ConfigError(f"Dataset {name} must remain relative to its resource root")
+                raise ConfigError(
+                    f"Dataset {name} must remain relative to its resource root"
+                )
         for name in ("manifest_sha256", "source_trace_sha256"):
             digest = getattr(self, name)
             if len(digest) != 64 or any(c not in "0123456789abcdef" for c in digest):
                 raise ConfigError(f"Dataset {name} must be a lowercase SHA-256")
-        for name in ("expected_tasks_per_episode", "expected_episodes", "expected_scenes"):
+        for name in (
+            "expected_tasks_per_episode",
+            "expected_episodes",
+            "expected_scenes",
+        ):
             _positive(getattr(self, name), name)
 
 
@@ -104,8 +124,14 @@ class EvaluationConfig:
     def __post_init__(self):
         _positive(self.max_steps_per_task, "max_steps_per_task")
         metrics = tuple(self.metrics)
-        if not metrics or len(set(metrics)) != len(metrics) or not set(metrics) <= {"SR", "SPL", "PSR", "PeSPL"}:
-            raise ConfigError("Evaluation metrics must be unique supported MON metric names")
+        if (
+            not metrics
+            or len(set(metrics)) != len(metrics)
+            or not set(metrics) <= {"SR", "SPL", "PSR", "PeSPL"}
+        ):
+            raise ConfigError(
+                "Evaluation metrics must be unique supported MON metric names"
+            )
         if type(self.record_decisions) is not bool or type(self.visualize) is not bool:
             raise ConfigError("Evaluation recording options must be booleans")
         object.__setattr__(self, "metrics", metrics)
@@ -140,6 +166,7 @@ class ExperimentConfig:
 
     def snapshot(self) -> dict:
         """Return the effective configuration as JSON/YAML-safe values."""
+
         def plain(value):
             if isinstance(value, Path):
                 return str(value)
@@ -174,7 +201,9 @@ def load_runtime(path: Path) -> RuntimeConfig:
     )
 
 
-def load_experiment(path: Path, runtime_path: Optional[Path] = None) -> ExperimentConfig:
+def load_experiment(
+    path: Path, runtime_path: Optional[Path] = None
+) -> ExperimentConfig:
     path = Path(path).resolve()
     experiment = read_yaml(path)
     _keys(experiment, ("name", "method", "dataset", "evaluation", "seed"), str(path))
@@ -189,20 +218,69 @@ def load_experiment(path: Path, runtime_path: Optional[Path] = None) -> Experime
         sources.append(reference)
         sections[name] = read_yaml(reference)
 
-    method = sections["method"]
-    _keys(method, (field.name for field in fields(MethodSettings)), "method")
-    resolved_method = dict(method)
-    for name, cls in (("mapping", MappingSettings), ("query", QuerySettings), ("navigation", NavigationSettings), ("suffix", SuffixSettings)):
-        resolved_method[name] = _typed(cls, method[name])
-    if not isinstance(method["query_switch_cooldown_by_category"], dict):
-        raise ConfigError("Category cooldowns must be a mapping")
-    settings = _typed(MethodSettings, resolved_method)
+    settings = method_settings(sections["method"])
     runtime = load_runtime(runtime_path) if runtime_path is not None else None
     if runtime_path is not None:
         sources.append(Path(runtime_path).resolve())
     return ExperimentConfig(
-        name=experiment["name"], seed=experiment["seed"], method=settings,
+        name=experiment["name"],
+        seed=experiment["seed"],
+        method=settings,
         dataset=_typed(DatasetConfig, sections["dataset"]),
-        evaluation=_typed(EvaluationConfig, sections["evaluation"]), runtime=runtime,
-        source_sha256={str(source): hashlib.sha256(source.read_bytes()).hexdigest() for source in sources},
+        evaluation=_typed(EvaluationConfig, sections["evaluation"]),
+        runtime=runtime,
+        source_sha256={
+            str(source): hashlib.sha256(source.read_bytes()).hexdigest()
+            for source in sources
+        },
+    )
+
+
+def method_settings(method: dict) -> MethodSettings:
+    """Validate the method block from source YAML or a resolved run snapshot."""
+    _keys(method, (field.name for field in fields(MethodSettings)), "method")
+    resolved_method = dict(method)
+    for name, cls in (
+        ("mapping", MappingSettings),
+        ("query", QuerySettings),
+        ("navigation", NavigationSettings),
+        ("suffix", SuffixSettings),
+    ):
+        resolved_method[name] = _typed(cls, method[name])
+    if not isinstance(method["query_switch_cooldown_by_category"], dict):
+        raise ConfigError("Category cooldowns must be a mapping")
+    return _typed(MethodSettings, resolved_method)
+
+
+def experiment_from_snapshot(value: dict) -> ExperimentConfig:
+    """Restore the saved configuration without reading mutable source files."""
+    _keys(
+        value, (field.name for field in fields(ExperimentConfig)), "resolved experiment"
+    )
+    runtime = value["runtime"]
+    if runtime is not None:
+        _keys(
+            runtime, (field.name for field in fields(RuntimeConfig)), "resolved runtime"
+        )
+        runtime = RuntimeConfig(
+            **{
+                name: (
+                    Path(item)
+                    if name not in {"mapping_gpu", "navigation_gpu"}
+                    else item
+                )
+                for name, item in runtime.items()
+            }
+        )
+    _text(value["name"], "experiment.name")
+    if type(value["seed"]) is not int or value["seed"] < 0:
+        raise ConfigError("Experiment seed must be a non-negative integer")
+    return ExperimentConfig(
+        name=value["name"],
+        seed=value["seed"],
+        method=method_settings(value["method"]),
+        dataset=_typed(DatasetConfig, value["dataset"]),
+        evaluation=_typed(EvaluationConfig, value["evaluation"]),
+        runtime=runtime,
+        source_sha256=value["source_sha256"],
     )

@@ -42,6 +42,7 @@ class RunSettings:
     max_steps_per_task: int
     enable_timing: bool
     query_refresh_cadence_steps: int
+    record_decisions: bool = True
 
     def __post_init__(self):
         if not 0 <= self.episode_start < self.episode_end:
@@ -107,8 +108,8 @@ def run_episodes(
             'MON standard-metric runs require a fresh results directory; '
             f'in-place resume is unsupported: {existing_outputs}'
         )
-    scsp_provider_events_path = Path(results_dir) / 'scsp_provider_events.jsonl'
-    scsp_decisions_path = Path(results_dir) / 'scsp_decisions.jsonl'
+    scsp_provider_events_path = Path(results_dir) / 'scsp_provider_events.jsonl' if settings.record_decisions else None
+    scsp_decisions_path = Path(results_dir) / 'scsp_decisions.jsonl' if settings.record_decisions else None
     metrics = artifacts.metrics
     timing_rows = artifacts.timing_rows
     es_status_log = artifacts.es_status_log
