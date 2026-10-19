@@ -333,8 +333,16 @@ class Clock:
 
 
 def current_functions(namespace, names):
+    from tests.replay.planning_sources import BRIDGE_METHODS, planning_function_source
+
     tree = ast.parse((ROOT / SOURCE).read_text())
-    nodes = [node for node in tree.body if isinstance(node, ast.FunctionDef) and node.name in names]
+    nodes = []
+    for name in names:
+        if name in BRIDGE_METHODS:
+            nodes.extend(ast.parse(planning_function_source(name)).body)
+        else:
+            nodes.append(next(node for node in tree.body
+                              if isinstance(node, ast.FunctionDef) and node.name == name))
     assert len(nodes) == len(names)
     exec(
         compile(ast.Module(body=nodes, type_ignores=[]), "<current-planning-bridge>", "exec"),

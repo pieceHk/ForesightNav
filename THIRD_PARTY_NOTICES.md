@@ -37,6 +37,9 @@ The sensor/action conversion in `adapters/habitat.py`, measurement reset in
 top-down visualization in `experiments/visualization.py` derive from LagMemo's
 Habitat environment and agent. They retain the same Meta copyright and MIT scope.
 Evaluation maps are read by the experiment observer separately from policy input.
+The episode/action loop in `experiments/runner.py` was extracted from the retained
+GOAT evaluator entrypoint, which adapts LagMemo's evaluation loop. The same
+attribution applies to that retained control flow.
 
 Upstream license texts are retained unchanged:
 

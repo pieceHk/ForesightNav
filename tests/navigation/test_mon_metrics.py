@@ -345,7 +345,7 @@ def test_run_artifact_aggregation_and_strict_json(tmp_path):
 def test_capture_precedes_subtask_reset_and_is_not_policy_input():
     root = Path(__file__).resolve().parents[2]
     entrypoint = (
-        root / "Navigation/runtime/evaluators/goat/entrypoint.py"
+        root / "experiments/runner.py"
     ).read_text(encoding="utf-8")
     capture = entrypoint.index("path_lengths = evaluator.get_subtask_path_lengths()")
     build = entrypoint.index("ep_metrics.update(build_subtask_telemetry(")

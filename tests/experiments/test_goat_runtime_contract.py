@@ -446,6 +446,10 @@ GOAT_ENTRYPOINT = (
 
 
 def _function_source(path, function_name):
+    from tests.replay.planning_sources import BRIDGE_METHODS, planning_function_source
+
+    if path == GOAT_ENTRYPOINT and function_name in BRIDGE_METHODS:
+        return planning_function_source(function_name)
     recorders = {
         "_record_scsp_provider_event": "record_provider_event",
         "_scsp_shadow_fallback_event": "planning_fallback_event",
@@ -483,7 +487,9 @@ def _function_source(path, function_name):
 
 
 def test_goat_entrypoint_has_version_gated_active_dispatch_without_gt_access():
-    source = GOAT_ENTRYPOINT.read_text(encoding="utf-8")
+    source = ((ROOT / "experiments/runner.py").read_text()
+              + (ROOT / "experiments/planning.py").read_text()
+              + GOAT_ENTRYPOINT.read_text(encoding="utf-8"))
     planning_source = (ROOT / "pbsp/navigation/planning.py").read_text(encoding="utf-8")
     agent_source = (ROOT / "pbsp/agent.py").read_text(encoding="utf-8")
     recorder = _function_source(GOAT_ENTRYPOINT, "_record_scsp_provider_event")
@@ -770,7 +776,7 @@ def test_goat_provider_sink_error_preserves_valid_gate_semantics(tmp_path):
 
 
 def test_goat_refresh_is_atomic_after_scsp_order_and_cooldown():
-    source = GOAT_ENTRYPOINT.read_text(encoding="utf-8")
+    source = (ROOT / "experiments/runner.py").read_text(encoding="utf-8")
     agent_source = (ROOT / "pbsp/agent.py").read_text(encoding="utf-8")
     for owner, expected in ((source, ["initial_goals"]),
                             (agent_source, ["projected_goals", "projected_goals"])):
@@ -2139,7 +2145,7 @@ def test_scsp_plan_state_is_cleared_at_each_subtask_boundary():
     assert reranker.resets == 1
     assert cache == {}
 
-    source = GOAT_ENTRYPOINT.read_text(encoding="utf-8")
+    source = (ROOT / "experiments/runner.py").read_text(encoding="utf-8")
     assert "current_task_idx != scsp_last_task_idx" in source
     assert "subtask_state_reset_count" in source
     assert "scsp_boundary_replan_pending = scsp_runtime_mode in" in source

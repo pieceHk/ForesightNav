@@ -149,3 +149,11 @@ def iter_episodes(dataset: Path, identities: Mapping[tuple[str, str], EpisodeIde
             yield episode, identity
     if seen != set(identities):
         raise ValueError("Unused records in the episode identity index")
+
+
+def task_category(task):
+    for name in ('category', 'object_category'):
+        value = task.get(name)
+        if value is not None and str(value).strip():
+            return str(value)
+    raise ValueError(f'MON task is missing its target category: {task}')
