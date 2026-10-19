@@ -292,10 +292,15 @@ GLUE_AGENT = (
 
 
 def _glue_method_source(method_name):
-    source = GLUE_AGENT.read_text(encoding="utf-8")
+    owner = GLUE_AGENT
+    class_name = "GLUEAgent"
+    if method_name in {"_validate_external_ranking_metadata", "refresh_gs_poses", "_mark_current_candidate_visited"}:
+        owner = Path(__file__).resolve().parents[2] / "pbsp/navigation/candidates.py"
+        class_name = "CandidateTracking"
+    source = owner.read_text(encoding="utf-8")
     tree = ast.parse(source)
     for node in tree.body:
-        if isinstance(node, ast.ClassDef) and node.name == "GLUEAgent":
+        if isinstance(node, ast.ClassDef) and node.name == class_name:
             for child in node.body:
                 if isinstance(child, ast.FunctionDef) and child.name == method_name:
                     child.decorator_list = []

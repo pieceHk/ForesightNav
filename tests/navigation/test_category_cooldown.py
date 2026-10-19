@@ -1,6 +1,4 @@
-import ast
 import json
-from pathlib import Path
 
 import numpy as np
 import pytest
@@ -11,6 +9,7 @@ from pbsp.navigation.cooldown import (
     normalize_category,
     parse_category_cooldowns,
 )
+from pbsp.navigation.candidates import reconcile_spatial_candidates as RECONCILE
 
 
 COOLDOWNS = {
@@ -24,27 +23,6 @@ COOLDOWNS = {
 
 A = [0.0, 0.0, 0.0]
 B = [5.0, 0.0, 0.0]
-
-
-def _load_reconcile_spatial_candidates():
-    path = (
-        Path(__file__).parents[2]
-        / "Navigation/runtime/lagmemo/src/lagmemo/lagmemo/agent/lagmemo_agent/glue_agent.py"
-    )
-    tree = ast.parse(path.read_text(encoding="utf-8"), filename=str(path))
-    function = next(
-        node
-        for node in tree.body
-        if isinstance(node, ast.FunctionDef)
-        and node.name == "reconcile_spatial_candidates"
-    )
-    module = ast.Module(body=[function], type_ignores=[])
-    namespace = {"np": np}
-    exec(compile(module, str(path), "exec"), namespace)
-    return namespace["reconcile_spatial_candidates"]
-
-
-RECONCILE = _load_reconcile_spatial_candidates()
 
 
 def _reconcile(

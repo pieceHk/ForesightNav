@@ -21,6 +21,11 @@ and tensor utility modules. The same attribution and license scope apply.
 `adapters/embodied_splat_model.py` retains the network constructor and optional
 sparse/OpenSeg backend methods from that encoder.
 
+Candidate refresh, visual-confirmation history and recovery-state operations in
+`pbsp/navigation/candidates.py`, `verification.py` and `recovery.py` were extracted
+from LagMemo's `glue_agent.py`. The upstream Meta copyright notice and MIT scope
+are preserved in those modules.
+
 Upstream license texts are retained unchanged:
 
 - `Mapping/runtime/embodied_splat/src/third_party/MinkowskiEngine/LICENSE`
