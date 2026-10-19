@@ -1,0 +1,37 @@
+{
+  "stage": "planning_decision_persistence",
+  "baseline_commit": "422cb8e",
+  "source_commit": "f13aa945f313a7791e11eca3f29f4f92f450d4b2",
+  "module": "experiments/recorder.py",
+  "function": "record_planning_decision",
+  "scope": [
+    "write completed decisions to strict JSONL",
+    "retain realized dispatch on serialization failure",
+    "write a degraded diagnostic when the full event cannot be serialized",
+    "report both primary and diagnostic write failures"
+  ],
+  "source_comparison": {
+    "executable_ast_equal": true,
+    "sha256": "63536e3efe83a48a924c9d136b1536dad2e095b7f8205878b9942c366d95a170",
+    "normalization": "Serializer and current-task hint are explicit parameters; the persistence block is unchanged."
+  },
+  "existing_recorders": "All six previously migrated functions and timing thresholds still match the frozen executable definitions.",
+  "targeted_tests": {
+    "passed": 75,
+    "not_selected": 1,
+    "elapsed_seconds": 1.88,
+    "note": "The machine-local environment test ran and passed in the complete Linux suite."
+  },
+  "fault_injection": "Existing tests execute the retained computation bridge and the canonical persistence function, with a supplied serializer; their fallback and realized-dispatch assertions remain unchanged.",
+  "linux_complete_suite": {
+    "passed": 390,
+    "warnings": 17,
+    "elapsed_seconds": 13.74
+  },
+  "completed_agent_integration": "phase12_integration_results.json",
+  "remaining": [
+    "complete experiment runner and evaluator assembly",
+    "root entrypoint and worker lifecycle",
+    "perception/model resource configuration, independent installation and full selected-split evaluation"
+  ]
+}

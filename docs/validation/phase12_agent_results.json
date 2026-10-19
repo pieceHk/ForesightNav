@@ -1,0 +1,97 @@
+{
+  "stage": "native_agent_state_and_candidate_execution",
+  "baseline_commit": "422cb8e",
+  "source_commit": "9548a2e7cce37088f06bb46e70e56d142ccb1425",
+  "modules": [
+    "pbsp/agent.py",
+    "adapters/lagmemo_agent.py",
+    "runtime/legacy_navigation.py"
+  ],
+  "scope": [
+    "explicit candidate tracking, verification and recovery settings",
+    "initial version-checked candidate installation",
+    "periodic candidate cooldown, rank reconciliation and one refresh",
+    "realized active target and raw-rank reporting"
+  ],
+  "source_comparison": {
+    "reference": "422cb8e",
+    "retained_model_assembly_executable_ast_equal": true,
+    "normalized_ast_sha256": "a0f630a1b94c85b454bd8176bf81a0a2abde84285a8b5e4429d203cc06345a68",
+    "reference_state_statements": 31,
+    "retained_model_statements": 69,
+    "constructor_state_replays": 5,
+    "dispatch_block_replays": 19,
+    "dispatch_blocks": {
+      "dispatch_initial_candidates": {
+        "executable_ast_equal": true,
+        "sha256": "76e35c883c721db890e3683b14becd126991a832e18988eb2da87375ee62382b"
+      },
+      "dispatch_candidates": {
+        "executable_ast_equal": true,
+        "sha256": "734596b355351ee3501b4ded8827560fc334541a48c41f618dd5bdd4aeafe1fb"
+      }
+    }
+  },
+  "normalization": "Agent bindings and task-category input replace evaluator locals. Experiment logging stays in the evaluator; the initial and periodic execution blocks otherwise match the frozen source.",
+  "constructor_state_replays": {
+    "passed": 5,
+    "cases": [
+      "original defaults",
+      "full method settings",
+      "custom values",
+      "blacklist radius defaults to tracking radius",
+      "boolean string interpretation"
+    ]
+  },
+  "dispatch_replays": {
+    "passed": 19,
+    "reference": "Directly execute the unchanged initial and periodic blocks from 422cb8e.",
+    "checks": [
+      "all result fields",
+      "Agent candidate/evidence state",
+      "cooldown state",
+      "refresh arguments and ordering",
+      "at most one candidate refresh"
+    ],
+    "cases": [
+      "active cooldown",
+      "expired cooldown",
+      "first step in a new task",
+      "disabled cooldown",
+      "missing query",
+      "missing current-task candidates",
+      "empty candidate set",
+      "raw-rank mismatch",
+      "stale dispatch gate",
+      "refresh failure",
+      "visited active target",
+      "internal ordering",
+      "missing external metadata"
+    ]
+  },
+  "additional_checks": [
+    "Agent instances do not share mutable state",
+    "inherited environment cannot change explicit Agent settings",
+    "model adapter requires settings and reads no environment variables"
+  ],
+  "linux_complete_suite": {
+    "passed": 390,
+    "warnings": 17,
+    "elapsed_seconds": 14.01
+  },
+  "local_complete_suite": {
+    "passed": 386,
+    "failed": 3,
+    "skipped": 1,
+    "elapsed_seconds": 9.34,
+    "failure_details": "Missing local dataset referenced by a temporary runtime fixture and two Darwin OpenCV thread-cap assertions. All three pass on Linux.",
+    "skip_details": "The optional mapping reference comparison was not configured locally; it ran and passed in the Linux complete suite."
+  },
+  "remaining": [
+    "complete observation/planning/episode coordination in the native Agent and runner",
+    "native root entrypoint and process lifecycle",
+    "explicit perception/model resource settings",
+    "independent Linux installation and complete selected-split evaluation"
+  ],
+  "completed_navigation_integration": "phase12_integration_results.json"
+}
