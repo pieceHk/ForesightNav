@@ -31,31 +31,41 @@ def _release_cuda_cache(device: str, reason: str = ''):
 
 
 def _move_tree_to_device(obj, device: str):
-    """Move all tensors in a nested ES state object to `device` in place."""
-    if obj is None:
-        return None
-    if torch.is_tensor(obj):
-        return obj.to(device, non_blocking=True)
-    if isinstance(obj, torch.nn.Module):
-        return obj
-    if isinstance(obj, dict):
-        for key, value in list(obj.items()):
-            obj[key] = _move_tree_to_device(value, device)
-        return obj
-    if isinstance(obj, list):
-        for idx, value in enumerate(obj):
-            obj[idx] = _move_tree_to_device(value, device)
-        return obj
-    if isinstance(obj, tuple):
-        return tuple(_move_tree_to_device(value, device) for value in obj)
-    if hasattr(obj, '__dict__'):
-        for name, value in list(vars(obj).items()):
-            setattr(obj, name, _move_tree_to_device(value, device))
-        if isinstance(getattr(obj, 'device', None), str):
-            obj.device = device
-        return obj
-    return obj
+    """Move nested state in place, completing CUDA-to-CPU copies before return."""
+    target = torch.device(device)
+    host_copy_streams = {}
 
+    def move(value):
+        if value is None:
+            return None
+        if torch.is_tensor(value):
+            if target.type == 'cpu' and value.device.type == 'cuda':
+                host_copy_streams[value.device] = torch.cuda.current_stream(value.device)
+            return value.to(device, non_blocking=True)
+        if isinstance(value, torch.nn.Module):
+            return value
+        if isinstance(value, dict):
+            for key, item in list(value.items()):
+                value[key] = move(item)
+            return value
+        if isinstance(value, list):
+            for index, item in enumerate(value):
+                value[index] = move(item)
+            return value
+        if isinstance(value, tuple):
+            return tuple(move(item) for item in value)
+        if hasattr(value, '__dict__'):
+            for name, item in list(vars(value).items()):
+                setattr(value, name, move(item))
+            if isinstance(getattr(value, 'device', None), str):
+                value.device = device
+            return value
+        return value
+
+    moved = move(obj)
+    for stream in host_copy_streams.values():
+        stream.synchronize()
+    return moved
 
 
 def _log_cuda_memory(device: str, label: str):
