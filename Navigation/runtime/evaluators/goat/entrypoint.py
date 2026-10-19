@@ -1431,45 +1431,15 @@ if __name__ == '__main__':
                             scsp_runtime_mode,
                         )
                     )
-                    ordered_ranks = initial_dispatch_metadata[
-                        'ordered_raw_ranks'
-                    ]
-                    initial_dispatch_metadata[
-                        'pre_cooldown_selected_raw_rank'
-                    ] = ordered_ranks[0] if ordered_ranks else None
-                    initial_dispatch_metadata[
-                        'post_cooldown_selected_raw_rank'
-                    ] = ordered_ranks[0] if ordered_ranks else None
-                    initial_refresh_kwargs = {}
-                    if initial_dispatch_metadata['externally_ranked']:
-                        initial_refresh_kwargs[
-                            'external_ranking_metadata'
-                        ] = initial_dispatch_metadata
-                    initial_refresh_applied = False
-                    initial_refresh_error = None
-                    try:
-                        if initial_goals is not None:
-                            agent.refresh_gs_poses(
-                                initial_goals, **initial_refresh_kwargs
-                            )
-                            initial_refresh_applied = True
-                    except Exception as exc:
-                        initial_refresh_error = (
-                            f'{type(exc).__name__}: {exc}'
-                        )
-                        print(
-                            '[P4] initial goal refresh warning: '
-                            f'{initial_refresh_error}',
-                            flush=True,
-                        )
-                    initial_realized = _active_candidate(
-                        agent, current_task_idx
+                    initial_dispatch = agent.dispatch_initial_candidates(
+                        initial_goals, initial_dispatch_metadata,
+                        task_idx=current_task_idx,
+                        candidate_batch=initial_decision.get('candidate_batch'),
                     )
-                    initial_realized_rank = _scsp_raw_rank_for_position(
-                        initial_decision.get('candidate_batch'),
-                        current_task_idx,
-                        initial_realized,
-                    )
+                    initial_refresh_applied = initial_dispatch.refresh_applied
+                    initial_refresh_error = initial_dispatch.refresh_error
+                    initial_realized = initial_dispatch.realized_active_position
+                    initial_realized_rank = initial_dispatch.realized_raw_rank
                     initial_decision = _finalize_scsp_dispatch_event(
                         initial_decision,
                         initial_dispatch_metadata,
@@ -1655,135 +1625,23 @@ if __name__ == '__main__':
                             )
                     except Exception as e:
                         print(f'[P4] goal refresh warning: {e}', flush=True)
-                    cooldown_event = None
-                    active_before_refresh = None
-                    if (
-                        projected_goals is not None
-                        and category_cooldown.enabled
-                        and current_task_idx in projected_goals
-                    ):
-                        active_before_refresh = _active_candidate(
-                            agent, current_task_idx
-                        )
-                        if local_step == 0:
-                            active_before_refresh = None
-                        gated, cooldown_event = category_cooldown.apply(
-                            task_idx=current_task_idx,
-                            category=_task_category(
-                                obs_tasks[current_task_idx]
-                            ),
-                            step=local_step,
-                            active_position=active_before_refresh,
-                            latest_ranked_candidates=projected_goals[
-                                current_task_idx
-                            ],
-                        )
-                        projected_goals = dict(projected_goals)
-                        projected_goals[current_task_idx] = gated
-                        cooldown_event['proposed_active_position'] = (
-                            gated[0] if gated else None
-                        )
-                    if (
-                        dispatch_metadata is not None
-                        and dispatch_metadata['ordered_raw_ranks']
-                    ):
-                        try:
-                            pre_cooldown_ranks = tuple(
-                                dispatch_metadata['ordered_raw_ranks']
-                            )
-                            post_cooldown_ranks = (
-                                _scsp_raw_ranks_for_positions(
-                                    periodic_decision['candidate_batch'],
-                                    current_task_idx,
-                                    projected_goals[current_task_idx],
-                                )
-                            )
-                            dispatch_metadata['ordered_raw_ranks'] = list(
-                                post_cooldown_ranks
-                            )
-                            dispatch_metadata[
-                                'pre_cooldown_selected_raw_rank'
-                            ] = (
-                                pre_cooldown_ranks[0]
-                                if pre_cooldown_ranks else None
-                            )
-                            dispatch_metadata[
-                                'post_cooldown_selected_raw_rank'
-                            ] = (
-                                post_cooldown_ranks[0]
-                                if post_cooldown_ranks else None
-                            )
-                            dispatch_metadata['cooldown_vetoed'] = bool(
-                                pre_cooldown_ranks
-                                and post_cooldown_ranks
-                                and pre_cooldown_ranks[0]
-                                != post_cooldown_ranks[0]
-                            )
-                        except Exception as exc:
-                            dispatch_metadata.update(
-                                {
-                                    'source': 'legacy',
-                                    'externally_ranked': False,
-                                    'reason': 'invalid_external_order',
-                                    'error': f'{type(exc).__name__}: {exc}',
-                                }
-                            )
-                            projected_goals = None
-                    refresh_applied = False
-                    refresh_error = None
-                    if projected_goals is not None:
-                        try:
-                            protected_active_by_task = None
-                            if (
-                                cooldown_event is not None
-                                and active_before_refresh is not None
-                                and cooldown_event.get('reason') in {
-                                    'KEEP_ACTIVE_COOLDOWN',
-                                    'LATEST_UNCHANGED',
-                                }
-                                and int(
-                                    cooldown_event['elapsed_since_switch']
-                                ) < int(cooldown_event['cooldown_steps'])
-                            ):
-                                protected_active_by_task = {
-                                    int(current_task_idx): active_before_refresh
-                                }
-                            refresh_kwargs = {
-                                'protected_active_by_task': (
-                                    protected_active_by_task
-                                )
-                            }
-                            if (
-                                dispatch_metadata is not None
-                                and dispatch_metadata['externally_ranked']
-                            ):
-                                refresh_kwargs[
-                                    'external_ranking_metadata'
-                                ] = dispatch_metadata
-                            agent.refresh_gs_poses(
-                                projected_goals, **refresh_kwargs
-                            )
-                            refresh_applied = True
-                        except Exception as e:
-                            refresh_error = f'{type(e).__name__}: {e}'
-                            print(f'[P4] goal refresh warning: {e}', flush=True)
+                    dispatch = agent.dispatch_candidates(
+                        projected_goals, dispatch_metadata,
+                        task_idx=current_task_idx,
+                        category=_task_category(obs_tasks[current_task_idx]),
+                        local_step=local_step,
+                        category_cooldown=category_cooldown,
+                        candidate_batch=(
+                            periodic_decision.get('candidate_batch')
+                            if periodic_decision is not None else None
+                        ),
+                    )
+                    projected_goals = dispatch.projected_goals
+                    dispatch_metadata = dispatch.metadata
+                    cooldown_event = dispatch.cooldown_event
+                    refresh_applied = dispatch.refresh_applied
+                    refresh_error = dispatch.refresh_error
                     if cooldown_event is not None:
-                        realized_active = _active_candidate(
-                            agent, current_task_idx
-                        )
-                        cooldown_event['refresh_applied'] = int(refresh_applied)
-                        cooldown_event['realized_switch'] = int(
-                            category_cooldown.observe_active(
-                                current_task_idx,
-                                realized_active,
-                                local_step,
-                            )
-                        )
-                        cooldown_event['realized_active_position'] = (
-                            None
-                            if realized_active is None
-                            else [float(value) for value in realized_active]
-                        )
                         category_cooldown_events.append(cooldown_event)
                         print(
                             '[CATEGORY_COOLDOWN] '

@@ -42,6 +42,7 @@ navigation:
   trapped_warmup_steps: 30
   trapped_window_steps: 25
   trapped_radius_m: 0.05
+  random_exploration_warmup_steps: 30
   recovery_history_size: 8
   recovery_novelty_weight: 0.65
   two_stage_verification: true

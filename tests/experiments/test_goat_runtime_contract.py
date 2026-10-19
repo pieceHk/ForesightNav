@@ -485,6 +485,7 @@ def _function_source(path, function_name):
 def test_goat_entrypoint_has_version_gated_active_dispatch_without_gt_access():
     source = GOAT_ENTRYPOINT.read_text(encoding="utf-8")
     planning_source = (ROOT / "pbsp/navigation/planning.py").read_text(encoding="utf-8")
+    agent_source = (ROOT / "pbsp/agent.py").read_text(encoding="utf-8")
     recorder = _function_source(GOAT_ENTRYPOINT, "_record_scsp_provider_event")
 
     assert source.count("candidate_provider.invalidate_cache()") == 2
@@ -506,11 +507,12 @@ def test_goat_entrypoint_has_version_gated_active_dispatch_without_gt_access():
     assert "_scsp_dispatch_gate(" in source
     assert "prepare_candidate_refresh(" in source
     assert "synchronous_requery_count" in planning_source
-    assert "external_ranking_metadata" in source
+    assert "external_ranking_metadata" in agent_source
     assert "scsp_decisions.jsonl" in source
     assert "SCSP active/shadow execution requires a complete" in source
-    assert "if initial_goals is not None:" in source
-    assert "if projected_goals is not None:" in source
+    assert "agent.dispatch_initial_candidates(" in source
+    assert "agent.dispatch_candidates(" in source
+    assert agent_source.count("if projected_goals is not None:") == 2
     assert "SCSP initial candidate refresh failed closed" in source
     gt_gate = source.index("SCSP runtime requires GROUND_TRUTH_SEMANTICS=0")
     assert gt_gate < source.index("env = HabitatGoatEnv(")
@@ -769,24 +771,26 @@ def test_goat_provider_sink_error_preserves_valid_gate_semantics(tmp_path):
 
 def test_goat_refresh_is_atomic_after_scsp_order_and_cooldown():
     source = GOAT_ENTRYPOINT.read_text(encoding="utf-8")
-    tree = ast.parse(source)
-    refresh_arguments = []
-    for node in ast.walk(tree):
-        if not isinstance(node, ast.Call) or not isinstance(node.func, ast.Attribute):
-            continue
-        if node.func.attr != "refresh_gs_poses" or not node.args:
-            continue
-        refresh_arguments.append(ast.unparse(node.args[0]))
-
-    assert refresh_arguments == ["initial_goals", "initial_goals", "projected_goals"]
-    assert source.count("agent.refresh_gs_poses(") == 3
+    agent_source = (ROOT / "pbsp/agent.py").read_text(encoding="utf-8")
+    for owner, expected in ((source, ["initial_goals"]),
+                            (agent_source, ["projected_goals", "projected_goals"])):
+        refresh_arguments = []
+        for node in ast.walk(ast.parse(owner)):
+            if not isinstance(node, ast.Call) or not isinstance(node.func, ast.Attribute):
+                continue
+            if node.func.attr == "refresh_gs_poses" and node.args:
+                refresh_arguments.append(ast.unparse(node.args[0]))
+        assert refresh_arguments == expected
     periodic_order = source.index(
         "_apply_scsp_runtime_order(", source.index("if scsp_enabled or new_goals:")
     )
-    cooldown = source.index("category_cooldown.apply(", periodic_order)
-    refresh = source.index("agent.refresh_gs_poses(", cooldown)
-    persist = source.index("decision_event=periodic_decision", refresh)
-    assert periodic_order < cooldown < refresh < persist
+    dispatch = source.index("agent.dispatch_candidates(", periodic_order)
+    persist = source.index("decision_event=periodic_decision", dispatch)
+    assert periodic_order < dispatch < persist
+    cooldown = agent_source.index("category_cooldown.apply(")
+    refresh = agent_source.index("self.refresh_gs_poses(", cooldown)
+    realized = agent_source.index("category_cooldown.observe_active(", refresh)
+    assert cooldown < refresh < realized
 
 
 def test_shadow_identity_lookup_uses_only_the_frozen_manifest():
@@ -2151,7 +2155,8 @@ def test_scsp_plan_state_is_cleared_at_each_subtask_boundary():
     assert "invalidate_cache()" not in boundary_source
     assert "if periodic_refresh_due" in source
     assert "category_cooldown.enabled and local_step > 0" in source
-    assert "if local_step == 0:" in source
+    agent_source = (ROOT / "pbsp/agent.py").read_text(encoding="utf-8")
+    assert "if local_step == 0:" in agent_source
 
 
 def test_final_dispatch_event_uses_realized_rank_and_computed_stale_guard():

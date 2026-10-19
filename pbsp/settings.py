@@ -78,6 +78,7 @@ class NavigationSettings:
     trapped_warmup_steps: int
     trapped_window_steps: int
     trapped_radius_m: float
+    random_exploration_warmup_steps: int
     recovery_history_size: int
     recovery_novelty_weight: float
     two_stage_verification: bool
