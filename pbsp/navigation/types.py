@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 from enum import Enum
-from typing import Optional, Protocol
+from typing import Any, Optional, Protocol
 
 import numpy as np
 
@@ -30,3 +30,20 @@ class Verification:
     @property
     def confirmed(self) -> bool:
         return self.target_evidence and self.finite_depth_pose and self.mask_pixels > 0
+
+
+class NavigationObservation(Protocol):
+    """RGB-D and local pose supplied by the simulator adapter.
+
+    Depth and GPS use metres; compass uses radians. The adapter supplies the
+    seven-element global pose used by the waypoint transform.
+    """
+
+    rgb: np.ndarray
+    depth: np.ndarray
+    semantic: np.ndarray
+    gps: np.ndarray
+    compass: np.ndarray
+    globalpose: np.ndarray
+    camera_pose: Any
+    task_observations: dict[str, Any]

@@ -15,13 +15,10 @@ def test_runners_and_visualizer_share_the_snapshot_contract():
     hm_runner = (root / "Exp/scripts/run_hm3dv1_objectnav.py").read_text()
     goat_runner = (root / "Exp/scripts/run_goat.py").read_text()
     visualizer = (
-        root
-        / "Navigation/runtime/lagmemo/src/lagmemo/lagmemo/agent/imagenav_agent/visualizer.py"
+        root / "Navigation/runtime/lagmemo/src/lagmemo/lagmemo/agent/imagenav_agent/visualizer.py"
     ).read_text()
     goat_entrypoint = (root / "Navigation/runtime/evaluators/goat/entrypoint.py").read_text()
-    glue_agent = (
-        root / "Navigation/runtime/lagmemo/src/lagmemo/lagmemo/agent/lagmemo_agent/glue_agent.py"
-    ).read_text()
+    navigator = (root / "pbsp/navigation/navigator.py").read_text()
 
     assert 'command.append("--print-images")' in hm_runner
     assert '"--print-images"' in goat_runner
@@ -35,18 +32,27 @@ def test_runners_and_visualizer_share_the_snapshot_contract():
     assert "import pdb; pdb.set_trace()" not in visualizer
     assert "* frame_w / obstacle_map.shape" in visualizer
     assert "* frame_h / obstacle_map.shape" in visualizer
-    assert "info['goal_text'] = goal_text_desc" in glue_agent
-    assert "pdb.set_trace" not in glue_agent
-    assert "ipdb.set_trace" not in glue_agent
-    assert "except:" not in glue_agent
+    assert 'info["goal_text"] = goal_text_desc' in navigator
+    assert "pdb.set_trace" not in navigator
+    assert "ipdb.set_trace" not in navigator
+    assert "except:" not in navigator
     assert "ES_LagMemo_Integration" not in goat_entrypoint
 
 
 def test_reachable_evaluator_modules_do_not_enter_an_interactive_debugger():
     root = Path(__file__).resolve().parents[2]
     agent_root = root / "Navigation/runtime/lagmemo/src/lagmemo/lagmemo/agent/lagmemo_agent"
-    for name in ("glue_agent.py", "lagmemo_matching.py", "frontier_agent_module.py"):
-        tree = ast.parse((agent_root / name).read_text())
+    sources = [
+        agent_root / name
+        for name in ("glue_agent.py", "lagmemo_matching.py", "frontier_agent_module.py")
+    ]
+    sources += [
+        root / "pbsp/navigation" / name
+        for name in ("navigator.py", "local_map.py", "verification.py")
+    ]
+    sources += [root / "adapters/lagmemo_agent.py", root / "adapters/perception.py"]
+    for source in sources:
+        tree = ast.parse(source.read_text())
         debugger_calls = [
             node
             for node in ast.walk(tree)
@@ -54,4 +60,4 @@ def test_reachable_evaluator_modules_do_not_enter_an_interactive_debugger():
             and isinstance(node.func, ast.Attribute)
             and node.func.attr == "set_trace"
         ]
-        assert not debugger_calls, f"interactive debugger in evaluator dependency: {name}"
+        assert not debugger_calls, f"interactive debugger in evaluator dependency: {source}"

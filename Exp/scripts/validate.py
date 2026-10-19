@@ -137,6 +137,7 @@ def validate_core_boundaries() -> None:
         "pbsp/types.py", "pbsp/settings.py", "pbsp/navigation/suffix.py",
         "pbsp/navigation/ranking.py", "pbsp/navigation/evidence.py",
         "pbsp/navigation/candidates.py", "pbsp/navigation/verification.py", "pbsp/navigation/recovery.py",
+        "pbsp/navigation/navigator.py", "pbsp/navigation/local_map.py", "pbsp/navigation/geometry.py",
         "pbsp/mapping/query.py", "pbsp/mapping/keyframes.py",
         "pbsp/mapping/mapper.py", "pbsp/mapping/model.py", "pbsp/mapping/memory.py",
         "pbsp/mapping/fusion.py", "pbsp/mapping/gaussians.py",

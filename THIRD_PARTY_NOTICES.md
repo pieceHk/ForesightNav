@@ -25,6 +25,11 @@ Candidate refresh, visual-confirmation history and recovery-state operations in
 `pbsp/navigation/candidates.py`, `verification.py` and `recovery.py` were extracted
 from LagMemo's `glue_agent.py`. The upstream Meta copyright notice and MIT scope
 are preserved in those modules.
+The navigation kernel in `pbsp/navigation/navigator.py`, local-map updates in
+`local_map.py`, geometric transforms in `geometry.py`, and the matching/assembly
+code in `adapters/perception.py` and `adapters/lagmemo_agent.py` have the same
+LagMemo provenance. Observation and action types are supplied through adapter
+boundaries; the upstream names remain available through compatibility imports.
 
 Upstream license texts are retained unchanged:
 

@@ -12,11 +12,11 @@
 
 `scripts/prepare_data.py` 验证三组固定版本数据的 manifest、内容和 source trace 校验值，在 `data/` 中建立资源链接，并为全部 episode 生成统一身份索引。清单使用 `assets/datasets.json`，以便数据准备只依赖 Python 标准库。
 
-在线 Mapper 的实际状态管理、关键帧接纳、后台融合及地图发布已迁入 `pbsp/mapping/mapper.py`，模型输入和推理调用位于 `model.py`。`encoder.py` 执行首轮编码及增量更新，`features.py` 提取区域特征并建立语义码本，`gaussians.py` 保存可扩容的高斯，`fusion.py` 执行投影关联、几何和特征融合及遮挡细化。模型组装与权重加载由 `adapters/embodied_splat.py`、`embodied_splat_model.py` 完成，实验图像由 `experiments/visualization.py` 写入。底层网络层依赖的目录整理、导航动作循环迁移仍待完成。当前复现入口为 `Exp/scripts/run_full_pbsp.py`。
+在线 Mapper 的实际状态管理、关键帧接纳、后台融合及地图发布已迁入 `pbsp/mapping/mapper.py`，模型输入和推理调用位于 `model.py`。`encoder.py` 执行首轮编码及增量更新，`features.py` 提取区域特征并建立语义码本，`gaussians.py` 保存可扩容的高斯，`fusion.py` 执行投影关联、几何和特征融合及遮挡细化。模型组装与权重加载由 `adapters/embodied_splat.py`、`embodied_splat_model.py` 完成，实验图像由 `experiments/visualization.py` 写入。底层网络层依赖的目录整理仍待完成。当前复现入口为 `Exp/scripts/run_full_pbsp.py`。
 
 阅读建图代码可从 `mapper.py` 的 `add_live_frame()`、`_rebuild_worker()` 和 `query_batch_with_records()` 开始。`reset_episode()` 清理整张地图；同一 episode 的任务切换保留地图。原运行目录中的 Mapper 文件只保留兼容入口。
 
-导航的候选集合刷新与版本校验位于 `pbsp/navigation/candidates.py`，视觉确认历史位于 `verification.py`，受困诊断和恢复目标状态位于 `recovery.py`。当前 Agent 已继承这些实现；动作循环和感知组装仍待迁移。
+导航的候选集合刷新与版本校验位于 `pbsp/navigation/candidates.py`，视觉确认历史位于 `verification.py`，受困诊断和恢复目标状态位于 `recovery.py`。实际动作循环、episode 重置和任务切换位于 `navigator.py`，局部地图更新及 RGB-D 预处理位于 `local_map.py`，坐标变换位于 `geometry.py`。`verification.py` 同时执行各目标模态的确认逻辑。模型构造和感知调用分别由 `adapters/lagmemo_agent.py`、`adapters/perception.py` 组装，图像写入交给实验观察器。原 `glue_agent.py` 仅保留兼容导入。候选规划协调器及评测循环仍待迁移。
 
 ## 阶段交付
 
@@ -25,7 +25,7 @@
 | 固定基准 | 原始数据身份、复现工具、设计文档及完整测试 | 已提交 `422cb8e` |
 | 迁移纯算法 | 浅层包、共享配置、完整数据身份索引和原有调用方 | 已验证，253 项测试通过 |
 | 拆分建图 | 实际在线 Mapper、编码、融合、检索和快照发布 | 在线流程与模型构造已迁移，底层网络依赖待整理 |
-| 拆分导航 | Agent、候选规划、导航执行、验证、恢复及评测循环 | 候选刷新、验证历史和恢复状态已迁移，执行及评测循环待拆分 |
+| 拆分导航 | Agent、候选规划、导航执行、验证、恢复及评测循环 | 候选刷新、验证、恢复和动作执行已迁移，规划协调及评测循环待拆分 |
 | 接入入口与安装 | `run.py`、工作进程、模型资源、环境脚本和离线流程 | 待实施 |
 | 验证完整流程 | 记录重放、2/3/4-MON 集成实验、全新 Linux 安装和完整选定 split | 待实施 |
 
@@ -59,3 +59,7 @@ Mapper 迁移后，服务器完整测试为 271 项通过。固定 RGB-D 序列�
 编码器迁移后的完整 4-MON 单 episode 验证完成了四个有序子任务，均成功，共 414 个动作。44 条规划记录均包含完整身份，未执行过期后缀计划；最终地图包含 3,081,037 个高斯点。此记录验证完整连接，与初始单次运行不构成受控的性能比较；完整 split 评测仍待完成。详见[集成结果](validation/phase5_integration_results.json)。
 
 导航状态迁移后，服务器完整测试为 299 项通过。13 个函数及方法的可执行定义与基准一致；重放覆盖候选刷新、过期元数据拒绝、多帧确认、历史过期、受困检测及恢复重置。实际 Agent 的对应方法已绑定核心包，详见[导航状态结果](validation/phase6_agent_state_results.json)。
+
+导航状态迁移后的 2-MON 和 3-MON 单 episode 实验均正常退出。2-MON 完成 2 个任务，成功 1 个，两个任务都耗尽 500 步预算；3-MON 的 3 个任务均以目标确认结束并成功。两次运行共 135 条规划记录均保留完整任务身份，未执行过期后缀计划。详见[导航状态集成结果](validation/phase6_integration_results.json)。
+
+动作循环迁移增加了 19 组固定输入重放，直接调用基准提交中的原方法进行比较，覆盖动作、停止条件、多帧确认、三种目标模态、位姿和局部地图更新；服务器上全部通过。另有 31 个方法及辅助函数通过可执行定义对比。局部地图现在始终提供算法所需的 explored/frontier 输入，其值与原来开启可视化时相同，图像写入可独立关闭。本机 CPU 上的 20 项导航检查也全部通过；完整测试为 316 项通过、3 项失败，失败涉及本机缺少服务器数据及 macOS OpenCV 的线程数行为。最新 Linux 完整测试和真实 Habitat 集成尚待服务器连接恢复后验证，详见[导航执行迁移结果](validation/phase7_navigator_results.json)。
