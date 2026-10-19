@@ -5,7 +5,7 @@ import os
 import sys
 
 
-def load_model(*, engine_root, checkpoint, work_directory, input_spec, device):
+def load_model(*, engine_root, checkpoint, work_directory, input_spec, device, semantic_injector=None):
     from hydra import compose, initialize_config_dir
     from hydra.core.global_hydra import GlobalHydra
     from pbsp.mapping.model import OnlineMappingModel
@@ -39,6 +39,8 @@ def load_model(*, engine_root, checkpoint, work_directory, input_spec, device):
     encoder_config = load_typed_config(config.model.encoder, EncoderEpipolarCfg)
     encoder_config.output_path = str(work_directory)
     encoder, _ = get_encoder(encoder_config, depth_range=[input_spec.near, input_spec.far])
+    if semantic_injector is not None:
+        encoder.semantic_injector = semantic_injector
     encoder = encoder.to(device).eval()
     decoder = get_decoder(config.model.decoder, config.dataset).to(device).eval()
     model = OnlineMappingModel(encoder, decoder, input_spec, work_directory)

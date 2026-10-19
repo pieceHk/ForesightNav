@@ -17,6 +17,9 @@ import torch
 import torch.nn.functional as F
 
 from pbsp.mapping.mapper import OnlineMapper
+from pbsp.query.types import FeatureSpace
+from adapters.embodied_splat_query import create_query_backend
+from runtime.legacy_query import ENVIRONMENT_FIELDS as QUERY_ENVIRONMENT_FIELDS
 from pbsp.mapping.model import OnlineMappingModel, preprocess_frame
 from runtime.config import load_experiment
 from runtime.legacy_mapping import ENVIRONMENT_FIELDS, benchmark_intrinsic, model_specification
@@ -73,14 +76,17 @@ def _settings(**kwargs):
 def _native(settings, tmp_path, encoder=None, **kwargs):
     encoder = encoder if encoder is not None else RecordingEncoder()
     model = OnlineMappingModel(encoder, torch.nn.Identity(), model_specification(), tmp_path)
-    return OnlineMapper(settings=settings, model=model, device="cpu",
+    query_settings = load_experiment(ROOT / "configs/experiments/hm3d_4mon.yaml").method.query
+    queries = kwargs.pop("query_backend", None) or create_query_backend(encoder, settings=query_settings, device="cpu", feature_space=FeatureSpace("fixture", 2))
+    return OnlineMapper(settings=settings, model=model, query_backend=queries, device="cpu",
                         camera_intrinsic=benchmark_intrinsic(), host_memory_hook=lambda reason: None,
                         **kwargs), encoder
 
 
 def _frozen(settings, encoder, monkeypatch):
-    for field, name in ENVIRONMENT_FIELDS.items():
-        value = getattr(settings, field)
+    query_settings = load_experiment(ROOT / "configs/experiments/hm3d_4mon.yaml").method.query
+    for field, name in {**ENVIRONMENT_FIELDS, **QUERY_ENVIRONMENT_FIELDS}.items():
+        value = getattr(query_settings if field in QUERY_ENVIRONMENT_FIELDS else settings, field)
         monkeypatch.setenv(name, str(int(value)) if type(value) is bool else str(value))
     source = subprocess.check_output([
         "git", "show", f"{BASELINE}:Mapping/runtime/server/online_es_mapper.py",
@@ -103,7 +109,7 @@ def _frozen(settings, encoder, monkeypatch):
     from pbsp.mapping.query import candidate_records
     namespace["candidate_records"] = candidate_records
     exec(compile(ast.Module(body=nodes, type_ignores=[]), "<frozen-mapping-runtime>", "exec"), namespace)
-    return namespace["OnlineESMapper"](device="cpu", top_k=settings.top_k,
+    return namespace["OnlineESMapper"](device="cpu", top_k=query_settings.top_k,
                                          warmup_n=settings.warmup_keyframes,
                                          rebuild_interval=settings.rebuild_interval)
 
@@ -211,3 +217,16 @@ def test_checkpoint_prefixes_load_into_the_owned_model(tmp_path):
     assert all(not value["missing_keys"] and not value["unexpected_keys"] for value in report.values())
     torch.testing.assert_close(encoder.weight, torch.ones((2, 2)))
     torch.testing.assert_close(decoder.weight, torch.full((2, 2), 2.0))
+
+
+def test_model_is_released_even_if_replacement_query_close_fails(tmp_path):
+    mapper, _ = _native(_settings(), tmp_path)
+
+    def broken_close():
+        raise RuntimeError("query service shutdown failed")
+
+    mapper.queries.close = broken_close
+    with pytest.raises(RuntimeError, match="shutdown failed"):
+        mapper.close()
+    assert mapper.model.encoder is None and mapper.model.decoder is None
+    mapper.close()

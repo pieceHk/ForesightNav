@@ -36,8 +36,14 @@ class LagMemoAgent(NavigationVisualization, GoalPerception, PBSPAgent, Agent):
         clip_cfg: str = "",
         *,
         settings: NavigationSettings,
+        navigation_backend=None,
     ):
-        PBSPAgent.__init__(self, settings=settings, actions=DiscreteNavigationAction)
+        PBSPAgent.__init__(
+            self,
+            settings=settings,
+            actions=DiscreteNavigationAction,
+            navigation_backend=navigation_backend,
+        )
         self.arrive_frontier_flag = False
         self.max_steps = config.AGENT.max_steps
         self.num_environments = config.NUM_ENVIRONMENTS

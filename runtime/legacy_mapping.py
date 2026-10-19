@@ -13,12 +13,6 @@ ENVIRONMENT_FIELDS = {
     "pixel_delta": "ES_FRAME_PIXEL_DELTA",
     "warmup_keyframes": "ES_WARMUP_KEYFRAMES",
     "rebuild_interval": "ES_REBUILD_INTERVAL",
-    "query_similarity": "ES_QUERY_MIN_SIMILARITY",
-    "query_support_radius_m": "ES_QUERY_SUPPORT_RADIUS",
-    "query_minimum_support": "ES_QUERY_MIN_SUPPORT",
-    "query_nms_radius_m": "ES_QUERY_NMS_RADIUS",
-    "query_pool_size": "ES_QUERY_POOL_SIZE",
-    "query_support_rerank_weight": "ES_QUERY_SUPPORT_RERANK_WEIGHT",
     "raw_frame_buffer": "ES_RAW_FRAME_BUFFER",
     "frame_compare_height": "ES_FRAME_COMPARE_H",
     "frame_compare_width": "ES_FRAME_COMPARE_W",
@@ -58,12 +52,15 @@ def create_mapper(*, device="cuda", top_k=10, warmup_n=None, rebuild_interval=No
                   ckpt_path=None, cfg_path=None, local_pos_path=None, bev_dir=None):
     from dataclasses import replace
     from adapters.embodied_splat import load_model
+    from adapters.embodied_splat_query import create_query_backend
+    from runtime.legacy_query import query_settings_from_environment
     from experiments.visualization import MappingArtifacts, write_fusion_debug_render
     from pbsp.mapping.mapper import OnlineMapper
     from Mapping.runtime.server.runtime_memory import release_host_memory
 
     settings = mapping_settings_from_environment()
-    overrides = {"top_k": top_k}
+    query_settings = replace(query_settings_from_environment(), top_k=top_k)
+    overrides = {}
     if warmup_n is not None:
         overrides["warmup_keyframes"] = warmup_n
     if rebuild_interval is not None:
@@ -81,5 +78,6 @@ def create_mapper(*, device="cuda", top_k=10, warmup_n=None, rebuild_interval=No
         final_directory=os.environ.get("ES_FINAL_BEV_DIR"), snapshot_directory=bev_dir,
         max_points=int(os.environ.get("ES_FINAL_BEV_MAX_POINTS", "200000")),
     )
-    return OnlineMapper(settings=settings, model=model, device=device, artifacts=artifacts,
+    queries = create_query_backend(model.encoder, settings=query_settings, device=device)
+    return OnlineMapper(settings=settings, model=model, query_backend=queries, device=device, artifacts=artifacts,
                         host_memory_hook=release_host_memory, camera_intrinsic=benchmark_intrinsic())

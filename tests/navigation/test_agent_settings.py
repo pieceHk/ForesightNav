@@ -134,6 +134,13 @@ def test_model_adapter_requires_explicit_settings_and_has_no_environment_reads()
         node for node in adapter.body if isinstance(node, ast.FunctionDef)
     )
     assert "settings" in [argument.arg for argument in constructor.args.kwonlyargs]
-    assert constructor.args.kw_defaults == [None]
+    defaults = dict(zip((arg.arg for arg in constructor.args.kwonlyargs), constructor.args.kw_defaults))
+    assert defaults["settings"] is None
+    assert isinstance(defaults["navigation_backend"], ast.Constant)
+    assert defaults["navigation_backend"].value is None
     assert "os.environ" not in source
-    assert "PBSPAgent.__init__(self, settings=settings" in source
+    call = constructor.body[0].value
+    assert ast.unparse(call.func) == "PBSPAgent.__init__"
+    supplied = {keyword.arg: ast.unparse(keyword.value) for keyword in call.keywords}
+    assert supplied["settings"] == "settings"
+    assert supplied["navigation_backend"] == "navigation_backend"

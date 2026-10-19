@@ -456,6 +456,10 @@ class EmbodiedSplatEncoder(OnlineEncoder):
                 torch.nn.init.kaiming_uniform_(self.non_object_embedding, a=math.sqrt(5))
                 self.non_object_embedding.requires_grad = True
 
+        from adapters.embodied_splat_semantics import EmbodiedSplatSemanticInjector
+
+        self.semantic_injector = EmbodiedSplatSemanticInjector(self)
+
     def backbone_3d(self, coords, feats, voxelization_matrix, rotation_matrix, globals=None):
         if globals is not None:
             global_coords = globals.means[:, globals.valid[0]][0]

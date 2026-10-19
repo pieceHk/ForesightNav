@@ -9,13 +9,14 @@ import numpy as np
 import pytest
 import torch
 
-from pbsp.mapping.query import query_categories, query_category, select_spatial_candidates
+from pbsp.query.engine import select_spatial_candidates
+from adapters.embodied_splat_query import legacy_query_categories as query_categories, legacy_query_category as query_category
 from runtime.config import load_experiment
 
 
 ROOT = Path(__file__).resolve().parents[2]
 BASELINE = json.loads((ROOT / "tests/fixtures/mapping_query_baseline.json").read_text())
-SETTINGS = load_experiment(ROOT / "configs/experiments/hm3d_4mon.yaml").method.mapping
+SETTINGS = load_experiment(ROOT / "configs/experiments/hm3d_4mon.yaml").method.query
 
 
 @pytest.mark.parametrize("case", BASELINE["cases"], ids=lambda case: case["name"])

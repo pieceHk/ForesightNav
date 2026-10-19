@@ -14,18 +14,19 @@ from .keyframes import tensor_frame_change_ratio
 from .memory import (_release_cuda_cache, _move_tree_to_device, _log_cuda_memory,
                      _release_encoder_transient_caches, release_host_memory)
 from .model import OnlineMappingModel, preprocess_frame
-from .query import query_category, query_categories
+from pbsp.query.types import QueryBackend
 
 
 class OnlineMapper:
     """Keep one persistent map per episode and share it across ordered tasks."""
 
     def __init__(self, *, settings: MappingSettings, model: OnlineMappingModel,
-                 device: str, artifacts=None, host_memory_hook=None, camera_intrinsic=None):
+                 device: str, query_backend: QueryBackend, artifacts=None, host_memory_hook=None, camera_intrinsic=None):
         self.settings = settings
         self.model = model
         self.device = device
-        self.top_k = settings.top_k
+        self.queries = query_backend
+        self.top_k = query_backend.top_k
         self.warmup_n = settings.warmup_keyframes
         self.rebuild_interval = settings.rebuild_interval
         self._artifacts = artifacts
@@ -360,9 +361,7 @@ class OnlineMapper:
             if g is None:
                 return []
             top_k = top_k or self.top_k
-            return query_category(
-                self.model.encoder, g, category, top_k, self.device, settings=self.settings
-            )
+            return self.queries.query(g, category, top_k)
 
 
     def query_with_records(self, category: str, top_k: int = None):
@@ -375,12 +374,8 @@ class OnlineMapper:
             if g is None:
                 return [], []
             top_k = top_k or self.top_k
-            return query_category(
-                self.model.encoder,
-                g,
-                category,
-                top_k,
-                self.device, settings=self.settings,
+            return self.queries.query(
+                g, category, top_k,
                 return_records=True,
                 map_revision=self._last_fused_n,
             )
@@ -396,9 +391,7 @@ class OnlineMapper:
             if g is None:
                 return {cat: [] for cat in categories}
             top_k = top_k or self.top_k
-            return query_categories(
-                self.model.encoder, g, categories, top_k, self.device, settings=self.settings
-            )
+            return self.queries.query_many(g, categories, top_k)
 
 
     def query_batch_with_records(self, categories: list, top_k: int = None):
@@ -411,12 +404,8 @@ class OnlineMapper:
                 empty = {cat: [] for cat in categories}
                 return empty, dict(empty)
             top_k = top_k or self.top_k
-            return query_categories(
-                self.model.encoder,
-                g,
-                categories,
-                top_k,
-                self.device, settings=self.settings,
+            return self.queries.query_many(
+                g, categories, top_k,
                 return_records=True,
                 map_revision=self._last_fused_n,
             )
@@ -461,5 +450,10 @@ class OnlineMapper:
             return
         self.reset_episode('', '')
         self._closed = True
-        self.model.close()
-        _release_cuda_cache(self.device, 'mapper close')
+        try:
+            self.queries.close()
+        finally:
+            try:
+                self.model.close()
+            finally:
+                _release_cuda_cache(self.device, 'mapper close')

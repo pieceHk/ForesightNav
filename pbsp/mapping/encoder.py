@@ -12,7 +12,7 @@ import torch
 from torch import Tensor, nn
 from einops import rearrange
 
-from .features import SemanticFeatures
+from pbsp.semantics.types import SemanticInjector
 from .fusion import GaussianFusion
 from .gaussians import EfficientGaussians
 from .geometry import calculate_distance_matrix, sample_image_grid
@@ -34,13 +34,14 @@ def tensor_bM_to_B(tensor_bMS):
     return tensor_BS
 
 
-class OnlineEncoder(GaussianFusion, SemanticFeatures, nn.Module):
+class OnlineEncoder(GaussianFusion, nn.Module):
     """Incremental inference with network layers supplied by the model factory."""
 
-    def __init__(self, cfg, *, profile_sink=None):
+    def __init__(self, cfg, *, profile_sink=None, semantic_injector: Optional[SemanticInjector] = None):
         super().__init__()
         self.cfg = cfg
         self._profile_sink = profile_sink
+        self.semantic_injector = semantic_injector
 
     def _record_profile(self, record):
         if self._profile_sink is not None:
@@ -130,20 +131,12 @@ class OnlineEncoder(GaussianFusion, SemanticFeatures, nn.Module):
         for batch in range(
             min(np.ceil(warmup_n_views / bs).astype(int), self.cfg.max_batch_length)
         ):
-            if self.cfg.sam_model_type == "fastsam":
-                (clip_img_feats, codebook_caches, globals) = self.extract_fastsam_clip_feats(
-                    cur_image[batch * bs : (batch + 1) * bs],
-                    cur_cache[batch * bs : (batch + 1) * bs],
-                    (h, w),
-                    globals,
-                )
-            elif self.cfg.sam_model_type == "sam":
-                (clip_img_feats, codebook_caches, globals) = self.extract_sam_clip_feats(
-                    cur_image[batch * bs : (batch + 1) * bs],
-                    cur_cache[batch * bs : (batch + 1) * bs],
-                    (h, w),
-                    globals,
-                )
+            semantic = self.semantic_injector.inject(
+                cur_image[batch * bs : (batch + 1) * bs],
+                cur_cache[batch * bs : (batch + 1) * bs], (h, w), globals,
+            )
+            clip_img_feats, codebook_caches, globals = semantic.values()
+            del semantic
             if self.cfg.openvocab_domain in ["ensemble", "3d"]:
                 clip_gaussian_feats = torch.nn.functional.interpolate(
                     clip_img_feats, size=(h // 2, w // 2), mode="nearest"
@@ -504,14 +497,9 @@ class OnlineEncoder(GaussianFusion, SemanticFeatures, nn.Module):
             cur_image = all_image[idx : idx + 1]
             cur_cache = [all_cache[idx]]
             new_feats = self.backbone(cur_image)
-            if self.cfg.sam_model_type == "fastsam":
-                (new_clip_feats, codebook_caches, globals) = self.extract_fastsam_clip_feats(
-                    cur_image, cur_cache, (h, w), globals
-                )
-            elif self.cfg.sam_model_type == "sam":
-                (new_clip_feats, codebook_caches, globals) = self.extract_sam_clip_feats(
-                    cur_image, cur_cache, (h, w), globals
-                )
+            semantic = self.semantic_injector.inject(cur_image, cur_cache, (h, w), globals)
+            new_clip_feats, codebook_caches, globals = semantic.values()
+            del semantic
             if self.cfg.openvocab_domain in ["ensemble", "3d"]:
                 clip_gaussians_feats = torch.nn.functional.interpolate(
                     new_clip_feats, size=(h // 2, w // 2), mode="nearest"

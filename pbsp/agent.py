@@ -31,8 +31,8 @@ class CandidateDispatch:
 class PBSPAgent(Navigator):
     """Execute the online policy with perception and map layers supplied by an adapter."""
 
-    def __init__(self, *, settings: NavigationSettings, actions):
-        super().__init__(actions=actions)
+    def __init__(self, *, settings: NavigationSettings, actions, navigation_backend=None):
+        super().__init__(actions=actions, navigation_backend=navigation_backend)
         self.settings = settings
         self.visited_candidate_positions = {}
         self.candidate_match_radius = settings.candidate_track_radius_m
@@ -232,3 +232,8 @@ class PBSPAgent(Navigator):
             realized_active,
             raw_rank_for_position(candidate_batch, task_idx, realized_active),
         )
+
+    def close(self):
+        from pbsp.navigation.backends import navigation_backend
+
+        navigation_backend(self).close()

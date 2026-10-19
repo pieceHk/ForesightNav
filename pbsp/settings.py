@@ -27,17 +27,10 @@ def _validate_scalars(value):
 
 @dataclass(frozen=True)
 class MappingSettings:
-    top_k: int
     keyframe_threshold: float
     pixel_delta: float
     warmup_keyframes: int
     rebuild_interval: int
-    query_similarity: float
-    query_support_radius_m: float
-    query_minimum_support: int
-    query_nms_radius_m: float
-    query_pool_size: int
-    query_support_rerank_weight: float
     raw_frame_buffer: int
     frame_compare_height: int
     frame_compare_width: int
@@ -48,11 +41,27 @@ class MappingSettings:
 
     def __post_init__(self):
         _validate_scalars(self)
-        if min(self.top_k, self.warmup_keyframes, self.rebuild_interval, self.query_pool_size,
+        if min(self.warmup_keyframes, self.rebuild_interval,
                self.frame_compare_height, self.frame_compare_width) < 1:
             raise ValueError("Mapping counts must be positive")
         if self.keyframe_threshold > 1 or self.pixel_delta > 1:
             raise ValueError("Frame-change thresholds must be within [0, 1]")
+
+
+@dataclass(frozen=True)
+class QuerySettings:
+    top_k: int
+    query_similarity: float
+    query_support_radius_m: float
+    query_minimum_support: int
+    query_nms_radius_m: float
+    query_pool_size: int
+    query_support_rerank_weight: float
+
+    def __post_init__(self):
+        _validate_scalars(self)
+        if min(self.top_k, self.query_pool_size) < 1:
+            raise ValueError("Query counts must be positive")
 
 @dataclass(frozen=True)
 class NavigationSettings:
@@ -136,6 +145,7 @@ class MethodSettings:
     name: str
     ground_truth_semantics: bool
     mapping: MappingSettings
+    query: QuerySettings
     navigation: NavigationSettings
     suffix: SuffixSettings
     query_switch_cooldown_by_category: Mapping[str, int]

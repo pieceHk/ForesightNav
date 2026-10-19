@@ -9,6 +9,8 @@ from typing import Iterable, Optional
 
 import numpy as np
 
+from .backends import navigation_backend
+
 
 @dataclass
 class TrappedDetector:
@@ -139,11 +141,7 @@ class RecoveryState:
         self.ctr = 0
         self.stuck_num = 0
         self._reset_trapped_state()
-        if hasattr(self.planner, "reset_subtask_state"):
-            self.planner.reset_subtask_state()
-        else:
-            self.planner.dd = None
-            self.planner.reset_collision_state()
+        navigation_backend(self).reset_task()
 
     def set_navmesh_override_goal(self, goal, mode):
         point = np.asarray(goal, dtype=np.float32)

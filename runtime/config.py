@@ -9,7 +9,7 @@ from typing import Mapping, Optional
 
 import yaml
 
-from pbsp.settings import MappingSettings, MethodSettings, NavigationSettings, SuffixSettings
+from pbsp.settings import MappingSettings, MethodSettings, NavigationSettings, QuerySettings, SuffixSettings
 
 
 class ConfigError(ValueError):
@@ -192,7 +192,7 @@ def load_experiment(path: Path, runtime_path: Optional[Path] = None) -> Experime
     method = sections["method"]
     _keys(method, (field.name for field in fields(MethodSettings)), "method")
     resolved_method = dict(method)
-    for name, cls in (("mapping", MappingSettings), ("navigation", NavigationSettings), ("suffix", SuffixSettings)):
+    for name, cls in (("mapping", MappingSettings), ("query", QuerySettings), ("navigation", NavigationSettings), ("suffix", SuffixSettings)):
         resolved_method[name] = _typed(cls, method[name])
     if not isinstance(method["query_switch_cooldown_by_category"], dict):
         raise ConfigError("Category cooldowns must be a mapping")

@@ -126,7 +126,7 @@ def test_semantic_feature_extraction_preserves_executable_ast(name):
     )
     new_class = next(
         node
-        for node in ast.parse((ROOT / "pbsp/mapping/features.py").read_text()).body
+        for node in ast.parse((ROOT / "pbsp/semantics/features.py").read_text()).body
         if isinstance(node, ast.ClassDef)
     )
     old = next(

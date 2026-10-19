@@ -134,7 +134,10 @@ def validate_source_tree() -> None:
 
 def validate_core_boundaries() -> None:
     required = (
-        "pbsp/types.py", "pbsp/settings.py", "pbsp/navigation/suffix.py",
+        "pbsp/types.py", "pbsp/settings.py", "pbsp/agent.py", "pbsp/navigation/suffix.py",
+        "pbsp/semantics/features.py", "pbsp/semantics/types.py",
+        "pbsp/query/engine.py", "pbsp/query/service.py", "pbsp/query/types.py",
+        "pbsp/navigation/backends.py",
         "pbsp/navigation/ranking.py", "pbsp/navigation/evidence.py",
         "pbsp/navigation/candidates.py", "pbsp/navigation/verification.py", "pbsp/navigation/recovery.py",
         "pbsp/navigation/navigator.py", "pbsp/navigation/local_map.py", "pbsp/navigation/geometry.py",

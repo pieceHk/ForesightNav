@@ -22,7 +22,8 @@ def test_new_configuration_preserves_frozen_full_method(count):
     suffix = "mon" if count == 3 else f"{count}mon"
     frozen = tomllib.loads((ROOT / f"Exp/profiles/hm3dv1_{suffix}_scsp_suffix.toml").read_text())
     for key, value in frozen["mapping"].items():
-        assert getattr(config.method.mapping, key) == value
+        owner = config.method.query if key.startswith("query_") or key == "top_k" else config.method.mapping
+        assert getattr(owner, key) == value
     for key, value in frozen["navigation"].items():
         assert getattr(config.method.navigation, key) == value
     for key, value in frozen["scsp"].items():

@@ -27,6 +27,7 @@ from .recovery import RecoveryState, should_request_random_exploration
 from .verification import GoalVerifier, update_multiview_verification
 from .evidence import passes_dual_score_verification
 from .types import NavigationObservation
+from .backends import NavigationFrame, NavigationRequest, navigation_backend
 
 LOGGER = logging.getLogger(__name__)
 
@@ -34,8 +35,9 @@ LOGGER = logging.getLogger(__name__)
 class Navigator(CandidateTracking, GoalVerifier, RecoveryState, LocalMapState, GoalProjection):
     """Run the navigation policy with models and an action enum supplied by its adapter."""
 
-    def __init__(self, *, actions):
+    def __init__(self, *, actions, navigation_backend=None):
         self.actions = actions
+        self.navigation_backend = navigation_backend
         self._es_test_gs_override = 3
 
     def _write_navigation_snapshot(self, info, action):
@@ -66,11 +68,7 @@ class Navigator(CandidateTracking, GoalVerifier, RecoveryState, LocalMapState, G
         self.frontier_rerank_diagnostics = {}
         self._reset_trapped_state()
         self._clear_navmesh_override_goal()
-        if hasattr(self.planner, "reset_subtask_state"):
-            self.planner.reset_subtask_state()
-        else:
-            self.planner.dd = None
-            self.planner.reset_collision_state()
+        navigation_backend(self).reset_task()
         self._module.reset_sub_episode()
 
     def reset(
@@ -78,7 +76,7 @@ class Navigator(CandidateTracking, GoalVerifier, RecoveryState, LocalMapState, G
     ):
         """Initialize agent state."""
         self.reset_vectorized()
-        self.planner.reset()
+        navigation_backend(self).reset_episode()
         self.goal_image = None
         self.goal_mask = None
         self.goal_image_keypoints = None
@@ -517,20 +515,19 @@ class Navigator(CandidateTracking, GoalVerifier, RecoveryState, LocalMapState, G
         if self.total_timesteps[0] < self.episode_panorama_start_steps:
             action = self.actions.TURN_RIGHT
         elif self.see_around == 0 or self.stop_by_seem:
-            (
-                action,
-                closest_goal_map,
-                short_term_goal,
-                dilated_obstacle_map,
-                could_not_find_path,
-                planner_stop,
-            ) = self.planner.plan(
-                **planner_inputs[0],
-                use_dilation_for_stg=self.use_dilation_for_stg,
-                timestep=self.sub_task_timesteps[0][self.current_task_idx],
-                debug=False,
+            metadata = self.last_external_ranking_metadata or {}
+            request = NavigationRequest(
+                frame=NavigationFrame(obs.rgb, obs.depth, obs.globalpose, obs.gps, obs.compass),
+                waypoint_world=frontier_global_pose, task_idx=self.current_task_idx,
+                task_step=self.sub_task_timesteps[0][self.current_task_idx],
+                scene_id=self.runtime_scene_id or "", episode_id=self.runtime_episode_id or "",
+                local_maps=planner_inputs[0], use_dilation_for_stg=self.use_dilation_for_stg,
+                version_token=metadata.get("version_token"),
             )
-            planner_error = getattr(self.planner, "last_plan_error", None)
+            plan = navigation_backend(self).plan(request)
+            (action, closest_goal_map, short_term_goal, dilated_obstacle_map,
+             could_not_find_path, planner_stop) = plan.values()
+            planner_error = plan.error
         current_position = obs.gps
         if self.prev_position is None:
             self.prev_position = current_position
