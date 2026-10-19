@@ -355,9 +355,11 @@ def mapping_server(runtime: dict, profile: dict, run: Path, socket_path: Path, e
         "--live_only",
     ]
     process = subprocess.Popen(command, env=env, stdout=log, stderr=subprocess.STDOUT, start_new_session=True)
+    completed_body = False
     try:
         wait_for_server(process, socket_path)
         yield process
+        completed_body = True
     finally:
         try:
             if process.poll() is None and socket_path.exists():
@@ -367,6 +369,13 @@ def mapping_server(runtime: dict, profile: dict, run: Path, socket_path: Path, e
         terminate_group(process)
         log.close()
         socket_path.unlink(missing_ok=True)
+        write_json(run / "mapping_process.json", {
+            "pid": process.pid,
+            "command": command,
+            "returncode": process.returncode,
+        })
+        if completed_body and process.returncode != 0:
+            raise RuntimeError(f"Mapping worker exited with {process.returncode}")
 
 
 def navigation_environment(runtime: dict, profile: dict, nav_gpu: int) -> dict:
