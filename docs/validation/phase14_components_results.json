@@ -1,0 +1,94 @@
+{
+  "stage": "mapping_semantics_query_navigation_interfaces",
+  "source_commit": "1580f45897ea29a471caab809eb31c567cd171e1",
+  "documentation_commit": "1be4790158aed33d52e9d9d0d0210646ffa5b79e",
+  "baseline_commit": "422cb8e",
+  "components": {
+    "mapping": "OnlineMapper receives a QueryBackend; model reconstruction and snapshot lifecycle stay in pbsp/mapping.",
+    "semantic_injection": "Warmup and incremental encoding call SemanticInjector. Actual pooling and codebook operations live in pbsp/semantics; the default adapter supplies semantic resources without geometry layers.",
+    "query": "SemanticQuery composes independent QuerySettings, TextEncoder and a SemanticIndex reader. The EmbodiedSplat adapter converts Gaussian storage to metric Habitat world coordinates before retrieval.",
+    "navigation": "The running Navigator dispatches through NavigationBackend. WaypointNavigationBackend supports an external waypoint controller with separate exploration fallback and explicit reset/close lifecycle.",
+    "removed_unused_prototype": "pbsp/mapping/pipeline.py"
+  },
+  "semantic_source_comparison": {
+    "extract_fastsam_clip_feats": {
+      "executable_ast_equal": true,
+      "sha256": "09598e524ae35b7a2462bc1be0cedb2dbaddea6a92539b697f8d4b871ff037d4"
+    },
+    "extract_sam_clip_feats": {
+      "executable_ast_equal": true,
+      "sha256": "3951783bbd7e9b684fd704fcccc678d257c3af85fc5f2d0f9625505a6b0c4c6e"
+    }
+  },
+  "linux_complete_suite": {
+    "passed": 407,
+    "warnings": 17,
+    "elapsed_seconds": 14.21
+  },
+  "local_complete_suite": {
+    "passed": 404,
+    "failed": 3,
+    "skipped": 0,
+    "elapsed_seconds": 7.56,
+    "failures": [
+      "A temporary runtime fixture references the server-only dataset path.",
+      "Two macOS OpenCV thread-limit checks report 10 threads after requesting 8."
+    ],
+    "note": "All three cases pass in the Linux complete suite. Assertions were retained. The temporary machine-local runtime file was removed after testing; the architecture validator then passed locally."
+  },
+  "new_checks": {
+    "count": 17,
+    "coverage": [
+      "portable semantic index, replaceable text encoder, feature-space mismatch, world coordinates, candidate revision and close",
+      "semantic state in 2D, 3D and ensemble modes, stable codebook IDs and resource lifetime",
+      "actual Navigator backend dispatch, sensor input without evaluation labels, exploration fallback, STOP verification/budget and reset/close",
+      "semantic/query package dependency boundaries and actual mapper/encoder port calls",
+      "mapping cleanup when query backend shutdown fails"
+    ]
+  },
+  "controlled_gpu_comparison": {
+    "status": "passed",
+    "reference_encoder": "Complete frozen encoder from 422cb8e",
+    "reference_query": "Query implementation from 3564c3e, before the component split",
+    "input": "12 identical real Habitat RGB-D observations",
+    "strict_checkpoint_parameter_keys": 1745,
+    "controls": {
+      "random_seed": 12345,
+      "torch_threads": 1,
+      "cudnn_deterministic": true,
+      "cudnn_benchmark": false
+    },
+    "compared_map_and_resume_state_tensors": 50,
+    "max_absolute_difference": 0.0,
+    "candidate_records_equal": true,
+    "public_status_equal": true,
+    "fused_keyframes": 12,
+    "gaussians": 287475,
+    "candidate_counts": {"chair": 2, "bed": 6},
+    "elapsed_seconds": 41.236,
+    "initial_comparison": "An earlier comparison against historical cached output had unmatched random/thread/cuDNN controls and differed. It was retained as failed and was not used as parity evidence; the independent controlled comparison above followed."
+  },
+  "readme": {
+    "lines": 99,
+    "order": ["data", "installation", "run", "components", "validation and provenance"],
+    "skill": "https://github.com/github/awesome-copilot/blob/main/skills/readme-blueprint-generator/SKILL.md",
+    "references": "../open_source_references.md",
+    "github_markdown_api": {
+      "h1": 1,
+      "h2": 5,
+      "tables": 3,
+      "recognized_mermaid_blocks": 1
+    },
+    "linked_documents_checked": 6,
+    "broken_local_links": 0,
+    "scope": "GitHub Markdown parsing and diagram recognition were checked. A browser screenshot was not obtained."
+  },
+  "integration": "phase14_integration_results.json",
+  "remaining": [
+    "VLFM and ApexNav adapters and evaluations; neither full navigation stack is bundled",
+    "fully replacing Gaussian storage requires matching index and artifact adapters",
+    "native experiment entrypoint, runner/evaluator and worker assembly",
+    "fresh Linux environment installation and full selected-split evaluation",
+    "public download location for the custom ordered episode datasets"
+  ]
+}

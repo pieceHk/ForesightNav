@@ -6,15 +6,17 @@
 
 ## 当前代码
 
-候选证据、候选排序、类别冷却、有序后缀规划及建图策略位于 `pbsp/`，所有调用方已使用这些实现。实际语义检索也已迁入 `pbsp/mapping/query.py`，包含特征加权、支持度重排、空间 NMS、单类别及批量查询。指标计算和决策格式分别位于 `experiments/metrics.py`、`experiments/telemetry.py`。Provider 快照记录、规划回退和分派结果的构造、距离摘要及耗时 CSV 位于 `experiments/recorder.py`。规划决策 JSONL 的写入及写入失败处理也由 Recorder 完成；实验主循环仍在旧入口。
+候选证据、候选排序、类别冷却、有序后缀规划及建图策略位于 `pbsp/`，所有调用方已使用这些实现。语义检索位于 `pbsp/query/engine.py`，包含特征加权、支持度重排、空间 NMS、单类别及批量查询；`service.py` 通过独立的文本编码器和索引读取器组装查询。指标计算和决策格式分别位于 `experiments/metrics.py`、`experiments/telemetry.py`。Provider 快照记录、规划回退和分派结果的构造、距离摘要及耗时 CSV 位于 `experiments/recorder.py`。规划决策 JSONL 的写入及写入失败处理也由 Recorder 完成；实验主循环仍在旧入口。
 
 `configs/experiments/hm3d_2mon.yaml`、`hm3d_3mon.yaml`、`hm3d_4mon.yaml` 引用同一个完整方法配置。`runtime/config.py` 读取配置并检查字段、数值、资源版本和引用路径。
 
 `scripts/prepare_data.py` 验证三组固定版本数据的 manifest、内容和 source trace 校验值，在 `data/` 中建立资源链接，并为全部 episode 生成统一身份索引。清单使用 `assets/datasets.json`，以便数据准备只依赖 Python 标准库。
 
-在线 Mapper 的实际状态管理、关键帧接纳、后台融合及地图发布已迁入 `pbsp/mapping/mapper.py`，模型输入和推理调用位于 `model.py`。`encoder.py` 执行首轮编码及增量更新，`features.py` 提取区域特征并建立语义码本，`gaussians.py` 保存可扩容的高斯，`fusion.py` 执行投影关联、几何和特征融合及遮挡细化。模型组装与权重加载由 `adapters/embodied_splat.py`、`embodied_splat_model.py` 完成，实验图像由 `experiments/visualization.py` 写入。底层网络层依赖的目录整理仍待完成。当前复现入口为 `Exp/scripts/run_full_pbsp.py`。
+在线 Mapper 的实际状态管理、关键帧接纳、后台融合及地图发布已迁入 `pbsp/mapping/mapper.py`，模型输入和推理调用位于 `model.py`。`encoder.py` 执行首轮编码及增量更新，通过 `SemanticInjector` 调用 `pbsp/semantics/features.py` 中的区域特征提取及语义码本操作。`gaussians.py` 保存可扩容的高斯，`fusion.py` 执行投影关联、几何和特征融合及遮挡细化。模型组装与权重加载由 `adapters/embodied_splat.py`、`embodied_splat_model.py` 完成，语义资源和高斯索引分别由 `embodied_splat_semantics.py`、`embodied_splat_query.py` 适配，实验图像由 `experiments/visualization.py` 写入。底层网络层依赖的目录整理仍待完成。当前复现入口为 `Exp/scripts/run_full_pbsp.py`。
 
 阅读建图代码可从 `mapper.py` 的 `add_live_frame()`、`_rebuild_worker()` 和 `query_batch_with_records()` 开始。`reset_episode()` 清理整张地图；同一 episode 的任务切换保留地图。原运行目录中的 Mapper 文件只保留兼容入口。
+
+四个组件的接口见[组件说明](components.md)。Mapping 接收独立的 `QueryBackend`；query 只消费 `SemanticIndex` 和匹配的 `TextEncoder`，检索参数位于独立的 `QuerySettings`。导航动作循环通过 `NavigationBackend` 执行局部规划，支持用外部控制器跟随 PBSP 选出的世界坐标 waypoint，并单独保留探索回退。默认 Gaussian 存储仍共同承载几何及语义融合；完全替换地图表示需要配套的索引读取和导出适配。VLFM 和 ApexNav 尚未接入或评测。
 
 导航的候选集合刷新与版本校验位于 `pbsp/navigation/candidates.py`，视觉确认历史位于 `verification.py`，受困诊断和恢复目标状态位于 `recovery.py`。实际动作循环、episode 重置和任务切换位于 `navigator.py`，局部地图更新及 RGB-D 预处理位于 `local_map.py`，坐标变换位于 `geometry.py`。`verification.py` 同时执行各目标模态的确认逻辑。模型构造和感知调用分别由 `adapters/lagmemo_agent.py`、`adapters/perception.py` 组装，图像写入交给实验观察器。原 `glue_agent.py` 仅保留兼容导入。候选投影绑定、候选层排序、版本化测地距离缓存和当前任务的顺序分派位于 `planning.py`。Habitat 导航网格投影、严格测地距离和恢复采样位于 `adapters/geometry.py`，参数由调用方显式传入。后缀计算和刷新事务也已迁入 `planning.py`，分别返回 `CandidatePlan` 和 `CandidateRefresh`。核心通过回调访问外部查询、版本检查和诊断，实验桥接层保留来源信息及记录格式。`pbsp/agent.py` 持有显式的候选、验证与恢复状态，并执行首次及周期候选分派；冷却控制、刷新后的实际目标和原始候选序号在这里统一处理。模型适配器接收 `NavigationSettings`，旧入口使用兼容构造器读取环境变量。观测、规划与 episode 的完整组装及评测循环仍待迁移。
 
@@ -26,6 +28,7 @@
 | 迁移纯算法 | 浅层包、共享配置、完整数据身份索引和原有调用方 | 已验证，253 项测试通过 |
 | 拆分建图 | 实际在线 Mapper、编码、融合、检索和快照发布 | 在线流程与模型构造已迁移，底层网络依赖待整理 |
 | 拆分导航 | Agent、候选规划、导航执行、验证、恢复及评测循环 | 候选刷新、验证、恢复、动作执行和候选分派已迁移，完整组装及评测循环待拆分 |
+| 四组件接口 | Mapping、semantic injection、query 和 navigation 的运行路径及替换契约 | 已接入默认路径并验证，外部导航后端待适配 |
 | 接入入口与安装 | `run.py`、工作进程、模型资源、环境脚本和离线流程 | 待实施 |
 | 验证完整流程 | 记录重放、2/3/4-MON 集成实验、全新 Linux 安装和完整选定 split | 待实施 |
 
@@ -79,3 +82,7 @@ Agent 状态及候选分派迁移后，服务器完整测试为 390 项通过。
 实际 Agent 分派路径的完整 4-MON 单 episode 验证完成，四项任务全部成功，共 414 个动作。44 条决策保留完整身份，未执行过期后缀计划；31 次地图重建均完成。最终日志点数与 BEV 图像中的 3,088,415 一致，图像标题逐像素核对通过。此项结果验证该 episode 的完整连接，完整 split 评测仍待完成。详见 [Agent 集成结果](validation/phase12_integration_results.json)。
 
 规划决策的 JSONL 写入和降级诊断已迁入 `experiments/recorder.py`，旧桥接层保留计算与异常事件的组装。写入部分与基准代码一致；75 项相关检查通过，随后服务器完整测试为 390 项通过。序列化失败时，记录模块保留已经发生的分派结果，并尝试写入诊断。详见 [决策持久化结果](validation/phase13_recorder_persistence_results.json)。
+
+四组件拆分后，服务器完整测试为 407 项通过。两个语义提取方法的可执行定义与冻结代码一致；受控 GPU 对照使用相同权重和 12 帧真实 RGB-D 输入，50 个地图及增量状态张量逐项相同，候选结果和公开状态也相同。首次与历史缓存的非受控比较出现差异，因此另行执行了固定随机种子、线程和 cuDNN 设置的独立对照。README 已按数据、环境和启动重排，并补充组件替换说明；参考项目及 skill 见[开源项目参考](open_source_references.md)。详见[组件拆分结果](validation/phase14_components_results.json)。
+
+默认四组件路径的完整 4-MON 单 episode 验证正常结束，四项任务全部成功，共 414 个动作。44 条规划记录身份完整，没有过期后缀分派；31 次地图重建均完成。动作数、指标和最终 BEV 文件哈希与上一轮 Agent 集成记录一致。此项验证覆盖一个完整有序 episode，完整 split 评测仍待完成。详见[四组件集成结果](validation/phase14_integration_results.json)。
