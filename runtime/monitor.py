@@ -30,7 +30,7 @@ def key_values(path: Path) -> dict:
                 values[key] = int(value.strip().split()[0])
             except (IndexError, ValueError):
                 continue
-    except (FileNotFoundError, PermissionError, ValueError):
+    except (FileNotFoundError, ProcessLookupError, PermissionError, ValueError):
         pass
     return values
 
@@ -44,7 +44,7 @@ def process_snapshot(root_pid: int) -> list:
             command_line = (
                 (entry / "cmdline").read_bytes().replace(b"\0", b" ").decode().strip()
             )
-        except (FileNotFoundError, PermissionError, UnicodeDecodeError):
+        except (FileNotFoundError, ProcessLookupError, PermissionError, UnicodeDecodeError):
             continue
         status = key_values(entry / "status")
         pid = int(entry.name)
