@@ -225,52 +225,12 @@ _THRESHOLDS = [
 ]
 
 
-def _project_goals_to_navigable(
-    goals,
-    pathfinder,
-    *,
-    return_indices=False,
-):
-    max_distance = float(
-        os.environ.get('ES_NAV_PROJECTION_MAX_DISTANCE', '1.5')
+def _project_goals_to_navigable(goals, pathfinder, *, return_indices=False):
+    from adapters.geometry import project_goals_to_navigable
+    return project_goals_to_navigable(
+        goals, pathfinder, return_indices=return_indices,
+        max_distance=float(os.environ.get('ES_NAV_PROJECTION_MAX_DISTANCE', '1.5')),
     )
-    projected = {}
-    projected_indices = {}
-    for task_idx, candidates in (goals or {}).items():
-        accepted = []
-        accepted_indices = []
-        for candidate_index, candidate in enumerate(candidates):
-            source = np.asarray(candidate, dtype=np.float32)
-            try:
-                snapped = np.asarray(pathfinder.snap_point(source), dtype=np.float32)
-            except Exception as exc:
-                print(
-                    f'[CANDIDATE_PROJECTION] task={task_idx} failed={exc}',
-                    flush=True,
-                )
-                continue
-            if snapped.shape != (3,) or not np.isfinite(snapped).all():
-                continue
-            distance = float(np.linalg.norm(snapped[[0, 2]] - source[[0, 2]]))
-            if distance > max_distance:
-                continue
-            if any(
-                np.linalg.norm(snapped[[0, 2]] - np.asarray(old)[[0, 2]]) < 0.25
-                for old in accepted
-            ):
-                continue
-            accepted.append(snapped.tolist())
-            accepted_indices.append(candidate_index)
-        projected[int(task_idx)] = accepted
-        projected_indices[int(task_idx)] = accepted_indices
-        print(
-            f'[CANDIDATE_PROJECTION] task={task_idx} '
-            f'input={len(candidates)} accepted={len(accepted)}',
-            flush=True,
-        )
-    if return_indices:
-        return projected, projected_indices
-    return projected
 
 
 def _task_category(task):
@@ -568,256 +528,28 @@ def _candidate_reranker_from_env(enabled):
 
 
 def _strict_geodesic_distance(pathfinder, start, end):
-    """Return an explicit Habitat geodesic status; never use Euclidean distance."""
-
-    try:
-        import habitat_sim
-    except Exception:
-        return GeodesicDistance.unavailable()
-    try:
-        path = habitat_sim.ShortestPath()
-        path.requested_start = np.asarray(start, dtype=np.float32)
-        path.requested_end = np.asarray(end, dtype=np.float32)
-        found = bool(pathfinder.find_path(path))
-    except Exception:
-        return GeodesicDistance.unavailable()
-    if not found:
-        return GeodesicDistance.unreachable()
-    try:
-        distance = float(path.geodesic_distance)
-    except (TypeError, ValueError, OverflowError):
-        return GeodesicDistance.unavailable()
-    if not np.isfinite(distance) or distance < 0.0:
-        return GeodesicDistance.unavailable()
-    return GeodesicDistance.available(distance)
+    from adapters.geometry import strict_geodesic_distance
+    return strict_geodesic_distance(pathfinder, start, end)
 
 
 def _projected_candidate_batch(candidate_batch, projected, projected_indices):
-    """Bind projected waypoints to the immutable mapper version token."""
-
-    validate_candidate_batch(candidate_batch)
-    positions_by_task = []
-    records_by_task = []
-    for task_idx, category in enumerate(candidate_batch.ordered_categories):
-        positions = tuple(projected.get(task_idx, ()))
-        accepted_indices = tuple(projected_indices.get(task_idx, ()))
-        source_records = candidate_batch.records_for_task(task_idx)
-        if len(positions) != len(accepted_indices):
-            raise SCSPContractError(
-                f'projected task {task_idx} index/position count mismatch'
-            )
-        records = []
-        for record_idx, (position, source_index) in enumerate(
-            zip(positions, accepted_indices)
-        ):
-            try:
-                source_record = source_records[int(source_index)]
-                records.append(
-                    CandidateRecord(
-                        task_idx=task_idx,
-                        category=category,
-                        position=position,
-                        raw_rank=source_record.raw_rank,
-                        semantic_score=source_record.semantic_score,
-                        support_count=source_record.support_count,
-                        support_score=source_record.support_score,
-                        map_revision=source_record.map_revision,
-                    )
-                )
-            except (IndexError, TypeError, ValueError) as exc:
-                raise SCSPContractError(
-                    f'invalid projected record {record_idx} for task {task_idx}: {exc}'
-                ) from exc
-        positions_by_task.append((task_idx, positions))
-        records_by_task.append((task_idx, tuple(records)))
-    return CandidateBatch(
-        scene_id=candidate_batch.scene_id,
-        episode_id=candidate_batch.episode_id,
-        map_revision=candidate_batch.map_revision,
-        last_fused_keyframes=candidate_batch.last_fused_keyframes,
-        query_serial=candidate_batch.query_serial,
-        ordered_categories=candidate_batch.ordered_categories,
-        positions_by_task=tuple(positions_by_task),
-        records_by_task=tuple(records_by_task),
-    )
+    from pbsp.navigation.planning import bind_projected_candidates
+    return bind_projected_candidates(candidate_batch, projected, projected_indices)
 
 
 def _subtask_has_acted(agent, task_idx):
-    try:
-        return int(agent.sub_task_timesteps[0][int(task_idx)]) > 0
-    except (AttributeError, IndexError, KeyError, TypeError, ValueError):
-        return False
+    from pbsp.navigation.planning import subtask_has_acted
+    return subtask_has_acted(agent, task_idx)
 
 
-def _rank_scsp_idea1_layers(
-    reranker,
-    candidate_batch,
-    origin,
-    pathfinder,
-    agent,
-):
-    """Compute the existing Idea-1 utility order without changing agent state."""
-
-    candidates_by_task = {}
-    telemetry_by_task = []
-    diagnostics_by_task = []
-    for task_idx in range(len(candidate_batch.ordered_categories)):
-        has_acted = _subtask_has_acted(agent, task_idx)
-        if not has_acted:
-            getattr(reranker, '_active', {}).pop(task_idx, None)
-        source_records = candidate_batch.records_for_task(task_idx)
-        record_by_rank = {record.raw_rank: record for record in source_records}
-        payload = [to_jsonable(record) for record in source_records]
-        travel_by_position = {}
-        travel_status_by_rank = []
-        for record in source_records:
-            distance = _strict_geodesic_distance(
-                pathfinder, origin, record.position
-            )
-            travel_by_position[tuple(record.position)] = (
-                distance.distance_m
-                if distance.status is GeodesicStatus.AVAILABLE
-                else float('inf')
-            )
-            travel_status_by_rank.append(
-                {
-                    'raw_rank': record.raw_rank,
-                    'status': distance.status.value,
-                    'distance_m': (
-                        distance.distance_m
-                        if distance.status is GeodesicStatus.AVAILABLE
-                        else None
-                    ),
-                }
-            )
-
-        def strict_travel_cost(start, end):
-            del start
-            return travel_by_position[tuple(float(value) for value in end)]
-
-        ranked, diagnostics = reranker.rank(
-            task_idx,
-            payload,
-            origin,
-            travel_cost=strict_travel_cost,
-            active_position=(
-                _active_candidate(agent, task_idx)
-                if has_acted
-                else None
-            ),
-            visited_positions=getattr(
-                agent, 'visited_candidate_positions', {}
-            ).get(task_idx, ()),
-        )
-        if not has_acted:
-            getattr(reranker, '_active', {}).pop(task_idx, None)
-        diagnostics = dict(diagnostics)
-        diagnostics['strict_travel_by_raw_rank'] = travel_status_by_rank
-        candidates = tuple(
-            Idea1Candidate(
-                record=record_by_rank[int(record['raw_rank'])],
-                utility=record['utility'],
-            )
-            for record in ranked
-        )
-        candidates_by_task[task_idx] = candidates
-        telemetry_by_task.append(
-            (
-                task_idx,
-                tuple(
-                    {
-                        'raw_rank': int(record['raw_rank']),
-                        'utility': float(record['utility']),
-                        'utility_components': record['utility_components'],
-                    }
-                    for record in ranked
-                ),
-            )
-        )
-        diagnostics_by_task.append((task_idx, diagnostics))
-    return candidates_by_task, tuple(telemetry_by_task), tuple(
-        diagnostics_by_task
-    )
+def _rank_scsp_idea1_layers(reranker, candidate_batch, origin, pathfinder, agent):
+    from pbsp.navigation.planning import rank_candidate_layers
+    return rank_candidate_layers(reranker, candidate_batch, origin, lambda start, end: _strict_geodesic_distance(pathfinder, start, end), agent)
 
 
-def _build_scsp_geodesic_matrices(
-    candidate_batch,
-    current_task,
-    idea1_candidates_by_task,
-    pathfinder,
-    distance_cache,
-    candidate_cap,
-):
-    """Build the capped suffix chain using a versioned pairwise cache."""
-
-    token = candidate_batch.version_token
-    entries_before = len(distance_cache)
-    stale_keys = [key for key in distance_cache if key[0] != token]
-    for key in stale_keys:
-        del distance_cache[key]
-    stats = {
-        'hits': 0,
-        'misses': 0,
-        'evictions': len(stale_keys),
-        'entries_before': entries_before,
-        'entries_after_eviction': len(distance_cache),
-        'entries_after': len(distance_cache),
-    }
-    task_count = len(candidate_batch.ordered_categories)
-    capped = {
-        task_idx: tuple(idea1_candidates_by_task[task_idx][:candidate_cap])
-        for task_idx in range(task_count)
-    }
-    if current_task >= task_count - 1 or any(
-        not capped[task_idx]
-        for task_idx in range(current_task, task_count)
-    ):
-        return (), stats
-
-    matrices = []
-    for source_task in range(current_task, task_count - 1):
-        target_task = source_task + 1
-        source = capped[source_task]
-        target = capped[target_task]
-        rows = []
-        for source_candidate in source:
-            row = []
-            for target_candidate in target:
-                key = (
-                    token,
-                    source_task,
-                    target_task,
-                    source_candidate.record.identity(),
-                    target_candidate.record.identity(),
-                )
-                if key in distance_cache:
-                    distance = distance_cache[key]
-                    stats['hits'] += 1
-                else:
-                    distance = _strict_geodesic_distance(
-                        pathfinder,
-                        source_candidate.record.position,
-                        target_candidate.record.position,
-                    )
-                    distance_cache[key] = distance
-                    stats['misses'] += 1
-                row.append(distance)
-            rows.append(tuple(row))
-        matrices.append(
-            GeodesicMatrix(
-                source_task_idx=source_task,
-                target_task_idx=target_task,
-                source_candidate_identities=tuple(
-                    candidate.record.identity() for candidate in source
-                ),
-                target_candidate_identities=tuple(
-                    candidate.record.identity() for candidate in target
-                ),
-                distances=tuple(rows),
-            )
-        )
-    stats['entries_after'] = len(distance_cache)
-    return tuple(matrices), stats
+def _build_scsp_geodesic_matrices(candidate_batch, current_task, idea1_candidates_by_task, pathfinder, distance_cache, candidate_cap):
+    from pbsp.navigation.planning import build_geodesic_matrices
+    return build_geodesic_matrices(candidate_batch, current_task, idea1_candidates_by_task, lambda start, end: _strict_geodesic_distance(pathfinder, start, end), distance_cache, candidate_cap)
 
 
 def _scsp_shadow_fallback_event(
@@ -1224,7 +956,8 @@ def _record_scsp_shadow_decision(
 
 
 def _fallback_value(value):
-    return getattr(value, 'value', value)
+    from pbsp.navigation.planning import fallback_value
+    return fallback_value(value)
 
 
 def _scsp_dispatch_gate(
@@ -1458,160 +1191,18 @@ def _prepare_scsp_refresh(
 
 
 def _scsp_raw_ranks_for_positions(candidate_batch, task_idx, positions):
-    """Recover raw ranks from projected positions after cooldown reordering."""
-
-    records = candidate_batch.records_for_task(int(task_idx))
-    used = set()
-    ordered = []
-    for position in positions:
-        point = np.asarray(position, dtype=np.float64)
-        matches = [
-            record
-            for record in records
-            if record.raw_rank not in used
-            and np.allclose(
-                point,
-                np.asarray(record.position, dtype=np.float64),
-                rtol=0.0,
-                atol=1e-6,
-            )
-        ]
-        if len(matches) != 1:
-            raise SCSPContractError(
-                'dispatched position does not map to exactly one projected record'
-            )
-        used.add(matches[0].raw_rank)
-        ordered.append(int(matches[0].raw_rank))
-    if len(ordered) != len(records):
-        raise SCSPContractError(
-            'dispatched raw-rank order is not a complete projected permutation'
-        )
-    return tuple(ordered)
+    from pbsp.navigation.planning import raw_ranks_for_positions
+    return raw_ranks_for_positions(candidate_batch, task_idx, positions)
 
 
 def _scsp_raw_rank_for_position(candidate_batch, task_idx, position):
-    if position is None or candidate_batch is None:
-        return None
-    try:
-        point = np.asarray(position, dtype=np.float64)
-        matches = [
-            record.raw_rank
-            for record in candidate_batch.records_for_task(int(task_idx))
-            if np.allclose(
-                point,
-                np.asarray(record.position, dtype=np.float64),
-                rtol=0.0,
-                atol=1e-6,
-            )
-        ]
-        return int(matches[0]) if len(matches) == 1 else None
-    except Exception:
-        return None
+    from pbsp.navigation.planning import raw_rank_for_position
+    return raw_rank_for_position(candidate_batch, task_idx, position)
 
 
 def _apply_scsp_runtime_order(projected_goals, decision, runtime_mode):
-    """Apply a version-valid order to the current task and no future task."""
-
-    goals = None if projected_goals is None else dict(projected_goals)
-    current_task = int(decision.get('current_task', 0))
-    gate = dict(decision.get('dispatch_version_gate', {}))
-    metadata = {
-        'mode': runtime_mode,
-        'source': 'legacy',
-        'task_idx': current_task,
-        'externally_ranked': False,
-        'suffix_eligible': False,
-        'suffix_intervention': False,
-        'reason': 'shadow_only' if runtime_mode == 'shadow' else 'fallback',
-        'dispatch_version_gate': gate,
-        'stale_suffix_dispatch': None,
-        'ordered_raw_ranks': [],
-        'version_token': None,
-    }
-    if goals is None:
-        metadata['reason'] = 'preserved_existing_candidates'
-        return None, metadata
-    if decision.get('status') == 'planned':
-        try:
-            candidate_batch = decision['candidate_batch']
-            legacy_ranks = _scsp_raw_ranks_for_positions(
-                candidate_batch,
-                current_task,
-                goals.get(current_task, ()),
-            )
-            metadata['ordered_raw_ranks'] = [
-                int(rank) for rank in legacy_ranks
-            ]
-            metadata['version_token'] = to_jsonable(
-                candidate_batch.version_token
-            )
-        except Exception as exc:
-            metadata['legacy_order_error'] = f'{type(exc).__name__}: {exc}'
-    if (
-        runtime_mode not in {'idea1_only', 'ordered_suffix_mvp'}
-        or decision.get('status') != 'planned'
-        or gate.get('would_invalidate', True)
-    ):
-        return goals, metadata
-
-    try:
-        candidate_batch = decision['candidate_batch']
-        if runtime_mode == 'idea1_only':
-            source = 'idea1'
-            raw_ranks = tuple(decision['idea1_order'][current_task])
-            metadata['reason'] = 'version_valid_idea1'
-        else:
-            fallback_reason = _fallback_value(
-                decision['suffix_plan'].fallback_reason
-            )
-            if fallback_reason == FallbackReason.NONE.value:
-                source = 'suffix'
-                raw_ranks = tuple(decision['suffix_order'][current_task])
-                metadata['suffix_eligible'] = True
-                metadata['suffix_intervention'] = bool(
-                    decision['suffix_plan'].intervention
-                )
-            else:
-                source = 'idea1_fallback'
-                raw_ranks = tuple(decision['idea1_order'][current_task])
-                metadata['reason'] = fallback_reason
-        records = candidate_batch.records_for_task(current_task)
-        record_by_rank = {int(record.raw_rank): record for record in records}
-        if len(record_by_rank) != len(records) or set(raw_ranks) != set(
-            record_by_rank
-        ):
-            raise SCSPContractError(
-                'external order must contain every projected raw rank once'
-            )
-        goals[current_task] = [
-            [float(value) for value in record_by_rank[rank].position]
-            for rank in raw_ranks
-        ]
-        metadata.update(
-            {
-                'source': source,
-                'externally_ranked': True,
-                'reason': (
-                    'version_valid_suffix'
-                    if source == 'suffix'
-                    else metadata['reason']
-                ),
-                'ordered_raw_ranks': [int(rank) for rank in raw_ranks],
-                'version_token': to_jsonable(candidate_batch.version_token),
-                'stale_suffix_dispatch': int(
-                    source == 'suffix'
-                    and gate.get('would_invalidate', True)
-                ),
-            }
-        )
-    except Exception as exc:
-        goals = dict(projected_goals)
-        metadata['suffix_eligible'] = False
-        metadata['suffix_intervention'] = False
-        metadata['stale_suffix_dispatch'] = None
-        metadata['reason'] = 'invalid_external_order'
-        metadata['error'] = f'{type(exc).__name__}: {exc}'
-    return goals, metadata
+    from pbsp.navigation.planning import apply_runtime_order
+    return apply_runtime_order(projected_goals, decision, runtime_mode)
 
 
 def _finalize_scsp_dispatch_event(
@@ -1679,91 +1270,32 @@ def _finalize_scsp_dispatch_event(
 
 
 def _reset_scsp_task_state(reranker, distance_cache):
-    """Clear all plan-local state when the ordered subtask advances."""
-
-    reranker.reset()
-    distance_cache.clear()
+    from pbsp.navigation.planning import reset_task_planning
+    return reset_task_planning(reranker, distance_cache)
 
 
 def _active_candidate(agent, task_idx):
-    candidates = getattr(agent, 'gs_poses', {}).get(int(task_idx), [])
-    active_index = getattr(agent, 'frontier_flag', {}).get(int(task_idx), 0)
-    if 0 <= active_index < len(candidates):
-        return candidates[active_index]
-    return None
+    from pbsp.navigation.planning import active_candidate
+    return active_candidate(agent, task_idx)
 
 
 def _sample_navmesh_goal(pathfinder, origin, mode):
-    origin = np.asarray(origin, dtype=np.float32)
-    max_vertical_delta = float(
-        os.environ.get('ES_NAVMESH_MAX_VERTICAL_DELTA', '0.35')
-    )
+    from adapters.geometry import sample_navmesh_goal
+
+    max_vertical_delta = float(os.environ.get('ES_NAVMESH_MAX_VERTICAL_DELTA', '0.35'))
     sample_count = int(os.environ.get('ES_NAVMESH_SAMPLE_COUNT', '32'))
+    parameters = {}
     if mode == 'escape':
-        radius = float(os.environ.get('ES_NAVMESH_ESCAPE_RADIUS', '3.0'))
-        min_distance = float(
-            os.environ.get('ES_NAVMESH_ESCAPE_MIN_DISTANCE', '1.25')
-        )
+        parameters['escape_radius_m'] = float(os.environ.get('ES_NAVMESH_ESCAPE_RADIUS', '3.0'))
+        parameters['escape_min_distance_m'] = float(os.environ.get('ES_NAVMESH_ESCAPE_MIN_DISTANCE', '1.25'))
     elif mode == 'random':
-        radius = None
-        min_distance = float(
-            os.environ.get('ES_NAVMESH_RANDOM_MIN_DISTANCE', '2.0')
-        )
-    else:
-        raise ValueError(f'unsupported navmesh sampling mode: {mode}')
-
-    try:
-        snapped_origin = np.asarray(pathfinder.snap_point(origin), dtype=np.float32)
-        island = int(pathfinder.get_island(snapped_origin))
-    except Exception as exc:
-        return None, {'error': f'origin_snap_failed:{exc}'}
-    if snapped_origin.shape != (3,) or not np.isfinite(snapped_origin).all():
-        return None, {'error': 'origin_not_navigable'}
-
-    candidates = []
-    vertical_rejections = 0
-    island_rejections = 0
-    for _ in range(sample_count):
-        try:
-            if mode == 'escape':
-                point = pathfinder.get_random_navigable_point_near(
-                    snapped_origin, radius, 100, island
-                )
-            else:
-                point = pathfinder.get_random_navigable_point(100, island)
-            point = np.asarray(point, dtype=np.float32)
-            if point.shape != (3,) or not np.isfinite(point).all():
-                continue
-            if int(pathfinder.get_island(point)) != island:
-                island_rejections += 1
-                continue
-        except Exception:
-            continue
-        if abs(float(point[1] - snapped_origin[1])) > max_vertical_delta:
-            vertical_rejections += 1
-            continue
-        distance = float(
-            np.linalg.norm(point[[0, 2]] - snapped_origin[[0, 2]])
-        )
-        if distance < min_distance:
-            continue
-        candidates.append((distance, point))
-
-    details = {
-        'mode': mode,
-        'sample_count': sample_count,
-        'accepted': len(candidates),
-        'vertical_rejections': vertical_rejections,
-        'island_rejections': island_rejections,
-        'max_vertical_delta': max_vertical_delta,
-        'stairs_suspected': vertical_rejections >= max(3, sample_count // 4),
-    }
-    if not candidates:
-        details['error'] = 'no_same_floor_navigable_sample'
-        return None, details
-    _, goal = max(candidates, key=lambda item: item[0])
-    details['goal'] = goal.tolist()
-    return goal, details
+        parameters['random_min_distance_m'] = float(os.environ.get('ES_NAVMESH_RANDOM_MIN_DISTANCE', '2.0'))
+    return sample_navmesh_goal(
+        pathfinder, origin, mode,
+        max_vertical_delta=max_vertical_delta,
+        sample_count=sample_count,
+        **parameters,
+    )
 
 
 def _write_timing_rows(rows, results_dir):

@@ -1,0 +1,98 @@
+{
+  "stage": "candidate_planning_and_geometry_extraction",
+  "baseline_commit": "422cb8e",
+  "parent_commit": "84f48d4",
+  "core": "pbsp/navigation/planning.py",
+  "geometry_adapter": "adapters/geometry.py",
+  "runtime_callers": "Navigation/runtime/evaluators/goat/entrypoint.py",
+  "source_comparison": {
+    "functions": 11,
+    "normalization": "Function names, injected geodesic callable, typed annotations and candidate/version payload bindings. Validated CandidateRecord payloads and VersionToken payloads are built locally with standard-library dataclass conversion.",
+    "definitions": {
+      "bind_projected_candidates": {
+        "executable_ast_equal": true,
+        "normalized_ast_sha256": "55f8997b816465654843b80d28c91217cd7f5c314c14d3f38aa114fd945b293d"
+      },
+      "subtask_has_acted": {
+        "executable_ast_equal": true,
+        "normalized_ast_sha256": "c9a28f9a6c66bceecebf2be46fee38f5caf2ee59a79867c60ac748d73a78f375"
+      },
+      "active_candidate": {
+        "executable_ast_equal": true,
+        "normalized_ast_sha256": "0fa1623e2e50058b0f2dab2a95eeba2752185c5324764b464b4795d3c66f233c"
+      },
+      "rank_candidate_layers": {
+        "executable_ast_equal": true,
+        "normalized_ast_sha256": "0d2089dca4cb2e33ceb806608709a5faf188876dd3cecf8c1272a71e6a3926e6"
+      },
+      "build_geodesic_matrices": {
+        "executable_ast_equal": true,
+        "normalized_ast_sha256": "471cf798c864cc6d06455bc8715dbf202ca60ca05a85a4cbf5fc39ed8fefc70b"
+      },
+      "raw_ranks_for_positions": {
+        "executable_ast_equal": true,
+        "normalized_ast_sha256": "42b3fd0c69704790e3b1414b964859d2c2331cbe0f7370e0006cd56386054f1e"
+      },
+      "raw_rank_for_position": {
+        "executable_ast_equal": true,
+        "normalized_ast_sha256": "8700b1ec498f897f75ae19a16f1a6c1f3b4cd8230b2516c8ab5825120ba40e63"
+      },
+      "apply_runtime_order": {
+        "executable_ast_equal": true,
+        "normalized_ast_sha256": "2738930a782b4d3fbcc783b759f5c5b67b8725187623dae12833e57f985bdb55"
+      },
+      "fallback_value": {
+        "executable_ast_equal": true,
+        "normalized_ast_sha256": "27b0ce9f2843f1cb523c5a0f27367a9f8939e7fcb326657723fef8abaaf852f8"
+      },
+      "reset_task_planning": {
+        "executable_ast_equal": true,
+        "normalized_ast_sha256": "36997eafe6e51f4ea3db0e4358d0aee288e087b33d3dfbcf3f622c7fe58b081f"
+      },
+      "strict_geodesic_distance": {
+        "executable_ast_equal": true,
+        "normalized_ast_sha256": "2da5dc68a58c0fbff5d1989d59359da39e35217890aac6b1e63cb5c247ccc4fb"
+      }
+    }
+  },
+  "geometry_parameters": "Projection tolerance, merge radius and recovery sampling parameters are explicit arguments. The compatibility evaluator translates existing environment settings.",
+  "frozen_replay": {
+    "cases": 19,
+    "source": "422cb8e:Navigation/runtime/evaluators/goat/entrypoint.py",
+    "comparison": "Directly execute original functions and compare all outputs, ranking state, cache keys/values and geometry calls.",
+    "coverage": [
+      "available, unreachable and unavailable strict travel status",
+      "active and not-yet-acted tasks",
+      "cache hits and version-token evictions",
+      "projected raw ranks and repeated-category task identities",
+      "suffix, Idea-1, fallback, stale and shadow dispatch",
+      "projection failures and deduplication",
+      "default and explicit recovery parameters for escape and random modes",
+      "recovery rejection of other floors and navigation islands"
+    ],
+    "passed": 19
+  },
+  "local_validation": {
+    "platform": "macOS arm64 CPU",
+    "planning_and_existing_runtime_contracts": {
+      "passed": 58,
+      "not_selected": 1,
+      "elapsed_seconds": 2.21,
+      "selection_note": "The legacy runtime-environment test requires the machine-local configuration. It was included in the complete suite below."
+    },
+    "full_suite": {
+      "passed": 335,
+      "failed": 3,
+      "elapsed_seconds": 8.28,
+      "failure_details": "Same local limitations as phase7: the temporary runtime configuration references server-only datasets; two OpenCV thread-cap tests report 10 threads instead of 8 on macOS."
+    },
+    "architecture_boundaries": "passed"
+  },
+  "remaining": [
+    "native suffix computation and refresh/version transaction assembly",
+    "experiment runner, evaluator and recorder",
+    "native launch and IPC lifecycle",
+    "latest synchronized Linux tests and Habitat integration",
+    "third-party resources, clean Linux installation and complete selected-split evaluation"
+  ]
+}

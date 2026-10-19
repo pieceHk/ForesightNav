@@ -16,7 +16,7 @@
 
 阅读建图代码可从 `mapper.py` 的 `add_live_frame()`、`_rebuild_worker()` 和 `query_batch_with_records()` 开始。`reset_episode()` 清理整张地图；同一 episode 的任务切换保留地图。原运行目录中的 Mapper 文件只保留兼容入口。
 
-导航的候选集合刷新与版本校验位于 `pbsp/navigation/candidates.py`，视觉确认历史位于 `verification.py`，受困诊断和恢复目标状态位于 `recovery.py`。实际动作循环、episode 重置和任务切换位于 `navigator.py`，局部地图更新及 RGB-D 预处理位于 `local_map.py`，坐标变换位于 `geometry.py`。`verification.py` 同时执行各目标模态的确认逻辑。模型构造和感知调用分别由 `adapters/lagmemo_agent.py`、`adapters/perception.py` 组装，图像写入交给实验观察器。原 `glue_agent.py` 仅保留兼容导入。候选规划协调器及评测循环仍待迁移。
+导航的候选集合刷新与版本校验位于 `pbsp/navigation/candidates.py`，视觉确认历史位于 `verification.py`，受困诊断和恢复目标状态位于 `recovery.py`。实际动作循环、episode 重置和任务切换位于 `navigator.py`，局部地图更新及 RGB-D 预处理位于 `local_map.py`，坐标变换位于 `geometry.py`。`verification.py` 同时执行各目标模态的确认逻辑。模型构造和感知调用分别由 `adapters/lagmemo_agent.py`、`adapters/perception.py` 组装，图像写入交给实验观察器。原 `glue_agent.py` 仅保留兼容导入。候选投影绑定、候选层排序、版本化测地距离缓存和当前任务的顺序分派位于 `planning.py`。Habitat 导航网格投影、严格测地距离和恢复采样位于 `adapters/geometry.py`，参数由调用方显式传入。完整规划事务及评测循环仍待迁移。
 
 ## 阶段交付
 
@@ -63,3 +63,5 @@ Mapper 迁移后，服务器完整测试为 271 项通过。固定 RGB-D 序列�
 导航状态迁移后的 2-MON 和 3-MON 单 episode 实验均正常退出。2-MON 完成 2 个任务，成功 1 个，两个任务都耗尽 500 步预算；3-MON 的 3 个任务均以目标确认结束并成功。两次运行共 135 条规划记录均保留完整任务身份，未执行过期后缀计划。详见[导航状态集成结果](validation/phase6_integration_results.json)。
 
 动作循环迁移增加了 19 组固定输入重放，直接调用基准提交中的原方法进行比较，覆盖动作、停止条件、多帧确认、三种目标模态、位姿和局部地图更新；服务器上全部通过。另有 31 个方法及辅助函数通过可执行定义对比。局部地图现在始终提供算法所需的 explored/frontier 输入，其值与原来开启可视化时相同，图像写入可独立关闭。本机 CPU 上的 20 项导航检查也全部通过；完整测试为 316 项通过、3 项失败，失败涉及本机缺少服务器数据及 macOS OpenCV 的线程数行为。最新 Linux 完整测试和真实 Habitat 集成尚待服务器连接恢复后验证，详见[导航执行迁移结果](validation/phase7_navigator_results.json)。
+
+候选规划与几何迁移增加了 19 项基准重放，覆盖距离状态、缓存失效、重复类别任务身份、分派顺序及恢复采样的楼层和岛屿约束；11 个函数通过可执行定义对比。本机完整测试为 335 项通过、3 项环境相关失败，与上一阶段一致。旧评测入口调用上述实现，完整刷新事务仍保留在入口中。详见[规划迁移结果](validation/phase8_planning_results.json)。
