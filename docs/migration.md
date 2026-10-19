@@ -6,6 +6,8 @@
 
 ## 当前代码
 
+独立 mapping 环境的完整 4-MON 单 episode 验证已通过：四个目标均成功，共 414 个动作；44 条规划记录身份完整，没有过期后缀分派；31 次地图重建均完成，最终为 301 个关键帧和 3,088,415 个高斯点。建图、导航及资源监控进程退出码均为 0，动作数、指标和最终地图哈希与此前记录一致。首次运行虽完成全部目标，但监控读取已退出进程的 procfs 信息时发生竞态，根入口按失败记录；修复 `ProcessLookupError` 处理后另行运行并通过。新增五项监控检查后，Linux 完整测试为 577 项通过。此实验的 navigation 仍使用原环境。详见[集成结果及首次失败记录](validation/phase21_integration_results.json)。
+
 Mapping 的独立离线安装已通过验证。安装器校验 42 个 Conda 包、122 个 Python 包输入和固定扩展源码，在新目录中创建环境并构建四个 CUDA 扩展；安装后依赖、扩展导入和 CUDA 检查均通过。真实推理补齐了 FastSAM 延迟导入的 pandas 依赖，最终锁定文件又在第二个空环境中完整执行。12 帧 RGB-D 重放的 50 个地图及增量状态张量与原环境逐项相同，候选和公开状态也一致。新增 13 项安装检查后，Linux 完整测试为 572 项通过。导航环境独立安装及完整 split 评测仍待完成。详见[安装指南](mapping_installation.md)和[安装验证](validation/phase21_mapping_install_results.json)。
 
 默认建图路径的可选依赖已按后端加载。FastSAM/MaskAdapter 构造时不再导入 TensorFlow、MinkowskiEngine 或 SAM；OpenSeg 的设备设置在首次使用时执行。配置转换函数已独立，推理读取配置时不再连带导入训练模型封装。真实模型在禁止导入上述可选包的进程中成功加载；同一组 12 帧 RGB-D 的冻结对照中，50 个地图及增量状态张量逐项相同，候选和公开状态也一致。Linux 完整测试为 559 项通过。两个独立 Conda 基础环境已创建，GPU 依赖下载和源码构建仍在进行，尚未完成独立环境的完整实验验证。详见[依赖隔离结果](validation/phase20_dependencies_results.json)。
