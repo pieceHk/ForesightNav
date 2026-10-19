@@ -666,94 +666,13 @@ def _record_scsp_shadow_decision(
                     'message': str(fallback_exc),
                 },
             }
-    event['recorded_to_jsonl'] = False
-    if output_path is not None:
-        try:
-            persisted_event = dict(event)
-            persisted_event['recorded_to_jsonl'] = True
-            with Path(output_path).open('a', encoding='utf-8') as stream:
-                stream.write(dumps_json_strict(persisted_event) + '\n')
-            event = persisted_event
-        except Exception as exc:
-            original_event = dict(event)
-            event = dict(original_event)
-            event.update(
-                {
-                    'recorded_to_jsonl': False,
-                    'recording_error': f'{type(exc).__name__}: {exc}',
-                }
-            )
-            diagnostic = {
-                'schema_version': original_event.get(
-                    'schema_version', SHADOW_SCHEMA_VERSION
-                ),
-                'phase': str(original_event.get('phase', 'unknown')),
-                'arm': str(original_event.get('arm', 'unknown')),
-                'mode': str(original_event.get('mode', 'shadow')),
-                'shadow_only': bool(original_event.get('shadow_only', True)),
-                'status': 'telemetry_error',
-                'computed_status': original_event.get('status'),
-                'dispatch_order_source': str(
-                    original_event.get('dispatch_order_source', 'not_applied')
-                ),
-                'current_task': int(
-                    original_event.get('current_task', kwargs.get('current_task', 0))
-                ),
-                'fallback_reason': FallbackReason.PLANNER_ERROR.value,
-                'failure_stage': 'serialization',
-                'profile_sha256': original_event.get('profile_sha256'),
-                'dataset_manifest_sha256': original_event.get(
-                    'dataset_manifest_sha256'
-                ),
-                'code_sha': original_event.get('code_sha'),
-                'planner_config': original_event.get('planner_config'),
-                'idea1_config': original_event.get('idea1_config'),
-                'episode_identity': original_event.get('episode_identity'),
-                'episode_identity_status': original_event.get(
-                    'episode_identity_status'
-                ),
-                'selected_raw_ranks': dict(
-                    original_event.get('selected_raw_ranks', {})
-                ),
-                'recording_error': f'{type(exc).__name__}: {exc}',
-            }
-            try:
-                with Path(output_path).open('a', encoding='utf-8') as stream:
-                    diagnostic['recorded_to_jsonl'] = True
-                    stream.write(dumps_json_strict(diagnostic) + '\n')
-                event['recorded_to_jsonl'] = True
-                event['recording_degraded'] = True
-            except Exception as fallback_exc:
-                event['fallback_recording_error'] = (
-                    f'{type(fallback_exc).__name__}: {fallback_exc}'
-                )
-            print(
-                '[SCSP_SHADOW] telemetry write warning: '
-                f'{event["recording_error"]}',
-                flush=True,
-            )
-    selected = event.get('selected_raw_ranks', {})
-    fallback_reason = event.get('fallback_reason')
-    if fallback_reason is None and event.get('suffix_plan') is not None:
-        fallback_reason = event['suffix_plan'].fallback_reason.value
-    print(
-        '[SCSP_RUNTIME] '
-        + json.dumps(
-            {
-                'phase': event['phase'],
-                'current_task': event['current_task'],
-                'status': event['status'],
-                'fallback_reason': fallback_reason,
-                'legacy_selected': selected.get('legacy'),
-                'idea1_selected': selected.get('idea1'),
-                'suffix_selected': selected.get('suffix'),
-                'dispatched_selected': selected.get('dispatched'),
-            },
-            sort_keys=True,
-        ),
-        flush=True,
+    from experiments.recorder import record_planning_decision
+
+    return record_planning_decision(
+        event, output_path=output_path,
+        current_task_hint=kwargs.get('current_task', 0),
+        serialize=dumps_json_strict,
     )
-    return event
 
 
 def _fallback_value(value):
