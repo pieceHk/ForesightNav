@@ -2,7 +2,7 @@
 
 import ast
 from copy import deepcopy
-from dataclasses import fields, is_dataclass
+from dataclasses import fields, is_dataclass, replace
 from functools import lru_cache
 import os
 from pathlib import Path
@@ -13,10 +13,10 @@ import numpy as np
 import pytest
 
 from adapters.geometry import project_goals_to_navigable, sample_navmesh_goal
-from experiments.telemetry import to_jsonable
+from experiments.telemetry import build_scsp_shadow_decision, to_jsonable
 from pbsp.navigation import planning
 from pbsp.navigation.ranking import CandidateActionReranker
-from pbsp.navigation.suffix import Idea1Candidate
+from pbsp.navigation.suffix import Idea1Candidate, SuffixPlanningResult, plan_ordered_suffix
 from pbsp.types import (
     CandidateBatch,
     CandidateRecord,
@@ -33,8 +33,12 @@ SOURCE = "Navigation/runtime/evaluators/goat/entrypoint.py"
 
 
 @lru_cache()
+def frozen_tree():
+    return ast.parse(subprocess.check_output(["git", "show", "422cb8e:" + SOURCE], cwd=ROOT))
+
+
 def frozen():
-    tree = ast.parse(subprocess.check_output(["git", "show", "422cb8e:" + SOURCE], cwd=ROOT))
+    tree = frozen_tree()
     names = {
         "_projected_candidate_batch",
         "_subtask_has_acted",
@@ -48,11 +52,19 @@ def frozen():
         "_reset_scsp_task_state",
         "_project_goals_to_navigable",
         "_sample_navmesh_goal",
+        "_scsp_shadow_fallback_event",
+        "_compute_scsp_shadow_decision",
+        "_prepare_scsp_refresh",
     }
     nodes = [node for node in tree.body if isinstance(node, ast.FunctionDef) and node.name in names]
     assert len(nodes) == len(names)
     namespace = {
         "np": np,
+        "replace": replace,
+        "SHADOW_SCHEMA_VERSION": "scsp_shadow_decision_v1",
+        "SuffixPlanningResult": SuffixPlanningResult,
+        "plan_ordered_suffix": plan_ordered_suffix,
+        "build_scsp_shadow_decision": build_scsp_shadow_decision,
         "os": os,
         "CandidateBatch": CandidateBatch,
         "CandidateRecord": CandidateRecord,
@@ -89,8 +101,8 @@ def same(left, right):
         assert left == right
 
 
-def batch(serial=1):
-    categories = ("chair", "tv", "chair")
+def batch(serial=1, task_count=3):
+    categories = ("chair", "tv", "chair", "bed")[:task_count]
     records = tuple(
         (
             task,
@@ -308,3 +320,277 @@ def test_recovery_rejects_other_floors_and_islands_like_frozen(mode, custom, mon
     assert actual[0].tolist() == [4.0, 0.0, 0.0]
     assert actual[1]["vertical_rejections"] > 0
     assert actual[1]["island_rejections"] > 0
+
+
+class Clock:
+    def __init__(self):
+        self.counter = 0
+
+    def perf_counter(self):
+        value = self.counter * 0.001
+        self.counter += 1
+        return value
+
+
+def current_functions(namespace, names):
+    tree = ast.parse((ROOT / SOURCE).read_text())
+    nodes = [node for node in tree.body if isinstance(node, ast.FunctionDef) and node.name in names]
+    assert len(nodes) == len(names)
+    exec(
+        compile(ast.Module(body=nodes, type_ignores=[]), "<current-planning-bridge>", "exec"),
+        namespace,
+    )
+
+
+@pytest.mark.parametrize(
+    "task_count,weight,case",
+    [
+        (2, 0.35, "normal"),
+        (3, 0.35, "normal"),
+        (4, 0.35, "normal"),
+        (3, 0.0, "zero_weight"),
+        (3, 0.35, "last_task"),
+        (3, 0.35, "empty_future"),
+        (3, 0.35, "unavailable"),
+        (3, 0.35, "unreachable"),
+        (3, 0.35, "stale"),
+        (3, 0.35, "invalid_projection"),
+    ],
+)
+def test_complete_planning_event_and_state_match_frozen(task_count, weight, case):
+    def run(native):
+        namespace = frozen()
+        namespace["time"] = Clock()
+        if native:
+            current_functions(namespace, {"_compute_scsp_shadow_decision"})
+        current = batch(task_count=task_count)
+        projected = {
+            task: [list(point) for point in current.positions_for_task(task)]
+            for task in range(task_count)
+        }
+        indices = {task: [0, 1] for task in range(task_count)}
+        if case == "empty_future":
+            projected[1], indices[1] = [], []
+        if case == "invalid_projection":
+            indices[0] = []
+        actor = SimpleNamespace(
+            sub_task_timesteps=[[0] * task_count],
+            visited_candidate_positions={},
+            gs_poses=deepcopy(projected),
+            frontier_flag={task: 0 for task in range(task_count)},
+        )
+        reranker, cache, geometry_calls = CandidateActionReranker(enabled=True), {}, []
+
+        def geodesic(start, end):
+            geometry_calls.append((tuple(start), tuple(end)))
+            if case == "unavailable":
+                return GeodesicDistance.unavailable()
+            if case == "unreachable":
+                return GeodesicDistance.unreachable()
+            return GeodesicDistance.available(abs(end[0] - start[0]) + abs(end[2] - start[2]) + 1.0)
+
+        event = namespace["_compute_scsp_shadow_decision"](
+            phase="fixture",
+            arm="ordered_suffix_mvp",
+            provider_event={
+                "version_gate": {
+                    "would_invalidate": case == "stale",
+                    "reason": "rebuilding" if case == "stale" else "none",
+                }
+            },
+            candidate_batch=current,
+            projected_goals=projected,
+            projected_indices=indices,
+            current_task=task_count - 1 if case == "last_task" else 0,
+            origin=[0.0, 0.0, 0.0],
+            pathfinder=geodesic,
+            agent=actor,
+            reranker=reranker,
+            distance_cache=cache,
+            candidate_cap=5,
+            suffix_weight=weight,
+            idea1_config=to_jsonable(reranker.config),
+            provenance={
+                "profile_sha256": "a" * 64,
+                "dataset_manifest_sha256": "b" * 64,
+                "code_sha": "c" * 40,
+            },
+            episode_identity={
+                "scene_id": "scene-a",
+                "runtime_episode_id": "episode-0",
+                "source_episode_ids": tuple(f"source-{i}" for i in range(task_count)),
+                "ordered_categories": current.ordered_categories,
+            },
+        )
+        return event, vars(reranker), cache, geometry_calls, vars(actor)
+
+    actual, expected = run(True), run(False)
+    same(actual, expected)
+    if case in ("stale", "invalid_projection"):
+        assert actual[0]["status"] == "fallback"
+    else:
+        assert actual[0]["status"] == "planned"
+    if case == "zero_weight":
+        assert actual[2] == {}
+
+
+@pytest.mark.parametrize(
+    "scenario",
+    [
+        "fresh",
+        "requery",
+        "still_stale",
+        "query_error",
+        "retry_plan_error",
+        "initial_plan_error",
+        "double_projection_error",
+        "retry_record_error",
+        "shadow_stale",
+        "retry_on_reason",
+        "keep_existing",
+        "new_payload_after_missing",
+        "empty_retry",
+        "non_retry_fallback",
+    ],
+)
+def test_refresh_transaction_matches_frozen_returns_and_call_order(scenario):
+    def run(native):
+        namespace = frozen()
+        namespace["time"] = Clock()
+        calls = []
+
+        class Provider:
+            serial = 1
+
+            def invalidate_cache(self):
+                calls.append(("invalidate",))
+
+            def get_all_goals(self):
+                calls.append(("query",))
+                if scenario in ("query_error", "keep_existing"):
+                    raise RuntimeError("query failed")
+                self.serial = 2
+                return {} if scenario == "empty_retry" else {0: [[2.0, 0.0, 0.0]]}
+
+            def get_candidate_batch(self):
+                calls.append(("batch", self.serial))
+                return batch(serial=self.serial)
+
+        provider = Provider()
+
+        def project(goals, _pathfinder, return_indices=False):
+            calls.append(("project", deepcopy(goals), return_indices))
+            if scenario == "double_projection_error":
+                raise RuntimeError("projection failed")
+            value = {} if goals is None else deepcopy(goals)
+            return (value, {0: [0]}) if return_indices else value
+
+        def compute(**kwargs):
+            calls.append(("plan", kwargs["candidate_batch"].query_serial, kwargs["suffix_weight"]))
+            if scenario == "initial_plan_error" or (
+                scenario == "retry_plan_error" and provider.serial == 2
+            ):
+                raise RuntimeError("plan failed")
+            decision = {
+                "status": "planned",
+                "current_task": 0,
+                "candidate_batch": kwargs["candidate_batch"],
+            }
+            if provider.serial == 1 and scenario in ("retry_on_reason", "non_retry_fallback"):
+                decision.update(
+                    status="fallback",
+                    fallback_reason=(
+                        FallbackReason.REBUILDING
+                        if scenario == "retry_on_reason"
+                        else FallbackReason.FUTURE_LAYER_EMPTY
+                    ),
+                )
+            return decision
+
+        def gate(_provider, decision, **kwargs):
+            calls.append(("gate", decision["status"], kwargs))
+            stale = scenario not in (
+                "fresh",
+                "initial_plan_error",
+                "double_projection_error",
+                "retry_on_reason",
+                "non_retry_fallback",
+            )
+            stale = stale and (provider.serial == 1 or scenario == "still_stale")
+            return {
+                "would_invalidate": stale,
+                "reason": "stale_version_token" if stale else "none",
+                "query_serial": provider.serial,
+            }
+
+        def fallback(**kwargs):
+            calls.append(
+                ("fallback", kwargs["reason"], kwargs["failure_stage"], str(kwargs["error"]))
+            )
+            return {
+                "status": "fallback",
+                "current_task": kwargs["current_task"],
+                "fallback_reason": kwargs["reason"],
+            }
+
+        def record(_provider, **kwargs):
+            calls.append(("record", kwargs))
+            if scenario == "retry_record_error":
+                raise RuntimeError("snapshot failed")
+            return {"version_gate": {"would_invalidate": False, "reason": "none"}}
+
+        namespace.update(
+            _project_goals_to_navigable=project,
+            _compute_scsp_shadow_decision=compute,
+            _scsp_dispatch_gate=gate,
+            _scsp_shadow_fallback_event=fallback,
+            _record_scsp_provider_event=record,
+        )
+        kwargs = dict(
+            phase="fixture",
+            runtime_mode="shadow" if scenario == "shadow_stale" else "ordered_suffix_mvp",
+            arm="ordered_suffix_mvp",
+            provider=provider,
+            provider_event={"version_gate": {"would_invalidate": False, "reason": "none"}},
+            raw_goals=(
+                None
+                if scenario in ("keep_existing", "new_payload_after_missing")
+                else {0: [[1.0, 0.0, 0.0]]}
+            ),
+            current_task=0,
+            origin=[0.0, 0.0, 0.0],
+            pathfinder=object(),
+            agent=object(),
+            reranker=object(),
+            distance_cache={},
+            candidate_cap=5,
+            suffix_weight=0.35,
+            idea1_config={},
+            provenance={},
+            episode_identity=None,
+            scene_id="scene-a",
+            episode_id="episode-0",
+            ordered_categories=("chair",),
+            provider_events_path=None,
+            preserve_existing_on_missing=scenario
+            in ("keep_existing", "new_payload_after_missing", "empty_retry"),
+        )
+        if native:
+            current_functions(namespace, {"_prepare_scsp_refresh"})
+        result = namespace["_prepare_scsp_refresh"](**kwargs)
+        return result, calls
+
+    actual, expected = run(True), run(False)
+    same(actual, expected)
+    result, calls = actual
+    assert sum(call[0] == "query" for call in calls) <= 1
+    assert sum(call[0] == "invalidate" for call in calls) <= 1
+    if scenario == "still_stale":
+        assert result[1]["status"] == "fallback"
+        assert result[1]["failure_stage"] == "pre_dispatch_version_gate"
+    if scenario == "shadow_stale":
+        assert result[1]["synchronous_requery_count"] == 0
+    if scenario in ("keep_existing", "empty_retry"):
+        assert result[0] is None
+    if scenario == "new_payload_after_missing":
+        assert result[0] == {0: [[2.0, 0.0, 0.0]]}

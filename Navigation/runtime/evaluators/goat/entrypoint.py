@@ -647,12 +647,11 @@ def _compute_scsp_shadow_decision(
     suffix_weight,
     idea1_config,
     provenance,
-    episode_identity,
+    episode_identity
 ):
     """Compute one suffix decision while leaving legacy candidates untouched."""
-
     started_at = time.perf_counter()
-    version_gate = dict(provider_event.get('version_gate', {}))
+    version_gate = dict(provider_event.get("version_gate", {}))
     if candidate_batch is None:
         return _scsp_shadow_fallback_event(
             phase=phase,
@@ -663,126 +662,71 @@ def _compute_scsp_shadow_decision(
             candidate_batch=None,
             origin=origin,
             started_at=started_at,
-            failure_stage='candidate_batch',
+            failure_stage="candidate_batch",
             provenance=provenance,
             candidate_cap=candidate_cap,
             suffix_weight=suffix_weight,
             idea1_config=idea1_config,
             episode_identity=episode_identity,
         )
-    if version_gate.get('would_invalidate', True):
+    if version_gate.get("would_invalidate", True):
         return _scsp_shadow_fallback_event(
             phase=phase,
             arm=arm,
             current_task=current_task,
-            reason=version_gate.get(
-                'reason', FallbackReason.PROVIDER_STATUS_UNAVAILABLE.value
-            ),
+            reason=version_gate.get("reason", FallbackReason.PROVIDER_STATUS_UNAVAILABLE.value),
             version_gate=version_gate,
             candidate_batch=candidate_batch,
             origin=origin,
             started_at=started_at,
-            failure_stage='version_gate',
+            failure_stage="version_gate",
             provenance=provenance,
             candidate_cap=candidate_cap,
             suffix_weight=suffix_weight,
             idea1_config=idea1_config,
             episode_identity=episode_identity,
         )
-
     try:
-        planning_batch = _projected_candidate_batch(
-            candidate_batch, projected_goals, projected_indices
-        )
-        legacy_order = tuple(
-            tuple(record.raw_rank for record in planning_batch.records_for_task(task))
-            for task in range(len(planning_batch.ordered_categories))
-        )
+        from pbsp.navigation.planning import compute_candidate_plan
 
-        rerank_started = time.perf_counter()
-        (
-            idea1_candidates_by_task,
-            idea1_candidates,
-            rerank_diagnostics,
-        ) = _rank_scsp_idea1_layers(
-            reranker, planning_batch, origin, pathfinder, agent
+        calculation = compute_candidate_plan(
+            candidate_batch=candidate_batch,
+            projected_goals=projected_goals,
+            projected_indices=projected_indices,
+            current_task=current_task,
+            origin=origin,
+            geodesic=lambda start, end: _strict_geodesic_distance(pathfinder, start, end),
+            agent=agent,
+            reranker=reranker,
+            distance_cache=distance_cache,
+            candidate_cap=candidate_cap,
+            suffix_weight=suffix_weight,
+            clock=time.perf_counter,
+            started_at=started_at,
         )
-        rerank_ms = (time.perf_counter() - rerank_started) * 1000.0
-        idea1_order = tuple(
-            tuple(candidate.record.raw_rank for candidate in candidates)
-            for _, candidates in sorted(idea1_candidates_by_task.items())
-        )
-
-        geodesic_started = time.perf_counter()
-        if float(suffix_weight) == 0.0:
-            matrices = ()
-            cache_stats = {
-                'hits': 0,
-                'misses': 0,
-                'evictions': 0,
-                'entries_before': len(distance_cache),
-                'entries_after_eviction': len(distance_cache),
-                'entries_after': len(distance_cache),
-            }
-        else:
-            matrices, cache_stats = _build_scsp_geodesic_matrices(
-                planning_batch,
-                int(current_task),
-                idea1_candidates_by_task,
-                pathfinder,
-                distance_cache,
-                int(candidate_cap),
-            )
-        geodesic_ms = (time.perf_counter() - geodesic_started) * 1000.0
-
-        planner_started = time.perf_counter()
-        result = plan_ordered_suffix(
-            candidate_batch=planning_batch,
-            current_task=int(current_task),
-            idea1_candidates_by_task=idea1_candidates_by_task,
-            strict_geodesic_matrices=matrices,
-            suffix_weight=float(suffix_weight),
-            candidate_cap=int(candidate_cap),
-            compute_time_ms=0.0,
-        )
-        planner_ms = (time.perf_counter() - planner_started) * 1000.0
-        result = SuffixPlanningResult(
-            plan=replace(result.plan, compute_time_ms=planner_ms),
-            ordered_raw_ranks=result.ordered_raw_ranks,
-        )
-        suffix_order = list(idea1_order)
-        suffix_order[int(current_task)] = result.ordered_raw_ranks
-        total_ms = (time.perf_counter() - started_at) * 1000.0
         event = build_scsp_shadow_decision(
             phase=phase,
             arm=arm,
-            candidate_batch=planning_batch,
-            suffix_plan=result.plan,
-            legacy_order=legacy_order,
-            idea1_order=idea1_order,
-            suffix_order=tuple(suffix_order),
-            idea1_candidates=idea1_candidates,
-            rerank_diagnostics=rerank_diagnostics,
+            candidate_batch=calculation.candidate_batch,
+            suffix_plan=calculation.suffix_plan,
+            legacy_order=calculation.legacy_order,
+            idea1_order=calculation.idea1_order,
+            suffix_order=tuple(calculation.suffix_order),
+            idea1_candidates=calculation.idea1_candidates,
+            rerank_diagnostics=calculation.rerank_diagnostics,
             version_gate=version_gate,
             origin_position=[float(value) for value in origin],
-            timing_ms={
-                'idea1_rerank': rerank_ms,
-                'geodesic_matrices': geodesic_ms,
-                'suffix_dp': planner_ms,
-                'total_shadow': total_ms,
-            },
-            distance_cache=cache_stats,
+            timing_ms=calculation.timing_ms,
+            distance_cache=calculation.distance_cache,
             candidate_cap=int(candidate_cap),
             suffix_weight=float(suffix_weight),
             idea1_config=idea1_config,
             provenance=provenance,
             episode_identity=episode_identity,
         )
-        event['status'] = 'planned'
-        event['provider_candidate_batch'] = candidate_batch
-        event['identity_sidecar_sha256'] = provenance.get(
-            'identity_sidecar_sha256'
-        )
+        event["status"] = "planned"
+        event["provider_candidate_batch"] = candidate_batch
+        event["identity_sidecar_sha256"] = provenance.get("identity_sidecar_sha256")
         return event
     except Exception as exc:
         reason = (
@@ -800,7 +744,7 @@ def _compute_scsp_shadow_decision(
             origin=origin,
             started_at=started_at,
             error=exc,
-            failure_stage='projection_rerank_or_planning',
+            failure_stage="projection_rerank_or_planning",
             provenance=provenance,
             candidate_cap=candidate_cap,
             suffix_weight=suffix_weight,
@@ -960,32 +904,16 @@ def _fallback_value(value):
     return fallback_value(value)
 
 
-def _scsp_dispatch_gate(
-    provider,
-    decision,
-    *,
-    scene_id,
-    episode_id,
-    ordered_categories,
-):
-    """Read mapper status immediately before an active dispatch."""
+def _scsp_dispatch_gate(provider, decision, *, scene_id, episode_id, ordered_categories):
+    from pbsp.navigation.planning import dispatch_version_gate
 
-    try:
-        batch = decision.get('candidate_batch')
-        if batch is None:
-            batch = provider.get_candidate_batch()
-        return provider.check_candidate_batch_status(
-            batch,
-            scene_id=scene_id,
-            episode_id=episode_id,
-            ordered_categories=ordered_categories,
-        )
-    except Exception as exc:
-        return {
-            'would_invalidate': True,
-            'reason': FallbackReason.PROVIDER_STATUS_UNAVAILABLE.value,
-            'error': f'{type(exc).__name__}: {exc}',
-        }
+    return dispatch_version_gate(
+        provider,
+        decision,
+        scene_id=scene_id,
+        episode_id=episode_id,
+        ordered_categories=ordered_categories,
+    )
 
 
 def _prepare_scsp_refresh(
@@ -1013,18 +941,11 @@ def _prepare_scsp_refresh(
     provider_events_path=None,
     preserve_existing_on_missing=False,
 ):
-    """Plan against a final status gate, re-querying at most once."""
-
-    active = runtime_mode in {'idea1_only', 'ordered_suffix_mvp'}
-    retry_provider_events = []
-    attempts = []
-    refresh_payload = raw_goals
+    from pbsp.navigation.planning import prepare_candidate_refresh
 
     def plan_once(attempt_goals, attempt_provider_event):
-        projected, projected_indices = _project_goals_to_navigable(
-            attempt_goals,
-            pathfinder,
-            return_indices=True,
+        (projected, projected_indices) = _project_goals_to_navigable(
+            attempt_goals, pathfinder, return_indices=True
         )
         decision = _compute_scsp_shadow_decision(
             phase=phase,
@@ -1040,9 +961,7 @@ def _prepare_scsp_refresh(
             reranker=reranker,
             distance_cache=distance_cache,
             candidate_cap=candidate_cap,
-            suffix_weight=(
-                0.0 if runtime_mode == 'idea1_only' else suffix_weight
-            ),
+            suffix_weight=0.0 if runtime_mode == "idea1_only" else suffix_weight,
             idea1_config=idea1_config,
             provenance=provenance,
             episode_identity=episode_identity,
@@ -1054,140 +973,57 @@ def _prepare_scsp_refresh(
             episode_id=episode_id,
             ordered_categories=ordered_categories,
         )
-        return projected, decision, gate
+        return (projected, decision, gate)
 
-    try:
-        projected_goals, decision, gate = plan_once(raw_goals, provider_event)
-    except Exception as exc:
-        try:
-            projected_goals = _project_goals_to_navigable(
-                raw_goals, pathfinder
-            )
-        except Exception:
-            projected_goals = {}
-        decision = _scsp_shadow_fallback_event(
+    def make_fallback(exc):
+        return _scsp_shadow_fallback_event(
             phase=phase,
             arm=arm,
             current_task=current_task,
             reason=FallbackReason.PLANNER_ERROR.value,
-            version_gate=provider_event.get('version_gate', {}),
+            version_gate=provider_event.get("version_gate", {}),
             candidate_batch=None,
             origin=origin,
             started_at=time.perf_counter(),
             error=exc,
-            failure_stage='unhandled_plan_attempt',
+            failure_stage="unhandled_plan_attempt",
             provenance=provenance,
             candidate_cap=candidate_cap,
             suffix_weight=suffix_weight,
             idea1_config=idea1_config,
             episode_identity=episode_identity,
         )
-        gate = _scsp_dispatch_gate(
+
+    def read_retry_event():
+        return _record_scsp_provider_event(
+            provider,
+            phase=f"{phase}_synchronous_requery",
+            current_task=current_task,
+            scene_id=scene_id,
+            episode_id=episode_id,
+            ordered_categories=ordered_categories,
+            output_path=provider_events_path,
+        )
+
+    result = prepare_candidate_refresh(
+        runtime_mode=runtime_mode,
+        provider=provider,
+        provider_event=provider_event,
+        raw_goals=raw_goals,
+        plan_once=plan_once,
+        project_fallback=lambda goals: _project_goals_to_navigable(goals, pathfinder),
+        make_fallback=make_fallback,
+        read_dispatch_gate=lambda decision: _scsp_dispatch_gate(
             provider,
             decision,
             scene_id=scene_id,
             episode_id=episode_id,
             ordered_categories=ordered_categories,
-        )
-    attempts.append(
-        {
-            'attempt': 0,
-            'query_serial': gate.get('query_serial'),
-            'version_gate': dict(gate),
-            'decision_status': decision.get('status'),
-            'fallback_reason': _fallback_value(
-                decision.get('fallback_reason')
-            ),
-        }
+        ),
+        read_retry_event=read_retry_event,
+        preserve_existing_on_missing=preserve_existing_on_missing,
     )
-    requery_error = None
-    retryable_fallbacks = {
-        FallbackReason.REBUILDING.value,
-        FallbackReason.EPISODE_MISMATCH.value,
-        FallbackReason.PROVIDER_TOKEN_CHANGED.value,
-        FallbackReason.PROVIDER_STATUS_UNAVAILABLE.value,
-        FallbackReason.INVALID_CANDIDATE_BATCH.value,
-        FallbackReason.STALE_VERSION_TOKEN.value,
-    }
-    if active and (
-        gate.get('would_invalidate', True)
-        or _fallback_value(decision.get('fallback_reason'))
-        in retryable_fallbacks
-    ):
-        try:
-            provider.invalidate_cache()
-            retry_goals = provider.get_all_goals()
-            refresh_payload = retry_goals
-            retry_event = _record_scsp_provider_event(
-                provider,
-                phase=f'{phase}_synchronous_requery',
-                current_task=current_task,
-                scene_id=scene_id,
-                episode_id=episode_id,
-                ordered_categories=ordered_categories,
-                output_path=provider_events_path,
-            )
-            retry_provider_events.append(retry_event)
-            projected_goals, decision, gate = plan_once(
-                retry_goals, retry_event
-            )
-            attempts.append(
-                {
-                    'attempt': 1,
-                    'query_serial': gate.get('query_serial'),
-                    'version_gate': dict(gate),
-                    'decision_status': decision.get('status'),
-                    'fallback_reason': _fallback_value(
-                        decision.get('fallback_reason')
-                    ),
-                }
-            )
-        except Exception as exc:
-            requery_error = f'{type(exc).__name__}: {exc}'
-            gate = {
-                'would_invalidate': True,
-                'reason': FallbackReason.PROVIDER_STATUS_UNAVAILABLE.value,
-                'error': requery_error,
-            }
-            attempts.append(
-                {
-                    'attempt': 1,
-                    'query_serial': None,
-                    'version_gate': dict(gate),
-                    'decision_status': 'fallback',
-                    'fallback_reason': (
-                        FallbackReason.PROVIDER_STATUS_UNAVAILABLE.value
-                    ),
-                }
-            )
-
-    decision = dict(decision)
-    decision['mode'] = runtime_mode
-    decision['shadow_only'] = runtime_mode == 'shadow'
-    decision['dispatch_version_gate'] = dict(gate)
-    decision['version_attempts'] = attempts
-    decision['synchronous_requery_count'] = len(attempts) - 1
-    decision['synchronous_requery_succeeded'] = bool(
-        len(attempts) == 2
-        and not gate.get('would_invalidate', True)
-        and decision.get('status') == 'planned'
-    )
-    if requery_error is not None:
-        decision['synchronous_requery_error'] = requery_error
-    if active and gate.get('would_invalidate', True):
-        decision['computed_status'] = decision.get('status')
-        decision['status'] = 'fallback'
-        decision['fallback_reason'] = gate.get(
-            'reason', FallbackReason.PROVIDER_STATUS_UNAVAILABLE.value
-        )
-        decision['failure_stage'] = 'pre_dispatch_version_gate'
-        decision['dispatch_order_source'] = 'legacy'
-    if preserve_existing_on_missing and not refresh_payload:
-        projected_goals = None
-        decision['preserved_existing_candidates'] = True
-    else:
-        decision['preserved_existing_candidates'] = False
-    return projected_goals, decision, retry_provider_events
+    return (result.projected_goals, result.decision, result.retry_provider_events)
 
 
 def _scsp_raw_ranks_for_positions(candidate_batch, task_idx, positions):

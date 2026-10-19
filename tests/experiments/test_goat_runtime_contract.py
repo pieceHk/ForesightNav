@@ -458,6 +458,7 @@ def _function_source(path, function_name):
 
 def test_goat_entrypoint_has_version_gated_active_dispatch_without_gt_access():
     source = GOAT_ENTRYPOINT.read_text(encoding="utf-8")
+    planning_source = (ROOT / "pbsp/navigation/planning.py").read_text(encoding="utf-8")
     recorder = _function_source(GOAT_ENTRYPOINT, "_record_scsp_provider_event")
 
     assert source.count("candidate_provider.invalidate_cache()") == 2
@@ -471,12 +472,14 @@ def test_goat_entrypoint_has_version_gated_active_dispatch_without_gt_access():
     assert "check_candidate_batch_status(" in recorder
     assert "to_jsonable(batch)" in recorder
     assert "refresh_gs_poses" not in recorder
-    assert "plan_ordered_suffix(" in source
+    assert "compute_candidate_plan(" in source
+    assert "plan_ordered_suffix(" in planning_source
     assert "_record_scsp_shadow_decision(" in source
     assert "_prepare_scsp_refresh(" in source
     assert "_apply_scsp_runtime_order(" in source
     assert "_scsp_dispatch_gate(" in source
-    assert "synchronous_requery_count" in source
+    assert "prepare_candidate_refresh(" in source
+    assert "synchronous_requery_count" in planning_source
     assert "external_ranking_metadata" in source
     assert "scsp_decisions.jsonl" in source
     assert "SCSP active/shadow execution requires a complete" in source
@@ -500,21 +503,11 @@ def test_goat_entrypoint_has_version_gated_active_dispatch_without_gt_access():
     assert "sorted(" not in recorder
     assert "except Exception as exc:" in recorder
     assert source.index("phase='initial_query'") < source.index("initial_goals =")
-    assert source.index("phase='runtime_context'") < source.index(
-        "action, info = agent.act(obs)"
-    )
-    identity_gate = source.index(
-        "SCSP episode identity does not match runtime tasks"
-    )
-    initial_active = source.index(
-        "phase='initial_runtime_dispatch'", identity_gate
-    )
-    assert identity_gate < initial_active < source.index(
-        "action, info = agent.act(obs)"
-    )
-    assert source.index("refresh_phase = (") < source.index(
-        "if scsp_enabled or new_goals:"
-    )
+    assert source.index("phase='runtime_context'") < source.index("action, info = agent.act(obs)")
+    identity_gate = source.index("SCSP episode identity does not match runtime tasks")
+    initial_active = source.index("phase='initial_runtime_dispatch'", identity_gate)
+    assert identity_gate < initial_active < source.index("action, info = agent.act(obs)")
+    assert source.index("refresh_phase = (") < source.index("if scsp_enabled or new_goals:")
 
 
 def test_pruned_detic_vendor_uses_inference_only_registration_stubs(tmp_path):
@@ -1482,19 +1475,16 @@ def test_version_gate_fallback_retains_provenance_and_planner_config():
     assert event["planner_config"]["suffix_weight"] == 0.35
 
 
-def test_shadow_off_on_fake_refresh_replay_has_identical_actions_and_rng():
-    fallback_source = _function_source(
-        GOAT_ENTRYPOINT, "_scsp_shadow_fallback_event"
-    )
-    compute_source = _function_source(
-        GOAT_ENTRYPOINT, "_compute_scsp_shadow_decision"
-    )
+def test_shadow_off_on_fake_refresh_replay_has_identical_actions_and_rng(monkeypatch):
+    from pbsp.navigation import planning
+
+    fallback_source = _function_source(GOAT_ENTRYPOINT, "_scsp_shadow_fallback_event")
+    compute_source = _function_source(GOAT_ENTRYPOINT, "_compute_scsp_shadow_decision")
 
     def rank_layers(_reranker, batch, _origin, _pathfinder, _agent):
         records = tuple(reversed(batch.records_for_task(0)))
         candidates = tuple(
-            Idea1Candidate(record, float(1 - idx))
-            for idx, record in enumerate(records)
+            Idea1Candidate(record, float(1 - idx)) for idx, record in enumerate(records)
         )
         telemetry = (
             (
@@ -1503,9 +1493,7 @@ def test_shadow_off_on_fake_refresh_replay_has_identical_actions_and_rng():
                     {
                         "raw_rank": candidate.record.raw_rank,
                         "utility": candidate.utility,
-                        "utility_components": _shadow_components(
-                            candidate.utility
-                        ),
+                        "utility_components": _shadow_components(candidate.utility),
                     }
                     for candidate in candidates
                 ),
@@ -1534,6 +1522,13 @@ def test_shadow_off_on_fake_refresh_replay_has_identical_actions_and_rng():
         "replace": replace,
         "build_scsp_shadow_decision": build_scsp_shadow_decision,
     }
+    monkeypatch.setattr(planning, "bind_projected_candidates", projected_batch)
+    monkeypatch.setattr(planning, "rank_candidate_layers", rank_layers)
+    monkeypatch.setattr(
+        planning,
+        "build_geodesic_matrices",
+        namespace["_build_scsp_geodesic_matrices"],
+    )
     exec(compile(fallback_source, "<shadow-fallback>", "exec"), namespace)
     exec(compile(compute_source, "<shadow-compute>", "exec"), namespace)
 
@@ -1546,6 +1541,7 @@ def test_shadow_off_on_fake_refresh_replay_has_identical_actions_and_rng():
         }
         for index in range(3)
     ]
+
     class FakeAgent:
         def __init__(self, seed):
             self.rng = np.random.RandomState(seed)
@@ -1570,14 +1566,10 @@ def test_shadow_off_on_fake_refresh_replay_has_identical_actions_and_rng():
         event = namespace["_compute_scsp_shadow_decision"](
             phase="fixture",
             arm="ordered_suffix_mvp",
-            provider_event={
-                "version_gate": {"would_invalidate": False, "reason": "none"}
-            },
+            provider_event={"version_gate": {"would_invalidate": False, "reason": "none"}},
             candidate_batch=_shadow_batch(query_serial=index),
             projected_goals=goals,
-            projected_indices=(
-                "broken-sidecar" if index == len(stream) else {}
-            ),
+            projected_indices=("broken-sidecar" if index == len(stream) else {}),
             current_task=0,
             origin=[0.0, 0.0, 0.0],
             pathfinder=object(),
@@ -1603,9 +1595,7 @@ def test_shadow_off_on_fake_refresh_replay_has_identical_actions_and_rng():
         assert goals == original
         dispatch_goals = deepcopy(goals)
         active_position = (
-            off_agent.gs_poses.get(0, [None])[0]
-            if off_agent.gs_poses.get(0)
-            else None
+            off_agent.gs_poses.get(0, [None])[0] if off_agent.gs_poses.get(0) else None
         )
         dispatch_goals[0], cooldown_event = cooldown.apply(
             task_idx=0,

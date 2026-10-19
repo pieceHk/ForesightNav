@@ -6,8 +6,9 @@ contains no simulator imports, experiment metadata or file output.
 
 from __future__ import annotations
 
-from dataclasses import asdict
-from typing import Callable
+from dataclasses import asdict, dataclass, replace
+from typing import Any, Callable, Mapping, Optional, Protocol
+import time
 import numpy as np
 
 from pbsp.types import (
@@ -18,11 +19,26 @@ from pbsp.types import (
     GeodesicMatrix,
     GeodesicStatus,
     SCSPContractError,
+    SuffixPlan,
     validate_candidate_batch,
 )
-from .suffix import Idea1Candidate
+from .suffix import Idea1Candidate, SuffixPlanningResult, plan_ordered_suffix
 
 GeodesicQuery = Callable[[object, object], GeodesicDistance]
+
+
+class MappingProvider(Protocol):
+    """Snapshot and refresh operations needed by the planning transaction."""
+
+    def invalidate_cache(self) -> None: ...
+
+    def get_all_goals(self) -> dict: ...
+
+    def get_candidate_batch(self) -> Optional[CandidateBatch]: ...
+
+    def check_candidate_batch_status(
+        self, batch, *, scene_id, episode_id, ordered_categories
+    ) -> Mapping[str, Any]: ...
 
 
 def _record_payload(record: CandidateRecord) -> dict:
@@ -169,7 +185,7 @@ def rank_candidate_layers(reranker, candidate_batch, origin, geodesic: GeodesicQ
 
 
 def build_geodesic_matrices(
-    candidate_batch,
+    candidate_batch: CandidateBatch,
     current_task,
     idea1_candidates_by_task,
     geodesic: GeodesicQuery,
@@ -377,3 +393,261 @@ def reset_task_planning(reranker, distance_cache):
     """Clear all plan-local state when the ordered subtask advances."""
     reranker.reset()
     distance_cache.clear()
+
+
+@dataclass(frozen=True)
+class CandidatePlan:
+    """A projected candidate snapshot, its ordered plan and computation diagnostics."""
+
+    candidate_batch: CandidateBatch
+    suffix_plan: SuffixPlan
+    legacy_order: tuple
+    idea1_order: tuple
+    suffix_order: tuple
+    idea1_candidates: tuple
+    rerank_diagnostics: tuple
+    timing_ms: Mapping[str, float]
+    distance_cache: Mapping[str, int]
+
+
+@dataclass(frozen=True)
+class CandidateRefresh:
+    """The final version gate and candidates after zero or one synchronous retry."""
+
+    projected_goals: Optional[dict]
+    decision: dict
+    retry_provider_events: list
+
+
+def compute_candidate_plan(
+    *,
+    candidate_batch: CandidateBatch,
+    projected_goals,
+    projected_indices,
+    current_task,
+    origin,
+    geodesic: GeodesicQuery,
+    agent,
+    reranker,
+    distance_cache,
+    candidate_cap,
+    suffix_weight,
+    clock: Optional[Callable[[], float]] = None,
+    started_at: Optional[float] = None,
+) -> CandidatePlan:
+    """Bind, rank and solve an ordered suffix on one mapper snapshot.
+
+    Geometry uses Habitat world coordinates in metres and returns explicit
+    available, unreachable or unavailable distance states.
+    """
+    if clock is None:
+        clock = time.perf_counter
+    if started_at is None:
+        started_at = clock()
+    planning_batch = bind_projected_candidates(candidate_batch, projected_goals, projected_indices)
+    legacy_order = tuple(
+        (
+            tuple((record.raw_rank for record in planning_batch.records_for_task(task)))
+            for task in range(len(planning_batch.ordered_categories))
+        )
+    )
+    rerank_started = clock()
+    (idea1_candidates_by_task, idea1_candidates, rerank_diagnostics) = rank_candidate_layers(
+        reranker, planning_batch, origin, geodesic, agent
+    )
+    rerank_ms = (clock() - rerank_started) * 1000.0
+    idea1_order = tuple(
+        (
+            tuple((candidate.record.raw_rank for candidate in candidates))
+            for (_, candidates) in sorted(idea1_candidates_by_task.items())
+        )
+    )
+    geodesic_started = clock()
+    if float(suffix_weight) == 0.0:
+        matrices = ()
+        cache_stats = {
+            "hits": 0,
+            "misses": 0,
+            "evictions": 0,
+            "entries_before": len(distance_cache),
+            "entries_after_eviction": len(distance_cache),
+            "entries_after": len(distance_cache),
+        }
+    else:
+        (matrices, cache_stats) = build_geodesic_matrices(
+            planning_batch,
+            int(current_task),
+            idea1_candidates_by_task,
+            geodesic,
+            distance_cache,
+            int(candidate_cap),
+        )
+    geodesic_ms = (clock() - geodesic_started) * 1000.0
+    planner_started = clock()
+    result = plan_ordered_suffix(
+        candidate_batch=planning_batch,
+        current_task=int(current_task),
+        idea1_candidates_by_task=idea1_candidates_by_task,
+        strict_geodesic_matrices=matrices,
+        suffix_weight=float(suffix_weight),
+        candidate_cap=int(candidate_cap),
+        compute_time_ms=0.0,
+    )
+    planner_ms = (clock() - planner_started) * 1000.0
+    result = SuffixPlanningResult(
+        plan=replace(result.plan, compute_time_ms=planner_ms),
+        ordered_raw_ranks=result.ordered_raw_ranks,
+    )
+    suffix_order = list(idea1_order)
+    suffix_order[int(current_task)] = result.ordered_raw_ranks
+    total_ms = (clock() - started_at) * 1000.0
+    return CandidatePlan(
+        candidate_batch=planning_batch,
+        suffix_plan=result.plan,
+        legacy_order=legacy_order,
+        idea1_order=idea1_order,
+        suffix_order=tuple(suffix_order),
+        idea1_candidates=idea1_candidates,
+        rerank_diagnostics=rerank_diagnostics,
+        timing_ms={
+            "idea1_rerank": rerank_ms,
+            "geodesic_matrices": geodesic_ms,
+            "suffix_dp": planner_ms,
+            "total_shadow": total_ms,
+        },
+        distance_cache=cache_stats,
+    )
+
+
+def dispatch_version_gate(
+    provider: MappingProvider, decision, *, scene_id, episode_id, ordered_categories
+):
+    """Read mapper status immediately before an active dispatch."""
+    try:
+        batch = decision.get("candidate_batch")
+        if batch is None:
+            batch = provider.get_candidate_batch()
+        return provider.check_candidate_batch_status(
+            batch, scene_id=scene_id, episode_id=episode_id, ordered_categories=ordered_categories
+        )
+    except Exception as exc:
+        return {
+            "would_invalidate": True,
+            "reason": FallbackReason.PROVIDER_STATUS_UNAVAILABLE.value,
+            "error": f"{type(exc).__name__}: {exc}",
+        }
+
+
+def prepare_candidate_refresh(
+    *,
+    runtime_mode,
+    provider: MappingProvider,
+    provider_event,
+    raw_goals,
+    plan_once: Callable[[Optional[dict], Mapping], tuple],
+    project_fallback: Callable[[Optional[dict]], dict],
+    make_fallback: Callable[[Exception], dict],
+    read_dispatch_gate: Callable[[dict], Mapping],
+    read_retry_event: Callable[[], Mapping],
+    preserve_existing_on_missing=False,
+) -> CandidateRefresh:
+    """Plan against a final status gate, re-querying at most once.
+
+    ``plan_once`` projects and computes a plan, then reads its dispatch gate.
+    The remaining callbacks supply geometry, fallback diagnostics and the new
+    provider snapshot. File output and experiment provenance belong to callers.
+    """
+    active = runtime_mode in {"idea1_only", "ordered_suffix_mvp"}
+    retry_provider_events = []
+    attempts = []
+    refresh_payload = raw_goals
+    try:
+        (projected_goals, decision, gate) = plan_once(raw_goals, provider_event)
+    except Exception as exc:
+        try:
+            projected_goals = project_fallback(raw_goals)
+        except Exception:
+            projected_goals = {}
+        decision = make_fallback(exc)
+        gate = read_dispatch_gate(decision)
+    attempts.append(
+        {
+            "attempt": 0,
+            "query_serial": gate.get("query_serial"),
+            "version_gate": dict(gate),
+            "decision_status": decision.get("status"),
+            "fallback_reason": fallback_value(decision.get("fallback_reason")),
+        }
+    )
+    requery_error = None
+    retryable_fallbacks = {
+        FallbackReason.REBUILDING.value,
+        FallbackReason.EPISODE_MISMATCH.value,
+        FallbackReason.PROVIDER_TOKEN_CHANGED.value,
+        FallbackReason.PROVIDER_STATUS_UNAVAILABLE.value,
+        FallbackReason.INVALID_CANDIDATE_BATCH.value,
+        FallbackReason.STALE_VERSION_TOKEN.value,
+    }
+    if active and (
+        gate.get("would_invalidate", True)
+        or fallback_value(decision.get("fallback_reason")) in retryable_fallbacks
+    ):
+        try:
+            provider.invalidate_cache()
+            retry_goals = provider.get_all_goals()
+            refresh_payload = retry_goals
+            retry_event = read_retry_event()
+            retry_provider_events.append(retry_event)
+            (projected_goals, decision, gate) = plan_once(retry_goals, retry_event)
+            attempts.append(
+                {
+                    "attempt": 1,
+                    "query_serial": gate.get("query_serial"),
+                    "version_gate": dict(gate),
+                    "decision_status": decision.get("status"),
+                    "fallback_reason": fallback_value(decision.get("fallback_reason")),
+                }
+            )
+        except Exception as exc:
+            requery_error = f"{type(exc).__name__}: {exc}"
+            gate = {
+                "would_invalidate": True,
+                "reason": FallbackReason.PROVIDER_STATUS_UNAVAILABLE.value,
+                "error": requery_error,
+            }
+            attempts.append(
+                {
+                    "attempt": 1,
+                    "query_serial": None,
+                    "version_gate": dict(gate),
+                    "decision_status": "fallback",
+                    "fallback_reason": FallbackReason.PROVIDER_STATUS_UNAVAILABLE.value,
+                }
+            )
+    decision = dict(decision)
+    decision["mode"] = runtime_mode
+    decision["shadow_only"] = runtime_mode == "shadow"
+    decision["dispatch_version_gate"] = dict(gate)
+    decision["version_attempts"] = attempts
+    decision["synchronous_requery_count"] = len(attempts) - 1
+    decision["synchronous_requery_succeeded"] = bool(
+        len(attempts) == 2
+        and (not gate.get("would_invalidate", True))
+        and (decision.get("status") == "planned")
+    )
+    if requery_error is not None:
+        decision["synchronous_requery_error"] = requery_error
+    if active and gate.get("would_invalidate", True):
+        decision["computed_status"] = decision.get("status")
+        decision["status"] = "fallback"
+        decision["fallback_reason"] = gate.get(
+            "reason", FallbackReason.PROVIDER_STATUS_UNAVAILABLE.value
+        )
+        decision["failure_stage"] = "pre_dispatch_version_gate"
+        decision["dispatch_order_source"] = "legacy"
+    if preserve_existing_on_missing and (not refresh_payload):
+        projected_goals = None
+        decision["preserved_existing_candidates"] = True
+    else:
+        decision["preserved_existing_candidates"] = False
+    return CandidateRefresh(projected_goals, decision, retry_provider_events)
