@@ -3,7 +3,7 @@ from pathlib import Path
 from typing import Optional, Type, TypeVar
 from typing_extensions import Literal
 
-from dacite import Config, from_dict
+from adapters.embodied_splat_config import TYPE_HOOKS, load_typed_config
 from omegaconf import DictConfig, OmegaConf
 
 from .dataset.data_module import DataLoaderCfg, DatasetCfg
@@ -55,27 +55,9 @@ class RootCfg:
     strict: bool = True
 
 
-TYPE_HOOKS = {
-    Path: Path,
-}
-
-
 T = TypeVar("T")
 
 DatasetCfgs = {'re10k': DatasetRE10kCfg, 'scannet': DatasetScannetCfg}
-
-
-def load_typed_config(
-    cfg: DictConfig,
-    data_class: Type[T],
-    extra_type_hooks: dict = {},
-) -> T:
-    return_dict = from_dict(
-        data_class,
-        OmegaConf.to_container(cfg),
-        config=Config(type_hooks={**TYPE_HOOKS, **extra_type_hooks}),
-    )
-    return return_dict
 
 
 def separate_loss_cfg_wrappers(joined: dict) -> list[LossCfgWrapper]:

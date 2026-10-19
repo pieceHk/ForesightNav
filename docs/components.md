@@ -51,6 +51,8 @@ mapper = OnlineMapper(
 
 The default [semantic feature implementation](../pbsp/semantics/features.py) preserves the original pooling and codebook operations. [Its adapter](../adapters/embodied_splat_semantics.py) supplies region/CLIP resources without giving it geometry layers. A weak resource reference preserves the existing model parameter names and resource cleanup.
 
+The model adapter loads optional dependencies in their selected branches: TensorFlow for OpenSeg, MinkowskiEngine for sparse 3D features, and SAM for the SAM region backend. Default FastSAM/MaskAdapter construction does not import these modules. [OpenSeg device controls](../adapters/openseg.py) run once when OpenSeg is first used.
+
 Supply another injector when loading the model through `adapters.embodied_splat.load_model(..., semantic_injector=injector)`, or set `encoder.semantic_injector` before inference. Both warmup and incremental reconstruction call this interface. A replacement must keep pixel alignment, feature dimensions and existing codebook IDs consistent with the selected fusion representation.
 
 Geometric reconstruction and semantic coefficient fusion still share the default Gaussian store. Replacing that storage format requires a corresponding mapping adapter; changing only the image embedding backend uses the injector interface.

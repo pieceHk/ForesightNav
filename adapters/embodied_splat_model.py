@@ -43,29 +43,6 @@ from src.third_party.fastsam import FastSAM, FastSAMPrompt
 from src.third_party.open_clip_network import OpenCLIPNetwork, OpenCLIPNetworkConfig
 from src.third_party.maskadapter.mask_adapter_head import MASKAdapterHead as MaskAdapter
 from src.third_party.maskadapter.clip import CLIP
-from src.third_party.hiersam import Tools
-
-from src.model.encoder.backbone.mink_unet import mink_unet
-from src.model.encoder.backbone.multilevel_memory import MultilevelMemory
-import MinkowskiEngine as ME
-
-import tensorflow as tff2
-import tensorflow.compat.v1 as tff
-
-if os.environ.get("EMBODIEDSPLAT_OPENSEG_CPU", "0") == "1":
-    try:
-        tff2.config.set_visible_devices([], "GPU")
-        print(
-            "[EmbodiedSplat] TensorFlow GPU hidden for OpenSeg; PyTorch still uses CUDA_VISIBLE_DEVICES."
-        )
-    except RuntimeError as exc:
-        print(f"[EmbodiedSplat] TensorFlow GPU visibility was already initialized: {exc}")
-else:
-    try:
-        for _tf_gpu in tff2.config.list_physical_devices("GPU"):
-            tff2.config.experimental.set_memory_growth(_tf_gpu, True)
-    except RuntimeError as exc:
-        print(f"[EmbodiedSplat] TensorFlow memory-growth setup skipped: {exc}")
 
 import math
 
@@ -359,6 +336,8 @@ class EmbodiedSplatEncoder(OnlineEncoder):
 
         if not self.cfg.load_cache:
             if self.cfg.sam_model_type == "sam":
+                from src.third_party.hiersam import Tools
+
                 self.sam = Tools(
                     points_per_side=32,
                     pred_iou_thresh=0.7,
@@ -385,6 +364,9 @@ class EmbodiedSplatEncoder(OnlineEncoder):
                     ]
                 )
             elif self.cfg.clip_model == "openseg":
+                from adapters.openseg import tensorflow_runtime
+
+                tff2, tff = tensorflow_runtime()
                 saved_model_path = self.cfg.clip_model_path
                 self.openseg = tff2.saved_model.load(
                     saved_model_path,
@@ -425,6 +407,8 @@ class EmbodiedSplatEncoder(OnlineEncoder):
             )
 
             if self.cfg.unet_3d:
+                from src.model.encoder.backbone.mink_unet import mink_unet
+
                 self.unet3d = mink_unet(
                     in_channels=self.cfg.unet3d_in_channels,
                     out_channels=self.cfg.unet3d_out_channels,
@@ -443,6 +427,8 @@ class EmbodiedSplatEncoder(OnlineEncoder):
                     self.M_v, self.M_r = None, None
 
             if self.cfg.memory:
+                from src.model.encoder.backbone.multilevel_memory import MultilevelMemory
+
                 self.memory = MultilevelMemory(
                     in_channels=self.cfg.memory_in_channels,
                     queue=self.cfg.memory_queue,
@@ -461,6 +447,8 @@ class EmbodiedSplatEncoder(OnlineEncoder):
         self.semantic_injector = EmbodiedSplatSemanticInjector(self)
 
     def backbone_3d(self, coords, feats, voxelization_matrix, rotation_matrix, globals=None):
+        import MinkowskiEngine as ME
+
         if globals is not None:
             global_coords = globals.means[:, globals.valid[0]][0]
             global_feats = globals.clip_features_3d[:, globals.valid[0]][0]
@@ -525,6 +513,9 @@ class EmbodiedSplatEncoder(OnlineEncoder):
         self, img, openseg_model, text_emb, img_size=None, regional_pool=True
     ):
         """Extract per-pixel OpenSeg features."""
+        from adapters.openseg import tensorflow_runtime
+
+        _, tff = tensorflow_runtime()
 
         def array_to_bytes(array):
             assert array.ndim == 3 and array.shape[2] == 3, "Expected shape (H, W, 3)"

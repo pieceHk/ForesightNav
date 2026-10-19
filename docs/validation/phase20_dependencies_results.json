@@ -1,0 +1,103 @@
+{
+  "stage": "optional_mapping_dependency_isolation",
+  "baseline_commit": "27cac507e5235995b67a7ece75d79385bd0ad6c4",
+  "source_files": {
+    "adapters/embodied_splat.py": "4f1333b1a15e42e7547e6df96dce8cfbe658c56710339b4d2121ff164c0a00a5",
+    "adapters/embodied_splat_config.py": "de4b1ff0bba5038edd83dfb3abf12ea51d9b432d32593aea49b967eb18682bda",
+    "adapters/embodied_splat_model.py": "c636b4a25ab27ec3b3ff9a3adc611ef8c6915e7a5790a97db8d9da824e07ddca",
+    "adapters/openseg.py": "0d437cd2546c92cea07382acfd68f6790bf06dac21cf630e27513f69db2fc136",
+    "Mapping/runtime/embodied_splat/src/config.py": "bcccc0e9182865d7b7732ed54e19836c3e7eefe4dca307e2266e47b0156ecebb"
+  },
+  "changes": [
+    "Inference configuration conversion is shared with the training configuration without importing the training model wrapper.",
+    "TensorFlow device setup occurs when OpenSeg is selected; sparse and SAM dependencies load only in their configured branches."
+  ],
+  "real_model_import_guard": {
+    "status": "passed",
+    "blocked_imports": [
+      "tensorflow",
+      "MinkowskiEngine",
+      "segment_anything"
+    ],
+    "parameters": 417224363,
+    "elapsed_seconds": 20.66482473630458,
+    "scope": "Real default FastSAM/MaskAdapter model construction and checkpoint loading in the provisioned mapping environment; optional modules are blocked at module execution."
+  },
+  "controlled_gpu_comparison": {
+    "status": "passed",
+    "scope": "Frozen and extracted online encoders on identical real RGB-D input",
+    "baseline_commit": "422cb8e",
+    "torch": "2.7.1+cu118",
+    "parameter_key_count": 1745,
+    "comparison": {
+      "tensors": 50,
+      "max_absolute_difference": 0.0
+    },
+    "candidate_counts": {
+      "chair": 2,
+      "bed": 6
+    },
+    "fused_keyframes": 12,
+    "gaussians": 287475,
+    "source_class": "src.model.encoder.pbsp_frozen_encoder",
+    "encoder_forward": "pbsp.mapping.encoder",
+    "semantic_injector": "adapters.embodied_splat_semantics",
+    "query_backend": "pbsp.query.service",
+    "torch_threads": 1,
+    "control": {
+      "seed": 12345,
+      "cudnn_deterministic": true,
+      "cudnn_benchmark": false
+    },
+    "fusion_class": "pbsp.mapping.fusion",
+    "storage_class": "pbsp.mapping.gaussians",
+    "elapsed_seconds": 38.597
+  },
+  "tests": {
+    "linux": {
+      "passed": 559,
+      "warnings": 17,
+      "seconds": 22.91
+    },
+    "new_checks": 9,
+    "coverage": [
+      "Configuration-conversion executable definition matches the frozen source.",
+      "Constructor, sparse-backbone and OpenSeg feature arithmetic match after removing only backend import/binding statements.",
+      "OpenSeg CPU/GPU device controls execute once, including already-initialized runtime cases."
+    ],
+    "local": {
+      "passed": 553,
+      "failed": 5,
+      "skipped": 1,
+      "seconds": 13.19,
+      "failures": "Three retained-runtime fixture tests require server data/resource paths; two macOS OpenCV thread-limit checks report 10 after requesting 8. All five pass in the Linux suite.",
+      "skip": "Frozen-mapper replay requires the server reference path."
+    }
+  },
+  "fresh_install": {
+    "base_environments": "Independent mapping Python 3.10 and navigation Python 3.9 Conda bases were created offline. Torch and Habitat were absent after creation.",
+    "gpu_wheels": "Official cu118 PyTorch and torchvision wheels for both roles were downloaded locally and verified against the official SHA256 values.",
+    "complete": false,
+    "remaining": [
+      "Finish default dependency package collection.",
+      "Install and build extensions from pinned source in the independent prefixes.",
+      "Validate full inference and an ordered episode in the fresh runtimes."
+    ]
+  },
+  "habitat_sim_source_audit": {
+    "commit": "6c26c4f9ae10ad7f534aa9e59a84dff00782741e",
+    "source_worktree_tracked_changes": false,
+    "recursive_submodule_tracked_changes": false,
+    "observed_existing_build": {
+      "bullet": false,
+      "cuda": false,
+      "compiler": "/usr/bin/g++"
+    },
+    "scope": "The existing source checkout and its build cache; this is not a fresh build result."
+  },
+  "remaining": [
+    "Independent full Linux/CUDA runtime installation.",
+    "Complete selected-split evaluation.",
+    "Resource and third-party source cleanup."
+  ]
+}

@@ -6,6 +6,8 @@
 
 ## 当前代码
 
+默认建图路径的可选依赖已按后端加载。FastSAM/MaskAdapter 构造时不再导入 TensorFlow、MinkowskiEngine 或 SAM；OpenSeg 的设备设置在首次使用时执行。配置转换函数已独立，推理读取配置时不再连带导入训练模型封装。真实模型在禁止导入上述可选包的进程中成功加载；同一组 12 帧 RGB-D 的冻结对照中，50 个地图及增量状态张量逐项相同，候选和公开状态也一致。Linux 完整测试为 559 项通过。两个独立 Conda 基础环境已创建，GPU 依赖下载和源码构建仍在进行，尚未完成独立环境的完整实验验证。详见[依赖隔离结果](validation/phase20_dependencies_results.json)。
+
 候选证据、候选排序、类别冷却、有序后缀规划及建图策略位于 `pbsp/`，所有调用方已使用这些实现。语义检索位于 `pbsp/query/engine.py`，包含特征加权、支持度重排、空间 NMS、单类别及批量查询；`service.py` 通过独立的文本编码器和索引读取器组装查询。完整 episode 循环位于 `experiments/runner.py`，规划事件的计算、重查和记录桥接位于 `experiments/planning.py`。指标计算和决策格式分别位于 `experiments/metrics.py`、`experiments/telemetry.py`。Provider 快照记录、规划回退和分派结果的构造、距离摘要及耗时 CSV 位于 `experiments/recorder.py`。规划决策 JSONL 的写入及写入失败处理也由 Recorder 完成。
 
 `configs/experiments/hm3d_2mon.yaml`、`hm3d_3mon.yaml`、`hm3d_4mon.yaml` 引用同一个完整方法配置。`runtime/config.py` 读取配置并检查字段、数值、资源版本和引用路径。 `runtime/plan.py` 先核对完整数据身份，再按 scene 和真实 episode ID 选择完整任务序列；`runtime/launch.py` 保存本次配置并直接管理建图、导航和资源监测进程。原生工厂位于 `runtime/factories.py`，默认运行不经过旧启动脚本或环境变量参数转换。

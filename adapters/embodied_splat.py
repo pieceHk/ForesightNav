@@ -30,7 +30,7 @@ def load_model(*, engine_root, checkpoint, work_directory, input_spec, device, s
         raise ValueError("Model input specification disagrees with the network configuration")
 
     from src.global_cfg import set_cfg
-    from src.config import load_typed_config
+    from adapters.embodied_splat_config import load_typed_config
     from src.model.encoder.encoder_config import EncoderEpipolarCfg
     from src.model.encoder import get_encoder
     from src.model.decoder import get_decoder

@@ -9,6 +9,8 @@ The current Linux validation uses two provisioned environments. Fresh-environmen
 
 Mapping needs the EmbodiedSplat CUDA extensions and region/CLIP models. Navigation needs Habitat-Sim, the pinned Habitat fork, Detectron2, Detic, SEEM, MobileCLIP and image-matching models. The retained sources and license scope are listed in [third-party notices](../THIRD_PARTY_NOTICES.md).
 
+The default mapping configuration uses FastSAM and MaskAdapter. OpenSeg loads TensorFlow when selected; the sparse 3D backend loads MinkowskiEngine when selected. SAM is also optional. These backends are no longer imported during default model construction. Configuration conversion lives in a small inference adapter shared with the retained training configuration.
+
 Install the project in each prepared environment:
 
 ```bash
