@@ -128,6 +128,38 @@ class MappingArtifacts:
 
 class NavigationVisualization:
 
+    def _read_top_down_map(self, obs):
+        reader = getattr(self, "top_down_map_reader", None)
+        if reader is not None:
+            return reader()
+        return obs.task_observations.get("top_down_map")
+
+    def _update_navigation_diagnostics(self, obs, goal, *, initialize_transform):
+        from pbsp.navigation.geometry import compute_td_params
+
+        td_map = self._read_top_down_map(obs)
+        if td_map is None:
+            return
+        if initialize_transform and self.td_transform is None:
+            try:
+                self.td_transform = compute_td_params(
+                    self.prev_global_pos,
+                    np.array([obs.globalpose[4], obs.globalpose[6]]),
+                    self.prev_td_pos,
+                    np.array(td_map["agent_map_coord"]),
+                    0,
+                )
+            except Exception as exc:
+                print(f"Error in computing td transform: {exc}")
+        try:
+            self.prev_global_pos = np.array([obs.globalpose[4], obs.globalpose[6]])
+            self.prev_td_pos = np.array(td_map["agent_map_coord"])
+            if goal is not None and self.td_transform is not None:
+                position = np.array([goal[0], goal[2], 1])
+                self.td_goal_pos = (self.td_transform @ position)[:2]
+        except Exception as exc:
+            print(f"Error in updating visualization position: {exc}")
+
     def set_episode_visualization_dir(self, scene_id, episode_id):
         if (
             self.continuous_print_images or self.episode_final_snapshot
@@ -177,7 +209,9 @@ class NavigationVisualization:
         if not os.path.exists(self.lightglue_vis_dir):
             os.makedirs(self.lightglue_vis_dir, exist_ok=True)
 
-    def _write_navigation_snapshot(self, info, action):
+    def _write_navigation_snapshot(self, info, action, *, observation):
+        info["last_td_map"] = self._read_top_down_map(observation)
+        info["goal_td_pose"] = self.td_goal_pos
         should_write_snapshot = self.continuous_print_images or (
             self.episode_final_snapshot and action == self.actions.STOP
         )
@@ -194,3 +228,26 @@ class NavigationVisualization:
                         max(snapshot_paths, key=os.path.getmtime),
                         os.path.join(self.imagenav_visualizer.vis_dir, "final.png"),
                     )
+
+
+class HabitatVisualization:
+    """Read evaluation maps only when recording Habitat diagnostics."""
+
+    def __init__(self, visualizer, habitat_env, evaluator):
+        self.visualizer = visualizer
+        self.habitat_env = habitat_env
+        self.evaluator = evaluator
+
+    def reset(self, episode):
+        self.visualizer.reset()
+        scene_id = episode.scene_id.split("/")[-1].split(".")[0]
+        self.visualizer.set_vis_dir(scene_id, episode.episode_id)
+
+    def on_action(self, info):
+        if info:
+            task = self.habitat_env.current_episode.tasks[
+                self.habitat_env.task.current_task_idx
+            ]
+            if task[1] != "image":
+                info["top_down_map"] = self.evaluator.top_down_map()
+                self.visualizer.visualize(**info)

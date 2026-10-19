@@ -1041,8 +1041,10 @@ if __name__ == '__main__':
         flush=True,
     )
     env = HabitatGoatEnv(habitat_env, config=config)
+    evaluator = env.evaluator
     agent = GLUEAgent(config=config, seem_cfg=seem_cfg,
                       clip_cfg=args.mobileclip_ckpt_path)
+    agent.top_down_map_reader = evaluator.top_down_map
     category_cooldown = CategorySwitchCooldown(
         parse_category_cooldowns(
             os.environ.get('ES_QUERY_SWITCH_COOLDOWN_BY_CATEGORY', '{}')
@@ -1676,9 +1678,9 @@ if __name__ == '__main__':
                     f'task={current_task_idx} reason={stop_reason}',
                     flush=True,
                 )
-                ep_metrics = env.get_episode_metrics()
+                ep_metrics = evaluator.get_episode_metrics()
                 ep_metrics.pop('goat_top_down_map', None)
-                path_lengths = env.get_subtask_path_lengths()
+                path_lengths = evaluator.get_subtask_path_lengths()
                 ep_metrics.update(build_subtask_telemetry(
                     ep_metrics,
                     actual_path_length=path_lengths['actual_path_length'],
@@ -1686,7 +1688,7 @@ if __name__ == '__main__':
                     steps=len(subtask_frame_times.get(current_task_idx, [])),
                     frame_times_ms=subtask_frame_times.get(current_task_idx, []),
                 ))
-                env.reset_subtask()
+                evaluator.reset_subtask()
                 print('----')
                 print(f'{scene_id}_{episode_id}_{current_task_idx}', ep_metrics)
                 print('----')

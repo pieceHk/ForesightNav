@@ -347,9 +347,9 @@ def test_capture_precedes_subtask_reset_and_is_not_policy_input():
     entrypoint = (
         root / "Navigation/runtime/evaluators/goat/entrypoint.py"
     ).read_text(encoding="utf-8")
-    capture = entrypoint.index("path_lengths = env.get_subtask_path_lengths()")
+    capture = entrypoint.index("path_lengths = evaluator.get_subtask_path_lengths()")
     build = entrypoint.index("ep_metrics.update(build_subtask_telemetry(")
-    reset = entrypoint.index("env.reset_subtask()", capture)
+    reset = entrypoint.index("evaluator.reset_subtask()", capture)
     policy = entrypoint.index("action, info = agent.act(obs)")
     assert policy < capture < build < reset
     assert entrypoint.count("build_subtask_telemetry(") == 1
@@ -358,7 +358,7 @@ def test_capture_precedes_subtask_reset_and_is_not_policy_input():
 
     env_source = (
         root
-        / "Navigation/runtime/lagmemo/src/lagmemo/lagmemo/env/habitat_lagmemo_env.py"
+        / "experiments/evaluator.py"
     ).read_text(encoding="utf-8")
     assert "np.isposinf(shortest_value)" in env_source
     assert "success != 0.0" in env_source

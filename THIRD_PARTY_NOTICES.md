@@ -32,6 +32,12 @@ code in `adapters/perception.py` and `adapters/lagmemo_agent.py` have the same
 LagMemo provenance. Observation and action types are supplied through adapter
 boundaries; the upstream names remain available through compatibility imports.
 
+The sensor/action conversion in `adapters/habitat.py`, measurement reset in
+`experiments/evaluator.py`, Habitat assembly in `runtime/legacy_habitat.py`, and
+top-down visualization in `experiments/visualization.py` derive from LagMemo's
+Habitat environment and agent. They retain the same Meta copyright and MIT scope.
+Evaluation maps are read by the experiment observer separately from policy input.
+
 Upstream license texts are retained unchanged:
 
 - `Mapping/runtime/embodied_splat/src/third_party/MinkowskiEngine/LICENSE`

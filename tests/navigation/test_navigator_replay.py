@@ -393,6 +393,42 @@ def test_temporal_confirmation_and_dual_score_veto_match_frozen(weak_scores):
         assert returned[0][0] is DiscreteNavigationAction.STOP
 
 
+def test_position_and_stuck_detection_work_without_an_evaluation_map():
+    actor = make_agent(NativeAgent)
+    for step in range(1, 9):
+        obs = observation()
+        obs.task_observations.pop("top_down_map")
+        obs.gps = np.array([step * .1, 0.])
+        actor.sub_task_timesteps[0][0] = actor.total_timesteps[0] = step
+        actor.act(obs)
+        np.testing.assert_array_equal(actor.prev_position, obs.gps)
+        assert actor.ctr == (1 if step == 1 else 0)
+    for step in range(9, 31):
+        actor.sub_task_timesteps[0][0] = actor.total_timesteps[0] = step
+        actor.act(obs)
+    assert actor.stuck_num > 0
+
+
+def test_evaluation_map_changes_only_visualization_diagnostics():
+    actors = [make_agent(NativeAgent, visualize=True) for _ in range(2)]
+    maps = [{"agent_map_coord": [20, 20]}, {"agent_map_coord": [900, -50]}]
+    for actor, td_map in zip(actors, maps):
+        actor.top_down_map_reader = lambda td_map=td_map: td_map
+    for step in range(1, 5):
+        outcomes = []
+        for actor in actors:
+            obs = observation()
+            obs.task_observations.pop("top_down_map")
+            obs.gps = np.array([step * .1, .2])
+            actor.sub_task_timesteps[0][0] = actor.total_timesteps[0] = step
+            outcomes.append(actor.act(obs))
+        assert outcomes[0] == outcomes[1]
+        assert plain(actors[0].last_action_metadata) == plain(actors[1].last_action_metadata)
+        np.testing.assert_array_equal(actors[0].prev_position, actors[1].prev_position)
+    assert actors[0].imagenav_visualizer.frames[-1]["last_td_map"] == maps[0]
+    assert actors[1].imagenav_visualizer.frames[-1]["last_td_map"] == maps[1]
+
+
 @pytest.mark.parametrize("camera_pose", (None, np.eye(4)))
 def test_rgbd_semantics_and_pose_preparation_match_frozen(camera_pose):
     actors = [

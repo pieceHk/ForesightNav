@@ -12,12 +12,10 @@ from typing import Any, Dict, Optional, Tuple
 import cv2
 import numpy as np
 import torch
-from scipy.spatial.transform import Rotation as R
 
 from .candidates import CandidateTracking
 from .geometry import (
     GoalProjection,
-    compute_td_params,
     compute_transform_params_v2,
     draw_goal_circle_to_explored,
     global_to_gps2,
@@ -40,8 +38,12 @@ class Navigator(CandidateTracking, GoalVerifier, RecoveryState, LocalMapState, G
         self.navigation_backend = navigation_backend
         self._es_test_gs_override = 3
 
-    def _write_navigation_snapshot(self, info, action):
+    def _write_navigation_snapshot(self, info, action, *, observation):
         """Optional observer supplied by the experiment adapter."""
+        return None
+
+    def _update_navigation_diagnostics(self, obs, goal, *, initialize_transform):
+        """Optional visualization observer; its output does not select actions."""
         return None
 
     def set_runtime_context(self, scene_id, episode_id):
@@ -531,6 +533,7 @@ class Navigator(CandidateTracking, GoalVerifier, RecoveryState, LocalMapState, G
         current_position = obs.gps
         if self.prev_position is None:
             self.prev_position = current_position
+        initialize_diagnostics = False
         if (
             np.linalg.norm(np.array(current_position) - np.array(self.prev_position)) < 0.001
             and action == self.actions.MOVE_FORWARD
@@ -567,33 +570,11 @@ class Navigator(CandidateTracking, GoalVerifier, RecoveryState, LocalMapState, G
             if self.stuck_num != 0:
                 self.stuck_flag = (self.stuck_flag + 1) % 2
             self.stuck_num = 0
-            if self.td_transform is None:
-                try:
-                    (qx, qy, qz, qw) = obs.globalpose[:4]
-                    quat = np.array([qx, qy, qz, qw])
-                    euler_angles = R.from_quat(quat).as_euler("xyz")
-                    theta_global = euler_angles[1] * np.cos(euler_angles[0])
-                    td_map = obs.task_observations.get("top_down_map")
-                    self.td_transform = compute_td_params(
-                        self.prev_global_pos,
-                        np.array([obs.globalpose[4], obs.globalpose[6]]),
-                        self.prev_td_pos,
-                        np.array(td_map["agent_map_coord"]),
-                        0,
-                    )
-                except Exception as e:
-                    print(f"Error in computing td transform: {e}")
-        try:
-            self.prev_global_pos = np.array([obs.globalpose[4], obs.globalpose[6]])
-            td_pos = obs.task_observations.get("top_down_map")["agent_map_coord"]
-            self.prev_td_pos = np.array(td_pos)
-            self.prev_position = current_position
-            goal_global_pose = frontier_global_pose if frontier_global_pose is not None else None
-            if goal_global_pose is not None and self.td_transform is not None:
-                goal_global_pose = np.array([goal_global_pose[0], goal_global_pose[2], 1])
-                self.td_goal_pos = (self.td_transform @ goal_global_pose)[:2]
-        except Exception as e:
-            print(f"Error in updating previous position: {e}")
+            initialize_diagnostics = True
+        self.prev_position = current_position
+        self._update_navigation_diagnostics(
+            obs, frontier_global_pose, initialize_transform=initialize_diagnostics
+        )
         if self.sub_task_timesteps[0][self.current_task_idx] >= self.max_steps:
             print("Reached max number of steps for subgoal, calling STOP")
             action = self.actions.STOP
@@ -637,9 +618,7 @@ class Navigator(CandidateTracking, GoalVerifier, RecoveryState, LocalMapState, G
                 "semantic_frame": obs.semantic,
                 "closest_goal_map": closest_goal_map,
                 "last_collisions": collision,
-                "last_td_map": obs.task_observations.get("top_down_map"),
                 "short_term_goal": short_term_goal,
-                "goal_td_pose": self.td_goal_pos,
                 "goal_vis_type": self.goal_vis_stage,
                 "explore_info": (
                     f"match score: {round(match_score, 2)}" if match_score != 0 else None
@@ -670,7 +649,7 @@ class Navigator(CandidateTracking, GoalVerifier, RecoveryState, LocalMapState, G
             }
             goal_text_desc["action"] = str(action).split(".")[1]
             info["goal_text"] = goal_text_desc
-            self._write_navigation_snapshot(info, action)
+            self._write_navigation_snapshot(info, action, observation=obs)
             info = None
         if action == self.actions.STOP:
             print(f"[STOP_REASON] task={self.current_task_idx} reason={stop_reason}", flush=True)
