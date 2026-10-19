@@ -18,10 +18,6 @@ import torch
 import torch.nn as nn
 from torch import Tensor
 
-from lagmemo.agent.imagenav_agent.SuperGluePretrainedNetwork.models.matching import (
-    Matching as SGPMatching,
-)
-
 matplotlib.use("Agg")
 
 
@@ -36,6 +32,16 @@ class Matching(nn.Module):
         print_images: bool,
         resources=None,
     ) -> None:
+        from lagmemo.agent.imagenav_agent.SuperGluePretrainedNetwork.models.matching import Matching as SGPMatching
+
+        if resources is None:
+            from adapters.model_resources import MatchingResources
+            from runtime.external_sources import ROOT
+
+            weights = ROOT / "Exp/assets/weights"
+            resources = MatchingResources(weights / "superglue/superpoint_v1.pth",
+                                          weights / f"superglue/superglue_{config.superglue_model}.pth",
+                                          weights / "clip/ViT-B-32.pt")
         super().__init__()
         self._device = torch.device(f"cuda:{device}")
         self.matcher = (

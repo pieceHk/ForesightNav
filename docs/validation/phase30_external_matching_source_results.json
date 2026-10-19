@@ -1,0 +1,48 @@
+{
+  "status": "macos_passed_linux_pending",
+  "base_commit": "42ca185b7a8d2938a18774f3d388c4f3f68b39f1",
+  "scope": "Obtain the fixed SuperGlue inference dependency separately while preserving every runtime source byte; remove its bundled demos and MobileCLIP iOS app",
+  "source": {
+    "repository": "https://github.com/mukulkhanna/SuperGluePretrainedNetwork",
+    "revision": "d2d6dcc21f67690c07a2787acfb357b7ed59b920",
+    "files": 6,
+    "source_manifest_sha256": "d98535e089344b72408937ef2bb133eaead425f261e7db2ee75d5e72c9f4ce3c",
+    "prepared_files_equal_to_frozen_runtime": 6,
+    "runtime_adaptations": "Two existing explicit checkpoint-path selections; batching and inference code preserve the frozen implementation"
+  },
+  "removed_files": 51,
+  "removed_tracked_bytes": 8044515,
+  "preserved_license": {
+    "path": "third_party/licenses/superglue/LICENSE",
+    "sha256": "8780b2b1202d7011a5bd76046fb691d04725b08aaa83ec1887a4c3136c3fe898"
+  },
+  "macos": {
+    "full_suite": {
+      "passed": 640,
+      "skipped": 1,
+      "seconds": 16.84,
+      "skip_reason": "Linux procfs integration"
+    },
+    "source_targeted_tests": {
+      "passed": 29,
+      "seconds": 0.18
+    },
+    "initial_failure": {
+      "passed": 639,
+      "failed": 1,
+      "skipped": 1,
+      "seconds": 17.67,
+      "reason": "New runtime bridge was not yet staged; architecture validator kept its tracked-runtime check; staging the bridge resolved the failure"
+    },
+    "navigation_offline_cache": {
+      "status": "passed",
+      "input_artifacts": 242,
+      "new_external_source_files": 6,
+      "environment_created": false
+    }
+  },
+  "linux": {
+    "status": "pending"
+  },
+  "active_evaluation": "Frozen 3665bae clone and its running workers remain unchanged"
+}

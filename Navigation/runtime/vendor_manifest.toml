@@ -10,6 +10,8 @@ detectron2 = "complete pinned external source; built by scripts/setup_navigation
 habitat_lab = "complete pinned external source; prepared by scripts/prepare_dependencies.py"
 mobileclip = "retained inference source; checkpoint supplied by NavigationResources"
 seem = "retained inference source; checkpoint and tokenizer supplied by NavigationResources"
+superglue = "separately prepared fixed inference files; checked by assets/superglue.json; tracked package redirects imports"
+excluded_examples = ["MobileCLIP ios_app", "SuperGlue demos and image-pair benchmark lists"]
 
 [patches]
 local = ["entrypoints derive TDONAV_ROOT and TDONAV_LAGMEMO_ROOT", "adapter selects named internal evaluator only"]

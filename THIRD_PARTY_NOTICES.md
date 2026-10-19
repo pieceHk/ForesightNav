@@ -53,7 +53,7 @@ Upstream license texts are retained unchanged:
 - `Mapping/runtime/embodied_splat/src/third_party/MinkowskiEngine/LICENSE`
 - `Mapping/runtime/embodied_splat/src/third_party/langsplat-rasterization/LICENSE.md`
 - `Mapping/runtime/embodied_splat/src/third_party/langsplat-rasterization/third_party/glm/copying.txt`
-- `Navigation/runtime/lagmemo/src/lagmemo/lagmemo/agent/imagenav_agent/SuperGluePretrainedNetwork/LICENSE`
+- `third_party/licenses/superglue/LICENSE`
 - `Navigation/runtime/lagmemo/src/lagmemo/lagmemo/perception/detection/detic/Detic/LICENSE`
 - `Navigation/runtime/lagmemo/src/lagmemo/lagmemo/perception/detection/detic/Detic/third_party/CenterNet2/LICENSE`
 - `Navigation/runtime/lagmemo/src/lagmemo/lagmemo/perception/detection/detic/Detic/third_party/Deformable-DETR/LICENSE`
@@ -88,3 +88,10 @@ the [official Habitat archive](https://dl.fbaipublicfiles.com/habitat/data/datas
 HM3D scene data and derived annotations retain the
 [Matterport academic-use terms](https://matterport.com/legal/matterport-end-user-license-agreement-academic-use-model-data).
 The metadata and reconstructed data carry a [dataset notice](assets/episodes/NOTICE.md).
+
+SuperGlue inference files are obtained separately during resource preparation from
+the [fixed fork used by LagMemo](https://github.com/mukulkhanna/SuperGluePretrainedNetwork/tree/d2d6dcc21f67690c07a2787acfb357b7ed59b920).
+Its [license](third_party/licenses/superglue/LICENSE) limits use to noncommercial
+research and restricts distribution. The source manifest in `assets/superglue.json`
+pins the six downloaded files and the prepared outputs, including the two explicit
+checkpoint-path adaptations. The tracked package contains an import bridge.

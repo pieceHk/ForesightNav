@@ -2123,5 +2123,11 @@
     "pytest",
     "pluggy",
     "iniconfig"
+  ],
+  "runtime_source_manifests": [
+    {
+      "path": "assets/superglue.json",
+      "sha256": "d98535e089344b72408937ef2bb133eaead425f261e7db2ee75d5e72c9f4ce3c"
+    }
   ]
 }

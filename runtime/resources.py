@@ -118,9 +118,14 @@ def validate_resources(resources, runtime):
     lock = json.loads((resources.root / "envs/navigation/linux-64.lock.json").read_text())
     source = habitat_source(lock)
     proof = verify_source(resources.habitat, source)
+    from runtime.external_sources import pinned_superglue_manifest, verify_external_source
+
+    source_manifest = pinned_superglue_manifest(resources.root)
+    matching_source = verify_external_source(resources.root / "Exp/assets/dependencies/superglue", source_manifest)
     return {
         "habitat_revision": source["revision"],
         "habitat_source": proof,
+        "superglue_source": matching_source,
         "models": models,
         "files": list(map(str, resources.required_files())),
     }

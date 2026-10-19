@@ -106,9 +106,10 @@ def main(argv=None):
     parser.add_argument("--cache", type=Path, default=ROOT / ".cache/pbsp-offline")
     parser.add_argument("--offline", action="store_true")
     args = parser.parse_args(argv)
-    from scripts.prepare_dependencies import prepare_habitat
+    from scripts.prepare_dependencies import prepare_habitat, prepare_superglue
 
     prepare_habitat(root=ROOT, cache=args.cache, offline=args.offline)
+    prepare_superglue(root=ROOT, cache=args.cache, offline=args.offline)
     payload = prepare_runtime(
         mapping_python=args.mapping_python,
         navigation_python=args.navigation_python,

@@ -50,9 +50,9 @@ python scripts/prepare_runtime.py \
   --data ./data --weights /path/to/pbsp-weights
 ```
 
-This prepares the pinned Habitat source snapshot from the environment cache and writes `runtime.local.yaml` with absolute data, weight, output and interpreter paths. The native precheck verifies its complete source inventory, file contents and all 22 model hashes. A clean checkout at the pinned revision is also accepted.
+This prepares the pinned Habitat source snapshot and six SuperGlue inference files from the environment cache, then writes `runtime.local.yaml` with absolute data, weight, output and interpreter paths. The native precheck verifies their source inventories and contents, plus all 22 model hashes. A clean Habitat checkout at the pinned revision is also accepted.
 
-For an offline server, add `--cache /path/to/offline-pbsp --offline`. `scripts/prepare_dependencies.py` prepares or checks the Habitat snapshot separately. Both commands use the source revision and content digest in the navigation lock.
+For an offline server, add `--cache /path/to/offline-pbsp --offline`. `scripts/prepare_dependencies.py` prepares or checks these source dependencies separately. Their versions and content hashes are pinned by the navigation lock and [SuperGlue source manifest](../assets/superglue.json). SuperGlue retains its [noncommercial research license](../third_party/licenses/superglue/LICENSE).
 
 GPU defaults are mapping `0`, navigation `1`. Set `--mapping-gpu` and `--navigation-gpu` during preparation or edit `runtime.local.yaml`. The two Kornia checkpoints are part of the model manifest; `--torch-home-source` also supports importing them from an existing Torch cache.
 

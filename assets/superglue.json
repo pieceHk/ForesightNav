@@ -1,0 +1,70 @@
+{
+  "schema": "pbsp_superglue_source_v1",
+  "repository": "https://github.com/mukulkhanna/SuperGluePretrainedNetwork",
+  "revision": "d2d6dcc21f67690c07a2787acfb357b7ed59b920",
+  "license_url": "https://github.com/mukulkhanna/SuperGluePretrainedNetwork/blob/d2d6dcc21f67690c07a2787acfb357b7ed59b920/LICENSE",
+  "files": [
+    {
+      "path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/mukulkhanna/SuperGluePretrainedNetwork/d2d6dcc21f67690c07a2787acfb357b7ed59b920/LICENSE",
+      "sha256": "8780b2b1202d7011a5bd76046fb691d04725b08aaa83ec1887a4c3136c3fe898",
+      "bytes": 7009,
+      "cache_path": "sources/navigation/superglue/d2d6dcc21f67690c07a2787acfb357b7ed59b920/LICENSE",
+      "installed_sha256": "8780b2b1202d7011a5bd76046fb691d04725b08aaa83ec1887a4c3136c3fe898"
+    },
+    {
+      "path": "models/__init__.py",
+      "url": "https://raw.githubusercontent.com/mukulkhanna/SuperGluePretrainedNetwork/d2d6dcc21f67690c07a2787acfb357b7ed59b920/models/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "cache_path": "sources/navigation/superglue/d2d6dcc21f67690c07a2787acfb357b7ed59b920/models/__init__.py",
+      "installed_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "models/matching.py",
+      "url": "https://raw.githubusercontent.com/mukulkhanna/SuperGluePretrainedNetwork/d2d6dcc21f67690c07a2787acfb357b7ed59b920/models/matching.py",
+      "sha256": "7513954a759b5e634eab5b883a3a7352d7a78fc865872c3195df4718095f7495",
+      "bytes": 3681,
+      "cache_path": "sources/navigation/superglue/d2d6dcc21f67690c07a2787acfb357b7ed59b920/models/matching.py",
+      "installed_sha256": "7513954a759b5e634eab5b883a3a7352d7a78fc865872c3195df4718095f7495"
+    },
+    {
+      "path": "models/superpoint.py",
+      "url": "https://raw.githubusercontent.com/mukulkhanna/SuperGluePretrainedNetwork/d2d6dcc21f67690c07a2787acfb357b7ed59b920/models/superpoint.py",
+      "sha256": "1b8ecd8b34df4cf96b5503a931855e7aa002ac84ce6284878d1e7a2df0e4cf73",
+      "bytes": 8111,
+      "cache_path": "sources/navigation/superglue/d2d6dcc21f67690c07a2787acfb357b7ed59b920/models/superpoint.py",
+      "installed_sha256": "f5a5ecddf36b1edfeb676c63ab2ca87221faf00593b09a859eaf17a4eb155207"
+    },
+    {
+      "path": "models/superglue.py",
+      "url": "https://raw.githubusercontent.com/mukulkhanna/SuperGluePretrainedNetwork/d2d6dcc21f67690c07a2787acfb357b7ed59b920/models/superglue.py",
+      "sha256": "8c3514a3a0166a3af0ef5281db390fb1fcb8a61c943035a0606196ad8cd158d9",
+      "bytes": 12203,
+      "cache_path": "sources/navigation/superglue/d2d6dcc21f67690c07a2787acfb357b7ed59b920/models/superglue.py",
+      "installed_sha256": "bafb6f4c217218add6cc86669dc3204f7d53d26093245f813e3d5546ea507f71"
+    },
+    {
+      "path": "models/utils.py",
+      "url": "https://raw.githubusercontent.com/mukulkhanna/SuperGluePretrainedNetwork/d2d6dcc21f67690c07a2787acfb357b7ed59b920/models/utils.py",
+      "sha256": "6563520230a07e62a3332e7b3aba605caa238383b6d38a03bec88ec6b13f5b60",
+      "bytes": 20039,
+      "cache_path": "sources/navigation/superglue/d2d6dcc21f67690c07a2787acfb357b7ed59b920/models/utils.py",
+      "installed_sha256": "6563520230a07e62a3332e7b3aba605caa238383b6d38a03bec88ec6b13f5b60"
+    }
+  ],
+  "patches": {
+    "models/superpoint.py": [
+      {
+        "before": "path = Path(__file__).parent / 'weights/superpoint_v1.pth'",
+        "after": "path = self.config.get('checkpoint', Path(__file__).parent / 'weights/superpoint_v1.pth')"
+      }
+    ],
+    "models/superglue.py": [
+      {
+        "before": "path = path / 'weights/superglue_{}.pth'.format(self.config['weights'])",
+        "after": "path = self.config.get('checkpoint', path / 'weights/superglue_{}.pth'.format(self.config['weights']))"
+      }
+    ]
+  }
+}

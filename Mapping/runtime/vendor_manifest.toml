@@ -7,7 +7,7 @@ source_scope = ["assets", "config", "dataset", "modules", "scripts", "src", "sr_
 generated_paths = ["embodied_splat/cache", "embodied_splat/log", "embodied_splat/outputs_*"]
 
 [assets]
-contract = "pretrained resolves to Exp/assets/weights through an internal symlink"
+contract = "native construction receives MappingModelResources; compatibility defaults use engine-relative pretrained paths"
 
 [patches]
 local = ["server root/HF defaults resolve through TDONAV_ROOT"]

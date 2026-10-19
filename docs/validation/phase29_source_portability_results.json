@@ -1,5 +1,5 @@
 {
-  "status": "local_passed_linux_pending",
+  "status": "passed",
   "base_commit": "addd72d3e4ced3f652382ec2213cdd5f8c77c3c7",
   "scope": "Remove the final machine-specific absolute path in public Python/YAML implementation and configuration",
   "change": {
@@ -16,6 +16,11 @@
     }
   },
   "linux": {
-    "status": "pending"
+    "status": "passed",
+    "targeted_tests": {
+      "passed": 21,
+      "seconds": 0.23
+    },
+    "architecture_clean_tree": "passed"
   }
 }

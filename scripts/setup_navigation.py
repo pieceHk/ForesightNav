@@ -24,6 +24,13 @@ from scripts._sources import materialize_source_group
 
 def checked_artifacts(lock, root):
     artifacts = lock["conda"] + lock["packages"] + lock["sources"]
+    from runtime.external_sources import load_source_manifest
+
+    for entry in lock.get("runtime_source_manifests", []):
+        path = PurePosixPath(entry["path"])
+        if path.is_absolute() or ".." in path.parts:
+            raise ValueError("Unsafe runtime source manifest path")
+        artifacts += load_source_manifest(root / str(path), entry["sha256"])["files"]
     paths = [item["cache_path"] for item in artifacts]
     if len(paths) != len(set(paths)):
         raise ValueError("Duplicate cache paths in the navigation lock")
