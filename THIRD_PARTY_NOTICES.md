@@ -81,3 +81,10 @@ The semantic pooling/codebook operations now live in `pbsp/semantics/features.py
 `pbsp/mapping/features.py` retains a compatibility import. The same EmbodiedSplat
 attribution and license scope apply. Semantic retrieval now lives in `pbsp/query/`;
 its Gaussian storage and coordinate adapter is `adapters/embodied_splat_query.py`.
+
+The fixed MON task orders and selection provenance are packaged in
+`assets/episodes/`. Episode preparation reads original ObjectNav annotations from
+the [official Habitat archive](https://dl.fbaipublicfiles.com/habitat/data/datasets/objectnav/hm3d/v1/objectnav_hm3d_v1.zip).
+HM3D scene data and derived annotations retain the
+[Matterport academic-use terms](https://matterport.com/legal/matterport-end-user-license-agreement-academic-use-model-data).
+The metadata and reconstructed data carry a [dataset notice](assets/episodes/NOTICE.md).

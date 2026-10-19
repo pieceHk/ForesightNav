@@ -1,5 +1,5 @@
 {
-  "status": "source_inventory_verified",
+  "status": "passed",
   "base_commit": "3665baec989556a6f81f19af16bf59f0f9d10f73",
   "scope": "Remove redundant partial dependency source trees after exact comparison with the complete fixed archives; no native implementation or model arithmetic change",
   "comparison": {
@@ -42,7 +42,14 @@
       "skipped": 1,
       "seconds": 15.69,
       "skip_reason": "Linux procfs integration"
+    },
+    "public_navigation_linux": {
+      "passed": 615,
+      "skipped": 0,
+      "warnings": 17,
+      "seconds": 35.61
     }
   },
-  "numerical_validation": "Independent full-split run continues in an unchanged detached source clone at the base commit; this cleanup is verified by source equality and import-boundary checks"
+  "numerical_validation": "Independent full-split run continues in an unchanged detached source clone at the base commit; this cleanup is verified by source equality and import-boundary checks",
+  "architecture": "Migration ownership, core/runtime boundaries and clean tracked tree verified on Linux"
 }

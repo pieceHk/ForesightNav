@@ -324,7 +324,7 @@ data/
     │   ├── source_trace.json
     │   ├── identities.json        # 准备脚本生成的完整身份索引
     │   ├── content/*.json.gz
-    │   └── val.json.gz
+    │   └── val_seen.json.gz
     ├── 3mon/
     └── 4mon/
 
@@ -343,7 +343,7 @@ weights/
 
 `prepare_data.py` 使用 Python 标准库，完成路径连接、manifest 和内容校验、任务顺序检查及身份索引生成，因而可以放在环境安装之前执行。完整 identity 索引统一覆盖全部 episode，运行时从当前数据读取身份；历史固定 48 条 identity 的来源记录保存在迁移记录中。
 
-发布资源中提供三组 PBSP episode 包及其版本清单，README 给出场景数据获取入口、PBSP episode 发布入口、资源放置位置和准备命令。`docs/datasets.md` 说明内部格式、数据版本、类别别名和任务顺序。数据集的重新采样或生成属于单独工具，不参与复现已有实验。
+发布资源包含三组固定 episode 元数据包，以及原始选样计划和来源池记录。准备脚本从官方 ObjectNav 归档读取指定验证文件，按固定源索引和任务顺序重建全部 60 个场景文件，并逐一核对原实验文件的 SHA-256。README 给出 HM3D v0.1 场景获取入口和一行准备命令；`docs/datasets.md` 说明格式、类别别名、离线流程及历史结果校准的选样范围。重新采样属于独立工具，不参与复现已有实验。
 
 模型清单同时记录 checkpoint、结构配置、类别元数据和必要缓存。`prepare_models.py` 支持网络下载及 `--cache` 本地导入，两者检查同一份清单，运行时从 `weights/` 读取资源。
 
@@ -431,7 +431,7 @@ README 控制在约 100 行，开头用一个短段落介绍 PBSP 并给出论�
 写明场景和 episode 的下载入口，用一个小目录树说明放置位置，再给出准备命令：
 
 ```bash
-python3 scripts/prepare_data.py --source /path/to/3DONav_datasets
+python3 scripts/prepare_data.py --scenes /path/to/scene_datasets
 ```
 
 ### 环境配置
@@ -439,8 +439,8 @@ python3 scripts/prepare_data.py --source /path/to/3DONav_datasets
 列出验证使用的 Linux、GPU 和驱动条件，给出安装和模型准备命令：
 
 ```bash
-bash scripts/setup_envs.sh
-conda run -n pbsp-nav python scripts/prepare_models.py --download
+python3 scripts/setup_envs.py --prefix .cache/envs --micromamba /path/to/micromamba --cuda-home /usr/local/cuda-11.8
+python3 scripts/prepare_models.py --output /path/to/pbsp-weights --zstd .cache/envs/mapping/bin/zstd
 ```
 
 ### 启动实验

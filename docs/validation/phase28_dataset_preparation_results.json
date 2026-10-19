@@ -1,0 +1,68 @@
+{
+  "status": "macos_passed_linux_pending",
+  "base_commit": "68e0b520ce14a86fe88b3445322defccef090f86",
+  "scope": "Make the complete fixed ordered datasets reproducible from bundled task metadata and official ObjectNav annotations; no task resampling or algorithm changes",
+  "macos": {
+    "status": "passed",
+    "scope": "Public prepare_data download-only command from an empty macOS cache; official validation range inputs and all fixed datasets compared byte-for-byte with the original server dataset bundles",
+    "scene_assets_downloaded_or_validated": false,
+    "datasets": [
+      {
+        "dataset": "hm3dv1_2mon_balanced1200",
+        "verified_scene_files": 20,
+        "verified_episodes": 600,
+        "targets": 1200,
+        "all_original_bundle_members_byte_equal": true,
+        "compared_members": 23,
+        "manifest_sha256": "dfcf14d1fe7edef9c9d7bd8286dfe8067c91f56ef46ca2be4524d7e01461ac62",
+        "source_trace_sha256": "96c2f75043e5fcdb2c8c594cab32c272642a05b2d83b56b611aa61426fc7cb08"
+      },
+      {
+        "dataset": "hm3dv1_3mon_balanced1200",
+        "verified_scene_files": 20,
+        "verified_episodes": 400,
+        "targets": 1200,
+        "all_original_bundle_members_byte_equal": true,
+        "compared_members": 23,
+        "manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+        "source_trace_sha256": "34931f42e88feb55d87f2c9c3caf4063e984f32efc4972fd82a40d210d32f04a"
+      },
+      {
+        "dataset": "hm3dv1_4mon_balanced1200",
+        "verified_scene_files": 20,
+        "verified_episodes": 300,
+        "targets": 1200,
+        "all_original_bundle_members_byte_equal": true,
+        "compared_members": 23,
+        "manifest_sha256": "e1e93c34fd5cadcf3d001f9d5e68f4bbc4dec69ba5df88ad230885b319c4e892",
+        "source_trace_sha256": "30454f63ab0a58395743fa2792b60ff91314b2da90712406cbe9c0d89ded2642"
+      }
+    ],
+    "original_metadata_and_content_files_compared": 69,
+    "verified_scene_files": 60,
+    "verified_episodes": 1300,
+    "verified_targets": 3600,
+    "tests": {
+      "full_suite": {
+        "passed": 630,
+        "skipped": 1,
+        "seconds": 15.52,
+        "skip_reason": "Linux procfs integration"
+      },
+      "episode_sources": {
+        "passed": 17,
+        "seconds": 0.06,
+        "includes_additional_fixed_plan_consistency_check": true
+      }
+    }
+  },
+  "scientific_scope": {
+    "selection_type": "historical paired-outcome-calibrated",
+    "intended_use": "controlled sequence-length comparisons sharing 1200 source tasks",
+    "independent_held_out": false
+  },
+  "dataset_terms": "https://matterport.com/legal/matterport-end-user-license-agreement-academic-use-model-data",
+  "linux": {
+    "status": "pending"
+  }
+}

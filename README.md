@@ -34,7 +34,18 @@ flowchart LR
 
 ## 1. Data
 
-Prepare HM3Dv1 scenes and the ordered episode datasets below. The [data guide](docs/datasets.md) gives the directory layout, source requirements and identity checks; exact versions and checksums are in [assets/datasets.json](assets/datasets.json).
+```bash
+git clone --branch refactor/full-pbsp https://github.com/pieceHk/PBSP.git
+cd PBSP
+```
+
+Obtain the HM3D v0.1 validation scenes and semantic annotations from the [official provider](https://github.com/matterport/habitat-matterport-3dresearch#downloading-hm3d-v01), using the layout in the [data guide](docs/datasets.md#scene-assets). Then prepare all three fixed episode sets:
+
+```bash
+python3 scripts/prepare_data.py --scenes /path/to/scene_datasets
+```
+
+The script fetches the selected official ObjectNav annotations, rebuilds the released task sequences and checks every output hash. It creates `data/scenes/` and `data/episodes/`; [offline preparation](docs/datasets.md#offline-preparation) is also supported.
 
 | Experiment | Scenes | Episodes | Targets per episode | Total targets |
 | --- | ---: | ---: | ---: | ---: |
@@ -42,14 +53,9 @@ Prepare HM3Dv1 scenes and the ordered episode datasets below. The [data guide](d
 | 3-MON | 20 | 400 | 3 | 1,200 |
 | 4-MON | 20 | 300 | 4 | 1,200 |
 
-Each episode includes its ordered source identities. Preserve `scene_id`, `episode_id` and task order when preparing or replacing a dataset.
+The three sets share a fixed 1,200-target source pool selected using historical paired outcomes for controlled sequence-length comparisons. Each episode retains its ordered source identities; see [dataset scope and identity](docs/datasets.md#dataset-scope-and-identity).
 
 ## 2. Installation
-
-```bash
-git clone --branch refactor/full-pbsp https://github.com/pieceHk/PBSP.git
-cd PBSP
-```
 
 Use separate Linux/CUDA environments for mapping and navigation:
 
