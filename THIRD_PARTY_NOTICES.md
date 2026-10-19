@@ -33,13 +33,17 @@ LagMemo provenance. Observation and action types are supplied through adapter
 boundaries; the upstream names remain available through compatibility imports.
 
 The sensor/action conversion in `adapters/habitat.py`, measurement reset in
-`experiments/evaluator.py`, Habitat assembly in `runtime/legacy_habitat.py`, and
+`experiments/evaluator.py`, Habitat assembly in `adapters/goat.py`, and
 top-down visualization in `experiments/visualization.py` derive from LagMemo's
 Habitat environment and agent. They retain the same Meta copyright and MIT scope.
 Evaluation maps are read by the experiment observer separately from policy input.
 The episode/action loop in `experiments/runner.py` was extracted from the retained
 GOAT evaluator entrypoint, which adapts LagMemo's evaluation loop. The same
 attribution applies to that retained control flow.
+The Habitat configuration adapter in `adapters/habitat_config.py` and the
+navigation service assembly in `runtime/navigation_worker.py` retain the same
+LagMemo attribution. The old Habitat and configuration modules forward to these
+implementations.
 
 Upstream license texts are retained unchanged:
 

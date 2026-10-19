@@ -489,7 +489,9 @@ def _function_source(path, function_name):
 def test_goat_entrypoint_has_version_gated_active_dispatch_without_gt_access():
     source = ((ROOT / "experiments/runner.py").read_text()
               + (ROOT / "experiments/planning.py").read_text()
-              + GOAT_ENTRYPOINT.read_text(encoding="utf-8"))
+              + GOAT_ENTRYPOINT.read_text(encoding="utf-8")
+              + (ROOT / "runtime/legacy_navigation_run.py").read_text()
+              + (ROOT / "runtime/navigation_worker.py").read_text())
     planning_source = (ROOT / "pbsp/navigation/planning.py").read_text(encoding="utf-8")
     agent_source = (ROOT / "pbsp/agent.py").read_text(encoding="utf-8")
     recorder = _function_source(GOAT_ENTRYPOINT, "_record_scsp_provider_event")
@@ -521,8 +523,8 @@ def test_goat_entrypoint_has_version_gated_active_dispatch_without_gt_access():
     assert agent_source.count("if projected_goals is not None:") == 2
     assert "SCSP initial candidate refresh failed closed" in source
     gt_gate = source.index("SCSP runtime requires GROUND_TRUTH_SEMANTICS=0")
-    assert gt_gate < source.index("env = HabitatGoatEnv(")
-    gt_guard = source.rfind("if scsp_runtime_mode != 'off':", 0, gt_gate)
+    assert gt_gate < source.index("habitat_env = Env(config)")
+    gt_guard = source.rfind('if mode != "off":', 0, gt_gate)
     assert gt_guard != -1
     assert "SCSP arm/profile mismatch" in source
     for forbidden_gt_access in (

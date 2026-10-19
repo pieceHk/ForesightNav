@@ -118,6 +118,8 @@ def validate_source_tree() -> None:
         ROOT / "Navigation" / "runtime" / "lagmemo",
         ROOT / "Navigation" / "runtime" / "evaluators" / "goat" / "entrypoint.py",
         ROOT / "Navigation" / "runtime" / "evaluators" / "hm3dv1" / "entrypoint.py",
+        ROOT / "runtime" / "navigation_worker.py",
+        ROOT / "adapters" / "goat.py",
     }
     for path in expected:
         assert path.exists(), f"owned runtime missing: {path.relative_to(ROOT)}"

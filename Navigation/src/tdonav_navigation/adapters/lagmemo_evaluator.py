@@ -21,6 +21,10 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--entrypoint", choices=("goat", "hm3dv1"), required=True)
     args, passthrough = parser.parse_known_args()
+    if args.entrypoint == "goat":
+        from runtime.navigation_worker import main as run_navigation
+        run_navigation(passthrough)
+        return
     source = RUNTIME_ROOT / "evaluators" / args.entrypoint / "entrypoint.py"
     if not source.is_file():
         raise FileNotFoundError(source)

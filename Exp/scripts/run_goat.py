@@ -19,6 +19,7 @@ from _runtime import (
     resource_monitor,
     send_socket,
     socket_for_run,
+    terminate_group,
     write_json,
     write_status,
 )
@@ -115,9 +116,7 @@ def main() -> None:
                 command = [
                     python,
                     "-m",
-                    "tdonav_navigation.adapters.lagmemo_evaluator",
-                    "--entrypoint",
-                    "goat",
+                    "runtime.navigation_worker",
                     "--scene_idx",
                     str(scene_index),
                     "--scenes",
@@ -145,9 +144,20 @@ def main() -> None:
                     else "--no-print-images"
                 )
                 with log_path.open("w", encoding="utf-8") as log:
-                    result = subprocess.run(command, env=env, stdout=log, stderr=subprocess.STDOUT)
-                if result.returncode:
-                    raise RuntimeError(f"Navigation failed for {scene}: {result.returncode}")
+                    process = subprocess.Popen(
+                        command, env=env, stdout=log, stderr=subprocess.STDOUT,
+                        start_new_session=True,
+                    )
+                    try:
+                        process.wait()
+                    finally:
+                        terminate_group(process)
+                        write_json(run / f"navigation_process_{scene_index:02d}.json", {
+                            "scene": scene, "pid": process.pid,
+                            "command": command, "returncode": process.returncode,
+                        })
+                if process.returncode:
+                    raise RuntimeError(f"Navigation failed for {scene}: {process.returncode}")
                 write_json_strict(
                     run / "mon_metrics.json", aggregate_run_artifacts(run)
                 )
