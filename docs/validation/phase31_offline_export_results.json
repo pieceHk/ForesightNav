@@ -1,0 +1,32 @@
+{
+  "status": "targeted_tests_passed_real_export_pending",
+  "base_commit": "110ee75ab15ec797c0e92f7d1fe85f5c206b392f",
+  "scope": "Export committed code and all selected pinned offline input groups; default includes environments, models and episode inputs; support transfer verification and an optional Linux micromamba executable",
+  "tests": {
+    "targeted_and_structure": {
+      "passed": 14,
+      "seconds": 1.94
+    },
+    "initial_failure": {
+      "passed": 11,
+      "failed": 1,
+      "seconds": 1.32,
+      "reason": "A bundle with only a branch ref did not check out on plain git clone; include matching HEAD and branch refs, then repeat the original transfer-and-clone test"
+    }
+  },
+  "real_cache_inventory": {
+    "verified_inputs": 415,
+    "bytes": 6583726271,
+    "groups": [
+      "environments",
+      "episodes"
+    ]
+  },
+  "complete_model_group_export": "pending remaining public model downloads",
+  "citation": {
+    "file": "CITATION.cff",
+    "source_of_collective_author": "Existing LICENSE copyright holder",
+    "version_matches_pyproject": true,
+    "no_paper_doi_or_release_date_added": true
+  }
+}

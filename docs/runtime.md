@@ -18,7 +18,7 @@ A mapping backend supplies `reset_episode`, `add_live_frame`, `query_with_record
 
 `MappingClient` receives a socket path and `task_reader(scene_id, episode_id)`. The released data reader is [load_runtime_tasks](../experiments/dataset.py); another dataset can supply its own reader. The client retains ordered task indices when duplicate categories share one query result.
 
-Importing the client, worker or protocol does not load models or change environment variables. Worker startup applies [thread controls](../runtime/bootstrap.py) and model cache paths before model imports. Complete resource preparation and independent installation remain to be finished.
+Importing the client, worker or protocol does not load models or change environment variables. Worker startup applies [thread controls](../runtime/bootstrap.py) and model cache paths before model imports. The [installation guide](installation.md) covers both independent environments and explicit resource preparation.
 
 ## Navigation assembly
 
@@ -28,7 +28,7 @@ The launcher runs [runtime.navigation_worker](../runtime/navigation_worker.py) d
 
 The worker registers each constructed resource for cleanup. It closes the Agent's navigation backend, Habitat and mapping connection on completion or failure. SIGINT and SIGTERM unwind this scope. The launcher owns the navigation process group and records its command, PID, scene and exit code in `navigation_process_<index>.json`.
 
-The retained command-line flags and environment controls are translated once by [legacy_navigation_run](../runtime/legacy_navigation_run.py). The root launcher's `--run-plan` path bypasses that resolver. The native request, service assembly and Runner receive explicit settings; third-party resource setup still needs migration.
+The retained command-line flags and environment controls are translated once by [legacy_navigation_run](../runtime/legacy_navigation_run.py). The root launcher's `--run-plan` path bypasses that resolver. The native request, service assembly and Runner receive explicit settings and model resources. Habitat and SuperGlue sources are prepared separately and checked before worker startup.
 
 ## Messages
 

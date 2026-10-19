@@ -23,10 +23,10 @@ This creates `.cache/envs/mapping` and `.cache/envs/navigation`, builds native e
 For an offline server, first prepare the Linux cache on a computer with internet access; macOS is supported:
 
 ```bash
-python scripts/setup_envs.py --download-only --cache ./offline-pbsp
+python scripts/setup_envs.py --download-only --cache .cache/pbsp-offline
 ```
 
-Copy the checkout and cache to the server, then add `--cache /path/to/offline-pbsp --offline` to the installation command. Both caches are verified before either environment is created.
+The [offline guide](offline.md) combines environment, model and episode inputs with a Git bundle, verifies the transfer, and gives the server installation commands. Both environment caches are verified before either environment is created.
 
 ## Model assets
 

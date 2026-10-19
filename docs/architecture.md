@@ -100,7 +100,7 @@ PBSP/
 │
 ├── scripts/
 │   ├── prepare_data.py            # 检查数据，生成路径与身份索引
-│   ├── setup_envs.sh              # 创建两个环境并安装固定依赖
+│   ├── setup_envs.py              # 创建两个环境并安装固定依赖
 │   ├── prepare_models.py          # 下载或从本地缓存导入权重
 │   ├── check_install.py           # 验证导入、模型加载与模拟器
 │   ├── export_offline.py          # 导出代码、依赖和权重缓存清单
@@ -117,7 +117,7 @@ PBSP/
 │   └── src/                       # 按清单准备的外部源码
 ├── assets/
 │   ├── datasets.json              # 标准库可读取的数据版本、来源及校验值
-│   └── models.yaml                # 权重、配置、元数据及校验值
+│   └── models.json                # 权重、配置、元数据及校验值
 ├── docs/
 │   ├── architecture.md
 │   ├── datasets.md
@@ -351,7 +351,7 @@ weights/
 
 保留独立的建图环境和导航环境。现有运行环境分别使用 Python 3.10 / PyTorch 2.7.1，以及 Python 3.9 / PyTorch 2.1.2；将两套模型强行装进一个环境会额外引入兼容性工作。
 
-`setup_envs.sh` 依据环境文件和依赖锁创建 `pbsp-map`、`pbsp-nav`，安装项目、固定外部源码并构建需要的 CUDA 扩展。构建参数、编译器和 CUDA 工具链写入安装清单。Habitat 使用当前已验证 fork 的固定 revision `8df2661e5b2203c0ddc47798d5da0132d5686bbe`，其来源及补丁由 third-party manifest 管理。
+`setup_envs.py` 依据两份 Linux 依赖锁创建独立的 mapping、navigation 环境，安装项目、固定外部源码并构建需要的 CUDA 扩展。构建参数、编译器和 CUDA 工具链写入安装清单。Habitat 使用已验证 fork 的固定 revision `8df2661e5b2203c0ddc47798d5da0132d5686bbe`；来源由 navigation lock 管理，SuperGlue 的六个外部文件由该 lock 引用的源码清单固定。
 
 安装脚本生成 `runtime.local.yaml`：
 
