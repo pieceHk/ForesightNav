@@ -10,6 +10,11 @@ from LagMemo. Their source revisions and retained paths are recorded in
 [Navigation/runtime/vendor_manifest.toml](Navigation/runtime/vendor_manifest.toml)
 and the original [source manifest](Exp/release/SOURCE_MANIFEST.json).
 
+The Gaussian storage in `pbsp/mapping/gaussians.py` and the projection, fusion and
+refinement operations in `pbsp/mapping/fusion.py` were extracted from
+`Mapping/runtime/embodied_splat/src/model/encoder/encoder_test_unet3d_online.py`.
+They retain their EmbodiedSplat provenance and upstream license scope.
+
 Upstream license texts are retained unchanged:
 
 - `Mapping/runtime/embodied_splat/src/third_party/MinkowskiEngine/LICENSE`

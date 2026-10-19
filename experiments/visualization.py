@@ -5,6 +5,17 @@ from pathlib import Path
 import numpy as np
 import torch
 
+
+def write_fusion_debug_render(render):
+    """Record the optional reconstruction-error diagnostic used by the network."""
+    import os
+    from PIL import Image
+
+    count = len(os.listdir('./debug'))
+    pixels = (render.squeeze().permute(1, 2, 0) * 255).byte()
+    Image.fromarray(pixels.detach().cpu().numpy(), 'RGB').save(f'debug/render_{count}.png')
+
+
 def render_bev_cv2(globals_state, out_path, n_keyframes=None, n_raw_frames=None,
                    size=420, margin=22, max_points=200000):
     """Draw the observed Gaussian map in the x-z plane.

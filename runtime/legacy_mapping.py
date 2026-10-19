@@ -58,7 +58,7 @@ def create_mapper(*, device="cuda", top_k=10, warmup_n=None, rebuild_interval=No
                   ckpt_path=None, cfg_path=None, local_pos_path=None, bev_dir=None):
     from dataclasses import replace
     from adapters.embodied_splat import load_model
-    from experiments.visualization import MappingArtifacts
+    from experiments.visualization import MappingArtifacts, write_fusion_debug_render
     from pbsp.mapping.mapper import OnlineMapper
     from Mapping.runtime.server.runtime_memory import release_host_memory
 
@@ -76,6 +76,7 @@ def create_mapper(*, device="cuda", top_k=10, warmup_n=None, rebuild_interval=No
     del cfg_path, local_pos_path
     model = load_model(engine_root=engine, checkpoint=checkpoint, work_directory=work,
                        input_spec=model_specification(), device=device)
+    model.encoder.fusion_debug_sink = write_fusion_debug_render
     artifacts = MappingArtifacts(
         final_directory=os.environ.get("ES_FINAL_BEV_DIR"), snapshot_directory=bev_dir,
         max_points=int(os.environ.get("ES_FINAL_BEV_MAX_POINTS", "200000")),
