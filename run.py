@@ -64,13 +64,14 @@ def main(argv=None):
                 "configuration_sha256": plan.configuration_sha256,
                 "identity_sha256": plan.identity_sha256,
                 "habitat_revision": resources["habitat_revision"],
+                "models": resources["models"],
             },
             indent=2,
         ),
         flush=True,
     )
     if not args.check:
-        launch(plan, tag=args.tag)
+        launch(plan, tag=args.tag, resource_checks=resources)
 
 
 if __name__ == "__main__":

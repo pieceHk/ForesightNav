@@ -177,9 +177,15 @@ def termination_scope():
             signal.signal(name, handler)
 
 
-def allocate_run(plan, *, tag=""):
+def allocate_run(plan, *, tag="", resource_checks=None):
     if not re.fullmatch(r"[A-Za-z0-9_-]*", tag):
         raise ValueError("Run tag may contain letters, digits, underscores and hyphens")
+    if resource_checks is not None:
+        import hashlib
+
+        model_manifest = (plan.resources.root / "assets/models.json").read_bytes()
+        if hashlib.sha256(model_manifest).hexdigest() != resource_checks["models"]["manifest_sha256"]:
+            raise ValueError("Model manifest changed after the resource check")
     if plan.run_directory is None:
         stamp = datetime.now().strftime("%Y%m%d_%H%M%S_%f")
         name = f"{stamp}_{plan.experiment.name}" + (f"_{tag}" if tag else "")
@@ -213,8 +219,11 @@ def allocate_run(plan, *, tag=""):
             "mapping_environment": worker_environment(plan, "mapping", {}),
             "navigation_environment": worker_environment(plan, "navigation", {}),
             "in_place_resume_supported": False,
+            **({"resource_checks": resource_checks} if resource_checks is not None else {}),
         },
     )
+    if resource_checks is not None:
+        (plan.run_directory / "model_manifest.json").write_bytes(model_manifest)
     shutil.copyfile(
         plan.resources.data
         / plan.experiment.dataset.root
@@ -224,10 +233,10 @@ def allocate_run(plan, *, tag=""):
     return plan
 
 
-def launch(plan, *, tag=""):
+def launch(plan, *, tag="", resource_checks=None):
     from experiments.metrics import aggregate_run_artifacts
 
-    plan = allocate_run(plan, tag=tag)
+    plan = allocate_run(plan, tag=tag, resource_checks=resource_checks)
     status(plan, "starting")
     print(f"Run: {plan.run_directory}", flush=True)
     try:

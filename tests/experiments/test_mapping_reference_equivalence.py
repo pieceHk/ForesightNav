@@ -1,7 +1,10 @@
 import importlib.util
+import ast
 import os
 import sys
+import subprocess
 from pathlib import Path
+from types import SimpleNamespace
 
 import numpy as np
 import pytest
@@ -15,7 +18,25 @@ REFERENCE = os.environ.get("THREEDONAV_REFERENCE_MAPPING")
 
 def _load_reference():
     if not REFERENCE:
-        pytest.skip("THREEDONAV_REFERENCE_MAPPING is not configured")
+        # Read only the two pure helpers from the frozen repository revision;
+        # importing that entire server would require its GPU model packages.
+        import torch
+        import torch.nn.functional as F
+
+        root = Path(__file__).resolve().parents[2]
+        tree = ast.parse(subprocess.check_output([
+            "git", "show", "422cb8e:Mapping/runtime/server/online_es_mapper.py",
+        ], cwd=root, text=True))
+        constants = {"_RUB2RDF", "_FRAME_PIXEL_DELTA", "_FRAME_COMPARE_H", "_FRAME_COMPARE_W"}
+        functions = {"globalpose_to_c2w", "frame_change_ratio"}
+        body = [node for node in tree.body if (
+            isinstance(node, ast.FunctionDef) and node.name in functions
+        ) or (
+            isinstance(node, ast.Assign) and any(isinstance(target, ast.Name) and target.id in constants for target in node.targets)
+        )]
+        namespace = {"np": np, "torch": torch, "F": F, "os": SimpleNamespace(environ={})}
+        exec(compile(ast.Module(body=body, type_ignores=[]), "<frozen-mapping-helpers>", "exec"), namespace)
+        return SimpleNamespace(**{name: namespace[name] for name in functions})
     source = Path(REFERENCE)
     sys.path.insert(0, str(source.parent))
     spec = importlib.util.spec_from_file_location("tdonav_reference_mapping", source)

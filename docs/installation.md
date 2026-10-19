@@ -30,63 +30,31 @@ Copy the checkout and cache to the server, then add `--cache /path/to/offline-pb
 
 ## Model assets
 
-The [model preparation guide](models.md) gives the download, offline import and checksum commands for the selected weight set. [assets/models.json](../assets/models.json) lists all 22 files. Public-source download and extraction validation is in progress.
+Prepare the 22 selected model and tokenizer files:
 
-Use the EmbodiedSplat checkpoints and auxiliary weights described in its [official repository](https://github.com/0nandon/EmbodiedSplat#data-preparation). The current preparation command expects:
-
-```text
-<weights>/
-├── freesplatpp_scannet_gtdepth.ckpt
-├── FastSAM-x.pt
-├── maskadpater_ckpt.pth
-├── mobileclip_s0.pt
-├── seem_focall_v0.pt
-├── hf_home/
-└── torch/hub/checkpoints/
-    ├── depth-save.pth
-    └── disk_lightglue_v0-1_arxiv-pth
+```bash
+python scripts/prepare_models.py --output /path/to/pbsp-weights \
+  --zstd .cache/envs/mapping/bin/zstd
 ```
 
-The `maskadpater_ckpt.pth` spelling follows the existing asset name. The Detic asset source must also contain:
-
-```text
-<detic>/
-├── models/Detic_LCOCOI21k_CLIP_SwinB_896b32_4x_ft4x_max-size.pth
-└── datasets/metadata/lvis_v1_train_cat_info.json
-```
-
-Preserve the additional SuperGlue/matching and Hugging Face cache assets used by the provisioned navigation and mapping environments. See the retained [reproduction guide](../Exp/release/REPRODUCIBILITY.md) for their resource paths.
+The [model guide](models.md) covers offline caching, importing existing weights and SHA-256 checks. Public-source model download and extraction validation is in progress. The model adapters receive the selected paths directly; weight links inside vendor source directories are unnecessary.
 
 ## Connect resources
 
-Run from the repository root after [preparing the data catalog](datasets.md):
-
-```bash
-python Exp/scripts/prepare_reproduction.py \
-  --mapping-python /path/to/mapping-env/bin/python \
-  --navigation-python /path/to/navigation-env/bin/python \
-  --datasets /path/to/dataset-catalog \
-  --weights /path/to/weights \
-  --detic /path/to/Detic
-```
-
-This writes the retained `Exp/runtime.local.toml`, connects scene and episode data, prepares identity sidecars, and installs the Habitat source copy at revision `8df2661e5b2203c0ddc47798d5da0132d5686bbe`. The native launcher loads Habitat from that copy. Complete task identities under `data/` are prepared by the [data guide](datasets.md).
-
-For an offline server, add `--habitat-source /path/to/local/habitat-lab` to copy the committed dependency from an existing local checkout. Source code can be transferred with a Git bundle; data and weight caches remain separate resources.
-
-Write the native launcher's machine configuration:
+After [preparing the data catalog](datasets.md), write the machine configuration:
 
 ```bash
 python scripts/prepare_runtime.py \
-  --mapping-python /path/to/mapping-env/bin/python \
-  --navigation-python /path/to/navigation-env/bin/python \
-  --weights ./Exp/assets/weights \
-  --torch-home-source /path/to/provisioned/.cache/torch
+  --mapping-python .cache/envs/mapping/bin/python \
+  --navigation-python .cache/envs/navigation/bin/python \
+  --data ./data --weights /path/to/pbsp-weights
 ```
 
-This writes `runtime.local.yaml` with absolute data, weight, output and interpreter paths. It copies the two required Kornia checkpoints into the selected weights directory. Omit `--torch-home-source` when they are already present there. GPU defaults are mapping `0`, navigation `1`; change them in this YAML or supply `--mapping-gpu` and `--navigation-gpu` during preparation.
+This prepares the pinned Habitat source snapshot from the environment cache and writes `runtime.local.yaml` with absolute data, weight, output and interpreter paths. The native precheck verifies its complete source inventory, file contents and all 22 model hashes. A clean checkout at the pinned revision is also accepted.
 
-The native model adapters receive auxiliary checkpoints and the SEEM tokenizer from the selected weights directory. FastSAM, MaskAdapter, Detic and image matching do not require weight links inside their source trees. The compatibility preparation command above remains while data and Habitat source preparation move to standalone commands.
+For an offline server, add `--cache /path/to/offline-pbsp --offline`. `scripts/prepare_dependencies.py` prepares or checks the Habitat snapshot separately. Both commands use the source revision and content digest in the navigation lock.
+
+GPU defaults are mapping `0`, navigation `1`. Set `--mapping-gpu` and `--navigation-gpu` during preparation or edit `runtime.local.yaml`. The two Kornia checkpoints are part of the model manifest; `--torch-home-source` also supports importing them from an existing Torch cache.
 
 ## Verify
 
@@ -99,3 +67,5 @@ python Exp/scripts/validate.py
 ```
 
 Then run a complete smoke episode using the [README command](../README.md#3-run). New component implementations should pass their interface checks and a full ordered episode before a selected-split evaluation.
+
+Each run stores the checked model manifest and resource provenance beside its resolved experiment configuration.

@@ -3,7 +3,7 @@
 from dataclasses import dataclass
 from pathlib import Path
 import os
-import subprocess
+import json
 
 HABITAT_REVISION = "8df2661e5b2203c0ddc47798d5da0132d5686bbe"
 DETIC_CHECKPOINT = "Detic_LCOCOI21k_CLIP_SwinB_896b32_4x_ft4x_max-size.pth"
@@ -111,15 +111,16 @@ def validate_resources(resources, runtime):
     for python in (runtime.mapping_python, runtime.navigation_python):
         if not os.access(python, os.X_OK):
             raise PermissionError(f"Interpreter is not executable: {python}")
-    revision = subprocess.check_output(
-        ["git", "-C", str(resources.habitat), "rev-parse", "HEAD"], text=True
-    ).strip()
-    if revision != HABITAT_REVISION:
-        raise ValueError(f"Habitat revision differs: {revision}")
-    subprocess.run(
-        ["git", "-C", str(resources.habitat), "diff", "--quiet", "HEAD"], check=True
-    )
+    from runtime.source_provenance import habitat_source, verify_source
+    from runtime.model_assets import verify_model_set
+
+    models = verify_model_set(resources.weights, resources.root / "assets/models.json")
+    lock = json.loads((resources.root / "envs/navigation/linux-64.lock.json").read_text())
+    source = habitat_source(lock)
+    proof = verify_source(resources.habitat, source)
     return {
-        "habitat_revision": revision,
+        "habitat_revision": source["revision"],
+        "habitat_source": proof,
+        "models": models,
         "files": list(map(str, resources.required_files())),
     }

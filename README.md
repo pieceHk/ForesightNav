@@ -79,6 +79,7 @@ outputs/<run>/
 ├── resolved_config.yaml    # effective experiment and model settings
 ├── launch.json             # selected identities and worker inputs
 ├── provenance.json         # code, devices and resource paths
+├── model_manifest.json     # checked default model identities
 ├── logs/                   # mapping and navigation logs
 └── mon_metrics.json        # SR, SPL, PSR and PeSPL
 ```

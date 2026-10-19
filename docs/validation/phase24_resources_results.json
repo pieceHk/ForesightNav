@@ -1,0 +1,66 @@
+{
+  "status": "passed",
+  "source_commit": "2228afad953e19b3ee63c32d132114cbe54c0d60",
+  "scope": "Default models loaded from a copied external directory, with audit hooks rejecting observed named model reads elsewhere; exact controlled model replays and replacement-injector construction, plus the separate full single-episode record",
+  "assets": {
+    "files": 22,
+    "bytes": 5631339793,
+    "manifest": "assets/models.json",
+    "copies_are_regular_files": true,
+    "hf_revision_refs_created": 2
+  },
+  "mapping": {
+    "tensors": 50,
+    "max_absolute_difference": 0.0,
+    "keys": 1745,
+    "keyframes": 12,
+    "gaussians": 287475,
+    "candidate_counts": {
+      "chair": 2,
+      "bed": 6
+    },
+    "elapsed_seconds": 25.67640072852373,
+    "observed_model_reads": 4,
+    "helper_sha256": "30a4066093a4dbf561237b67b01532c7f56d2f25bfc12bb294e2afd188075294"
+  },
+  "navigation": {
+    "tensors": 21,
+    "all_exact": true,
+    "equal_shapes_and_dtypes": true,
+    "elapsed_seconds": 115.54262819327414,
+    "observed_model_reads": 14,
+    "helper_sha256": "c59ffdc8312e0a81cc74f6044431fc905462842bcc95517ae446ed2543dfeb5e"
+  },
+  "custom_injector": {
+    "status": "passed",
+    "scope": "Real mapping model construction with a supplied injector and forbidden default semantic model imports; no replacement-backend inference or navigation evaluation",
+    "default_semantic_models_loaded": false,
+    "injected_object_preserved": true,
+    "encoder_parameter_keys": 1159,
+    "elapsed_seconds": 6.166289151646197
+  },
+  "integration": "phase24_integration_results.json",
+  "tests": {
+    "local": {
+      "passed": 602,
+      "skipped": 2,
+      "seconds": 14.9
+    },
+    "public_navigation_linux": {
+      "passed": 602,
+      "skipped": 2,
+      "seconds": 34.72,
+      "skip_reasons": [
+        "zstd executable absent from navigation-only PATH",
+        "private frozen reference environment variable not set"
+      ]
+    }
+  },
+  "remaining": [
+    "Public model-source download and archive extraction validation",
+    "Standalone Habitat source preparation integration",
+    "Dataset download publication",
+    "Third-party source cleanup",
+    "Complete selected-split evaluation"
+  ]
+}

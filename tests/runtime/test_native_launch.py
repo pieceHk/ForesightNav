@@ -31,6 +31,18 @@ from runtime.plan import load_plan, prepare_plan
 ROOT = Path(__file__).resolve().parents[2]
 
 
+def test_run_preserves_checked_model_identity_and_rejects_manifest_changes(plan):
+    manifest = (ROOT / "assets/models.json").read_bytes()
+    proof = {"models": {"manifest_sha256": hashlib.sha256(manifest).hexdigest()}}
+    prepared = allocate_run(plan, resource_checks=proof)
+    assert (prepared.run_directory / "model_manifest.json").read_bytes() == manifest
+    recorded = json.loads((prepared.run_directory / "provenance.json").read_text())
+    assert recorded["resource_checks"] == proof
+    proof["models"]["manifest_sha256"] = "0" * 64
+    with pytest.raises(ValueError, match="Model manifest changed"):
+        allocate_run(plan, resource_checks=proof)
+
+
 @pytest.fixture
 def plan(tmp_path):
     config = load_experiment(ROOT / "configs/experiments/hm3d_2mon.yaml")

@@ -38,7 +38,7 @@ python scripts/prepare_data.py --source /path/to/dataset-catalog
 
 This creates `data/scenes/hm3dv1/`, `data/episodes/hm3dv1/{2mon,3mon,4mon}/` and an `identities.json` for each split. The script verifies manifest, source-trace and content hashes, scene counts and task identities before writing links.
 
-The current experiment launcher uses `Exp/assets/datasets/`. The [installation preparation command](installation.md#connect-resources) connects the same catalog there and generates the launcher's identity sidecars.
+The root launcher reads this `data/` layout. Pass its absolute path to the [runtime preparation command](installation.md#connect-resources) when the prepared directory is elsewhere.
 
 ## Task identity
 

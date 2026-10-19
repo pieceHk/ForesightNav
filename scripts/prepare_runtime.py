@@ -5,10 +5,12 @@ import argparse
 import hashlib
 from pathlib import Path
 import shutil
+import sys
 
 import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
 TORCH_FILES = ("depth-save.pth", "disk_lightglue_v0-1_arxiv-pth")
 
 
@@ -101,7 +103,12 @@ def main(argv=None):
         help="Copy the two required Kornia checkpoints from a provisioned Torch cache",
     )
     parser.add_argument("--output", type=Path, default=ROOT / "runtime.local.yaml")
+    parser.add_argument("--cache", type=Path, default=ROOT / ".cache/pbsp-offline")
+    parser.add_argument("--offline", action="store_true")
     args = parser.parse_args(argv)
+    from scripts.prepare_dependencies import prepare_habitat
+
+    prepare_habitat(root=ROOT, cache=args.cache, offline=args.offline)
     payload = prepare_runtime(
         mapping_python=args.mapping_python,
         navigation_python=args.navigation_python,
