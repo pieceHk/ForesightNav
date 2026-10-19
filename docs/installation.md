@@ -27,7 +27,10 @@ Use the EmbodiedSplat checkpoints and auxiliary weights described in its [offici
 ├── maskadpater_ckpt.pth
 ├── mobileclip_s0.pt
 ├── seem_focall_v0.pt
-└── hf_home/
+├── hf_home/
+└── torch/hub/checkpoints/
+    ├── depth-save.pth
+    └── disk_lightglue_v0-1_arxiv-pth
 ```
 
 The `maskadpater_ckpt.pth` spelling follows the existing asset name. The Detic asset source must also contain:
@@ -53,16 +56,30 @@ python Exp/scripts/prepare_reproduction.py \
   --detic /path/to/Detic
 ```
 
-This writes `Exp/runtime.local.toml`, connects scene and episode data, prepares identity sidecars, and installs the Habitat source copy at revision `8df2661e5b2203c0ddc47798d5da0132d5686bbe`. The launcher loads Habitat from that copy.
+This writes the retained `Exp/runtime.local.toml`, connects scene and episode data, prepares identity sidecars, and installs the Habitat source copy at revision `8df2661e5b2203c0ddc47798d5da0132d5686bbe`. The native launcher loads Habitat from that copy. Complete task identities under `data/` are prepared by the [data guide](datasets.md).
 
 For an offline server, add `--habitat-source /path/to/local/habitat-lab` to copy the committed dependency from an existing local checkout. Source code can be transferred with a Git bundle; data and weight caches remain separate resources.
+
+Write the native launcher's machine configuration:
+
+```bash
+python scripts/prepare_runtime.py \
+  --mapping-python /path/to/mapping-env/bin/python \
+  --navigation-python /path/to/navigation-env/bin/python \
+  --weights ./Exp/assets/weights \
+  --torch-home-source /path/to/provisioned/.cache/torch
+```
+
+This writes `runtime.local.yaml` with absolute data, weight, output and interpreter paths. It copies the two required Kornia checkpoints into the selected weights directory. Omit `--torch-home-source` when they are already present there. GPU defaults are mapping `0`, navigation `1`; change them in this YAML or supply `--mapping-gpu` and `--navigation-gpu` during preparation.
+
+The current model constructors still use several vendor-relative auxiliary paths. The native precheck verifies that those paths resolve to the selected weights. Consolidating that resource setup and validating an independent installation remain unfinished.
 
 ## Verify
 
 With the navigation environment activated:
 
 ```bash
-python Exp/scripts/run_full_pbsp.py --mon 4 --scope smoke --check-only
+python run.py --config configs/experiments/hm3d_4mon.yaml --check
 python -m pytest tests -q
 python Exp/scripts/validate.py
 ```

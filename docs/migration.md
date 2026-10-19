@@ -8,11 +8,11 @@
 
 候选证据、候选排序、类别冷却、有序后缀规划及建图策略位于 `pbsp/`，所有调用方已使用这些实现。语义检索位于 `pbsp/query/engine.py`，包含特征加权、支持度重排、空间 NMS、单类别及批量查询；`service.py` 通过独立的文本编码器和索引读取器组装查询。完整 episode 循环位于 `experiments/runner.py`，规划事件的计算、重查和记录桥接位于 `experiments/planning.py`。指标计算和决策格式分别位于 `experiments/metrics.py`、`experiments/telemetry.py`。Provider 快照记录、规划回退和分派结果的构造、距离摘要及耗时 CSV 位于 `experiments/recorder.py`。规划决策 JSONL 的写入及写入失败处理也由 Recorder 完成。
 
-`configs/experiments/hm3d_2mon.yaml`、`hm3d_3mon.yaml`、`hm3d_4mon.yaml` 引用同一个完整方法配置。`runtime/config.py` 读取配置并检查字段、数值、资源版本和引用路径。
+`configs/experiments/hm3d_2mon.yaml`、`hm3d_3mon.yaml`、`hm3d_4mon.yaml` 引用同一个完整方法配置。`runtime/config.py` 读取配置并检查字段、数值、资源版本和引用路径。 `runtime/plan.py` 先核对完整数据身份，再按 scene 和真实 episode ID 选择完整任务序列；`runtime/launch.py` 保存本次配置并直接管理建图、导航和资源监测进程。原生工厂位于 `runtime/factories.py`，默认运行不经过旧启动脚本或环境变量参数转换。
 
 `scripts/prepare_data.py` 验证三组固定版本数据的 manifest、内容和 source trace 校验值，在 `data/` 中建立资源链接，并为全部 episode 生成统一身份索引。清单使用 `assets/datasets.json`，以便数据准备只依赖 Python 标准库。
 
-在线 Mapper 的实际状态管理、关键帧接纳、后台融合及地图发布已迁入 `pbsp/mapping/mapper.py`，模型输入和推理调用位于 `model.py`。`encoder.py` 执行首轮编码及增量更新，通过 `SemanticInjector` 调用 `pbsp/semantics/features.py` 中的区域特征提取及语义码本操作。`gaussians.py` 保存可扩容的高斯，`fusion.py` 执行投影关联、几何和特征融合及遮挡细化。模型组装与权重加载由 `adapters/embodied_splat.py`、`embodied_splat_model.py` 完成，语义资源和高斯索引分别由 `embodied_splat_semantics.py`、`embodied_splat_query.py` 适配，实验图像由 `experiments/visualization.py` 写入。底层网络层依赖的目录整理仍待完成。当前复现入口为 `Exp/scripts/run_full_pbsp.py`。
+在线 Mapper 的实际状态管理、关键帧接纳、后台融合及地图发布已迁入 `pbsp/mapping/mapper.py`，模型输入和推理调用位于 `model.py`。`encoder.py` 执行首轮编码及增量更新，通过 `SemanticInjector` 调用 `pbsp/semantics/features.py` 中的区域特征提取及语义码本操作。`gaussians.py` 保存可扩容的高斯，`fusion.py` 执行投影关联、几何和特征融合及遮挡细化。模型组装与权重加载由 `adapters/embodied_splat.py`、`embodied_splat_model.py` 完成，语义资源和高斯索引分别由 `embodied_splat_semantics.py`、`embodied_splat_query.py` 适配，实验图像由 `experiments/visualization.py` 写入。底层网络层依赖的目录整理仍待完成。当前复现入口为根目录 `run.py`；`Exp/scripts/` 中的旧入口保留兼容。
 
 阅读建图代码可从 `mapper.py` 的 `add_live_frame()`、`_rebuild_worker()` 和 `query_batch_with_records()` 开始。`reset_episode()` 清理整张地图；同一 episode 的任务切换保留地图。原运行目录中的 Mapper 文件只保留兼容入口。
 
@@ -20,9 +20,9 @@
 
 Habitat 的传感器、任务查询和动作转换位于 `adapters/habitat.py`，语义源、类别表、分割模型构造和动作编号由调用方提供。Detic 和禁用语义模式不读取语义传感器或场景标注。成功标签、路径状态和测量重置由 `experiments/evaluator.py` 持有；实际入口在动作之后、任务重置之前读取评测状态。真值俯视图由实验可视化层单独读取，不进入导航观测。导航器按 GPS 更新上一位置，不再依赖可视化数据。Habitat 组装位于 `adapters/goat.py`，配置合并位于 `adapters/habitat_config.py`；旧文件保留兼容入口。
 
-Runner 接收 `RunSettings`、`PlanningRunSettings`、环境、Agent、Mapper provider 和规划服务，维护跨任务及跨 episode 的运行状态。刷新间隔来自显式配置；默认完整方法仍为 10 步。`RunArtifacts` 持有指标、耗时、Mapper 状态记录和距离缓存。`PlanningBridge` 接收投影、严格测地距离和时钟，不读取环境变量。`runtime/navigation_worker.py` 接收显式运行请求，组装环境、Agent 和规划服务，再调用同一个 Runner；根目录启动器和完整资源准备仍待完成。
+Runner 接收 `RunSettings`、`PlanningRunSettings`、环境、Agent、Mapper provider 和规划服务，维护跨任务及跨 episode 的运行状态。刷新间隔来自显式配置；默认完整方法仍为 10 步。`RunArtifacts` 持有指标、耗时、Mapper 状态记录和距离缓存。`PlanningBridge` 接收投影、严格测地距离和时钟，不读取环境变量。`runtime/navigation_worker.py` 接收显式运行请求，组装环境、Agent 和规划服务，再调用同一个 Runner；根目录启动器直接读取 YAML，并从保存的运行清单启动服务；完整资源准备仍待完成。
 
-建图客户端、命令处理和消息帧位于 `runtime/mapping_client.py`、`mapping_worker.py` 与 `protocol.py`。实际启动器直接运行原生建图工作进程，导航入口显式注入数据读取器。27 个客户端状态及数值方法、7 个服务端处理方法保留已验证逻辑；协议新增版本号和正常退出流程。工作进程在连接处理结束后关闭 Mapper，启动器记录并校验退出码。原客户端和服务端文件保留兼容导入，线程设置统一由 `runtime/bootstrap.py` 提供。协议和资源所有权见[运行时说明](runtime.md)；导航组装也已迁入原生工作进程，根目录启动器仍待迁移。
+建图客户端、命令处理和消息帧位于 `runtime/mapping_client.py`、`mapping_worker.py` 与 `protocol.py`。实际启动器直接运行原生建图工作进程，导航入口显式注入数据读取器。27 个客户端状态及数值方法、7 个服务端处理方法保留已验证逻辑；协议新增版本号和正常退出流程。工作进程在连接处理结束后关闭 Mapper，启动器记录并校验退出码。原客户端和服务端文件保留兼容导入，线程设置统一由 `runtime/bootstrap.py` 提供。协议和资源所有权见[运行时说明](runtime.md)；根目录启动器通过 `--run-plan` 直接组装两个原生工作进程。
 
 导航的候选集合刷新与版本校验位于 `pbsp/navigation/candidates.py`，视觉确认历史位于 `verification.py`，受困诊断和恢复目标状态位于 `recovery.py`。实际动作循环、episode 重置和任务切换位于 `navigator.py`，局部地图更新及 RGB-D 预处理位于 `local_map.py`，坐标变换位于 `geometry.py`。`verification.py` 同时执行各目标模态的确认逻辑。模型构造和感知调用分别由 `adapters/lagmemo_agent.py`、`adapters/perception.py` 组装，图像写入交给实验观察器。原 `glue_agent.py` 仅保留兼容导入。候选投影绑定、候选层排序、版本化测地距离缓存和当前任务的顺序分派位于 `planning.py`。Habitat 导航网格投影、严格测地距离和恢复采样位于 `adapters/geometry.py`，参数由调用方显式传入。后缀计算和刷新事务也已迁入 `planning.py`，分别返回 `CandidatePlan` 和 `CandidateRefresh`。核心通过回调访问外部查询、版本检查和诊断，实验桥接层保留来源信息及记录格式。`pbsp/agent.py` 持有显式的候选、验证与恢复状态，并执行首次及周期候选分派；冷却控制、刷新后的实际目标和原始候选序号在这里统一处理。模型适配器接收 `NavigationSettings`，旧入口使用兼容构造器读取环境变量。运行组装与资源生命周期位于 `runtime/navigation_worker.py`，旧参数和环境变量仅在 `runtime/legacy_navigation_run.py` 边界解析。启动器直接运行原生工作进程，并记录各场景的命令、PID 和退出码。
 
@@ -39,8 +39,9 @@ Runner 接收 `RunSettings`、`PlanningRunSettings`、环境、Agent、Mapper pr
 | 实验 Runner | 完整 episode 循环、任务边界、规划与记录桥接 | 已迁入实际运行路径，采用显式设置与服务对象 |
 | 建图 IPC 与工作进程 | 实际客户端、协议、服务处理、连接及模型清理 | 已接入默认启动路径，退出码写入运行记录 |
 | 导航工作进程 | 实际服务组装、显式请求、身份读取和资源清理 | 已接入默认启动路径，旧入口转发到原生工作进程 |
-| 接入入口与安装 | `run.py`、模型资源、环境脚本和离线流程 | 待实施 |
-| 验证完整流程 | 记录重放、2/3/4-MON 集成实验、全新 Linux 安装和完整选定 split | 重放与已有入口的单 episode 已验证；新入口、全新环境和完整 split 待验证 |
+| 根目录启动 | 共享 YAML、完整身份选择、运行清单、原生服务与进程管理 | 已实现并接入真实运行；35 项新增检查和 550 项 Linux 完整测试通过 |
+| 发布资源与安装 | 模型资源、依赖固定、环境脚本和离线流程 | 独立环境与依赖构建验证进行中 |
+| 验证完整流程 | 记录重放、2/3/4-MON 集成实验、全新 Linux 安装和完整选定 split | 新入口已分别完成 2/3/4-MON 单 episode；全新环境和完整 split 待验证 |
 
 ## 验证要求
 
@@ -104,3 +105,5 @@ Agent 状态及候选分派迁移后，服务器完整测试为 390 项通过。
 建图客户端、七个服务处理方法及实际 Unix socket 通信迁入 `runtime` 后，服务器完整测试为 491 项通过。三组冻结帧载荷的 JPEG、深度、位姿及内参完全一致；31 项新增检查覆盖真实连接、分片消息、查询回退、版本拒绝和异常清理。原生建图进程的完整 4-MON 单 episode 四项任务全部成功，共 414 个动作，退出码为 0。动作数、指标及最终地图文件哈希与上一轮一致。详见[IPC 结果](validation/phase17_ipc_results.json)、[集成结果](validation/phase17_integration_results.json)及[运行协议](runtime.md)。
 
 导航启动与服务组装已迁入原生工作进程。三组冻结启动重放比较了实际组装参数、Episode 选择、规划配置和资源路径；补齐非默认投影距离的兼容绑定后全部一致。新增检查也覆盖构造失败、非法身份和信号退出；后续补丁将 Agent 的导航后端纳入清理，即使关闭报错也继续释放其余服务。服务器完整测试为 515 项通过。实际 3-MON 单 episode 的三个目标全部成功，共 307 个动作，33 条规划记录身份完整，没有执行过期后缀计划；两个工作进程均以 0 退出。GPU 实验采用组装迁移提交，后续清理补丁的验证单独列出，详见[导航工作进程结果](validation/phase18_worker_results.json)及[集成结果](validation/phase18_integration_results.json)。
+
+根目录 `run.py` 已直接读取共享 YAML，保存本次配置、模型输入和完整任务身份，再启动原生建图、导航及资源监测进程。35 项新增检查覆盖真实子进程的失败与终止、身份选择、清单恢复、参数传入和记录开关，Linux 完整测试为 550 项通过。三组数据的 1,300 个 episode 也已通过新入口的完整预检查。新入口分别运行了完整 2/3/4-MON 单 episode：2-MON 完成两项任务，成功一项，两项均耗尽 500 步预算；3-MON 和 4-MON 的目标全部成功。三次运行共 179 条规划记录身份完整，没有执行过期后缀计划，九个工作进程均正常退出。4-MON 的指标和最终地图哈希与上一轮一致；3-MON 动作数相同，但路径指标和地图略有差异，结果原样保留。详见[根入口结果](validation/phase19_launch_results.json)与[三组集成结果](validation/phase19_integration_results.json)。

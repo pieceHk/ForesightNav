@@ -1,0 +1,321 @@
+{
+  "stage": "native_root_cli_2_3_4mon_integration",
+  "source_commit": "b4a359cd0583361f683c5c19e65624ee1e942d11",
+  "scope": "One complete ordered episode for each of 2/3/4-MON, all through run.py. This is not a complete selected-split evaluation.",
+  "runs": [
+    {
+      "stage": "native_root_cli_integration",
+      "source_commit": "b4a359cd0583361f683c5c19e65624ee1e942d11",
+      "scope": "One complete ordered 2-MON episode; no full-split or general performance claim.",
+      "run": "outputs/20261020_031304_919055_hm3d_2mon_full_pbsp_native_root_2mon",
+      "configuration_sha256": "9be1b92ae3eb3665ea0209b97b9222b157162e0fc06abbb9087911e064b1e64b",
+      "identity_sha256": "db1a0e14d7a3b84966785fcac534cec634d282048d8ff68e075e1d394fabdc19",
+      "seed": 1,
+      "semantic_source": "detic",
+      "ground_truth_semantics": false,
+      "scene_id": "4ok3usBNeis",
+      "runtime_episode_id": "0",
+      "source_episode_ids": [
+        "46",
+        "61"
+      ],
+      "ordered_categories": [
+        "chair",
+        "tv"
+      ],
+      "dataset_manifest_sha256": "dfcf14d1fe7edef9c9d7bd8286dfe8067c91f56ef46ca2be4524d7e01461ac62",
+      "completed_episodes": 1,
+      "completed_subtasks": 2,
+      "successful_subtasks": 1,
+      "actions_per_subtask": [
+        500,
+        500
+      ],
+      "total_actions": 1000,
+      "stop_reasons": [
+        "max_steps",
+        "max_steps"
+      ],
+      "metrics": {
+        "sr": 0.0,
+        "psr": 0.5,
+        "spl": 0.0,
+        "pespl": 0.05495503954397644
+      },
+      "planning_audit": {
+        "decisions": 102,
+        "complete_identity_records": 102,
+        "stale_suffix_dispatches": 0,
+        "dispatch_sources": {
+          "idea1_fallback": 53,
+          "suffix": 49
+        }
+      },
+      "mapping": {
+        "completed_rebuilds": 74,
+        "rebuild_errors": 0,
+        "final_keyframes": 733,
+        "completed_gaussians": 4473047,
+        "final_bev_sha256": "b04eb9f216d2d127625b90aa64cdf9ff97edad9c7005a23f3a5e4b69d2fd0c39",
+        "header_verification": {
+          "different_pixels": 0,
+          "point_count": 4473047,
+          "sampled_clip_coverage_percent": 97,
+          "opencv": "4.13.0"
+        }
+      },
+      "processes": [
+        {
+          "role": "monitor",
+          "module": "runtime.monitor",
+          "pid": 905709,
+          "returncode": 0
+        },
+        {
+          "role": "mapping",
+          "module": "runtime.mapping_worker",
+          "pid": 905710,
+          "returncode": 0
+        },
+        {
+          "role": "navigation",
+          "module": "runtime.navigation_worker",
+          "pid": 905769,
+          "returncode": 0
+        }
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 1000.806,
+      "remaining": [
+        "Independent Linux installation and resource preparation",
+        "Complete selected-split evaluation"
+      ],
+      "mon": 2,
+      "previous_run_comparison": {
+        "reference": "phase6_integration_results.json, 2-MON run",
+        "actions_per_subtask_equal": true,
+        "metrics_equal": true,
+        "scope": "Observed comparison of one complete episode; timing and general performance equivalence are not established."
+      }
+    },
+    {
+      "stage": "native_root_cli_integration",
+      "source_commit": "b4a359cd0583361f683c5c19e65624ee1e942d11",
+      "scope": "One complete ordered 3-MON episode; no full-split or general performance claim.",
+      "run": "outputs/20261020_031304_864738_hm3d_3mon_full_pbsp_native_root_3mon",
+      "configuration_sha256": "ee2439efd0faf7c02d5eb8a2db96fa56e7543f4b8ee88ed5ca347d3838d669cf",
+      "identity_sha256": "a414a4c77e1239a5e9aad4b4589013059ea88d9631f3fd1c07ecc491570877b6",
+      "seed": 1,
+      "semantic_source": "detic",
+      "ground_truth_semantics": false,
+      "scene_id": "4ok3usBNeis",
+      "runtime_episode_id": "0",
+      "source_episode_ids": [
+        "71",
+        "53",
+        "20"
+      ],
+      "ordered_categories": [
+        "couch",
+        "bed",
+        "chair"
+      ],
+      "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+      "completed_episodes": 1,
+      "completed_subtasks": 3,
+      "successful_subtasks": 3,
+      "actions_per_subtask": [
+        184,
+        31,
+        92
+      ],
+      "total_actions": 307,
+      "stop_reasons": [
+        "verified_target",
+        "verified_target",
+        "verified_target"
+      ],
+      "metrics": {
+        "sr": 1.0,
+        "psr": 1.0,
+        "spl": 0.5948813711647675,
+        "pespl": 0.6344789325378694
+      },
+      "planning_audit": {
+        "decisions": 33,
+        "complete_identity_records": 33,
+        "stale_suffix_dispatches": 0,
+        "dispatch_sources": {
+          "idea1_fallback": 11,
+          "suffix": 22
+        }
+      },
+      "mapping": {
+        "completed_rebuilds": 22,
+        "rebuild_errors": 0,
+        "final_keyframes": 219,
+        "completed_gaussians": 2469908,
+        "final_bev_sha256": "5d9473d65de5937603a0dc9b5ca0f84505c0ca488b38cf0e84dc4be057b13400",
+        "header_verification": {
+          "different_pixels": 0,
+          "point_count": 2469908,
+          "sampled_clip_coverage_percent": 95,
+          "opencv": "4.13.0"
+        }
+      },
+      "processes": [
+        {
+          "role": "monitor",
+          "module": "runtime.monitor",
+          "pid": 905688,
+          "returncode": 0
+        },
+        {
+          "role": "mapping",
+          "module": "runtime.mapping_worker",
+          "pid": 905689,
+          "returncode": 0
+        },
+        {
+          "role": "navigation",
+          "module": "runtime.navigation_worker",
+          "pid": 905767,
+          "returncode": 0
+        }
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 414.22,
+      "remaining": [
+        "Independent Linux installation and resource preparation",
+        "Complete selected-split evaluation"
+      ],
+      "mon": 3,
+      "previous_run_comparison": {
+        "reference": "phase18_integration_results.json",
+        "actions_per_subtask_equal": true,
+        "metrics_equal": false,
+        "scope": "Observed comparison of one complete episode; timing and general performance equivalence are not established.",
+        "final_bev_sha256_equal": false,
+        "differences": {
+          "reference_metrics": {
+            "sr": 1.0,
+            "psr": 1.0,
+            "spl": 0.5945051529288189,
+            "pespl": 0.6341230846441959
+          },
+          "reference_keyframes": 218,
+          "reference_gaussians": 2474655,
+          "note": "All targets succeed with the same action counts, but SPL/PeSPL and final map state differ slightly. The native run applies explicit seed controls and uses a different GPU pair; the cause of these differences has not been isolated. Fixed-input numerical and complete-loop replays provide the separate fidelity checks."
+        }
+      }
+    },
+    {
+      "stage": "native_root_cli_integration",
+      "source_commit": "b4a359cd0583361f683c5c19e65624ee1e942d11",
+      "scope": "One complete ordered 4-MON episode; no full-split or general performance claim.",
+      "run": "outputs/20261020_030940_230521_hm3d_4mon_full_pbsp_native_root_4mon",
+      "configuration_sha256": "da7f87013f3e90dc9d6a1b44e31580d5b9e3d624c785b6906b51420d8b190c81",
+      "identity_sha256": "04f6a565f4cf150597f52baefe1d2a536205f228ce8e7bdf7e38ff5dbc25dfbb",
+      "seed": 1,
+      "semantic_source": "detic",
+      "ground_truth_semantics": false,
+      "scene_id": "4ok3usBNeis",
+      "runtime_episode_id": "0",
+      "source_episode_ids": [
+        "13",
+        "67",
+        "61",
+        "58"
+      ],
+      "ordered_categories": [
+        "toilet",
+        "bed",
+        "tv",
+        "toilet"
+      ],
+      "dataset_manifest_sha256": "e1e93c34fd5cadcf3d001f9d5e68f4bbc4dec69ba5df88ad230885b319c4e892",
+      "completed_episodes": 1,
+      "completed_subtasks": 4,
+      "successful_subtasks": 4,
+      "actions_per_subtask": [
+        114,
+        55,
+        179,
+        66
+      ],
+      "total_actions": 414,
+      "stop_reasons": [
+        "verified_target",
+        "verified_target",
+        "verified_target",
+        "verified_target"
+      ],
+      "metrics": {
+        "sr": 1.0,
+        "psr": 1.0,
+        "spl": 0.60856290807867,
+        "pespl": 0.648577769229401
+      },
+      "planning_audit": {
+        "decisions": 44,
+        "complete_identity_records": 44,
+        "stale_suffix_dispatches": 0,
+        "dispatch_sources": {
+          "idea1_fallback": 14,
+          "suffix": 30
+        }
+      },
+      "mapping": {
+        "completed_rebuilds": 31,
+        "rebuild_errors": 0,
+        "final_keyframes": 301,
+        "completed_gaussians": 3088415,
+        "final_bev_sha256": "8d0b7ec50c8ec74b470479c18464402f67bc8ad049cd970eb8118fb91c21c1d7",
+        "header_verification": {
+          "different_pixels": 0,
+          "point_count": 3088415,
+          "sampled_clip_coverage_percent": 97,
+          "opencv": "4.13.0"
+        }
+      },
+      "processes": [
+        {
+          "role": "monitor",
+          "module": "runtime.monitor",
+          "pid": 904926,
+          "returncode": 0
+        },
+        {
+          "role": "mapping",
+          "module": "runtime.mapping_worker",
+          "pid": 904927,
+          "returncode": 0
+        },
+        {
+          "role": "navigation",
+          "module": "runtime.navigation_worker",
+          "pid": 904959,
+          "returncode": 0
+        }
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 513.162,
+      "remaining": [
+        "Independent Linux installation and resource preparation",
+        "Complete selected-split evaluation"
+      ],
+      "mon": 4,
+      "previous_run_comparison": {
+        "reference": "phase17_integration_results.json",
+        "actions_per_subtask_equal": true,
+        "metrics_equal": true,
+        "scope": "Observed comparison of one complete episode; timing and general performance equivalence are not established.",
+        "final_bev_sha256_equal": true
+      }
+    }
+  ],
+  "remaining": [
+    "Complete independent Linux installation and dependency/resource preparation",
+    "Complete selected-split evaluation"
+  ]
+}

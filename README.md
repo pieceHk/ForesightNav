@@ -54,30 +54,32 @@ Use separate Linux/CUDA environments for mapping and navigation:
 | Mapping | 3.10 | 2.7.1 | cu118 |
 | Navigation | 3.9 | 2.1.2 | cu118 |
 
-Follow [environment and model preparation](docs/installation.md), then install PBSP in both environments with `python -m pip install -e .`. The preparation command records interpreter paths, connects data and weights, and checks the pinned Habitat dependency.
+Follow [environment and model preparation](docs/installation.md), then install PBSP in both environments with `python -m pip install -e .`. Preparation connects data and weights, checks the pinned Habitat dependency and writes interpreter/GPU paths to `runtime.local.yaml`.
 
 ## 3. Run
 
 From the repository root, with the navigation environment activated:
 
 ```bash
-python Exp/scripts/run_full_pbsp.py --mon 4 --scope smoke --check-only
-python Exp/scripts/run_full_pbsp.py --mon 4 --scope full --gpus 0,1
+python run.py --config configs/experiments/hm3d_4mon.yaml --limit-episodes 1 --check
+python run.py --config configs/experiments/hm3d_4mon.yaml
 ```
 
-`--mon 2` or `--mon 3` selects another dataset. GPU order is **mapping,navigation**. Use `--scope smoke` to run one complete ordered episode before a full split.
+Select `hm3d_2mon.yaml` or `hm3d_3mon.yaml` for another dataset. GPU IDs live in `runtime.local.yaml`. Keep `--limit-episodes 1` and remove `--check` to run one complete ordered episode. `--scene <id> --episode <id>` selects an exact runtime identity.
 
-Each run writes a new directory under `Exp/runs/`:
+Each run writes a new directory under the configured output root, normally `outputs/`:
 
 ```text
-Exp/runs/<run>/
+outputs/<run>/
 ├── status.json             # process completion
-├── provenance.json         # code, configuration and data identity
+├── resolved_config.yaml    # effective experiment and model settings
+├── launch.json             # selected identities and worker inputs
+├── provenance.json         # code, devices and resource paths
 ├── logs/                   # mapping and navigation logs
 └── mon_metrics.json        # SR, SPL, PSR and PeSPL
 ```
 
-Per-episode metrics, candidate decisions and final map images live under the scene result directories. See [reproduction and outputs](Exp/release/LOCAL_REPRODUCTION.md) for deterministic scene/episode ranges and detailed artifacts.
+Per-episode metrics and candidate decisions live under scene result directories; final map images are in `artifacts/mapping_final/`. Worker exit records and logs accompany the results. See [runtime and outputs](docs/runtime.md) for lifecycle and configuration details.
 
 ## Components
 

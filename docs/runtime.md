@@ -1,5 +1,13 @@
 # Runtime workers
 
+## Root launcher
+
+[run.py](../run.py) reads an experiment preset and `runtime.local.yaml`. [The run planner](../runtime/plan.py) validates the complete dataset and its prepared identity index before selecting scenes and episodes. `--limit-episodes` limits complete ordered episodes across the selection. `--episode` uses actual runtime IDs within one `--scene`.
+
+`--check` verifies inputs and resources without creating an output directory or loading models. A run freezes shared method/evaluation settings, model input/camera specifications and selected identities in `launch.json`; `resolved_config.yaml` provides a readable copy. [The launcher](../runtime/launch.py) directly starts mapping, navigation and resource-monitor processes, records their exit codes and aggregates the selected complete episodes. A failed worker prevents a completed status.
+
+Both workers accept `--run-plan`. [The native factories](../runtime/factories.py) compose services from that saved configuration. Process startup supplies owned import paths, cache locations, GPU visibility and seed controls. Ambient settings from the retained experiment launcher do not override the native method configuration. Existing run directories cannot be resumed in place.
+
 The launcher starts [runtime.mapping_worker](../runtime/mapping_worker.py) in the mapping environment. Navigation uses [MappingClient](../runtime/mapping_client.py) to stream RGB-D frames and query the published map. Both use [runtime.protocol](../runtime/protocol.py).
 
 ## Backend ownership
@@ -10,7 +18,7 @@ A mapping backend supplies `reset_episode`, `add_live_frame`, `query_with_record
 
 `MappingClient` receives a socket path and `task_reader(scene_id, episode_id)`. The released data reader is [load_runtime_tasks](../experiments/dataset.py); another dataset can supply its own reader. The client retains ordered task indices when duplicate categories share one query result.
 
-Importing the client, worker or protocol does not load models or change environment variables. Worker startup applies [thread controls](../runtime/bootstrap.py) and model cache paths before model imports. The root CLI and complete resource preparation remain to be migrated.
+Importing the client, worker or protocol does not load models or change environment variables. Worker startup applies [thread controls](../runtime/bootstrap.py) and model cache paths before model imports. Complete resource preparation and independent installation remain to be finished.
 
 ## Navigation assembly
 
@@ -20,7 +28,7 @@ The launcher runs [runtime.navigation_worker](../runtime/navigation_worker.py) d
 
 The worker registers each constructed resource for cleanup. It closes the Agent's navigation backend, Habitat and mapping connection on completion or failure. SIGINT and SIGTERM unwind this scope. The launcher owns the navigation process group and records its command, PID, scene and exit code in `navigation_process_<index>.json`.
 
-The retained command-line flags and environment controls are translated once by [legacy_navigation_run](../runtime/legacy_navigation_run.py). That compatibility boundary still prepares vendor import paths and their working directory. The native request, service assembly and Runner do not read those controls; third-party resource setup still needs migration.
+The retained command-line flags and environment controls are translated once by [legacy_navigation_run](../runtime/legacy_navigation_run.py). The root launcher's `--run-plan` path bypasses that resolver. The native request, service assembly and Runner receive explicit settings; third-party resource setup still needs migration.
 
 ## Messages
 
