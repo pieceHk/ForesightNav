@@ -36,6 +36,7 @@ def create_mapper(plan, *, device="cuda"):
         work_directory=plan.run_directory / "artifacts/mapping_tmp",
         input_spec=ModelInputSpec(**specification["input"]),
         device=device,
+        model_resources=resources.mapping_resources(),
     )
     try:
         model.encoder.fusion_debug_sink = write_fusion_debug_render

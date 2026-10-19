@@ -546,7 +546,7 @@ def test_moved_setup_definitions_preserve_frozen_executable_bodies(kind):
                 n.keywords = [
                     k
                     for k in n.keywords
-                    if k.arg not in ("config_file", "checkpoint_file")
+                    if k.arg not in ("config_file", "checkpoint_file", "category_frequency", "clip_checkpoint")
                 ]
         assert digest(old_ctor) == digest(new_ctor)
 

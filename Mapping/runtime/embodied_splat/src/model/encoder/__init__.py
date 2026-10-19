@@ -10,13 +10,16 @@ EncoderCfg = EncoderEpipolarCfg
 
 
 def get_encoder(
-    cfg: EncoderCfg, depth_range=[0.5, 15.0]
+    cfg: EncoderCfg, depth_range=[0.5, 15.0], *, semantic_injector=None, model_resources=None
 ) -> tuple[OnlineEncoder, Optional[EncoderVisualizer]]:
     from adapters.embodied_splat_model import EmbodiedSplatEncoder
     from .visualization.encoder_visualizer_epipolar import EncoderVisualizerEpipolar
 
     if cfg.name != "encoder_test_unet3d_online":
         raise KeyError(cfg.name)
-    encoder = EmbodiedSplatEncoder(cfg, depth_range=depth_range)
+    encoder = EmbodiedSplatEncoder(
+        cfg, depth_range=depth_range, semantic_injector=semantic_injector,
+        model_resources=model_resources,
+    )
     visualizer = EncoderVisualizerEpipolar(cfg.visualizer, encoder)
     return encoder, visualizer

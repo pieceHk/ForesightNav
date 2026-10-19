@@ -45,8 +45,18 @@ class ResourcePaths:
     def hf_home(self):
         return self.weights / "hf_home"
 
+    def mapping_resources(self):
+        from adapters.model_resources import MappingModelResources
+
+        return MappingModelResources(
+            self.weights / "FastSAM-x.pt",
+            self.weights / "maskadpater_ckpt.pth",
+            self.weights / "tf_efficientnetv2_s_21ft1k-d7dafa41.pth",
+        )
+
     def navigation_resources(self):
         from runtime.navigation_worker import NavigationResources
+        from adapters.model_resources import MatchingResources
 
         detic = self.navigation / "src/lagmemo/lagmemo/perception/detection/detic/Detic"
         return NavigationResources(
@@ -62,6 +72,13 @@ class ResourcePaths:
             detic_checkpoint=self.weights / "detic" / DETIC_CHECKPOINT,
             scene_directory=self.scene_directory,
             scene_dataset=self.scene_dataset,
+            seem_tokenizer=self.weights / "clip-vit-base-patch32",
+            detic_category_frequency=self.weights / "detic/datasets/metadata/lvis_v1_train_cat_info.json",
+            matching=MatchingResources(
+                self.weights / "superglue/superpoint_v1.pth",
+                self.weights / "superglue/superglue_indoor.pth",
+                self.weights / "clip/ViT-B-32.pt",
+            ),
         )
 
     def required_files(self):
@@ -70,15 +87,13 @@ class ResourcePaths:
             self.scene_dataset,
             self.root / "configs/models/embodied_splat.yaml",
             self.weights / "freesplatpp_scannet_gtdepth.ckpt",
-            self.weights / "FastSAM-x.pt",
-            self.weights / "maskadpater_ckpt.pth",
-            self.weights / "tf_efficientnetv2_s_21ft1k-d7dafa41.pth",
             self.weights / "detic/datasets/metadata/lvis_v1_train_cat_info.json",
-            self.weights / "superglue/superpoint_v1.pth",
-            self.weights / "superglue/superglue_indoor.pth",
             self.torch_home / "hub/checkpoints/depth-save.pth",
             self.torch_home / "hub/checkpoints/disk_lightglue_v0-1_arxiv-pth",
-            *(path for name, path in vars(nav).items() if name != "scene_directory"),
+            *vars(self.mapping_resources()).values(),
+            *vars(nav.matching).values(),
+            *(nav.seem_tokenizer / name for name in ("vocab.json", "merges.txt", "tokenizer_config.json", "special_tokens_map.json")),
+            *(getattr(nav, name) for name in ("habitat_config", "agent_config", "categories", "seem_config", "seem_checkpoint", "mobileclip_checkpoint", "detic_config", "detic_checkpoint")),
         ]
 
 
@@ -96,30 +111,6 @@ def validate_resources(resources, runtime):
     for python in (runtime.mapping_python, runtime.navigation_python):
         if not os.access(python, os.X_OK):
             raise PermissionError(f"Interpreter is not executable: {python}")
-    # These vendor constructors still resolve auxiliary weights relative to
-    # their source. Make that bridge explicit until resource migration finishes.
-    bridges = {
-        resources.mapping
-        / "pretrained/FastSAM-x.pt": resources.weights
-        / "FastSAM-x.pt",
-        resources.mapping
-        / "src/third_party/maskadapter/maskadpater_ckpt.pth": resources.weights
-        / "maskadpater_ckpt.pth",
-        resources.navigation
-        / "src/lagmemo/lagmemo/perception/detection/detic/Detic/datasets/metadata/lvis_v1_train_cat_info.json": resources.weights
-        / "detic/datasets/metadata/lvis_v1_train_cat_info.json",
-    }
-    matching = (
-        resources.navigation
-        / "src/lagmemo/lagmemo/agent/imagenav_agent/SuperGluePretrainedNetwork/models/weights"
-    )
-    for name in ("superpoint_v1.pth", "superglue_indoor.pth"):
-        bridges[matching / name] = resources.weights / "superglue" / name
-    for vendor, selected in bridges.items():
-        if not vendor.is_file() or not vendor.samefile(selected):
-            raise ValueError(
-                f"Vendor resource bridge differs from the selected weights: {vendor} -> {selected}"
-            )
     revision = subprocess.check_output(
         ["git", "-C", str(resources.habitat), "rev-parse", "HEAD"], text=True
     ).strip()
@@ -131,5 +122,4 @@ def validate_resources(resources, runtime):
     return {
         "habitat_revision": revision,
         "files": list(map(str, resources.required_files())),
-        "vendor_resource_bridges": {str(k): str(v) for k, v in bridges.items()},
     }

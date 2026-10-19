@@ -171,11 +171,11 @@ class CLIPTEXT(nn.Module):
         return features
 
 
-def build_text_encoder(pretrain=True):
+def build_text_encoder(pretrain=True, checkpoint=None):
     text_encoder = CLIPTEXT()
     if pretrain:
         import clip
-        pretrained_model, _ = clip.load("ViT-B/32", device='cpu')
+        pretrained_model, _ = clip.load(str(checkpoint) if checkpoint else "ViT-B/32", device='cpu')
         state_dict = pretrained_model.state_dict()
         to_delete_keys = ["logit_scale", "input_resolution", \
         "context_length", "vocab_size"] + \

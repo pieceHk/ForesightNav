@@ -37,6 +37,7 @@ class LagMemoAgent(NavigationVisualization, GoalPerception, PBSPAgent, Agent):
         *,
         settings: NavigationSettings,
         navigation_backend=None,
+        matching_resources=None,
     ):
         PBSPAgent.__init__(
             self,
@@ -82,6 +83,7 @@ class LagMemoAgent(NavigationVisualization, GoalPerception, PBSPAgent, Agent):
             default_vis_dir=f"{config.DUMP_LOCATION}/images/{config.EXP_NAME}",
             print_images=config.PRINT_IMAGES,
             instance_memory=self.instance_memory,
+            resources=matching_resources,
         )
         if self.goal_policy_config.batching:
             self.image_matching_function = self.matching.match_image_batch_to_image

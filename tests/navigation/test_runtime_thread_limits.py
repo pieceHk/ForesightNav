@@ -1,5 +1,6 @@
 import json
 import os
+
 import subprocess
 import sys
 from pathlib import Path
@@ -21,6 +22,16 @@ import importlib.util
 import json
 import os
 
+import cv2
+cv2.setNumThreads(8)
+expected_opencv = cv2.getNumThreads()
+calls = []
+set_threads = cv2.setNumThreads
+def record_threads(value):
+    calls.append(value)
+    set_threads(value)
+cv2.setNumThreads = record_threads
+
 spec = importlib.util.spec_from_file_location("runtime_adapter", {str(adapter)!r})
 module = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(module)
@@ -36,6 +47,8 @@ print(json.dumps({{
     "torch": torch.get_num_threads(),
     "interop": torch.get_num_interop_threads(),
     "opencv": cv2.getNumThreads(),
+    "opencv_expected": expected_opencv,
+    "opencv_calls": calls,
 }}))
 """
     env = os.environ.copy()
@@ -62,6 +75,9 @@ print(json.dumps({{
         env=env,
     )
     values = json.loads(result.stdout.strip().splitlines()[-1])
+    # OpenCV's backend may report a fixed pool size (e.g. GCD on macOS).
+    assert values.pop("opencv_calls") == [8]
+    expected_opencv = values.pop("opencv_expected")
     assert values == {
         "omp": "8",
         "mkl": "8",
@@ -69,5 +85,5 @@ print(json.dumps({{
         "numexpr": "8",
         "torch": 16,
         "interop": 2,
-        "opencv": 8,
+        "opencv": expected_opencv,
     }

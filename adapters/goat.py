@@ -41,6 +41,8 @@ class HabitatGoatEnv(HabitatEnvironment):
         categories_path,
         detic_config=None,
         detic_checkpoint=None,
+        detic_category_frequency=None,
+        clip_checkpoint=None,
     ):
         from habitat.sims.habitat_simulator.actions import HabitatSimActions
         from lagmemo.core.interfaces import Observations
@@ -74,6 +76,8 @@ class HabitatGoatEnv(HabitatEnvironment):
                 gpu_id=(-1 if config.NO_GPU else habitat_env.sim.gpu_device),
                 config_file=str(detic_config) if detic_config else None,
                 checkpoint_file=str(detic_checkpoint) if detic_checkpoint else None,
+                category_frequency=detic_category_frequency,
+                clip_checkpoint=clip_checkpoint,
             ),
             semantic_mapping=mapping,
             observer=observer,
@@ -102,4 +106,6 @@ def create_environment(habitat_env, *, config, resources, semantic_source):
         categories_path=resources.categories,
         detic_config=resources.detic_config,
         detic_checkpoint=resources.detic_checkpoint,
+        detic_category_frequency=resources.detic_category_frequency,
+        clip_checkpoint=resources.matching.clip if resources.matching else None,
     )

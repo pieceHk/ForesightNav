@@ -56,8 +56,8 @@ BUILDIN_METADATA_PATH = {
 }
 
 
-def get_clip_embeddings(vocabulary, prompt="a "):
-    text_encoder = build_text_encoder(pretrain=True)
+def get_clip_embeddings(vocabulary, prompt="a ", clip_checkpoint=None):
+    text_encoder = build_text_encoder(pretrain=True, checkpoint=clip_checkpoint)
     text_encoder.eval()
     texts = [prompt + x for x in vocabulary]
     emb = text_encoder(texts).detach().permute(1, 0).contiguous().cpu()
@@ -73,6 +73,8 @@ class DeticPerception(PerceptionModule):
         checkpoint_file=None,
         sem_gpu_id=0,
         verbose: bool = False,
+        category_frequency=None,
+        clip_checkpoint=None,
     ):
         """Load trained Detic model for inference.
 
@@ -87,6 +89,7 @@ class DeticPerception(PerceptionModule):
             verbose: whether to print out debug information
         """
         self.verbose = verbose
+        self.clip_checkpoint = clip_checkpoint
         if config_file is None:
             config_file = str(
                 Path(__file__).resolve().parent
@@ -119,7 +122,7 @@ class DeticPerception(PerceptionModule):
 
         string_args = string_args.split()
         args = get_parser().parse_args(string_args)
-        cfg = setup_cfg(args, verbose=verbose)
+        cfg = setup_cfg(args, verbose=verbose, category_frequency=category_frequency)
 
         assert vocabulary in ["coco", "custom"]
         if args.vocabulary == "custom":
@@ -127,7 +130,7 @@ class DeticPerception(PerceptionModule):
                 MetadataCatalog.remove("__unused")
             self.metadata = MetadataCatalog.get("__unused")
             self.metadata.thing_classes = args.custom_vocabulary.split(",")
-            classifier = get_clip_embeddings(self.metadata.thing_classes)
+            classifier = get_clip_embeddings(self.metadata.thing_classes, clip_checkpoint=clip_checkpoint)
             self.categories_mapping = {
                 i: i for i in range(len(self.metadata.thing_classes))
             }
@@ -175,7 +178,7 @@ class DeticPerception(PerceptionModule):
         if vocab_type == "custom":
             self.metadata = MetadataCatalog.get("__unused")
             self.metadata.thing_classes = new_vocab
-            classifier = get_clip_embeddings(self.metadata.thing_classes)
+            classifier = get_clip_embeddings(self.metadata.thing_classes, clip_checkpoint=self.clip_checkpoint)
             self.categories_mapping = {
                 i: i for i in range(len(self.metadata.thing_classes))
             }
@@ -246,7 +249,7 @@ class DeticPerception(PerceptionModule):
         return obs
 
 
-def setup_cfg(args, verbose: bool = False):
+def setup_cfg(args, verbose: bool = False, category_frequency=None):
     cfg = get_cfg()
     if args.cpu:
         cfg.MODEL.DEVICE = "cpu"
@@ -266,7 +269,7 @@ def setup_cfg(args, verbose: bool = False):
     if not args.pred_all_class:
         cfg.MODEL.ROI_HEADS.ONE_CLASS_PER_PROPOSAL = True
     # Fix cfg paths given we're not running from the Detic folder
-    cfg.MODEL.ROI_BOX_HEAD.CAT_FREQ_PATH = str(
+    cfg.MODEL.ROI_BOX_HEAD.CAT_FREQ_PATH = str(category_frequency) if category_frequency is not None else str(
         Path(__file__).resolve().parent / "Detic" / cfg.MODEL.ROI_BOX_HEAD.CAT_FREQ_PATH
     )
     cfg.freeze()

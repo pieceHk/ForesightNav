@@ -44,13 +44,36 @@ def test_backend_arithmetic_preserves_frozen_definition(name):
                     and node.value.func.id == "tensorflow_runtime"):
                 assert ast.unparse(node.targets[0]) in {"(tff2, tff)", "(_, tff)"}
                 return None
-            return node
+            return self.generic_visit(node)
+
+        def visit_IfExp(self, node):
+            # Compare the retained defaults; explicit checkpoints are exercised
+            # separately by the relocated-resource model replay.
+            if ast.unparse(node.test) == "model_resources":
+                return self.visit(node.orelse)
+            return self.generic_visit(node)
+
+        def visit_If(self, node):
+            condition = ast.unparse(node.test)
+            if condition == "semantic_injector is None and (not self.cfg.load_cache)":
+                node.test = ast.parse("not self.cfg.load_cache", mode="eval").body
+            if condition == "semantic_injector is None":
+                return [result for item in node.body if (result := self.visit(item)) is not None]
+            return self.generic_visit(node)
+
+        def visit_Call(self, node):
+            if ast.unparse(node.func) == "super().__init__":
+                node.keywords = [item for item in node.keywords if item.arg != "semantic_injector"]
+            return self.generic_visit(node)
 
     def function(tree):
         cls = next(node for node in tree.body if isinstance(node, ast.ClassDef))
         fn = next(node for node in cls.body if isinstance(node, ast.FunctionDef) and node.name == name)
         return RemoveBackendImports().visit(fn)
-    assert ast.dump(function(previous)) == ast.dump(function(current))
+    old, new = function(previous), function(current)
+    if name == "__init__":
+        new.args = old.args
+    assert ast.dump(old) == ast.dump(new)
 
 
 def test_openseg_adapter_import_does_not_load_tensorflow():

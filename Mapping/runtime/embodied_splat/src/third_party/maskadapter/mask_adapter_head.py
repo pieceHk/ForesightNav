@@ -13,7 +13,8 @@ class MASKAdapterHead(nn.Module):
         mask_in_chans=16,
         num_channels=768,
         num_output_maps=16,
-        pretrained=True
+        pretrained=True,
+        checkpoint="src/third_party/maskadapter/maskadpater_ckpt.pth",
     ):
         """
         NOTE: this interface is experimental.
@@ -55,7 +56,7 @@ class MASKAdapterHead(nn.Module):
         )
         
         if pretrained:
-            ckpt = torch.load("src/third_party/maskadapter/maskadpater_ckpt.pth", map_location=torch.device('cpu'), weights_only=False)
+            ckpt = torch.load(checkpoint, map_location=torch.device('cpu'), weights_only=False)
             self.load_state_dict(ckpt, strict=True)
         
     def forward(self, clip_feature, masks):

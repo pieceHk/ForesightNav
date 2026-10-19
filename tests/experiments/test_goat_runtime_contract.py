@@ -62,7 +62,7 @@ def test_goat_profile_declares_shared_navigation_contract():
 
 
 def test_goat_navigation_environment_uses_explicit_baseline_controls():
-    runtime = load_toml(ROOT / "Exp" / "runtime.local.toml")
+    runtime = load_toml(ROOT / "Exp" / "runtime.local.example.toml")
     profile = load_toml(ROOT / "Exp" / "profiles" / "goat_val_seen.toml")
     environment = navigation_environment(runtime, profile, nav_gpu=1)
 

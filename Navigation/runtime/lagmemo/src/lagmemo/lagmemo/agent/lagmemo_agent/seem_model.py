@@ -91,18 +91,21 @@ def render_mask_overlay(image, mask, text, color=(255, 0, 0), alpha=0.5):
     return output
 
 class SEEMModel:
-    def __init__(self, conf_path, ckpt_path):
+    def __init__(self, conf_path, ckpt_path, tokenizer_path=None):
         seem_cfg = {
             'conf_path': conf_path,
             'ckpt_path': ckpt_path,
+            'tokenizer_path': tokenizer_path,
         }
         
         self.seem_model = self.build_seem_model(**seem_cfg)
         # Resize transform: keep aspect ratio, min edge = 512
         self.resize_transform = transforms.Resize(512, interpolation=Image.BICUBIC)
             
-    def build_seem_model(self, conf_path, ckpt_path):
+    def build_seem_model(self, conf_path, ckpt_path, tokenizer_path=None):
         opt = load_opt_from_config_files([conf_path])
+        if tokenizer_path is not None:
+            opt['MODEL']['TEXT']['PRETRAINED_TOKENIZER'] = str(tokenizer_path)
         opt = init_distributed(opt)
         model = BaseModel(opt, build_model(opt)).from_pretrained(ckpt_path).eval().cuda()
         with torch.no_grad():

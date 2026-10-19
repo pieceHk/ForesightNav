@@ -33,8 +33,9 @@ class GoatMatching(Matching):
         default_vis_dir: str,
         print_images: bool,
         instance_memory: InstanceMemory,
+        resources=None,
     ) -> None:
-        super().__init__(device, config, default_vis_dir, print_images)
+        super().__init__(device, config, default_vis_dir, print_images, resources=resources)
 
         assert score_func in ["confidence_sum", "match_count"]
         self.score_func = score_func
@@ -42,7 +43,7 @@ class GoatMatching(Matching):
 
         # generate clip embeddings by loading clip model
         self.device = device
-        self.clip_model, self.clip_preprocess = clip.load("ViT-B/32", device)
+        self.clip_model, self.clip_preprocess = clip.load(str(resources.clip) if resources else "ViT-B/32", device)
         self.goto_past_pose = config.goto_past_pose
         self.instance_memory = instance_memory
 

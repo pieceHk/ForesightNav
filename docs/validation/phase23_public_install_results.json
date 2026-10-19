@@ -1,0 +1,55 @@
+{
+  "status": "passed",
+  "scope": "Public combined installer from an empty parent directory, offline native compilation and controlled model replays; model assets use the existing prepared set and full selected-split evaluation remains pending",
+  "source_commit": "ec98bbd6f6cc7ba78fff6d70bc7b571a3a43ae15",
+  "elapsed_seconds": 617.09,
+  "environments": {
+    "mapping": {
+      "prefix": ".cache/fresh-envs/public-locked/mapping",
+      "conda": 42,
+      "input_artifacts": 166,
+      "installed_distributions": 129,
+      "native_extensions": 4,
+      "model_tensors": 50,
+      "max_absolute_difference": 0,
+      "keyframes": 12,
+      "gaussians": 287475,
+      "model_replay_seconds": 24.81803376507014
+    },
+    "navigation": {
+      "prefix": ".cache/fresh-envs/public-locked/navigation",
+      "conda": 50,
+      "input_artifacts": 236,
+      "installed_distributions": 173,
+      "source_files": {
+        "habitat_sim": 21216,
+        "habitat_lab": 550,
+        "imath": 331,
+        "detectron2": 827
+      },
+      "model_and_habitat_tensors": 21,
+      "max_absolute_difference": 0,
+      "equal_shapes_and_dtypes": true,
+      "model_replay_seconds": 115.50792813207954
+    }
+  },
+  "pip_check": "No broken requirements found in either environment",
+  "native_checks": "All checked native modules load from their new prefix; CUDA tensor execution and analytic CPU/CUDA rotated NMS pass",
+  "primary_source_archives": {
+    "passed": 21,
+    "failed": 0,
+    "comparison": "Complete normalized file contents, modes and link targets equal the pinned clean Git exports",
+    "eigen": "Official GitLab API archive endpoint used after the standard archive endpoint returned HTTP 403"
+  },
+  "macos_offline_cache_checks": {
+    "mapping": 166,
+    "navigation": 236
+  },
+  "tests_at_source_commit": {
+    "linux_passed": 593
+  },
+  "model_replay_helpers_sha256": {
+    "mapping": "6be835fc1d236d66a49c046a8248586cdf69a451ea48e6e7c7e7e0bc348f1084",
+    "navigation": "aed3eedbf2d4e0a6d42af91d4788e83487c80da3d762dce18056d7b103c94c01"
+  }
+}

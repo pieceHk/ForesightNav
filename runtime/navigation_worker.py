@@ -13,6 +13,7 @@ from pathlib import Path
 from typing import TYPE_CHECKING, Any, Mapping, Optional
 
 from pbsp.settings import NavigationSettings
+from adapters.model_resources import MatchingResources
 
 if TYPE_CHECKING:
     from experiments.runner import PlanningRunSettings
@@ -30,6 +31,9 @@ class NavigationResources:
     detic_checkpoint: Optional[Path] = None
     scene_directory: Optional[Path] = None
     scene_dataset: Optional[Path] = None
+    seem_tokenizer: Optional[Path] = None
+    detic_category_frequency: Optional[Path] = None
+    matching: Optional[MatchingResources] = None
 
 
 @dataclass(frozen=True)
@@ -197,9 +201,13 @@ def build_services(request, stack):
         seem_cfg={
             "conf_path": str(request.resources.seem_config),
             "ckpt_path": str(request.resources.seem_checkpoint),
+            **({"tokenizer_path": str(request.resources.seem_tokenizer)}
+               if request.resources.seem_tokenizer else {}),
         },
         clip_cfg=str(request.resources.mobileclip_checkpoint),
         settings=request.settings,
+        **({"matching_resources": request.resources.matching}
+           if request.resources.matching else {}),
     )
     stack.callback(agent.close)
     agent.top_down_map_reader = evaluator.top_down_map

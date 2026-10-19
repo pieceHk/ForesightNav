@@ -12,7 +12,7 @@ PROFILE_PATH = ROOT / "Exp" / "profiles" / "hm3dv1_objectnav_val.toml"
 CANDIDATE_PROFILE_PATH = (
     ROOT / "Exp" / "profiles" / "hm3dv1_objectnav_val_query_candidate.toml"
 )
-RUNTIME_PATH = ROOT / "Exp" / "runtime.local.toml"
+RUNTIME_PATH = ROOT / "Exp" / "runtime.local.example.toml"
 
 
 def test_hm3dv1_profile_matches_v1_controls():

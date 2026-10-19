@@ -39,11 +39,6 @@ from src.model.encoder.attention.transformer import GRU2D_naive_Wweights
 
 from src.model.encoder.encoder_config import EncoderEpipolarCfg
 
-from src.third_party.fastsam import FastSAM, FastSAMPrompt
-from src.third_party.open_clip_network import OpenCLIPNetwork, OpenCLIPNetworkConfig
-from src.third_party.maskadapter.mask_adapter_head import MASKAdapterHead as MaskAdapter
-from src.third_party.maskadapter.clip import CLIP
-
 import math
 
 
@@ -56,8 +51,8 @@ class EmbodiedSplatEncoder(OnlineEncoder):
     gaussian_adapter: GaussianAdapter
     high_resolution_skip: nn.Sequential
 
-    def __init__(self, cfg: EncoderEpipolarCfg, depth_range=[0.5, 15.0]) -> None:
-        super().__init__(cfg)
+    def __init__(self, cfg: EncoderEpipolarCfg, depth_range=[0.5, 15.0], *, semantic_injector=None, model_resources=None) -> None:
+        super().__init__(cfg, semantic_injector=semantic_injector)
         activation_func = nn.ReLU()
         self.to_tensor = tf.ToTensor()
 
@@ -205,7 +200,7 @@ class EmbodiedSplatEncoder(OnlineEncoder):
                     embed_dim=cfg.d_feature,
                 )
         else:
-            effv2_weight = Path(
+            effv2_weight = Path(model_resources.efficientnet) if model_resources else Path(
                 os.environ.get(
                     "ES_TIMM_EFFV2_WEIGHTS",
                     "/nvme/khy/weights/timm/tf_efficientnetv2_s_21ft1k-d7dafa41.pth",
@@ -334,7 +329,7 @@ class EmbodiedSplatEncoder(OnlineEncoder):
 
         self.device = "cuda" if torch.cuda.is_available() else "cpu"
 
-        if not self.cfg.load_cache:
+        if semantic_injector is None and not self.cfg.load_cache:
             if self.cfg.sam_model_type == "sam":
                 from src.third_party.hiersam import Tools
 
@@ -350,10 +345,14 @@ class EmbodiedSplatEncoder(OnlineEncoder):
                     load_tracker="pretrained/sam2.1_hiera_base_plus.pt",
                 )
             elif self.cfg.sam_model_type == "fastsam":
-                self.fastsam = FastSAM(self.cfg.fastsam_model_path)
+                from src.third_party.fastsam import FastSAM, FastSAMPrompt
+
+                self.fastsam = FastSAM(str(model_resources.fastsam) if model_resources else self.cfg.fastsam_model_path)
                 self.fastsam_prompt = FastSAMPrompt
 
             if self.cfg.clip_model == "clip":
+                from src.third_party.open_clip_network import OpenCLIPNetwork, OpenCLIPNetworkConfig
+
                 self.clip = OpenCLIPNetwork(OpenCLIPNetworkConfig)
                 self.clip_process = tf.Compose(
                     [
@@ -374,7 +373,10 @@ class EmbodiedSplatEncoder(OnlineEncoder):
                 )
                 self.openseg_text_emb = tff.zeros([1, 1, 768])
             elif self.cfg.clip_model == "maskadapter":
-                self.maskadapter = MaskAdapter()
+                from src.third_party.maskadapter.mask_adapter_head import MASKAdapterHead as MaskAdapter
+                from src.third_party.maskadapter.clip import CLIP
+
+                self.maskadapter = MaskAdapter(checkpoint=model_resources.maskadapter) if model_resources else MaskAdapter()
                 self.clip = CLIP(
                     model_name=self.cfg.clip_model_type, pretrained=self.cfg.clip_model_path
                 )
@@ -442,9 +444,10 @@ class EmbodiedSplatEncoder(OnlineEncoder):
                 torch.nn.init.kaiming_uniform_(self.non_object_embedding, a=math.sqrt(5))
                 self.non_object_embedding.requires_grad = True
 
-        from adapters.embodied_splat_semantics import EmbodiedSplatSemanticInjector
+        if semantic_injector is None:
+            from adapters.embodied_splat_semantics import EmbodiedSplatSemanticInjector
 
-        self.semantic_injector = EmbodiedSplatSemanticInjector(self)
+            self.semantic_injector = EmbodiedSplatSemanticInjector(self)
 
     def backbone_3d(self, coords, feats, voxelization_matrix, rotation_matrix, globals=None):
         import MinkowskiEngine as ME

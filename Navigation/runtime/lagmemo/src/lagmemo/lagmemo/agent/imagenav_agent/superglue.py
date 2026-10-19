@@ -34,6 +34,7 @@ class Matching(nn.Module):
         config: Dict[str, Any],
         default_vis_dir: str,
         print_images: bool,
+        resources=None,
     ) -> None:
         super().__init__()
         self._device = torch.device(f"cuda:{device}")
@@ -44,11 +45,13 @@ class Matching(nn.Module):
                         "nms_radius": config.nms_radius,
                         "keypoint_threshold": config.keypoint_threshold,
                         "max_keypoints": config.max_keypoints,
+                        **({"checkpoint": str(resources.superpoint)} if resources else {}),
                     },
                     "superglue": {
                         "weights": config.superglue_model,
                         "sinkhorn_iterations": config.sinkhorn_iterations,
                         "match_threshold": config.match_threshold,
+                        **({"checkpoint": str(resources.superglue)} if resources else {}),
                     },
                 },
             )

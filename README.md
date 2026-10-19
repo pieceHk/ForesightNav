@@ -14,6 +14,10 @@ Online spatial memory and planning for ordered multi-object navigation.
 
 PBSP builds a persistent semantic Gaussian map from RGB-D observations, retrieves candidate locations for the remaining targets, and plans their ordered suffix before navigation. The map is shared across tasks within an episode. **2/3/4-MON use the same implementation and select their task sequences through configuration.**
 
+<p align="center"><img src="docs/media/4mon-map.png" width="480" alt="Top-down Gaussian map from the recorded four-target episode"></p>
+
+Final map from the [recorded 4-MON episode](docs/validation/phase22_integration_results.json): 301 keyframes and 3,088,415 Gaussian points. The image header reports sampled points and CLIP feature coverage.
+
 ```mermaid
 flowchart LR
     RGBD[RGB-D + poses] --> M[Mapping]
@@ -96,6 +100,6 @@ The [component guide](docs/components.md) explains how to replace a component an
 
 ## Validation and provenance
 
-The [validation records](docs/migration.md) include frozen-code replays, Linux tests and complete single-episode runs using independently built mapping and navigation environments. Final installer validation and full selected-split evaluation remain in progress. Historical branches and tags are documented in [versions and results](docs/versions.md).
+The [validation records](docs/migration.md) include frozen-code replays, Linux tests and complete single-episode runs using independently built mapping and navigation environments. The public offline installer has also created both environments from an empty directory; 50 mapping tensors and 21 navigation/Habitat tensors match their references exactly. Public model-download validation and full selected-split evaluation remain in progress. Historical branches and tags are documented in [versions and results](docs/versions.md).
 
 PBSP-authored code uses the [MIT license](LICENSE). Adapted code, dependencies, datasets and weights retain their respective licenses; see [third-party notices](THIRD_PARTY_NOTICES.md). Mapping derives from [EmbodiedSplat](https://github.com/0nandon/EmbodiedSplat), and the default navigation backend derives from LagMemo.

@@ -5,7 +5,7 @@ import os
 import sys
 
 
-def load_model(*, engine_root, checkpoint, work_directory, input_spec, device, semantic_injector=None):
+def load_model(*, engine_root, checkpoint, work_directory, input_spec, device, semantic_injector=None, model_resources=None):
     from hydra import compose, initialize_config_dir
     from hydra.core.global_hydra import GlobalHydra
     from pbsp.mapping.model import OnlineMappingModel
@@ -16,7 +16,7 @@ def load_model(*, engine_root, checkpoint, work_directory, input_spec, device, s
     for path in (engine_root, engine_root / "src/third_party", engine_root / "src"):
         if str(path) not in sys.path:
             sys.path.insert(0, str(path))
-    # The retained network resolves its auxiliary checkpoints relative to this root.
+    # Retained optional training backends still use engine-relative configuration.
     os.chdir(engine_root)
     GlobalHydra.instance().clear()
     with initialize_config_dir(config_dir=str(engine_root / "config"), version_base=None):
@@ -38,9 +38,10 @@ def load_model(*, engine_root, checkpoint, work_directory, input_spec, device, s
     set_cfg(config)
     encoder_config = load_typed_config(config.model.encoder, EncoderEpipolarCfg)
     encoder_config.output_path = str(work_directory)
-    encoder, _ = get_encoder(encoder_config, depth_range=[input_spec.near, input_spec.far])
-    if semantic_injector is not None:
-        encoder.semantic_injector = semantic_injector
+    encoder, _ = get_encoder(
+        encoder_config, depth_range=[input_spec.near, input_spec.far],
+        semantic_injector=semantic_injector, model_resources=model_resources,
+    )
     encoder = encoder.to(device).eval()
     decoder = get_decoder(config.model.decoder, config.dataset).to(device).eval()
     model = OnlineMappingModel(encoder, decoder, input_spec, work_directory)

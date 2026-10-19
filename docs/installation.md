@@ -1,6 +1,6 @@
 # Environment and model preparation
 
-The installers create separate mapping and navigation environments from locked inputs. The independent environments passed model, native-extension and complete-episode checks; the final public navigation recipe is undergoing an empty-prefix validation. See the [navigation validation](validation/phase22_navigation_install_results.json) and [episode record](validation/phase22_integration_results.json).
+The installers create separate mapping and navigation environments from locked inputs. The public combined command passed an offline installation from an empty directory, followed by exact mapping and navigation model replays. Independently built environments also passed a complete ordered episode. See the [installation record](validation/phase23_public_install_results.json) and [episode record](validation/phase22_integration_results.json).
 
 | Runtime | Python | PyTorch | torchvision | NumPy |
 | --- | --- | --- | --- | --- |
@@ -29,6 +29,8 @@ python scripts/setup_envs.py --download-only --cache ./offline-pbsp
 Copy the checkout and cache to the server, then add `--cache /path/to/offline-pbsp --offline` to the installation command. Both caches are verified before either environment is created.
 
 ## Model assets
+
+The [model preparation guide](models.md) gives the download, offline import and checksum commands for the selected weight set. [assets/models.json](../assets/models.json) lists all 22 files. Public-source download and extraction validation is in progress.
 
 Use the EmbodiedSplat checkpoints and auxiliary weights described in its [official repository](https://github.com/0nandon/EmbodiedSplat#data-preparation). The current preparation command expects:
 
@@ -84,7 +86,7 @@ python scripts/prepare_runtime.py \
 
 This writes `runtime.local.yaml` with absolute data, weight, output and interpreter paths. It copies the two required Kornia checkpoints into the selected weights directory. Omit `--torch-home-source` when they are already present there. GPU defaults are mapping `0`, navigation `1`; change them in this YAML or supply `--mapping-gpu` and `--navigation-gpu` during preparation.
 
-The current model constructors still use several vendor-relative auxiliary paths. The native precheck verifies that those paths resolve to the selected weights. Resource consolidation remains unfinished.
+The native model adapters receive auxiliary checkpoints and the SEEM tokenizer from the selected weights directory. FastSAM, MaskAdapter, Detic and image matching do not require weight links inside their source trees. The compatibility preparation command above remains while data and Habitat source preparation move to standalone commands.
 
 ## Verify
 

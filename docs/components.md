@@ -53,7 +53,9 @@ The default [semantic feature implementation](../pbsp/semantics/features.py) pre
 
 The model adapter loads optional dependencies in their selected branches: TensorFlow for OpenSeg, MinkowskiEngine for sparse 3D features, and SAM for the SAM region backend. Default FastSAM/MaskAdapter construction does not import these modules. [OpenSeg device controls](../adapters/openseg.py) run once when OpenSeg is first used.
 
-Supply another injector when loading the model through `adapters.embodied_splat.load_model(..., semantic_injector=injector)`, or set `encoder.semantic_injector` before inference. Both warmup and incremental reconstruction call this interface. A replacement must keep pixel alignment, feature dimensions and existing codebook IDs consistent with the selected fusion representation.
+Supply another injector when loading the model through `adapters.embodied_splat.load_model(..., semantic_injector=injector)`. Construction skips the default region/CLIP resources when an injector is supplied. Both warmup and incremental reconstruction call this interface. A replacement must keep pixel alignment, feature dimensions and existing codebook IDs consistent with the selected fusion representation. Supply a matching query text encoder separately.
+
+The default factory receives `MappingModelResources`; navigation receives `NavigationResources` and `MatchingResources`. These objects carry auxiliary checkpoint and tokenizer paths. Model assets can live outside the checkout without adding weight links to vendor source directories. See [model preparation](models.md).
 
 Geometric reconstruction and semantic coefficient fusion still share the default Gaussian store. Replacing that storage format requires a corresponding mapping adapter; changing only the image embedding backend uses the injector interface.
 
