@@ -32,3 +32,40 @@ def mapper_world_to_habitat(points: np.ndarray) -> np.ndarray:
     if points.shape[-1] != 3:
         raise ValueError("world points must end in xyz")
     return (points @ RUB_TO_RDF.T).astype(np.float32)
+
+
+def sample_image_grid(shape, device=None):
+    """Return normalized xy coordinates and integer ij indices at pixel centers."""
+    import torch
+
+    if device is None:
+        device = torch.device("cpu")
+    indices = [torch.arange(length, device=device) for length in shape]
+    stacked_indices = torch.stack(torch.meshgrid(*indices, indexing="ij"), dim=-1)
+    coordinates = [(idx + 0.5) / length for (idx, length) in zip(indices, shape)]
+    coordinates = reversed(coordinates)
+    coordinates = torch.stack(torch.meshgrid(*coordinates, indexing="xy"), dim=-1)
+    return (coordinates, stacked_indices)
+
+
+def rotation_distance(rotations):
+    import torch
+
+    R1 = rotations.unsqueeze(2)
+    R2 = rotations.unsqueeze(1)
+    R_rel = torch.matmul(R1.transpose(-2, -1), R2)
+    trace = torch.diagonal(R_rel, dim1=-2, dim2=-1).sum(-1)
+    trace = torch.clamp(trace, -1, 3)
+    angle = torch.acos((trace - 1) / 2)
+    return angle.squeeze(0)
+
+
+def calculate_distance_matrix(poses):
+    import torch
+
+    translations = poses[:, :, :3, 3]
+    rotations = poses[:, :, :3, :3]
+    translation_dist = torch.cdist(translations, translations).squeeze(0)
+    rotation_dist = rotation_distance(rotations)
+    combined_dist = translation_dist + rotation_dist
+    return combined_dist

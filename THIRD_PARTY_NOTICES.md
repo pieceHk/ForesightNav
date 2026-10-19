@@ -14,6 +14,12 @@ The Gaussian storage in `pbsp/mapping/gaussians.py` and the projection, fusion a
 refinement operations in `pbsp/mapping/fusion.py` were extracted from
 `Mapping/runtime/embodied_splat/src/model/encoder/encoder_test_unet3d_online.py`.
 They retain their EmbodiedSplat provenance and upstream license scope.
+The online encoding and region-feature operations in `pbsp/mapping/encoder.py`
+and `pbsp/mapping/features.py`, and the view-distance and image-grid helpers in
+`pbsp/mapping/geometry.py`, were extracted from the same runtime and its geometry
+and tensor utility modules. The same attribution and license scope apply.
+`adapters/embodied_splat_model.py` retains the network constructor and optional
+sparse/OpenSeg backend methods from that encoder.
 
 Upstream license texts are retained unchanged:
 

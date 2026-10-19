@@ -1,21 +1,22 @@
 from typing import Optional
+from pbsp.mapping.encoder import OnlineEncoder
 
 from .encoder import Encoder
-from .encoder_epipolar import EncoderEpipolar, EncoderEpipolarCfg
-from .encoder_test_unet3d_online import EmbodiedSplatEncoderTestUnet3d_Online
+from .encoder_config import EncoderEpipolarCfg
 
 from .visualization.encoder_visualizer import EncoderVisualizer
-from .visualization.encoder_visualizer_epipolar import EncoderVisualizerEpipolar
-
-ENCODERS = {
-    "encoder_test_unet3d_online": (EmbodiedSplatEncoderTestUnet3d_Online, EncoderVisualizerEpipolar)
-}
 
 EncoderCfg = EncoderEpipolarCfg
 
-def get_encoder(cfg: EncoderCfg, depth_range=[0.5,15.0]) -> tuple[Encoder, Optional[EncoderVisualizer]]:
-    encoder, visualizer = ENCODERS[cfg.name]
-    encoder = encoder(cfg, depth_range=depth_range)
-    if visualizer is not None:
-        visualizer = visualizer(cfg.visualizer, encoder)
+
+def get_encoder(
+    cfg: EncoderCfg, depth_range=[0.5, 15.0]
+) -> tuple[OnlineEncoder, Optional[EncoderVisualizer]]:
+    from adapters.embodied_splat_model import EmbodiedSplatEncoder
+    from .visualization.encoder_visualizer_epipolar import EncoderVisualizerEpipolar
+
+    if cfg.name != "encoder_test_unet3d_online":
+        raise KeyError(cfg.name)
+    encoder = EmbodiedSplatEncoder(cfg, depth_range=depth_range)
+    visualizer = EncoderVisualizerEpipolar(cfg.visualizer, encoder)
     return encoder, visualizer
