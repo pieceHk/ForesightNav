@@ -32,6 +32,13 @@ def test_backend_arithmetic_preserves_frozen_definition(name):
     current = ast.parse((ROOT / path).read_text())
 
     class RemoveBackendImports(ast.NodeTransformer):
+        def visit_Constant(self, node):
+            # The compatibility resource default is now engine-relative. This
+            # one fixed path changes source selection, not model construction.
+            if node.value == "/nvme/khy/weights/timm/tf_efficientnetv2_s_21ft1k-d7dafa41.pth":
+                node.value = "pretrained/tf_efficientnetv2_s_21ft1k-d7dafa41.pth"
+            return node
+
         def visit_Import(self, node):
             return None
 

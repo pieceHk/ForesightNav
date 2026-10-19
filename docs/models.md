@@ -50,3 +50,5 @@ Import checks every source and existing destination before copying. It copies se
 | Image matching | [SuperGlue](https://github.com/magicleap/SuperGluePretrainedNetwork), [DISK](https://github.com/cvlab-epfl/disk), [LightGlue](https://github.com/cvg/LightGlue) |
 
 The filenames and hashes preserve the validated models. Model and dataset licenses remain with their providers; see [third-party notices](../THIRD_PARTY_NOTICES.md).
+
+The native mapping factory passes `MappingModelResources` explicitly. Direct compatibility construction also accepts `ES_TIMM_EFFV2_WEIGHTS`; its default EfficientNet path is `pretrained/tf_efficientnetv2_s_21ft1k-d7dafa41.pth` relative to the mapping engine.

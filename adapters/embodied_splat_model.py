@@ -203,7 +203,7 @@ class EmbodiedSplatEncoder(OnlineEncoder):
             effv2_weight = Path(model_resources.efficientnet) if model_resources else Path(
                 os.environ.get(
                     "ES_TIMM_EFFV2_WEIGHTS",
-                    "/nvme/khy/weights/timm/tf_efficientnetv2_s_21ft1k-d7dafa41.pth",
+                    "pretrained/tf_efficientnetv2_s_21ft1k-d7dafa41.pth",
                 )
             )
             pretrained_kwargs = {}
