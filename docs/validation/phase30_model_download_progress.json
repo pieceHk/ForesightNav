@@ -1,0 +1,127 @@
+{
+  "status": "in_progress",
+  "scope": "Public-source artifact downloads with complete size and SHA-256 verification; archive extraction and complete prepared-set checks remain pending",
+  "source_commit": "db16410202bf5c7811fd8584af5282c0c8732943",
+  "verified_download_artifacts": 16,
+  "total_download_artifacts": 20,
+  "verified": [
+    {
+      "path": "tf_efficientnetv2_s_21ft1k-d7dafa41.pth",
+      "bytes": 86570281,
+      "sha256": "d7dafa417e9edb0b3d973bc89735df6a0181f707ca277591a7c97b6df047bae8"
+    },
+    {
+      "path": "mobileclip_s0.pt",
+      "bytes": 215934653,
+      "sha256": "809b408eff74f8058843e86a1f92967097d42ba782450e85b8f4867b7f0ca0b7"
+    },
+    {
+      "path": "detic/Detic_LCOCOI21k_CLIP_SwinB_896b32_4x_ft4x_max-size.pth",
+      "bytes": 702411632,
+      "sha256": "5841d0cd573b1aaa19fae98be3dc2e32e77bad55c66d548fa18ca3b317426b40"
+    },
+    {
+      "path": "detic/datasets/metadata/lvis_v1_train_cat_info.json",
+      "bytes": 268947,
+      "sha256": "56abd7581b779fb62b167a52c76026839eabbfb5bfb12986e6170fbe0111fe40"
+    },
+    {
+      "path": "superglue/superpoint_v1.pth",
+      "bytes": 5206086,
+      "sha256": "52b6708629640ca883673b5d5c097c4ddad37d8048b33f09c8ca0d69db12c40e"
+    },
+    {
+      "path": "superglue/superglue_indoor.pth",
+      "bytes": 48233807,
+      "sha256": "0e710469be25ebe1e2ccf68edcae8b2945b0617c8e7e68412251d9d47f5052b1"
+    },
+    {
+      "path": "torch/hub/checkpoints/depth-save.pth",
+      "bytes": 4375832,
+      "sha256": "9c2ee4ded238892dfa51569941372601e35e4a74aa6f84ea80053d2ab1c07abe"
+    },
+    {
+      "path": "torch/hub/checkpoints/disk_lightglue_v0-1_arxiv-pth",
+      "bytes": 47631405,
+      "sha256": "b5b21d47ea24f2c5e501aec9c91b9716e4c8c3429a4dc1e615c133c4c9378335"
+    },
+    {
+      "path": "clip-vit-base-patch32/config.json",
+      "bytes": 4186,
+      "sha256": "b575ef3c36f2a057fa19e221650105052d61cc9c1a972ec15019c6261ec98770"
+    },
+    {
+      "path": "clip-vit-base-patch32/merges.txt",
+      "bytes": 524657,
+      "sha256": "f526393189112391ce6f9795d4695f704121ce452c3aad1f5335cc41337eba85"
+    },
+    {
+      "path": "clip-vit-base-patch32/special_tokens_map.json",
+      "bytes": 389,
+      "sha256": "f8c0d6c39aee3f8431078ef6646567b0aba7f2246e9c54b8b99d55c22b707cbf"
+    },
+    {
+      "path": "clip-vit-base-patch32/tokenizer.json",
+      "bytes": 2224041,
+      "sha256": "b556ac8c99757ffb677208af34bc8c6721572114111a6e0aaf5fa69ff0b8d842"
+    },
+    {
+      "path": "clip-vit-base-patch32/tokenizer_config.json",
+      "bytes": 592,
+      "sha256": "34b7336e4bee12e0a9730eaf5189f582ef3c3eea5027f65730e5717256755aad"
+    },
+    {
+      "path": "clip-vit-base-patch32/vocab.json",
+      "bytes": 862328,
+      "sha256": "5047b556ce86ccaf6aa22b3ffccfc52d391ea4accdab9c2f2407da5b742d4363"
+    },
+    {
+      "path": "clip-vit-base-patch32/preprocessor_config.json",
+      "bytes": 316,
+      "sha256": "910e70b3956ac9879ebc90b22fb3bc8a75b6a0677814500101a4c072bd7857bd"
+    },
+    {
+      "path": "clip/ViT-B-32.pt",
+      "bytes": 353976522,
+      "sha256": "40d365715913c9da98579312b702a82c18be219cc2a73407c4526f58eba950af"
+    }
+  ],
+  "pending": [
+    {
+      "path": "seem_focall_v0.pt",
+      "bytes": 1365136278,
+      "sha256": "b907a76b74fe047507d18c1a3fda7e89c75133f97af4457767db78440ebb1761"
+    },
+    {
+      "path": "hf_home/hub/models--laion--CLIP-convnext_large_d_320.laion2B-s29B-b131K-ft-soup/snapshots/654d0f80ff73c58e7281a3ca7dc425589049e2e1/open_clip_model.safetensors",
+      "bytes": 1407151868,
+      "sha256": "1a8e47bdefd6d36202ec66a8975edda9e3c89560bcd1ecefe6f676311637a671"
+    },
+    {
+      "path": "hf_home/hub/models--laion--CLIP-ViT-B-16-laion2B-s34B-b88K/snapshots/7288da5a0d6f0b51c4a2b27c624837a9236d0112/open_clip_pytorch_model.bin",
+      "bytes": 598529951,
+      "sha256": "1f16b1274ca25493b1f36225efe81d05f66a3f33c487acd1a07c5ba87920de6f"
+    },
+    {
+      "id": "embodiedsplat_pretrained",
+      "bytes": 6982820861,
+      "sha256": "75d168bef049d79ba7fc8cf5e9ee8bcfaaaa784523c323fa92f7a6ab615afe80"
+    }
+  ],
+  "recovered_downloads": [
+    {
+      "resource": "mobileclip_s0.pt",
+      "verified_bytes": 215934653,
+      "seconds": 1409.781,
+      "method": "Resumed a read-only copy of the earlier failed partial into an isolated cache, then copied its verified final content into the common cache"
+    },
+    {
+      "resource": "clip/ViT-B-32.pt",
+      "initial_error": "Response ended before the pinned file size; initial failure retained",
+      "resume_bytes_at_start": 348176384,
+      "verified_bytes": 353976522,
+      "seconds": 12.313
+    }
+  ],
+  "inference_validation_with_downloaded_complete_model_set": "pending"
+}
