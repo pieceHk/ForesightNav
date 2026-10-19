@@ -6,6 +6,8 @@
 
 ## 当前代码
 
+公开安装流程已整理为 `scripts/setup_envs.py`，分别读取 mapping 与 navigation 的锁定清单；两套缓存通过后才创建环境。导航清单包含 50 个 Conda 包、163 个 Python 输入及 23 个源码归档，覆盖 Habitat-Sim 的全部递归子模块、完整 Detectron2 和离线 Imath。共享校验代码保持 mapping 安装主体不变，新增 15 项检查覆盖递归归档、符号链接、路径重叠、缓存变更及非法清单。真实源码组装及缓存检查通过，Linux 完整测试为 593 项通过。最终公开命令仍需在另一个空目录中完成安装验证。环境入口和系统依赖见[安装说明](installation.md)及[导航环境指南](navigation_installation.md)。
+
 两个独立环境已共同完成完整 4-MON 单 episode：四项任务全部成功，共 414 个动作，44 条规划记录身份完整，三个工作进程均以 0 退出。动作数、指标和最终地图哈希与上一轮一致。新导航环境在空目录中创建并重新编译 Habitat-Sim、Magnum 与 Detectron2；21 个模型及 Habitat 初始观测张量的数值、形状和类型均与原环境一致，完整测试为 578 项通过。实际工作进程的动态库映射也未引用旧环境或旧工作目录。安装验证修复了 Imath 临时联网、源码符号链接处理、Detectron2 导入遮蔽及其旧副本缺少 `data` 模块的问题。当前使用完整固定版本的 Detectron2 包；统一导航安装器及另一空环境中的最终流程验证仍待完成。详见[导航环境结果](validation/phase22_navigation_install_results.json)和[双环境集成结果](validation/phase22_integration_results.json)。
 
 独立 mapping 环境的完整 4-MON 单 episode 验证已通过：四个目标均成功，共 414 个动作；44 条规划记录身份完整，没有过期后缀分派；31 次地图重建均完成，最终为 301 个关键帧和 3,088,415 个高斯点。建图、导航及资源监控进程退出码均为 0，动作数、指标和最终地图哈希与此前记录一致。首次运行虽完成全部目标，但监控读取已退出进程的 procfs 信息时发生竞态，根入口按失败记录；修复 `ProcessLookupError` 处理后另行运行并通过。新增五项监控检查后，Linux 完整测试为 577 项通过。此实验的 navigation 仍使用原环境。详见[集成结果及首次失败记录](validation/phase21_integration_results.json)。

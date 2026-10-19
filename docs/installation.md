@@ -1,6 +1,6 @@
 # Environment and model preparation
 
-Mapping has a locked installation with source-built CUDA extensions. An independent navigation environment has also passed model, native-extension and complete-episode checks; its public installer is being assembled. See the [navigation validation](validation/phase22_navigation_install_results.json) and [episode record](validation/phase22_integration_results.json).
+The installers create separate mapping and navigation environments from locked inputs. The independent environments passed model, native-extension and complete-episode checks; the final public navigation recipe is undergoing an empty-prefix validation. See the [navigation validation](validation/phase22_navigation_install_results.json) and [episode record](validation/phase22_integration_results.json).
 
 | Runtime | Python | PyTorch | torchvision | NumPy |
 | --- | --- | --- | --- | --- |
@@ -11,14 +11,22 @@ Mapping needs the EmbodiedSplat CUDA extensions and region/CLIP models. Navigati
 
 The default mapping configuration uses FastSAM and MaskAdapter. OpenSeg loads TensorFlow when selected; the sparse 3D backend loads MinkowskiEngine when selected. SAM is also optional. These backends are no longer imported during default model construction. Configuration conversion lives in a small inference adapter shared with the retained training configuration.
 
-Install the project in each prepared environment:
+Create both environments from the repository root with a current Conda or micromamba and the CUDA 11.8 toolkit available:
 
 ```bash
-/path/to/mapping-env/bin/python -m pip install -e .
-/path/to/navigation-env/bin/python -m pip install -e .
+python scripts/setup_envs.py --prefix .cache/envs \
+  --micromamba /path/to/micromamba --cuda-home /usr/local/cuda-11.8
 ```
 
-To create the mapping environment from scratch, use the [mapping installer](mapping_installation.md). It supports online preparation and an offline cache, and installs PBSP as part of the build.
+This creates `.cache/envs/mapping` and `.cache/envs/navigation`, builds native extensions and installs PBSP in both. The [mapping guide](mapping_installation.md) and [navigation guide](navigation_installation.md) list system dependencies and individual installer options.
+
+For an offline server, first prepare the Linux cache on a computer with internet access; macOS is supported:
+
+```bash
+python scripts/setup_envs.py --download-only --cache ./offline-pbsp
+```
+
+Copy the checkout and cache to the server, then add `--cache /path/to/offline-pbsp --offline` to the installation command. Both caches are verified before either environment is created.
 
 ## Model assets
 
@@ -76,7 +84,7 @@ python scripts/prepare_runtime.py \
 
 This writes `runtime.local.yaml` with absolute data, weight, output and interpreter paths. It copies the two required Kornia checkpoints into the selected weights directory. Omit `--torch-home-source` when they are already present there. GPU defaults are mapping `0`, navigation `1`; change them in this YAML or supply `--mapping-gpu` and `--navigation-gpu` during preparation.
 
-The current model constructors still use several vendor-relative auxiliary paths. The native precheck verifies that those paths resolve to the selected weights. Resource consolidation and the public navigation installer remain unfinished.
+The current model constructors still use several vendor-relative auxiliary paths. The native precheck verifies that those paths resolve to the selected weights. Resource consolidation remains unfinished.
 
 ## Verify
 
