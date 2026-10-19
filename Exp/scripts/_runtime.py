@@ -344,7 +344,7 @@ def mapping_server(runtime: dict, profile: dict, run: Path, socket_path: Path, e
     command = [
         python,
         "-m",
-        "tdonav_mapping.adapters.embodied_splat_server",
+        "runtime.mapping_worker",
         "--socket_path",
         str(socket_path),
         "--device",

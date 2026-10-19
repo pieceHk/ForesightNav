@@ -5,6 +5,7 @@ from __future__ import annotations
 import gzip
 import hashlib
 import json
+import os
 from pathlib import Path
 from typing import Iterator, Mapping, Optional
 
@@ -157,3 +158,41 @@ def task_category(task):
         if value is not None and str(value).strip():
             return str(value)
     raise ValueError(f'MON task is missing its target category: {task}')
+
+
+def load_runtime_tasks(content_root, scene_id, episode_id):
+    content_path = os.path.join(content_root, f'{scene_id}.json.gz')
+    if not os.path.exists(content_path):
+        print(f'[OnlineESProvider] WARNING: content file not found: {content_path}', flush=True)
+        return []
+    with gzip.open(content_path, 'rt') as f:
+        data = json.load(f)
+    episodes = data if isinstance(data, list) else data.get('episodes', [])
+    # Habitat reindexes filtered content to 0..N-1 while the retained
+    # GOAT records keep source episode IDs.  When the content is visibly
+    # reindexed, runtime IDs can collide with a different source ID, so
+    # the deterministic content order must take precedence.
+    try:
+        runtime_index = int(episode_id)
+    except (TypeError, ValueError):
+        runtime_index = -1
+    has_reindexed_ids = any(
+        str(ep.get('episode_id', '')) != str(index)
+        for index, ep in enumerate(episodes)
+    )
+    if has_reindexed_ids and 0 <= runtime_index < len(episodes):
+        matched = episodes[runtime_index]
+        source_episode_id = matched.get('episode_id', '')
+        tasks = matched.get('tasks', [])
+        print(
+            '[OnlineESProvider] episode ID reindex mapping: '
+            f'runtime={episode_id} content={source_episode_id} '
+            f'({len(tasks)} tasks)',
+            flush=True,
+        )
+        return tasks
+    for ep in episodes:
+        if str(ep.get('episode_id', '')) == str(episode_id):
+            return ep.get('tasks', [])
+    print(f'[OnlineESProvider] WARNING: episode {episode_id} not found', flush=True)
+    return []

@@ -29,6 +29,7 @@ import json
 import time
 import types
 from dataclasses import replace
+from functools import partial
 from pathlib import Path
 from pprint import pprint
 
@@ -140,7 +141,8 @@ from lagmemo.agent.lagmemo_agent.glue_agent import GLUEAgent
 from lagmemo.core.interfaces import DiscreteNavigationAction
 from lagmemo.env.habitat_lagmemo_env import HabitatGoatEnv
 
-from online_es_provider import OnlineESProvider
+from runtime.mapping_client import MappingClient
+from experiments.dataset import load_runtime_tasks
 from pbsp.navigation.cooldown import (
     CategorySwitchCooldown,
     cooldown_for_category,
@@ -667,11 +669,12 @@ if __name__ == '__main__':
 
     # ── Provider ────────────────────────────────────────────────────────
     print('[P4] Connecting to ES Mapper Server...', flush=True)
-    candidate_provider = OnlineESProvider(
+    candidate_provider = MappingClient(
         socket_path=args.socket_path,
         top_k=args.top_k,
         connect_timeout=120.0,
-        content_root=str(dataset_content),
+        task_reader=partial(load_runtime_tasks, str(dataset_content)),
+        live_mode=args.live_mode,
     )
     if args.live_mode:
         candidate_provider._live_mode = True
