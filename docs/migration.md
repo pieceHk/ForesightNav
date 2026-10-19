@@ -2,6 +2,8 @@
 
 工作分支为 `refactor/full-pbsp`，方法来源为 `full-pbsp`。重构目标和模块划分见[架构设计](architecture.md)。每个阶段经过验证后提交并推送到同一分支。
 
+项目自身代码采用 [MIT 许可证](../LICENSE)，第三方来源与原有许可证保留在[第三方清单](../THIRD_PARTY_NOTICES.md)中。
+
 ## 当前代码
 
 候选证据、候选排序、类别冷却、有序后缀规划及建图的小型策略位于 `pbsp/`，所有调用方已使用这些实现。指标计算和决策记录分别位于 `experiments/metrics.py`、`experiments/telemetry.py`。

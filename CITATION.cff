@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If you use PBSP in your research, cite this software repository."
+type: software
+title: "PBSP: Persistent Belief-Aware Suffix Planning"
+authors:
+  - name: PBSP contributors
+version: 0.1.0
+repository-code: https://github.com/pieceHk/PBSP
+license: MIT

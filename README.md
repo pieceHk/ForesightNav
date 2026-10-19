@@ -38,7 +38,7 @@ The reproduction helpers below belong to the current Full PBSP workspace.
 - [Reproduction guide](Exp/release/REPRODUCIBILITY.md): assets, environment, profile selection and launch commands.
 - [Version and evaluation notes](Exp/release/VERSIONS_AND_RESULTS.md): source lineage and raw-versus-post-hoc distinction.
 - [Validation record](Exp/release/VALIDATION.md): tests actually run and remaining limitations.
-- [Third-party notices](Exp/release/THIRD_PARTY_NOTICES.md): preserved licenses; no new blanket license is granted.
+- [Third-party notices](THIRD_PARTY_NOTICES.md): sources and preserved upstream licenses.
 
 This is a **source release**, not a self-contained GPU image. Licensed HM3D assets, generated episodes, model weights, machine-local configuration, logs and images are not uploaded. Relative asset symlinks are retained. Linux, suitable CUDA/PyTorch environments, Habitat and separate mapping/navigation dependencies are required.
 
@@ -52,3 +52,9 @@ python Exp/scripts/run_full_pbsp.py --mon 4 --scope smoke --gpus 0,1
 The wrapper supplies the episode identity mapping and uses the tracked profile without changing the planner or evaluation controls. Use `--scope full` for the complete selected split.
 
 Current snapshot source: `7f232ca714f3f77e516489fb8af07af8ef580751`.
+
+## License
+
+PBSP-authored code is available under the [MIT license](LICENSE). Third-party
+software, adapted upstream components, model weights and datasets retain their
+original licenses; see [third-party notices](THIRD_PARTY_NOTICES.md).
