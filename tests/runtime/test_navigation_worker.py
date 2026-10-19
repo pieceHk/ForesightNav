@@ -211,6 +211,7 @@ def test_actual_startup_arguments_match_frozen_main(tmp_path, monkeypatch, mode)
             continuous_print_images=False,
             episode_final_snapshot=False,
             visualize=False,
+            close=lambda: events.append(("close_agent",)),
         )
 
     def capture(**kwargs):
@@ -280,8 +281,8 @@ def test_actual_startup_arguments_match_frozen_main(tmp_path, monkeypatch, mode)
     run_navigation(request)
     new_call = calls.pop()
     # The native assembly selects and configures the same concrete services.
-    assert events[:-2] == old_events[:-1]
-    assert events[-2:] == [("close_habitat",), ("close_provider",)]
+    assert events[:-3] == old_events[:-1]
+    assert events[-3:] == [("close_agent",), ("close_habitat",), ("close_provider",)]
     for name in ("settings", "planning_settings"):
         assert asdict(new_call[name]) == asdict(old_call[name])
     assert new_call["reranker"].config == old_call["reranker"].config
@@ -300,7 +301,7 @@ def test_actual_startup_arguments_match_frozen_main(tmp_path, monkeypatch, mode)
 
 
 @pytest.mark.parametrize(
-    "stage", ["config", "habitat", "environment", "agent", "runner"]
+    "stage", ["config", "habitat", "environment", "agent", "runner", "close_agent"]
 )
 def test_actual_resource_construction_failure_closes_prepared_services(
     tmp_path, monkeypatch, stage
@@ -338,11 +339,15 @@ def test_actual_resource_construction_failure_closes_prepared_services(
     def make_agent(**kwargs):
         fail("agent")
         return SimpleNamespace(
-            continuous_print_images=False, episode_final_snapshot=False, visualize=False
+            continuous_print_images=False,
+            episode_final_snapshot=False,
+            visualize=False,
+            close=lambda: (events.append("close_agent"), fail("close_agent")),
         )
 
     def runner(**kwargs):
         fail("runner")
+        Path(kwargs["artifacts"].directory).mkdir(parents=True)
 
     monkeypatch.setattr("runtime.mapping_client.MappingClient", Provider)
     monkeypatch.setattr("experiments.runner.run_episodes", runner)
@@ -358,7 +363,11 @@ def test_actual_resource_construction_failure_closes_prepared_services(
     assert events == (
         ["provider", "close_provider"]
         if stage in ("config", "habitat")
-        else ["provider", "close_habitat", "close_provider"]
+        else (
+            ["provider", "close_agent", "close_habitat", "close_provider"]
+            if stage in ("runner", "close_agent")
+            else ["provider", "close_habitat", "close_provider"]
+        )
     )
 
 

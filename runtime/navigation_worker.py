@@ -182,6 +182,7 @@ def build_services(request, stack):
         clip_cfg=str(request.resources.mobileclip_checkpoint),
         settings=request.settings,
     )
+    stack.callback(agent.close)
     agent.top_down_map_reader = evaluator.top_down_map
     enable_planning_maps(
         agent,
