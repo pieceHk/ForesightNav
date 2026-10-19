@@ -72,7 +72,6 @@ def worker_environment(plan, role, inherited=None):
                 resources.habitat / "habitat-baselines",
                 resources.navigation / "src/lagmemo",
                 third_party / "seem/src",
-                third_party / "detectron2",
                 third_party / "ml-mobileclip",
                 third_party / "frontier_exploration",
             ]

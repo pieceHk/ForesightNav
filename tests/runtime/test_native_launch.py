@@ -1,6 +1,7 @@
 """Exercise native run selection, frozen inputs and actual process cleanup."""
 
 from dataclasses import replace
+from importlib.machinery import PathFinder
 import gzip
 import hashlib
 import json
@@ -235,6 +236,21 @@ def test_worker_environment_replaces_ambient_algorithm_source_and_device_values(
         )
         assert "/old/source" not in environment["PYTHONPATH"]
     assert str(plan.resources.habitat / "habitat-lab") in nav["PYTHONPATH"]
+
+
+def test_navigation_source_paths_preserve_installed_detectron2_package(plan, tmp_path):
+    installed = tmp_path / "site-packages"
+    package = installed / "detectron2"
+    package.mkdir(parents=True)
+    (package / "__init__.py").write_text("__version__ = 'installed'\n")
+    # The native extension belongs to this package. A source-only package
+    # earlier on sys.path hides it, even when the extension is installed.
+    environment = worker_environment(plan, "navigation", {})
+    paths = environment["PYTHONPATH"].split(os.pathsep) + [str(installed)]
+    spec = PathFinder.find_spec("detectron2", paths)
+    assert spec is not None
+    assert Path(spec.origin) == package / "__init__.py"
+    assert list(spec.submodule_search_locations) == [str(package)]
 
 
 def test_native_habitat_selection_preserves_requested_ids(plan):
