@@ -57,9 +57,9 @@ Upstream license texts are retained unchanged:
 - `Navigation/runtime/lagmemo/src/lagmemo/lagmemo/perception/detection/detic/Detic/LICENSE`
 - `Navigation/runtime/lagmemo/src/lagmemo/lagmemo/perception/detection/detic/Detic/third_party/CenterNet2/LICENSE`
 - `Navigation/runtime/lagmemo/src/lagmemo/lagmemo/perception/detection/detic/Detic/third_party/Deformable-DETR/LICENSE`
-- `Navigation/runtime/lagmemo/src/third_party/detectron2/LICENSE`
+- `third_party/licenses/detectron2/LICENSE`
 - `Navigation/runtime/lagmemo/src/third_party/frontier_exploration/LICENSE`
-- `Navigation/runtime/lagmemo/src/third_party/habitat-lab/LICENSE`
+- `third_party/licenses/habitat_lab/LICENSE`
 - `Navigation/runtime/lagmemo/src/third_party/ml-mobileclip/LICENSE`
 - `Navigation/runtime/lagmemo/src/third_party/ml-mobileclip/LICENSE_weights_data`
 - `Navigation/runtime/lagmemo/src/third_party/seem/LICENSE`
@@ -70,6 +70,12 @@ from pinned source archives. Their license texts above are copied byte for byte
 from those archives. The depth rasterizer retains the Gaussian-Splatting license;
 PBSP's MIT license applies to PBSP-authored code. Versions, artifact checksums and
 tracked extension source hashes are recorded in [the mapping lock](envs/mapping/linux-64.lock.json).
+
+Detectron2 and Habitat-Lab use complete pinned external source archives from the
+[navigation lock](envs/navigation/linux-64.lock.json). Their unchanged license
+texts are retained above. The navigation installer builds Detectron2, Habitat-Lab
+and Habitat-Baselines; runtime preparation exports the same Habitat-Lab source
+revision for the sensor and task adapters.
 
 The semantic pooling/codebook operations now live in `pbsp/semantics/features.py`;
 `pbsp/mapping/features.py` retains a compatibility import. The same EmbodiedSplat

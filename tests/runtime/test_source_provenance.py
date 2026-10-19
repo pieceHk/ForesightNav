@@ -43,6 +43,24 @@ def test_archive_source_preparation_is_offline_and_idempotent(tmp_path, monkeypa
     assert verify_source(path, source) == first
 
 
+def test_compatibility_preparer_accepts_the_same_non_git_source(tmp_path, monkeypatch):
+    import importlib
+
+    root, cache, source = fixture(tmp_path)
+    expected_cache = root / ".cache/pbsp-offline"
+    expected_cache.parent.mkdir()
+    cache.rename(expected_cache)
+    monkeypatch.syspath_prepend(str(Path(__file__).resolve().parents[2] / "Exp/scripts"))
+    legacy = importlib.import_module("prepare_reproduction")
+    destination = root / "Exp/assets/dependencies/habitat-lab"
+    monkeypatch.setattr(legacy, "ROOT", root)
+    monkeypatch.setattr(legacy, "HABITAT_DEPENDENCY", destination)
+    monkeypatch.setattr("urllib.request.urlopen", lambda *a, **k: pytest.fail("cached source accessed network"))
+    assert legacy.prepare_habitat()["kind"] == "archive"
+    assert legacy.prepare_habitat(tmp_path / "unused-git-source")["revision"] == source["revision"]
+    assert not (destination / ".git").exists()
+
+
 @pytest.mark.parametrize("change", ["content", "extra", "manifest"])
 def test_changed_source_is_rejected_without_replacement(tmp_path, change):
     root, cache, source = fixture(tmp_path)

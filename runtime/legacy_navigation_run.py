@@ -252,7 +252,6 @@ def prepare_request(argv=None):
         (
             source,
             third_party / "seem/src",
-            third_party / "detectron2",
             third_party / "ml-mobileclip",
             third_party / "frontier_exploration",
         )

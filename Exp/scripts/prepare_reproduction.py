@@ -7,6 +7,7 @@ import json
 import os
 import shutil
 import subprocess
+import sys
 from pathlib import Path
 
 from _runtime import ROOT
@@ -23,23 +24,27 @@ HABITAT_DEPENDENCY = ROOT / "Exp/assets/dependencies/habitat-lab"
 
 
 def prepare_habitat(source=None):
-    """Copy a committed dependency without sharing objects with an older checkout."""
+    """Prepare the pinned snapshot or copy an explicit local Git source."""
+    sys.path.insert(0, str(ROOT))
+    from runtime.source_provenance import habitat_source, verify_source
+    from scripts.prepare_dependencies import prepare_habitat as prepare_pinned_habitat
+
+    if source is None or HABITAT_DEPENDENCY.exists():
+        return prepare_pinned_habitat(root=ROOT, cache=ROOT / ".cache/pbsp-offline")
     if not HABITAT_DEPENDENCY.exists():
         HABITAT_DEPENDENCY.parent.mkdir(parents=True, exist_ok=True)
         subprocess.run(["git", "clone", "--no-hardlinks", "--dissociate", "--no-checkout",
                         str(source or HABITAT_REPOSITORY), str(HABITAT_DEPENDENCY)], check=True)
         subprocess.run(["git", "-C", str(HABITAT_DEPENDENCY), "checkout", "--detach", HABITAT_REVISION], check=True)
         subprocess.run(["git", "-C", str(HABITAT_DEPENDENCY), "remote", "set-url", "origin", HABITAT_REPOSITORY], check=True)
-    observed = subprocess.check_output(["git", "-C", str(HABITAT_DEPENDENCY), "rev-parse", "HEAD"], text=True).strip()
-    if observed != HABITAT_REVISION:
-        raise RuntimeError(f"Habitat dependency revision differs: {observed}")
-    subprocess.run(["git", "-C", str(HABITAT_DEPENDENCY), "diff", "--quiet", "HEAD"], check=True)
+    lock = json.loads((ROOT / "envs/navigation/linux-64.lock.json").read_text())
+    return verify_source(HABITAT_DEPENDENCY, habitat_source(lock))
 
 
 def habitat_pythonpaths():
     paths = [HABITAT_DEPENDENCY / "habitat-lab", HABITAT_DEPENDENCY / "habitat-baselines"]
     if not (paths[0] / "habitat/datasets/goat/goat_dataset.py").is_file():
-        raise FileNotFoundError("Pinned Habitat dependency is missing; run prepare_reproduction.py")
+        raise FileNotFoundError("Pinned Habitat dependency is missing; run scripts/prepare_dependencies.py")
     prepare_habitat()
     return paths
 

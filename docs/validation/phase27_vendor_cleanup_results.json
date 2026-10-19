@@ -1,0 +1,48 @@
+{
+  "status": "source_inventory_verified",
+  "base_commit": "3665baec989556a6f81f19af16bf59f0f9d10f73",
+  "scope": "Remove redundant partial dependency source trees after exact comparison with the complete fixed archives; no native implementation or model arithmetic change",
+  "comparison": {
+    "detectron2": {
+      "vendored_files": 750,
+      "pinned_complete_files": 827,
+      "differences": [],
+      "absent_from_pinned_archive": [],
+      "revision": "9604f5995cc628619f0e4fd913453b4d7d61db3f"
+    },
+    "habitat_lab": {
+      "vendored_files": 481,
+      "pinned_complete_files": 550,
+      "differences": [],
+      "absent_from_pinned_archive": [],
+      "revision": "8df2661e5b2203c0ddc47798d5da0132d5686bbe"
+    }
+  },
+  "removed_files": 1231,
+  "licenses": {
+    "detectron2": {
+      "path": "third_party/licenses/detectron2/LICENSE",
+      "sha256": "ceb78ee847e76f67a6a521a5732dc3373aed07eee003d738a572dc96705f08ff",
+      "matches_frozen_vendor_bytes": true
+    },
+    "habitat_lab": {
+      "path": "third_party/licenses/habitat_lab/LICENSE",
+      "sha256": "2d4c3d00d67067461412a2d9a2f3f8b7b9cda62b3db501e4b6844ccf35c949aa",
+      "matches_frozen_vendor_bytes": true
+    }
+  },
+  "retained_entries": "Native and compatibility entry paths resolve the installed complete Detectron2 package; the compatibility Habitat preparer accepts the verified archive source",
+  "tests": {
+    "targeted": {
+      "passed": 76,
+      "seconds": 1.76
+    },
+    "local": {
+      "passed": 614,
+      "skipped": 1,
+      "seconds": 15.69,
+      "skip_reason": "Linux procfs integration"
+    }
+  },
+  "numerical_validation": "Independent full-split run continues in an unchanged detached source clone at the base commit; this cleanup is verified by source equality and import-boundary checks"
+}

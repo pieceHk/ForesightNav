@@ -593,9 +593,8 @@ def navigation_environment(runtime: dict, profile: dict, nav_gpu: int) -> dict:
         ROOT / "Navigation" / "src",
         NAVIGATION_ENGINE / "src" / "lagmemo",
         third_party / "seem" / "src",
-        third_party / "detectron2",
         third_party / "ml-mobileclip",
         third_party / "frontier_exploration",
     ]
-    env["PYTHONPATH"] = os.pathsep.join(map(str, pythonpath)) + os.pathsep + env.get("PYTHONPATH", "")
+    env["PYTHONPATH"] = os.pathsep.join(map(str, pythonpath))
     return env

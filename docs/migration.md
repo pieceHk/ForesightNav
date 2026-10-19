@@ -6,6 +6,8 @@
 
 ## 当前代码
 
+已移除两份重复的导航依赖源码：750 个 Detectron2 文件及 481 个 Habitat-Lab 文件。删除前逐项核对文件内容、执行位及链接目标，均与已固定的完整源码归档一致，没有独有改动。原许可证逐字保留在 `third_party/licenses/`。默认路径继续使用完整已安装的 Detectron2，以及经过校验的 Habitat 源码快照；兼容入口也不再添加旧 Detectron2 源码路径，旧 profile 启动器使用显式源码搜索路径。旧资源准备入口可验证同一份非 Git Habitat 快照。
+
 默认模型的外部资源验证已通过：22 个文件复制到仓库之外后，建图的 50 个张量、导航模型及 Habitat reset 的 21 个张量仍与基线完全相同。检查拒绝已观察到的模型文件从其他目录读取。自定义 semantic injector 的真实构造验证禁止导入默认语义模型，并确认默认 FastSAM、MaskAdapter 和 CLIP 未被创建。使用公开安装的两个环境及这份外部权重，完整 4-MON 单 episode 的四个目标全部成功，414 个动作、44 条完整身份记录、最终地图哈希及指标均与此前一致，根进程和三个工作进程均以 0 退出。详见[资源验证](validation/phase24_resources_results.json)和[集成结果](validation/phase24_integration_results.json)。
 
 资源准备入口已改为浅层脚本。`prepare_runtime.py` 从环境缓存导出固定版本的 Habitat 源码；原生检查按锁定清单核对其全部 550 个文件，也保留对干净固定 Git checkout 的支持。`run.py --check` 会校验全部模型的内容及缓存引用，实际运行保存检查结果和模型清单。服务器已通过独立资源准备及检查，非 Git 源码导出的五类 Habitat 传感器观测与基线逐项一致，且未加载感知模型。冻结建图辅助函数的测试直接读取仓库基准版本，脱离服务器私有路径。本机完整测试为 608 项通过、1 项 Linux procfs 检查跳过；Linux 完整测试为 609 项通过。下载错误的处理另增加检查，确保一个来源失败后其他缓存任务仍会继续，相关 53 项检查通过。详见[资源准备结果](validation/phase25_preparation_results.json)。
