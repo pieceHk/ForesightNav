@@ -1,6 +1,6 @@
 # PBSP 开源架构设计
 
-以 `full-pbsp` 的在线建图、候选证据、候选重排、顺序后缀规划和导航执行为主体，整理成一个可阅读、可安装、可复现实验的项目。2/3/4-MON 共用同一套实现，通过配置选择数据集。本文定义目标目录和接口，供下一步重构使用。
+以 `full-pbsp` 的在线建图、候选证据、候选重排、顺序后缀规划和导航执行为主体，整理成一个可阅读、可安装、可复现实验的项目。2/3/4-MON 共用同一套实现，通过配置选择数据集。本文定义目标目录和接口，实现进度见[迁移记录](migration.md)，四部分的当前接入方式见[组件接口](components.md)。
 
 ## 1 设计边界
 
@@ -36,14 +36,21 @@ PBSP/
 │   │   ├── keyframes.py           # 关键帧接纳与缓存
 │   │   ├── geometry.py            # 相机、地图、Habitat 坐标变换
 │   │   ├── memory.py              # 融合状态、地图快照与版本发布
-│   │   ├── query.py               # 语义检索、支持度、空间 NMS
 │   │   ├── model.py               # 网络构建、权重加载、推理调用
 │   │   ├── encoder.py             # 在线编码和增量特征更新
 │   │   ├── fusion.py              # Gaussian 融合实现
 │   │   ├── decoder.py             # 本实验使用的解码与渲染逻辑
 │   │   └── layers/                # 实际用到的网络层，按职责保留必要子目录
+│   ├── semantics/
+│   │   ├── features.py            # 区域特征提取与语义码本注入
+│   │   └── types.py               # SemanticInjector / SemanticInjection
+│   ├── query/
+│   │   ├── engine.py              # 语义检索、支持度、空间 NMS
+│   │   ├── service.py             # 组装文本编码器与索引读取器
+│   │   └── types.py               # SemanticIndex / FeatureSpace / QueryBackend
 │   └── navigation/
 │       ├── navigator.py           # 目标执行、局部地图和动作生成
+│       ├── backends.py            # NavigationBackend 与 waypoint 控制接口
 │       ├── planning.py            # 组织候选刷新、排序和计划分派
 │       ├── candidates.py          # 候选记录、投影结果和距离状态
 │       ├── evidence.py            # 跨帧候选证据与空间轨迹
@@ -58,6 +65,8 @@ PBSP/
 │   ├── habitat.py                 # Habitat 环境、观测和动作转换
 │   ├── geometry.py                # 导航网格投影、测地距离和可达性查询
 │   ├── perception.py              # 组织实际使用的感知模型
+│   ├── embodied_splat_semantics.py # 语义模型资源适配
+│   ├── embodied_splat_query.py     # Gaussian 状态到通用语义索引
 │   ├── detic.py
 │   ├── seem.py
 │   └── matching.py                # 当前流程实际调用的图像匹配与验证模型
@@ -227,7 +236,7 @@ Evaluator 单独持有成功标签和真值目标。Agent 获得任务查询、�
 
 | 配置 | 回答的问题 | 示例 |
 | --- | --- | --- |
-| Method | 方法怎样工作 | 关键帧阈值、候选权重、后缀权重、验证阈值 |
+| Method | 方法怎样工作 | 独立的 mapping、query、navigation 与 suffix 参数 |
 | Dataset | 在哪些样本上运行 | 数据版本、split、manifest、身份索引、预期任务数 |
 | Evaluation | 怎样执行和评价 | 每任务 500 步、指标、输出和可视化选项 |
 | Experiment | 采用哪组组合 | method、dataset、evaluation、随机种子 |

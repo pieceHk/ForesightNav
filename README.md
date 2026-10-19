@@ -1,60 +1,99 @@
-# PBSP: Persistent Belief-Aware Suffix Planning
+<div align="center">
 
-Source snapshots for the Baseline and Full PBSP versions used in the recorded experiments. Full PBSP here means the historical complete-C implementation (`ordered_suffix_mvp`), not the later Suffix-only checked-candidate ablation. The paper name does not imply implementation of every item in historical design notes; consult the executable code and profiles.
+# PBSP
 
-The `refactor/full-pbsp` branch organizes the Full PBSP implementation into shallow mapping and navigation modules. See [migration progress](docs/migration.md) for the completed stages and validation requirements.
+**Persistent Belief-Aware Suffix Planning**
 
-## Select the experiment version
+Online spatial memory and planning for ordered multi-object navigation.
 
-| Variant | Branch | Fixed tag | Original source commit |
-|---|---|---|---|
-| Baseline reference / 2-MON | `baseline` | `baseline-5ec04a8f` | `5ec04a8f` |
-| Baseline early 3-MON records | `baseline-3mon-legacy` | `baseline-3mon-legacy-a3719e68` | `a3719e68` |
-| Baseline 4-MON recovery | `baseline-runtime-fix` | `baseline-runtime-36e6c403` | `36e6c403` |
-| Baseline final 4-MON runtime | `baseline-4mon-runtime` | `baseline-runtime-cf0e056f` | `cf0e056f` |
-| Full PBSP 3-MON | `full-pbsp-3mon` | `pbsp-3mon-96e91424` | `96e91424` |
-| Full PBSP 2-MON | `full-pbsp-2mon` | `pbsp-2mon-ea5efef0` | `ea5efef0` |
-| Full PBSP 4-MON / latest tracked snapshot | `main`, `full-pbsp` | `pbsp-4mon-7f232ca7` | `7f232ca7` |
+[Data](#1-data) · [Installation](#2-installation) · [Run](#3-run) · [Components](docs/components.md) · [Validation](docs/migration.md)
 
-These are **new export commits**, not the original repository's Git history. Original full SHAs, file hashes, exclusions and packaging changes are recorded in [SOURCE_MANIFEST.json](Exp/release/SOURCE_MANIFEST.json). No algorithm source or experiment outcomes were edited for this release.
+[![License: MIT](https://img.shields.io/badge/PBSP-MIT-blue.svg)](LICENSE)
+
+</div>
+
+PBSP builds a persistent semantic Gaussian map from RGB-D observations, retrieves candidate locations for the remaining targets, and plans their ordered suffix before navigation. The map is shared across tasks within an episode. **2/3/4-MON use the same implementation and select their task sequences through configuration.**
+
+```mermaid
+flowchart LR
+    RGBD[RGB-D + poses] --> M[Mapping]
+    RGBD --> S[Semantic injection]
+    M --> SM[Semantic memory]
+    S --> SM
+    SM --> Q[Query]
+    Tasks[Ordered targets] --> Q
+    Q --> P[PBSP candidate / suffix planning]
+    P --> N[Navigation]
+    RGBD --> N
+    N --> A[Simulator actions]
+```
+
+## 1. Data
+
+Prepare HM3Dv1 scenes and the ordered episode datasets below. The [data guide](docs/datasets.md) gives the directory layout, source requirements and identity checks; exact versions and checksums are in [assets/datasets.json](assets/datasets.json).
+
+| Experiment | Scenes | Episodes | Targets per episode | Total targets |
+| --- | ---: | ---: | ---: | ---: |
+| 2-MON | 20 | 600 | 2 | 1,200 |
+| 3-MON | 20 | 400 | 3 | 1,200 |
+| 4-MON | 20 | 300 | 4 | 1,200 |
+
+Each episode includes its ordered source identities. Preserve `scene_id`, `episode_id` and task order when preparing or replacing a dataset.
+
+## 2. Installation
 
 ```bash
-git clone --branch full-pbsp https://github.com/pieceHk/PBSP.git
+git clone --branch refactor/full-pbsp https://github.com/pieceHk/PBSP.git
 cd PBSP
 ```
 
-Select a fixed tag from the table when inspecting a historical source version.
-The reproduction helpers below belong to the current Full PBSP workspace.
+Use separate Linux/CUDA environments for mapping and navigation:
 
-## Layout and reproduction
+| Environment | Python | PyTorch | CUDA build |
+| --- | --- | --- | --- |
+| Mapping | 3.10 | 2.7.1 | cu118 |
+| Navigation | 3.9 | 2.1.2 | cu118 |
 
-- `pbsp/`: mapping policies, candidate evidence/ranking and ordered suffix planning.
-- `experiments/`: dataset identities, MON metrics and decision records.
-- `configs/`: shared method, dataset, evaluation and experiment configuration.
-- `tests/`: behavior and runtime integration tests.
-- `Mapping/`, `Navigation/`, `Exp/`: model runtimes and launchers being migrated.
-- [Core code guide](Exp/release/CODE_GUIDE.md): module responsibilities and a reading order for Full PBSP.
-- [Linux reproduction](Exp/release/LOCAL_REPRODUCTION.md): resource preparation, identity alignment and the Full PBSP launcher.
-- [Reproduction guide](Exp/release/REPRODUCIBILITY.md): assets, environment, profile selection and launch commands.
-- [Version and evaluation notes](Exp/release/VERSIONS_AND_RESULTS.md): source lineage and raw-versus-post-hoc distinction.
-- [Validation record](Exp/release/VALIDATION.md): tests actually run and remaining limitations.
-- [Third-party notices](THIRD_PARTY_NOTICES.md): sources and preserved upstream licenses.
+Follow [environment and model preparation](docs/installation.md), then install PBSP in both environments with `python -m pip install -e .`. The preparation command records interpreter paths, connects data and weights, and checks the pinned Habitat dependency.
 
-This is a **source release**, not a self-contained GPU image. Licensed HM3D assets, generated episodes, model weights, machine-local configuration, logs and images are not uploaded. Relative asset symlinks are retained. Linux, suitable CUDA/PyTorch environments, Habitat and separate mapping/navigation dependencies are required.
+## 3. Run
 
-After preparing the resources in the Linux reproduction guide, run a complete single-episode check:
+From the repository root, with the navigation environment activated:
 
 ```bash
 python Exp/scripts/run_full_pbsp.py --mon 4 --scope smoke --check-only
-python Exp/scripts/run_full_pbsp.py --mon 4 --scope smoke --gpus 0,1
+python Exp/scripts/run_full_pbsp.py --mon 4 --scope full --gpus 0,1
 ```
 
-The wrapper supplies the episode identity mapping and uses the tracked profile without changing the planner or evaluation controls. Use `--scope full` for the complete selected split.
+`--mon 2` or `--mon 3` selects another dataset. GPU order is **mapping,navigation**. Use `--scope smoke` to run one complete ordered episode before a full split.
 
-Current snapshot source: `7f232ca714f3f77e516489fb8af07af8ef580751`.
+Each run writes a new directory under `Exp/runs/`:
 
-## License
+```text
+Exp/runs/<run>/
+├── status.json             # process completion
+├── provenance.json         # code, configuration and data identity
+├── logs/                   # mapping and navigation logs
+└── mon_metrics.json        # SR, SPL, PSR and PeSPL
+```
 
-PBSP-authored code is available under the [MIT license](LICENSE). Third-party
-software, adapted upstream components, model weights and datasets retain their
-original licenses; see [third-party notices](THIRD_PARTY_NOTICES.md).
+Per-episode metrics, candidate decisions and final map images live under the scene result directories. See [reproduction and outputs](Exp/release/LOCAL_REPRODUCTION.md) for deterministic scene/episode ranges and detailed artifacts.
+
+## Components
+
+| Part | Read the implementation | Replacement boundary |
+| --- | --- | --- |
+| Mapping | [mapper.py](pbsp/mapping/mapper.py), [encoder.py](pbsp/mapping/encoder.py) | RGB-D, poses and episode-local map state |
+| Semantic injection | [features.py](pbsp/semantics/features.py), [SemanticInjector](pbsp/semantics/types.py) | Aligned features, codebook IDs and semantic state |
+| Query | [engine.py](pbsp/query/engine.py), [SemanticQuery](pbsp/query/service.py) | Semantic index and matching text embeddings |
+| Navigation | [navigator.py](pbsp/navigation/navigator.py), [NavigationBackend](pbsp/navigation/backends.py) | Sensor frame, world waypoint, local maps and action |
+
+[PBSPAgent](pbsp/agent.py) owns candidate execution and verification. [Shared method settings](configs/methods/full_pbsp.yaml) separate mapping, query, navigation and suffix parameters. Experiment presets live in [configs/experiments](configs/experiments).
+
+The [component guide](docs/components.md) explains how to replace a component and which interfaces a VLFM or ApexNav adapter must supply. Their full navigation stacks are future integrations; the default backend uses LagMemo.
+
+## Validation and provenance
+
+The [validation records](docs/migration.md) include frozen-code replays, Linux tests and complete single-episode runs. Full selected-split evaluation and fresh-environment installation remain in progress. Historical branches and tags are documented in [versions and results](docs/versions.md).
+
+PBSP-authored code uses the [MIT license](LICENSE). Adapted code, dependencies, datasets and weights retain their respective licenses; see [third-party notices](THIRD_PARTY_NOTICES.md). Mapping derives from [EmbodiedSplat](https://github.com/0nandon/EmbodiedSplat), and the default navigation backend derives from LagMemo.

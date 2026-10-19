@@ -15,7 +15,7 @@ refinement operations in `pbsp/mapping/fusion.py` were extracted from
 `Mapping/runtime/embodied_splat/src/model/encoder/encoder_test_unet3d_online.py`.
 They retain their EmbodiedSplat provenance and upstream license scope.
 The online encoding and region-feature operations in `pbsp/mapping/encoder.py`
-and `pbsp/mapping/features.py`, and the view-distance and image-grid helpers in
+and `pbsp/semantics/features.py`, and the view-distance and image-grid helpers in
 `pbsp/mapping/geometry.py`, were extracted from the same runtime and its geometry
 and tensor utility modules. The same attribution and license scope apply.
 `adapters/embodied_splat_model.py` retains the network constructor and optional
@@ -47,3 +47,8 @@ Upstream license texts are retained unchanged:
 - `Navigation/runtime/lagmemo/src/third_party/ml-mobileclip/LICENSE`
 - `Navigation/runtime/lagmemo/src/third_party/ml-mobileclip/LICENSE_weights_data`
 - `Navigation/runtime/lagmemo/src/third_party/seem/LICENSE`
+
+The semantic pooling/codebook operations now live in `pbsp/semantics/features.py`;
+`pbsp/mapping/features.py` retains a compatibility import. The same EmbodiedSplat
+attribution and license scope apply. Semantic retrieval now lives in `pbsp/query/`;
+its Gaussian storage and coordinate adapter is `adapters/embodied_splat_query.py`.
