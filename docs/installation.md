@@ -1,11 +1,11 @@
 # Environment and model preparation
 
-Mapping has a locked installation with source-built CUDA extensions, verified in an independent Linux environment. Navigation currently uses a provisioned environment; its independent installation is still being validated.
+Mapping has a locked installation with source-built CUDA extensions. An independent navigation environment has also passed model, native-extension and complete-episode checks; its public installer is being assembled. See the [navigation validation](validation/phase22_navigation_install_results.json) and [episode record](validation/phase22_integration_results.json).
 
 | Runtime | Python | PyTorch | torchvision | NumPy |
 | --- | --- | --- | --- | --- |
 | Mapping | 3.10 | 2.7.1+cu118 | 0.22.1+cu118 | 2.1.3 |
-| Navigation | 3.9 | 2.1.2+cu118 | 0.16.2+cu118 | 1.23.5 |
+| Navigation | 3.9 | 2.1.2+cu118 | 0.16.2+cu118 | 1.26.4 |
 
 Mapping needs the EmbodiedSplat CUDA extensions and region/CLIP models. Navigation needs Habitat-Sim, the pinned Habitat fork, Detectron2, Detic, SEEM, MobileCLIP and image-matching models. The retained sources and license scope are listed in [third-party notices](../THIRD_PARTY_NOTICES.md).
 
@@ -76,7 +76,7 @@ python scripts/prepare_runtime.py \
 
 This writes `runtime.local.yaml` with absolute data, weight, output and interpreter paths. It copies the two required Kornia checkpoints into the selected weights directory. Omit `--torch-home-source` when they are already present there. GPU defaults are mapping `0`, navigation `1`; change them in this YAML or supply `--mapping-gpu` and `--navigation-gpu` during preparation.
 
-The current model constructors still use several vendor-relative auxiliary paths. The native precheck verifies that those paths resolve to the selected weights. Consolidating that resource setup and validating the independent navigation installation remain unfinished.
+The current model constructors still use several vendor-relative auxiliary paths. The native precheck verifies that those paths resolve to the selected weights. Resource consolidation and the public navigation installer remain unfinished.
 
 ## Verify
 

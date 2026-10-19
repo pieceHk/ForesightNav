@@ -96,6 +96,6 @@ The [component guide](docs/components.md) explains how to replace a component an
 
 ## Validation and provenance
 
-The [validation records](docs/migration.md) include frozen-code replays, Linux tests, an independent mapping installation and complete single-episode runs. Full selected-split evaluation and independent navigation installation remain in progress. Historical branches and tags are documented in [versions and results](docs/versions.md).
+The [validation records](docs/migration.md) include frozen-code replays, Linux tests and complete single-episode runs using independently built mapping and navigation environments. The public navigation installer and full selected-split evaluation remain in progress. Historical branches and tags are documented in [versions and results](docs/versions.md).
 
 PBSP-authored code uses the [MIT license](LICENSE). Adapted code, dependencies, datasets and weights retain their respective licenses; see [third-party notices](THIRD_PARTY_NOTICES.md). Mapping derives from [EmbodiedSplat](https://github.com/0nandon/EmbodiedSplat), and the default navigation backend derives from LagMemo.

@@ -6,6 +6,8 @@
 
 ## 当前代码
 
+两个独立环境已共同完成完整 4-MON 单 episode：四项任务全部成功，共 414 个动作，44 条规划记录身份完整，三个工作进程均以 0 退出。动作数、指标和最终地图哈希与上一轮一致。新导航环境在空目录中创建并重新编译 Habitat-Sim、Magnum 与 Detectron2；21 个模型及 Habitat 初始观测张量的数值、形状和类型均与原环境一致，完整测试为 578 项通过。实际工作进程的动态库映射也未引用旧环境或旧工作目录。安装验证修复了 Imath 临时联网、源码符号链接处理、Detectron2 导入遮蔽及其旧副本缺少 `data` 模块的问题。当前使用完整固定版本的 Detectron2 包；统一导航安装器及另一空环境中的最终流程验证仍待完成。详见[导航环境结果](validation/phase22_navigation_install_results.json)和[双环境集成结果](validation/phase22_integration_results.json)。
+
 独立 mapping 环境的完整 4-MON 单 episode 验证已通过：四个目标均成功，共 414 个动作；44 条规划记录身份完整，没有过期后缀分派；31 次地图重建均完成，最终为 301 个关键帧和 3,088,415 个高斯点。建图、导航及资源监控进程退出码均为 0，动作数、指标和最终地图哈希与此前记录一致。首次运行虽完成全部目标，但监控读取已退出进程的 procfs 信息时发生竞态，根入口按失败记录；修复 `ProcessLookupError` 处理后另行运行并通过。新增五项监控检查后，Linux 完整测试为 577 项通过。此实验的 navigation 仍使用原环境。详见[集成结果及首次失败记录](validation/phase21_integration_results.json)。
 
 Mapping 的独立离线安装已通过验证。安装器校验 42 个 Conda 包、122 个 Python 包输入和固定扩展源码，在新目录中创建环境并构建四个 CUDA 扩展；安装后依赖、扩展导入和 CUDA 检查均通过。真实推理补齐了 FastSAM 延迟导入的 pandas 依赖，最终锁定文件又在第二个空环境中完整执行。12 帧 RGB-D 重放的 50 个地图及增量状态张量与原环境逐项相同，候选和公开状态也一致。新增 13 项安装检查后，Linux 完整测试为 572 项通过。导航环境独立安装及完整 split 评测仍待完成。详见[安装指南](mapping_installation.md)和[安装验证](validation/phase21_mapping_install_results.json)。
