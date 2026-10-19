@@ -1,5 +1,5 @@
 {
-  "status": "targeted_tests_passed_real_export_pending",
+  "status": "real_export_verified_linux_transfer_in_progress",
   "base_commit": "110ee75ab15ec797c0e92f7d1fe85f5c206b392f",
   "scope": "Export committed code and all selected pinned offline input groups; default includes environments, models and episode inputs; support transfer verification and an optional Linux micromamba executable",
   "tests": {
@@ -28,5 +28,27 @@
     "source_of_collective_author": "Existing LICENSE copyright holder",
     "version_matches_pyproject": true,
     "no_paper_doi_or_release_date_added": true
+  },
+  "implementation_commit": "1ae72fd0be486230e6bc9fd2f7633b51ce677440",
+  "macos_export": {
+    "status": "passed",
+    "groups": [
+      "environments",
+      "episodes"
+    ],
+    "verified_payload_files": 417,
+    "payload_bytes": 6613002996,
+    "included_linux_micromamba": true,
+    "plain_git_clone_restores_branch_and_commit": "passed in transfer-and-clone test",
+    "repeat_verify_cli": "passed"
+  },
+  "linux": {
+    "targeted_and_structure_tests": {
+      "passed": 14,
+      "seconds": 3.08
+    },
+    "architecture_clean_tree": "passed",
+    "full_selected_group_transfer": "running",
+    "fresh_restored_checkout_validation": "pending transfer completion"
   }
 }
