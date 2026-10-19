@@ -6,6 +6,8 @@
 
 ## 当前代码
 
+数据准备已包含三组固定任务元数据和原始选样记录，并可直接读取官方 ObjectNav 验证注释。公开命令从 macOS 空缓存完成下载及重建，69 个原始元数据和内容文件逐字节一致，覆盖全部 60 个场景文件、1,300 个 episode、3,600 个目标。Linux 从同一份官方源注释离线重建后，三组完整身份索引均与现有数据一致，2/3/4-MON 的根入口检查分别通过 600、400、300 个 episode，重复准备结果一致。验证使用已有场景资源。README 按场景获取、数据准备、环境、启动组织；数据指南明确说明共享目标池由历史配对结果校准。Linux 完整测试为 631 项通过、1 项因直接调用解释器时 PATH 缺少 zstd 而跳过；补齐工具路径后相关 12 项全部通过，架构检查通过。详见[数据准备结果](validation/phase28_dataset_preparation_results.json)。
+
 已移除两份重复的导航依赖源码：750 个 Detectron2 文件及 481 个 Habitat-Lab 文件。删除前逐项核对文件内容、执行位及链接目标，均与已固定的完整源码归档一致，没有独有改动。原许可证逐字保留在 `third_party/licenses/`。默认路径继续使用完整已安装的 Detectron2，以及经过校验的 Habitat 源码快照；兼容入口也不再添加旧 Detectron2 源码路径，旧 profile 启动器使用显式源码搜索路径。旧资源准备入口可验证同一份非 Git Habitat 快照。
 
 默认模型的外部资源验证已通过：22 个文件复制到仓库之外后，建图的 50 个张量、导航模型及 Habitat reset 的 21 个张量仍与基线完全相同。检查拒绝已观察到的模型文件从其他目录读取。自定义 semantic injector 的真实构造验证禁止导入默认语义模型，并确认默认 FastSAM、MaskAdapter 和 CLIP 未被创建。使用公开安装的两个环境及这份外部权重，完整 4-MON 单 episode 的四个目标全部成功，414 个动作、44 条完整身份记录、最终地图哈希及指标均与此前一致，根进程和三个工作进程均以 0 退出。详见[资源验证](validation/phase24_resources_results.json)和[集成结果](validation/phase24_integration_results.json)。
