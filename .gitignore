@@ -2,6 +2,14 @@ __pycache__/
 *.py[cod]
 .pytest_cache/
 .venv/
+*.egg-info/
+build/
+dist/
+runtime.local.yaml
+data/*
+weights/*
+outputs/*
+.cache/
 Exp/runs/*
 !Exp/runs/.gitignore
 Exp/runtime.local.toml

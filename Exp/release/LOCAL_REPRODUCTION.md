@@ -48,7 +48,7 @@ verifies the revision and loads Habitat and Habitat Baselines from this copy.
 
 ```bash
 python Exp/scripts/run_full_pbsp.py --mon 4 --scope smoke --check-only
-python -m pytest Mapping/tests Navigation/tests Exp/tests -q
+python -m pytest -q
 python Exp/scripts/validate.py
 python Exp/scripts/run_full_pbsp.py --mon 4 --scope smoke --gpus 0,1
 ```
@@ -81,10 +81,9 @@ The tracked 4-MON profile disables per-keyframe image writes. Planner maps remai
 enabled for SCSP. Enabling screenshots changes the frozen experiment controls;
 record it as a separate diagnostic run.
 
-`verify_source.py` checks committed retained source blobs and requires tracked
-working files to match the commit. During review, use
-`git diff origin/full-pbsp` to inspect the pending packaging changes. The source
-manifest preserves the original hashes, including the relocated placeholder.
+`verify_source.py` checks the retained blobs of the original export. Review the
+refactor with `git diff origin/full-pbsp` and run the current test suite. The
+source manifest preserves the original hashes for tracing source lineage.
 
 ## Server environment inventory
 

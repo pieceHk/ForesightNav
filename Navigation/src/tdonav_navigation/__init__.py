@@ -1,8 +1,8 @@
 """Visual navigation boundary policies."""
 
-from .evidence import CandidateEvidenceBank
-from .policy import GoalHierarchy, StopBoundary
-from .recovery import NoveltyGoalSelector
+from pbsp.navigation.evidence import CandidateEvidenceBank
+from pbsp.navigation.policy import GoalHierarchy, StopBoundary
+from pbsp.navigation.recovery import NoveltyGoalSelector
 
 __all__ = [
     "CandidateEvidenceBank",

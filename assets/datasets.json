@@ -1,0 +1,36 @@
+{
+  "schema_version": "pbsp_dataset_catalog_v1",
+  "scenes": "HM3Dv1_objectnav_val_20scenes_3donav/data/scene_datasets",
+  "datasets": [
+    {
+      "name": "hm3dv1_2mon_balanced1200",
+      "source": "HM3Dv1_MON_balanced1200_v1_runtime_compat_20260829/2MON_600x2",
+      "target": "episodes/hm3dv1/2mon",
+      "tasks_per_episode": 2,
+      "episodes": 600,
+      "scenes": 20,
+      "manifest_sha256": "dfcf14d1fe7edef9c9d7bd8286dfe8067c91f56ef46ca2be4524d7e01461ac62",
+      "source_trace_sha256": "96c2f75043e5fcdb2c8c594cab32c272642a05b2d83b56b611aa61426fc7cb08"
+    },
+    {
+      "name": "hm3dv1_3mon_balanced1200",
+      "source": "HM3Dv1_MON_balanced1200_v1_runtime_compat_20260829/3MON_400x3",
+      "target": "episodes/hm3dv1/3mon",
+      "tasks_per_episode": 3,
+      "episodes": 400,
+      "scenes": 20,
+      "manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+      "source_trace_sha256": "34931f42e88feb55d87f2c9c3caf4063e984f32efc4972fd82a40d210d32f04a"
+    },
+    {
+      "name": "hm3dv1_4mon_balanced1200",
+      "source": "HM3Dv1_MON_balanced1200_v1_runtime_compat_20260829/4MON_300x4",
+      "target": "episodes/hm3dv1/4mon",
+      "tasks_per_episode": 4,
+      "episodes": 300,
+      "scenes": 20,
+      "manifest_sha256": "e1e93c34fd5cadcf3d001f9d5e68f4bbc4dec69ba5df88ad230885b319c4e892",
+      "source_trace_sha256": "30454f63ab0a58395743fa2792b60ff91314b2da90712406cbe9c0d89ded2642"
+    }
+  ]
+}

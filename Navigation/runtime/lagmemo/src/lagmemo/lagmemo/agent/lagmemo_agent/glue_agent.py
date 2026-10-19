@@ -41,12 +41,12 @@ from lagmemo.agent.lagmemo_agent.seem_model import SEEMModel
 from lagmemo.agent.lagmemo_agent.candidate_provider import CandidateProvider
 import kornia as K
 import kornia.feature as KF
-from tdonav_navigation.evidence import (
+from pbsp.navigation.evidence import (
     CandidateEvidenceBank,
     passes_dual_score_verification,
     select_independent_evidence,
 )
-from tdonav_navigation.ranking import FrontierRerankConfig, FrontierUtilityRanker
+from pbsp.navigation.ranking import FrontierRerankConfig, FrontierUtilityRanker
 
 from matplotlib import pyplot as plt
 

@@ -41,11 +41,11 @@ from lagmemo.core.interfaces import DiscreteNavigationAction, Observations
 from lagmemo.env.habitat_abstract_env import HabitatEnv
 from online_es_provider import OnlineESProvider
 from runtime_memory import release_host_memory
-from tdonav_navigation.ranking import (
+from pbsp.navigation.ranking import (
     CandidateActionReranker,
     CandidateRerankConfig,
 )
-from tdonav_navigation.recovery import NoveltyGoalSelector
+from pbsp.navigation.recovery import NoveltyGoalSelector
 
 
 OBJECTNAV_SEMANTIC_IDS = {

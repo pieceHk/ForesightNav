@@ -1,0 +1,10 @@
+paths:
+  data: ../data
+  weights: ../weights
+  outputs: ../outputs
+python:
+  mapping: /path/to/envs/pbsp-map/bin/python
+  navigation: /path/to/envs/pbsp-nav/bin/python
+gpus:
+  mapping: 0
+  navigation: 1

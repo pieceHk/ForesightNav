@@ -336,7 +336,7 @@ def mapping_server(runtime: dict, profile: dict, run: Path, socket_path: Path, e
         env["HF_HOME"] = expand(runtime["shared"]["hf_home"])
         env["HF_HUB_CACHE"] = str(Path(env["HF_HOME"]) / "hub")
         env["HF_HUB_OFFLINE"] = "1"
-    pythonpath = [ROOT / "Mapping" / "src", MAPPING_ENGINE, MAPPING_ENGINE / "src", MAPPING_ENGINE / "src" / "third_party"]
+    pythonpath = [ROOT, ROOT / "Mapping" / "src", MAPPING_ENGINE, MAPPING_ENGINE / "src", MAPPING_ENGINE / "src" / "third_party"]
     env["PYTHONPATH"] = os.pathsep.join(map(str, pythonpath)) + os.pathsep + env.get("PYTHONPATH", "")
     log = (run / "logs" / "mapping.log").open("w", encoding="utf-8")
     command = [
@@ -578,6 +578,7 @@ def navigation_environment(runtime: dict, profile: dict, nav_gpu: int) -> dict:
         env["HF_HUB_OFFLINE"] = "1"
     third_party = NAVIGATION_ENGINE / "src" / "third_party"
     pythonpath = [
+        ROOT,
         ROOT / "Navigation" / "src",
         NAVIGATION_ENGINE / "src" / "lagmemo",
         third_party / "seem" / "src",

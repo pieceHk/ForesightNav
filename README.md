@@ -2,6 +2,8 @@
 
 Source snapshots for the Baseline and Full PBSP versions used in the recorded experiments. Full PBSP here means the historical complete-C implementation (`ordered_suffix_mvp`), not the later Suffix-only checked-candidate ablation. The paper name does not imply implementation of every item in historical design notes; consult the executable code and profiles.
 
+The `refactor/full-pbsp` branch organizes the Full PBSP implementation into shallow mapping and navigation modules. See [migration progress](docs/migration.md) for the completed stages and validation requirements.
+
 ## Select the experiment version
 
 | Variant | Branch | Fixed tag | Original source commit |
@@ -26,9 +28,11 @@ The reproduction helpers below belong to the current Full PBSP workspace.
 
 ## Layout and reproduction
 
-- `Mapping/`: online geometric-semantic mapper, server and vendored runtime.
-- `Navigation/`: candidate execution, evidence/ranking, suffix planning, metrics and evaluator runtime.
-- `Exp/`: profiles, dataset catalog, launch/monitor scripts and tests.
+- `pbsp/`: mapping policies, candidate evidence/ranking and ordered suffix planning.
+- `experiments/`: dataset identities, MON metrics and decision records.
+- `configs/`: shared method, dataset, evaluation and experiment configuration.
+- `tests/`: behavior and runtime integration tests.
+- `Mapping/`, `Navigation/`, `Exp/`: model runtimes and launchers being migrated.
 - [Core code guide](Exp/release/CODE_GUIDE.md): module responsibilities and a reading order for Full PBSP.
 - [Linux reproduction](Exp/release/LOCAL_REPRODUCTION.md): resource preparation, identity alignment and the Full PBSP launcher.
 - [Reproduction guide](Exp/release/REPRODUCIBILITY.md): assets, environment, profile selection and launch commands.

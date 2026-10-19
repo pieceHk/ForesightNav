@@ -15,8 +15,9 @@ except ImportError:
 
 ROOT = Path(__file__).resolve().parents[2]
 os.environ.setdefault("TDONAV_ROOT", str(ROOT))
-OWNERS = {"Mapping", "Navigation", "Exp"}
-ROOT_FILES = {".gitattributes", ".gitignore", "README.md", "pyproject.toml"}
+LEGACY_OWNERS = {"Mapping", "Navigation", "Exp"}
+OWNERS = {"pbsp", "adapters", "runtime", "experiments", "configs", "scripts", "envs", "third_party", "assets", "docs", "tests", "data", "weights", "outputs"}
+ROOT_FILES = {".gitattributes", ".gitignore", "README.md", "pyproject.toml", "run.py", "LICENSE", "CITATION.cff", "THIRD_PARTY_NOTICES.md", "runtime.local.yaml"}
 LEGACY_TOKENS = tuple("/nvme/khy/" + name for name in ("goat" + "_rssfix", "hm3dv1" + "_exp"))
 RUNTIME_ROOTS = (ROOT / "Mapping" / "runtime", ROOT / "Navigation" / "runtime")
 DATA_ROOT = Path("/data/3DONav_datasets").resolve()
@@ -123,12 +124,39 @@ def validate_source_tree() -> None:
         assert _inside_root(path), f"runtime escapes 3DONav: {path}"
         assert_tree_is_owned(path)
     extensions = {".py", ".toml", ".yaml", ".yml"}
-    for owner in OWNERS:
+    for owner in LEGACY_OWNERS:
         for path in (ROOT / owner).rglob("*"):
             if path == Path(__file__) or "runs" in path.parts or "assets" in path.parts or path.suffix not in extensions:
                 continue
             text = path.read_text(encoding="utf-8", errors="ignore")
             assert not any(token in text for token in LEGACY_TOKENS), f"legacy runtime reference: {path.relative_to(ROOT)}"
+
+
+def validate_core_boundaries() -> None:
+    required = (
+        "pbsp/types.py", "pbsp/settings.py", "pbsp/navigation/suffix.py",
+        "pbsp/navigation/ranking.py", "pbsp/navigation/evidence.py",
+        "pbsp/mapping/query.py", "pbsp/mapping/keyframes.py",
+        "experiments/metrics.py", "runtime/config.py",
+    )
+    for name in required:
+        assert (ROOT / name).is_file(), f"canonical implementation missing: {name}"
+    forbidden = {"experiments", "runtime", "Exp", "Mapping", "Navigation", "tdonav_mapping", "tdonav_navigation"}
+    for source in (ROOT / "pbsp").rglob("*.py"):
+        tree = ast.parse(source.read_text(encoding="utf-8"), filename=str(source))
+        for node in ast.walk(tree):
+            imported = []
+            if isinstance(node, ast.Import):
+                imported = [alias.name for alias in node.names]
+            elif isinstance(node, ast.ImportFrom) and node.module:
+                imported = [node.module]
+            assert not {name.split(".")[0] for name in imported} & forbidden, (
+                f"core depends on an experiment/runtime package: {source.relative_to(ROOT)}"
+            )
+            if isinstance(node, ast.Attribute) and isinstance(node.value, ast.Name):
+                assert not (node.value.id == "os" and node.attr == "environ"), (
+                    f"core must receive explicit settings: {source.relative_to(ROOT)}"
+                )
 
 
 def git_output(*args: str) -> str:
@@ -155,14 +183,17 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--require-clean", action="store_true", help="also require no staged or unstaged source changes")
     args = parser.parse_args()
-    top_dirs = {path.name for path in ROOT.iterdir() if path.is_dir() and path.name != ".git"}
-    assert top_dirs == OWNERS, f"top-level owners must be exactly {sorted(OWNERS)}: {sorted(top_dirs)}"
+    ignored_dirs = {".git", ".venv", ".cache", ".pytest_cache", "__pycache__", "build", "dist"}
+    top_dirs = {path.name for path in ROOT.iterdir() if path.is_dir() and path.name not in ignored_dirs and not path.name.endswith(".egg-info")}
+    assert top_dirs <= OWNERS | LEGACY_OWNERS, f"unowned top-level directories: {sorted(top_dirs - OWNERS - LEGACY_OWNERS)}"
+    assert {"pbsp", "runtime", "experiments", "configs", "tests"} <= top_dirs
     extra_files = {path.name for path in ROOT.iterdir() if path.is_file() and path.name != ".git"} - ROOT_FILES
     assert not extra_files, f"unowned root files: {sorted(extra_files)}"
     validate_source_tree()
+    validate_core_boundaries()
     validate_runtime()
     validate_tracked_runtime(args.require_clean)
-    print("architecture=passed runtime=independent tracked=true owners=Mapping,Navigation,Exp")
+    print("architecture=migration core=pbsp runtime=independent tracked_runtime=true")
 
 
 if __name__ == "__main__":

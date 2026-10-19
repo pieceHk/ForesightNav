@@ -1,0 +1,5 @@
+name: hm3d_3mon_full_pbsp
+method: ../methods/full_pbsp.yaml
+dataset: ../datasets/hm3d_3mon.yaml
+evaluation: ../evaluation/standard.yaml
+seed: 1

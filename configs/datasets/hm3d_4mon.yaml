@@ -1,0 +1,10 @@
+name: hm3dv1_4mon_balanced1200
+split: val
+root: episodes/hm3dv1/4mon
+manifest: dataset_manifest.json
+identities: identities.json
+manifest_sha256: e1e93c34fd5cadcf3d001f9d5e68f4bbc4dec69ba5df88ad230885b319c4e892
+expected_tasks_per_episode: 4
+expected_episodes: 300
+expected_scenes: 20
+source_trace_sha256: 30454f63ab0a58395743fa2792b60ff91314b2da90712406cbe9c0d89ded2642

@@ -3,12 +3,19 @@ requires = ["setuptools>=68"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "3donav"
+name = "pbsp"
 version = "0.1.0"
 requires-python = ">=3.9"
-dependencies = ["numpy>=1.23", "tomli>=2; python_version<'3.11'"]
+dependencies = ["numpy>=1.23,<3", "PyYAML==6.0.2", "tomli>=2; python_version<'3.11'"]
+
+[project.optional-dependencies]
+test = ["pytest>=7,<9"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["pbsp*", "experiments*", "runtime*", "adapters*"]
 
 [tool.pytest.ini_options]
-pythonpath = ["Mapping/src", "Navigation/src"]
-testpaths = ["Mapping/tests", "Navigation/tests", "Exp/tests"]
+pythonpath = [".", "Mapping/src", "Navigation/src"]
+testpaths = ["tests"]
 cache_dir = "Exp/runs/.pytest_cache"

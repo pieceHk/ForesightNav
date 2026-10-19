@@ -5,37 +5,39 @@ candidate goals, and uses the remaining ordered tasks to rank the next candidate
 The `full-pbsp` snapshot selects `ordered_suffix_mvp`. Its 4-MON profile is
 `Exp/profiles/hm3dv1_4mon_scsp_suffix.toml`.
 
-The package name `tdonav` and the experiment launcher's historical name
-`run_goat.py` are retained so that the frozen experiment remains traceable.
+The core implementation is organized under `pbsp/`. Historical launchers remain
+under `Exp/` while the model runtimes and action loop are migrated. See
+[migration progress](../../docs/migration.md).
 
 ## Repository boundaries
 
 | Directory | Responsibility | Start reading here |
 | --- | --- | --- |
-| `Mapping/src/tdonav_mapping/` | Observation, coordinate, keyframe, query and resource contracts | `contracts.py`, `coordinates.py`, `query.py` |
+| `pbsp/mapping/` | Observation, coordinate, keyframe, query and resource policies | `types.py`, `geometry.py`, `query.py` |
 | `Mapping/runtime/server/` | Live RGB-D input, Gaussian reconstruction and semantic candidate retrieval | `online_es_mapper.py`, `es_mapper_server.py` |
 | `Mapping/runtime/embodied_splat/` | Neural mapping engine and its dependencies | Enter through the server adapter |
-| `Navigation/src/tdonav_navigation/` | Candidate evidence, ranking, ordered suffix planning and MON metrics | Reading order below |
+| `pbsp/navigation/` | Candidate evidence, ranking and ordered suffix planning | Reading order below |
+| `experiments/` | Dataset identities, MON metrics and decision records | `dataset.py`, `metrics.py`, `telemetry.py` |
 | `Navigation/runtime/evaluators/` | Connects the planner, mapper and Habitat action loop | `goat/entrypoint.py` |
 | `Navigation/runtime/lagmemo/` | Navigation execution, verification, simulator integration and vendored libraries | `src/lagmemo/lagmemo/agent/lagmemo_agent/glue_agent.py` |
 | `Exp/` | Dataset identities, experiment controls, launch, validation and output records | `profiles/`, `scripts/run_goat.py` |
 
 ## Core reading order
 
-1. Read `Navigation/src/tdonav_navigation/scsp_contracts.py` for episode identity,
+1. Read `pbsp/types.py` for episode identity,
    map/query version tokens, candidate records and explicit geodesic status.
    These contracts keep scene, episode and task indices attached to a decision.
-2. Read `evidence.py`, `ranking.py` and `category_cooldown.py` for recurring
+2. Read `pbsp/navigation/evidence.py`, `ranking.py` and `cooldown.py` for recurring
    candidate evidence, candidate utility and controls on switching active goals.
-3. Read `suffix_planning.py`. `plan_ordered_suffix` consumes the current candidate
+3. Read `pbsp/navigation/suffix.py`. `plan_ordered_suffix` consumes the current candidate
    ordering and strict geodesic matrices, then returns a deterministic current-task
    ordering. It is a pure module: the caller supplies candidates and distances.
 4. Read `Navigation/runtime/evaluators/goat/entrypoint.py` to follow candidate
    refresh, geodesic construction, plan dispatch, verification and action execution.
-5. Read `scsp_telemetry.py` and `mon_metrics.py` to connect a decision to the
+5. Read `experiments/telemetry.py` and `metrics.py` to connect a decision to the
    recorded episode identity and the SR, SPL, PeSPL and PSR computations.
 
-`Mapping/src/tdonav_mapping/` provides interfaces and small policies. The actual
+`pbsp/mapping/` currently provides interfaces and small policies. The actual
 online neural mapper lives under `Mapping/runtime/server/` and
 `Mapping/runtime/embodied_splat/`; reading only the interface package does not
 cover the mapping implementation.
@@ -109,9 +111,9 @@ a fresh installation still requires those builds to be provisioned.
 Keep algorithm edits, resource preparation and generated results separate in
 review. Run output, private runtime paths, licensed scenes and model weights
 belong under the existing ignored paths. Review changes against
-`origin/full-pbsp`; keep the frozen profiles and original source hashes intact
-when establishing the reproduction baseline. Resource-placeholder relocations
-retain the original source hash and an explicit release path in the manifest.
+`origin/full-pbsp`. The source manifest describes the original exported snapshot;
+the current test suite and migration validation records cover the refactor.
+Original hashes remain available for tracing source lineage.
 
 A single completed episode demonstrates the mapping/navigation runtime path.
 Dataset-wide SR/SPL claims require the complete selected split and its recorded

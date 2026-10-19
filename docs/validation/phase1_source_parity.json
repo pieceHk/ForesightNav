@@ -1,0 +1,126 @@
+{
+  "scope": "pure_algorithm_migration",
+  "baseline_commit": "422cb8e704fd346979be35951f7b0c871ddaa17e",
+  "comparison": "module AST excluding import statements; all executable definitions and constants retained",
+  "modules": [
+    {
+      "source": "Mapping/src/tdonav_mapping/contracts.py",
+      "destination": "pbsp/mapping/types.py",
+      "original_sha256": "3ce6729519001e5284d27d71c8884cf0a4ceacd74064bffd043c3052c22332c6",
+      "destination_sha256": "3ce6729519001e5284d27d71c8884cf0a4ceacd74064bffd043c3052c22332c6",
+      "non_import_ast_sha256": "24d9c56261c89c25092d0d717f2608775ef9c24433ee35a3eac98df758c646fc"
+    },
+    {
+      "source": "Mapping/src/tdonav_mapping/coordinates.py",
+      "destination": "pbsp/mapping/geometry.py",
+      "original_sha256": "2644fe98b5f9af1b4fb2f51985a8c4f485f120fa4de1864dcf83c76ea2e21a5b",
+      "destination_sha256": "2644fe98b5f9af1b4fb2f51985a8c4f485f120fa4de1864dcf83c76ea2e21a5b",
+      "non_import_ast_sha256": "c3c1be344e566fbf83362c94e9e38c5ed069b3e71e6c2b0e471b26da8b5e63d4"
+    },
+    {
+      "source": "Mapping/src/tdonav_mapping/keyframes.py",
+      "destination": "pbsp/mapping/keyframes.py",
+      "original_sha256": "4ed132e1b9045f9b285f64d77ffbb71f1800893de5ebd3d586e83809953880e6",
+      "destination_sha256": "4ed132e1b9045f9b285f64d77ffbb71f1800893de5ebd3d586e83809953880e6",
+      "non_import_ast_sha256": "c04006d9e370b3e90a525dbda90d92aebec996292db4a48c9b1012745d828911"
+    },
+    {
+      "source": "Mapping/src/tdonav_mapping/query.py",
+      "destination": "pbsp/mapping/query.py",
+      "original_sha256": "f1473a72f54b08487d4381aa0a50f4978c272a699b4154d513f189288e06ea52",
+      "destination_sha256": "f1473a72f54b08487d4381aa0a50f4978c272a699b4154d513f189288e06ea52",
+      "non_import_ast_sha256": "f609e35cc572a879c09d5375aec3c36b96c132b0adfef6968ae34ca90bd166ed"
+    },
+    {
+      "source": "Mapping/src/tdonav_mapping/resources.py",
+      "destination": "pbsp/mapping/resources.py",
+      "original_sha256": "0bf26a582b0cd96cf6b7965f33abba2dcea6c38d06f136a2997178441c8543d8",
+      "destination_sha256": "0bf26a582b0cd96cf6b7965f33abba2dcea6c38d06f136a2997178441c8543d8",
+      "non_import_ast_sha256": "2158dfacb089006b66e259bb70ee004da525d23bb24311077dabc61bf891870c"
+    },
+    {
+      "source": "Mapping/src/tdonav_mapping/pipeline.py",
+      "destination": "pbsp/mapping/pipeline.py",
+      "original_sha256": "7482743f592f21c7d3d520aa03491c54feed3fee2a2322af14c35561eee6272d",
+      "destination_sha256": "c33c48c08829caf8190a8d70d7012eb38efcf6519756d614450ac388d0f54044",
+      "non_import_ast_sha256": "03998133fe95e5489d3a715fa2d043b4c5db113ac0b957d342e868e8291c2a36"
+    },
+    {
+      "source": "Navigation/src/tdonav_navigation/contracts.py",
+      "destination": "pbsp/navigation/types.py",
+      "original_sha256": "19edb3ad1d668780981c133e92f8529b41d4be51931ef20f4ac7ddae073a4403",
+      "destination_sha256": "19edb3ad1d668780981c133e92f8529b41d4be51931ef20f4ac7ddae073a4403",
+      "non_import_ast_sha256": "1df830688c6fe6d05208bf1f1fea2ba08a786e29c2efb84b825596262db47bf7"
+    },
+    {
+      "source": "Navigation/src/tdonav_navigation/candidates.py",
+      "destination": "pbsp/navigation/candidates.py",
+      "original_sha256": "fd26176d7b12697772eaada37f4ea5c657ec499f7531ca0692624d21b3f40631",
+      "destination_sha256": "0679a7c416d122a6848a5ff7c441532a5c60db77763db470b5a4d721eeb90f04",
+      "non_import_ast_sha256": "1a174f28fd26960b339bae89febaeceb2f80d030f97171e3176624c0ab1941dc"
+    },
+    {
+      "source": "Navigation/src/tdonav_navigation/evidence.py",
+      "destination": "pbsp/navigation/evidence.py",
+      "original_sha256": "da206c4125b75d111a042c8a65902f1deceee9c54ed5935579073cd83bf1922e",
+      "destination_sha256": "da206c4125b75d111a042c8a65902f1deceee9c54ed5935579073cd83bf1922e",
+      "non_import_ast_sha256": "d601fc7ffa1143fec3530c36245d5e6a1e10411d31ddf2ccadea6291af39cf06"
+    },
+    {
+      "source": "Navigation/src/tdonav_navigation/ranking.py",
+      "destination": "pbsp/navigation/ranking.py",
+      "original_sha256": "35cf5a77645167e50278b432d4bd4763e898c2c41b1150e42b0d8f7f9d11e956",
+      "destination_sha256": "35cf5a77645167e50278b432d4bd4763e898c2c41b1150e42b0d8f7f9d11e956",
+      "non_import_ast_sha256": "b9af13ad2e66b5c096a8eefd17138a076fa621fe8a13bcf3eb71ec063cb111e6"
+    },
+    {
+      "source": "Navigation/src/tdonav_navigation/recovery.py",
+      "destination": "pbsp/navigation/recovery.py",
+      "original_sha256": "69b79b387538f52a4e0047143ef97c738f69f6c6715e81d65bc07a482be10d65",
+      "destination_sha256": "69b79b387538f52a4e0047143ef97c738f69f6c6715e81d65bc07a482be10d65",
+      "non_import_ast_sha256": "db056ff3af4592bca186fe07d7e698eb97eb3eececda498c79d457775fe36759"
+    },
+    {
+      "source": "Navigation/src/tdonav_navigation/policy.py",
+      "destination": "pbsp/navigation/policy.py",
+      "original_sha256": "33b6b9e0f67e6ce71ba8ed2b04e1841b968dce5f256228e88faaaa95333279f5",
+      "destination_sha256": "ec6b491a21950eb240c31acbc8fa145c1201cd3de2ac47db8ebf2ff070ed1250",
+      "non_import_ast_sha256": "cb3381847a634548b08bbf7ca36d0fc84c41de58ffe098504e1e9c010a98634d"
+    },
+    {
+      "source": "Navigation/src/tdonav_navigation/category_cooldown.py",
+      "destination": "pbsp/navigation/cooldown.py",
+      "original_sha256": "aca6aed0fe4b14fe1d38486a4e29d905adf84dfc3edecd636d36bbaff48f0d55",
+      "destination_sha256": "aca6aed0fe4b14fe1d38486a4e29d905adf84dfc3edecd636d36bbaff48f0d55",
+      "non_import_ast_sha256": "d32069bb2bf9e0a72fc4fb81e7966cf1a04b6132314fc03560e09829cedd11d7"
+    },
+    {
+      "source": "Navigation/src/tdonav_navigation/suffix_planning.py",
+      "destination": "pbsp/navigation/suffix.py",
+      "original_sha256": "5c4e35dafa45f85aee567754fcc83bacefe0eec2755788049c9034fda3b77246",
+      "destination_sha256": "75b39c40026035e4b84172313d4cce4dddbbda89fb94fe7216c4d34ea7e01366",
+      "non_import_ast_sha256": "2fedd35fd0f966fc58c86870b24845b136f08fc244446b1fe617414da7d49c1a"
+    },
+    {
+      "source": "Navigation/src/tdonav_navigation/scsp_contracts.py",
+      "destination": "pbsp/types.py",
+      "original_sha256": "1be86a4b26ccb086e5f8b48938159360454fe7b31c9fa4d1fb06b9cf43ad39a0",
+      "destination_sha256": "1be86a4b26ccb086e5f8b48938159360454fe7b31c9fa4d1fb06b9cf43ad39a0",
+      "non_import_ast_sha256": "7c102ef95e59f6a736892dcce87a837675778343b738566c9a7370878280dcd7"
+    },
+    {
+      "source": "Navigation/src/tdonav_navigation/scsp_telemetry.py",
+      "destination": "experiments/telemetry.py",
+      "original_sha256": "336165039803128399bf9bf85d0021be5c52dfabc873fb0bd883b2d609230e3c",
+      "destination_sha256": "17d197446a87b2dd12b6a5f55e0ff9a2d2053dd60567b176eab5306d41f13235",
+      "non_import_ast_sha256": "37cd391b565bc28af805e88c319279b284dc894588a4b6fcd8ade4bb552953fa"
+    },
+    {
+      "source": "Navigation/src/tdonav_navigation/mon_metrics.py",
+      "destination": "experiments/metrics.py",
+      "original_sha256": "e34ddd5a34f6405833cf2bc84de3db5b51cb3fac02bcbfdbf356d7c1604fafd3",
+      "destination_sha256": "e34ddd5a34f6405833cf2bc84de3db5b51cb3fac02bcbfdbf356d7c1604fafd3",
+      "non_import_ast_sha256": "c0a9fbcc190b341af783b05422d8f32f4f5418d97251468aa15e734939214755"
+    }
+  ]
+}

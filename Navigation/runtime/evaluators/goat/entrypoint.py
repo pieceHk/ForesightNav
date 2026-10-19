@@ -141,12 +141,12 @@ from lagmemo.core.interfaces import DiscreteNavigationAction
 from lagmemo.env.habitat_lagmemo_env import HabitatGoatEnv
 
 from online_es_provider import OnlineESProvider
-from tdonav_navigation.category_cooldown import (
+from pbsp.navigation.cooldown import (
     CategorySwitchCooldown,
     cooldown_for_category,
     parse_category_cooldowns,
 )
-from tdonav_navigation.mon_metrics import (
+from experiments.metrics import (
     DISTANCE_TO_GOAL_KEY,
     DISTANCE_TO_GOAL_STATUS_KEY,
     SHORTEST_PATH_UNREACHABLE,
@@ -157,11 +157,11 @@ from tdonav_navigation.mon_metrics import (
     summarize_records,
     write_json_strict,
 )
-from tdonav_navigation.ranking import (
+from pbsp.navigation.ranking import (
     CandidateActionReranker,
     CandidateRerankConfig,
 )
-from tdonav_navigation.scsp_contracts import (
+from pbsp.types import (
     BatchValidationStatus,
     CandidateBatch,
     CandidateRecord,
@@ -172,13 +172,13 @@ from tdonav_navigation.scsp_contracts import (
     SCSPContractError,
     validate_candidate_batch,
 )
-from tdonav_navigation.scsp_telemetry import (
+from experiments.telemetry import (
     SHADOW_SCHEMA_VERSION,
     build_scsp_shadow_decision,
     dumps_json_strict,
     to_jsonable,
 )
-from tdonav_navigation.suffix_planning import (
+from pbsp.navigation.suffix import (
     DEFAULT_CANDIDATE_CAP,
     DEFAULT_SUFFIX_WEIGHT,
     Idea1Candidate,

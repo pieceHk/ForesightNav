@@ -27,7 +27,7 @@ NAVIGATION_SRC = ROOT / "Navigation" / "src"
 if str(NAVIGATION_SRC) not in sys.path:
     sys.path.insert(0, str(NAVIGATION_SRC))
 
-from tdonav_navigation.mon_metrics import (  # noqa: E402
+from experiments.metrics import (  # noqa: E402
     aggregate_run_artifacts,
     write_json_strict,
 )

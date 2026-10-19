@@ -19,7 +19,7 @@ _lagmemo_src = str(_LAGMEMO_ROOT / 'src' / 'lagmemo')
 if _lagmemo_src not in sys.path:
     sys.path.insert(0, _lagmemo_src)
 from lagmemo.agent.lagmemo_agent.candidate_provider import CandidateProvider
-from tdonav_navigation.scsp_contracts import (
+from pbsp.types import (
     BatchValidationStatus,
     CandidateBatch,
     CandidateRecord,

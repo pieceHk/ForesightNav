@@ -34,7 +34,7 @@ import torch
 import torch.nn.functional as F
 
 from runtime_memory import release_host_memory
-from tdonav_mapping.query import candidate_records
+from pbsp.mapping.query import candidate_records
 
 # ── ES paths ──────────────────────────────────────────────────────────────────
 _SCRIPT_DIR = Path(__file__).resolve().parent

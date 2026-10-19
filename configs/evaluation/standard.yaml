@@ -1,0 +1,8 @@
+max_steps_per_task: 500
+metrics:
+- SR
+- SPL
+- PSR
+- PeSPL
+record_decisions: true
+visualize: false
