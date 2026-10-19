@@ -99,6 +99,14 @@ The supplied controller implements `step(request) -> NavigationPlan`, `reset_epi
 
 These adapters are not bundled or evaluated yet. VLFM's full exploration policy also owns goal selection and mapping; adopting it is a broader policy replacement than using its PointNav controller. ApexNav's existing ROS evaluation interface needs an explicit way to consume PBSP-selected waypoints. Continuous control additionally requires an environment adapter that accepts velocity commands.
 
+## Experiment orchestration
+
+[run_episodes](../experiments/runner.py) executes complete episodes through the configured environment, Agent, mapping provider and planning service. Task count comes from the ordered observation. It resets map state once per episode and preserves it across tasks.
+
+`RunSettings` supplies the episode range, step budget, timing flag and query cadence. `PlanningRunSettings` supplies planning mode, identity records and provenance. `RunArtifacts` holds run metrics, timing, mapping status and the distance cache. The [PlanningBridge](../experiments/planning.py) binds projection, strict geodesic distance and a clock around the planning core and Recorder.
+
+The retained launcher assembles these objects and calls this Runner. Root CLI and worker assembly are still being migrated. A replacement backend uses the same loop and evaluation protocol.
+
 ## Verify a replacement
 
 Run the relevant interface tests, then a complete ordered smoke episode. Check task identities, candidate versions, reset behavior and realized actions. Use the same data and evaluation protocol when comparing navigation backends; report changed model weights and action spaces in the run provenance.

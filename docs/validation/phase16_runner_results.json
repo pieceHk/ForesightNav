@@ -1,0 +1,111 @@
+{
+  "stage": "native_episode_runner_and_planning_events",
+  "source_commit": "c045b7ac0fb5707dbba06b5e473bc46da01cd7d5",
+  "loop_reference_commit": "43824ab89c06fd206af07eefeebad5f88dbe6766",
+  "existing_algorithm_reference_commit": "422cb8e",
+  "canonical_modules": {
+    "episode_loop": "experiments/runner.py",
+    "planning_events": "experiments/planning.py",
+    "task_category": "experiments/dataset.py",
+    "legacy_geometry_assembly": "runtime/legacy_experiments.py"
+  },
+  "scope": [
+    "Move the actual complete episode/task loop, including mapping pushes, queries, dispatch, action execution, evaluation and artifact generation.",
+    "Move the actual compute, refresh/requery and recording bridges into PlanningBridge with per-instance geometry and clock bindings.",
+    "Supply episode range, task budget, timing and query cadence through RunSettings.",
+    "Keep run metrics, timing, mapping status and distance cache in RunArtifacts.",
+    "The retained startup code composes services and calls the same native Runner; no old entrypoint import or execution occurs inside it.",
+    "Use the same injected clock for calculation start and fallback timestamps."
+  ],
+  "source_comparison": {
+    "loop": {
+      "executable_ast_equal": true,
+      "normalization": [
+        "max step budget and timing flag supplied by RunSettings",
+        "the original 10-step cadence is an explicit RunSettings field; full_pbsp remains 10"
+      ],
+      "sha256": "e00700fc3b626592053fa4106170d4870d05ddf0e66c96ccccf0c88545a010bd"
+    },
+    "bridges": {
+      "_compute_scsp_shadow_decision": {
+        "executable_ast_equal": true,
+        "sha256": "6b435ac8c600c2d42a9caf71f329412459d5f59cacb0814609a5564c4f6da1c2"
+      },
+      "_record_scsp_shadow_decision": {
+        "executable_ast_equal": true,
+        "sha256": "324f281e5e93d439218e82735a768163fd2dc8fbd9f21ed49487a4cfb993abab"
+      },
+      "_prepare_scsp_refresh": {
+        "executable_ast_equal": true,
+        "sha256": "db09711ea524d948cba824c636d58818deb6c11070bdf7b349ef4822412a1e5b"
+      }
+    }
+  },
+  "complete_loop_replay": {
+    "reference": "Execute the complete loop from the fixed pre-extraction commit; synthetic sensor observations and fixed policy outputs, with real candidate dispatch, cooldown, ranking, suffix planning, telemetry and file writers.",
+    "cases": 12,
+    "coverage": [
+      "2/3/4 ordered tasks",
+      "two consecutive episodes with repeated categories",
+      "ordered_suffix_mvp, idea1_only, shadow and off modes",
+      "live and snapshot frame paths",
+      "trapped and random recovery",
+      "failed unreachable subtask with +inf path state",
+      "missing/mismatched identity, illegal STOP and incomplete episode",
+      "delayed Habitat episode-over flag"
+    ],
+    "comparison": [
+      "every realized action",
+      "complete service-call order",
+      "candidate state",
+      "run metrics, timing and mapping status",
+      "generated artifact text, including JSONL and CSV",
+      "raised error text"
+    ]
+  },
+  "new_checks": {
+    "count": 19,
+    "additional": [
+      "non-default query cadence changes actual refresh steps",
+      "reject in-place resume before using services",
+      "whole-loop and bridge executable-source parity",
+      "import without Habitat, Torch or perception models",
+      "geometry controls bind once and remain isolated between instances",
+      "fallback latency uses its supplied clock without changing global recorder state"
+    ]
+  },
+  "related_suite": {
+    "passed": 101,
+    "not_selected": 1,
+    "elapsed_seconds": 3.33,
+    "scope": "Runner replays, planning replays and GOAT runtime contracts; the machine-local environment case ran in the complete suite."
+  },
+  "linux_complete_suite": {
+    "passed": 460,
+    "warnings": 17,
+    "elapsed_seconds": 14.2
+  },
+  "local_complete_suite": {
+    "passed": 457,
+    "failed": 3,
+    "skipped": 0,
+    "elapsed_seconds": 8.0,
+    "failures": [
+      "Temporary runtime fixture points at server-only datasets.",
+      "Two macOS OpenCV thread-limit cases report 10 threads after requesting 8."
+    ],
+    "note": "Assertions were retained. All three cases pass on Linux. The local temporary runtime file was removed and the architecture validator passed."
+  },
+  "integration": "phase16_integration_results.json",
+  "remaining": [
+    "native root CLI, workers and IPC assembly",
+    "explicit model/perception resources and dependency preparation",
+    "fresh Linux installation and complete selected-split evaluation",
+    "VLFM/ApexNav adapters and evaluation"
+  ],
+  "runner_extraction_commit": "6c9dd3af8d7f8126aa5f4127c0060a4614d5b78a",
+  "clock_correction": {
+    "scope": "Use the injected calculation clock for fallback latency, retaining the standard-library clock by default.",
+    "regression": "A fixed per-instance clock produces a 1 ms fallback latency without patching recorder globals."
+  }
+}

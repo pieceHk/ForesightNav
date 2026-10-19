@@ -6,7 +6,7 @@
 
 ## 当前代码
 
-候选证据、候选排序、类别冷却、有序后缀规划及建图策略位于 `pbsp/`，所有调用方已使用这些实现。语义检索位于 `pbsp/query/engine.py`，包含特征加权、支持度重排、空间 NMS、单类别及批量查询；`service.py` 通过独立的文本编码器和索引读取器组装查询。指标计算和决策格式分别位于 `experiments/metrics.py`、`experiments/telemetry.py`。Provider 快照记录、规划回退和分派结果的构造、距离摘要及耗时 CSV 位于 `experiments/recorder.py`。规划决策 JSONL 的写入及写入失败处理也由 Recorder 完成；实验主循环仍在旧入口。
+候选证据、候选排序、类别冷却、有序后缀规划及建图策略位于 `pbsp/`，所有调用方已使用这些实现。语义检索位于 `pbsp/query/engine.py`，包含特征加权、支持度重排、空间 NMS、单类别及批量查询；`service.py` 通过独立的文本编码器和索引读取器组装查询。完整 episode 循环位于 `experiments/runner.py`，规划事件的计算、重查和记录桥接位于 `experiments/planning.py`。指标计算和决策格式分别位于 `experiments/metrics.py`、`experiments/telemetry.py`。Provider 快照记录、规划回退和分派结果的构造、距离摘要及耗时 CSV 位于 `experiments/recorder.py`。规划决策 JSONL 的写入及写入失败处理也由 Recorder 完成。
 
 `configs/experiments/hm3d_2mon.yaml`、`hm3d_3mon.yaml`、`hm3d_4mon.yaml` 引用同一个完整方法配置。`runtime/config.py` 读取配置并检查字段、数值、资源版本和引用路径。
 
@@ -20,7 +20,9 @@
 
 Habitat 的传感器、任务查询和动作转换位于 `adapters/habitat.py`，语义源、类别表、分割模型构造和动作编号由调用方提供。Detic 和禁用语义模式不读取语义传感器或场景标注。成功标签、路径状态和测量重置由 `experiments/evaluator.py` 持有；实际入口在动作之后、任务重置之前读取评测状态。真值俯视图由实验可视化层单独读取，不进入导航观测。导航器按 GPS 更新上一位置，不再依赖可视化数据。旧环境文件仅保留兼容导入；旧入口的环境组装由 `runtime/legacy_habitat.py` 承接。
 
-导航的候选集合刷新与版本校验位于 `pbsp/navigation/candidates.py`，视觉确认历史位于 `verification.py`，受困诊断和恢复目标状态位于 `recovery.py`。实际动作循环、episode 重置和任务切换位于 `navigator.py`，局部地图更新及 RGB-D 预处理位于 `local_map.py`，坐标变换位于 `geometry.py`。`verification.py` 同时执行各目标模态的确认逻辑。模型构造和感知调用分别由 `adapters/lagmemo_agent.py`、`adapters/perception.py` 组装，图像写入交给实验观察器。原 `glue_agent.py` 仅保留兼容导入。候选投影绑定、候选层排序、版本化测地距离缓存和当前任务的顺序分派位于 `planning.py`。Habitat 导航网格投影、严格测地距离和恢复采样位于 `adapters/geometry.py`，参数由调用方显式传入。后缀计算和刷新事务也已迁入 `planning.py`，分别返回 `CandidatePlan` 和 `CandidateRefresh`。核心通过回调访问外部查询、版本检查和诊断，实验桥接层保留来源信息及记录格式。`pbsp/agent.py` 持有显式的候选、验证与恢复状态，并执行首次及周期候选分派；冷却控制、刷新后的实际目标和原始候选序号在这里统一处理。模型适配器接收 `NavigationSettings`，旧入口使用兼容构造器读取环境变量。观测、规划与 episode 的完整组装及评测循环仍待迁移。
+Runner 接收 `RunSettings`、`PlanningRunSettings`、环境、Agent、Mapper provider 和规划服务，维护跨任务及跨 episode 的运行状态。刷新间隔来自显式配置；默认完整方法仍为 10 步。`RunArtifacts` 持有指标、耗时、Mapper 状态记录和距离缓存。`PlanningBridge` 接收投影、严格测地距离和时钟，不读取环境变量。旧入口继续负责配置与模型组装，再调用同一个 Runner；根目录入口和工作进程的迁移仍待完成。
+
+导航的候选集合刷新与版本校验位于 `pbsp/navigation/candidates.py`，视觉确认历史位于 `verification.py`，受困诊断和恢复目标状态位于 `recovery.py`。实际动作循环、episode 重置和任务切换位于 `navigator.py`，局部地图更新及 RGB-D 预处理位于 `local_map.py`，坐标变换位于 `geometry.py`。`verification.py` 同时执行各目标模态的确认逻辑。模型构造和感知调用分别由 `adapters/lagmemo_agent.py`、`adapters/perception.py` 组装，图像写入交给实验观察器。原 `glue_agent.py` 仅保留兼容导入。候选投影绑定、候选层排序、版本化测地距离缓存和当前任务的顺序分派位于 `planning.py`。Habitat 导航网格投影、严格测地距离和恢复采样位于 `adapters/geometry.py`，参数由调用方显式传入。后缀计算和刷新事务也已迁入 `planning.py`，分别返回 `CandidatePlan` 和 `CandidateRefresh`。核心通过回调访问外部查询、版本检查和诊断，实验桥接层保留来源信息及记录格式。`pbsp/agent.py` 持有显式的候选、验证与恢复状态，并执行首次及周期候选分派；冷却控制、刷新后的实际目标和原始候选序号在这里统一处理。模型适配器接收 `NavigationSettings`，旧入口使用兼容构造器读取环境变量。完整运行组装与资源生命周期仍在旧入口，后续迁入工作进程。
 
 ## 阶段交付
 
@@ -29,11 +31,12 @@ Habitat 的传感器、任务查询和动作转换位于 `adapters/habitat.py`�
 | 固定基准 | 原始数据身份、复现工具、设计文档及完整测试 | 已提交 `422cb8e` |
 | 迁移纯算法 | 浅层包、共享配置、完整数据身份索引和原有调用方 | 已验证，253 项测试通过 |
 | 拆分建图 | 实际在线 Mapper、编码、融合、检索和快照发布 | 在线流程与模型构造已迁移，底层网络依赖待整理 |
-| 拆分导航 | Agent、候选规划、导航执行、验证、恢复及评测循环 | 候选刷新、验证、恢复、动作执行和候选分派已迁移，完整组装及评测循环待拆分 |
+| 拆分导航 | Agent、候选规划、导航执行、验证、恢复及评测循环 | 候选刷新、验证、恢复、动作执行及实验循环已迁移，运行组装待完善 |
 | 四组件接口 | Mapping、semantic injection、query 和 navigation 的运行路径及替换契约 | 已接入默认路径并验证，外部导航后端待适配 |
-| 环境与评测边界 | 传感器和动作适配、真值指标、任务测量重置、可视化 | 已迁入浅层模块并接入实际入口，完整实验循环待迁移 |
+| 环境与评测边界 | 传感器和动作适配、真值指标、任务测量重置、可视化 | 已迁入浅层模块并接入实际入口 |
+| 实验 Runner | 完整 episode 循环、任务边界、规划与记录桥接 | 已迁入实际运行路径，采用显式设置与服务对象 |
 | 接入入口与安装 | `run.py`、工作进程、模型资源、环境脚本和离线流程 | 待实施 |
-| 验证完整流程 | 记录重放、2/3/4-MON 集成实验、全新 Linux 安装和完整选定 split | 待实施 |
+| 验证完整流程 | 记录重放、2/3/4-MON 集成实验、全新 Linux 安装和完整选定 split | 重放与已有入口的单 episode 已验证；新入口、全新环境和完整 split 待验证 |
 
 ## 验证要求
 
@@ -91,3 +94,5 @@ Agent 状态及候选分派迁移后，服务器完整测试为 390 项通过。
 默认四组件路径的完整 4-MON 单 episode 验证正常结束，四项任务全部成功，共 414 个动作。44 条规划记录身份完整，没有过期后缀分派；31 次地图重建均完成。动作数、指标和最终 BEV 文件哈希与上一轮 Agent 集成记录一致。此项验证覆盖一个完整有序 episode，完整 split 评测仍待完成。详见[四组件集成结果](validation/phase14_integration_results.json)。
 
 环境与评测拆分后，服务器完整测试为 441 项通过。新增 34 项检查覆盖冻结代码的观测转换、三种目标模态、动作编号、路径状态、测量重置顺序及无评测地图时的导航状态；评测路径读取的可执行定义与基准一致。实际 4-MON 单 episode 的四个目标全部成功，共 414 个动作，任务身份和版本记录完整。动作数、指标及最终地图文件哈希与拆分前的上一轮记录一致。详见[环境与评测结果](validation/phase15_habitat_results.json)及[集成结果](validation/phase15_integration_results.json)。
+
+实际 episode 循环及三段规划桥接逻辑迁入实验模块后，12 组完整循环重放逐项比较了动作、调用顺序、候选状态和输出文件，覆盖 2/3/4 个目标、连续两个 episode、恢复、不可达及异常路径。循环的可执行定义与迁移前一致，仅将预算、计时选项和默认 10 步的刷新间隔改为显式参数。后续补齐了回退日志的时钟注入，服务器完整测试为 460 项通过。新 Runner 的真实 4-MON 单 episode 四项任务全部成功，共 414 个动作，指标及最终地图哈希与上一轮一致。GPU 运行提交和计时修复的验证范围分别记录在[Runner 结果](validation/phase16_runner_results.json)与[集成结果](validation/phase16_integration_results.json)中。

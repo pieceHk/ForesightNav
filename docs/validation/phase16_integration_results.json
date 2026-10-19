@@ -1,0 +1,93 @@
+{
+  "stage": "native_runner_and_planning_bridge_integration",
+  "source_commit": "6c9dd3af8d7f8126aa5f4127c0060a4614d5b78a",
+  "scope": "One complete ordered 4-MON episode; no full-split or general performance-equivalence claim.",
+  "run": "Exp/runs/20261020_015815_hm3dv1_4mon_scsp_native_runner_4mon",
+  "profile_sha256": "cc86a4d946e775929d3078a9ace8ddae6724a6f5e83bcd333ec51843a14a0970",
+  "semantic_source": "detic",
+  "ground_truth_semantics": false,
+  "scene_id": "4ok3usBNeis",
+  "runtime_episode_id": "0",
+  "ordered_categories": [
+    "toilet",
+    "bed",
+    "tv",
+    "toilet"
+  ],
+  "source_episode_ids": [
+    "13",
+    "67",
+    "61",
+    "58"
+  ],
+  "dataset_manifest_sha256": "e1e93c34fd5cadcf3d001f9d5e68f4bbc4dec69ba5df88ad230885b319c4e892",
+  "completed_episodes": 1,
+  "completed_subtasks": 4,
+  "successful_subtasks": 4,
+  "total_actions": 414,
+  "actions_per_subtask": [
+    114,
+    55,
+    179,
+    66
+  ],
+  "stop_reasons": [
+    "verified_target",
+    "verified_target",
+    "verified_target",
+    "verified_target"
+  ],
+  "metrics": {
+    "sr": 1.0,
+    "psr": 1.0,
+    "spl": 0.60856290807867,
+    "pespl": 0.648577769229401
+  },
+  "planning_audit": {
+    "decisions": 44,
+    "complete_identity_records": 44,
+    "dispatch_sources": {
+      "idea1_fallback": 14,
+      "suffix": 30
+    },
+    "task_counts": {
+      "0": 12,
+      "1": 6,
+      "2": 18,
+      "3": 8
+    },
+    "stale_suffix_dispatches": 0
+  },
+  "mapping": {
+    "completed_rebuilds": 31,
+    "rebuild_errors": 0,
+    "final_keyframes": 301,
+    "completed_gaussians": 3088415,
+    "final_bev_images": 1,
+    "final_bev_sha256": "8d0b7ec50c8ec74b470479c18464402f67bc8ad049cd970eb8118fb91c21c1d7",
+    "header_verification": {
+      "different_pixels": 0,
+      "point_count": 3088415,
+      "sampled_clip_coverage_percent": 97,
+      "opencv": "4.13.0"
+    }
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 507.898,
+  "remaining": [
+    "native root CLI, workers and IPC assembly",
+    "independent Linux installation",
+    "complete selected-split evaluation"
+  ],
+  "previous_run_comparison": {
+    "reference": "phase15_integration_results.json",
+    "actions_per_subtask_equal": true,
+    "metrics_equal": true,
+    "final_bev_sha256_equal": true,
+    "scope": "Observed agreement for this complete episode; not a full-split performance claim."
+  },
+  "clock_follow_up": {
+    "commit": "c045b7ac0fb5707dbba06b5e473bc46da01cd7d5",
+    "scope": "A later logging-only correction uses the supplied planning clock for fallback latency. The CPU replay and complete suites validate it separately; this GPU run used the source commit above."
+  }
+}
