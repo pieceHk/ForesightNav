@@ -2,7 +2,7 @@
 """Prepare the pinned default model assets without importing model packages."""
 
 import argparse
-from concurrent.futures import ThreadPoolExecutor
+from concurrent.futures import ThreadPoolExecutor, as_completed
 import json
 from pathlib import Path
 import shutil
@@ -104,9 +104,18 @@ def prepare(manifest, *, destination, cache, source=None, offline=False, downloa
             verify(inputs[item["path"]], item)
     else:
         artifacts = [item for item in manifest["files"] if "url" in item] + manifest["archives"]
+        downloaded, failures = {}, []
         with ThreadPoolExecutor(max_workers=jobs) as pool:
-            cached = list(pool.map(lambda item: fetch(cache, item, offline), artifacts))
-        downloaded = {item["sha256"]: path for item, path in zip(artifacts, cached)}
+            pending = {pool.submit(fetch, cache, item, offline): item for item in artifacts}
+            for future in as_completed(pending):
+                item = pending[future]
+                try:
+                    downloaded[item["sha256"]] = future.result()
+                except Exception as error:
+                    failures.append(error)
+                    print(f"Failed {item.get('path', item.get('id'))}: {error}", file=sys.stderr, flush=True)
+        if failures:
+            raise failures[0]
         if download_only:
             return len(artifacts)
         inputs = {item["path"]: downloaded[item["sha256"]] for item in manifest["files"] if "url" in item}

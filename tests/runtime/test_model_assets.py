@@ -61,6 +61,24 @@ def test_offline_cache_does_not_fall_back_to_network(tmp_path, monkeypatch):
     assert not (tmp_path / "target").exists()
 
 
+def test_failed_download_keeps_processing_other_cache_artifacts(tmp_path, monkeypatch):
+    data = manifest(tmp_path)
+    data["files"] = [{**data["files"][0], "path": f"model/{index}.bin", "sha256": str(index) * 64} for index in range(3)]
+    calls = []
+
+    def download(cache, item, offline):
+        calls.append(item["path"])
+        if item["path"] == "model/0.bin":
+            raise OSError("first source failed")
+        return cache / item["sha256"]
+
+    monkeypatch.setattr("scripts.prepare_models.fetch", download)
+    with pytest.raises(OSError, match="first source failed"):
+        prepare(data, destination=tmp_path / "target", cache=tmp_path / "cache", download_only=True, jobs=1)
+    assert calls == ["model/0.bin", "model/1.bin", "model/2.bin"]
+    assert not (tmp_path / "target").exists()
+
+
 @pytest.mark.parametrize("path", ["../escape", "/absolute", "a/../escape", "model", "model/weights.bin/child"])
 def test_manifest_rejects_traversal_and_file_directory_collisions(tmp_path, path):
     data = manifest(tmp_path)
