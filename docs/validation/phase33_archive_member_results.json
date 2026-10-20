@@ -43,5 +43,10 @@
   "local_targeted_tests": {
     "passed": 34,
     "seconds": 1.42
+  },
+  "linux_targeted_tests": {
+    "passed": 34,
+    "seconds": 1.7,
+    "architecture_clean_tree": "passed"
   }
 }

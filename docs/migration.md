@@ -6,6 +6,10 @@
 
 ## 当前代码
 
+离线导出已完成真实跨机器恢复验证。6.61 GB 的代码、两套环境输入、episode 源注释和 Linux micromamba 从 macOS 完整传到服务器后，从 bundle 克隆了独立目录。Python 网络连接被禁用时，缓存、550 个 Habitat 文件及 6 个 SuperGlue 文件校验通过，三组数据重建及重复准备均通过，全部 1,300 个身份索引与原数据一致。2/3/4-MON 分别通过完整 600、400、300 个 episode 的输入检查，架构检查通过。本轮使用已有独立环境、场景及外部权重，没有重建环境或启动 GPU 推理。模型组的公开下载及完整导出仍待完成。详见[离线导出结果](validation/phase31_offline_export_results.json)。
+
+公开模型归档的前缀检查发现，模型文件直接位于归档根部，清单中的 `pretrained/` 前缀需移除。实际 FastSAM 文件的 144,943,063 字节及 SHA-256 均与原权重一致；用其原始成员名验证公开提取器时，旧路径明确报缺失，修正路径提取成功。另两个选定归档成员仍待完整归档验证。输出路径、文件大小和 22 个权重哈希均未改变，相关 34 项检查在本机和 Linux 上通过。详见[归档成员结果](validation/phase33_archive_member_results.json)。
+
 新增公开结果汇总入口 `scripts/summarize.py`。它按保存的身份索引核对任务顺序、工作进程退出记录及逐帧耗时，从原始任务测量重算 episode 和 run 指标，再核对已有汇总。多个运行可分别比较；合并分片时还要求代码、方法、数据、随机种子、模型及评测身份一致，来源干净且 episode 不重叠。真实 4-MON 单 episode 的 414 步记录在 Linux 和 macOS 上重算后均与缓存指标完全一致，表格明确标为 300 个 episode 中的 1 个。相关 40 项检查在本机和 Linux 上通过；完整 split 的实际合并仍等待运行结束。实验协议和指标定义见[复现说明](reproduction.md)，证据见[结果汇总验证](validation/phase32_result_summary_results.json)。
 
 SuperGlue 改为独立准备的外部依赖。来源是 LagMemo 使用的固定 fork，保留其批量匹配行为；六个准备文件与冻结实现逐字节一致，两处 checkpoint 路径适配在本地准备时应用。导航安装缓存现包含 242 个输入，资源准备与根入口分别校验 Habitat 和 SuperGlue。Linux 真实 CPU 双图批量匹配对照中，363 个参数张量及 13 个输出张量全部相同，未初始化 CUDA；完整测试为 641 项通过、无跳过，架构检查通过。同时删除 SuperGlue 示例及配对列表、MobileCLIP iOS 示例，共 51 个文件、约 8 MB，许可证原文保留。详见[外部匹配依赖结果](validation/phase30_external_matching_source_results.json)。
