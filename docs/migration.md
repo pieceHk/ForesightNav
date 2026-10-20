@@ -6,13 +6,15 @@
 
 ## 当前代码
 
+按用户要求停止整批评测，后续验收不要求跑满完整 split。停止时已有 59 个完整 episode、236 个目标；59,776 帧计时和 6,174 条决策的身份、任务顺序及指标重算均通过，过期后缀分派为 0。中断中的 episode 未纳入统计，四个已停止运行的原始状态和退出码保留，汇总工具正确拒绝将其当作完整运行。全部相关进程已退出，详见[已完成数据检查](validation/phase44_completed_data_results.json)。
+
 离线导出已完成真实跨机器恢复验证。6.61 GB 的代码、两套环境输入、episode 源注释和 Linux micromamba 从 macOS 完整传到服务器后，从 bundle 克隆了独立目录。Python 网络连接被禁用时，缓存、550 个 Habitat 文件及 6 个 SuperGlue 文件校验通过，三组数据重建及重复准备均通过，全部 1,300 个身份索引与原数据一致。2/3/4-MON 分别通过完整 600、400、300 个 episode 的输入检查，架构检查通过。本轮使用已有独立环境、场景及外部权重，没有重建环境或启动 GPU 推理。模型组的公开下载及完整导出仍待完成。详见[离线导出结果](validation/phase31_offline_export_results.json)。
 
 公开模型归档的成员位于根部，清单已去掉多余的 `pretrained/` 前缀。实际 FastSAM 文件验证了修正后的公开提取路径；输出路径、文件大小和 22 个权重哈希均未改变，详见[归档成员结果](validation/phase33_archive_member_results.json)。
 
 19 个公开下载的直接文件及两份模型版本引用已传到服务器，在禁用联网、未加载模型的条件下逐项校验，19 个文件均与原实验权重同哈希。另从归档前缀完整读取了 FastSAM 和 `freesplatpp_scannet_gtdepth.ckpt`，两者大小及 SHA-256 均与清单一致。MaskAdapter、整个归档及完整模型组的准备仍待验证，详见[公开模型暂存结果](validation/phase41_public_model_staging_results.json)。
 
-新增公开结果汇总入口 `scripts/summarize.py`。它按保存的身份索引核对任务顺序、工作进程退出记录及逐帧耗时，从原始任务测量重算 episode 和 run 指标，再核对已有汇总。多个运行可分别比较；合并分片时还要求代码、方法、数据、随机种子、模型及评测身份一致，来源干净且 episode 不重叠。真实 4-MON 单 episode 的 414 步记录在 Linux 和 macOS 上重算后均与缓存指标完全一致，表格明确标为 300 个 episode 中的 1 个。相关 40 项检查在本机和 Linux 上通过；完整 split 的实际合并仍等待运行结束。实验协议和指标定义见[复现说明](reproduction.md)，证据见[结果汇总验证](validation/phase32_result_summary_results.json)。
+新增公开结果汇总入口 `scripts/summarize.py`。它按保存的身份索引核对任务顺序、工作进程退出记录及逐帧耗时，从原始任务测量重算 episode 和 run 指标，再核对已有汇总。多个运行可分别比较；合并分片时还要求代码、方法、数据、随机种子、模型及评测身份一致，来源干净且 episode 不重叠。真实 4-MON 单 episode 的 414 步记录在 Linux 和 macOS 上重算后均与缓存指标完全一致，表格明确标为 300 个 episode 中的 1 个。相关 40 项检查在本机和 Linux 上通过；完整 split 的实际合并未执行，本轮验收无需运行完整 split。实验协议和指标定义见[复现说明](reproduction.md)，证据见[结果汇总验证](validation/phase32_result_summary_results.json)。
 
 SuperGlue 改为独立准备的外部依赖。来源是 LagMemo 使用的固定 fork，保留其批量匹配行为；六个准备文件与冻结实现逐字节一致，两处 checkpoint 路径适配在本地准备时应用。导航安装缓存现包含 242 个输入，资源准备与根入口分别校验 Habitat 和 SuperGlue。Linux 真实 CPU 双图批量匹配对照中，363 个参数张量及 13 个输出张量全部相同，未初始化 CUDA；完整测试为 641 项通过、无跳过，架构检查通过。同时删除 SuperGlue 示例及配对列表、MobileCLIP iOS 示例，共 51 个文件、约 8 MB，许可证原文保留。详见[外部匹配依赖结果](validation/phase30_external_matching_source_results.json)。
 
@@ -34,7 +36,7 @@ SuperGlue 改为独立准备的外部依赖。来源是 LagMemo 使用的固定 
 
 独立 mapping 环境的完整 4-MON 单 episode 验证已通过：四个目标均成功，共 414 个动作；44 条规划记录身份完整，没有过期后缀分派；31 次地图重建均完成，最终为 301 个关键帧和 3,088,415 个高斯点。建图、导航及资源监控进程退出码均为 0，动作数、指标和最终地图哈希与此前记录一致。首次运行虽完成全部目标，但监控读取已退出进程的 procfs 信息时发生竞态，根入口按失败记录；修复 `ProcessLookupError` 处理后另行运行并通过。新增五项监控检查后，Linux 完整测试为 577 项通过。此实验的 navigation 仍使用原环境。详见[集成结果及首次失败记录](validation/phase21_integration_results.json)。
 
-Mapping 的独立离线安装已通过验证。安装器校验 42 个 Conda 包、122 个 Python 包输入和固定扩展源码，在新目录中创建环境并构建四个 CUDA 扩展；安装后依赖、扩展导入和 CUDA 检查均通过。真实推理补齐了 FastSAM 延迟导入的 pandas 依赖，最终锁定文件又在第二个空环境中完整执行。12 帧 RGB-D 重放的 50 个地图及增量状态张量与原环境逐项相同，候选和公开状态也一致。新增 13 项安装检查后，Linux 完整测试为 572 项通过。导航环境独立安装及完整 split 评测仍待完成。详见[安装指南](mapping_installation.md)和[安装验证](validation/phase21_mapping_install_results.json)。
+Mapping 的独立离线安装已通过验证。安装器校验 42 个 Conda 包、122 个 Python 包输入和固定扩展源码，在新目录中创建环境并构建四个 CUDA 扩展；安装后依赖、扩展导入和 CUDA 检查均通过。真实推理补齐了 FastSAM 延迟导入的 pandas 依赖，最终锁定文件又在第二个空环境中完整执行。12 帧 RGB-D 重放的 50 个地图及增量状态张量与原环境逐项相同，候选和公开状态也一致。新增 13 项安装检查后，Linux 完整测试为 572 项通过。导航环境独立安装及此阶段未评测完整 split。详见[安装指南](mapping_installation.md)和[安装验证](validation/phase21_mapping_install_results.json)。
 
 默认建图路径的可选依赖已按后端加载。FastSAM/MaskAdapter 构造时不再导入 TensorFlow、MinkowskiEngine 或 SAM；OpenSeg 的设备设置在首次使用时执行。配置转换函数已独立，推理读取配置时不再连带导入训练模型封装。真实模型在禁止导入上述可选包的进程中成功加载；同一组 12 帧 RGB-D 的冻结对照中，50 个地图及增量状态张量逐项相同，候选和公开状态也一致。Linux 完整测试为 559 项通过。两个独立 Conda 基础环境已创建，GPU 依赖下载和源码构建仍在进行，尚未完成独立环境的完整实验验证。详见[依赖隔离结果](validation/phase20_dependencies_results.json)。
 
@@ -102,7 +104,7 @@ Mapper 迁移后，服务器完整测试为 271 项通过。固定 RGB-D 序列�
 
 在线编码器迁移后，服务器完整测试为 292 项通过。GPU 对比增加了增量恢复状态，共 50 个张量与基准逐项相同，候选及公开状态也相同。构造函数和在线路径的可执行定义对比通过，区域特征提取方法保留原有实现。计时通过可选回调记录，在线编码器不写离线渲染或导出文件。详见[编码器迁移结果](validation/phase5_encoder_results.json)。
 
-编码器迁移后的完整 4-MON 单 episode 验证完成了四个有序子任务，均成功，共 414 个动作。44 条规划记录均包含完整身份，未执行过期后缀计划；此记录验证完整连接，与初始单次运行不构成受控的性能比较；完整 split 评测仍待完成。详见[集成结果](validation/phase5_integration_results.json)。
+编码器迁移后的完整 4-MON 单 episode 验证完成了四个有序子任务，均成功，共 414 个动作。44 条规划记录均包含完整身份，未执行过期后缀计划；此记录验证完整连接，与初始单次运行不构成受控的性能比较；此阶段未评测完整 split。详见[集成结果](validation/phase5_integration_results.json)。
 
 导航状态迁移后，服务器完整测试为 299 项通过。13 个函数及方法的可执行定义与基准一致；重放覆盖候选刷新、过期元数据拒绝、多帧确认、历史过期、受困检测及恢复重置。实际 Agent 的对应方法已绑定核心包，详见[导航状态结果](validation/phase6_agent_state_results.json)。
 
@@ -122,13 +124,13 @@ Mapper 迁移后，服务器完整测试为 271 项通过。固定 RGB-D 序列�
 
 Agent 状态及候选分派迁移后，服务器完整测试为 390 项通过。5 组构造状态对照和 19 组原入口代码块重放通过，覆盖冷却、首步、候选缺失、过期版本与刷新失败，并比较实际目标、候选状态和刷新调用顺序。模型与局部地图构造的 69 条语句保持一致；首次和周期分派的实际计算也通过源码对比。详见 [Agent 状态与分派结果](validation/phase12_agent_results.json)。
 
-实际 Agent 分派路径的完整 4-MON 单 episode 验证完成，四项任务全部成功，共 414 个动作。44 条决策保留完整身份，未执行过期后缀计划；31 次地图重建均完成。最终日志点数与 BEV 图像中的 3,088,415 一致，图像标题逐像素核对通过。此项结果验证该 episode 的完整连接，完整 split 评测仍待完成。详见 [Agent 集成结果](validation/phase12_integration_results.json)。
+实际 Agent 分派路径的完整 4-MON 单 episode 验证完成，四项任务全部成功，共 414 个动作。44 条决策保留完整身份，未执行过期后缀计划；31 次地图重建均完成。最终日志点数与 BEV 图像中的 3,088,415 一致，图像标题逐像素核对通过。此项结果验证该 episode 的完整连接，此阶段未评测完整 split。详见 [Agent 集成结果](validation/phase12_integration_results.json)。
 
 规划决策的 JSONL 写入和降级诊断已迁入 `experiments/recorder.py`，旧桥接层保留计算与异常事件的组装。写入部分与基准代码一致；75 项相关检查通过，随后服务器完整测试为 390 项通过。序列化失败时，记录模块保留已经发生的分派结果，并尝试写入诊断。详见 [决策持久化结果](validation/phase13_recorder_persistence_results.json)。
 
 四组件拆分后，服务器完整测试为 407 项通过。两个语义提取方法的可执行定义与冻结代码一致；受控 GPU 对照使用相同权重和 12 帧真实 RGB-D 输入，50 个地图及增量状态张量逐项相同，候选结果和公开状态也相同。首次与历史缓存的非受控比较出现差异，因此另行执行了固定随机种子、线程和 cuDNN 设置的独立对照。README 已按数据、环境和启动重排，并补充组件替换说明；参考项目及 skill 见[开源项目参考](open_source_references.md)。详见[组件拆分结果](validation/phase14_components_results.json)。
 
-默认四组件路径的完整 4-MON 单 episode 验证正常结束，四项任务全部成功，共 414 个动作。44 条规划记录身份完整，没有过期后缀分派；31 次地图重建均完成。动作数、指标和最终 BEV 文件哈希与上一轮 Agent 集成记录一致。此项验证覆盖一个完整有序 episode，完整 split 评测仍待完成。详见[四组件集成结果](validation/phase14_integration_results.json)。
+默认四组件路径的完整 4-MON 单 episode 验证正常结束，四项任务全部成功，共 414 个动作。44 条规划记录身份完整，没有过期后缀分派；31 次地图重建均完成。动作数、指标和最终 BEV 文件哈希与上一轮 Agent 集成记录一致。此项验证覆盖一个完整有序 episode，此阶段未评测完整 split。详见[四组件集成结果](validation/phase14_integration_results.json)。
 
 环境与评测拆分后，服务器完整测试为 441 项通过。新增 34 项检查覆盖冻结代码的观测转换、三种目标模态、动作编号、路径状态、测量重置顺序及无评测地图时的导航状态；评测路径读取的可执行定义与基准一致。实际 4-MON 单 episode 的四个目标全部成功，共 414 个动作，任务身份和版本记录完整。动作数、指标及最终地图文件哈希与拆分前的上一轮记录一致。详见[环境与评测结果](validation/phase15_habitat_results.json)及[集成结果](validation/phase15_integration_results.json)。
 
