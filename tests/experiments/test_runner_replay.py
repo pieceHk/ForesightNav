@@ -561,11 +561,12 @@ def test_refresh_cadence_is_supplied_by_configuration(tmp_path, monkeypatch):
     )
 
 
-@pytest.mark.parametrize("episodes,case", [(2, "normal"), (1, "recovery")])
-def test_trajectory_observer_preserves_all_calls_actions_metrics_and_timing(tmp_path, monkeypatch, episodes, case):
-    plain_run = execute(tmp_path / "plain", monkeypatch, native=True, episodes=episodes, case=case)
+@pytest.mark.parametrize("tasks,episodes,case", [(2, 1, "normal"), (3, 2, "normal"),
+                                               (4, 1, "normal"), (3, 1, "recovery")])
+def test_trajectory_observer_preserves_all_calls_actions_metrics_and_timing(tmp_path, monkeypatch, tasks, episodes, case):
+    plain_run = execute(tmp_path / "plain", monkeypatch, native=True, tasks=tasks, episodes=episodes, case=case)
     recorded = execute(tmp_path / "recorded", monkeypatch, native=True, episodes=episodes,
-                       case=case, record_trajectory=True)
+                       tasks=tasks, case=case, record_trajectory=True)
     assert plain_run["error"] is recorded["error"] is None
     for key in set(plain_run) - {"files"}:
         assert recorded[key] == plain_run[key]
@@ -576,11 +577,11 @@ def test_trajectory_observer_preserves_all_calls_actions_metrics_and_timing(tmp_
     all_rows = []
     for episode in range(episodes):
         identity = json.loads(recorded["files"][f"episodes/scene-a/{episode}/identity.json"])
-        assert identity["identity"]["source_episode_ids"] == [str(episode * 3 + task) for task in range(3)]
+        assert identity["identity"]["source_episode_ids"] == [str(episode * tasks + task) for task in range(tasks)]
         rows = [json.loads(line) for line in recorded["files"][f"episodes/scene-a/{episode}/trajectory.jsonl"].splitlines()]
         assert [row["frame_index"] for row in rows] == list(range(1, len(rows) + 1))
         assert [row["world_pose"][4] for row in rows] == pytest.approx([index * 0.1 for index in range(len(rows))])
-        assert [row["subtask_index"] for row in rows if row["is_stop"]] == [0, 1, 2]
+        assert [row["subtask_index"] for row in rows if row["is_stop"]] == list(range(tasks))
         all_rows.extend(rows)
     actions = [event for event in recorded["events"] if event[0] == "apply_action"]
     assert [(row["subtask_index"], row["action_name"]) for row in all_rows] == [(event[1], event[2]) for event in actions]
