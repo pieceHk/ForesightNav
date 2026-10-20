@@ -116,5 +116,14 @@
     "runner_blob": "a71c8ea168f3948f189fe62545910d92783d264c",
     "unchanged_from_frozen": true,
     "scope": "The algorithm tree and Runner file are unchanged; native worker composition adds the recording wrapper and environment inventories."
+  },
+  "linux_expanded": {
+    "source_commit": "0bb8d3e3975cefce4a5eb8a3250b6a94cd6780f0",
+    "passed": 728,
+    "skipped": 0,
+    "warnings": 17,
+    "seconds": 37.45,
+    "cuda_visible_devices": "",
+    "scope": "Complete suite after direct2/3/4MON observation-layer coverage was added; original frozen policy-loop checks retained"
   }
 }
