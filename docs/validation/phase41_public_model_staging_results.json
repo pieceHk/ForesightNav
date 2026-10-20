@@ -1,0 +1,73 @@
+{
+  "status": "direct_models_transferred_checkpoint_member_verified_archive_pending",
+  "source_commit": "8e886ff2248db70a4551468b907e02dd94d47a86",
+  "scope": "Public download preparation and cross-machine file verification; no model inference. Selected archive-member hashes are independent of whole-archive verification.",
+  "source_manifest_sha256": "f2905de04d378a8418494a077aea1b44649415b48a70e8efeceeb0ec3539a4b2",
+  "linux_direct_model_stage": {
+    "status": "direct_subset_verified_full_set_pending",
+    "scope": "Actual public preparation output transferred fromMac; network blocked, no model libraries loaded. Only19direct files and2refs are staged; full22file verification remains incomplete by design. Existing active evaluation resources were read for comparison only.",
+    "model_files_verified": 19,
+    "ref_files_verified": 2,
+    "regular_files": 21,
+    "verified_model_bytes": 4839043771,
+    "equal_to_original_model_files": 19,
+    "missing_archive_members": [
+      "freesplatpp_scannet_gtdepth.ckpt",
+      "FastSAM-x.pt",
+      "maskadpater_ckpt.pth"
+    ],
+    "full_manifest_rejected_incomplete_set": true,
+    "source_manifest_sha256": "f2905de04d378a8418494a077aea1b44649415b48a70e8efeceeb0ec3539a4b2",
+    "helper_sha256": "9796f1404d4bc6c49d5903344d1f1157bf7245e5bb39966b7d1be5628b856af3",
+    "seconds": 6.35
+  },
+  "archive_prefix": {
+    "public_url": "https://huggingface.co/datasets/onandon/EmbodiedSplat/resolve/60307f90694e57dc364ac72795b9c6a7bd1e0437/pretrained-shard-0001.tar.zst",
+    "expected_archive_bytes": 6982820861,
+    "expected_archive_sha256": "75d168bef049d79ba7fc8cf5e9ee8bcfaaaa784523c323fa92f7a6ab615afe80",
+    "whole_archive_verified": false,
+    "bytes_observed_before": 2801578552,
+    "bytes_observed_after": 2802627128,
+    "verified_complete_members": [
+      {
+        "member": "FastSAM-x.pt",
+        "expected_bytes": 144943063,
+        "expected_sha256": "c0be4e7ddbe4c15333d15a859c676d053c486d0a746a3be6a7a9790d52a9b6d7",
+        "received_bytes": 144943063,
+        "sha256": "c0be4e7ddbe4c15333d15a859c676d053c486d0a746a3be6a7a9790d52a9b6d7",
+        "status": "verified_complete_member"
+      },
+      {
+        "member": "freesplatpp_scannet_gtdepth.ckpt",
+        "expected_bytes": 587708397,
+        "expected_sha256": "0032a028783f5c0455ddb7e8ac3892601463c6dee652ea222e64c8e1b5fbfe9c",
+        "received_bytes": 587708397,
+        "sha256": "0032a028783f5c0455ddb7e8ac3892601463c6dee652ea222e64c8e1b5fbfe9c",
+        "status": "verified_complete_member"
+      }
+    ],
+    "other_selected_members_pending": [
+      "maskadpater_ckpt.pth"
+    ],
+    "model_output_files_created": false,
+    "prefix_end": "ReadError('unexpected end of data')",
+    "zstd_returncode": 1,
+    "seconds": 2.546,
+    "helper_sha256": "f860bd0f43fcd301fc3b452bd9fe1480eff61950e4dd3139f0d158712b775c06"
+  },
+  "coverage": {
+    "default_model_files": 22,
+    "model_files_individually_byte_verified": 21,
+    "default_model_bytes": 5631339793,
+    "model_bytes_individually_verified": 5571695231,
+    "prepared_and_transferred_model_files": 19,
+    "complete_default_preparation_verified": false
+  },
+  "remaining": [
+    "Complete archive size/SHA-256 verification and actual MaskAdapter member verification",
+    "Prepare all 22 default files through the public offline model preparation command",
+    "Export, transfer and restore the complete model cache group",
+    "Current-source CUDA/model and full ordered-episode validation when GPUs are free",
+    "Finish and strictly merge the frozen 300-episode 4-MON evaluation"
+  ]
+}

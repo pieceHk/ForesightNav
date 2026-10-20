@@ -8,7 +8,9 @@
 
 离线导出已完成真实跨机器恢复验证。6.61 GB 的代码、两套环境输入、episode 源注释和 Linux micromamba 从 macOS 完整传到服务器后，从 bundle 克隆了独立目录。Python 网络连接被禁用时，缓存、550 个 Habitat 文件及 6 个 SuperGlue 文件校验通过，三组数据重建及重复准备均通过，全部 1,300 个身份索引与原数据一致。2/3/4-MON 分别通过完整 600、400、300 个 episode 的输入检查，架构检查通过。本轮使用已有独立环境、场景及外部权重，没有重建环境或启动 GPU 推理。模型组的公开下载及完整导出仍待完成。详见[离线导出结果](validation/phase31_offline_export_results.json)。
 
-公开模型归档的前缀检查发现，模型文件直接位于归档根部，清单中的 `pretrained/` 前缀需移除。实际 FastSAM 文件的 144,943,063 字节及 SHA-256 均与原权重一致；用其原始成员名验证公开提取器时，旧路径明确报缺失，修正路径提取成功。另两个选定归档成员仍待完整归档验证。输出路径、文件大小和 22 个权重哈希均未改变，相关 34 项检查在本机和 Linux 上通过。详见[归档成员结果](validation/phase33_archive_member_results.json)。
+公开模型归档的成员位于根部，清单已去掉多余的 `pretrained/` 前缀。实际 FastSAM 文件验证了修正后的公开提取路径；输出路径、文件大小和 22 个权重哈希均未改变，详见[归档成员结果](validation/phase33_archive_member_results.json)。
+
+19 个公开下载的直接文件及两份模型版本引用已传到服务器，在禁用联网、未加载模型的条件下逐项校验，19 个文件均与原实验权重同哈希。另从归档前缀完整读取了 FastSAM 和 `freesplatpp_scannet_gtdepth.ckpt`，两者大小及 SHA-256 均与清单一致。MaskAdapter、整个归档及完整模型组的准备仍待验证，详见[公开模型暂存结果](validation/phase41_public_model_staging_results.json)。
 
 新增公开结果汇总入口 `scripts/summarize.py`。它按保存的身份索引核对任务顺序、工作进程退出记录及逐帧耗时，从原始任务测量重算 episode 和 run 指标，再核对已有汇总。多个运行可分别比较；合并分片时还要求代码、方法、数据、随机种子、模型及评测身份一致，来源干净且 episode 不重叠。真实 4-MON 单 episode 的 414 步记录在 Linux 和 macOS 上重算后均与缓存指标完全一致，表格明确标为 300 个 episode 中的 1 个。相关 40 项检查在本机和 Linux 上通过；完整 split 的实际合并仍等待运行结束。实验协议和指标定义见[复现说明](reproduction.md)，证据见[结果汇总验证](validation/phase32_result_summary_results.json)。
 
@@ -42,7 +44,7 @@ Mapping 的独立离线安装已通过验证。安装器校验 42 个 Conda 包�
 
 `scripts/prepare_data.py` 验证三组固定版本数据的 manifest、内容和 source trace 校验值，在 `data/` 中建立资源链接，并为全部 episode 生成统一身份索引。清单使用 `assets/datasets.json`，以便数据准备只依赖 Python 标准库。
 
-在线 Mapper 的实际状态管理、关键帧接纳、后台融合及地图发布已迁入 `pbsp/mapping/mapper.py`，模型输入和推理调用位于 `model.py`。`encoder.py` 执行首轮编码及增量更新，通过 `SemanticInjector` 调用 `pbsp/semantics/features.py` 中的区域特征提取及语义码本操作。`gaussians.py` 保存可扩容的高斯，`fusion.py` 执行投影关联、几何和特征融合及遮挡细化。模型组装与权重加载由 `adapters/embodied_splat.py`、`embodied_splat_model.py` 完成，语义资源和高斯索引分别由 `embodied_splat_semantics.py`、`embodied_splat_query.py` 适配，实验图像由 `experiments/visualization.py` 写入。底层网络层依赖的目录整理仍待完成。当前复现入口为根目录 `run.py`；`Exp/scripts/` 中的旧入口保留兼容。
+在线 Mapper 的实际状态管理、关键帧接纳、后台融合及地图发布已迁入 `pbsp/mapping/mapper.py`，模型输入和推理调用位于 `model.py`。`encoder.py` 执行首轮编码及增量更新，通过 `SemanticInjector` 调用 `pbsp/semantics/features.py` 中的区域特征提取及语义码本操作。`gaussians.py` 保存可扩容的高斯，`fusion.py` 执行投影关联、几何和特征融合及遮挡细化。模型组装与权重加载由 `adapters/embodied_splat.py`、`embodied_splat_model.py` 完成，语义资源和高斯索引分别由 `embodied_splat_semantics.py`、`embodied_splat_query.py` 适配，实验图像由 `experiments/visualization.py` 写入。基础网络层和渲染器按架构设计保留在原来源目录，由适配器构建，保持 checkpoint 参数名。当前复现入口为根目录 `run.py`；`Exp/scripts/` 中的旧入口保留兼容。
 
 阅读建图代码可从 `mapper.py` 的 `add_live_frame()`、`_rebuild_worker()` 和 `query_batch_with_records()` 开始。`reset_episode()` 清理整张地图；同一 episode 的任务切换保留地图。原运行目录中的 Mapper 文件只保留兼容入口。
 
@@ -62,16 +64,16 @@ Runner 接收 `RunSettings`、`PlanningRunSettings`、环境、Agent、Mapper pr
 | --- | --- | --- |
 | 固定基准 | 原始数据身份、复现工具、设计文档及完整测试 | 已提交 `422cb8e` |
 | 迁移纯算法 | 浅层包、共享配置、完整数据身份索引和原有调用方 | 已验证，253 项测试通过 |
-| 拆分建图 | 实际在线 Mapper、编码、融合、检索和快照发布 | 在线流程与模型构造已迁移，底层网络依赖待整理 |
-| 拆分导航 | Agent、候选规划、导航执行、验证、恢复及评测循环 | 候选刷新、验证、恢复、动作执行及实验循环已迁移，运行组装待完善 |
+| 拆分建图 | 实际在线 Mapper、编码、融合、检索和快照发布 | 在线流程已迁移，基础网络由适配器从原来源目录构建 |
+| 拆分导航 | Agent、候选规划、导航执行、验证、恢复及评测循环 | 实际导航、实验循环及工作进程组装已迁移 |
 | 四组件接口 | Mapping、semantic injection、query 和 navigation 的运行路径及替换契约 | 已接入默认路径并验证，外部导航后端待适配 |
 | 环境与评测边界 | 传感器和动作适配、真值指标、任务测量重置、可视化 | 已迁入浅层模块并接入实际入口 |
 | 实验 Runner | 完整 episode 循环、任务边界、规划与记录桥接 | 已迁入实际运行路径，采用显式设置与服务对象 |
 | 建图 IPC 与工作进程 | 实际客户端、协议、服务处理、连接及模型清理 | 已接入默认启动路径，退出码写入运行记录 |
 | 导航工作进程 | 实际服务组装、显式请求、身份读取和资源清理 | 已接入默认启动路径，旧入口转发到原生工作进程 |
-| 根目录启动 | 共享 YAML、完整身份选择、运行清单、原生服务与进程管理 | 已实现并接入真实运行；35 项新增检查和 550 项 Linux 完整测试通过 |
-| 发布资源与安装 | 模型资源、依赖固定、环境脚本和离线流程 | 独立环境与依赖构建验证进行中 |
-| 验证完整流程 | 记录重放、2/3/4-MON 集成实验、全新 Linux 安装和完整选定 split | 新入口已分别完成 2/3/4-MON 单 episode；全新环境和完整 split 待验证 |
+| 根目录启动 | 共享 YAML、完整身份选择、运行清单、原生服务与进程管理 | 已接入真实运行；当前 Linux 完整测试 741 项通过 |
+| 发布资源与安装 | 模型资源、依赖固定、环境脚本和离线流程 | 公开双环境安装及环境/数据离线恢复通过；完整模型组待验证 |
+| 验证完整流程 | 记录重放、2/3/4-MON 集成实验、全新 Linux 安装和完整选定 split | 单 episode 与独立环境通过；冻结完整 split 运行中，当前源码 GPU 检查待完成 |
 
 ## 验证要求
 
