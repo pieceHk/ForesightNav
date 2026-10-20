@@ -137,3 +137,5 @@ Agent 状态及候选分派迁移后，服务器完整测试为 390 项通过。
 导航启动与服务组装已迁入原生工作进程。三组冻结启动重放比较了实际组装参数、Episode 选择、规划配置和资源路径；补齐非默认投影距离的兼容绑定后全部一致。新增检查也覆盖构造失败、非法身份和信号退出；后续补丁将 Agent 的导航后端纳入清理，即使关闭报错也继续释放其余服务。服务器完整测试为 515 项通过。实际 3-MON 单 episode 的三个目标全部成功，共 307 个动作，33 条规划记录身份完整，没有执行过期后缀计划；两个工作进程均以 0 退出。GPU 实验采用组装迁移提交，后续清理补丁的验证单独列出，详见[导航工作进程结果](validation/phase18_worker_results.json)及[集成结果](validation/phase18_integration_results.json)。
 
 根目录 `run.py` 已直接读取共享 YAML，保存本次配置、模型输入和完整任务身份，再启动原生建图、导航及资源监测进程。35 项新增检查覆盖真实子进程的失败与终止、身份选择、清单恢复、参数传入和记录开关，Linux 完整测试为 550 项通过。三组数据的 1,300 个 episode 也已通过新入口的完整预检查。新入口分别运行了完整 2/3/4-MON 单 episode：2-MON 完成两项任务，成功一项，两项均耗尽 500 步预算；3-MON 和 4-MON 的目标全部成功。三次运行共 179 条规划记录身份完整，没有执行过期后缀计划，九个工作进程均正常退出。4-MON 的指标和最终地图哈希与上一轮一致；3-MON 动作数相同，但路径指标和地图略有差异，结果原样保留。详见[根入口结果](validation/phase19_launch_results.json)与[三组集成结果](validation/phase19_integration_results.json)。
+
+公开安装检查入口现为 `scripts/check_install.py`，区分原生依赖检查、`--cpu-only` 与完整有序 episode 的 `--smoke`。模型下载增加 32 MiB 分段和每段三次有限重试；校验错误与 404 会停止对应资源。macOS 的 43 项针对性检查和真实 Hugging Face 小文件分段下载通过；Linux 诊断与完整模型组仍待验证，见[记录](validation/phase34_install_diagnostics_results.json)。

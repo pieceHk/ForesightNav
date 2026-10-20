@@ -1,0 +1,27 @@
+{
+  "status": "targeted_checks_passed_linux_install_probe_pending",
+  "changes": [
+    "32 MiB bounded HTTP ranges with three attempts per range for transient failures; exact Content-Range and final SHA-256 remain mandatory",
+    "Standalone dual-environment installation diagnostic with explicit CPU-only and complete ordered smoke modes",
+    "Architecture directory documentation reconciled with retained foundation networks and actual environment locks"
+  ],
+  "macos": {
+    "checks": 43,
+    "command": ".venv/bin/python -m pytest tests/runtime/test_model_download.py tests/runtime/test_model_assets.py tests/runtime/test_offline_export.py tests/runtime/test_install_check.py tests/experiments/test_structure.py -q",
+    "seconds": 1.64
+  },
+  "real_public_download": {
+    "status": "passed",
+    "resource": "clip-vit-base-patch32/config.json",
+    "chunk_bytes": 1024,
+    "verified_bytes": 4186,
+    "sha256": "b575ef3c36f2a057fa19e221650105052d61cc9c1a972ec15019c6261ec98770",
+    "seconds": 14.702,
+    "scope": "Real pinned HF config downloaded into a new isolated cache with five explicit ranges and full SHA verification; no active large-download cache mutated"
+  },
+  "limits": [
+    "Large model downloads still owned by their original running jobs; this change has not replaced them",
+    "Linux native diagnostic and optional full smoke mode require separate execution; neither is claimed here",
+    "Whole upstream pretrained archive and all selected model members remain pending"
+  ]
+}

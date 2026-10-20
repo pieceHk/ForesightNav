@@ -39,8 +39,8 @@ PBSP/
 │   │   ├── model.py               # 网络构建、权重加载、推理调用
 │   │   ├── encoder.py             # 在线编码和增量特征更新
 │   │   ├── fusion.py              # Gaussian 融合实现
-│   │   ├── decoder.py             # 本实验使用的解码与渲染逻辑
-│   │   └── layers/                # 实际用到的网络层，按职责保留必要子目录
+│   │   ├── gaussians.py           # Gaussian 数据及批量操作
+│   │   └── types.py               # 建图输入、快照和查询端口
 │   ├── semantics/
 │   │   ├── features.py            # 区域特征提取与语义码本注入
 │   │   └── types.py               # SemanticInjector / SemanticInjection
@@ -107,17 +107,14 @@ PBSP/
 │   └── summarize.py               # 汇总已有实验结果
 │
 ├── envs/
-│   ├── mapping.yml
-│   ├── navigation.yml
-│   ├── mapping.lock.txt
-│   └── navigation.lock.txt
+│   ├── mapping/                  # requirements、Conda 显式锁、完整 JSON 构建锁
+│   └── navigation/               # requirements、Conda 显式锁、完整 JSON 构建锁
 ├── third_party/
-│   ├── manifest.yaml              # 来源、固定 revision、构建方法、许可证
-│   ├── patches/                   # 对外部代码的明确补丁
-│   └── src/                       # 按清单准备的外部源码
+│   └── licenses/                 # 外部代码许可证；来源索引见 THIRD_PARTY_NOTICES.md
 ├── assets/
 │   ├── datasets.json              # 标准库可读取的数据版本、来源及校验值
-│   └── models.json                # 权重、配置、元数据及校验值
+│   ├── models.json                # 权重、配置、元数据及校验值
+│   └── superglue.json             # 固定推理源码及补丁后的校验值
 ├── docs/
 │   ├── architecture.md
 │   ├── datasets.md
@@ -137,11 +134,11 @@ PBSP/
 └── runtime.local.yaml             # 准备脚本生成，忽略内容
 ```
 
-目录树省略各 Python 包常规的 `__init__.py`。`pyproject.toml` 明确声明需要安装的包和两个环境各自的依赖组。
+目录树省略各 Python 包常规的 `__init__.py` 和兼容入口。`pyproject.toml` 声明 PBSP 包及公共依赖；两个环境的具体版本、源代码 revision、构建输入和校验值位于 `envs/<role>/linux-64.lock.json`。
 
 建图从 `pbsp/mapping/mapper.py` 开始读，导航从 `pbsp/navigation/planning.py` 和 `navigator.py` 开始读，完整方法从 `pbsp/agent.py` 开始读。正常阅读无需进入旧仓库名称和多层 `src` 目录。
 
-`mapper.py`、`encoder.py`、`fusion.py` 应包含实际实现。迁移时按在线推理的依赖关系提取网络代码，保留模块来源和许可证。基础网络层可以有自然的子目录；PBSP 的增量建图、检索、规划和验证逻辑直接放在上述模块。外部 Detic、SEEM、Habitat 等依赖由 `third_party/manifest.yaml` 固定版本。
+`mapper.py`、`encoder.py`、`fusion.py` 包含实际在线更新与融合实现，PBSP 的检索、规划和验证也位于上述浅层模块。EmbodiedSplat 的基础网络层与 Gaussian 渲染器保留在 `Mapping/runtime/embodied_splat/src/model/`，由 `adapters/embodied_splat.py` 构建；它们沿用原有 checkpoint 键和来源说明。Detic、SEEM 等推理依赖保留在 `Navigation/runtime/lagmemo/`；Habitat 和 SuperGlue 源码按清单准备到 `Exp/assets/dependencies/`。所有保留目录的用途和许可证见 `THIRD_PARTY_NOTICES.md`，可下载依赖由环境 JSON 锁和 `assets/superglue.json` 固定。
 
 ## 3 模块依赖与运行流程
 
@@ -459,7 +456,7 @@ README 中每一步都有可执行命令和明确产物。较长的安装构建�
 | --- | --- |
 | `Mapping/src/tdonav_mapping/contracts.py` 等 | `pbsp/types.py`、`mapping/geometry.py`、`keyframes.py`、`query.py` |
 | `Mapping/runtime/server/online_es_mapper.py` | `mapping/mapper.py`、`memory.py`、`model.py`、`query.py`，提取异步融合和快照发布 |
-| `Mapping/runtime/embodied_splat/src/model/` | 当前在线网络迁入 `mapping/encoder.py`、`fusion.py`、`decoder.py`、`layers/`，保留 checkpoint 键和来源 |
+| `Mapping/runtime/embodied_splat/src/model/` | 增量编码与融合实现位于 `mapping/encoder.py`、`fusion.py`；基础网络层和渲染器保留在原来源目录，通过 `adapters/embodied_splat.py` 构建，保持 checkpoint 键 |
 | `Mapping/runtime/server/es_mapper_server.py` | `runtime/mapping_worker.py`、`protocol.py` |
 | `Navigation/src/tdonav_navigation/evidence.py`、`ranking.py` | `navigation/evidence.py`、`ranking.py` |
 | `suffix_planning.py`、`category_cooldown.py` | `navigation/suffix.py`、`cooldown.py` |

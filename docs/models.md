@@ -12,6 +12,8 @@ python scripts/prepare_models.py --output /path/to/pbsp-weights
 
 The EmbodiedSplat release supplies three selected weights inside a 6.98 GB archive. Extraction needs `zstd`; use `--zstd .cache/envs/mapping/bin/zstd` to select the executable installed with the mapping environment. The script extracts only the selected files. Other models download separately from their original providers.
 
+Downloads use 32 MiB ranges when the provider supports them. Interrupted responses resume from the saved `.partial` file, with up to three attempts per range. A provider that ignores ranges is handled as a full download. Every complete file must match its pinned size and SHA-256 before entering the cache; HTTP errors such as 404, invalid ranges and checksum failures stop that artifact.
+
 For an offline server, prepare the cache on the connected computer:
 
 ```bash

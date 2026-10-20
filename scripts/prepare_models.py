@@ -3,19 +3,71 @@
 
 import argparse
 from concurrent.futures import ThreadPoolExecutor, as_completed
+import http.client
 import json
 from pathlib import Path
+import re
 import shutil
+import socket
 import subprocess
 import sys
 import tarfile
 import tempfile
+import time
+import urllib.error
 import urllib.request
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
 from runtime.model_assets import load_manifest, relative_path, target_path, verify
+
+CHUNK_BYTES = 32 * 1024 * 1024
+DOWNLOAD_ATTEMPTS = 3
+
+
+class ShortDownload(OSError):
+    """A valid response ended before its declared byte range was complete."""
+
+
+def _fetch_range(partial, item):
+    offset = partial.stat().st_size if partial.exists() else 0
+    end = min(offset + CHUNK_BYTES, item["bytes"]) - 1
+    request = urllib.request.Request(item["url"], headers={
+        "Range": f"bytes={offset}-{end}", "Accept-Encoding": "identity",
+    })
+    with urllib.request.urlopen(request, timeout=120) as response:
+        if response.headers.get("Content-Encoding", "identity") != "identity":
+            raise ValueError("Model server returned encoded bytes")
+        if response.status == 206:
+            expected = f"bytes {offset}-{end}/{item['bytes']}"
+            if response.headers.get("Content-Range") != expected:
+                raise ValueError("Model server returned an unexpected byte range")
+            remaining, mode = end - offset + 1, "ab"
+        elif response.status == 200:
+            # A server may ignore Range. A full response starts at byte zero.
+            remaining, mode = item["bytes"], "wb"
+        else:
+            raise ValueError(f"Unexpected model response status: {response.status}")
+        length = response.headers.get("Content-Length")
+        if length is not None and (not re.fullmatch(r"[0-9]+", length) or int(length) != remaining):
+            raise ValueError("Model server returned an unexpected content length")
+        with partial.open(mode) as output:
+            while remaining:
+                block = response.read(min(1024 * 1024, remaining))
+                if not block:
+                    raise ShortDownload("Model response ended early; the partial file is retained")
+                output.write(block)
+                remaining -= len(block)
+            if response.read(1):
+                raise ValueError("Model response exceeded its declared byte range")
+
+
+def _transient(error):
+    if isinstance(error, urllib.error.HTTPError):
+        return error.code in {408, 429, 500, 502, 503, 504}
+    return isinstance(error, (ShortDownload, http.client.IncompleteRead,
+                              urllib.error.URLError, ConnectionError, socket.timeout))
 
 
 def fetch(cache, item, offline):
@@ -27,14 +79,19 @@ def fetch(cache, item, offline):
         raise FileNotFoundError(f"Missing cached model: {path}")
     cache.mkdir(parents=True, exist_ok=True)
     partial = path.with_suffix(".partial")
-    offset = partial.stat().st_size if partial.exists() else 0
-    request = urllib.request.Request(item["url"], headers={"Range": f"bytes={offset}-"} if offset else {})
-    with urllib.request.urlopen(request, timeout=120) as response:
-        resumed = response.status == 206
-        if resumed and response.headers.get("Content-Range", "").split("/")[0] != f"bytes {offset}-{item['bytes'] - 1}":
-            raise ValueError("Model server returned an unexpected byte range")
-        with partial.open("ab" if resumed else "wb") as output:
-            shutil.copyfileobj(response, output, length=1024 * 1024)
+    if partial.exists() and partial.stat().st_size > item["bytes"]:
+        raise ValueError(f"Cached partial model is larger than the pinned asset: {partial}")
+    while not partial.exists() or partial.stat().st_size < item["bytes"]:
+        for attempt in range(DOWNLOAD_ATTEMPTS):
+            try:
+                _fetch_range(partial, item)
+                break
+            except Exception as error:
+                if not _transient(error) or attempt + 1 == DOWNLOAD_ATTEMPTS:
+                    raise
+                print(f"Retry {attempt + 1}/{DOWNLOAD_ATTEMPTS - 1}: "
+                      f"{item.get('path', item.get('id'))} ({type(error).__name__})", flush=True)
+                time.sleep(2 ** attempt)
     verify(partial, item)
     partial.replace(path)
     print(f"Verified {item.get('path', item.get('id'))}", flush=True)

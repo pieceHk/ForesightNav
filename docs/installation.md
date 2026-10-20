@@ -61,11 +61,13 @@ GPU defaults are mapping `0`, navigation `1`. Set `--mapping-gpu` and `--navigat
 With the navigation environment activated:
 
 ```bash
-python run.py --config configs/experiments/hm3d_4mon.yaml --check
+python scripts/check_install.py
 python -m pytest tests -q
 python Exp/scripts/validate.py
 ```
 
-Then run a complete smoke episode using the [README command](../README.md#3-run). New component implementations should pass their interface checks and a full ordered episode before a selected-split evaluation.
+The installation check verifies input hashes, both environments' locked package versions, module origins, native extension imports, tensor operations and Detectron2 rotated NMS. It writes a new evidence directory under `Exp/runs/check_install/`. `--cpu-only` skips CUDA initialization while retaining CPU and source checks.
+
+Run `python scripts/check_install.py --smoke` to also load the default models and execute one complete ordered episode through the normal launcher. This checks Habitat reset, simulator actions and recorded episode metrics. `--scene <id> --episode <id>` selects an exact identity. New component implementations should pass their interface checks and a full ordered episode before a selected-split evaluation.
 
 Each run stores the checked model manifest and resource provenance beside its resolved experiment configuration.
