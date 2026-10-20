@@ -211,11 +211,16 @@ def allocate_run(plan, *, tag="", resource_checks=None):
         )
     )
     source = source_info(plan.resources.root)
+    from runtime.source_snapshot import capture_source_snapshot
+
+    source_snapshot = capture_source_snapshot(plan.resources.root, plan.run_directory, source,
+                                               state_reader=source_info)
     (plan.run_directory / "source.patch").write_text(source.pop("patch"))
     write_json(
         plan.run_directory / "provenance.json",
         {
             **source,
+            "source_snapshot": source_snapshot,
             "configuration_sha256": plan.configuration_sha256,
             "identity_sha256": plan.identity_sha256,
             "selected_episodes": len(plan.identities),

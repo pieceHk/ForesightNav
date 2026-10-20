@@ -121,6 +121,11 @@ def validate_run(directory):
     if provenance["commit"] != plan["source_commit"]:
         raise ValueError("Run plan and source provenance revisions differ")
     patch = (directory / "source.patch").read_bytes()
+    snapshot = None
+    if "source_snapshot" in provenance:
+        from runtime.source_snapshot import verify_source_snapshot
+
+        snapshot = verify_source_snapshot(directory, provenance["source_snapshot"], provenance, read_json)
     checks = provenance.get("resource_checks", {})
     model_proof = checks.get("models")
     if model_proof is not None:
@@ -174,12 +179,14 @@ def validate_run(directory):
             or provenance["selected_tasks"] != len(identities) * dataset["expected_tasks_per_episode"]):
         raise ValueError("Run completion counts differ from the selected task identities")
     row = {"run": directory.name, "directory": str(directory), "dataset": dataset["name"],
-           "source_commit": plan["source_commit"], "source_dirty": bool(provenance["status"] or patch.strip()),
+           "source_commit": plan["source_commit"],
+           "source_dirty": bool(provenance["status"] or patch.strip() or (snapshot and snapshot["untracked_objects"])),
            "protocol_sha256": digest(protocol), "identity_sha256": identity_hash,
            "coverage": coverage(identities, dataset, manifest), "metrics": metrics,
            "model_identity_checked": model_proof is not None, "runtime": config["runtime"],
            "environment_identity_checked": schemas is not None,
-           "trajectory_checked": recorded_trajectory}
+           "trajectory_checked": recorded_trajectory,
+           "source_snapshot_complete": snapshot["complete"] if snapshot is not None else None}
     return ValidatedRun(directory, identities, records, frame_times, protocol, row)
 
 
@@ -195,6 +202,8 @@ def summarize_runs(directories, *, merge=False):
             raise ValueError("Cannot merge runs with different code, method, data, seed, model or evaluation identities")
         if any(run.row["source_dirty"] or not run.row["model_identity_checked"] for run in runs):
             raise ValueError("Merge requires clean source records and checked model identities")
+        if any(run.row["source_snapshot_complete"] is False for run in runs):
+            raise ValueError("Merge requires complete source snapshots where recorded")
         identities, records, times = {}, {}, []
         for run in runs:
             if set(identities) & set(run.identities):
@@ -208,6 +217,8 @@ def summarize_runs(directories, *, merge=False):
                  "coverage": coverage(identities, protocol["dataset"], manifest),
                  "metrics": summarize_records(records, frame_times_ms=times),
                  "environment_identity_checked": all(run.row["environment_identity_checked"] for run in runs),
+                 "source_snapshot_complete": (all(run.row["source_snapshot_complete"] for run in runs)
+                                              if all(run.row["source_snapshot_complete"] is not None for run in runs) else None),
                  "trajectory_checked": ({"episodes": sum(run.row["trajectory_checked"]["episodes"] for run in runs),
                                          "frames": sum(run.row["trajectory_checked"]["frames"] for run in runs)}
                                         if all(run.row["trajectory_checked"] is not None for run in runs) else None),
@@ -238,7 +249,7 @@ def write_csv(report, stream):
     coverage_fields = ["completed_scenes", "completed_episodes", "dataset_episodes"]
     metric_fields = ["sr", "spl", "psr", "pespl"]
     fields = identity_fields + ["coverage"] + coverage_fields + ["completed_subtasks"] + metric_fields + [
-        "environment_identity_checked", "trajectory_frames_checked"]
+        "environment_identity_checked", "trajectory_frames_checked", "source_snapshot_complete"]
     writer = csv.DictWriter(stream, fieldnames=fields, lineterminator="\n")
     writer.writeheader()
     for row in report["rows"]:
@@ -250,6 +261,7 @@ def write_csv(report, stream):
             **{key: row["metrics"]["mon_metrics"][key] for key in metric_fields},
             "environment_identity_checked": row["environment_identity_checked"],
             "trajectory_frames_checked": row["trajectory_checked"]["frames"] if row["trajectory_checked"] else None,
+            "source_snapshot_complete": row["source_snapshot_complete"],
         })
 
 

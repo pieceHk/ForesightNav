@@ -6,6 +6,8 @@
 
 `--check` verifies inputs and resources without creating an output directory or loading models. A run freezes shared method/evaluation settings, model input/camera specifications and selected identities in `launch.json`; `resolved_config.yaml` provides a readable copy. [The launcher](../runtime/launch.py) directly starts mapping, navigation and resource-monitor processes, records their exit codes and aggregates the selected complete episodes. A failed worker prevents a completed status.
 
+The launcher also saves the tracked Git patch and an [untracked-source snapshot](../runtime/source_snapshot.py). Copied files retain their bytes and executable mode; symlinks are stored as target records. The inventory records skipped or changing objects, and the summary verifies captured content without accessing the original checkout. This lets a reviewer inspect a newly added backend alongside edits to tracked modules.
+
 Both workers accept `--run-plan`. [The native factories](../runtime/factories.py) compose services from that saved configuration. Process startup supplies owned import paths, cache locations, GPU visibility and seed controls. Ambient settings from the retained experiment launcher do not override the native method configuration. Existing run directories cannot be resumed in place.
 
 The launcher copies both environment locks into the run directory. Each native worker writes an [environment inventory](../runtime/environment.py) with its actual interpreter, package versions and locations, source search paths and selected GPU. Python user-site packages are disabled at process startup. These files describe installed metadata; the [installation diagnostic](installation.md#verify) separately checks native module origins and operations.

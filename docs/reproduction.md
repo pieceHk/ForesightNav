@@ -31,6 +31,7 @@ A completed run has `status.json` with `status: completed`. Mapping, monitor and
 | --- | --- |
 | `launch.json` | Effective configuration, model input specification and selected task identities |
 | `provenance.json`, `source.patch` | Code revision, working-tree state, worker settings and checked resource identities |
+| `source_snapshot.json`, `source_untracked/` | Hash-bound inventory and captured contents of nonignored new files, with executable modes and symlink target records |
 | `dataset_manifest.json` | Fixed dataset version and scene-file hashes |
 | `model_manifest.json` | Model manifest verified at launch |
 | `environment_locks/`, `*_environment*.json` | Lock snapshots, actual interpreter, installed package versions and package/source paths |
@@ -41,6 +42,8 @@ A completed run has `status.json` with `status: completed`. Mapping, monitor and
 | `mon_metrics.json` | Aggregate metrics for the selected complete episodes |
 
 Current native runs declare environment and trajectory schemas in `provenance.json`. The summary checks copied lock hashes, installed package versions, interpreter/device bindings, and every trajectory frame against raw timing, task order and STOP reasons. Package versions and locks also enter the merge protocol; machine paths and GPU IDs may differ.
+
+The source snapshot binds the tracked patch to captured untracked files. Regular files share a 64 MiB capture budget per run; larger or changing objects remain listed with an explicit incomplete status. Symlink targets are recorded without reading their contents. `source_snapshot_complete` in JSON/CSV distinguishes a complete capture, a partial capture and an absent historical record. The snapshot covers Git working-tree objects; model assets and external dependencies have their separate manifests. A comparison can inspect partial captures, while merging rejects a declared incomplete source snapshot. Runs with working-tree changes remain marked dirty even when their source capture is complete.
 
 Earlier runs may lack these records or the model manifest. Their raw metrics can still be compared. Merging requires a saved checked model identity; runs without the newer recording schemas retain metric-only validation, shown by `environment_identity_checked: false` and `trajectory_checked: null` in the JSON report. Historical records are not backfilled.
 

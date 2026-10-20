@@ -399,6 +399,8 @@ outputs/<run_id>/
 ├── resolved_config.yaml
 ├── provenance.json
 ├── source.patch
+├── source_snapshot.json
+├── source_untracked/              # 新建文件内容；链接仅保存目标记录
 ├── dataset_manifest.json
 ├── model_manifest.json
 ├── environment_locks/             # 两份启动时的锁文件
