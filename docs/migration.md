@@ -141,3 +141,7 @@ Agent 状态及候选分派迁移后，服务器完整测试为 390 项通过。
 公开安装检查入口现为 `scripts/check_install.py`，区分原生依赖检查、`--cpu-only` 与完整有序 episode 的 `--smoke`。模型下载增加 32 MiB 分段和每段三次有限重试；校验错误与 404 会停止对应资源。macOS 的 43 项针对性检查和真实 Hugging Face 小文件分段下载通过；Linux 诊断与完整模型组仍待验证，见[记录](validation/phase34_install_diagnostics_results.json)。
 
 Linux 随后通过 `check_install.py --cpu-only`：mapping 的 122 个锁定包和 10 个模块来源、navigation 的 163 个锁定包和 11 个模块来源均通过，两个进程均未初始化 CUDA。首次发现的 mmcv 源码包名与 mmcv-lite 安装名差异已显式写入锁文件。完整测试 688 项通过；因 shell 未提供 zstd 而跳过的两个归档提取测试，指定 mapping 环境中的 zstd 后也通过。原生 CUDA 检查和该入口的完整 `--smoke` 尚待空闲 GPU，见[同一记录](validation/phase34_install_diagnostics_results.json)。
+
+README 的环境部分补齐了双环境安装、权重准备和本机资源配置命令；启动命令直接使用新环境解释器。全文 124 行，经 GitHub GFM 接口渲染，31 个本地链接目标和六条 Python 命令的参数检查通过，见[入口检查](validation/phase35_readme_entry_results.json)。浏览器预览读取超时，本轮未据此宣称像素级显示已验证。
+
+为明确完整评测与后续发布整理的关系，比较了冻结评测提交 `3665bae` 和当前源码：八个目录树的 2,434 个跟踪文件路径、内容和模式一致，22 个模型文件身份不变，外置 SuperGlue 的六个文件与冻结版本完全一致。八个在运行工作进程的解释器、资源环境和已映射库路径再次通过检查。该证据不等同于完整运行时相同，评测结果仍须标注实际冻结提交；当前源码的 CUDA/完整 smoke 验证继续保留，见[边界审计](validation/phase35_frozen_source_boundaries.json)。

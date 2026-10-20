@@ -1,0 +1,63 @@
+{
+  "status": "passed",
+  "readme_sha256": "51d1030ec5bce3c75db2d9e8b44257267b1b9ec10397eb83d85495ac25a9e601",
+  "lines": 124,
+  "render": "GitHub Markdown API, GFM mode with repository context",
+  "html_sha256": "0feb127ec99ccdb17ab00b0c21b0775409419e39e237182bb3fafe551289a961",
+  "tables": 3,
+  "rendered_headings": [
+    "PBSP",
+    "1. Data",
+    "2. Installation",
+    "3. Run",
+    "Components",
+    "Validation and provenance"
+  ],
+  "local_links_checked": 31,
+  "command_help_checks": [
+    {
+      "script": "scripts/prepare_data.py",
+      "options_checked": [
+        "--scenes"
+      ]
+    },
+    {
+      "script": "scripts/setup_envs.py",
+      "options_checked": [
+        "--micromamba",
+        "--cuda-home"
+      ]
+    },
+    {
+      "script": "scripts/prepare_models.py",
+      "options_checked": [
+        "--output",
+        "--zstd"
+      ]
+    },
+    {
+      "script": "scripts/prepare_runtime.py",
+      "options_checked": [
+        "--mapping-python",
+        "--navigation-python",
+        "--weights"
+      ]
+    },
+    {
+      "script": "run.py",
+      "options_checked": [
+        "--config",
+        "--limit-episodes",
+        "--check"
+      ]
+    },
+    {
+      "script": "run.py",
+      "options_checked": [
+        "--config"
+      ]
+    }
+  ],
+  "scope": "Rendered heading text, table structure, Mermaid enrichment container, image attributes, local link targets and real CLI option names. The Markdown API omits heading ids; fragment names were checked against heading slugs. Scripts ran only with --help; installation and model preparation were not rerun.",
+  "visual_preview": "Browser page reads timed out; pixel-level display and live browser anchor navigation remain unverified."
+}

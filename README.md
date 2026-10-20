@@ -39,7 +39,7 @@ git clone --branch refactor/full-pbsp https://github.com/pieceHk/PBSP.git
 cd PBSP
 ```
 
-Obtain the HM3D v0.1 validation scenes and semantic annotations from the [official provider](https://github.com/matterport/habitat-matterport-3dresearch#downloading-hm3d-v01), using the layout in the [data guide](docs/datasets.md#scene-assets). Then prepare all three fixed episode sets:
+Obtain the HM3D v0.1 validation scenes and semantic annotations from the [official provider](https://github.com/matterport/habitat-matterport-3dresearch#downloading-hm3d-v01), using the layout in the [data guide](docs/datasets.md#scene-assets). `scene_datasets/` must contain `hm3d/`. Then prepare all three fixed episode sets:
 
 ```bash
 python3 scripts/prepare_data.py --scenes /path/to/scene_datasets
@@ -64,15 +64,27 @@ Use separate Linux/CUDA environments for mapping and navigation:
 | Mapping | 3.10 | 2.7.1 | cu118 |
 | Navigation | 3.9 | 2.1.2 | cu118 |
 
-Follow [environment and model preparation](docs/installation.md). The combined installer creates both environments and supports an offline server; resource preparation connects data and weights, checks the pinned Habitat dependency and writes interpreter/GPU paths to `runtime.local.yaml`.
+Validation used Ubuntu 20.04, GCC 9.4 and NVIDIA A40 GPUs. Install [micromamba](https://mamba.readthedocs.io/en/stable/installation/micromamba-installation.html), the CUDA 11.8 toolkit and the [system build dependencies](docs/navigation_installation.md). Then prepare both environments and resources:
+
+```bash
+python3 scripts/setup_envs.py --micromamba /path/to/micromamba \
+  --cuda-home /usr/local/cuda-11.8
+.cache/envs/navigation/bin/python scripts/prepare_models.py \
+  --output Exp/assets/weights --zstd .cache/envs/mapping/bin/zstd
+.cache/envs/navigation/bin/python scripts/prepare_runtime.py \
+  --mapping-python .cache/envs/mapping/bin/python \
+  --navigation-python .cache/envs/navigation/bin/python --weights Exp/assets/weights
+```
+
+This creates `.cache/envs/{mapping,navigation}`, prepares model assets and the pinned source dependencies, and writes data, weight, interpreter and GPU paths to `runtime.local.yaml`. See [installation details](docs/installation.md) or the [offline server workflow](docs/offline.md).
 
 ## 3. Run
 
-From the repository root, with the navigation environment activated:
+From the repository root:
 
 ```bash
-python run.py --config configs/experiments/hm3d_4mon.yaml --limit-episodes 1 --check
-python run.py --config configs/experiments/hm3d_4mon.yaml
+.cache/envs/navigation/bin/python run.py --config configs/experiments/hm3d_4mon.yaml --limit-episodes 1 --check
+.cache/envs/navigation/bin/python run.py --config configs/experiments/hm3d_4mon.yaml
 ```
 
 Select `hm3d_2mon.yaml` or `hm3d_3mon.yaml` for another dataset. GPU IDs live in `runtime.local.yaml`. Keep `--limit-episodes 1` and remove `--check` to run one complete ordered episode. `--scene <id> --episode <id>` selects an exact runtime identity.

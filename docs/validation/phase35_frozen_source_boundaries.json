@@ -1,0 +1,169 @@
+{
+  "status": "passed_for_listed_boundaries_full_split_still_running",
+  "frozen_evaluation_commit": "3665baec989556a6f81f19af16bf59f0f9d10f73",
+  "audited_source_commit": "9286d8b9d3491f84bb10887e886c3e30f50a49de",
+  "identical_git_trees": [
+    {
+      "path": "pbsp",
+      "tree": "9b1b7c4ee8eea3204109ccb2cac690aec30dbe0d",
+      "same_paths_bytes_modes": true,
+      "files": 40
+    },
+    {
+      "path": "experiments",
+      "tree": "c96f66872a464cb1dbb29f921d3c4a47687e2296",
+      "same_paths_bytes_modes": true,
+      "files": 10
+    },
+    {
+      "path": "configs",
+      "tree": "6c2d255e10dece6ac7854314fe36c1adac53ea38",
+      "same_paths_bytes_modes": true,
+      "files": 10
+    },
+    {
+      "path": "Mapping/runtime/embodied_splat",
+      "tree": "bdf6c4873f7bc8754fc45a6182e9fcba8c647cfb",
+      "same_paths_bytes_modes": true,
+      "files": 2344
+    },
+    {
+      "path": "Mapping/runtime/server",
+      "tree": "cca450913e87ba140f28f0c8f2bed485013f7d53",
+      "same_paths_bytes_modes": true,
+      "files": 3
+    },
+    {
+      "path": "Mapping/src",
+      "tree": "18eb293053b5737027d3d55d2df5418eac9bfb9a",
+      "same_paths_bytes_modes": true,
+      "files": 3
+    },
+    {
+      "path": "Navigation/src",
+      "tree": "28cf93f1bc80bdf9f56d23b8648b8cdba1038f24",
+      "same_paths_bytes_modes": true,
+      "files": 3
+    },
+    {
+      "path": "Navigation/runtime/lagmemo/project",
+      "tree": "af1a15208102d638512b1b152ee5b68b9a0967de",
+      "same_paths_bytes_modes": true,
+      "files": 21
+    }
+  ],
+  "default_model_file_identities": {
+    "files": 22,
+    "paths_bytes_sha256_unchanged": true,
+    "huggingface_refs_unchanged": true,
+    "archive_member_locators_and_one_download_url_are_preparation_metadata": true
+  },
+  "external_superglue": {
+    "files": [
+      {
+        "path": "LICENSE",
+        "sha256": "8780b2b1202d7011a5bd76046fb691d04725b08aaa83ec1887a4c3136c3fe898"
+      },
+      {
+        "path": "models/__init__.py",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "models/matching.py",
+        "sha256": "7513954a759b5e634eab5b883a3a7352d7a78fc865872c3195df4718095f7495"
+      },
+      {
+        "path": "models/superpoint.py",
+        "sha256": "f5a5ecddf36b1edfeb676c63ab2ca87221faf00593b09a859eaf17a4eb155207"
+      },
+      {
+        "path": "models/superglue.py",
+        "sha256": "bafb6f4c217218add6cc86669dc3204f7d53d26093245f813e3d5546ea507f71"
+      },
+      {
+        "path": "models/utils.py",
+        "sha256": "6563520230a07e62a3332e7b3aba605caa238383b6d38a03bec88ec6b13f5b60"
+      }
+    ],
+    "all_generated_inference_bytes_equal_frozen_vendored_files": true
+  },
+  "source_changes_outside_these_trees": [
+    "adapters/embodied_splat_model.py changes only the compatibility EfficientNet fallback path; native factory supplies an explicit MappingModelResources path",
+    "runtime/resources.py adds a required SuperGlue source inventory/hash check",
+    "runtime/external_sources.py validates and locates the separately prepared six-file dependency",
+    "runtime/legacy_navigation_run.py removes a redundant Detectron2 source search path for the retained entry",
+    "SuperGlue compatibility imports point to separately prepared exact inference files; demos and unused dependencies are removed",
+    "Mapping/runtime/vendor_manifest.toml describes explicit native resources and engine-relative compatibility defaults"
+  ],
+  "limits": [
+    "This audit proves equality only of the listed source trees, model identities and generated SuperGlue files",
+    "It does not claim full runtime/source-tree equality or a completed selected-split result",
+    "The public current-source CUDA diagnostic and full ordered smoke execution remain pending free GPUs",
+    "Full metrics must report the actual frozen evaluation commit, not the newer packaging/documentation commit"
+  ],
+  "live_evaluation_workers": {
+    "status": "passed",
+    "source_commit": "3665baec989556a6f81f19af16bf59f0f9d10f73",
+    "checked_unix": 1792456472.4010549,
+    "helper_sha256": "2b0904a2f72b98d1478b4c0c5145c15cd11bb0320a1e5fb46f2f5e25869493ef",
+    "scope": "OS mapped files, interpreter, source-search paths and selected resource environment of all eight live workers; not an inventory of every Python module",
+    "workers": [
+      {
+        "group": 0,
+        "role": "mapping",
+        "mapped_files": 342,
+        "forbidden_mapped_paths": 0,
+        "selected_interpreter_source_paths_model_cache_and_gpu_match": true
+      },
+      {
+        "group": 1,
+        "role": "mapping",
+        "mapped_files": 342,
+        "forbidden_mapped_paths": 0,
+        "selected_interpreter_source_paths_model_cache_and_gpu_match": true
+      },
+      {
+        "group": 3,
+        "role": "mapping",
+        "mapped_files": 342,
+        "forbidden_mapped_paths": 0,
+        "selected_interpreter_source_paths_model_cache_and_gpu_match": true
+      },
+      {
+        "group": 2,
+        "role": "mapping",
+        "mapped_files": 342,
+        "forbidden_mapped_paths": 0,
+        "selected_interpreter_source_paths_model_cache_and_gpu_match": true
+      },
+      {
+        "group": 1,
+        "role": "navigation",
+        "mapped_files": 442,
+        "forbidden_mapped_paths": 0,
+        "selected_interpreter_source_paths_model_cache_and_gpu_match": true
+      },
+      {
+        "group": 3,
+        "role": "navigation",
+        "mapped_files": 442,
+        "forbidden_mapped_paths": 0,
+        "selected_interpreter_source_paths_model_cache_and_gpu_match": true
+      },
+      {
+        "group": 2,
+        "role": "navigation",
+        "mapped_files": 442,
+        "forbidden_mapped_paths": 0,
+        "selected_interpreter_source_paths_model_cache_and_gpu_match": true
+      },
+      {
+        "group": 0,
+        "role": "navigation",
+        "mapped_files": 442,
+        "forbidden_mapped_paths": 0,
+        "selected_interpreter_source_paths_model_cache_and_gpu_match": true
+      }
+    ]
+  }
+}
