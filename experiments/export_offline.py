@@ -172,7 +172,7 @@ def main(argv=None):
     action = parser.add_mutually_exclusive_group(required=True)
     action.add_argument("--output", type=Path)
     action.add_argument("--verify", type=Path)
-    parser.add_argument("--cache", type=Path, default=ROOT / ".cache/pbsp-offline")
+    parser.add_argument("--cache", type=Path, default=Path.home() / ".cache/pbsp")
     parser.add_argument("--group", action="append", choices=GROUPS, help="Export selected groups; default exports all three")
     parser.add_argument("--micromamba", type=Path, help="Include an existing Linux x86_64 micromamba executable")
     args = parser.parse_args(argv)

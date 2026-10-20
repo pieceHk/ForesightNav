@@ -18,7 +18,9 @@ Create both environments from the repository root:
 python3 prepare.py envs --micromamba /path/to/micromamba --cuda-home /usr/local/cuda-11.8
 ```
 
-Use `--conda /path/to/conda` to select Conda, `--environment mapping` or `navigation` for one environment, and `--prefix /path/to/envs` to select another location. `--jobs` controls build parallelism; `--cuda-arch 8.6` selects an A40 build.
+The default environment directory is `~/.local/share/pbsp/envs/`, with installation files cached in `~/.cache/pbsp/`. Use `--prefix /path/to/envs` and `--cache /path/to/offline-pbsp` to select other locations. Both directories can stay outside the checkout.
+
+Use `--conda /path/to/conda` to select Conda and `--environment mapping` or `navigation` for one environment. `--jobs` controls build parallelism; `--cuda-arch 8.6` selects an A40 build.
 
 [Mapping](environments/mapping/linux-64.lock.json) and [navigation](environments/navigation/linux-64.lock.json) locks pin packages, native source inputs, revisions and checksums. Mapping uses Python 3.10/PyTorch 2.7.1; navigation uses Python 3.9/PyTorch 2.1.2. Both use CUDA 11.8 builds.
 

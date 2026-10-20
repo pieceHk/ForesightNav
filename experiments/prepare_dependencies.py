@@ -71,7 +71,7 @@ def prepare_superglue(*, root, cache, destination=None, offline=False, download_
 
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--cache", type=Path, default=ROOT / ".cache/pbsp-offline")
+    parser.add_argument("--cache", type=Path, default=Path.home() / ".cache/pbsp")
     parser.add_argument("--output", type=Path)
     parser.add_argument("--offline", action="store_true")
     parser.add_argument("--download-only", action="store_true", help="Cache the small SuperGlue inference source files")

@@ -103,7 +103,7 @@ def main(argv=None):
         help="Copy the two required Kornia checkpoints from a provisioned Torch cache",
     )
     parser.add_argument("--output", type=Path, default=ROOT / "runtime.local.yaml")
-    parser.add_argument("--cache", type=Path, default=ROOT / ".cache/pbsp-offline")
+    parser.add_argument("--cache", type=Path, default=Path.home() / ".cache/pbsp")
     parser.add_argument("--offline", action="store_true")
     args = parser.parse_args(argv)
     from experiments.prepare_dependencies import prepare_habitat, prepare_superglue

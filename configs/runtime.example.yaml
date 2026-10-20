@@ -3,8 +3,8 @@ paths:
   weights: ../third_party/weights
   outputs: ../experiments/runs
 python:
-  mapping: /path/to/configs/environments/pbsp-map/bin/python
-  navigation: /path/to/configs/environments/pbsp-nav/bin/python
+  mapping: /path/to/pbsp-envs/mapping/bin/python
+  navigation: /path/to/pbsp-envs/navigation/bin/python
 gpus:
   mapping: 0
   navigation: 1

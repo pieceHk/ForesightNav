@@ -204,7 +204,7 @@ def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--manifest", type=Path, default=ROOT / "configs/resources/models.json")
     parser.add_argument("--output", type=Path, default=ROOT / "third_party/weights")
-    parser.add_argument("--cache", type=Path, default=ROOT / ".cache/pbsp-offline/models")
+    parser.add_argument("--cache", type=Path, default=Path.home() / ".cache/pbsp/models")
     modes = parser.add_mutually_exclusive_group()
     modes.add_argument("--source", type=Path, help="Import an existing prepared weights directory")
     modes.add_argument("--download-only", action="store_true")

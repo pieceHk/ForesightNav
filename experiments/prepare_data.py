@@ -79,7 +79,7 @@ def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--source", type=Path, help="Connect an existing catalog instead of rebuilding the bundled fixed episodes")
     parser.add_argument("--scenes", type=Path, help="Scene asset directory containing hm3d/")
-    parser.add_argument("--cache", type=Path, default=ROOT / ".cache/pbsp-offline/datasets")
+    parser.add_argument("--cache", type=Path, default=Path.home() / ".cache/pbsp/datasets")
     parser.add_argument("--offline", action="store_true")
     parser.add_argument("--download-only", action="store_true", help="Rebuild and verify episode cache without scene assets")
     parser.add_argument("--destination", type=Path, default=ROOT / "data")

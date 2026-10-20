@@ -59,6 +59,8 @@ The sets share a fixed 1,200-target pool selected using historical paired outcom
 
 Use Linux x86_64, a CUDA 11.8 toolkit and [micromamba](https://mamba.readthedocs.io/en/stable/installation/micromamba-installation.html). System packages and fixed environment inputs are listed in [configs](configs/README.md).
 
+Environments are installed outside the checkout in `~/.local/share/pbsp/envs/`; downloaded installation files are cached in `~/.cache/pbsp/`.
+
 | Environment | Python | PyTorch | CUDA build |
 | --- | --- | --- | --- |
 | Mapping | 3.10 | 2.7.1 | cu118 |
@@ -66,10 +68,10 @@ Use Linux x86_64, a CUDA 11.8 toolkit and [micromamba](https://mamba.readthedocs
 
 ```bash
 python3 prepare.py envs --micromamba /path/to/micromamba --cuda-home /usr/local/cuda-11.8
-.cache/envs/navigation/bin/python prepare.py models --zstd .cache/envs/mapping/bin/zstd
-.cache/envs/navigation/bin/python prepare.py runtime \
-  --mapping-python .cache/envs/mapping/bin/python \
-  --navigation-python .cache/envs/navigation/bin/python
+"$HOME/.local/share/pbsp/envs/navigation/bin/python" prepare.py models --zstd "$HOME/.local/share/pbsp/envs/mapping/bin/zstd"
+"$HOME/.local/share/pbsp/envs/navigation/bin/python" prepare.py runtime \
+  --mapping-python "$HOME/.local/share/pbsp/envs/mapping/bin/python" \
+  --navigation-python "$HOME/.local/share/pbsp/envs/navigation/bin/python"
 ```
 
 Weights go to `third_party/weights/`. The last command prepares the pinned runtime dependencies and writes `runtime.local.yaml` with data, weights, output, interpreter and GPU paths. Existing weights and offline servers are supported through [local resource import](third_party/README.md#offline-preparation).
@@ -79,7 +81,7 @@ Weights go to `third_party/weights/`. The last command prepares the pinned runti
 Run one complete ordered episode:
 
 ```bash
-.cache/envs/navigation/bin/python run.py --config configs/experiments/hm3d_4mon.yaml --limit-episodes 1
+"$HOME/.local/share/pbsp/envs/navigation/bin/python" run.py --config configs/experiments/hm3d_4mon.yaml --limit-episodes 1
 ```
 
 Use `hm3d_2mon.yaml` or `hm3d_3mon.yaml` for another experiment. Remove `--limit-episodes 1` to evaluate the full selected set. `--scene <id> --episode <id>` selects an exact episode; `--gpus 0,1` overrides the mapping and navigation GPU IDs. `--check` validates inputs without starting workers.

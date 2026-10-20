@@ -22,7 +22,7 @@ Sources retain their upstream license scope. See [third-party notices](../THIRD_
 From the repository root:
 
 ```bash
-python prepare.py models --zstd .cache/envs/mapping/bin/zstd
+python prepare.py models --zstd "$HOME/.local/share/pbsp/envs/mapping/bin/zstd"
 ```
 
 The command prepares and verifies 22 model, tokenizer and metadata files in `third_party/weights/`. `--output` selects another directory. `--verify` verifies an already prepared destination.

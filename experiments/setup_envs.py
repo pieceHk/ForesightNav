@@ -16,12 +16,12 @@ from experiments import setup_mapping, setup_navigation
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--prefix", type=Path, default=ROOT / ".cache/envs")
+    parser.add_argument("--prefix", type=Path, default=Path.home() / ".local/share/pbsp/envs")
     parser.add_argument("--environment", choices=("both", "mapping", "navigation"), default="both")
     manager = parser.add_mutually_exclusive_group()
     manager.add_argument("--conda", type=Path)
     manager.add_argument("--micromamba", type=Path)
-    parser.add_argument("--cache", type=Path, default=ROOT / ".cache/pbsp-offline")
+    parser.add_argument("--cache", type=Path, default=Path.home() / ".cache/pbsp")
     parser.add_argument("--offline", action="store_true")
     parser.add_argument("--download-only", action="store_true")
     parser.add_argument("--cuda-home", type=Path, default=Path("/usr/local/cuda-11.8"))
