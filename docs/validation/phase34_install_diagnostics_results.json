@@ -1,5 +1,5 @@
 {
-  "status": "targeted_checks_passed_linux_install_probe_pending",
+  "status": "linux_cpu_diagnostics_passed_smoke_pending",
   "changes": [
     "32 MiB bounded HTTP ranges with three attempts per range for transient failures; exact Content-Range and final SHA-256 remain mandatory",
     "Standalone dual-environment installation diagnostic with explicit CPU-only and complete ordered smoke modes",
@@ -20,8 +20,53 @@
     "scope": "Real pinned HF config downloaded into a new isolated cache with five explicit ranges and full SHA verification; no active large-download cache mutated"
   },
   "limits": [
-    "Large model downloads still owned by their original running jobs; this change has not replaced them",
-    "Linux native diagnostic and optional full smoke mode require separate execution; neither is claimed here",
+    "Native CUDA checks and the public --smoke mode remain pending while all GPU pairs run the full selected split",
+    "Large model downloads remain under their original live jobs; no concurrent writer was added",
     "Whole upstream pretrained archive and all selected model members remain pending"
-  ]
+  ],
+  "linux": {
+    "source_commit": "e09d5989a03df42a63b351ab51a8b7a69317e5d4",
+    "scope": "CPU-only checks against both independently installed public-locked environments; existing verified external models and prepared data; no GPU inference",
+    "diagnostic_status": "passed",
+    "model_inference": "not_requested",
+    "habitat_reset_and_actions": "not_requested",
+    "mapping": {
+      "locked_packages": 122,
+      "checked_module_origins": 10,
+      "devices_checked": [
+        "cpu"
+      ],
+      "cuda_initialized": false
+    },
+    "navigation": {
+      "locked_packages": 163,
+      "checked_module_origins": 11,
+      "devices_checked": [
+        "cpu"
+      ],
+      "cuda_initialized": false
+    },
+    "full_tests": {
+      "interpreter": ".cache/fresh-envs/navigation-candidate/bin/python",
+      "passed": 688,
+      "skipped": 2,
+      "warnings": 17,
+      "seconds": 37.09,
+      "cuda_visible_devices": "",
+      "skip_reason": "The two parametrized zstd archive-extraction checks were skipped because zstd was absent from the original shell PATH."
+    },
+    "retained_initial_failure": "The first diagnostic queried mmcv by its source archive name. The MMCV_WITH_OPS=0 build installs mmcv-lite==2.2.0; the lock now explicitly declares installed_distribution. No environment was reinstalled or changed.",
+    "archive_followup": {
+      "passed": 2,
+      "deselected": 11,
+      "seconds": 0.12,
+      "path_includes": ".cache/fresh-envs/public-locked/mapping/bin",
+      "scope": "The same two skipped tests passed using the zstd executable from the installed mapping environment."
+    }
+  },
+  "macos_followup": {
+    "checks": 57,
+    "seconds": 3.86,
+    "includes": "installed-distribution rename regression and mapping lock checks"
+  }
 }
