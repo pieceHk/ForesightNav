@@ -47,6 +47,8 @@ python3 scripts/prepare_data.py --scenes /path/to/scene_datasets
 
 The script fetches the selected official ObjectNav annotations, rebuilds the released task sequences and checks every output hash. It creates `data/scenes/` and `data/episodes/`; [offline preparation](docs/datasets.md#offline-preparation) is also supported.
 
+Prebuilt episode bundle (2/3/4-MON): `<DATASET_DOWNLOAD_URL>`.
+
 | Experiment | Scenes | Episodes | Targets per episode | Total targets |
 | --- | ---: | ---: | ---: | ---: |
 | 2-MON | 20 | 600 | 2 | 1,200 |

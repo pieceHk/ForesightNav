@@ -28,6 +28,8 @@ The catalog lists the 20 selected scene IDs. Scene assets and derived annotation
 
 ## Prepare all episode sets
 
+Prebuilt episode bundle (2/3/4-MON): `<DATASET_DOWNLOAD_URL>`.
+
 From the repository root, using Python 3.9 or newer:
 
 ```bash
