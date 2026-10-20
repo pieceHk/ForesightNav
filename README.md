@@ -35,7 +35,7 @@ flowchart LR
 Preparation commands use Python 3.9 or newer.
 
 ```bash
-git clone --branch refactor/full-pbsp https://github.com/pieceHk/PBSP.git
+git clone https://github.com/pieceHk/PBSP.git
 cd PBSP
 ```
 
