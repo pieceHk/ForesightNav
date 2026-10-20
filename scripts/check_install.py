@@ -24,6 +24,17 @@ def require_prefix(path, prefix):
     return str(path)
 
 
+def locked_versions(packages):
+    versions = {}
+    for item in packages:
+        name = item.get("installed_distribution", item["name"])
+        actual = importlib.metadata.version(name)
+        if actual != item["version"]:
+            raise ValueError(f"{name}: installed {actual}, expected {item['version']}")
+        versions[name] = actual
+    return versions
+
+
 def probe(payload):
     """Run inside the selected interpreter, with explicit runtime search paths."""
     for path in reversed(payload["search_paths"]):
@@ -32,12 +43,7 @@ def probe(payload):
     lock = json.loads((ROOT / "envs" / role / "linux-64.lock.json").read_text())
     if list(sys.version_info[:2]) != lock["python"]:
         raise ValueError(f"{role} Python differs from the environment lock")
-    versions = {}
-    for item in lock["packages"]:
-        actual = importlib.metadata.version(item["name"])
-        if actual != item["version"]:
-            raise ValueError(f"{item['name']}: installed {actual}, expected {item['version']}")
-        versions[item["name"]] = actual
+    versions = locked_versions(lock["packages"])
     names = ["torch", "torchvision"]
     if role == "mapping":
         names += ["diff_gaussian_rasterization._C", "diff_gaussian_rasterization_lang._C",

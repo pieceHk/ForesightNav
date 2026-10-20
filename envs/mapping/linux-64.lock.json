@@ -779,7 +779,8 @@
       "filename": "mmcv-2.2.0.tar.gz",
       "url": "https://files.pythonhosted.org/packages/e9/a2/57a733e7e84985a8a0e3101dfb8170fc9db92435c16afad253069ae3f9df/mmcv-2.2.0.tar.gz",
       "sha256": "ac479247e808d8802f89eadf04d4118de86bdfe81361ec5aed0cc1bf731c67c9",
-      "cache_path": "wheels/mapping/mmcv-2.2.0.tar.gz"
+      "cache_path": "wheels/mapping/mmcv-2.2.0.tar.gz",
+      "installed_distribution": "mmcv-lite"
     },
     {
       "name": "mmengine",
