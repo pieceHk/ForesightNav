@@ -5,7 +5,7 @@ import torch.jit as jit
 import torch.nn.functional as F
 from torch import Tensor
 
-from sr_utils.generic_utils import batched_trace
+from embodied_splat.sr_utils.generic_utils import batched_trace
 
 
 @torch.jit.script

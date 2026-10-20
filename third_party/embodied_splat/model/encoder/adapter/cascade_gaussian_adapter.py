@@ -2,9 +2,9 @@ import random, copy
 import torch
 import matplotlib.pyplot as plt
 import torch.nn as nn
-from src.geometry.projection import project
-from src.model.types import Gaussian
-from src.ops import DeformableAggregationFunction as DAF
+from embodied_splat.geometry.projection import project
+from embodied_splat.model.types import Gaussian
+from embodied_splat.ops import DeformableAggregationFunction as DAF
 from .deformable_module import DeformableFeatureAggregation
 from ..common.gaussians import build_covariance
 

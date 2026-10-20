@@ -1392,7 +1392,7 @@
     },
     {
       "name": "deformable_aggregation",
-      "repository_path": "third_party/embodied_splat/src/ops",
+      "repository_path": "third_party/embodied_splat/ops",
       "content_sha256": "af3390829e137a48f5152e59383931c1d5ba523b7028a2995014a9dc2fcc8547",
       "tracked_files": 5
     },

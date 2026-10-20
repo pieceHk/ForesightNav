@@ -6,7 +6,7 @@ from einops import einsum, rearrange
 from jaxtyping import Float
 
 from .utils import linear_relu_ln, safe_sigmoid
-from src.model.types import Gaussian
+from embodied_splat.model.types import Gaussian
 
 class Scale(nn.Module):
     def __init__(self, scale):

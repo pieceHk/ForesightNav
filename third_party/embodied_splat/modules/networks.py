@@ -7,10 +7,10 @@ from torch import nn
 from torchvision.ops import FeaturePyramidNetwork
 import torch.nn.functional as F
 
-from modules.layers import BasicBlock
-from sr_utils.generic_utils import upsample
+from embodied_splat.modules.layers import BasicBlock
+from embodied_splat.sr_utils.generic_utils import upsample
 from einops import *
-from src.model.encoder.costvolume.ldm_unet.unet import UNetModel
+from embodied_splat.model.encoder.costvolume.ldm_unet.unet import UNetModel
 
 
 def double_basic_block(num_ch_in, num_ch_out, num_repeats=2):

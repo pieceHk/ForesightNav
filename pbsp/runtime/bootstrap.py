@@ -57,8 +57,6 @@ def worker_environment(plan, role, inherited=None):
     if role == "mapping":
         paths.extend(
             [
-                resources.mapping,
-                resources.mapping / "src",
                 resources.root / "third_party",
             ]
         )
@@ -71,10 +69,6 @@ def worker_environment(plan, role, inherited=None):
                 resources.habitat / "habitat-lab",
                 resources.habitat / "habitat-baselines",
                 third_party,
-                third_party / "detic",
-                third_party / "seem/src",
-                third_party / "mobileclip",
-                third_party / "frontier_exploration",
             ]
         )
     environment.update(

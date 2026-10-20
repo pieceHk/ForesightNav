@@ -13,31 +13,31 @@ from collections import OrderedDict
 import numpy as np
 from pathlib import Path
 
-from src.dataset.shims.patch_shim import apply_patch_shim
-from src.dataset.types import BatchedExample, DataShim
-from src.model.encoder.backbone import Backbone, get_backbone, BackboneMultiview
-from src.model.encoder.common.gaussian_adapter import GaussianAdapter
-from src.model.encoder.costvolume.depth_predictor_multiview import DepthPredictorMultiView
-from src.model.encoder.epipolar.depth_predictor_monocular import DepthPredictorMonocular
-from src.model.encoder.epipolar.epipolar_transformer import EpipolarTransformer
-from src.global_cfg import get_cfg
+from embodied_splat.dataset.shims.patch_shim import apply_patch_shim
+from embodied_splat.dataset.types import BatchedExample, DataShim
+from embodied_splat.model.encoder.backbone import Backbone, get_backbone, BackboneMultiview
+from embodied_splat.model.encoder.common.gaussian_adapter import GaussianAdapter
+from embodied_splat.model.encoder.costvolume.depth_predictor_multiview import DepthPredictorMultiView
+from embodied_splat.model.encoder.epipolar.depth_predictor_monocular import DepthPredictorMonocular
+from embodied_splat.model.encoder.epipolar.epipolar_transformer import EpipolarTransformer
+from embodied_splat.global_cfg import get_cfg
 import os
 
 
-from src.model.encoder.common.keypoint_scorer import ContextScorer
-from src.model.encoder.adapter.cascade_gaussian_adapter import CascadeGaussianAdapter
-from src.model.encoder.adapter.gaussian_refiner import IterativeGaussianRefiner
+from embodied_splat.model.encoder.common.keypoint_scorer import ContextScorer
+from embodied_splat.model.encoder.adapter.cascade_gaussian_adapter import CascadeGaussianAdapter
+from embodied_splat.model.encoder.adapter.gaussian_refiner import IterativeGaussianRefiner
 
-from modules.networks import CVEncoder, DepthDecoderPP, ResnetMatchingEncoder
-from modules.cost_volume import AVGFeatureVolumeManager
+from embodied_splat.modules.networks import CVEncoder, DepthDecoderPP, ResnetMatchingEncoder
+from embodied_splat.modules.cost_volume import AVGFeatureVolumeManager
 import timm
-from modules.layers import TensorFormatter
+from embodied_splat.modules.layers import TensorFormatter
 import torchvision.transforms as tf
 
-from src.model.encoder.attention.transformer import GRU2D_naive_Wweights
+from embodied_splat.model.encoder.attention.transformer import GRU2D_naive_Wweights
 
 
-from src.model.encoder.encoder_config import EncoderEpipolarCfg
+from embodied_splat.model.encoder.encoder_config import EncoderEpipolarCfg
 
 import math
 
@@ -409,7 +409,7 @@ class EmbodiedSplatEncoder(OnlineEncoder):
             )
 
             if self.cfg.unet_3d:
-                from src.model.encoder.backbone.mink_unet import mink_unet
+                from embodied_splat.model.encoder.backbone.mink_unet import mink_unet
 
                 self.unet3d = mink_unet(
                     in_channels=self.cfg.unet3d_in_channels,
@@ -429,7 +429,7 @@ class EmbodiedSplatEncoder(OnlineEncoder):
                     self.M_v, self.M_r = None, None
 
             if self.cfg.memory:
-                from src.model.encoder.backbone.multilevel_memory import MultilevelMemory
+                from embodied_splat.model.encoder.backbone.multilevel_memory import MultilevelMemory
 
                 self.memory = MultilevelMemory(
                     in_channels=self.cfg.memory_in_channels,

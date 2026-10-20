@@ -7,5 +7,6 @@ setuptools.setup(
     author_email="naokiyokoyama@github",
     description="Frontier_exploration for habitat",
     url="https://github.com/naokiyokoyama/frontier_exploration",
-    packages=setuptools.find_packages(),
+    packages=["frontier_exploration", *["frontier_exploration." + name for name in setuptools.find_packages()]],
+    package_dir={"frontier_exploration": "."},
 )

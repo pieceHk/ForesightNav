@@ -1,6 +1,6 @@
 import random, torch
 import torch.nn as nn
-from src.ops import DeformableAggregationFunction as DAF
+from embodied_splat.ops import DeformableAggregationFunction as DAF
 from .deformable_module import DeformableFeatureAggregation
 from .utils import SparseGaussian3DEncoder
 from .refine import SparseGaussian3DRefinementModule

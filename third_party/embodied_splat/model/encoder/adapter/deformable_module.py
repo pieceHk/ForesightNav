@@ -8,7 +8,7 @@ import torch.nn.functional as F
 from torch import Tensor
 from torchvision.models import resnet50, resnet18
 from torch.cuda.amp.autocast_mode import autocast
-from src.ops import DeformableAggregationFunction as DAF
+from embodied_splat.ops import DeformableAggregationFunction as DAF
 from .utils import get_rotation_matrix, safe_sigmoid
 from .utils import cartesian, inv_cartesian
 

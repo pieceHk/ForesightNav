@@ -12,7 +12,7 @@ def load_model(*, engine_root, checkpoint, work_directory, input_spec, device, s
     engine_root = Path(engine_root).resolve()
     work_directory = Path(work_directory).resolve()
     work_directory.mkdir(parents=True, exist_ok=True)
-    for path in (engine_root, engine_root.parent, engine_root / "src"):
+    for path in (engine_root.parent,):
         if str(path) not in sys.path:
             sys.path.insert(0, str(path))
     os.chdir(engine_root)
@@ -22,11 +22,11 @@ def load_model(*, engine_root, checkpoint, work_directory, input_spec, device, s
             or float(config.dataset.near) != input_spec.near or float(config.dataset.far) != input_spec.far):
         raise ValueError("Model input specification disagrees with the network configuration")
 
-    from src.global_cfg import set_cfg
+    from embodied_splat.global_cfg import set_cfg
     from pbsp.adapters.embodied_splat_config import load_typed_config
-    from src.model.encoder.encoder_config import EncoderEpipolarCfg
+    from embodied_splat.model.encoder.encoder_config import EncoderEpipolarCfg
     from pbsp.adapters.embodied_splat_model import EmbodiedSplatEncoder
-    from src.model.decoder import get_decoder
+    from embodied_splat.model.decoder import get_decoder
 
     set_cfg(config)
     encoder_config = load_typed_config(config.model.encoder, EncoderEpipolarCfg)

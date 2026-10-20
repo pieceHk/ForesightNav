@@ -4,12 +4,12 @@ import torch.nn as nn
 import torch.nn.functional as F
 from torch import Tensor
 
-from modules.networks import MLP
-from sr_utils.generic_utils import combine_dims, tensor_B_to_bM, tensor_bM_to_B
-from sr_utils.geometry_utils import (BackprojectDepth, Project3D, get_camera_rays,
+from embodied_splat.modules.networks import MLP
+from embodied_splat.sr_utils.generic_utils import combine_dims, tensor_B_to_bM, tensor_bM_to_B
+from embodied_splat.sr_utils.geometry_utils import (BackprojectDepth, Project3D, get_camera_rays,
                                   pose_distance)
 
-from src.model.encoder.attention.transformer import LocalFeatureTransformer
+from embodied_splat.model.encoder.attention.transformer import LocalFeatureTransformer
 
 from einops import *
 
