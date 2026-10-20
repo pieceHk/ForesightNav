@@ -6,17 +6,19 @@
 
 ## 当前代码
 
+整包模型缓存的额外验证已停止，已下载内容保留。该 6.98 GB 归档来自 EmbodiedSplat，默认流程只读取其中 FastSAM 和重建 checkpoint；它不包含本项目的 MON episode 或 HM3D 场景数据。当前代码和结果检查使用的 22 个模型文件均已逐项校验并在服务器离线准备，公开 CUDA 单 episode 也已通过。离线用户可直接[导入已准备权重](offline.md#transfer-prepared-weights)，无需为了已有资源再验证整包缓存。完整归档缓存仍标为未验证，见[验证范围](validation/phase50_validation_scope.json)。
+
 公开 `check_install.py --smoke` 已通过完整 CUDA 检查和一个完整 4-MON episode。使用两套公开安装的独立环境、公开注释重建的数据及 22 个公开来源模型文件，四个目标全部成功，共 414 个动作。44 条决策的身份完整，过期后缀分派为 0；环境锁、轨迹和完整源码快照通过校验，三个工作进程及根进程均以 0 退出。动作数及指标与已有单 episode 参考一致，本次检查耗时 513.211 秒。结果汇总已生成 JSON、CSV 和 Markdown，GPU 计算进程已退出，详见[公开 CUDA 单 episode 结果](validation/phase47_public_cuda_smoke_results.json)。
 
 Linux 完整测试为 747 项通过、0 跳过。实际单 episode 运行发现环境记录同时枚举到 tomli 的锁定版本与 setuptools 内置副本，原汇总器误报版本冲突。修复后按保存的搜索路径顺序选择版本，并保留全部元数据；错误版本优先、来源不明及优先级含糊时仍拒绝通过。原生运行的 414 帧轨迹、环境记录、完整源码快照及指标已通过只读复核，原始失败诊断保留，见[修复及复核记录](validation/phase46_public_model_and_record_results.json)。
 
 按用户要求停止整批评测，后续验收不要求跑满完整 split。停止时已有 59 个完整 episode、236 个目标；59,776 帧计时和 6,174 条决策的身份、任务顺序及指标重算均通过，过期后缀分派为 0。中断中的 episode 未纳入统计，四个已停止运行的原始状态和退出码保留，汇总工具正确拒绝将其当作完整运行。全部相关进程已退出，详见[已完成数据检查](validation/phase44_completed_data_results.json)。
 
-离线导出已完成真实跨机器恢复验证。6.61 GB 的代码、两套环境输入、episode 源注释和 Linux micromamba 从 macOS 完整传到服务器后，从 bundle 克隆了独立目录。Python 网络连接被禁用时，缓存、550 个 Habitat 文件及 6 个 SuperGlue 文件校验通过，三组数据重建及重复准备均通过，全部 1,300 个身份索引与原数据一致。2/3/4-MON 分别通过完整 600、400、300 个 episode 的输入检查，架构检查通过。本轮使用已有独立环境、场景及外部权重，没有重建环境或启动 GPU 推理。模型组的公开下载及完整导出仍待完成。详见[离线导出结果](validation/phase31_offline_export_results.json)。
+离线导出已完成真实跨机器恢复验证。6.61 GB 的代码、两套环境输入、episode 源注释和 Linux micromamba 从 macOS 完整传到服务器后，从 bundle 克隆了独立目录。Python 网络连接被禁用时，缓存、550 个 Habitat 文件及 6 个 SuperGlue 文件校验通过，三组数据重建及重复准备均通过，全部 1,300 个身份索引与原数据一致。2/3/4-MON 分别通过完整 600、400、300 个 episode 的输入检查，架构检查通过。本轮使用已有独立环境、场景及外部权重，没有重建环境或启动 GPU 推理。该阶段未导出模型缓存；已准备权重的离线导入与后续 GPU 检查另有验证。详见[离线导出结果](validation/phase31_offline_export_results.json)。
 
 公开模型归档的成员位于根部，清单已去掉多余的 `pretrained/` 前缀。实际 FastSAM 文件验证了修正后的公开提取路径；输出路径、文件大小和 22 个权重哈希均未改变，详见[归档成员结果](validation/phase33_archive_member_results.json)。
 
-22 个公开来源文件及两份模型版本引用已在服务器通过离线 `--source` 准备，全部与原实验权重同哈希。MaskAdapter 使用作者公开 Space 中的固定版本，另外两个权重来自归档前缀中已完整读取的成员；输出路径、大小和 22 个文件哈希保持不变。整个归档及默认缓存导出仍待验证，详见[模型准备结果](validation/phase46_public_model_and_record_results.json)。
+22 个公开来源文件及两份模型版本引用已在服务器通过离线 `--source` 准备，全部与原实验权重同哈希。MaskAdapter 使用作者公开 Space 中的固定版本，另外两个权重来自归档前缀中已完整读取的成员；输出路径、大小和 22 个文件哈希保持不变。整个归档及默认缓存导出未执行完整验证，详见[模型准备结果](validation/phase46_public_model_and_record_results.json)。
 
 新增公开结果汇总入口 `scripts/summarize.py`。它按保存的身份索引核对任务顺序、工作进程退出记录及逐帧耗时，从原始任务测量重算 episode 和 run 指标，再核对已有汇总。多个运行可分别比较；合并分片时还要求代码、方法、数据、随机种子、模型及评测身份一致，来源干净且 episode 不重叠。真实 4-MON 单 episode 的 414 步记录在 Linux 和 macOS 上重算后均与缓存指标完全一致，表格明确标为 300 个 episode 中的 1 个。相关 40 项检查在本机和 Linux 上通过；完整 split 的实际合并未执行，本轮验收无需运行完整 split。实验协议和指标定义见[复现说明](reproduction.md)，证据见[结果汇总验证](validation/phase32_result_summary_results.json)。
 

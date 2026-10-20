@@ -37,7 +37,7 @@ python scripts/prepare_models.py --output /path/to/pbsp-weights \
   --zstd .cache/envs/mapping/bin/zstd
 ```
 
-The [model guide](models.md) covers offline caching, importing existing weights and SHA-256 checks. All 22 publicly obtained files passed offline source preparation; whole-archive cache verification remains in progress. See the [model preparation record](validation/phase46_public_model_and_record_results.json). The model adapters receive the selected paths directly; weight links inside vendor source directories are unnecessary.
+The [model guide](models.md) covers offline caching, importing existing weights and SHA-256 checks. All 22 publicly obtained files passed offline source preparation. An offline server can import the prepared directory with `--source`. See the [model preparation record](validation/phase46_public_model_and_record_results.json). The model adapters receive the selected paths directly; weight links inside vendor source directories are unnecessary.
 
 ## Connect resources
 

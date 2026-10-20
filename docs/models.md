@@ -27,7 +27,7 @@ python scripts/prepare_models.py --offline --cache /path/to/offline-pbsp/models 
   --output /path/to/pbsp-weights --zstd .cache/envs/mapping/bin/zstd
 ```
 
-All 22 publicly obtained files passed individual size and SHA-256 checks and offline `--source` preparation on Linux. The two selected archive members were read completely from a growing archive prefix; verification of the entire archive and its cache export is still in progress. See the [preparation record](validation/phase46_public_model_and_record_results.json).
+All 22 publicly obtained files passed individual size and SHA-256 checks and offline `--source` preparation on Linux. The two selected archive members were read completely from an archive prefix. Whole-archive cache export was not verified; importing the prepared weights supports offline use without that export. See the [preparation record](validation/phase46_public_model_and_record_results.json).
 
 ## Import an existing set
 

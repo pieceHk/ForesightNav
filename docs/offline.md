@@ -85,3 +85,14 @@ python3 scripts/export_offline.py --group environments --group episodes \
 ```
 
 The manifest records the selected groups. The default command exports all three groups; a selected-group export contains only those inputs and its code bundle. `--verify` checks either kind without downloading or modifying files.
+
+## Transfer prepared weights
+
+If the 22 model files are already prepared, export the environments and episodes with the selected-group command above and transfer the prepared weight directory separately. Import it on the server:
+
+```bash
+python3 scripts/prepare_models.py --source /path/to/prepared-weights \
+  --output ./weights --offline
+```
+
+Continue with `prepare_runtime.py` using `--weights ./weights`. Import verifies all 22 file hashes and creates the pinned model references. The [public-model preparation](validation/phase46_public_model_and_record_results.json) and [CUDA episode](validation/phase47_public_cuda_smoke_results.json) records cover this prepared-weight route. The 6.98 GB upstream download contains model checkpoints, not episode or scene data; its complete cache export was not validated.
