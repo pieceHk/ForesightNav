@@ -6,6 +6,8 @@
 
 ## 当前代码
 
+新增公开结果汇总入口 `scripts/summarize.py`。它按保存的身份索引核对任务顺序、工作进程退出记录及逐帧耗时，从原始任务测量重算 episode 和 run 指标，再核对已有汇总。多个运行可分别比较；合并分片时还要求代码、方法、数据、随机种子、模型及评测身份一致，来源干净且 episode 不重叠。真实 4-MON 单 episode 的 414 步记录在 Linux 和 macOS 上重算后均与缓存指标完全一致，表格明确标为 300 个 episode 中的 1 个。相关 40 项检查在本机和 Linux 上通过；完整 split 的实际合并仍等待运行结束。实验协议和指标定义见[复现说明](reproduction.md)，证据见[结果汇总验证](validation/phase32_result_summary_results.json)。
+
 SuperGlue 改为独立准备的外部依赖。来源是 LagMemo 使用的固定 fork，保留其批量匹配行为；六个准备文件与冻结实现逐字节一致，两处 checkpoint 路径适配在本地准备时应用。导航安装缓存现包含 242 个输入，资源准备与根入口分别校验 Habitat 和 SuperGlue。Linux 真实 CPU 双图批量匹配对照中，363 个参数张量及 13 个输出张量全部相同，未初始化 CUDA；完整测试为 641 项通过、无跳过，架构检查通过。同时删除 SuperGlue 示例及配对列表、MobileCLIP iOS 示例，共 51 个文件、约 8 MB，许可证原文保留。详见[外部匹配依赖结果](validation/phase30_external_matching_source_results.json)。
 
 数据准备已包含三组固定任务元数据和原始选样记录，并可直接读取官方 ObjectNav 验证注释。公开命令从 macOS 空缓存完成下载及重建，69 个原始元数据和内容文件逐字节一致，覆盖全部 60 个场景文件、1,300 个 episode、3,600 个目标。Linux 从同一份官方源注释离线重建后，三组完整身份索引均与现有数据一致，2/3/4-MON 的根入口检查分别通过 600、400、300 个 episode，重复准备结果一致。验证使用已有场景资源。README 按场景获取、数据准备、环境、启动组织；数据指南明确说明共享目标池由历史配对结果校准。Linux 完整测试为 631 项通过、1 项因直接调用解释器时 PATH 缺少 zstd 而跳过；补齐工具路径后相关 12 项全部通过，架构检查通过。详见[数据准备结果](validation/phase28_dataset_preparation_results.json)。

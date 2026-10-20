@@ -1,5 +1,5 @@
 {
-  "status": "local_and_real_record_checks_passed_linux_tests_pending",
+  "status": "passed",
   "base_commit": "8965ffa2bc884d51be5d2a95ce13288e6681e840",
   "scope": "Public posthoc recomputation, comparison tables and strict merging of completed disjoint native runs; no metric formula or inference change",
   "targeted_tests": {
@@ -34,5 +34,10 @@
   },
   "running_split_group": "Rejected with Run is not completed; no run files changed",
   "full_split_merge": "pending actual completion of all running groups",
-  "linux_targeted_tests": "pending"
+  "linux_targeted_tests": {
+    "passed": 40,
+    "seconds": 2.05,
+    "architecture_clean_tree": "passed"
+  },
+  "implementation_commit": "f4f9ba57e99062451a7799cc453a616a5dd356be"
 }
