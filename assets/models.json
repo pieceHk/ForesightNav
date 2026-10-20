@@ -7,21 +7,21 @@
       "bytes": 587708397,
       "sha256": "0032a028783f5c0455ddb7e8ac3892601463c6dee652ea222e64c8e1b5fbfe9c",
       "archive": "embodiedsplat_pretrained",
-      "member": "pretrained/freesplatpp_scannet_gtdepth.ckpt"
+      "member": "freesplatpp_scannet_gtdepth.ckpt"
     },
     {
       "path": "FastSAM-x.pt",
       "bytes": 144943063,
       "sha256": "c0be4e7ddbe4c15333d15a859c676d053c486d0a746a3be6a7a9790d52a9b6d7",
       "archive": "embodiedsplat_pretrained",
-      "member": "pretrained/FastSAM-x.pt"
+      "member": "FastSAM-x.pt"
     },
     {
       "path": "maskadpater_ckpt.pth",
       "bytes": 59644562,
       "sha256": "b6c403930166df235cde4f99f997e3d9de35fc5bfba482ac421e42b4266e3581",
       "archive": "embodiedsplat_pretrained",
-      "member": "pretrained/maskadpater_ckpt.pth"
+      "member": "maskadpater_ckpt.pth"
     },
     {
       "path": "tf_efficientnetv2_s_21ft1k-d7dafa41.pth",

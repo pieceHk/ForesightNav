@@ -1,0 +1,47 @@
+{
+  "status": "root_layout_corrected_partial_member_verified",
+  "base_commit": "0f184470f62f625c99421e8954ea076aea1f7f53",
+  "scope": "Correct archive-member locators; model output paths, byte sizes and all selected model SHA-256 values remain unchanged",
+  "changes": [
+    {
+      "path": "freesplatpp_scannet_gtdepth.ckpt",
+      "before": "pretrained/freesplatpp_scannet_gtdepth.ckpt",
+      "after": "freesplatpp_scannet_gtdepth.ckpt"
+    },
+    {
+      "path": "FastSAM-x.pt",
+      "before": "pretrained/FastSAM-x.pt",
+      "after": "FastSAM-x.pt"
+    },
+    {
+      "path": "maskadpater_ckpt.pth",
+      "before": "pretrained/maskadpater_ckpt.pth",
+      "after": "maskadpater_ckpt.pth"
+    }
+  ],
+  "public_source_manifest": "https://huggingface.co/datasets/onandon/EmbodiedSplat/resolve/60307f90694e57dc364ac72795b9c6a7bd1e0437/pretrained-shard-manifest.json",
+  "observed_archive_prefix_members": [
+    "FastSAM-x.pt",
+    "embodiedsplat_scannet.ckpt",
+    "embodiedsplat_scannet_gtdepth.ckpt"
+  ],
+  "real_selected_member": {
+    "status": "passed",
+    "scope": "Actual complete FastSAM payload from the still-incomplete official archive prefix; repacked with its observed root member name to exercise the public extractor",
+    "public_archive_url": "https://huggingface.co/datasets/onandon/EmbodiedSplat/resolve/60307f90694e57dc364ac72795b9c6a7bd1e0437/pretrained-shard-0001.tar.zst",
+    "archive_bytes_fully_verified": false,
+    "observed_member": "FastSAM-x.pt",
+    "old_member": "pretrained/FastSAM-x.pt",
+    "model_bytes": 144943063,
+    "model_sha256": "c0be4e7ddbe4c15333d15a859c676d053c486d0a746a3be6a7a9790d52a9b6d7",
+    "old_path_failure": "Model archive members missing: ['pretrained/FastSAM-x.pt']",
+    "corrected_path_extract_and_model_sha256": "passed",
+    "other_selected_members": "pending full archive availability"
+  },
+  "remaining_selected_members": "Await the full archive before claiming their extraction or the complete downloaded model set",
+  "active_jobs": "Archive download and frozen full4MON evaluation unchanged; terminal failed SEEM and ConvNeXt downloads resumed in a separate bounded-retry helper",
+  "local_targeted_tests": {
+    "passed": 34,
+    "seconds": 1.42
+  }
+}

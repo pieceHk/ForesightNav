@@ -90,11 +90,12 @@ def test_manifest_rejects_traversal_and_file_directory_collisions(tmp_path, path
 
 
 @pytest.mark.skipif(shutil.which("zstd") is None, reason="zstd is required for compressed model archives")
-def test_model_archive_only_materializes_selected_regular_members(tmp_path):
+@pytest.mark.parametrize("member_name", ("FastSAM-x.pt", "pretrained/checkpoint.bin"))
+def test_model_archive_only_materializes_selected_regular_members(tmp_path, member_name):
     import subprocess
 
     data = manifest(tmp_path)
-    item = {**data["files"][0], "member": "pretrained/checkpoint.bin"}
+    item = {**data["files"][0], "member": member_name}
     archive = tmp_path / "models.tar"
     with tarfile.open(archive, "w") as output:
         for name, payload in [("unrelated/large.bin", b"unused"), (item["member"], b"weights")]:
