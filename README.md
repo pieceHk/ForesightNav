@@ -55,7 +55,7 @@ The sets share a fixed 1,200-target pool selected using historical paired outcom
 
 ## 2. Installation
 
-Use Linux x86_64, a CUDA 11.8 toolkit and [micromamba](https://mamba.readthedocs.io/en/stable/installation/micromamba-installation.html). System packages and fixed environment inputs are listed in [configs](configs/README.md).
+Use Python 3.9+, Linux x86_64, a CUDA 11.8 toolkit and [micromamba](https://mamba.readthedocs.io/en/stable/installation/micromamba-installation.html). System packages and fixed environment inputs are listed in [configs](configs/README.md).
 
 | Environment | Python | PyTorch | CUDA build |
 | --- | --- | --- | --- |

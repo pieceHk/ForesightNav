@@ -7,7 +7,6 @@ import torch
 import torch.nn.functional as F
 
 from pbsp.mapping.geometry import mapper_world_to_habitat
-from pbsp.query.engine import query_category, query_categories
 from pbsp.query.service import SemanticQuery
 from pbsp.query.types import FeatureSpace, SemanticIndex
 

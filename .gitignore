@@ -10,7 +10,7 @@ runtime.local.yaml
 data/scenes/
 data/episodes/
 experiments/runs/
-third_party/weights/
+third_party/weights
 third_party/habitat-lab/
 third_party/superglue/
 third_party/embodied_splat/cache/
