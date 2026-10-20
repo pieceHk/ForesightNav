@@ -1,0 +1,5 @@
+[source]
+repository = "https://github.com/0nandon/EmbodiedSplat"
+revision = "b5e1e90fc9917fbfe34231684b823725b7e1e948"
+scope = "Neural inference layers and tensor utilities; PBSP owns model assembly and online updates"
+configuration = "configs/models/network.yaml"

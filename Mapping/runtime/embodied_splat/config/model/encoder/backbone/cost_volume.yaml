@@ -1,7 +1,0 @@
-name: cost_volume
-
-model: cost_volume
-d_out: 512
-resnet_name: resunet
-
-

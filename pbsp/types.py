@@ -2,7 +2,7 @@
 
 The objects in this module deliberately use only the Python standard library.  They
 are safe to import from unit tests, mapping adapters, and evaluator entrypoints
-without importing Habitat or either runtime.
+without importing Habitat or either pbsp.runtime.
 """
 
 from __future__ import annotations
@@ -285,7 +285,7 @@ class VersionToken:
 
 @dataclass(frozen=True)
 class CandidateRecord:
-    """One query candidate with provenance retained across adapters."""
+    """One query candidate with provenance retained across pbsp.adapters."""
 
     task_idx: int
     category: str

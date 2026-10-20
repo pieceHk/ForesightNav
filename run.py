@@ -6,10 +6,10 @@ from dataclasses import replace
 import json
 from pathlib import Path
 
-from runtime.config import load_experiment
-from runtime.launch import launch, source_info
-from runtime.plan import prepare_plan
-from runtime.resources import validate_resources
+from pbsp.runtime.config import load_experiment
+from pbsp.runtime.launch import launch, source_info
+from pbsp.runtime.plan import prepare_plan
+from pbsp.runtime.resources import validate_resources
 
 ROOT = Path(__file__).resolve().parent
 

@@ -1,97 +1,29 @@
 # Third-party notices
 
-PBSP-authored code is licensed under the MIT license in [LICENSE](LICENSE).
-Vendored software, adaptations of upstream components, model weights and datasets
-retain their original licenses and attribution notices.
+PBSP-authored code uses the MIT license in [LICENSE](LICENSE). Adapted upstream code, dependencies, weights and datasets retain their original licenses and attribution notices.
 
-The mapping runtime derives from EmbodiedSplat, and the navigation runtime derives
-from LagMemo. Their source revisions and retained paths are recorded in
-[Mapping/runtime/vendor_manifest.toml](Mapping/runtime/vendor_manifest.toml),
-[Navigation/runtime/vendor_manifest.toml](Navigation/runtime/vendor_manifest.toml)
-and the original [source manifest](Exp/release/SOURCE_MANIFEST.json).
+The reconstruction layers derive from EmbodiedSplat revision `b5e1e90fc9917fbfe34231684b823725b7e1e948`. Its [source record](third_party/embodied_splat/UPSTREAM.toml) identifies the retained inference scope. Gaussian storage, projection, fusion and refinement in `pbsp/mapping/gaussians.py` and `fusion.py`, online encoding in `encoder.py`, semantic pooling in `pbsp/semantics/features.py`, and geometry helpers retain their EmbodiedSplat provenance and license scope. `pbsp/adapters/embodied_splat_model.py` constructs the upstream neural layers and optional feature backends.
 
-The Gaussian storage in `pbsp/mapping/gaussians.py` and the projection, fusion and
-refinement operations in `pbsp/mapping/fusion.py` were extracted from
-`Mapping/runtime/embodied_splat/src/model/encoder/encoder_test_unet3d_online.py`.
-They retain their EmbodiedSplat provenance and upstream license scope.
-The online encoding and region-feature operations in `pbsp/mapping/encoder.py`
-and `pbsp/semantics/features.py`, and the view-distance and image-grid helpers in
-`pbsp/mapping/geometry.py`, were extracted from the same runtime and its geometry
-and tensor utility modules. The same attribution and license scope apply.
-`adapters/embodied_splat_model.py` retains the network constructor and optional
-sparse/OpenSeg backend methods from that encoder.
+Navigation support derives from LagMemo revision `df48cfca2d0c5646ea012c72bc006da279512898`; see its [source record](third_party/lagmemo/UPSTREAM.toml). Agent execution, local-map updates, candidate history, target verification, recovery, Habitat conversion, experiment visualization and the evaluation loop retain the upstream Meta copyright and MIT scope. These adaptations are in `pbsp/agent.py`, `pbsp/navigation/`, `pbsp/adapters/` and `experiments/`.
 
-Candidate refresh, visual-confirmation history and recovery-state operations in
-`pbsp/navigation/candidates.py`, `verification.py` and `recovery.py` were extracted
-from LagMemo's `glue_agent.py`. The upstream Meta copyright notice and MIT scope
-are preserved in those modules.
-The Agent state and candidate execution in `pbsp/agent.py`, the navigation kernel
-in `pbsp/navigation/navigator.py`, local-map updates in
-`local_map.py`, geometric transforms in `geometry.py`, and the matching/assembly
-code in `adapters/perception.py` and `adapters/lagmemo_agent.py` have the same
-LagMemo provenance. Observation and action types are supplied through adapter
-boundaries; the upstream names remain available through compatibility imports.
+Retained license texts:
 
-The sensor/action conversion in `adapters/habitat.py`, measurement reset in
-`experiments/evaluator.py`, Habitat assembly in `adapters/goat.py`, and
-top-down visualization in `experiments/visualization.py` derive from LagMemo's
-Habitat environment and agent. They retain the same Meta copyright and MIT scope.
-Evaluation maps are read by the experiment observer separately from policy input.
-The episode/action loop in `experiments/runner.py` was extracted from the retained
-GOAT evaluator entrypoint, which adapts LagMemo's evaluation loop. The same
-attribution applies to that retained control flow.
-The Habitat configuration adapter in `adapters/habitat_config.py` and the
-navigation service assembly in `runtime/navigation_worker.py` retain the same
-LagMemo attribution. The old Habitat and configuration modules forward to these
-implementations.
+- [OpenAI CLIP](third_party/licenses/clip/LICENSE)
+- [Gaussian depth rasterizer](third_party/licenses/gaussian_rasterizer/LICENSE.md) and its [GLM notice](third_party/licenses/gaussian_rasterizer/glm-copying.txt)
+- [Language rasterizer](third_party/langsplat-rasterization/LICENSE.md) and its [GLM notice](third_party/langsplat-rasterization/third_party/glm/copying.txt)
+- [MinkowskiEngine](third_party/licenses/MinkowskiEngine-LICENSE)
+- [Detic](third_party/detic/LICENSE), [CenterNet2](third_party/detic/third_party/CenterNet2/LICENSE) and [Deformable-DETR](third_party/detic/third_party/Deformable-DETR/LICENSE)
+- [Detectron2](third_party/licenses/detectron2/LICENSE)
+- [Frontier exploration](third_party/frontier_exploration/LICENSE)
+- [Habitat-Lab](third_party/licenses/habitat_lab/LICENSE)
+- [MobileCLIP code](third_party/mobileclip/LICENSE) and [weights/data](third_party/mobileclip/LICENSE_weights_data)
+- [SEEM](third_party/seem/LICENSE)
+- [SuperGlue](third_party/licenses/superglue/LICENSE)
 
-Upstream license texts are retained unchanged:
+FastSAM and the retained Ultralytics files carry their upstream AGPL-3.0 source notices. Those notices remain in the corresponding source files.
 
-- `third_party/licenses/clip/LICENSE`
-- `third_party/licenses/gaussian_rasterizer/LICENSE.md`
-- `third_party/licenses/gaussian_rasterizer/glm-copying.txt`
-- `Mapping/runtime/embodied_splat/src/third_party/MinkowskiEngine/LICENSE`
-- `Mapping/runtime/embodied_splat/src/third_party/langsplat-rasterization/LICENSE.md`
-- `Mapping/runtime/embodied_splat/src/third_party/langsplat-rasterization/third_party/glm/copying.txt`
-- `third_party/licenses/superglue/LICENSE`
-- `Navigation/runtime/lagmemo/src/lagmemo/lagmemo/perception/detection/detic/Detic/LICENSE`
-- `Navigation/runtime/lagmemo/src/lagmemo/lagmemo/perception/detection/detic/Detic/third_party/CenterNet2/LICENSE`
-- `Navigation/runtime/lagmemo/src/lagmemo/lagmemo/perception/detection/detic/Detic/third_party/Deformable-DETR/LICENSE`
-- `third_party/licenses/detectron2/LICENSE`
-- `Navigation/runtime/lagmemo/src/third_party/frontier_exploration/LICENSE`
-- `third_party/licenses/habitat_lab/LICENSE`
-- `Navigation/runtime/lagmemo/src/third_party/ml-mobileclip/LICENSE`
-- `Navigation/runtime/lagmemo/src/third_party/ml-mobileclip/LICENSE_weights_data`
-- `Navigation/runtime/lagmemo/src/third_party/seem/LICENSE`
+The mapping installer builds OpenAI CLIP revision `d05afc436d78f1c48dc0dbf8e5980a9d471f35f6` and the depth rasterizer revision `cb65e4b86bc3bd8ed42174b72a62e8d3a3a71110` from pinned source archives. The rasterizer retains its Gaussian-Splatting license. Detectron2 and Habitat use complete external source archives pinned in the [navigation lock](configs/environments/navigation/linux-64.lock.json). The unchanged license texts above accompany these dependencies.
 
-The mapping installer builds [OpenAI CLIP](https://github.com/openai/CLIP/tree/d05afc436d78f1c48dc0dbf8e5980a9d471f35f6)
-and the [depth rasterizer](https://github.com/JonathonLuiten/diff-gaussian-rasterization-w-depth/tree/cb65e4b86bc3bd8ed42174b72a62e8d3a3a71110)
-from pinned source archives. Their license texts above are copied byte for byte
-from those archives. The depth rasterizer retains the Gaussian-Splatting license;
-PBSP's MIT license applies to PBSP-authored code. Versions, artifact checksums and
-tracked extension source hashes are recorded in [the mapping lock](envs/mapping/linux-64.lock.json).
+SuperGlue inference files are prepared separately from revision `d2d6dcc21f67690c07a2787acfb357b7ed59b920` of the fork used by LagMemo. Its license limits use to noncommercial research and restricts distribution. The [source manifest](configs/resources/superglue.json) pins six downloaded files and two explicit checkpoint-path adaptations.
 
-Detectron2 and Habitat-Lab use complete pinned external source archives from the
-[navigation lock](envs/navigation/linux-64.lock.json). Their unchanged license
-texts are retained above. The navigation installer builds Detectron2, Habitat-Lab
-and Habitat-Baselines; runtime preparation exports the same Habitat-Lab source
-revision for the sensor and task adapters.
-
-The semantic pooling/codebook operations now live in `pbsp/semantics/features.py`;
-`pbsp/mapping/features.py` retains a compatibility import. The same EmbodiedSplat
-attribution and license scope apply. Semantic retrieval now lives in `pbsp/query/`;
-its Gaussian storage and coordinate adapter is `adapters/embodied_splat_query.py`.
-
-The fixed MON task orders and selection provenance are packaged in
-`assets/episodes/`. Episode preparation reads original ObjectNav annotations from
-the [official Habitat archive](https://dl.fbaipublicfiles.com/habitat/data/datasets/objectnav/hm3d/v1/objectnav_hm3d_v1.zip).
-HM3D scene data and derived annotations retain the
-[Matterport academic-use terms](https://matterport.com/legal/matterport-end-user-license-agreement-academic-use-model-data).
-The metadata and reconstructed data carry a [dataset notice](assets/episodes/NOTICE.md).
-
-SuperGlue inference files are obtained separately during resource preparation from
-the [fixed fork used by LagMemo](https://github.com/mukulkhanna/SuperGluePretrainedNetwork/tree/d2d6dcc21f67690c07a2787acfb357b7ed59b920).
-Its [license](third_party/licenses/superglue/LICENSE) limits use to noncommercial
-research and restricts distribution. The source manifest in `assets/superglue.json`
-pins the six downloaded files and the prepared outputs, including the two explicit
-checkpoint-path adaptations. The tracked package contains an import bridge.
+Fixed MON task orders and source identities are packaged in `configs/resources/episodes/`. Preparation reads selected annotations from the official Habitat ObjectNav archive. Scene data and generated annotations retain the [dataset notice](configs/resources/episodes/NOTICE.md) and Matterport terms. Model identities and source locations are listed in [the model manifest](configs/resources/models.json).

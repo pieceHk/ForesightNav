@@ -1,0 +1,153 @@
+dataset:
+  view_sampler:
+    name: bounded
+    num_target_views: 4
+    num_context_views: 10
+    min_distance_between_context_views: 25
+    max_distance_between_context_views: 25
+    min_distance_to_context_views: 0
+    warm_up_steps: 15000
+    initial_min_distance_between_context_views: 15
+    initial_max_distance_between_context_views: 25
+    random: true
+  name: scannet
+  roots:
+  - dataset/scannet
+  make_baseline_1: false
+  augment: true
+  image_shape:
+  - 384
+  - 512
+  background_color:
+  - 0.0
+  - 0.0
+  - 0.0
+  cameras_are_circular: false
+  baseline_epsilon: 0.001
+  max_fov: 100.0
+  use_depth: true
+  overfit_to_scene: null
+  near: 0.5
+  far: 15.0
+  sample_num_start: 2
+  sample_num_end: 8
+model:
+  encoder:
+    backbone:
+      name: efficientnet
+      model: efficientnet
+      d_out: 512
+      resnet_name: resunet
+    name: encoder_test_unet3d_online
+    opacity_mapping:
+      initial: 0.0
+      final: 0.0
+      warm_up: 1
+    num_monocular_samples: 32
+    num_surfaces: 1
+    predict_opacity: false
+    near_disparity: 3.0
+    gaussians_per_pixel: 3
+    gaussian_adapter:
+      gaussian_scale_min: 0.5
+      gaussian_scale_max: 15.0
+      sh_degree: 2
+      depth_sup: true
+    d_feature: 128
+    epipolar_transformer:
+      self_attention:
+        patch_size: 4
+        num_octaves: 10
+        num_layers: 2
+        num_heads: 4
+        d_token: 128
+        d_dot: 128
+        d_mlp: 256
+      num_octaves: 10
+      num_layers: 2
+      num_heads: 4
+      num_samples: 32
+      d_dot: 128
+      d_mlp: 256
+      downscale: 4
+    visualizer:
+      num_samples: 8
+      min_resolution: 256
+      export_ply: false
+    apply_bounds_shim: true
+    use_epipolar_transformer: false
+    use_transmittance: false
+    use_depth: false
+    est_depth: cost
+    use_semantic_fusion: true
+    sam_model_type: fastsam
+    fastsam_model_path: pretrained/FastSAM-x.pt
+    fastsam_retina_masks: true
+    fastsam_conf: 0.4
+    fastsam_iou: 0.9
+    clip_model: maskadapter
+    clip_model_type: convnext_large_d_320
+    clip_model_path: laion2b_s29b_b131k_ft_soup
+    unet3d_in_channels: 64
+    unet3d_out_channels: 64
+    unet3d_D: 3
+    unet3d_arch: MinkUNet14A
+    voxel_size: 0.02
+    memory: false
+    memory_in_channels:
+    - 32
+    - 64
+    - 128
+    - 256
+    memory_queue: -1
+    memory_vmp_layer:
+    - 0
+    - 1
+    - 2
+    - 3
+    unet_3d: false
+    pcd_aug: false
+    unimatch_weights_path: checkpoints/gmdepth-scale1-resumeflowthings-scannet-5d9d7964.pth
+    multiview_trans_attn_split: 2
+    costvolume_unet_feat_dim: 128
+    costvolume_unet_channel_mult:
+    - 1
+    - 1
+    - 1
+    costvolume_unet_attn_res: []
+    depth_unet_feat_dim: 64
+    depth_unet_attn_res: []
+    depth_unet_channel_mult:
+    - 1
+    - 1
+    - 1
+    downscale_factor: 4
+    shim_patch_size: 4
+    wo_depth_refine: false
+    wo_cost_volume: false
+    wo_backbone_cross_attn: false
+    wo_cost_volume_refine: false
+    use_epipolar_trans: false
+    n_levels: -1
+    num_views: 5
+    fusion: true
+    cv_type: cv
+    wo_matchnet: true
+    log_plane: true
+    num_depth_candidates: 128
+    low_res: true
+    refine_gs: true
+    refine_pp: true
+    fore_fusion: true
+    refine_window: 30
+    use_gt_depth: true
+    load_cache: false
+    clip_dim: 768
+    max_batch: 10
+    openvocab_domain: 2d
+    recon_mode: incremental
+    output_path: null
+  decoder:
+    name: splatting_cuda
+mode: test
+use_openscene: false

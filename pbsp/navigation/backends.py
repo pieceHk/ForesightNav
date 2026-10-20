@@ -102,7 +102,7 @@ class WaypointNavigationBackend:
     """Use an external waypoint controller with a separate exploration policy.
 
     A controller's step(request) returns NavigationPlan and translates its native
-    action to the simulator enum. Full VLFM/ApexNav policies need their own adapters.
+    action to the simulator enum. Full VLFM/ApexNav policies need their own pbsp.adapters.
     """
 
     def __init__(self, controller, *, exploration: NavigationBackend):

@@ -1,4 +1,2 @@
-# Preserve upstream vendor formatting; local 3DONav code remains whitespace-checked.
-Mapping/runtime/** -whitespace
-Navigation/runtime/** -whitespace
-third_party/licenses/** -whitespace
+# Preserve vendor formatting; PBSP source remains whitespace-checked.
+third_party/** -whitespace

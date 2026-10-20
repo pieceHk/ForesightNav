@@ -1,0 +1,5 @@
+[source]
+name = "LagMemo"
+revision = "df48cfca2d0c5646ea012c72bc006da279512898"
+scope = "Local maps, frontier planner, matching and visualization support used by PBSP"
+configuration = ["configs/habitat.yaml", "configs/navigation.yaml"]
