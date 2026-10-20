@@ -32,6 +32,8 @@ flowchart LR
 
 ## 1. Data
 
+Preparation commands use Python 3.9 or newer.
+
 ```bash
 git clone --branch refactor/full-pbsp https://github.com/pieceHk/PBSP.git
 cd PBSP
@@ -55,7 +57,7 @@ The sets share a fixed 1,200-target pool selected using historical paired outcom
 
 ## 2. Installation
 
-Use Python 3.9+, Linux x86_64, a CUDA 11.8 toolkit and [micromamba](https://mamba.readthedocs.io/en/stable/installation/micromamba-installation.html). System packages and fixed environment inputs are listed in [configs](configs/README.md).
+Use Linux x86_64, a CUDA 11.8 toolkit and [micromamba](https://mamba.readthedocs.io/en/stable/installation/micromamba-installation.html). System packages and fixed environment inputs are listed in [configs](configs/README.md).
 
 | Environment | Python | PyTorch | CUDA build |
 | --- | --- | --- | --- |
@@ -104,5 +106,7 @@ prepare.py     Data, environment and resource preparation entry
 | Navigation | [navigator.py](pbsp/navigation/navigator.py), [backends.py](pbsp/navigation/backends.py) | Sensor frame, world waypoint and action |
 
 [Agent](pbsp/agent.py) owns PBSP planning and target verification. [Runner](experiments/runner.py) executes and evaluates complete ordered episodes. The [component guide](pbsp/README.md) describes navigation replacement, including VLFM and ApexNav adapter requirements.
+
+A complete 4-MON episode and clean-checkout preparation checks passed. The [reproduction record](experiments/reproduction.json) includes the source revision, checked identities and metrics.
 
 PBSP-authored code uses the [MIT license](LICENSE). Adapted code, dependencies, data and weights retain their respective licenses; see [third-party notices](THIRD_PARTY_NOTICES.md).

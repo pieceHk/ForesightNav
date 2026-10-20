@@ -1,0 +1,170 @@
+{
+  "status": "passed",
+  "date": "2026-10-20",
+  "source_commit": "72f3172967db5f124aeffedf84aaded5119970c0",
+  "scope": "Single-project release layout; one complete ordered 4-MON episode",
+  "layout": {
+    "top_level_directories": [
+      "configs",
+      "data",
+      "experiments",
+      "pbsp",
+      "third_party"
+    ],
+    "maximum_pbsp_python_file_depth": 3,
+    "published_test_files": 0,
+    "duplicate_project_python_files": 0
+  },
+  "regression_checks": {
+    "passed": 234,
+    "failed": 0,
+    "harness_in_release_tree": false
+  },
+  "clean_checkout": {
+    "status": "passed",
+    "reused_inputs": "Locked interpreters, model weights and cached source archives",
+    "steps": [
+      {
+        "name": "data",
+        "returncode": 0
+      },
+      {
+        "name": "models",
+        "returncode": 0
+      },
+      {
+        "name": "runtime",
+        "returncode": 0
+      },
+      {
+        "name": "locked-cpu-probes",
+        "returncode": 0
+      },
+      {
+        "name": "plan-2mon",
+        "returncode": 0
+      },
+      {
+        "name": "plan-3mon",
+        "returncode": 0
+      },
+      {
+        "name": "plan-4mon",
+        "returncode": 0
+      },
+      {
+        "name": "frontier-wheel",
+        "returncode": 0
+      }
+    ],
+    "source_dirty": false
+  },
+  "cuda_episode": {
+    "run": "experiments/runs/20261020_162631_463239_hm3d_4mon_full_pbsp_check_install_20261020_082624_748799",
+    "identity": {
+      "dataset_manifest_sha256": "e1e93c34fd5cadcf3d001f9d5e68f4bbc4dec69ba5df88ad230885b319c4e892",
+      "ordered_categories": [
+        "toilet",
+        "bed",
+        "tv",
+        "toilet"
+      ],
+      "runtime_episode_id": "0",
+      "scene_id": "4ok3usBNeis",
+      "source_episode_ids": [
+        "13",
+        "67",
+        "61",
+        "58"
+      ]
+    },
+    "identity_sha256": "04f6a565f4cf150597f52baefe1d2a536205f228ce8e7bdf7e38ff5dbc25dfbb",
+    "counts": {
+      "completed_episodes": 1,
+      "completed_subtasks": 4,
+      "episodes_with_unreachable": 0,
+      "finite_shortest_path_episodes": 1,
+      "finite_shortest_path_subtasks": 4,
+      "successful_episodes": 1,
+      "successful_subtasks": 4,
+      "targets_per_episode": 4,
+      "unreachable_subtasks": 0
+    },
+    "metrics": {
+      "pespl": 0.648577769229401,
+      "pespl_denominator": 4,
+      "pespl_numerator": 2.594311076917604,
+      "psr": 1.0,
+      "psr_by_category": {
+        "bed": {
+          "psr_contribution": 0.25,
+          "success_rate": 1.0,
+          "successes": 1,
+          "targets": 1
+        },
+        "toilet": {
+          "psr_contribution": 0.5,
+          "success_rate": 1.0,
+          "successes": 2,
+          "targets": 2
+        },
+        "tv": {
+          "psr_contribution": 0.25,
+          "success_rate": 1.0,
+          "successes": 1,
+          "targets": 1
+        }
+      },
+      "psr_denominator": 4,
+      "psr_numerator": 4,
+      "spl": 0.60856290807867,
+      "sr": 1.0
+    },
+    "trajectory_checked": {
+      "episodes": 1,
+      "frames": 414
+    },
+    "decisions": {
+      "identity_checked": 44,
+      "candidate_batches_checked": 88,
+      "dispatch_gates_checked": 44,
+      "stale_suffix_dispatches": 0
+    },
+    "environment_probes": {
+      "mapping": {
+        "status": "passed",
+        "devices_checked": [
+          "cpu",
+          "cuda"
+        ],
+        "torch_cuda_build": "11.8"
+      },
+      "navigation": {
+        "status": "passed",
+        "devices_checked": [
+          "cpu",
+          "cuda"
+        ],
+        "torch_cuda_build": "11.8"
+      }
+    },
+    "worker_exit_codes": {
+      "monitor_process.json": 0,
+      "mapping_process.json": 0,
+      "navigation_4ok3usBNeis_process.json": 0
+    },
+    "model_identity_checked": true,
+    "environment_identity_checked": true,
+    "source_snapshot_complete": true,
+    "source_dirty": false
+  },
+  "reference_comparison": {
+    "execution_source_commit": "d06e6d205c102989d59b744425d2af4debce54d0",
+    "reference_record_commit": "38e23b903f3274adb6d87ce5719b22589184d68e",
+    "reference_record_path": "docs/validation/phase47_public_cuda_smoke_results.json",
+    "same_identity": true,
+    "same_metrics": true,
+    "same_completed_counts": true,
+    "same_trajectory_frame_count": true
+  }
+}

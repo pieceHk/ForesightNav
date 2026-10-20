@@ -27,7 +27,7 @@ Summarize one or more completed runs:
 python -m experiments.summarize experiments/runs/<run> --output experiments/runs/summary
 ```
 
-The command validates completion, task identities, candidate freshness, timing records and recomputed metrics before producing `summary.json`, `summary.csv` and `summary.md`. Interrupted runs retain their logs and are rejected as completed results. Use `python -m experiments.summarize --help` for protocol comparison and shard merging.
+The command validates completion, task identities, environment records, timing records and recomputed metrics before producing `summary.json`, `summary.csv` and `summary.md`. Interrupted runs retain their logs and are rejected as completed results. Use `python -m experiments.summarize --help` for protocol comparison and shard merging.
 
 To check the two environments and run one complete ordered episode:
 
