@@ -3,6 +3,7 @@
 import csv
 from dataclasses import asdict
 import hashlib
+import io
 import json
 from pathlib import Path
 
@@ -11,7 +12,7 @@ import pytest
 from experiments.metrics import build_subtask_telemetry, summarize_episode, summarize_records
 from pbsp.types import EpisodeIdentity
 from runtime.plan import digest
-from scripts.summarize import main, markdown, summarize_runs
+from scripts.summarize import main, markdown, summarize_runs, write_csv
 
 ROOT = Path(__file__).resolve().parents[2]
 
@@ -204,6 +205,26 @@ def test_cli_writes_a_new_summary_without_modifying_the_run(tmp_path):
     main([str(run), "--output", str(destination)])
     assert json.loads((destination / "summary.json").read_text())["mode"] == "compare"
     assert "selection of 2" in (destination / "summary.md").read_text()
+    with (destination / "summary.csv").open(newline="") as stream:
+        row, = csv.DictReader(stream)
+    assert row["coverage"] == "selected_episodes"
+    assert row["completed_episodes"] == "1"
+    assert row["completed_subtasks"] == "2"
+    assert float(row["psr"]) == 0.5
     assert (run / "mon_metrics.json").read_bytes() == before
     with pytest.raises(FileExistsError):
         main([str(run), "--output", str(destination)])
+
+
+def test_csv_quotes_run_names_and_preserves_unavailable_path_efficiency(tmp_path):
+    run = fixture(tmp_path, name='run, "quoted"')
+    report = summarize_runs([run])
+    report["rows"][0]["metrics"]["mon_metrics"]["spl"] = None
+    stream = io.StringIO()
+    write_csv(report, stream)
+    stream.seek(0)
+    row, = csv.DictReader(stream)
+    assert row["run"] == 'run, "quoted"'
+    assert row["spl"] == ""
+    assert float(row["psr"]) == 0.5
+    assert "n/a" in markdown(report)

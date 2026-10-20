@@ -33,11 +33,16 @@ A completed run has `status.json` with `status: completed`. Mapping, monitor and
 | `provenance.json`, `source.patch` | Code revision, working-tree state, worker settings and checked resource identities |
 | `dataset_manifest.json` | Fixed dataset version and scene-file hashes |
 | `model_manifest.json` | Model manifest verified at launch |
+| `environment_locks/`, `*_environment*.json` | Lock snapshots, actual interpreter, installed package versions and package/source paths |
+| `results_*/.../episodes/<scene>/<episode>/identity.json` | Ordered source identities, pose convention and discrete action space |
+| `results_*/.../episodes/<scene>/<episode>/trajectory.jsonl` | One pre-action world pose and issued action per accepted environment step |
 | `results_*/.../per_episode_metrics.json` | Raw task measurements, stop reasons and derived episode metrics |
 | `results_*/.../timing_log.csv` | Scene, episode, task, frame and per-step elapsed time |
 | `mon_metrics.json` | Aggregate metrics for the selected complete episodes |
 
-Model-manifest recording is part of the current native launcher. Earlier migration runs may lack that record. Their raw metrics can still be compared, while shard merging requires a saved checked model identity.
+Current native runs declare environment and trajectory schemas in `provenance.json`. The summary checks copied lock hashes, installed package versions, interpreter/device bindings, and every trajectory frame against raw timing, task order and STOP reasons. Package versions and locks also enter the merge protocol; machine paths and GPU IDs may differ.
+
+Earlier runs may lack these records or the model manifest. Their raw metrics can still be compared. Merging requires a saved checked model identity; runs without the newer recording schemas retain metric-only validation, shown by `environment_identity_checked: false` and `trajectory_checked: null` in the JSON report. Historical records are not backfilled.
 
 ## Metric definitions
 
@@ -58,7 +63,7 @@ The summary command checks completion, process exits, configuration and identity
 python3 scripts/summarize.py outputs/<run> --output outputs/<summary>
 ```
 
-It writes `summary.json` and `summary.md` in a new directory. Multiple run arguments produce separate comparison rows. Each row distinguishes a complete dataset from a selected subset; an asterisk marks a run launched with working-tree changes.
+It writes `summary.json`, `summary.csv` and `summary.md` in a new directory. Multiple run arguments produce separate comparison rows. Each row distinguishes a complete dataset from a selected subset; an asterisk marks a run launched with working-tree changes. CSV includes recording coverage and retains full numeric precision; unavailable path-efficiency values appear as empty CSV cells and `n/a` in Markdown.
 
 For completed, disjoint shards of the same experiment:
 

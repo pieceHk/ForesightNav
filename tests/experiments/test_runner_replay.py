@@ -381,6 +381,7 @@ def execute(
     mode="ordered_suffix_mvp",
     case="normal",
     cadence=10,
+    record_trajectory=False,
 ):
     output = tmp_path / ("native" if native else "frozen")
     events, clock = [], Clock()
@@ -424,8 +425,17 @@ def execute(
     error = None
     try:
         if native:
+            observed_env = env
+            if record_trajectory:
+                from experiments.trajectory import TrajectoryEnvironment
+
+                observed_env = TrajectoryEnvironment(
+                    env, directory=output, identities=identities,
+                    dataset_manifest_sha256="a" * 64, actions=Action,
+                    action_metadata=lambda: agent.last_action_metadata,
+                )
             run_episodes(
-                env=env,
+                env=observed_env,
                 evaluator=evaluator,
                 agent=agent,
                 candidate_provider=provider,
@@ -549,6 +559,31 @@ def test_refresh_cadence_is_supplied_by_configuration(tmp_path, monkeypatch):
     assert [event[1] for event in result["events"] if event[0] == "invalidate"] == list(
         range(0, 27, 3)
     )
+
+
+@pytest.mark.parametrize("episodes,case", [(2, "normal"), (1, "recovery")])
+def test_trajectory_observer_preserves_all_calls_actions_metrics_and_timing(tmp_path, monkeypatch, episodes, case):
+    plain_run = execute(tmp_path / "plain", monkeypatch, native=True, episodes=episodes, case=case)
+    recorded = execute(tmp_path / "recorded", monkeypatch, native=True, episodes=episodes,
+                       case=case, record_trajectory=True)
+    assert plain_run["error"] is recorded["error"] is None
+    for key in set(plain_run) - {"files"}:
+        assert recorded[key] == plain_run[key]
+    assert {key: recorded["files"][key] for key in plain_run["files"]} == plain_run["files"]
+    added = {f"episodes/scene-a/{episode}/{name}" for episode in range(episodes)
+             for name in ("identity.json", "trajectory.jsonl")}
+    assert set(recorded["files"]) - set(plain_run["files"]) == added
+    all_rows = []
+    for episode in range(episodes):
+        identity = json.loads(recorded["files"][f"episodes/scene-a/{episode}/identity.json"])
+        assert identity["identity"]["source_episode_ids"] == [str(episode * 3 + task) for task in range(3)]
+        rows = [json.loads(line) for line in recorded["files"][f"episodes/scene-a/{episode}/trajectory.jsonl"].splitlines()]
+        assert [row["frame_index"] for row in rows] == list(range(1, len(rows) + 1))
+        assert [row["world_pose"][4] for row in rows] == pytest.approx([index * 0.1 for index in range(len(rows))])
+        assert [row["subtask_index"] for row in rows if row["is_stop"]] == [0, 1, 2]
+        all_rows.extend(rows)
+    actions = [event for event in recorded["events"] if event[0] == "apply_action"]
+    assert [(row["subtask_index"], row["action_name"]) for row in all_rows] == [(event[1], event[2]) for event in actions]
 
 
 def test_runner_rejects_in_place_resume_before_using_services(tmp_path):

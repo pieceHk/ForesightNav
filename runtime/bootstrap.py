@@ -81,6 +81,7 @@ def worker_environment(plan, role, inherited=None):
             "CUDA_VISIBLE_DEVICES": str(gpu),
             "PYTHONPATH": os.pathsep.join(map(str, paths)),
             "PYTHONUNBUFFERED": "1",
+            "PYTHONNOUSERSITE": "1",
             "PYTHONHASHSEED": str(plan.experiment.seed),
             "TDONAV_ROOT": str(resources.root),
             "TDONAV_LAGMEMO_ROOT": str(resources.navigation),

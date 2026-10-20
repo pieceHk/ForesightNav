@@ -1,0 +1,32 @@
+{
+  "status": "targeted_tests_passed_linux_checks_pending",
+  "changes": [
+    "Per-episode source identity and accepted-action trajectory recorded by an environment observer without extra observations or policy loop changes",
+    "Per-worker installed package/interpreter inventory and portable snapshots of both environment locks",
+    "Strict recording validation against launch identities, installed versions, raw timing and task STOP reasons; environment versions enter the merge protocol when declared",
+    "CSV export with full metric precision, explicit recording coverage and unavailable path-efficiency handling",
+    "Root --gpus mapping,navigation override updates the effective plan without changing machine settings"
+  ],
+  "macos": {
+    "passed": 135,
+    "seconds": 6.22,
+    "scope": "Full frozen loop parity plus two-episode/recovery observer transparency, artifact-corruption rejection, native construction/cleanup/launch behavior, environment metadata and CSV export"
+  },
+  "implementation_sha256": {
+    "run.py": "79e7002f7e3905bacfcd43d4b659e22634daae35e517a252cff6e722043caae2",
+    "experiments/trajectory.py": "182d30cdbcb131c9d3988fb0ed60372249324e047af656658b12ebbe87a5f42a",
+    "experiments/run_records.py": "9a452f163e9be95d1c906798038f438778161842c1f132093597402ce54cd406",
+    "runtime/environment.py": "0e0550cd2f545c4f9f07dd9867f30d59244fe3c18b5a8fb410385eaf40c8a724",
+    "runtime/bootstrap.py": "e3941f08d914239c0511493745423fe43b569908f6aadde868c1e9ce2b841c70",
+    "runtime/launch.py": "92789d00217f82b6079ba3e32b111fa3dbf30c8ea9492181f099cda844862933",
+    "runtime/navigation_worker.py": "cf3d86a2b014dc99d01c55ea42441e74505967b5b0af29826d94e855c2e2a7f0",
+    "runtime/mapping_worker.py": "1b1677e6c3fde7a049a1a88fec5ac5a733ebe87038f8cd7a3f96eadd04531471",
+    "scripts/summarize.py": "d0fcf4e88ec93cb3360aa444c60613cf8c3aa83da6067f5c3f0e0779dd8fc5c1"
+  },
+  "limits": [
+    "Current-source default CUDA diagnostic and complete native --smoke remain pending free GPUs",
+    "The ongoing full300episode evaluation remains at its frozen3665bae source and is not modified",
+    "Historical runs are not backfilled; reports explicitly distinguish missing environment/trajectory validation",
+    "Environment inventory records installed metadata and source paths; it is not a hash inventory of every loaded binary"
+  ]
+}

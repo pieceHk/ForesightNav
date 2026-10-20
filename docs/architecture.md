@@ -350,7 +350,7 @@ weights/
 
 `setup_envs.py` 依据两份 Linux 依赖锁创建独立的 mapping、navigation 环境，安装项目、固定外部源码并构建需要的 CUDA 扩展。构建参数、编译器和 CUDA 工具链写入安装清单。Habitat 使用已验证 fork 的固定 revision `8df2661e5b2203c0ddc47798d5da0132d5686bbe`；来源由 navigation lock 管理，SuperGlue 的六个外部文件由该 lock 引用的源码清单固定。
 
-安装脚本生成 `runtime.local.yaml`：
+`prepare_runtime.py` 连接已准备的数据、权重与解释器，并生成 `runtime.local.yaml`：
 
 ```yaml
 paths:
@@ -369,26 +369,25 @@ gpus:
 
 每次运行使用独立 socket、日志和进程组。启动器负责就绪检查、异常状态、Ctrl-C 和资源回收。算法模块只承担 episode 资源的生命周期。
 
-`check_install.py` 覆盖两个环境的包来源、必要扩展、权重加载、Habitat 场景 reset 及一次动作。发布的环境锁由全新 Linux 环境安装验证后生成。
+`check_install.py` 检查两个环境的包版本、模块来源、必要扩展与 CPU/CUDA 操作。`--cpu-only` 保留 CPU 检查；`--smoke` 另行加载模型并完成一个有序 episode，覆盖 Habitat 场景 reset 和动作。环境锁已通过全新 Linux 环境安装验证。
 
 离线服务器使用同一目录和入口。联网端准备 Git bundle、文档、权重和依赖缓存，传至服务器；CUDA 扩展和环境包针对服务器的 Linux、架构及 CUDA 组合构建。`docs/offline.md` 给出导出、传输和离线安装命令，服务器运行阶段使用本地资源。
 
 ## 8 启动入口
 
-完成数据和环境准备后，完整 4-MON 实验的目标启动方式为：
+完成数据和环境准备后，完整 4-MON 实验的启动方式为：
 
 ```bash
-conda activate pbsp-nav
-python run.py --config configs/experiments/hm3d_4mon.yaml
+.cache/envs/navigation/bin/python run.py --config configs/experiments/hm3d_4mon.yaml
 ```
 
 `hm3d_2mon.yaml` 和 `hm3d_3mon.yaml` 使用同一入口。默认执行选定配置的完整数据集；只运行一个完整 episode 时显式限制数量：
 
 ```bash
-python run.py --config configs/experiments/hm3d_4mon.yaml --limit-episodes 1
+.cache/envs/navigation/bin/python run.py --config configs/experiments/hm3d_4mon.yaml --limit-episodes 1
 ```
 
-保留少量直接参数：`--config`、`--runtime`、`--gpus`、`--scene`、`--episode`、`--limit-episodes` 和 `--check`。scene 和 episode 选择使用真实 ID，样本顺序按发布 manifest 保留。`--check` 检查配置、数据、依赖和模型资源后退出。
+直接参数包括 `--config`、`--runtime`、`--gpus`、`--scene`、`--episode`、`--limit-episodes`、`--tag` 和 `--check`。`--gpus 0,1` 只覆盖本次运行的 mapping、navigation GPU，写入有效配置快照。scene 和 episode 使用真实 ID，样本顺序按发布 manifest 保留。`--check` 检查配置、数据、依赖源码和模型文件后退出；原生操作与模型加载由安装诊断另行验证。
 
 `run.py` 仅解析命令行并调用 `runtime.launch`。它不实现候选排序、模型加载或评测公式。
 
@@ -396,24 +395,33 @@ python run.py --config configs/experiments/hm3d_4mon.yaml --limit-episodes 1
 
 ```text
 outputs/<run_id>/
-├── config.resolved.yaml
+├── launch.json                    # 有效配置、模型输入规格和所选身份
+├── resolved_config.yaml
 ├── provenance.json
+├── source.patch
+├── dataset_manifest.json
+├── model_manifest.json
+├── environment_locks/             # 两份启动时的锁文件
+├── mapping_environment.json
+├── navigation_environment_<index>.json
 ├── status.json
-├── summary.json
-├── summary.csv
+├── mon_metrics.json
+├── resource_timeline.jsonl
 ├── logs/
-│   ├── mapping.log
-│   └── navigation.log
-└── episodes/<scene_id>/<episode_id>/
-    ├── identity.json
-    ├── metrics.json
-    ├── trajectory.jsonl
-    ├── decisions.jsonl
-    ├── timing.csv
-    └── images/                   # 根据可视化配置生成
+├── artifacts/mapping_final/
+└── results_<scene>/<experiment>/
+    ├── per_episode_metrics.json   # 按 scene/episode 索引的原始任务测量
+    ├── timing_log.csv
+    ├── scsp_provider_events.jsonl
+    ├── scsp_decisions.jsonl
+    └── episodes/<scene>/<episode>/
+        ├── identity.json
+        └── trajectory.jsonl       # 每个已接受动作及动作前的世界坐标姿态
 ```
 
-`provenance.json` 保存代码 commit、未提交差异的摘要和内容快照、数据及模型校验值、外部依赖 revision、环境清单、随机种子和实际样本列表。`decisions.jsonl` 记录候选、地图版本、排序、分派和回退原因。
+`summarize.py --output outputs/<summary>` 在独立目录生成 `summary.json`、`summary.csv` 和 `summary.md`，保留原始运行文件。轨迹由实验环境观察层记录，算法循环继续使用同一组观测和动作调用。
+
+`provenance.json` 保存代码 commit、未提交差异的摘要和内容快照、数据及模型校验值、外部依赖 revision、环境清单、随机种子和实际样本列表。`scsp_decisions.jsonl` 记录候选、地图版本、排序、分派和回退原因。环境清单保存实际解释器、已安装包版本与来源目录，和启动时复制的锁文件一同保留。汇总工具把轨迹步数、动作及 STOP 原因与计时和原始指标交叉核对；已记录的环境版本也参与分片合并协议。
 
 每个任务记录自己的成功状态和结束原因，包括验证结束、预算耗尽、无法继续执行和进程错误。指标模块沿用当前 MON 指标定义；运行错误与合法实验失败分别记录，汇总时报告实际完成数量。
 

@@ -2,6 +2,7 @@
 """Run PBSP from shared experiment and machine-local YAML configuration."""
 
 import argparse
+from dataclasses import replace
 import json
 from pathlib import Path
 
@@ -13,12 +14,24 @@ from runtime.resources import validate_resources
 ROOT = Path(__file__).resolve().parent
 
 
+def gpu_pair(value):
+    try:
+        parts = tuple(int(part) for part in value.split(","))
+    except ValueError as error:
+        raise argparse.ArgumentTypeError("Use mapping,navigation GPU IDs, for example 0,1") from error
+    if len(parts) != 2 or any(part < 0 for part in parts):
+        raise argparse.ArgumentTypeError("Use two non-negative GPU IDs, for example 0,1")
+    return parts
+
+
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
         "--config", type=Path, default=ROOT / "configs/experiments/hm3d_4mon.yaml"
     )
     parser.add_argument("--runtime", type=Path, default=ROOT / "runtime.local.yaml")
+    parser.add_argument("--gpus", type=gpu_pair, metavar="MAPPING,NAVIGATION",
+                        help="Override the two GPU IDs from the machine configuration")
     parser.add_argument(
         "--scene",
         action="append",
@@ -40,6 +53,9 @@ def main(argv=None):
     )
     args = parser.parse_args(argv)
     config = load_experiment(args.config, args.runtime)
+    if args.gpus is not None:
+        config = replace(config, runtime=replace(config.runtime, mapping_gpu=args.gpus[0],
+                                                  navigation_gpu=args.gpus[1]))
     plan = prepare_plan(
         config,
         root=ROOT,

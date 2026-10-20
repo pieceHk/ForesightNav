@@ -145,3 +145,5 @@ Linux 随后通过 `check_install.py --cpu-only`：mapping 的 122 个锁定包�
 README 的环境部分补齐了双环境安装、权重准备和本机资源配置命令；启动命令直接使用新环境解释器。全文 124 行，经 GitHub GFM 接口渲染，31 个本地链接目标和六条 Python 命令的参数检查通过，见[入口检查](validation/phase35_readme_entry_results.json)。浏览器预览读取超时，本轮未据此宣称像素级显示已验证。
 
 为明确完整评测与后续发布整理的关系，比较了冻结评测提交 `3665bae` 和当前源码：八个目录树的 2,434 个跟踪文件路径、内容和模式一致，22 个模型文件身份不变，外置 SuperGlue 的六个文件与冻结版本完全一致。八个在运行工作进程的解释器、资源环境和已映射库路径再次通过检查。该证据不等同于完整运行时相同，评测结果仍须标注实际冻结提交；当前源码的 CUDA/完整 smoke 验证继续保留，见[边界审计](validation/phase35_frozen_source_boundaries.json)。
+
+输出补齐了逐 episode 的身份与动作轨迹、工作进程环境清单、启动时环境锁快照及 CSV 汇总。记录层包在实验环境外部，不改策略循环，也不额外读取传感器；汇总会交叉核对轨迹、计时、STOP 原因及包版本。根入口另支持架构中列出的 `--gpus mapping,navigation`。macOS 针对性检查 135 项通过，包含未改动的冻结循环回归、两 episode/恢复动作透明性和记录损坏拒绝测试。完整选定 split 继续使用冻结源码，新记录层仍需当前源码的真实 GPU episode 验证，见[记录](validation/phase36_native_recording_results.json)。

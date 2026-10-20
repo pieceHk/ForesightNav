@@ -136,6 +136,15 @@ def validate_run(directory):
     if len(expected_keys) != len(identities) or set(raw) != set(expected_keys):
         raise ValueError("Completed metric episodes differ from the selected identities")
     times, frame_times = timing_records(directory.glob("results_*/**/timing_log.csv"), identities)
+    schemas = provenance.get("artifact_schemas")
+    recorded_trajectory = None
+    if schemas is not None:
+        if schemas != {"environment": "pbsp_environment_v1", "trajectory": "pbsp_trajectory_v1"}:
+            raise ValueError("Unsupported native recording schemas")
+        from experiments.run_records import environment_identity, validate_trajectories
+
+        protocol["installed_environments"] = environment_identity(directory, plan, provenance, read_json)
+        recorded_trajectory = validate_trajectories(directory, identities, raw, times, read_json)
     records = {}
     for key, record in raw.items():
         identity_key = expected_keys[key]
@@ -168,7 +177,9 @@ def validate_run(directory):
            "source_commit": plan["source_commit"], "source_dirty": bool(provenance["status"] or patch.strip()),
            "protocol_sha256": digest(protocol), "identity_sha256": identity_hash,
            "coverage": coverage(identities, dataset, manifest), "metrics": metrics,
-           "model_identity_checked": model_proof is not None, "runtime": config["runtime"]}
+           "model_identity_checked": model_proof is not None, "runtime": config["runtime"],
+           "environment_identity_checked": schemas is not None,
+           "trajectory_checked": recorded_trajectory}
     return ValidatedRun(directory, identities, records, frame_times, protocol, row)
 
 
@@ -196,6 +207,10 @@ def summarize_runs(directories, *, merge=False):
                  "source_dirty": False, "protocol_sha256": digest(protocol),
                  "coverage": coverage(identities, protocol["dataset"], manifest),
                  "metrics": summarize_records(records, frame_times_ms=times),
+                 "environment_identity_checked": all(run.row["environment_identity_checked"] for run in runs),
+                 "trajectory_checked": ({"episodes": sum(run.row["trajectory_checked"]["episodes"] for run in runs),
+                                         "frames": sum(run.row["trajectory_checked"]["frames"] for run in runs)}
+                                        if all(run.row["trajectory_checked"] is not None for run in runs) else None),
                  "source_runs": [run.row for run in runs]}]
     return {"schema_version": "pbsp_result_summary_v1", "mode": "merge" if merge else "compare", "rows": rows}
 
@@ -210,18 +225,39 @@ def markdown(report):
         code = row["source_commit"][:8] + ("*" if row["source_dirty"] else "")
         scope = "full" if counts["kind"] == "full_dataset" else f"selection of {counts['dataset_episodes']}"
         cells = [row["run"], row["dataset"], counts["completed_episodes"], scope,
-                 *(f"{values[key]:.6f}" for key in ("sr", "spl", "psr", "pespl")), code]
+                 *("n/a" if values[key] is None else f"{values[key]:.6f}"
+                   for key in ("sr", "spl", "psr", "pespl")), code]
         lines.append("| " + " | ".join(escape(cell) for cell in cells) + " |")
     if any(row["source_dirty"] for row in report["rows"]):
         lines.extend(["", "An asterisk marks a run launched with working-tree changes."])
     return "\n".join(lines) + "\n"
 
 
+def write_csv(report, stream):
+    identity_fields = ["run", "dataset", "source_commit", "source_dirty", "protocol_sha256"]
+    coverage_fields = ["completed_scenes", "completed_episodes", "dataset_episodes"]
+    metric_fields = ["sr", "spl", "psr", "pespl"]
+    fields = identity_fields + ["coverage"] + coverage_fields + ["completed_subtasks"] + metric_fields + [
+        "environment_identity_checked", "trajectory_frames_checked"]
+    writer = csv.DictWriter(stream, fieldnames=fields, lineterminator="\n")
+    writer.writeheader()
+    for row in report["rows"]:
+        writer.writerow({
+            **{key: row[key] for key in identity_fields},
+            "coverage": row["coverage"]["kind"],
+            **{key: row["coverage"][key] for key in coverage_fields},
+            "completed_subtasks": row["metrics"]["counts"]["completed_subtasks"],
+            **{key: row["metrics"]["mon_metrics"][key] for key in metric_fields},
+            "environment_identity_checked": row["environment_identity_checked"],
+            "trajectory_frames_checked": row["trajectory_checked"]["frames"] if row["trajectory_checked"] else None,
+        })
+
+
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("runs", nargs="+", type=Path)
     parser.add_argument("--merge", action="store_true", help="Combine disjoint runs with identical checked protocol identities")
-    parser.add_argument("--output", type=Path, help="Write summary.json and summary.md into a new directory")
+    parser.add_argument("--output", type=Path, help="Write summary.json, summary.csv and summary.md into a new directory")
     args = parser.parse_args(argv)
     if args.output is not None and args.output.exists():
         raise FileExistsError(args.output)
@@ -235,6 +271,8 @@ def main(argv=None):
             staging.mkdir()
             (staging / "summary.json").write_text(json.dumps(report, indent=2, sort_keys=True, allow_nan=False) + "\n")
             (staging / "summary.md").write_text(table)
+            with (staging / "summary.csv").open("w", encoding="utf-8", newline="") as stream:
+                write_csv(report, stream)
             staging.replace(destination)
     print(table, end="")
 

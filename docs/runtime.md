@@ -8,6 +8,8 @@
 
 Both workers accept `--run-plan`. [The native factories](../runtime/factories.py) compose services from that saved configuration. Process startup supplies owned import paths, cache locations, GPU visibility and seed controls. Ambient settings from the retained experiment launcher do not override the native method configuration. Existing run directories cannot be resumed in place.
 
+The launcher copies both environment locks into the run directory. Each native worker writes an [environment inventory](../runtime/environment.py) with its actual interpreter, package versions and locations, source search paths and selected GPU. Python user-site packages are disabled at process startup. These files describe installed metadata; the [installation diagnostic](installation.md#verify) separately checks native module origins and operations.
+
 The launcher starts [runtime.mapping_worker](../runtime/mapping_worker.py) in the mapping environment. Navigation uses [MappingClient](../runtime/mapping_client.py) to stream RGB-D frames and query the published map. Both use [runtime.protocol](../runtime/protocol.py).
 
 ## Backend ownership
@@ -26,7 +28,9 @@ The launcher runs [runtime.navigation_worker](../runtime/navigation_worker.py) d
 
 [The Habitat factory](../adapters/goat.py) receives categories and Detic resources. [The configuration adapter](../adapters/habitat_config.py) combines the retained sensor and Agent presets. They share the same observation and evaluation boundaries described in [components](components.md).
 
-The worker registers each constructed resource for cleanup. It closes the Agent's navigation backend, Habitat and mapping connection on completion or failure. SIGINT and SIGTERM unwind this scope. The launcher owns the navigation process group and records its command, PID, scene and exit code in `navigation_process_<index>.json`.
+The worker registers each constructed resource for cleanup. It closes the Agent's navigation backend, Habitat and mapping connection on completion or failure. SIGINT and SIGTERM unwind this scope. The launcher owns the navigation process group and records its command, PID, scene and exit code in `navigation_<scene>_process.json`.
+
+[TrajectoryEnvironment](../experiments/trajectory.py) observes the existing environment calls around the Runner. It adds no sensor reads and returns the underlying observation/action results. Each accepted action records its preceding Habitat world pose, episode/task/step identity, action ID/name and STOP reason under `results_*/.../episodes/`. Episode IDs are reversibly encoded as path components; their original values remain in `identity.json`. A failed step leaves the accepted-action prefix for diagnosis.
 
 The retained command-line flags and environment controls are translated once by [legacy_navigation_run](../runtime/legacy_navigation_run.py). The root launcher's `--run-plan` path bypasses that resolver. The native request, service assembly and Runner receive explicit settings and model resources. Habitat and SuperGlue sources are prepared separately and checked before worker startup.
 

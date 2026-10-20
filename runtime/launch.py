@@ -3,6 +3,7 @@
 from contextlib import contextmanager
 from dataclasses import replace
 from datetime import datetime, timezone
+import hashlib
 import json
 import os
 from pathlib import Path
@@ -181,8 +182,6 @@ def allocate_run(plan, *, tag="", resource_checks=None):
     if not re.fullmatch(r"[A-Za-z0-9_-]*", tag):
         raise ValueError("Run tag may contain letters, digits, underscores and hyphens")
     if resource_checks is not None:
-        import hashlib
-
         model_manifest = (plan.resources.root / "assets/models.json").read_bytes()
         if hashlib.sha256(model_manifest).hexdigest() != resource_checks["models"]["manifest_sha256"]:
             raise ValueError("Model manifest changed after the resource check")
@@ -193,6 +192,12 @@ def allocate_run(plan, *, tag="", resource_checks=None):
     plan.run_directory.mkdir(parents=True, exist_ok=False)
     (plan.run_directory / "logs").mkdir()
     (plan.run_directory / "artifacts").mkdir()
+    (plan.run_directory / "environment_locks").mkdir()
+    environment_locks = {}
+    for role in ("mapping", "navigation"):
+        data = (plan.resources.root / "envs" / role / "linux-64.lock.json").read_bytes()
+        (plan.run_directory / "environment_locks" / (role + ".json")).write_bytes(data)
+        environment_locks[role] = hashlib.sha256(data).hexdigest()
     write_json(plan.run_directory / "launch.json", plan.snapshot())
     import yaml
 
@@ -219,6 +224,8 @@ def allocate_run(plan, *, tag="", resource_checks=None):
             "mapping_environment": worker_environment(plan, "mapping", {}),
             "navigation_environment": worker_environment(plan, "navigation", {}),
             "in_place_resume_supported": False,
+            "artifact_schemas": {"environment": "pbsp_environment_v1", "trajectory": "pbsp_trajectory_v1"},
+            "environment_locks": environment_locks,
             **({"resource_checks": resource_checks} if resource_checks is not None else {}),
         },
     )

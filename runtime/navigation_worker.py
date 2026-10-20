@@ -295,8 +295,17 @@ def run_navigation(request, *, services_factory=build_services):
         services = services_factory(request, stack)
         results = request.output / f"results_{request.scene}" / services.config.EXP_NAME
         artifacts = RunArtifacts(results)
+        from experiments.trajectory import TrajectoryEnvironment
+
+        recorded_environment = TrajectoryEnvironment(
+            services.env, directory=results,
+            identities=request.planning_settings.episode_identities,
+            dataset_manifest_sha256=request.planning_settings.provenance.get("dataset_manifest_sha256"),
+            actions=services.actions,
+            action_metadata=lambda: getattr(services.agent, "last_action_metadata", {}),
+        )
         run_episodes(
-            env=services.env,
+            env=recorded_environment,
             evaluator=services.evaluator,
             agent=services.agent,
             candidate_provider=services.candidate_provider,
@@ -339,9 +348,11 @@ def main(argv=None):
         from runtime.plan import load_plan
         from runtime.bootstrap import configure_run_process
         from runtime.factories import navigation_request
+        from runtime.environment import record_environment
 
         plan = load_plan(args.run_plan)
         configure_run_process(plan, "navigation")
+        record_environment(plan, "navigation", scene=args.scene)
         request = navigation_request(plan, args.scene)
     else:
         from runtime.legacy_navigation_run import prepare_request

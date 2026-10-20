@@ -170,8 +170,10 @@ def main(argv=None):
         from runtime.plan import load_plan
         from runtime.bootstrap import configure_run_process
         from runtime.factories import create_mapper
+        from runtime.environment import record_environment
         plan = load_plan(args.run_plan)
         configure_run_process(plan, "mapping")
+        record_environment(plan, "mapping")
         mapper = create_mapper(plan, device=args.device)
         args.socket_path = str(plan.socket_path)
         args.top_k = plan.experiment.method.query.top_k

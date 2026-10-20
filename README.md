@@ -87,7 +87,7 @@ From the repository root:
 .cache/envs/navigation/bin/python run.py --config configs/experiments/hm3d_4mon.yaml
 ```
 
-Select `hm3d_2mon.yaml` or `hm3d_3mon.yaml` for another dataset. GPU IDs live in `runtime.local.yaml`. Keep `--limit-episodes 1` and remove `--check` to run one complete ordered episode. `--scene <id> --episode <id>` selects an exact runtime identity.
+Select `hm3d_2mon.yaml` or `hm3d_3mon.yaml` for another dataset. GPU IDs live in `runtime.local.yaml`; `--gpus 0,1` overrides them for one run. Keep `--limit-episodes 1` and remove `--check` to run one complete ordered episode. `--scene <id> --episode <id>` selects an exact runtime identity.
 
 Each run writes a new directory under the configured output root, normally `outputs/`:
 
