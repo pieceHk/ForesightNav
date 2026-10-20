@@ -37,7 +37,7 @@ python scripts/prepare_models.py --output /path/to/pbsp-weights \
   --zstd .cache/envs/mapping/bin/zstd
 ```
 
-The [model guide](models.md) covers offline caching, importing existing weights and SHA-256 checks. Public-source model download and extraction validation is in progress. The model adapters receive the selected paths directly; weight links inside vendor source directories are unnecessary.
+The [model guide](models.md) covers offline caching, importing existing weights and SHA-256 checks. All 22 publicly obtained files passed offline source preparation; whole-archive cache verification remains in progress. See the [model preparation record](validation/phase46_public_model_and_record_results.json). The model adapters receive the selected paths directly; weight links inside vendor source directories are unnecessary.
 
 ## Connect resources
 
@@ -69,5 +69,7 @@ python Exp/scripts/validate.py
 The installation check verifies input hashes, both environments' locked package versions, module origins, native extension imports, tensor operations and Detectron2 rotated NMS. It writes a new evidence directory under `Exp/runs/check_install/`. `--cpu-only` skips CUDA initialization while retaining CPU and source checks.
 
 Run `python scripts/check_install.py --smoke` to also load the default models and execute one complete ordered episode through the normal launcher. This checks Habitat reset, simulator actions and recorded episode metrics. `--scene <id> --episode <id>` selects an exact identity. New component implementations should pass their interface checks and a full ordered episode before a selected-split evaluation.
+
+The [recorded public CUDA smoke](validation/phase47_public_cuda_smoke_results.json) completed one 4-MON episode with all four targets successful; trajectory, environment and source records passed validation.
 
 Each run stores the checked model manifest and resource provenance beside its resolved experiment configuration.

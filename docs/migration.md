@@ -6,13 +6,17 @@
 
 ## 当前代码
 
+公开 `check_install.py --smoke` 已通过完整 CUDA 检查和一个完整 4-MON episode。使用两套公开安装的独立环境、公开注释重建的数据及 22 个公开来源模型文件，四个目标全部成功，共 414 个动作。44 条决策的身份完整，过期后缀分派为 0；环境锁、轨迹和完整源码快照通过校验，三个工作进程及根进程均以 0 退出。动作数及指标与已有单 episode 参考一致，本次检查耗时 513.211 秒。结果汇总已生成 JSON、CSV 和 Markdown，GPU 计算进程已退出，详见[公开 CUDA 单 episode 结果](validation/phase47_public_cuda_smoke_results.json)。
+
+Linux 完整测试为 747 项通过、0 跳过。实际单 episode 运行发现环境记录同时枚举到 tomli 的锁定版本与 setuptools 内置副本，原汇总器误报版本冲突。修复后按保存的搜索路径顺序选择版本，并保留全部元数据；错误版本优先、来源不明及优先级含糊时仍拒绝通过。原生运行的 414 帧轨迹、环境记录、完整源码快照及指标已通过只读复核，原始失败诊断保留，见[修复及复核记录](validation/phase46_public_model_and_record_results.json)。
+
 按用户要求停止整批评测，后续验收不要求跑满完整 split。停止时已有 59 个完整 episode、236 个目标；59,776 帧计时和 6,174 条决策的身份、任务顺序及指标重算均通过，过期后缀分派为 0。中断中的 episode 未纳入统计，四个已停止运行的原始状态和退出码保留，汇总工具正确拒绝将其当作完整运行。全部相关进程已退出，详见[已完成数据检查](validation/phase44_completed_data_results.json)。
 
 离线导出已完成真实跨机器恢复验证。6.61 GB 的代码、两套环境输入、episode 源注释和 Linux micromamba 从 macOS 完整传到服务器后，从 bundle 克隆了独立目录。Python 网络连接被禁用时，缓存、550 个 Habitat 文件及 6 个 SuperGlue 文件校验通过，三组数据重建及重复准备均通过，全部 1,300 个身份索引与原数据一致。2/3/4-MON 分别通过完整 600、400、300 个 episode 的输入检查，架构检查通过。本轮使用已有独立环境、场景及外部权重，没有重建环境或启动 GPU 推理。模型组的公开下载及完整导出仍待完成。详见[离线导出结果](validation/phase31_offline_export_results.json)。
 
 公开模型归档的成员位于根部，清单已去掉多余的 `pretrained/` 前缀。实际 FastSAM 文件验证了修正后的公开提取路径；输出路径、文件大小和 22 个权重哈希均未改变，详见[归档成员结果](validation/phase33_archive_member_results.json)。
 
-19 个公开下载的直接文件及两份模型版本引用已传到服务器，在禁用联网、未加载模型的条件下逐项校验，19 个文件均与原实验权重同哈希。另从归档前缀完整读取了 FastSAM 和 `freesplatpp_scannet_gtdepth.ckpt`，两者大小及 SHA-256 均与清单一致。MaskAdapter、整个归档及完整模型组的准备仍待验证，详见[公开模型暂存结果](validation/phase41_public_model_staging_results.json)。
+22 个公开来源文件及两份模型版本引用已在服务器通过离线 `--source` 准备，全部与原实验权重同哈希。MaskAdapter 使用作者公开 Space 中的固定版本，另外两个权重来自归档前缀中已完整读取的成员；输出路径、大小和 22 个文件哈希保持不变。整个归档及默认缓存导出仍待验证，详见[模型准备结果](validation/phase46_public_model_and_record_results.json)。
 
 新增公开结果汇总入口 `scripts/summarize.py`。它按保存的身份索引核对任务顺序、工作进程退出记录及逐帧耗时，从原始任务测量重算 episode 和 run 指标，再核对已有汇总。多个运行可分别比较；合并分片时还要求代码、方法、数据、随机种子、模型及评测身份一致，来源干净且 episode 不重叠。真实 4-MON 单 episode 的 414 步记录在 Linux 和 macOS 上重算后均与缓存指标完全一致，表格明确标为 300 个 episode 中的 1 个。相关 40 项检查在本机和 Linux 上通过；完整 split 的实际合并未执行，本轮验收无需运行完整 split。实验协议和指标定义见[复现说明](reproduction.md)，证据见[结果汇总验证](validation/phase32_result_summary_results.json)。
 
@@ -150,12 +154,12 @@ README 的环境部分补齐了双环境安装、权重准备和本机资源配�
 
 为明确完整评测与后续发布整理的关系，比较了冻结评测提交 `3665bae` 和当前源码：八个目录树的 2,434 个跟踪文件路径、内容和模式一致，22 个模型文件身份不变，外置 SuperGlue 的六个文件与冻结版本完全一致。八个在运行工作进程的解释器、资源环境和已映射库路径再次通过检查。该证据不等同于完整运行时相同，评测结果仍须标注实际冻结提交；当前源码的 CUDA/完整 smoke 验证继续保留，见[边界审计](validation/phase35_frozen_source_boundaries.json)。
 
-输出补齐了逐 episode 的身份与动作轨迹、工作进程环境清单、启动时环境锁快照及 CSV 汇总。记录层包在实验环境外部，不改策略循环，也不额外读取传感器；汇总会交叉核对轨迹、计时、STOP 原因及包版本。根入口另支持架构中列出的 `--gpus mapping,navigation`。macOS 针对性检查 135 项通过，包含未改动的冻结循环回归、两 episode/恢复动作透明性和记录损坏拒绝测试。完整选定 split 继续使用冻结源码，新记录层仍需当前源码的真实 GPU episode 验证，见[记录](validation/phase36_native_recording_results.json)。
+输出补齐了逐 episode 的身份与动作轨迹、工作进程环境清单、启动时环境锁快照及 CSV 汇总。记录层包在实验环境外部，不改策略循环，也不额外读取传感器；汇总会交叉核对轨迹、计时、STOP 原因及包版本。根入口另支持架构中列出的 `--gpus mapping,navigation`。macOS 针对性检查 135 项通过，包含未改动的冻结循环回归、两 episode/恢复动作透明性和记录损坏拒绝测试。完整选定 split 继续使用冻结源码，新记录层的真实 GPU episode 验证见后续记录，见[记录](validation/phase36_native_recording_results.json)。
 
 Linux 完整测试 726 项通过、0 跳过。两套独立 public-locked 环境用新清单模块实测记录 129/173 个分发包，其中锁定的 122/163 个输入版本全部匹配；检查时隐藏 CUDA、禁用 Python 网络连接，未导入模型库。真实根入口 `--gpus 7,6 --check` 通过。历史真实 414 步四目标 episode 经新 CLI 导出 CSV，四项指标与原始 JSON 完全一致，且明确保留缺少历史环境/轨迹记录的状态。观察层新增了对 2/3/4-MON 的直接重放覆盖，macOS 针对性检查扩为 137 项通过。
 
-观察层对 2/3/4-MON、多 episode 重置和恢复动作的直接覆盖补齐后，Linux 完整测试扩展为 728 项通过、0 跳过。当前实现的真实模型加载与完整 GPU episode 检查仍保留为待完成项。
+观察层对 2/3/4-MON、多 episode 重置和恢复动作的直接覆盖补齐后，Linux 完整测试扩展为 728 项通过、0 跳过。该阶段尚未执行真实模型加载与完整 GPU episode 检查，后续结果见本页当前代码。
 
 源码追溯补齐了 Git patch 不包含的新建文件：启动时保存 `source_snapshot.json` 和 `source_untracked/`，汇总交叉验证快照清单、文件内容、执行位和 patch。链接只记录目标，不读取外部内容；超出字节预算或捕获期间变化的对象显式标为不完整。历史运行保持缺少该记录的状态，不作回填。macOS 针对性检查 88 项通过，包含移除原 Git 目录后的独立校验和错误快照拒绝测试，见[记录](validation/phase38_source_snapshot_results.json)。
 
-源码快照随后通过 Linux 完整测试（741 项、0 跳过）及真实 `allocate_run` 路径验证。该路径使用实际数据和已校验模型文件，生成可独立验证的干净源码快照和两份锁文件；检查中未导入模型库、未启动工作进程，未执行的目录也被汇总工具正确拒绝。它验证了运行准备与源码追溯，完整 GPU episode 验证仍待资源空闲。
+源码快照随后通过 Linux 完整测试（741 项、0 跳过）及真实 `allocate_run` 路径验证。该路径使用实际数据和已校验模型文件，生成可独立验证的干净源码快照和两份锁文件；检查中未导入模型库、未启动工作进程，未执行的目录也被汇总工具正确拒绝。它验证了运行准备与源码追溯，该阶段仅验证 CPU 准备，GPU 结果见本页当前代码。

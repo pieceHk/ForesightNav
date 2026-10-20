@@ -27,7 +27,7 @@ python scripts/prepare_models.py --offline --cache /path/to/offline-pbsp/models 
   --output /path/to/pbsp-weights --zstd .cache/envs/mapping/bin/zstd
 ```
 
-Download and extraction validation against the public model sources is in progress. The manifest hashes identify the existing weights used by the controlled inference replays.
+All 22 publicly obtained files passed individual size and SHA-256 checks and offline `--source` preparation on Linux. The two selected archive members were read completely from a growing archive prefix; verification of the entire archive and its cache export is still in progress. See the [preparation record](validation/phase46_public_model_and_record_results.json).
 
 ## Import an existing set
 
