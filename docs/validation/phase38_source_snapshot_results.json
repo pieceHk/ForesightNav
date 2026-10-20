@@ -1,5 +1,5 @@
 {
-  "status": "targeted_tests_passed_linux_and_real_allocation_pending",
+  "status": "linux_and_real_cpu_allocation_passed_gpu_episode_pending",
   "scope": "Source provenance for tracked patches and untracked working-tree objects; no policy/model changes",
   "macos": {
     "passed": 88,
@@ -23,5 +23,32 @@
     "Default untracked regular-file capture budget is64MiB; skipped or unstable objects make the snapshot explicitly incomplete",
     "Actual current-source CUDA/model episode validation remains pending free GPUs",
     "Frozen full-split evaluation at3665bae is untouched; no historical artifacts are backfilled"
-  ]
+  ],
+  "linux": {
+    "source_commit": "9623db42bbdc077a4afabb7647dc27752a5b7f34",
+    "passed": 741,
+    "skipped": 0,
+    "warnings": 17,
+    "seconds": 44.52,
+    "cuda_visible_devices": "",
+    "scope": "Complete suite in the independent navigation candidate, with zstd supplied by the locked mapping environment"
+  },
+  "actual_native_allocation": {
+    "complete_episodes_selected": 1,
+    "helper_sha256": "273108482471d61be2fb87c17c91795cefb148ecb79f833e43545ba9cbc57758",
+    "locks": {
+      "mapping": "0fa43099a91c19d81cfc97c15e204debea803d1279fe8b440954d182b217c675",
+      "navigation": "04b9ff0e8a459ad5a4ce9274a15421d35f86884da39bb4efc541ac133905a1ee"
+    },
+    "scope": "Actual native allocate_run with validated data/dependency/model files; CPU-only, no models imported and no workers started. Existing verified external weights were used only for file checks. This is not GPU inference.",
+    "snapshot": {
+      "captured_file_bytes": 0,
+      "complete": true,
+      "untracked_objects": 0
+    },
+    "source_commit": "9623db42bbdc077a4afabb7647dc27752a5b7f34",
+    "source_patch_bytes": 0,
+    "status": "passed",
+    "unrun_allocation_rejected_by_summary": true
+  }
 }
