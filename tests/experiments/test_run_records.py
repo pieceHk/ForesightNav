@@ -1,7 +1,10 @@
 """Reject incomplete traces and environment claims using independent run records."""
 
 import hashlib
+import importlib.metadata
 import json
+import shutil
+import sys
 
 import pytest
 
@@ -111,6 +114,69 @@ def test_an_extra_installed_version_changes_the_merge_protocol(tmp_path):
     second, _ = with_recordings(tmp_path, 1)
     mutate_json(second / "mapping_environment.json", lambda data: data["packages"].append(
         {"name": "extra-backend", "version": "1.0", "location": "/another/environment"}))
+    assert len(summarize_runs([first, second])["rows"]) == 2
+    with pytest.raises(ValueError, match="different code"):
+        summarize_runs([first, second], merge=True)
+
+
+@pytest.mark.parametrize("vendor_first", [False, True])
+def test_duplicate_metadata_matches_real_python_lookup_and_remains_portable(tmp_path, monkeypatch, vendor_first):
+    run, _ = with_recordings(tmp_path)
+    path = run / "navigation_environment_0.json"
+    report = json.loads(path.read_text())
+    expected = next(row["version"] for row in report["packages"] if row["name"] == "tomli")
+    site = tmp_path / "metadata"
+    vendor = site / "setuptools/_vendor"
+    for directory, version in ((site, expected), (vendor, "2.0.1")):
+        metadata = directory / f"tomli-{version}.dist-info"
+        metadata.mkdir(parents=True)
+        (metadata / "METADATA").write_text(f"Metadata-Version: 2.1\nName: tomli\nVersion: {version}\n")
+    paths = [str(vendor), str(site)] if vendor_first else [str(site), str(vendor)]
+    with monkeypatch.context() as patch:
+        patch.setattr(sys, "path", paths)
+        assert importlib.metadata.version("tomli") == ("2.0.1" if vendor_first else expected)
+    for row in report["packages"]:
+        row["location"] = str(site)
+    report["source_search_paths"] = paths
+    report["packages"].append({"name": "TOMLI", "version": "2.0.1", "location": str(vendor)})
+    write(path, report)
+    shutil.rmtree(site)
+    if vendor_first:
+        with pytest.raises(ValueError, match="differs from the lock: tomli"):
+            summarize_runs([run])
+    else:
+        result = summarize_runs([run])
+        assert result["rows"][0]["environment_identity_checked"] is True
+        assert json.loads(path.read_text()) == report
+
+
+@pytest.mark.parametrize("case", ["missing_paths", "unknown_location", "same_location"])
+def test_duplicate_versions_require_unambiguous_recorded_precedence(tmp_path, case):
+    run, _ = with_recordings(tmp_path)
+    path = run / "navigation_environment_0.json"
+    report = json.loads(path.read_text())
+    location = "/navigation/site-packages"
+    vendor = location + "/setuptools/_vendor"
+    if case != "missing_paths":
+        report["source_search_paths"] = [location, vendor]
+    duplicate = location if case == "same_location" else "/unrecorded" if case == "unknown_location" else vendor
+    report["packages"].append({"name": "tomli", "version": "2.0.1", "location": duplicate})
+    write(path, report)
+    with pytest.raises(ValueError, match="package (precedence|metadata)"):
+        summarize_runs([run])
+
+
+def test_active_version_precedence_changes_merge_protocol_for_unlocked_packages(tmp_path):
+    first, _ = with_recordings(tmp_path)
+    second, _ = with_recordings(tmp_path, 1)
+    for run, reverse in ((first, False), (second, True)):
+        path = run / "navigation_environment_0.json"
+        report = json.loads(path.read_text())
+        paths = ["/navigation/site-packages", "/navigation/site-packages/vendor"]
+        report["source_search_paths"] = paths[::-1] if reverse else paths
+        report["packages"].extend({"name": "extra-backend", "version": version, "location": location}
+                                  for version, location in zip(("1.0", "2.0"), paths))
+        write(path, report)
     assert len(summarize_runs([first, second])["rows"]) == 2
     with pytest.raises(ValueError, match="different code"):
         summarize_runs([first, second], merge=True)

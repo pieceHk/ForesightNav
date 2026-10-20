@@ -4,7 +4,42 @@ from dataclasses import asdict
 import hashlib
 import json
 import math
+import posixpath
 import re
+
+
+def package_versions(report):
+    """Resolve duplicated metadata using recorded import-path precedence."""
+    grouped, packages = {}, set()
+    for package in report["packages"]:
+        if not all(isinstance(package.get(key), str) and package[key]
+                   for key in ("name", "version", "location")):
+            raise ValueError("Invalid environment package record")
+        name = re.sub(r"[-_.]+", "-", package["name"]).lower()
+        grouped.setdefault(name, []).append(package)
+        packages.add((name, package["version"]))
+    resolved = {}
+    for name, entries in grouped.items():
+        versions = {entry["version"] for entry in entries}
+        if len(versions) == 1:
+            resolved[name] = next(iter(versions))
+            continue
+        priorities = {}
+        for index, path in enumerate(report.get("source_search_paths", ())):
+            if isinstance(path, str) and path.startswith("/"):
+                priorities.setdefault(posixpath.normpath(path), index)
+        candidates = []
+        for entry in entries:
+            location = posixpath.normpath(entry["location"])
+            if location not in priorities:
+                raise ValueError(f"Cannot resolve recorded package precedence: {name}")
+            candidates.append((priorities[location], entry["version"]))
+        first = min(priority for priority, _ in candidates)
+        selected = {version for priority, version in candidates if priority == first}
+        if len(selected) != 1:
+            raise ValueError(f"Ambiguous recorded package metadata: {name}")
+        resolved[name] = next(iter(selected))
+    return packages, resolved
 
 
 def environment_identity(directory, plan, provenance, read_json):
@@ -41,17 +76,13 @@ def environment_identity(directory, plan, provenance, read_json):
         lock = read_json(lock_path)
         if list(map(int, report["python_version"].split(".")[:2])) != lock["python"]:
             raise ValueError("Recorded Python differs from its environment lock")
-        packages = set()
-        for package in report["packages"]:
-            if not all(isinstance(package[key], str) and package[key] for key in ("name", "version", "location")):
-                raise ValueError("Invalid environment package record")
-            packages.add((re.sub(r"[-_.]+", "-", package["name"]).lower(), package["version"]))
+        packages, resolved = package_versions(report)
         for item in lock["packages"]:
             name = re.sub(r"[-_.]+", "-", item.get("installed_distribution", item["name"])).lower()
-            if {version for package, version in packages if package == name} != {item["version"]}:
+            if resolved.get(name) != item["version"]:
                 raise ValueError(f"Recorded installed package differs from the lock: {name}")
         signature = {"python_version": report["python_version"], "lock_sha256": lock_hash,
-                     "packages": sorted(packages)}
+                     "packages": sorted(packages), "resolved_packages": sorted(resolved.items())}
         if role in signatures and signatures[role] != signature:
             raise ValueError("Installed navigation environment changed between scenes")
         signatures[role] = signature
