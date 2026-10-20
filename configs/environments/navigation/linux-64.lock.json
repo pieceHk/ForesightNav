@@ -2115,8 +2115,8 @@
     {
       "name": "frontier",
       "repository_path": "third_party/frontier_exploration",
-      "content_sha256": "2489b1d646255e60655d81b15c30d03b71abdaaa2607578012045c0a80292682",
-      "files": 24
+      "content_sha256": "cf73e0a3e8016173350324fd1840d92a89d979d867c5a25e8d6a9625abaaa6de",
+      "files": 17
     }
   ],
   "validation_packages": [
