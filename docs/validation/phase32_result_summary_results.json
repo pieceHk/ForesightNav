@@ -1,0 +1,38 @@
+{
+  "status": "local_and_real_record_checks_passed_linux_tests_pending",
+  "base_commit": "8965ffa2bc884d51be5d2a95ce13288e6681e840",
+  "scope": "Public posthoc recomputation, comparison tables and strict merging of completed disjoint native runs; no metric formula or inference change",
+  "targeted_tests": {
+    "passed": 40,
+    "seconds": 0.47,
+    "scope": "Summary binding and rejection cases, canonical MON metrics and architecture structure"
+  },
+  "real_completed_run": {
+    "source_commit": "2228afad953e19b3ee63c32d132114cbe54c0d60",
+    "dataset": "hm3dv1_4mon_balanced1200",
+    "complete_episodes": 1,
+    "complete_subtasks": 4,
+    "steps": 414,
+    "raw_records_and_cached_metrics_equal": true,
+    "macos_stdlib_replay": "passed",
+    "linux_replay": "passed",
+    "coverage": {
+      "completed_episodes": 1,
+      "completed_scenes": 1,
+      "dataset_episodes": 300,
+      "kind": "selected_episodes"
+    },
+    "mon_metrics": {
+      "sr": 1.0,
+      "spl": 0.60856290807867,
+      "psr": 1.0,
+      "pespl": 0.648577769229401
+    },
+    "portable_evidence_files": 11,
+    "portable_evidence_bytes": 100976,
+    "model_manifest_recorded_in_this_older_run": false
+  },
+  "running_split_group": "Rejected with Run is not completed; no run files changed",
+  "full_split_merge": "pending actual completion of all running groups",
+  "linux_targeted_tests": "pending"
+}

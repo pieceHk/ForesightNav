@@ -90,7 +90,7 @@ outputs/<run>/
 └── mon_metrics.json        # SR, SPL, PSR and PeSPL
 ```
 
-Per-episode metrics and candidate decisions live under scene result directories; final map images are in `artifacts/mapping_final/`. Worker exit records and logs accompany the results. See [runtime and outputs](docs/runtime.md) for lifecycle and configuration details.
+Per-episode metrics and candidate decisions live under scene result directories; final map images are in `artifacts/mapping_final/`. Worker exit records and logs accompany the results. See [runtime and outputs](docs/runtime.md) for lifecycle details, and [result summarization](docs/reproduction.md#recompute-and-compare) to recompute metrics, compare runs or merge completed shards.
 
 ## Components
 
