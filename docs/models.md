@@ -10,7 +10,7 @@ On a computer with internet access:
 python scripts/prepare_models.py --output /path/to/pbsp-weights
 ```
 
-The EmbodiedSplat release supplies three selected weights inside a 6.98 GB archive. Extraction needs `zstd`; use `--zstd .cache/envs/mapping/bin/zstd` to select the executable installed with the mapping environment. The script extracts only the selected files. Other models download separately from their original providers.
+The EmbodiedSplat release supplies two selected weights inside a 6.98 GB archive. Extraction needs `zstd`; use `--zstd .cache/envs/mapping/bin/zstd` to select the executable installed with the mapping environment. The script extracts only the selected files. Other models download separately from their original providers.
 
 Downloads use 32 MiB ranges when the provider supports them. Interrupted responses resume from the saved `.partial` file, with up to three attempts per range. A provider that ignores ranges is handled as a full download. Every complete file must match its pinned size and SHA-256 before entering the cache; HTTP errors such as 404, invalid ranges and checksum failures stop that artifact.
 
@@ -42,7 +42,8 @@ Import checks every source and existing destination before copying. It copies se
 
 | Resource | Provider |
 | --- | --- |
-| Reconstruction, FastSAM and MaskAdapter | [EmbodiedSplat](https://github.com/0nandon/EmbodiedSplat), [released archive](https://huggingface.co/datasets/onandon/EmbodiedSplat/tree/60307f90694e57dc364ac72795b9c6a7bd1e0437) |
+| Reconstruction and FastSAM | [EmbodiedSplat](https://github.com/0nandon/EmbodiedSplat), [released archive](https://huggingface.co/datasets/onandon/EmbodiedSplat/tree/60307f90694e57dc364ac72795b9c6a7bd1e0437) |
+| MaskAdapter | [MaskAdapter](https://github.com/hustvl/MaskAdapter), [pinned author checkpoint](https://huggingface.co/spaces/wondervictor/Mask-Adapter/blob/7f589c6a796ed653b0b10642f4802d944d86791f/model_0279999_with_sem_new.pth) |
 | EfficientNetV2 | [timm model configuration](https://github.com/huggingface/pytorch-image-models/blob/v0.4.12/timm/models/efficientnet.py) |
 | MobileCLIP-S0 | [Apple's download script](https://github.com/apple/ml-mobileclip/blob/main/get_pretrained_models.sh) |
 | Detic | [Detic model zoo](https://github.com/facebookresearch/Detic/blob/main/docs/MODEL_ZOO.md) |

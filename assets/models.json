@@ -20,8 +20,7 @@
       "path": "maskadpater_ckpt.pth",
       "bytes": 59644562,
       "sha256": "b6c403930166df235cde4f99f997e3d9de35fc5bfba482ac421e42b4266e3581",
-      "archive": "embodiedsplat_pretrained",
-      "member": "maskadpater_ckpt.pth"
+      "url": "https://huggingface.co/spaces/wondervictor/Mask-Adapter/resolve/7f589c6a796ed653b0b10642f4802d944d86791f/model_0279999_with_sem_new.pth"
     },
     {
       "path": "tf_efficientnetv2_s_21ft1k-d7dafa41.pth",
