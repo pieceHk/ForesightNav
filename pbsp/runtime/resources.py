@@ -1,6 +1,6 @@
 """Locate the default backend resources used by a resolved run."""
 
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from pathlib import Path
 import os
 import json
@@ -95,6 +95,24 @@ class ResourcePaths:
             *(nav.seem_tokenizer / name for name in ("vocab.json", "merges.txt", "tokenizer_config.json", "special_tokens_map.json")),
             *(getattr(nav, name) for name in ("habitat_config", "agent_config", "categories", "seem_config", "seem_checkpoint", "mobileclip_checkpoint", "detic_config", "detic_checkpoint")),
         ]
+
+
+@dataclass(frozen=True)
+class ObjectNavResourcePaths(ResourcePaths):
+    scenes: Path
+    scene_config: Path
+
+    @property
+    def scene_directory(self):
+        return self.scenes
+
+    @property
+    def scene_dataset(self):
+        return self.scene_config
+
+    def navigation_resources(self):
+        return replace(super().navigation_resources(),
+                       habitat_config=self.root/'configs/habitat_objectnav.yaml')
 
 
 def validate_resources(resources, runtime):

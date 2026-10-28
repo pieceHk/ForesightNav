@@ -9,6 +9,7 @@ from contextlib import ExitStack
 from dataclasses import dataclass
 from functools import partial
 import json
+import hashlib
 from pathlib import Path
 from typing import TYPE_CHECKING, Any, Mapping, Optional
 
@@ -62,8 +63,11 @@ class NavigationRequest:
     escape_radius_m: float = 3.0
     escape_min_distance_m: float = 1.25
     random_min_distance_m: float = 2.0
+    dataset_format: str = 'goat_mon'
 
     def __post_init__(self):
+        if self.dataset_format not in {'goat_mon', 'objectnav'}:
+            raise ValueError('Unknown native navigation dataset format')
         if self.top_k < 1 or self.episode_start < 0:
             raise ValueError("Expected positive top_k and a non-negative episode start")
         if self.episode_end is not None and self.episode_end <= self.episode_start:
@@ -106,6 +110,7 @@ class NavigationServices:
     actions: Any
     config: Any
     episode_end: int
+    metric_protocol: Any = None
 
 
 def enable_planning_maps(agent, *, scsp_enabled, print_images):
@@ -137,7 +142,13 @@ def configure_experiment(config, request):
     config.EXP_FIRST = False
     config.habitat.environment.iterator_options.shuffle = False
     config.DUMP_LOCATION = str(request.output)
-    config.habitat.dataset.data_path = str(request.dataset / "val_seen.json.gz")
+    native = getattr(request, 'dataset_format', 'goat_mon') == 'objectnav'
+    config.habitat.dataset.data_path = str(request.dataset / ('val.json.gz' if native else 'val_seen.json.gz'))
+    if native:
+        config.habitat.dataset.split = 'val'
+        config.habitat.environment.max_episode_steps = request.max_steps_per_task
+        config.ENVIRONMENT.max_num_sub_task_episodes = 1
+        config.AGENT.radius = config.habitat.simulator.agents.main_agent.radius
     if request.resources.scene_directory is not None:
         config.habitat.dataset.scenes_dir = str(request.resources.scene_directory)
     if request.resources.scene_dataset is not None:
@@ -168,7 +179,28 @@ def build_services(request, stack):
     from experiments.dataset import load_runtime_tasks
     from pbsp.runtime.mapping_client import MappingClient
 
-    for path in (request.dataset / "val_seen.json.gz", request.dataset / "content"):
+    native = getattr(request, 'dataset_format', 'goat_mon') == 'objectnav'
+    metric_protocol = None
+    if native:
+        from pbsp.adapters.objectnav import create_environment, policy_category
+        from experiments.objectnav import ObjectNavEvaluator, ObjectNavMetricProtocol, validate_episode_identity
+        manifest_path = request.dataset/'dataset_manifest.json'
+        raw = manifest_path.read_bytes()
+        if hashlib.sha256(raw).hexdigest() != request.planning_settings.provenance['dataset_manifest_sha256']:
+            raise ValueError('Native ObjectNav source manifest changed after planning')
+        rows = json.loads(raw)['entries']
+        native_identities = {(Path(row['scene_id']).name.split('.')[0], str(row['content_index'])): row for row in rows}
+        if len(native_identities) != len(rows):
+            raise ValueError('Native ObjectNav identities are ambiguous')
+
+        def task_reader(scene, episode):
+            return [[policy_category(native_identities[(str(scene), str(episode))]['category']), 'object']]
+
+        metric_protocol = ObjectNavMetricProtocol(native_identities)
+    else:
+        task_reader = partial(load_runtime_tasks, str(request.dataset / 'content'))
+
+    for path in (request.dataset / ('val.json.gz' if native else 'val_seen.json.gz'), request.dataset / 'content'):
         if not path.exists():
             raise FileNotFoundError(path)
     candidate_provider = MappingClient(
@@ -176,7 +208,7 @@ def build_services(request, stack):
         top_k=request.top_k,
         connect_timeout=120.0,
         live_mode=request.live_mode,
-        task_reader=partial(load_runtime_tasks, str(request.dataset / "content")),
+        task_reader=task_reader,
     )
     stack.callback(candidate_provider.close)
     config = configure_experiment(
@@ -188,6 +220,10 @@ def build_services(request, stack):
     habitat_env = Env(config)
     stack.callback(habitat_env.close)
     selected, episode_end = select_habitat_episodes(habitat_env.episodes, request)
+    if native:
+        for episode in selected:
+            key = (Path(episode.scene_id).name.split('.')[0], str(episode.episode_id))
+            validate_episode_identity(episode, native_identities[key])
     habitat_env.episode_iterator = iter(selected)
     env = create_environment(
         habitat_env,
@@ -195,7 +231,7 @@ def build_services(request, stack):
         resources=request.resources,
         semantic_source=request.settings.semantic_source,
     )
-    evaluator = env.evaluator
+    evaluator = ObjectNavEvaluator(habitat_env) if native else env.evaluator
     agent = LagMemoAgent(
         config=config,
         seem_cfg={
@@ -210,7 +246,7 @@ def build_services(request, stack):
            if request.resources.matching else {}),
     )
     stack.callback(agent.close)
-    agent.top_down_map_reader = evaluator.top_down_map
+    agent.top_down_map_reader = getattr(evaluator, 'top_down_map', lambda: None)
     enable_planning_maps(
         agent,
         scsp_enabled=request.planning_settings.mode != "off",
@@ -224,6 +260,7 @@ def build_services(request, stack):
         DiscreteNavigationAction,
         config,
         episode_end,
+        metric_protocol,
     )
 
 
@@ -324,6 +361,7 @@ def run_navigation(request, *, services_factory=build_services):
             ),
             planning_settings=request.planning_settings,
             artifacts=artifacts,
+            metric_protocol=services.metric_protocol,
         )
         with (results / "es_status.json").open("w") as stream:
             json.dump(artifacts.es_status_log, stream, indent=4)

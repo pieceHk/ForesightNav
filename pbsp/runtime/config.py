@@ -115,6 +115,43 @@ class DatasetConfig:
 
 
 @dataclass(frozen=True)
+class ObjectNavDatasetConfig:
+    format: str
+    name: str
+    split: str
+    root: str
+    manifest: str
+    manifest_sha256: str
+    expected_episodes: int
+    expected_scenes: int
+    scene_directory: str
+    scene_dataset: str
+
+    def __post_init__(self):
+        if self.format != 'objectnav' or self.split != 'val':
+            raise ConfigError('Native ObjectNav requires format=objectnav and split=val')
+        for name in ('name', 'root', 'manifest', 'scene_directory', 'scene_dataset'):
+            value = getattr(self, name)
+            _text(value, name)
+            if name != 'name' and (Path(value).is_absolute() or '..' in Path(value).parts):
+                raise ConfigError('ObjectNav resource paths must be relative: ' + name)
+        digest = self.manifest_sha256
+        if not isinstance(digest, str) or len(digest) != 64 or any(c not in '0123456789abcdef' for c in digest):
+            raise ConfigError('ObjectNav manifest_sha256 must be a lowercase SHA-256')
+        for name in ('expected_episodes', 'expected_scenes'):
+            _positive(getattr(self, name), name)
+
+    @property
+    def expected_tasks_per_episode(self):
+        return 1
+
+
+def dataset_config(value):
+    cls = ObjectNavDatasetConfig if isinstance(value, dict) and 'format' in value else DatasetConfig
+    return _typed(cls, value)
+
+
+@dataclass(frozen=True)
 class EvaluationConfig:
     max_steps_per_task: int
     metrics: tuple[str, ...]
@@ -226,7 +263,7 @@ def load_experiment(
         name=experiment["name"],
         seed=experiment["seed"],
         method=settings,
-        dataset=_typed(DatasetConfig, sections["dataset"]),
+        dataset=dataset_config(sections["dataset"]),
         evaluation=_typed(EvaluationConfig, sections["evaluation"]),
         runtime=runtime,
         source_sha256={
@@ -279,7 +316,7 @@ def experiment_from_snapshot(value: dict) -> ExperimentConfig:
         name=value["name"],
         seed=value["seed"],
         method=method_settings(value["method"]),
-        dataset=_typed(DatasetConfig, value["dataset"]),
+        dataset=dataset_config(value["dataset"]),
         evaluation=_typed(EvaluationConfig, value["evaluation"]),
         runtime=runtime,
         source_sha256=value["source_sha256"],

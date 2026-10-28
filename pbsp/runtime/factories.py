@@ -108,6 +108,7 @@ def navigation_request(plan, scene):
         settings=nav,
         category_cooldowns=config.method.query_switch_cooldown_by_category,
         seed=config.seed,
+        dataset_format=getattr(config.dataset, 'format', 'goat_mon'),
         planning_settings=PlanningRunSettings(
             mode=suffix.mode,
             arm=suffix.mode,

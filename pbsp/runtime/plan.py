@@ -11,7 +11,7 @@ from experiments.dataset import build_identity_index, load_identity_index
 from pbsp.types import EpisodeIdentity
 from pbsp.mapping.spec import ModelInputSpec
 from pbsp.runtime.config import ExperimentConfig, experiment_from_snapshot, read_yaml
-from pbsp.runtime.resources import ResourcePaths
+from pbsp.runtime.resources import ResourcePaths, ObjectNavResourcePaths
 
 SCHEMA = "pbsp_launch_v1"
 
@@ -116,21 +116,31 @@ def prepare_plan(
     )
     dataset = resources.data / experiment.dataset.root
     config = experiment.dataset
-    payload = build_identity_index(
-        dataset,
-        config.expected_tasks_per_episode,
-        config.manifest_sha256,
-        config.source_trace_sha256,
-    )
-    index = load_identity_index(dataset / config.identities, config.manifest_sha256)
-    checked = {
-        (row["scene_id"], row["runtime_episode_id"]): EpisodeIdentity(
-            dataset_manifest_sha256=config.manifest_sha256, **row
+    if getattr(config, 'format', None) == 'objectnav':
+        from experiments.objectnav_data import load_dataset, episode_identities
+        manifest = load_dataset(dataset, config)
+        values = episode_identities(manifest, config.manifest_sha256)
+        checked = index = {(item.scene_id, item.runtime_episode_id): item for item in values}
+        payload = {'episodes': [asdict(item) for item in values]}
+        scenes_path = resources.data/config.scene_directory
+        resources = ObjectNavResourcePaths(resources.root, resources.data, resources.weights,
+                                           scenes_path, scenes_path/config.scene_dataset)
+    else:
+        payload = build_identity_index(
+            dataset,
+            config.expected_tasks_per_episode,
+            config.manifest_sha256,
+            config.source_trace_sha256,
         )
-        for row in payload["episodes"]
-    }
-    if checked != index:
-        raise ValueError("Prepared identity index differs from the validated dataset")
+        index = load_identity_index(dataset / config.identities, config.manifest_sha256)
+        checked = {
+            (row["scene_id"], row["runtime_episode_id"]): EpisodeIdentity(
+                dataset_manifest_sha256=config.manifest_sha256, **row
+            )
+            for row in payload["episodes"]
+        }
+        if checked != index:
+            raise ValueError("Prepared identity index differs from the validated dataset")
     if (
         len(index) != config.expected_episodes
         or len({key[0] for key in index}) != config.expected_scenes
@@ -206,7 +216,7 @@ def load_plan(path):
         )
     plan = RunPlan(
         experiment,
-        ResourcePaths(
+        (ObjectNavResourcePaths if getattr(experiment.dataset, 'format', None) == 'objectnav' else ResourcePaths)(
             **{name: Path(item) for name, item in value["resources"].items()}
         ),
         tuple(

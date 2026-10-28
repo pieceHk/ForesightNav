@@ -15,12 +15,12 @@ import numpy as np
 
 from experiments.dataset import task_category as _task_category
 from experiments.metrics import (
-    DISTANCE_TO_GOAL_KEY, SPL_KEY, SUCCESS_KEY, build_subtask_telemetry,
-    summarize_episode, summarize_records, write_json_strict,
+    write_json_strict,
 )
+from experiments.metric_protocol import GoatMetricProtocol
+from pbsp.adapters.habitat import task_index
 from experiments.recorder import (
     finalize_dispatch_event as _finalize_scsp_dispatch_event,
-    finite_metric_summary as _finite_metric_summary,
     record_provider_event as _record_scsp_provider_event,
     write_timing_rows as _write_timing_rows,
 )
@@ -82,7 +82,7 @@ def run_episodes(
     *, env, evaluator, agent, candidate_provider, category_cooldown, reranker,
     planning, sample_goal, actions, settings: RunSettings,
     planning_settings: PlanningRunSettings, artifacts: RunArtifacts,
-    progress_factory=None, clock=time,
+    progress_factory=None, clock=time, metric_protocol=None,
 ):
     """Execute the full episode/task loop; resources belong to the caller.
 
@@ -93,6 +93,7 @@ def run_episodes(
         from tqdm import tqdm as progress_factory
     tqdm = progress_factory
     time = clock
+    metric_protocol = GoatMetricProtocol() if metric_protocol is None else metric_protocol
     DiscreteNavigationAction = actions
     episode_start, episode_end = settings.episode_start, settings.episode_end
     results_dir = str(artifacts.directory)
@@ -186,15 +187,16 @@ def run_episodes(
             continue
 
         agent.planner.set_vis_dir(scene_id,
-            f'{episode_id}_{env.habitat_env.task.current_task_idx}')
+            f'{episode_id}_{task_index(env)}')
         agent.imagenav_visualizer.set_vis_dir(
-            f'{scene_id}_{episode_id}_{env.habitat_env.task.current_task_idx}')
+            f'{scene_id}_{episode_id}_{task_index(env)}')
         agent.matching.set_vis_dir(
-            f'{scene_id}_{episode_id}_{env.habitat_env.task.current_task_idx}')
-        env.visualizer.set_vis_dir(scene_id,
-            f'{episode_id}_{env.habitat_env.task.current_task_idx}')
+            f'{scene_id}_{episode_id}_{task_index(env)}')
+        if getattr(env, 'visualizer', None) is not None:
+            env.visualizer.set_vis_dir(scene_id,
+                f'{episode_id}_{task_index(env)}')
         agent.set_lightglue_vis_dir(
-            f'{scene_id}_{episode_id}_{env.habitat_env.task.current_task_idx}')
+            f'{scene_id}_{episode_id}_{task_index(env)}')
 
         all_subtask_metrics = []
         all_stop_reasons = []
@@ -204,7 +206,7 @@ def run_episodes(
 
         n_subtasks = None  # Read from the first observation.
         while not env.episode_over:
-            current_task_idx = env.habitat_env.task.current_task_idx
+            current_task_idx = task_index(env)
             # Habitat can advance the task index before episode_over becomes true.
             if n_subtasks is not None and current_task_idx >= n_subtasks:
                 print(f'[P6 boundary] current_task_idx={current_task_idx} >= '
@@ -629,32 +631,28 @@ def run_episodes(
                     f'task={current_task_idx} reason={stop_reason}',
                     flush=True,
                 )
-                ep_metrics = evaluator.get_episode_metrics()
-                ep_metrics.pop('goat_top_down_map', None)
-                path_lengths = evaluator.get_subtask_path_lengths()
-                ep_metrics.update(build_subtask_telemetry(
-                    ep_metrics,
-                    actual_path_length=path_lengths['actual_path_length'],
-                    shortest_path_length=path_lengths['shortest_path_length'],
+                ep_metrics = metric_protocol.capture(
+                    evaluator,
                     steps=len(subtask_frame_times.get(current_task_idx, [])),
+                    stop_reason=stop_reason,
                     frame_times_ms=subtask_frame_times.get(current_task_idx, []),
-                ))
-                evaluator.reset_subtask()
+                )
                 print('----')
                 print(f'{scene_id}_{episode_id}_{current_task_idx}', ep_metrics)
                 print('----')
                 all_subtask_metrics.append(ep_metrics)
                 if not env.episode_over:
                     agent.imagenav_visualizer.set_vis_dir(
-                        f'{scene_id}_{episode_id}_{env.habitat_env.task.current_task_idx}')
+                        f'{scene_id}_{episode_id}_{task_index(env)}')
                     agent.matching.set_vis_dir(
-                        f'{scene_id}_{episode_id}_{env.habitat_env.task.current_task_idx}')
+                        f'{scene_id}_{episode_id}_{task_index(env)}')
                     agent.planner.set_vis_dir(scene_id,
-                        f'{episode_id}_{env.habitat_env.task.current_task_idx}')
+                        f'{episode_id}_{task_index(env)}')
                     agent.set_lightglue_vis_dir(
-                        f'{scene_id}_{episode_id}_{env.habitat_env.task.current_task_idx}')
-                    env.visualizer.set_vis_dir(scene_id,
-                        f'{episode_id}_{env.habitat_env.task.current_task_idx}')
+                        f'{scene_id}_{episode_id}_{task_index(env)}')
+                    if getattr(env, 'visualizer', None) is not None:
+                        env.visualizer.set_vis_dir(scene_id,
+                            f'{episode_id}_{task_index(env)}')
                     pbar.reset()
 
         pbar.close()
@@ -665,6 +663,13 @@ def run_episodes(
             es_status_log.append({'episode_id': episode_id, 't': t, 'status': status})
         except Exception:
             pass
+
+        if metric_protocol.capture_on_episode_end and n_subtasks == 1 and not all_subtask_metrics:
+            all_stop_reasons.append('episode_limit')
+            all_subtask_metrics.append(metric_protocol.capture(
+                evaluator, steps=len(episode_frame_times), stop_reason='episode_limit',
+                frame_times_ms=episode_frame_times,
+            ))
 
         scene_ep_id = f'{scene_id}_{episode_id}'
         if n_subtasks is None or len(all_subtask_metrics) != n_subtasks:
@@ -802,7 +807,7 @@ def run_episodes(
                 metrics[scene_ep_id]['scsp_shadow_decision_summary'] = dict(
                     decision_summary
                 )
-        metrics[scene_ep_id].update(summarize_episode(
+        metrics[scene_ep_id].update(metric_protocol.summarize_episode(
             all_subtask_metrics,
             total_steps=t,
             stop_reasons=all_stop_reasons,
@@ -817,17 +822,13 @@ def run_episodes(
                 category_cooldown_events
             )
 
-        for metric in (
-            DISTANCE_TO_GOAL_KEY,
-            SUCCESS_KEY,
-            SPL_KEY,
-        ):
-            metric_summary = _finite_metric_summary(
+        for metric in metric_protocol.metric_keys:
+            metric_summary = metric_protocol.metric_summary(
                 metrics[scene_ep_id]['metrics'], metric
             )
             metrics[scene_ep_id][f'{metric}_mean'] = metric_summary['mean']
             metrics[scene_ep_id][f'{metric}_median'] = metric_summary['median']
-            if metric == DISTANCE_TO_GOAL_KEY:
+            if metric == metric_protocol.distance_key:
                 metrics[scene_ep_id][f'{metric}_finite_count'] = (
                     metric_summary['finite_count']
                 )
@@ -846,22 +847,18 @@ def run_episodes(
         )
 
         stats = {}
-        for metric in (
-            DISTANCE_TO_GOAL_KEY,
-            SUCCESS_KEY,
-            SPL_KEY,
-        ):
-            metric_summary = _finite_metric_summary(
+        for metric in metric_protocol.metric_keys:
+            metric_summary = metric_protocol.metric_summary(
                 [y for ep in metrics.values() for y in ep['metrics']], metric
             )
             stats[f'{metric}_mean'] = metric_summary['mean']
             stats[f'{metric}_median'] = metric_summary['median']
-            if metric == DISTANCE_TO_GOAL_KEY:
+            if metric == metric_protocol.distance_key:
                 stats[f'{metric}_finite_count'] = metric_summary['finite_count']
                 stats[f'{metric}_unreachable_count'] = (
                     metric_summary['unreachable_count']
                 )
-        stats.update(summarize_records(
+        stats.update(metric_protocol.summarize_records(
             metrics,
             frame_times_ms=(
                 [row['dt_total_ms'] for row in timing_rows]

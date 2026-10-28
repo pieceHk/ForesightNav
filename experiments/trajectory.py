@@ -6,6 +6,8 @@ import operator
 from pathlib import Path
 from urllib.parse import quote
 
+from pbsp.adapters.habitat import task_index
+
 SCHEMA = "pbsp_trajectory_v1"
 
 
@@ -93,7 +95,7 @@ class TrajectoryEnvironment:
     def apply_action(self, action, info=None, **kwargs):
         if self.pose is None or self.output is None:
             raise RuntimeError("Trajectory action requires an observation after reset")
-        task = operator.index(self.environment.habitat_env.task.current_task_idx)
+        task = task_index(self.environment)
         value = getattr(action, "value", action)
         if isinstance(value, bool):
             raise ValueError("Trajectory action ID cannot be a boolean")
@@ -109,6 +111,13 @@ class TrajectoryEnvironment:
                "world_pose": list(self.pose)}
         encoded = json.dumps(row, allow_nan=False, separators=(",", ":")) + "\n"
         result = self.environment.apply_action(action, info=info, **kwargs)
+        end_pose = getattr(self.environment, 'action_end_pose', None)
+        if end_pose is not None:
+            end_pose = [float(value) for value in end_pose]
+            if len(end_pose) != 7 or not all(math.isfinite(value) for value in end_pose):
+                raise ValueError('Native action end pose must be finite')
+            row['world_pose_after'] = end_pose
+            encoded = json.dumps(row, allow_nan=False, separators=(',', ':')) + '\n'
         with self.output.open("a", encoding="utf-8") as stream:
             stream.write(encoded)
         self.frame += 1
