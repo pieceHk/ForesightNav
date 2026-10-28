@@ -26,10 +26,13 @@ def gpu_pair(value):
 
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
+    # 切换任务，替换hm3d_2mon.yaml/hm3d_3mon.yaml/hm3d_4mon.yaml的配置文件
     parser.add_argument(
         "--config", type=Path, default=ROOT / "configs/experiments/hm3d_4mon.yaml"
     )
+    # 声明数据集来源，权重路径，解释器。
     parser.add_argument("--runtime", type=Path, default=ROOT / "runtime.local.yaml")
+    # 选择GPU，顺序是"MAPPING,NAVIGATION"
     parser.add_argument("--gpus", type=gpu_pair, metavar="MAPPING,NAVIGATION",
                         help="Override the two GPU IDs from the machine configuration")
     parser.add_argument(
