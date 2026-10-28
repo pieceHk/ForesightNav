@@ -327,6 +327,14 @@ def run_navigation(request, *, services_factory=build_services):
         )
         with (results / "es_status.json").open("w") as stream:
             json.dump(artifacts.es_status_log, stream, indent=4)
+        cache = getattr(getattr(services.agent, 'navigation_backend', None),
+                        'distance_cache', None)
+        if cache is not None and all(
+            hasattr(cache, field) for field in ('hits', 'misses', 'bytes', 'max_bytes')
+        ):
+            with (results / 'planner_cache.json').open('w') as stream:
+                json.dump({'hits': cache.hits, 'misses': cache.misses,
+                           'bytes': cache.bytes, 'max_bytes': cache.max_bytes}, stream)
         if request.enable_timing and artifacts.timing_rows:
             print_timing_summary(artifacts.timing_rows, str(results), save_csv=True)
         return artifacts

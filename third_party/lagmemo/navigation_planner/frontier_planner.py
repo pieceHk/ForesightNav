@@ -119,6 +119,10 @@ class DiscretePlanner:
 
         self.map_downsample_factor = map_downsample_factor
         self.map_update_frequency = map_update_frequency
+        self.distance_cache = None
+
+    def set_distance_cache(self, cache):
+        self.distance_cache = cache
 
     def reset(self):
         self.vis_dir = self.default_vis_dir
@@ -603,6 +607,7 @@ class DiscretePlanner:
             visualize=self.visualize,
             print_images=self.print_images,
             goal_tolerance=self.goal_tolerance,
+            distance_cache=self.distance_cache,
         )
         if plan_to_dilated_goal:
             # Compute dilated goal map for use with simulation code - use this to compute closest goal
@@ -692,7 +697,7 @@ class DiscretePlanner:
             traversible_[goal_map == 1] = 1
         else:
             traversible_[dilated_goal_map == 1] = 1
-        vis_planner = FMMPlanner(traversible_)
+        vis_planner = FMMPlanner(traversible_, distance_cache=self.distance_cache)
         curr_loc_map = np.zeros_like(goal_map)
         # Update our location for finding the closest goal
         curr_loc_map[start[0], start[1]] = 1
@@ -714,7 +719,7 @@ class DiscretePlanner:
     def get_closest_goal(self, goal_map, start):
         """closest goal, avoiding any obstacles."""
         empty = np.ones_like(goal_map)
-        empty_planner = FMMPlanner(empty)
+        empty_planner = FMMPlanner(empty, distance_cache=self.distance_cache)
         empty_planner.set_goal(start)
         dist_map = empty_planner.fmm_dist * goal_map
         dist_map[dist_map == 0] = 10000

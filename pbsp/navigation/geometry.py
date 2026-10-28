@@ -79,11 +79,26 @@ def global_to_gps(global_point, transform_parameters):
 
 
 def draw_circle(array, x, y, radius):
-    """在数组的 (x, y) 处绘制一个半径为 radius 的圆"""
+    """Fill a circle in place, touching only its clipped bounding box."""
     (rows, cols) = array.shape
-    (xx, yy) = np.mgrid[:rows, :cols]
+    if radius < 0 or not rows or not cols:
+        return array
+    bounds = (x - radius, x + radius, y - radius, y + radius)
+    if not all(math.isfinite(value) for value in (*bounds, x, y, radius)):
+        xx, yy = np.mgrid[:rows, :cols]
+        distance = np.sqrt((xx - x) ** 2 + (yy - y) ** 2)
+        array[distance <= radius] = 1
+        return array
+    row_start = max(0, math.floor(bounds[0]))
+    row_end = min(rows, math.ceil(bounds[1]) + 1)
+    col_start = max(0, math.floor(bounds[2]))
+    col_end = min(cols, math.ceil(bounds[3]) + 1)
+    if row_start >= row_end or col_start >= col_end:
+        return array
+    xx, yy = np.ogrid[row_start:row_end, col_start:col_end]
     distance = np.sqrt((xx - x) ** 2 + (yy - y) ** 2)
-    array[distance <= radius] = 1
+    view = array[row_start:row_end, col_start:col_end]
+    view[distance <= radius] = 1
     return array
 
 

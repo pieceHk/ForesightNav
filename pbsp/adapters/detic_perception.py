@@ -16,6 +16,7 @@ import torch
 from detectron2.config import get_cfg
 from detectron2.data import MetadataCatalog
 from detectron2.engine.defaults import DefaultPredictor
+from detectron2.utils.colormap import random_color
 from detectron2.utils.visualizer import ColorMode, Visualizer
 
 from lagmemo.core.abstract_perception import PerceptionModule
@@ -65,6 +66,9 @@ def get_clip_embeddings(vocabulary, prompt="a ", clip_checkpoint=None):
 
 
 class DeticPerception(PerceptionModule):
+    # Fixed weights and vocabulary have no episode-local state.
+    reuse_across_episodes = True
+
     def __init__(
         self,
         config_file=None,
@@ -75,6 +79,8 @@ class DeticPerception(PerceptionModule):
         verbose: bool = False,
         category_frequency=None,
         clip_checkpoint=None,
+        draw_instance_predictions: bool = True,
+        preserve_visualization_rng: bool = False,
     ):
         """Load trained Detic model for inference.
 
@@ -90,6 +96,8 @@ class DeticPerception(PerceptionModule):
         """
         self.verbose = verbose
         self.clip_checkpoint = clip_checkpoint
+        self.draw_instance_predictions = draw_instance_predictions
+        self.preserve_visualization_rng = preserve_visualization_rng
         if config_file is None:
             config_file = str(
                 Path(__file__).resolve().parents[2]
@@ -195,7 +203,7 @@ class DeticPerception(PerceptionModule):
         self,
         obs: Observations,
         depth_threshold: Optional[float] = None,
-        draw_instance_predictions: bool = True,
+        draw_instance_predictions: Optional[bool] = None,
     ) -> Observations:
         """
         Arguments:
@@ -218,6 +226,8 @@ class DeticPerception(PerceptionModule):
         if obs.task_observations is None:
             obs.task_observations = {}
 
+        if draw_instance_predictions is None:
+            draw_instance_predictions = self.draw_instance_predictions
         if draw_instance_predictions:
             visualizer = Visualizer(
                 image[:, :, ::-1], self.metadata, instance_mode=self.instance_mode
@@ -227,6 +237,10 @@ class DeticPerception(PerceptionModule):
             ).get_image()
             obs.task_observations["semantic_frame"] = visualization
         else:
+            if self.preserve_visualization_rng:
+                # The policy's depth subsampling shares NumPy's RNG with the overlay.
+                for _ in range(len(pred["instances"])):
+                    random_color(rgb=True, maximum=1)
             obs.task_observations["semantic_frame"] = None
 
         # Sort instances by mask size

@@ -7,10 +7,32 @@ import numpy as np
 import torch
 import cv2
 import kornia as K
+import weakref
 from PIL import Image
 
 
 class GoalPerception:
+
+    def _mobileclip_text_features(self, text, image_features):
+        model = self.clip_model
+        model_ref = getattr(self, '_clip_text_model_ref', None)
+        if model_ref is None or model_ref() is not model:
+            self._clip_text_model_ref = weakref.ref(model)
+            self._clip_text_cache = {}
+        key = (text, image_features.device, image_features.dtype)
+        cache = self._clip_text_cache
+        if model.training:
+            cache.clear()
+        if not model.training and key in cache:
+            return cache[key]
+        tokens = self.clip_tokenizer([text])
+        features = model.encode_text(tokens)
+        features /= features.norm(dim=-1, keepdim=True)
+        if not model.training:
+            if len(cache) >= 32:
+                del cache[next(iter(cache))]
+            cache[key] = features.detach()
+        return features
 
     def disk_preprocess(self, goal_img):
         img_bgr = cv2.cvtColor(goal_img, cv2.COLOR_RGB2BGR)
@@ -79,15 +101,13 @@ class GoalPerception:
     @torch.cuda.amp.autocast()
     def mobileclip_score(self, image, text, score_type="text"):
         if score_type == "text":
-            text = self.clip_tokenizer([text])
             image = self.clip_preprocess(
                 Image.fromarray(image.astype(np.uint8), mode="RGB")
             ).unsqueeze(0)
             with torch.no_grad(), torch.cuda.amp.autocast():
                 image_features = self.clip_model.encode_image(image)
-                text_features = self.clip_model.encode_text(text)
                 image_features /= image_features.norm(dim=-1, keepdim=True)
-                text_features /= text_features.norm(dim=-1, keepdim=True)
+                text_features = self._mobileclip_text_features(text, image_features)
             probs = image_features @ text_features.T
         elif score_type == "image":
             image1 = self.clip_preprocess(

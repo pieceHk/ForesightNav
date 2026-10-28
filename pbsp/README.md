@@ -81,6 +81,8 @@ The frame excludes evaluation labels and the ground-truth top-down map. `Navigat
 
 [HabitatEnvironment](adapters/habitat.py) translates sensor frames and task queries before they reach the Agent. It receives explicit observation settings, categories, segmentation construction and action IDs. Importing the adapter does not load Habitat or perception models. Detic and disabled modes do not read the semantic sensor or scene annotations.
 
+Detic reuses its fixed weights and vocabulary across episodes. The Habitat factory skips its instance overlay while preserving the random sequence used by policy depth sampling. Frozen MobileCLIP target text features are cached, and each observation image is encoded separately.
+
 [GoatEvaluator](../experiments/evaluator.py) reads success and path measurements after an action and before task reset. The experiment visualization observer reads its top-down map separately. Navigator updates its previous position from GPS even when evaluation visualization is absent. The native factory wires these adapters to explicit resources; the active experiment uses the evaluator directly.
 
 `LocalPlannerBackend` adapts the current planner with unchanged arguments. To replace waypoint following while retaining exploration before a memory goal exists:
@@ -91,6 +93,8 @@ agent.navigation_backend = WaypointNavigationBackend(
     exploration=LocalPlannerBackend(agent.planner),
 )
 ```
+
+The native FMM planner reuses exact distance fields for identical numeric inputs and grid spacing. With one source and no obstacles, it reflects a cached corner field to the source position. Each backend keeps at most eight fields within 64 MiB and clears them at episode reset. `planner_cache.json` records cache hits, misses and memory use.
 
 The supplied controller implements `step(request) -> NavigationPlan`, `reset_episode()`, `reset_task()` and `close()`. It translates its native action to the current simulator's action enum. Sensor normalization, coordinate conversion and recurrent state belong to that adapter.
 

@@ -66,7 +66,9 @@ class HabitatEnvironment:
         habitat_obs = self.habitat_env.reset()
         self.current_episode = self.habitat_env.current_episode
         self.active_task_idx = 0
-        if self.semantic_source == "detic":
+        if self.semantic_source == "detic" and not getattr(
+            self.segmentation, "reuse_across_episodes", False
+        ):
             self.init_perception_module()
         self._last_obs = self._preprocess_obs(habitat_obs)
         if self.observer is not None:
