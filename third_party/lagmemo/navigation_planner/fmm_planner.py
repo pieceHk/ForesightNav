@@ -33,6 +33,7 @@ class FMMPlanner:
         visualize=False,
         print_images=True,
         debug=False,
+        distance_cache=None,
     ):
         """
         Arguments:
@@ -63,6 +64,7 @@ class FMMPlanner:
         self.du = int(self.step_size / (self.scale * 1.0))
         self.fmm_dist = None
         self.debug = debug
+        self.distance_cache = distance_cache
         # self.goal_map = None
 
     def set_goal(self, goal, auto_improve: bool = False):
@@ -82,12 +84,26 @@ class FMMPlanner:
 
         traversible_ma[goal_x, goal_y] = 0
         try:
-            dd = skfmm.distance(traversible_ma, dx=1)
+            dd = self._distance(traversible_ma, dx=1)
         except Exception as exc:
             raise PlannerError(f"fmm_distance_failed:{exc}") from exc
         dd = self._filled_distance(dd)
         self.fmm_dist = dd
         return
+
+    def _distance(self, level_set, *, dx):
+        if self.distance_cache is None:
+            return skfmm.distance(level_set, dx=dx)
+        point_source = getattr(self.distance_cache, 'point_source', None)
+        values = np.ma.getdata(level_set)
+        if point_source is not None and values.ndim == 2 and min(values.shape) >= 3:
+            if not np.any(np.ma.getmaskarray(level_set)):
+                sources = np.flatnonzero(values == 0)
+                if len(sources) == 1 and np.count_nonzero(values != 1) == 1:
+                    goal = np.unravel_index(sources[0], values.shape)
+                    return point_source(values.shape, goal, dtype=values.dtype,
+                                        dx=dx, solver=skfmm.distance)
+        return self.distance_cache.compute(level_set, dx=dx, solver=skfmm.distance)
 
     @staticmethod
     def _filled_distance(dd: np.ndarray) -> np.ndarray:
@@ -156,7 +172,7 @@ class FMMPlanner:
         # It will compute the distance from each traversible point to the goal.
         if (timestep - 1) % map_update_frequency == 0 or dd is None:
             try:
-                dd = skfmm.distance(traversible_ma, dx=1 * map_downsample_factor)
+                dd = self._distance(traversible_ma, dx=1 * map_downsample_factor)
             except Exception as exc:
                 raise PlannerError(f"fmm_distance_failed:{exc}") from exc
             dd = self._filled_distance(dd)
@@ -333,6 +349,7 @@ class FMMPlanner:
             np.ones_like(self.traversible),
             print_images=self.print_images,
             vis_dir=self.vis_dir,
+            distance_cache=self.distance_cache,
         )
         # Plan to the goal mask
         planner.set_multi_goal(goal, timestep=timestep)

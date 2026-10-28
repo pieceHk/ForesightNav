@@ -39,7 +39,7 @@ def get_config(
 
     rgb_sensor = sim_sensors.rgb_sensor
     depth_sensor = sim_sensors.depth_sensor
-    semantic_sensor = sim_sensors.semantic_sensor
+    semantic_sensor = sim_sensors.get('semantic_sensor')
     frame_height = config.ENVIRONMENT.frame_height
     assert rgb_sensor.height == depth_sensor.height
     if semantic_sensor:

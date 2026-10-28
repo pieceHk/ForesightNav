@@ -202,8 +202,11 @@ class GoatAgentModule(nn.Module):
         # Compute the frontier map here
         # frontier_map = (map_features[:, [MC.EXPLORED_MAP], :, :] == 0).float()
         # MC.EXPLORED_MAP = 1 there
-        frontier_map = self.policy.get_frontier_map(map_features,wxl_frontier=True)
+        # All consumers use the same map tensor during this forward call.
         frontiers = self.policy.get_frontiers(map_features=map_features)
+        frontier_map = self.policy.get_frontier_map(
+            map_features, wxl_frontier=True, frontiers=frontiers
+        )
         
         # 查看frontier map， wxl
         # frontier_array= np.array(frontier_map.cpu()).reshape((480,480))
@@ -256,6 +259,7 @@ class GoatAgentModule(nn.Module):
                 map_features,
                 seq_object_goal_category,
                 reject_visited_targets=reject_visited_targets,
+                frontier_map=frontier_map,
             )
 
             seq_goal_map = goal_map.view(

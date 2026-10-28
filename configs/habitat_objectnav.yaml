@@ -1,0 +1,18 @@
+# @package _global_
+defaults:
+  - /habitat_baselines: habitat_baselines_rl_config_base
+  - /benchmark/nav/objectnav: objectnav_hm3d
+  - /habitat/task/lab_sensors@habitat.task.lab_sensors.globalpose_sensor: globalpose_sensor
+  - _self_
+
+habitat:
+  simulator:
+    agents:
+      main_agent:
+        sim_sensors:
+          depth_sensor:
+            normalize_depth: false
+  environment:
+    max_episode_steps: 500
+    iterator_options:
+      shuffle: false

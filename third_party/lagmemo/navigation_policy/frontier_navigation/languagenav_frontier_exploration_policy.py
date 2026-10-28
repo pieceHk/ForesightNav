@@ -45,13 +45,13 @@ class LanguageNavFrontierExplorationPolicy(nn.Module):
     def goal_update_steps(self):
         return 1
 
-    def reach_single_category(self, map_features, category, reject_visited_targets):
+    def reach_single_category(self, map_features, category, reject_visited_targets, frontier_map=None):
         # if the goal is found, reach it
         goal_map, found_goal = self.reach_goal_if_in_map(
             map_features, category, reject_visited_targets=reject_visited_targets
         )
         # otherwise, do frontier exploration
-        goal_map = self.explore_otherwise(map_features, goal_map, found_goal)
+        goal_map = self.explore_otherwise(map_features, goal_map, found_goal, frontier_map=frontier_map)
         return goal_map, found_goal
 
     def forward(
@@ -59,6 +59,7 @@ class LanguageNavFrontierExplorationPolicy(nn.Module):
         map_features,
         object_category=None,
         reject_visited_targets=False,
+        frontier_map=None,
     ):
         """
         Arguments:
@@ -74,7 +75,7 @@ class LanguageNavFrontierExplorationPolicy(nn.Module):
 
         # Here, the goal is specified by a single object
         return self.reach_single_category(
-            map_features, object_category, reject_visited_targets
+            map_features, object_category, reject_visited_targets, frontier_map=frontier_map
         )
 
     def cluster_filtering(self, m):
@@ -163,45 +164,15 @@ class LanguageNavFrontierExplorationPolicy(nn.Module):
         )
         return frontiers
     
-    def get_frontier_map(self, map_features, wxl_frontier=False):
+    def get_frontier_map(self, map_features, wxl_frontier=False, *, frontiers=None):
         # Select unexplored area
         if wxl_frontier:
-            # import cv2
-            # import frontier_exploration
-            agent_radius = 0.18 # 0.36
-            pixels_per_meter = 20
-            area_thresh = 1.0
-            kernel_size = pixels_per_meter * agent_radius * 2
-            _area_thresh_in_pixels = area_thresh * (pixels_per_meter**2)
-            # round kernel_size to nearest odd number
-            kernel_size = int(kernel_size) + (int(kernel_size) % 2 == 0)
-            _navigable_kernel = np.ones((kernel_size, kernel_size), np.uint8)
-            
-            # mapfeatures的取得维度还得再调
-            obstacle_map = map_features[0, MC.OBSTACLE_MAP, :, :]
-            obstacle_mask = np.rint(np.array(obstacle_map.cpu())) == 1
-            navigable_map = 1 - cv2.dilate(
-                obstacle_mask.astype(np.uint8),
-                _navigable_kernel,
-                iterations=1,
-            ).astype(bool)
-            explored_map = np.array(map_features[0, MC.EXPLORED_MAP, :, :].cpu())
-            explored_area = cv2.dilate(
-                explored_map.astype(np.uint8),
-                np.ones((5, 5), np.uint8),
-                iterations=1,
-            )
-            frontiers = frontier_exploration.frontier_detection.detect_frontier_waypoints(
-                navigable_map.astype(np.uint8),
-                explored_area.astype(np.uint8),
-                _area_thresh_in_pixels,
-            )
-            frontier_map = np.zeros(obstacle_mask.shape)
+            if frontiers is None:
+                frontiers = self.get_frontiers(map_features)
+            frontier_map = np.zeros(tuple(map_features.shape[-2:]))
             for point in frontiers:
                 cv2.circle(frontier_map, point.astype(np.int32), radius=2, color=1, thickness=-1)
-            frontier_map = torch.from_numpy(frontier_map).to(map_features.device).unsqueeze(0).unsqueeze(0).float()
-            return frontier_map
-            # frontier_map = (map_features[:, [MC.EXPLORED_MAP], :, :] == 0).float()
+            return torch.from_numpy(frontier_map).to(map_features.device).unsqueeze(0).unsqueeze(0).float()
         elif self.exploration_strategy == "seen_frontier":
             frontier_map = (map_features[:, [MC.EXPLORED_MAP], :, :] == 0).float()
         elif self.exploration_strategy == "been_close_to_frontier":
@@ -218,9 +189,10 @@ class LanguageNavFrontierExplorationPolicy(nn.Module):
         )
         return frontier_map
 
-    def explore_otherwise(self, map_features, goal_map, found_goal, wxl_frontier=True):
+    def explore_otherwise(self, map_features, goal_map, found_goal, wxl_frontier=True, *, frontier_map=None):
         """Explore closest unexplored region otherwise."""
-        frontier_map = self.get_frontier_map(map_features, wxl_frontier=wxl_frontier)
+        if frontier_map is None:
+            frontier_map = self.get_frontier_map(map_features, wxl_frontier=wxl_frontier)
         batch_size = map_features.shape[0]
         for e in range(batch_size):
             if not found_goal[e]:

@@ -1,11 +1,25 @@
 """Translate Habitat sensor frames, task queries and discrete actions."""
 
 from dataclasses import dataclass
+import operator
 
 import numpy as np
 
 # Portions adapted from LagMemo, Copyright (c) Meta Platforms, Inc. and affiliates.
 # Upstream MIT terms and provenance are retained in THIRD_PARTY_NOTICES.md.
+
+
+def task_index(environment):
+    """Read task progress from the adapter, including native single-target tasks."""
+    index = getattr(environment, 'task_index', None)
+    if index is None:
+        index = environment.habitat_env.task.current_task_idx
+    if isinstance(index, (bool, np.bool_)):
+        raise ValueError('Task index must be a nonnegative integer')
+    index = operator.index(index)
+    if index < 0:
+        raise ValueError('Task index must be a nonnegative integer')
+    return index
 
 
 @dataclass(frozen=True)
@@ -66,7 +80,9 @@ class HabitatEnvironment:
         habitat_obs = self.habitat_env.reset()
         self.current_episode = self.habitat_env.current_episode
         self.active_task_idx = 0
-        if self.semantic_source == "detic":
+        if self.semantic_source == "detic" and not getattr(
+            self.segmentation, "reuse_across_episodes", False
+        ):
             self.init_perception_module()
         self._last_obs = self._preprocess_obs(habitat_obs)
         if self.observer is not None:
@@ -153,6 +169,10 @@ class HabitatEnvironment:
     def _process_info(self, info):
         if self.observer is not None:
             self.observer.on_action(info)
+
+    @property
+    def task_index(self):
+        return self.habitat_env.task.current_task_idx
 
     @property
     def episode_over(self):

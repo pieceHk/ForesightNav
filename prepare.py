@@ -7,6 +7,7 @@ import sys
 
 COMMANDS = {
     "data": "prepare_data",
+    "objectnav": "prepare_objectnav",
     "envs": "setup_envs",
     "models": "prepare_models",
     "runtime": "prepare_runtime",

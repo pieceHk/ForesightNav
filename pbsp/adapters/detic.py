@@ -12,4 +12,6 @@ def create_segmentation(categories, *, gpu_id, config_file=None, checkpoint_file
         checkpoint_file=checkpoint_file,
         category_frequency=category_frequency,
         clip_checkpoint=clip_checkpoint,
+        draw_instance_predictions=False,
+        preserve_visualization_rng=True,
     )

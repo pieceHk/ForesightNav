@@ -70,8 +70,16 @@ class LocalPlannerBackend:
 
     def __init__(self, planner):
         self.planner = planner
+        self.distance_cache = None
+        if hasattr(planner, 'set_distance_cache'):
+            from .distance_cache import DistanceFieldCache
+
+            self.distance_cache = DistanceFieldCache()
+            planner.set_distance_cache(self.distance_cache)
 
     def reset_episode(self):
+        if self.distance_cache is not None:
+            self.distance_cache.clear()
         self.planner.reset()
 
     def reset_task(self):
@@ -93,6 +101,8 @@ class LocalPlannerBackend:
         )
 
     def close(self):
+        if self.distance_cache is not None:
+            self.distance_cache.clear()
         close = getattr(self.planner, "close", None)
         if close is not None:
             close()

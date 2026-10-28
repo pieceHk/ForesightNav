@@ -247,6 +247,9 @@ def allocate_run(plan, *, tag="", resource_checks=None):
 
 def launch(plan, *, tag="", resource_checks=None):
     from experiments.metrics import aggregate_run_artifacts
+    native = getattr(plan.experiment.dataset, 'format', None) == 'objectnav'
+    if native:
+        from experiments.objectnav_results import aggregate_run as aggregate_native_run
 
     plan = allocate_run(plan, tag=tag, resource_checks=resource_checks)
     status(plan, "starting")
@@ -266,8 +269,9 @@ def launch(plan, *, tag="", resource_checks=None):
                         plan, "navigation", scene=selection.scene_id
                     ) as navigation:
                         navigation.wait()
-                    result = aggregate_run_artifacts(plan.run_directory)
-                    write_json(plan.run_directory / "mon_metrics.json", result)
+                    result = (aggregate_native_run(plan.run_directory, require_complete=False)
+                              if native else aggregate_run_artifacts(plan.run_directory))
+                    write_json(plan.run_directory / ('objectnav_metrics.json' if native else 'mon_metrics.json'), result)
                     response = request(
                         plan.socket_path, {"cmd": "flush"}, timeout_s=120
                     )
@@ -282,6 +286,9 @@ def launch(plan, *, tag="", resource_checks=None):
                     raise RuntimeError(
                         "Completed metric counts differ from the selected complete episodes"
                     )
+                if native:
+                    result = aggregate_native_run(plan.run_directory)
+                    write_json(plan.run_directory/'objectnav_metrics.json', result)
             status(plan, "finishing")
         status(plan, "completed", completed_episodes=expected)
     except BaseException as exc:

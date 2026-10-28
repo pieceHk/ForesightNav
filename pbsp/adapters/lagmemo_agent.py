@@ -7,6 +7,8 @@ from pbsp.adapters.perception import GoalPerception
 from experiments.visualization import NavigationVisualization
 from pbsp.agent import PBSPAgent
 from pbsp.settings import NavigationSettings
+from pbsp.adapters.frontier_runtime import warm_up_frontier_kernels
+from pbsp.navigation.backends import LocalPlannerBackend
 
 from pathlib import Path
 import numpy as np
@@ -39,6 +41,7 @@ class LagMemoAgent(NavigationVisualization, GoalPerception, PBSPAgent, Agent):
         navigation_backend=None,
         matching_resources=None,
     ):
+        warm_up_frontier_kernels()
         PBSPAgent.__init__(
             self,
             settings=settings,
@@ -158,6 +161,8 @@ class LagMemoAgent(NavigationVisualization, GoalPerception, PBSPAgent, Agent):
             map_update_frequency=config.AGENT.PLANNER.map_update_frequency,
             discrete_actions=config.AGENT.PLANNER.discrete_actions,
         )
+        if self.navigation_backend is None:
+            self.navigation_backend = LocalPlannerBackend(self.planner)
         self.one_hot_encoding = torch.eye(
             config.AGENT.SEMANTIC_MAP.num_sem_categories, device=self.device
         )
