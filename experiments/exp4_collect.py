@@ -18,9 +18,14 @@ def write(path, value):
 
 
 def source_fingerprint():
-    return {str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest()
-            for folder in ('pbsp', 'experiments') for p in sorted((ROOT / folder).rglob('*.py'))
-            if not any(part in {'runs', 'results', 'analysis', '__pycache__'} for part in p.parts)}
+    paths = [p for folder in ('pbsp', 'experiments') for p in sorted((ROOT / folder).rglob('*.py'))
+             if not any(part in {'runs', 'results', 'analysis', '__pycache__'} for part in p.parts)]
+    paths.extend(p for p in sorted((ROOT / 'configs').rglob('*'))
+                 if p.is_file() and p.suffix in {'.yaml', '.json'})
+    paths.append(ROOT / 'runtime.exp4.local.yaml')
+    paths.extend(OUT / 'meta' / name for name in ('folds.json', '2mon-identities.json',
+                 '3mon-identities.json', 'smoke-20-identities.json', 'protocol_decisions.json'))
+    return {str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest() for p in paths}
 
 
 def read_jsonl(path):
