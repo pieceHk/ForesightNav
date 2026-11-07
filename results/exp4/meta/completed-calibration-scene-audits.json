@@ -1,8 +1,8 @@
 {
-  "checked_at_utc": "2026-11-07T20:42:56.104627+00:00",
+  "checked_at_utc": "2026-11-07T22:35:26.103099+00:00",
   "scope": "completed 2-MON calibration integrity only; no fitting, no 3-MON table",
   "frozen_runtime_unchanged": true,
-  "complete_episodes": 90,
+  "complete_episodes": 120,
   "completed_scenes": [
     {
       "scene": "6s7QHgap2fW",
@@ -95,6 +95,47 @@
         "status.json": "4a3adb20e391a7e534017276d5a403ca52df05ad7b35148a6deae230c9f19c9b",
         "launch.json": "d8dd6ece9cb7773e66ef28c2aa47f9424a38259815f8b44f1064530a0d83d6e1",
         "mon_metrics.json": "54311f01cba107e2e277063e4811080836649c6d5672499e6a374a5f95149ff6"
+      }
+    },
+    {
+      "scene": "cvZr5TUy5C5",
+      "run_directory": "/nvme/khy/ForesightNav_exp4/results/exp4/runs/20261108_032232_380297_exp4_calibration_calibration-a2-fold0-cvZr5TUy5C5",
+      "native_exit_code": 0,
+      "complete_episodes": 30,
+      "targets_per_episode": 2,
+      "actual_identity_files_checked": 30,
+      "frozen_manifest_source_ids_ordered_categories_match": true,
+      "complete_trajectory_and_terminal_STOP_checks_passed": true,
+      "candidate_checks": 413,
+      "final_labels": 413,
+      "check_to_final_event_keys_match": true,
+      "shadow_snapshots": 1847,
+      "shadow_errors": 0,
+      "process_path_complete_under_legacy_logs": false,
+      "path_association_gaps": [
+        {
+          "scene_id": "cvZr5TUy5C5",
+          "episode_id": "0",
+          "k": 1,
+          "reason": "confirmed_invalid_visit_followed_by_further_checks"
+        },
+        {
+          "scene_id": "cvZr5TUy5C5",
+          "episode_id": "1",
+          "k": 0,
+          "reason": "confirmed_invalid_visit_followed_by_further_checks"
+        },
+        {
+          "scene_id": "cvZr5TUy5C5",
+          "episode_id": "9",
+          "k": 0,
+          "reason": "confirmed_invalid_visit_followed_by_further_checks"
+        }
+      ],
+      "artifact_sha256": {
+        "status.json": "763c64b1cb7970c479a3414c5097d99b2e965e17bb17435a7fad631a050abea9",
+        "launch.json": "f812aacdec97071e5801330716b969c2febf0a1217ba94857e59b0e01deee966",
+        "mon_metrics.json": "defd340ebec439ed399eb0ecfc655e74eaa75994011c29408a0f24b4bec50d95"
       }
     }
   ]
