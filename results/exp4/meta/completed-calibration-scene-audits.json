@@ -1,0 +1,72 @@
+{
+  "checked_at_utc": "2026-11-07T19:27:04.963420+00:00",
+  "scope": "completed 2-MON calibration integrity only; no fitting, no 3-MON table",
+  "frozen_runtime_unchanged": true,
+  "complete_episodes": 60,
+  "completed_scenes": [
+    {
+      "scene": "6s7QHgap2fW",
+      "run_directory": "/nvme/khy/ForesightNav_exp4/results/exp4/runs/20261108_000733_439246_exp4_calibration_calibration-a2-fold0-6s7QHgap2fW",
+      "native_exit_code": 0,
+      "complete_episodes": 30,
+      "targets_per_episode": 2,
+      "actual_identity_files_checked": 30,
+      "frozen_manifest_source_ids_ordered_categories_match": true,
+      "complete_trajectory_and_terminal_STOP_checks_passed": true,
+      "candidate_checks": 425,
+      "final_labels": 425,
+      "check_to_final_event_keys_match": true,
+      "shadow_snapshots": 1687,
+      "shadow_errors": 0,
+      "process_path_complete_under_legacy_logs": false,
+      "path_association_gaps": [
+        {
+          "scene_id": "6s7QHgap2fW",
+          "episode_id": "6",
+          "k": 0,
+          "reason": "confirmed_invalid_visit_followed_by_further_checks"
+        },
+        {
+          "scene_id": "6s7QHgap2fW",
+          "episode_id": "26",
+          "k": 1,
+          "reason": "confirmed_invalid_visit_followed_by_further_checks"
+        }
+      ],
+      "artifact_sha256": {
+        "status.json": "057e5999b2413be78d267482de8d2ed9319ba2501b245f6a232e0432ff862a7e",
+        "launch.json": "494ac04b464cadb873b889eaf464932e04ac5b472416a70d6315c57acaa3560d",
+        "mon_metrics.json": "31ada62fa396c7120cc77d73ffa1b77cd796cb53df44bc207611f022d67be937"
+      }
+    },
+    {
+      "scene": "TEEsavR23oF",
+      "run_directory": "/nvme/khy/ForesightNav_exp4/results/exp4/runs/20261108_000733_533484_exp4_calibration_calibration-a2-fold0-TEEsavR23oF",
+      "native_exit_code": 0,
+      "complete_episodes": 30,
+      "targets_per_episode": 2,
+      "actual_identity_files_checked": 30,
+      "frozen_manifest_source_ids_ordered_categories_match": true,
+      "complete_trajectory_and_terminal_STOP_checks_passed": true,
+      "candidate_checks": 377,
+      "final_labels": 377,
+      "check_to_final_event_keys_match": true,
+      "shadow_snapshots": 1860,
+      "shadow_errors": 0,
+      "process_path_complete_under_legacy_logs": false,
+      "path_association_gaps": [
+        {
+          "scene_id": "TEEsavR23oF",
+          "episode_id": "8",
+          "k": 1,
+          "reason": "confirmed_invalid_visit_followed_by_further_checks"
+        }
+      ],
+      "artifact_sha256": {
+        "status.json": "78f75f7efae834dc1166fea6739d7eaf5feed9c18b037b17288070ac439e3935",
+        "launch.json": "e8cd711b02cc39715d66d444dabb51398ab1e06d6dcd52d2d239e669e385b735",
+        "mon_metrics.json": "88e1f46324f53f0c7f86cd3425429795a58ff46895fdd620e102c62d0d22fdff"
+      }
+    }
+  ]
+}
