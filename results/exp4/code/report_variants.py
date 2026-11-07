@@ -127,8 +127,7 @@ def process_metrics(events, decisions, dispatches, traces, episode_keys):
         if event['y'] != 0 or event['v'] != 1:
             continue
         trace = traces.get((scene, episode), [])
-        stops = [r for r in trace if r['subtask_index'] == k and r['is_stop']
-                 and r['stop_reason'] == 'verified_target']
+        stops = [r for r in trace if r['subtask_index'] == k and r['is_stop']]
         if stops:
             stop = stops[-1]['frame_index']
             if any(e['event'] == 'noncandidate_verification' and e['scene_id'] == scene

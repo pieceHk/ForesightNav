@@ -3,7 +3,7 @@ from pathlib import Path
 import math
 import unittest
 
-from report_variants import conditional_rates, effects_and_pairs, prefix_metrics, summarize_distribution, interval_union_length
+from report_variants import conditional_rates, effects_and_pairs, prefix_metrics, summarize_distribution, interval_union_length, process_metrics
 
 
 class ReportingTests(unittest.TestCase):
@@ -53,6 +53,17 @@ class ReportingTests(unittest.TestCase):
     def test_overlapping_visits_do_not_double_count_the_physical_path(self):
         self.assertEqual(interval_union_length([(0., 2.), (1., 3.), (5., 7.)]), 5.)
         self.assertEqual(interval_union_length([(0., 3.), (1., 2.)]), 3.)
+
+    def test_invalid_confirmed_approach_tail_is_counted_even_at_budget_stop(self):
+        event = {'event': 'verification_final', 'scene_id': 's', 'episode_id': '0',
+                 'k': 0, 'candidate_id': '0:0', 'v': 1, 'y': 0,
+                 'start_path_m': 0., 'verification_path_m': .25, 't': 2, 'last_t': 2}
+        trace = [{'frame_index': i + 1, 'subtask_index': 0, 'is_stop': i == 2,
+                  'stop_reason': 'max_steps' if i == 2 else None,
+                  'world_pose': [0., 0., 0., 1., i * .25, 0., 0.]} for i in range(3)]
+        result = process_metrics([event], [], [], {('s', '0'): trace}, {('s', '0')})
+        self.assertEqual(result['invalid_visit_path_m'], .5)
+        self.assertTrue(result['invalid_path_complete'])
 
 
 if __name__ == '__main__':
