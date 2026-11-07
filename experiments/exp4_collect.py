@@ -74,6 +74,7 @@ def main():
     if path.exists():
         raise RuntimeError('Collection ledger exists; inspect current jobs before explicit recovery')
     folds = json.loads((OUT / 'meta/folds.json').read_text())['folds']
+    attempt = acceptance.get('collection_attempt', 'a1')
     ledger = {'status': 'running', 'controller_pid': os.getpid(),
               'boot_id': Path('/proc/sys/kernel/random/boot_id').read_text().strip(),
               'source_fingerprint': fingerprint, 'jobs': []}
@@ -93,11 +94,11 @@ def main():
                     if gpu in active or not pending:
                         continue
                     scene = pending.pop(0)
-                    log = OUT / f'logs/calibration-fold{fold}-{scene}.controller.log'
+                    log = OUT / f'logs/calibration-{attempt}-fold{fold}-{scene}.controller.log'
                     handle = log.open('x')
                     command = [str(ROOT / 'run.py'), '--config', 'configs/experiments/exp4_calibration.yaml',
                                '--runtime', 'runtime.exp4.local.yaml', '--gpus', f'{gpu},{gpu}',
-                               '--scene', scene, '--tag', f'calibration-fold{fold}-{scene}']
+                               '--scene', scene, '--tag', f'calibration-{attempt}-fold{fold}-{scene}']
                     process = subprocess.Popen([os.sys.executable, *command], cwd=ROOT,
                                                stdout=handle, stderr=subprocess.STDOUT,
                                                stdin=subprocess.DEVNULL, start_new_session=True)

@@ -443,6 +443,10 @@ class Navigator(CandidateTracking, GoalVerifier, RecoveryState, LocalMapState, G
                             )
                             verification_event = {
                                 **({'candidate_position': list(map(float, frontier_global_pose)),
+                                    'candidate_source': ('navmesh_override' if self.navmesh_override_goal is not None
+                                                         and np.allclose(frontier_global_pose, self.navmesh_override_goal,
+                                                                         rtol=0., atol=1e-6)
+                                                         else 'query_candidate'),
                                     'task_idx': int(self.current_task_idx)}
                                    if getattr(self, 'blp_enabled', False) else {}),
                                 "triggered": bool(self._last_verification_triggered),

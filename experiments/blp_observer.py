@@ -3,6 +3,7 @@ from dataclasses import asdict
 import json
 from pathlib import Path
 import time
+from types import SimpleNamespace
 
 import numpy as np
 
@@ -113,7 +114,10 @@ def compute_blp_event(planning, *, phase, arm, candidate_batch, projected_goals,
                path_to_first_candidate_m=identity['path_m'] - activation['activation_path_m']))
         activation['empty_activation_open'] = False
     for task in range(current_task, len(batch.ordered_categories)):
+        history = planning.blp_context.setdefault('query_record_history', {}).setdefault(task, [])
         for record in batch.records_for_task(task):
+            history.append({'position': list(record.position), 'semantic_score': record.semantic_score,
+                            'query_serial': batch.query_serial, 't': identity['t']})
             register_candidate(planning, task, record)
     return {'schema_version': 'blp_eq13_v1', 'phase': phase, 'arm': arm,
             'status': 'planned', 'current_task': current_task,
@@ -180,12 +184,35 @@ def observe_verification(planning, agent, evaluator, metadata):
                 finalize_visit(planning, 'candidate_abandoned')
         return
     task, position = event['task_idx'], event['candidate_position']
+    if event.get('candidate_source') == 'navmesh_override':
+        finalize_visit(planning, 'switched_to_navmesh_override')
+        append(planning, 'blp_events.jsonl', {
+            'event': 'noncandidate_verification', 'scene_id': batch.scene_id,
+            'episode_id': batch.episode_id, 'k': task, 'position': list(position),
+            't': planning.blp_context['t'], 'v': int(bool(event['confirmed'])),
+            'candidate_source': 'navmesh_override',
+            'gt_diagnostic': evaluator.label_candidate(position, task),
+            'excluded_from_belief_fit': True})
+        return
     records = batch.records_for_task(task)
-    if not records:
-        raise RuntimeError('Verification candidate has no source record')
-    record = min(records, key=lambda r: np.linalg.norm(np.asarray(r.position)[[0, 2]] - np.asarray(position)[[0, 2]]))
-    if np.linalg.norm(np.asarray(record.position)[[0, 2]] - np.asarray(position)[[0, 2]]) > .75:
-        raise RuntimeError('Verification candidate is not aligned with latest batch')
+    matches = [r for r in records if np.linalg.norm(
+        np.asarray(r.position)[[0, 2]] - np.asarray(position)[[0, 2]]) <= .75]
+    evidence_source = 'current_batch'
+    if matches:
+        record = min(matches, key=lambda r: np.linalg.norm(
+            np.asarray(r.position)[[0, 2]] - np.asarray(position)[[0, 2]]))
+    else:
+        history = planning.blp_context.get('query_record_history', {}).get(task, [])
+        matches = [r for r in history if np.linalg.norm(
+            np.asarray(r['position'])[[0, 2]] - np.asarray(position)[[0, 2]]) <= .75]
+        if not matches:
+            append(planning, 'blp_errors.jsonl', {'error': 'unmatched_query_verification',
+                   'scene_id': batch.scene_id, 'episode_id': batch.episode_id,
+                   'k': task, 't': planning.blp_context['t'], 'position': list(position)})
+            return
+        source = max(matches, key=lambda r: r['query_serial'])
+        record = SimpleNamespace(position=source['position'], semantic_score=source['semantic_score'])
+        evidence_source = 'historical_query_record'
     item = register_candidate(planning, task, record)
     visit = planning.blp_context.get('visit')
     if visit and visit['candidate_id'] != item['candidate_id']:
@@ -210,6 +237,7 @@ def observe_verification(planning, agent, evaluator, metadata):
     s, _, _ = planning.blp_parameters.evidence(record.semantic_score, n_views)
     visit.update(v=int(bool(event['confirmed'])), y=diagnostic['y'],
                  E=record.semantic_score, N_views=n_views, S=s, position=list(position),
+                 semantic_evidence_source=evidence_source,
                  gt_diagnostic=diagnostic,
                  y_agent_at_check=int(bool(metrics['goat_sub-task_success'])),
                  last_t=planning.blp_context['t'], verification=event)

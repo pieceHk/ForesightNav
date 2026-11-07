@@ -274,6 +274,48 @@ class BLPTests(unittest.TestCase):
             self.assertEqual(finalized[0]['v'], 0)
             self.assertEqual(finalized[0]['verification_path_m'], 2.)
 
+    def test_nonquery_recovery_verification_is_logged_without_fabricating_evidence(self):
+        import json
+        from pathlib import Path
+        from tempfile import TemporaryDirectory
+        from experiments.blp_observer import observe_verification
+        with TemporaryDirectory() as folder:
+            batch = SimpleNamespace(scene_id='s', episode_id='0', records_for_task=lambda _: ())
+            planning = SimpleNamespace(blp_directory=Path(folder),
+                        blp_context={'batch': batch, 't': 108, 'path_m': 4.})
+            evaluator = SimpleNamespace(label_candidate=lambda *_: {'y': 0, 'criterion': 'test'})
+            observe_verification(planning, SimpleNamespace(), evaluator, {
+                'verification_event': {'task_idx': 0, 'candidate_position': [4, 0, 0],
+                                       'candidate_source': 'navmesh_override', 'confirmed': False}})
+            rows = [json.loads(x) for x in (Path(folder)/'blp_events.jsonl').read_text().splitlines()]
+            self.assertEqual(len(rows), 1)
+            self.assertEqual(rows[0]['event'], 'noncandidate_verification')
+            self.assertTrue(rows[0]['excluded_from_belief_fit'])
+            self.assertNotIn('E', rows[0])
+            self.assertFalse((Path(folder)/'blp_errors.jsonl').exists())
+
+    def test_protected_old_candidate_uses_recorded_query_evidence(self):
+        import json
+        from pathlib import Path
+        from tempfile import TemporaryDirectory
+        from experiments.blp_observer import observe_verification
+        with TemporaryDirectory() as folder:
+            batch = SimpleNamespace(scene_id='s', episode_id='0', records_for_task=lambda _: ())
+            planning = SimpleNamespace(blp_directory=Path(folder), blp_parameters=BeliefParameters(),
+                        blp_context={'batch': batch, 't': 10, 'path_m': 4.,
+                          'query_record_history': {0: [{'position': [1, 0, 0], 'semantic_score': .27,
+                                                       'query_serial': 2, 't': 5}]}})
+            evaluator = SimpleNamespace(label_candidate=lambda *_: {'y': 1, 'criterion': 'test'},
+                                        get_episode_metrics=lambda: {'goat_sub-task_success': 1})
+            agent = SimpleNamespace(candidate_evidence=CandidateEvidenceBank())
+            observe_verification(planning, agent, evaluator, {
+                'verification_event': {'task_idx': 0, 'candidate_position': [1, 0, 0],
+                                       'candidate_source': 'query_candidate', 'confirmed': True}})
+            rows = [json.loads(x) for x in (Path(folder)/'blp_events.jsonl').read_text().splitlines()]
+            final = next(r for r in rows if r['event'] == 'verification_final')
+            self.assertEqual(final['E'], .27)
+            self.assertEqual(final['semantic_evidence_source'], 'historical_query_record')
+
 
 if __name__ == '__main__':
     unittest.main()

@@ -50,6 +50,13 @@ episode bootstrap, confusion/reliability diagnostics and exact decision replay.
 One-class or unbounded fits raise an error rather than emitting invented
 parameters. Candidate priors count distinct checked spatial identities.
 
+Recovery waypoints are tagged as `navmesh_override` at the actual verification
+call. Their events are retained as `noncandidate_verification` and excluded from
+the candidate belief fit because they have no query semantic score. A protected
+query candidate missing from a newer batch uses its recorded query evidence,
+with explicit historical provenance; an unknown query candidate raises a logged
+calibration error for review. No semantic score is fabricated for a recovery point.
+
 The one-metre switching hysteresis and the existing category cooldown apply to
 all four variants. Thus Nearest's unconstrained proposal has zero deviation from
 nearest, while its realized active candidate can be held by either mechanism.

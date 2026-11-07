@@ -10,8 +10,10 @@ test_myopic_does_not_query_future_categories (experiments.test_blp.BLPTests) ...
 ok
 test_myopic_ignores_all_future_layers (experiments.test_blp.BLPTests) ... ok
 test_negative_check_finalizes_once_on_abandonment (experiments.test_blp.BLPTests) ... ok
+test_nonquery_recovery_verification_is_logged_without_fabricating_evidence (experiments.test_blp.BLPTests) ... ok
 test_permutation_and_hysteresis (experiments.test_blp.BLPTests) ... ok
 test_positive_slope_fit_and_unique_candidate_prior (experiments.test_blp.BLPTests) ... ok
+test_protected_old_candidate_uses_recorded_query_evidence (experiments.test_blp.BLPTests) ... ok
 test_raw_rank_cap_blacklist_and_unreachable (experiments.test_blp.BLPTests) ... ok
 test_separated_calibration_refuses_invented_finite_fit (experiments.test_blp.BLPTests) ... ok
 test_uncalibrated_active_mode_is_rejected (experiments.test_blp.BLPTests) ... ok
@@ -19,6 +21,6 @@ test_unit_belief_reduces_to_deterministic (experiments.test_blp.BLPTests) ... ok
 test_visibility_occlusion_range_and_fov (experiments.test_blp.BLPTests) ... ok
 
 ----------------------------------------------------------------------
-Ran 16 tests in 0.265s
+Ran 18 tests in 0.276s
 
 OK
