@@ -1,0 +1,16 @@
+{
+  "source": "user replies in this chat",
+  "E": {
+    "answer": "保留现有 E，调整论文描述（推荐）",
+    "implementation": "CandidateRecord.semantic_score unchanged"
+  },
+  "nearest_stability": {
+    "answer": "保留共享机制，分开报告（推荐）",
+    "implementation": "shared 1m hysteresis and native category cooldown; separate unconstrained and realized deviation"
+  },
+  "github": {
+    "answer": "已添加该公钥并允许写入",
+    "branch": "exp4/blp-eq13"
+  },
+  "evaluation_parameter_policy": "fit only 2-MON system-verification labels; freeze before 3-MON evaluation"
+}

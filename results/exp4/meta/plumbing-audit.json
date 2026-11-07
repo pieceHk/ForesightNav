@@ -1,0 +1,9 @@
+{
+  "pilot_v2": "/nvme/khy/ForesightNav_exp4/results/exp4/runs/20261107_234611_495499_exp4_calibration_plumbing-v2",
+  "n_decisions": 6,
+  "plan_ms_median": 7.9401050170417875,
+  "plan_ms_p95": 9.423654977581464,
+  "full_trajectory_identical_to_pre_diagnostic_fix": true,
+  "trajectory_steps": 48,
+  "error_files": []
+}
