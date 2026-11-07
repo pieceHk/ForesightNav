@@ -32,6 +32,7 @@ class OnlineMapper:
         self._artifacts = artifacts
         self._host_memory_hook = host_memory_hook or release_host_memory
         self._closed = False
+        self._rebuild_error = None
         self.camera_intrinsic = None if camera_intrinsic is None else np.asarray(camera_intrinsic).copy()
         # Rejected raw frames are retained only briefly. Accepted keyframes remain
         # on CPU because the incremental encoder requires stable frame indexing.
@@ -84,6 +85,7 @@ class OnlineMapper:
 
     def flush_episode(self):
         """Synchronously fuse and optionally export the completed episode map."""
+        self._check_rebuild_error()
         for _ in range(3):
             with self._buf_lock:
                 n_kf = len(self._keyframes)
@@ -95,6 +97,7 @@ class OnlineMapper:
             if rebuild_thread is None:
                 break
             rebuild_thread.join()
+            self._check_rebuild_error()
         if self._last_fused_n < n_kf:
             print(f'[OnlineESMapper] Flush incomplete: fused={self._last_fused_n}, '
                   f'accepted={n_kf}', flush=True)
@@ -270,7 +273,10 @@ class OnlineMapper:
 
             # Keep the persistent state on CPU between rebuilds. The ES encoder
             # mutates it in place, so it only lives on GPU during this forward.
-            resume_state = _move_tree_to_device(self._online_state, self.device)
+            resume_state = _move_tree_to_device(
+                self._online_state, self.device,
+                host_keys=('cur_feats', 'depth_outputs_all'),
+            )
             _log_cuda_memory(self.device, 'before encoder forward')
 
             results = self.model.update(
@@ -329,6 +335,7 @@ class OnlineMapper:
 
         except Exception as e:
             import traceback
+            self._rebuild_error = repr(e)
             print(f'[OnlineESMapper] Rebuild ERROR: {e}', flush=True)
             traceback.print_exc()
         finally:
@@ -341,7 +348,7 @@ class OnlineMapper:
             self._model_lock.release()
             with self._rebuild_lock:
                 self._rebuild_active = False
-                restart = self._rebuild_pending and not self._resetting
+                restart = self._rebuild_pending and not self._resetting and self._rebuild_error is None
                 self._rebuild_pending = False
             if restart:
                 self._maybe_start_rebuild()
@@ -411,7 +418,13 @@ class OnlineMapper:
             )
 
 
+    def _check_rebuild_error(self):
+        if self._rebuild_error is not None:
+            raise RuntimeError('Mapping rebuild failed; incomplete maps cannot be used: '
+                               + self._rebuild_error)
+
     def get_status(self) -> dict:
+        self._check_rebuild_error()
         with self._globals_lock:
             n_g = self.n_gaussians
             n_f = self.n_frames

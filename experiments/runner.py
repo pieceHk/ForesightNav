@@ -144,6 +144,8 @@ def run_episodes(
                 'identity-only episode record'
             )
 
+        if hasattr(env, "policy_identity") and scsp_episode_identity is not None:
+            scsp_episode_identity = env.policy_identity(scsp_episode_identity)
         candidate_provider.reset_episode(scene_id, episode_id)
         candidate_provider.invalidate_cache()
 
@@ -212,6 +214,11 @@ def run_episodes(
                 print(f'[P6 boundary] current_task_idx={current_task_idx} >= '
                       f'n_subtasks={n_subtasks}; ending episode cleanly', flush=True)
                 break
+            if current_task_idx != scsp_last_task_idx and hasattr(env, "activate_policy"):
+                env.activate_policy(candidate_provider)
+                obs_tasks = env.get_observation().task_observations["tasks"]
+                runtime_categories = tuple(_task_category(task) for task in obs_tasks)
+                scsp_episode_identity = env.policy_identity(scsp_episode_identity)
             if scsp_enabled and current_task_idx != scsp_last_task_idx:
                 _reset_scsp_task_state(scsp_reranker, scsp_distance_cache)
                 scsp_last_task_idx = int(current_task_idx)
@@ -382,12 +389,18 @@ def run_episodes(
                 if getattr(candidate_provider, '_live_mode', False):
                     _rgb_raw = obs.rgb                                  # (H,W,3) uint8
                     _dep_raw = obs.depth                                # (H,W) float32 m
-                    _gp_raw  = np.array(obs.globalpose, dtype=np.float32)  # (7,)
+                    _camera = obs.task_observations.get('_mfmon_camera')
+                    # Optical pose for fusion, base pose for navigation/records.
+                    _mapping_pose = (np.r_[_camera['rotation'], _camera['position']]
+                                     if _camera is not None else obs.globalpose)
+                    _gp_raw = np.array(_mapping_pose, dtype=np.float32)
                     candidate_provider.push_live_frame(_rgb_raw, _dep_raw, _gp_raw)
                 else:
                     candidate_provider.push_frame(t - 1)
                 dt_push = (time.perf_counter() - t0) * 1000
             except Exception as e:
+                if obs.task_observations.get('_mfmon_camera') is not None:
+                    raise RuntimeError('MFMON mapping frame was not accepted') from e
                 print(f'[P5] push_frame warning: {e}', flush=True)
 
             # ── periodic goal refresh ───────────────────────────────────
@@ -664,6 +677,11 @@ def run_episodes(
         except Exception:
             pass
 
+        terminal_prefix = getattr(metric_protocol, "allows_terminal_prefix", False)
+        if terminal_prefix and evaluator.last_capture is not None and (not all_subtask_metrics or all_subtask_metrics[-1] != evaluator.last_capture):
+            all_stop_reasons.append("episode_limit")
+            all_subtask_metrics.append(metric_protocol.capture(evaluator, steps=len(episode_frame_times), stop_reason="episode_limit", frame_times_ms=episode_frame_times))
+
         if metric_protocol.capture_on_episode_end and n_subtasks == 1 and not all_subtask_metrics:
             all_stop_reasons.append('episode_limit')
             all_subtask_metrics.append(metric_protocol.capture(
@@ -672,7 +690,8 @@ def run_episodes(
             ))
 
         scene_ep_id = f'{scene_id}_{episode_id}'
-        if n_subtasks is None or len(all_subtask_metrics) != n_subtasks:
+        complete = (1 <= len(all_subtask_metrics) <= n_subtasks and (len(all_subtask_metrics) == n_subtasks or all_subtask_metrics[-1]["success"] == 0 or all_subtask_metrics[-1].get("budget_exhausted", False))) if terminal_prefix and n_subtasks else len(all_subtask_metrics) == n_subtasks
+        if n_subtasks is None or not complete:
             raise RuntimeError(
                 f'incomplete MON episode {scene_ep_id}: '
                 f'captured={len(all_subtask_metrics)} expected={n_subtasks}'

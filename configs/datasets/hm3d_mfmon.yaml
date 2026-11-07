@@ -1,0 +1,10 @@
+format: mfmon
+name: author_hm3d_mfmon
+split: val
+root: PBSP/hm3d_mfmon
+manifest: dataset_manifest.json
+manifest_sha256: ad23cc9dff0f0258dda6e143e3c566cc14f151a9a41f55d15f8c20f8557e640f
+expected_episodes: 927
+expected_scenes: 36
+scene_directory: LifelongCrossNav/scene_datasets
+scene_dataset: hm3d_v0.2/hm3d_annotated_basis.scene_dataset_config.json

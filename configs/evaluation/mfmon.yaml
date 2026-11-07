@@ -1,0 +1,6 @@
+# The native runner field is per-task; MFMON World enforces one shared 1500-step episode budget.
+# MFMON uses its own posterior SR/SPL/PR/PPL protocol; the metric names below satisfy the native config schema.
+max_steps_per_task: 1500
+metrics: [SR, SPL, PSR, PeSPL]
+record_decisions: true
+visualize: false

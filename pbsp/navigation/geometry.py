@@ -102,6 +102,31 @@ def draw_circle(array, x, y, radius):
     return array
 
 
+def draw_local_waypoint(goal_map, explored_map, x, y, radius, *, origin=None):
+    """Project a waypoint into the local window without expanding its goal region."""
+    if goal_map.shape != explored_map.shape or goal_map.ndim != 2:
+        raise ValueError("goal and explored maps must have the same 2D shape")
+    shape = np.asarray(goal_map.shape, dtype=np.float64)
+    center = np.asarray([x, y], dtype=np.float64)
+    if np.any(shape <= 0) or not np.isfinite(center).all() or radius < 0:
+        raise ValueError("invalid local waypoint or map")
+    anchor = (shape - 1) / 2 if origin is None else np.asarray(origin, dtype=np.float64)
+    if anchor.shape != (2,) or not np.isfinite(anchor).all():
+        raise ValueError("invalid waypoint projection origin")
+    anchor = np.clip(anchor, 0, shape - 1)
+    delta = center - anchor
+    scale = 1.0
+    for axis in range(2):
+        if delta[axis] > 0:
+            scale = min(scale, (shape[axis] - 1 - anchor[axis]) / delta[axis])
+        elif delta[axis] < 0:
+            scale = min(scale, -anchor[axis] / delta[axis])
+    center = anchor + scale * delta
+    goal_map = draw_circle(goal_map, center[0], center[1], radius)
+    overlap = int(np.count_nonzero((goal_map > 0) & (np.asarray(explored_map) > 0)))
+    return goal_map, radius, overlap
+
+
 def draw_goal_circle_to_explored(goal_map, explored_map, x, y, start_radius, min_overlap=20):
     """Draw a finite goal region overlapping the nearest explored pixels.
 

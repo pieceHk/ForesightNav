@@ -30,7 +30,7 @@ def _release_cuda_cache(device: str, reason: str = ''):
 
 
 
-def _move_tree_to_device(obj, device: str):
+def _move_tree_to_device(obj, device: str, *, host_keys=()):
     """Move nested state in place, completing CUDA-to-CPU copies before return."""
     target = torch.device(device)
     host_copy_streams = {}
@@ -46,7 +46,8 @@ def _move_tree_to_device(obj, device: str):
             return value
         if isinstance(value, dict):
             for key, item in list(value.items()):
-                value[key] = move(item)
+                value[key] = (_move_tree_to_device(item, 'cpu')
+                              if key in host_keys else move(item))
             return value
         if isinstance(value, list):
             for index, item in enumerate(value):

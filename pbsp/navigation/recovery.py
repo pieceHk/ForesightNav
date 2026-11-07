@@ -106,9 +106,10 @@ class RecoveryState:
         if (
             step < self.trapped_warmup_steps
             or len(self.trapped_position_history) < self.trapped_window_steps
-            or self.see_around != 0
         ):
             return None
+        # The movement window already allows a complete 12-step panorama.
+        # Exempting every nonzero scan state masked endless repeated scans.
         positions = np.stack(self.trapped_position_history)
         displacement = np.linalg.norm(positions - positions[0], axis=1)
         trapped = float(displacement.max()) <= self.trapped_radius

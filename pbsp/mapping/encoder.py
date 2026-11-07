@@ -479,16 +479,19 @@ class OnlineEncoder(GaussianFusion, nn.Module):
         all_extrinsics = context["extrinsics"].gather(
             dim=1, index=all_indices.view(1, -1, 1, 1).repeat(b, 1, 4, 4)
         )
-        all_image = (
-            context["image"]
-            .gather(dim=1, index=all_indices.view(1, -1, 1, 1, 1).repeat(b, 1, 3, h, w))
-            .view(-1, 3, h, w)
-        )
+        all_image = context["image"][:, warmup_n_views:].reshape(-1, 3, h, w)
         all_cache = [context["cache"][i] for i in all_indices]
         cur_indices = warmup_cache["warmup_indices"]
         cur_intrinsics = warmup_cache["warmup_intrinsics"]
         cur_extrinsics = warmup_cache["warmup_extrinsics"]
         cur_feats = warmup_cache["warmup_img_feats"]
+        # Historical feature values stay on the host, at original precision.
+        # Only the views selected by the unchanged distance ranking go to GPU.
+        # Per-frame chunks also avoid copying the complete history each step.
+        cur_feats = [list(feat.detach().cpu().split(1, dim=0))
+                     if torch.is_tensor(feat) else feat for feat in cur_feats]
+        depth_outputs_all = {key: [v.detach().cpu() for v in values]
+                             for key, values in depth_outputs_all.items()}
         _start_idx = len(cur_indices) - warmup_n_views
         for idx in range(_start_idx, n_views - warmup_n_views):
             cur_indices = torch.cat([cur_indices, all_indices[idx : idx + 1]], dim=0)
@@ -513,10 +516,8 @@ class OnlineEncoder(GaussianFusion, nn.Module):
                 cur_codebook_caches = rearrange(cur_codebook_caches, "b h w -> () b (h w)")
             else:
                 cur_codebook_caches = None
-            new_cur_feats = []
-            for cur_feat, new_feat in zip(cur_feats, new_feats):
-                new_cur_feats.append(torch.cat([cur_feat, new_feat], dim=0))
-            cur_feats = new_cur_feats
+            for history, new_feat in zip(cur_feats, new_feats):
+                history.extend(new_feat.detach().cpu().split(1, dim=0))
             resized = 0
             s = -1 if not self.cfg.low_res else 0
             cur_n_views = len(cur_indices)
@@ -533,18 +534,13 @@ class OnlineEncoder(GaussianFusion, nn.Module):
             slide_mask.scatter_(1, indices, True)
             slide_mask[0, -1] = False
             src_indices = full_indices[slide_mask][None, None].repeat(b, 1, 1)
-            matching_cur_feats = cur_feats[1][-1:]
+            matching_cur_feats = new_feats[1]
             dim = matching_cur_feats.shape[-3]
-            matching_src_feats = (
-                rearrange(cur_feats[1], "(b v) c h w -> b v c h w", b=b, v=cur_n_views)[:, None]
-                .gather(
-                    dim=2,
-                    index=src_indices[:, :, :, None, None, None].repeat(
-                        1, 1, 1, dim, h // 4, w // 4
-                    ),
-                )
-                .view(-1, num_context_views - 1, dim, h // 4, w // 4)
-            )
+            assert b == 1, 'Online mapping owns one episode at a time'
+            selected = src_indices.reshape(-1).tolist()
+            matching_src_feats = torch.cat([cur_feats[1][i] for i in selected], dim=0).to(device)
+            matching_src_feats = matching_src_feats.view(
+                -1, num_context_views - 1, dim, h // 4, w // 4)
             src_extrinsics = cur_extrinsics[:, None].gather(
                 dim=2, index=src_indices[:, :, :, None, None].repeat(1, 1, 1, 4, 4)
             )
@@ -583,9 +579,9 @@ class OnlineEncoder(GaussianFusion, nn.Module):
                 min_depth=near,
                 max_depth=far,
             )
-            cost_volume_features = self.cv_encoder(cost_volume, [x[-1:] for x in cur_feats[1:]])
+            cost_volume_features = self.cv_encoder(cost_volume, new_feats[1:])
             depth_outputs = self.depth_decoder(
-                [cur_feats[0][-1:]] + cost_volume_features, imgs=cur_image
+                [new_feats[0]] + cost_volume_features, imgs=cur_image
             )
             to_skip = cur_image
             skip = self.high_resolution_skip[s + 1](to_skip)
@@ -648,9 +644,9 @@ class OnlineEncoder(GaussianFusion, nn.Module):
                 if key not in depth_outputs_all:
                     continue
                 if is_testing:
-                    depth_outputs_all[key].append(depth_outputs[key])
+                    depth_outputs_all[key].append(depth_outputs[key].detach().cpu())
                 else:
-                    depth_outputs_all[key].append(depth_outputs[key])
+                    depth_outputs_all[key].append(depth_outputs[key].detach().cpu())
             gaussians_feats = rearrange(gaussians_feats, "b v h w c -> b v (h w) c")
             xy_ray = rearrange(xy_ray, "h w xy -> (h w) () xy")
             offset_xy = torch.zeros_like(
@@ -728,13 +724,8 @@ class OnlineEncoder(GaussianFusion, nn.Module):
                 self._record_profile(
                     {"phase": "fuse_frame", "ms": round((time.perf_counter() - _t_fuse) * 1000, 2)}
                 )
-            depth_preds_all = torch.cat(depth_outputs_all[f"depth_pred_s{s}_b1hw"], dim=0)
-            densities_preds_all = torch.cat(depth_outputs_all[f"densities"], dim=0)
-            refine_window = (
-                self.cfg.refine_window
-                if depth_preds_all.shape[0] >= self.cfg.refine_window
-                else depth_preds_all.shape[0]
-            )
+            # Historical depth outputs are returned for provenance; the online
+            # path does not refine them and need not concatenate them per frame.
         results["globals"] = globals
         if return_state:
             results["online_state"] = {

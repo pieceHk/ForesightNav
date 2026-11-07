@@ -116,8 +116,11 @@ def prepare_plan(
     )
     dataset = resources.data / experiment.dataset.root
     config = experiment.dataset
-    if getattr(config, 'format', None) == 'objectnav':
-        from experiments.objectnav_data import load_dataset, episode_identities
+    if getattr(config, 'format', None) in {'objectnav', 'mfmon'}:
+        if config.format == 'mfmon':
+            from experiments.mfmon import load_dataset, episode_identities
+        else:
+            from experiments.objectnav_data import load_dataset, episode_identities
         manifest = load_dataset(dataset, config)
         values = episode_identities(manifest, config.manifest_sha256)
         checked = index = {(item.scene_id, item.runtime_episode_id): item for item in values}
@@ -216,7 +219,7 @@ def load_plan(path):
         )
     plan = RunPlan(
         experiment,
-        (ObjectNavResourcePaths if getattr(experiment.dataset, 'format', None) == 'objectnav' else ResourcePaths)(
+        (ObjectNavResourcePaths if getattr(experiment.dataset, 'format', None) in {'objectnav', 'mfmon'} else ResourcePaths)(
             **{name: Path(item) for name, item in value["resources"].items()}
         ),
         tuple(

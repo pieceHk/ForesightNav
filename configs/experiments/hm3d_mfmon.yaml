@@ -1,0 +1,5 @@
+name: hm3d_mfmon_full_sequence_pbsp
+method: ../methods/full_pbsp.yaml
+dataset: ../datasets/hm3d_mfmon.yaml
+evaluation: ../evaluation/mfmon.yaml
+seed: 1

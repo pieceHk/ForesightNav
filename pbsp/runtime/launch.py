@@ -247,9 +247,13 @@ def allocate_run(plan, *, tag="", resource_checks=None):
 
 def launch(plan, *, tag="", resource_checks=None):
     from experiments.metrics import aggregate_run_artifacts
-    native = getattr(plan.experiment.dataset, 'format', None) == 'objectnav'
+    mfmon = getattr(plan.experiment.dataset, 'format', None) == 'mfmon'
+    native = getattr(plan.experiment.dataset, 'format', None) in {'objectnav','mfmon'}
     if native:
-        from experiments.objectnav_results import aggregate_run as aggregate_native_run
+        if mfmon:
+            from experiments.mfmon import aggregate_run as aggregate_native_run
+        else:
+            from experiments.objectnav_results import aggregate_run as aggregate_native_run
 
     plan = allocate_run(plan, tag=tag, resource_checks=resource_checks)
     status(plan, "starting")
@@ -271,7 +275,7 @@ def launch(plan, *, tag="", resource_checks=None):
                         navigation.wait()
                     result = (aggregate_native_run(plan.run_directory, require_complete=False)
                               if native else aggregate_run_artifacts(plan.run_directory))
-                    write_json(plan.run_directory / ('objectnav_metrics.json' if native else 'mon_metrics.json'), result)
+                    write_json(plan.run_directory / ('metrics.json' if mfmon else 'objectnav_metrics.json' if native else 'mon_metrics.json'), result)
                     response = request(
                         plan.socket_path, {"cmd": "flush"}, timeout_s=120
                     )
@@ -280,15 +284,15 @@ def launch(plan, *, tag="", resource_checks=None):
                 expected = len(plan.identities)
                 if (
                     result["counts"]["completed_episodes"] != expected
-                    or result["counts"]["completed_subtasks"]
-                    != expected * plan.experiment.dataset.expected_tasks_per_episode
+                    or (not mfmon and result["counts"]["completed_subtasks"]
+                    != expected * plan.experiment.dataset.expected_tasks_per_episode)
                 ):
                     raise RuntimeError(
                         "Completed metric counts differ from the selected complete episodes"
                     )
                 if native:
                     result = aggregate_native_run(plan.run_directory)
-                    write_json(plan.run_directory/'objectnav_metrics.json', result)
+                    write_json(plan.run_directory/('metrics.json' if mfmon else 'objectnav_metrics.json'), result)
             status(plan, "finishing")
         status(plan, "completed", completed_episodes=expected)
     except BaseException as exc:

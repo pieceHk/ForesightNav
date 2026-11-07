@@ -77,6 +77,8 @@ class TrajectoryEnvironment:
                         "source_episode_ids": None, "ordered_categories": categories}
             if self.identity is not None:
                 identity.update(self.identity)
+            if hasattr(self.environment, "policy_identity"):
+                identity = self.environment.policy_identity(identity)
             if (identity["scene_id"], identity["runtime_episode_id"], list(identity["ordered_categories"])) != (
                     self.scene, self.episode, categories):
                 raise ValueError("Trajectory identity differs from the observed episode tasks")

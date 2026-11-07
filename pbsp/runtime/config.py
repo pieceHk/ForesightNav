@@ -146,8 +146,29 @@ class ObjectNavDatasetConfig:
         return 1
 
 
+@dataclass(frozen=True)
+class MFMONDatasetConfig(ObjectNavDatasetConfig):
+    def __post_init__(self):
+        if self.format != 'mfmon' or self.split != 'val':
+            raise ConfigError('MFMON requires format=mfmon, split=val')
+        if self.expected_episodes != 927 or self.expected_scenes != 36:
+            raise ConfigError('MFMON manifest must cover all 927 episodes and 36 scenes')
+        for name in ('name', 'root', 'manifest', 'scene_directory', 'scene_dataset'):
+            value = getattr(self, name)
+            _text(value, name)
+            if name != 'name' and (Path(value).is_absolute() or '..' in Path(value).parts):
+                raise ConfigError('MFMON resource paths must be relative: ' + name)
+        digest = self.manifest_sha256
+        if not isinstance(digest, str) or len(digest) != 64 or any(c not in '0123456789abcdef' for c in digest):
+            raise ConfigError('MFMON manifest_sha256 must be a lowercase SHA-256')
+
+    @property
+    def expected_tasks_per_episode(self):
+        return 3
+
+
 def dataset_config(value):
-    cls = ObjectNavDatasetConfig if isinstance(value, dict) and 'format' in value else DatasetConfig
+    cls = (MFMONDatasetConfig if value.get('format') == 'mfmon' else ObjectNavDatasetConfig) if isinstance(value, dict) and 'format' in value else DatasetConfig
     return _typed(cls, value)
 
 

@@ -17,7 +17,7 @@ from .candidates import CandidateTracking
 from .geometry import (
     GoalProjection,
     compute_transform_params_v2,
-    draw_goal_circle_to_explored,
+    draw_local_waypoint,
     global_to_gps2,
 )
 from .local_map import LocalMapState
@@ -299,12 +299,13 @@ class Navigator(CandidateTracking, GoalVerifier, RecoveryState, LocalMapState, G
                 planner_inputs[0]["goal_map"] = np.zeros_like(planner_inputs[0]["goal_map"])
                 dilate_radius = 4
                 (planner_inputs[0]["goal_map"], dilate_radius, goal_overlap) = (
-                    draw_goal_circle_to_explored(
+                    draw_local_waypoint(
                         planner_inputs[0]["goal_map"],
                         vis_inputs[0]["explored_map"],
                         goal_pixel_pose[1],
                         goal_pixel_pose[0],
                         dilate_radius,
+                        origin=[cur_self_pixel_pose[1], cur_self_pixel_pose[0]],
                     )
                 )
                 if goal_overlap < 20:
@@ -314,7 +315,6 @@ class Navigator(CandidateTracking, GoalVerifier, RecoveryState, LocalMapState, G
                     )
                 if (
                     np.linalg.norm(relative_pose) < 0.6
-                    or np.linalg.norm(relative_pixel_pose) < dilate_radius + 4
                 ):
                     planner_inputs[0]["goal_pose"] = math.degrees(planner_goal_pose)
         elif goal_global_pose is not None:
@@ -328,12 +328,13 @@ class Navigator(CandidateTracking, GoalVerifier, RecoveryState, LocalMapState, G
             planner_inputs[0]["goal_map"] = np.zeros_like(planner_inputs[0]["goal_map"])
             dilate_radius = 4
             (planner_inputs[0]["goal_map"], dilate_radius, goal_overlap) = (
-                draw_goal_circle_to_explored(
+                draw_local_waypoint(
                     planner_inputs[0]["goal_map"],
                     vis_inputs[0]["explored_map"],
                     goal_pixel_pose[1],
                     goal_pixel_pose[0],
                     dilate_radius,
+                    origin=[cur_self_pixel_pose[1], cur_self_pixel_pose[0]],
                 )
             )
             if goal_overlap < 20:
@@ -343,7 +344,6 @@ class Navigator(CandidateTracking, GoalVerifier, RecoveryState, LocalMapState, G
                 )
             if (
                 np.linalg.norm(relative_pose) < 0.6
-                or np.linalg.norm(relative_pixel_pose) < dilate_radius + 4
             ):
                 planner_inputs[0]["goal_pose"] = math.degrees(planner_goal_pose)
         else:
@@ -365,12 +365,13 @@ class Navigator(CandidateTracking, GoalVerifier, RecoveryState, LocalMapState, G
                 goal_pixel_pose = cur_self_pixel_pose + relative_pixel_pose
                 dilate_radius = 6
                 (planner_inputs[0]["goal_map"], dilate_radius, goal_overlap) = (
-                    draw_goal_circle_to_explored(
+                    draw_local_waypoint(
                         planner_inputs[0]["goal_map"],
                         vis_inputs[0]["explored_map"],
                         goal_pixel_pose[1],
                         goal_pixel_pose[0],
                         dilate_radius,
+                        origin=[cur_self_pixel_pose[1], cur_self_pixel_pose[0]],
                     )
                 )
                 if goal_overlap < 20:
@@ -380,7 +381,6 @@ class Navigator(CandidateTracking, GoalVerifier, RecoveryState, LocalMapState, G
                     )
                 if (
                     np.linalg.norm(relative_pose) < 1.2
-                    or np.linalg.norm(relative_pixel_pose) < dilate_radius + 8
                 ):
                     if self.see_around <= 12:
                         self.goal_vis_stage = 1
@@ -473,6 +473,11 @@ class Navigator(CandidateTracking, GoalVerifier, RecoveryState, LocalMapState, G
                                     }
                                 )
                             if confirmed:
+                                if '_mfmon_camera' in obs.task_observations:
+                                    from experiments.mfmon import project_detection
+                                    point = project_detection(seem_mask, obs)
+                                    if point is not None:
+                                        self._mfmon_detection_position = point
                                 self.stop_by_seem = True
                                 self.goal_vis_stage = 2
                                 self.seem_goal_pose = mask_pos + local_pose[:2]
@@ -651,7 +656,9 @@ class Navigator(CandidateTracking, GoalVerifier, RecoveryState, LocalMapState, G
             info["goal_text"] = goal_text_desc
             self._write_navigation_snapshot(info, action, observation=obs)
             info = None
+        mfmon_detection = getattr(self, "_mfmon_detection_position", None)
         if action == self.actions.STOP:
+            self._mfmon_detection_position = None
             print(f"[STOP_REASON] task={self.current_task_idx} reason={stop_reason}", flush=True)
             self._clear_seem_verification_state()
             self.see_around = 0
@@ -667,6 +674,7 @@ class Navigator(CandidateTracking, GoalVerifier, RecoveryState, LocalMapState, G
                 self.reset_sub_episode()
         self.prev_task_type = task_type
         self.last_action_metadata = {
+            "mfmon_detection_position": mfmon_detection,
             "stop_reason": stop_reason,
             "planner_error": planner_error,
             "trapped_event_count": len(self.trapped_events),

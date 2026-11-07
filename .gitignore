@@ -15,3 +15,12 @@ third_party/habitat-lab/
 third_party/superglue/
 third_party/embodied_splat/cache/
 third_party/embodied_splat/log/
+
+experiments/results/
+experiments/.*.lock
+experiments/history.tar
+
+# Mutable experiment audit records; policy source remains captured.
+experiments/mfmon_revision*.json
+experiments/mfmon_revision*.log
+experiments/diagnostics/

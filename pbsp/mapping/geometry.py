@@ -12,7 +12,7 @@ def habitat_pose_to_c2w(habitat_pose: np.ndarray) -> np.ndarray:
     if pose.shape != (7,):
         raise ValueError(f"expected pose shape (7,), got {pose.shape}")
     qw, qx, qy, qz, px, py, pz = pose
-    x, y, z, w = qw, qx, qy, qz
+    x, y, z, w = qx, qy, qz, qw
     rotation = np.array(
         [
             [1 - 2 * y * y - 2 * z * z, 2 * x * y - 2 * z * w, 2 * x * z + 2 * y * w],
@@ -22,7 +22,9 @@ def habitat_pose_to_c2w(habitat_pose: np.ndarray) -> np.ndarray:
         dtype=np.float64,
     )
     c2w = np.eye(4, dtype=np.float64)
-    c2w[:3, :3] = rotation @ RUB_TO_RDF
+    # Convert world and optical axes separately; a quaternion permutation only
+    # happened to agree for yaw-only poses, not for pitched camera poses.
+    c2w[:3, :3] = RUB_TO_RDF @ rotation @ RUB_TO_RDF
     c2w[:3, 3] = RUB_TO_RDF @ np.array([px, py, pz], dtype=np.float64)
     return c2w.astype(np.float32)
 

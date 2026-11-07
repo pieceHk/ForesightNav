@@ -19,7 +19,8 @@ class MappingClient:
     """Versioned mapping candidates and RGB-D streaming over local IPC."""
 
     def __init__(
-        self, socket_path, *, task_reader, top_k=10, connect_timeout=60.0, live_mode=True
+        self, socket_path, *, task_reader, top_k=10, connect_timeout=60.0, live_mode=True,
+        strict_errors=False,
     ):
         self.socket_path = socket_path
         self.top_k = top_k
@@ -45,6 +46,7 @@ class MappingClient:
         self.current_snap: str = ''  # snap basename after last query
         self.n_live_frames: int = 0  # frames sent via push_live_frame
         self._live_mode: bool = live_mode
+        self.strict_errors = strict_errors
 
     # ── connection ──────────────────────────────────────────────────────
 
@@ -177,6 +179,8 @@ class MappingClient:
         self._t_push_ms = (time.perf_counter() - t0) * 1000
         self.n_live_frames += 1
         if not resp.get('ok'):
+            if self.strict_errors:
+                raise RuntimeError(f'push_live_frame failed: {resp}')
             print(f'[OnlineESProvider] push_live_frame warning: {resp}', flush=True)
 
     def get_goals(self, task_idx: int, category: str = None) -> List:

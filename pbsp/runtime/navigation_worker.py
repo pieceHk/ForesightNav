@@ -66,7 +66,7 @@ class NavigationRequest:
     dataset_format: str = 'goat_mon'
 
     def __post_init__(self):
-        if self.dataset_format not in {'goat_mon', 'objectnav'}:
+        if self.dataset_format not in {'goat_mon', 'objectnav', 'mfmon'}:
             raise ValueError('Unknown native navigation dataset format')
         if self.top_k < 1 or self.episode_start < 0:
             raise ValueError("Expected positive top_k and a non-negative episode start")
@@ -171,6 +171,9 @@ def configure_experiment(config, request):
 
 def build_services(request, stack):
     """Load default model adapters; register resources before later construction."""
+    if request.dataset_format == 'mfmon':
+        from experiments.mfmon import build_services as build_mfmon_services
+        return build_mfmon_services(request, stack)
     from pbsp.adapters.habitat_config import get_config
     from habitat.core.env import Env
     from pbsp.adapters.goat import create_environment
