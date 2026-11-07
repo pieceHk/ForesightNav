@@ -1,0 +1,145 @@
+--- a/pbsp/navigation/navigator.py
++++ b/pbsp/navigation/navigator.py
+@@ -235,6 +235,12 @@
+                 self._clear_navmesh_override_goal()
+             else:
+                 frontier_global_pose = override_goal
++        if getattr(self, 'blp_enabled', False):
++            from experiments.blp_observer import action_target_descriptor
++            if not self.stop_by_seem:
++                self.blp_visual_parent = None
++            blp_action_target = action_target_descriptor(
++                self, self.current_task_idx, frontier_global_pose)
+         if frontier_global_pose is None and self.frontier_reranker.enabled:
+             (ranked_frontier, self.frontier_rerank_diagnostics) = self.frontier_reranker.rank(
+                 planner_inputs[0]["frontier_map"],
+@@ -279,6 +285,9 @@
+                 )
+                 self._clear_seem_verification_state()
+         if self.stop_by_seem:
++            if getattr(self, 'blp_enabled', False):
++                blp_action_target = getattr(self, 'blp_visual_parent', None) or blp_action_target
++                blp_action_target['pursuit_mode'] = 'confirmed_visual_goal'
+             min_dist = 1000000.0
+             best_goal_idx = -1
+             for idx, seem_goal in enumerate(self.seem_goal_pose):
+@@ -483,6 +492,9 @@
+                                     }
+                                 )
+                             if confirmed:
++                                if getattr(self, 'blp_enabled', False):
++                                    blp_action_target['pursuit_mode'] = 'confirmed_visual_goal'
++                                    self.blp_visual_parent = blp_action_target
+                                 if '_mfmon_camera' in obs.task_observations:
+                                     from experiments.mfmon import project_detection
+                                     point = project_detection(seem_mask, obs)
+@@ -684,6 +696,8 @@
+                 self.reset_sub_episode()
+         self.prev_task_type = task_type
+         self.last_action_metadata = {
++            **({'blp_action_target': blp_action_target}
++               if getattr(self, 'blp_enabled', False) else {}),
+             "mfmon_detection_position": mfmon_detection,
+             "stop_reason": stop_reason,
+             "planner_error": planner_error,
+--- a/experiments/blp_observer.py
++++ b/experiments/blp_observer.py
+@@ -243,3 +243,47 @@
+                  last_t=planning.blp_context['t'], verification=event)
+     if event['confirmed']:
+         finalize_visit(planning, 'confirmed')
++
++
++def action_target_descriptor(agent, task_idx, position):
++    """Copy the selected target before STOP can advance the policy task."""
++    point = None if position is None else np.asarray(position, dtype=float)
++    if point is not None and (point.shape != (3,) or not np.all(np.isfinite(point))):
++        raise ValueError('Action target must be a finite world XYZ point')
++    override = getattr(agent, 'navmesh_override_goal', None)
++    source = ('frontier' if point is None else 'navmesh_override'
++              if override is not None and np.allclose(point, override, rtol=0., atol=1e-6)
++              else 'query_candidate')
++    return {'schema_version': 'blp_action_target_v1', 'task_idx': int(task_idx),
++            'source': source, 'position': None if point is None else point.tolist()}
++
++
++def bind_action_target(planning, metadata, task_idx, frame_index):
++    """Read existing identities without registering candidates or changing rank."""
++    target = dict(metadata['blp_action_target'])
++    if target['task_idx'] != int(task_idx):
++        raise ValueError('Action target belongs to a different pre-STOP task')
++    recovery = metadata.get('blp_effective_recovery')
++    if recovery is not None:
++        target.update(source='navmesh_override', position=list(recovery['position']),
++                      runner_recovery_mode=recovery['mode'])
++    saved_id = target.get('candidate_id') if recovery is None else None
++    target.update(frame_index=int(frame_index), candidate_id=None,
++                  query_identity_status='not_query')
++    if target['source'] == 'query_candidate':
++        point = np.asarray(target['position'], dtype=float)
++        registry = planning.blp_context.get('candidate_registry', {}).get(int(task_idx), [])
++        if saved_id is not None:
++            if not any(r['candidate_id'] == saved_id for r in registry):
++                raise ValueError('Confirmed visual parent is absent from episode registry')
++            target.update(candidate_id=saved_id, query_identity_status='resolved')
++            return target
++        distances = [(float(np.linalg.norm((np.asarray(r['position']) - point)[[0, 2]])), r)
++                     for r in registry]
++        matches = [(distance, r) for distance, r in distances if distance <= .75]
++        if matches:
++            _, match = min(matches, key=lambda item: (item[0], item[1]['candidate_id']))
++            target.update(candidate_id=match['candidate_id'], query_identity_status='resolved')
++        else:
++            target['query_identity_status'] = 'unresolved'
++    return target
+--- a/experiments/runner.py
++++ b/experiments/runner.py
+@@ -603,6 +603,9 @@
+                 trapped_event['escape'] = escape_details
+                 if escape_goal is not None:
+                     agent.set_navmesh_override_goal(escape_goal, 'escape')
++                    if getattr(agent, 'blp_enabled', False):
++                        action_metadata['blp_effective_recovery'] = {
++                            'mode': 'escape', 'position': list(map(float, escape_goal))}
+                     action = DiscreteNavigationAction.TURN_RIGHT
+                 else:
+                     agent.clear_local_navigation_state()
+@@ -619,6 +622,9 @@
+                 )
+                 if random_goal is not None:
+                     agent.set_navmesh_override_goal(random_goal, 'random')
++                    if getattr(agent, 'blp_enabled', False):
++                        action_metadata['blp_effective_recovery'] = {
++                            'mode': 'random', 'position': list(map(float, random_goal))}
+                     action = DiscreteNavigationAction.TURN_RIGHT
+                 print(
+                     '[RANDOM_EXPLORATION_GOAL] '
+@@ -634,6 +640,14 @@
+                     f'planner_error={planner_error!r}'
+                 )
+ 
++            if getattr(agent, 'blp_enabled', False):
++                from experiments.blp_observer import bind_action_target
++                original_target = action_metadata['blp_action_target']
++                bound_target = bind_action_target(
++                    planning, action_metadata, current_task_idx, t)
++                if bound_target['source'] == 'query_candidate' and bound_target['candidate_id'] is not None:
++                    original_target['candidate_id'] = bound_target['candidate_id']
++                action_metadata['blp_action_target'] = bound_target
+             env.apply_action(action, info=info)
+ 
+             dt_total = (time.perf_counter() - t_step_start) * 1000
+--- a/experiments/trajectory.py
++++ b/experiments/trajectory.py
+@@ -111,6 +111,11 @@
+                "action_id": action_id, "action_name": str(action_name),
+                "is_stop": is_stop, "stop_reason": self.action_metadata().get("stop_reason") if is_stop else None,
+                "world_pose": list(self.pose)}
++        target = self.action_metadata().get('blp_action_target')
++        if target is not None:
++            if target['task_idx'] != task or target['frame_index'] != self.frame + 1:
++                raise ValueError('BLP target and accepted-action trajectory disagree')
++            row['blp_action_target'] = json.loads(json.dumps(target, allow_nan=False))
+         encoded = json.dumps(row, allow_nan=False, separators=(",", ":")) + "\n"
+         result = self.environment.apply_action(action, info=info, **kwargs)
+         end_pose = getattr(self.environment, 'action_end_pose', None)

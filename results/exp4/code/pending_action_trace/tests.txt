@@ -1,0 +1,13 @@
+test_confirmed_visual_parent_identity_survives_query_centroid_drift (test_pending_action_trace.PendingTraceTests) ... ok
+test_descriptor_copies_point_and_distinguishes_nonquery_sources (test_pending_action_trace.PendingTraceTests) ... ok
+test_frame_and_task_mismatches_are_rejected (test_pending_action_trace.PendingTraceTests) ... ok
+test_old_mode_keeps_native_action_row_without_extension (test_pending_action_trace.PendingTraceTests) ... ok
+test_recovery_does_not_rewrite_the_confirmed_parent (test_pending_action_trace.PendingTraceTests) ... ok
+test_registry_is_read_only_and_unresolved_query_is_explicit (test_pending_action_trace.PendingTraceTests) ... ok
+test_rejected_action_is_not_added_to_the_native_trace (test_pending_action_trace.PendingTraceTests) ... ok
+test_stop_uses_environment_task_before_transition_and_snapshots_target (test_pending_action_trace.PendingTraceTests) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.004s
+
+OK

@@ -124,3 +124,17 @@ a2 当前 launcher PID 为 `1979825`（GPU2）及 `1979826`（GPU3），控制�
 **CP3前必须处理的真实缺口**：完整场景诊断发现3处“GT无效查询候选确认后又检查其他候选”的路径归属不明。当前分析工具正确保留invalid_path_complete=false，正式汇总拒绝不完整过程路径。不是标定E/S/v/y或C_exp错误，不能为此重启当前收集。收集结束后、CP3之前必须补齐被动逐动作实际导航目标及来源记录，保留STOP前任务索引并纳入Runner恢复动作替换，逐帧与原生轨迹对齐计算路径，不再依赖“最后一次确认到STOP”的推断。之后重新检查旧模式回归、更新源码指纹及CP2b绑定；四个变体同样记录。该源码修改尚未实现，不能仅清空分析器的gap列表来绕过。
 
 已定位位置：Navigator的 `frontier_global_pose` 是本次动作实际使用的查询／override目标；`last_action_metadata`在STOP后可能已切换self.current_task_idx，因此须捕获STOP前的task和目标。Runner在agent.act之后还可能把动作改成TURN_RIGHT并设置恢复目标，应在最终env.apply_action前记录有效动作。当前 `trajectory.jsonl`只含action/pose，没有目标身份；仅靠刷新节奏的scsp_decisions不能精确重建每次候选切换。证据案例TEEsavR23oF/8/k1：确认t555、下一检查t601、STOPt997。
+
+03:27 当前62/360：QaLdnwvtxbs已完成2条、动作534；cvZr5TUy5C5动作326，尚未完成首条。两个新launcher均真实存活，控制器存活、源指纹不变、错误0。可复用独立审计入口为 `PYTHONPATH=.:results/exp4/code python results/exp4/code/audit_completed_calibration.py`，已对两个完整场景执行成功；802次检查与最终标签按(scene,episode,k,candidate_id,t)多重集合严格匹配，不只是计数相等。审计脚本、报告和差异已推送 `5ae9991`；运行代码仍为d94ca7d。本轮为真实场景完成、独立完整审计与缺口发现的进展，未启动3-MON、未改变运行源码。
+
+04:16 本轮为 verified wait，持续核查约50分钟后完成91/360，超过前三组收集目标的四分之一。QaLdnwvtxbs为23/30（launcher2003961，动作5171），cvZr5TUy5C5为8/30（launcher2004691，动作4897）；两项真实/proc身份匹配，控制器1979824存活，源指纹未变、影子错误0。源配置与数值口径未改，没有新启动的额外实验、没有提前拟合或3-MON运行。最新live audit与ledger已同步本机。仍等待固定三组完成，之前3处过程路径记录缺口必须在CP3前修复，不能因持续等待而遗忘。
+
+## 尚未应用的逐动作记录补丁（04:23）
+
+当前94/360（30+30+26+8），真实控制器和两项新launcher仍存活，源指纹未变、错误0。运行源码没有变化。新增准备材料在 `code/prepare_action_trace_patch.py`、`code/test_pending_action_trace.py` 和 `code/pending_action_trace/`。生成器只写源文件副本和diff，4个源文件SHA256绑定到d94ca7d；4份提案可编译，`git apply --check`通过，8项独立测试通过。没有执行git apply。
+
+方案将可选 `blp_action_target` 直接附在原生trajectory每行，沿用其“环境接受后才记录”的保证。Navigator捕获STOP前任务和实际查询／override目标；确认视觉目标后保存父候选，避免GS刷新把旧视觉目标的路径误归给新候选。Runner如实标注实际恢复动作，Observer只读注册表绑定身份；没有E/S、注册、排序或验证算法调用的改变。关键新发现是stop_by_seem分支可继续追逐确认的SEEM目标，不一定追逐最新GS候选，因此仅记录frontier_flag是不够的。
+
+8项测试仅对提案的辅助函数和真实TrajectoryEnvironment适配器在临时模拟环境验证：描述复制、来源分类、只读身份匹配、确认父身份延续、恢复覆盖、STOP原阶段、拒绝动作不落盘、帧任务匹配及旧模式行兼容。没有验证完整Navigator、GPU行为或正式路径统计；不能把准备补丁当成运行修复已完成。
+
+仍须等标定收集结束后再审查和应用，重做219次旧模式回归并更新源指纹及CP2b绑定。正式汇总消费该字段、按原生GT判据处理同一候选重复检查／标签变化并计算逐动作路径的部分尚未实现。旧数据的3处gap继续保留，不得清空或宣称已修复。README明确这些限制；基准及提案的完整副本不必入Git，生成器可按SHA从当前源码或d94ca7d恢复，diff和测试需同步。
