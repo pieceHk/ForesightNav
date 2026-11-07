@@ -233,6 +233,37 @@ class BLPTests(unittest.TestCase):
         self.assertEqual(diagnostic['fn'], 0)
         self.assertEqual(sum(b['n'] for b in diagnostic['reliability_bins']), 6)
 
+    def test_negative_check_finalizes_once_on_abandonment(self):
+        import json
+        from pathlib import Path
+        from tempfile import TemporaryDirectory
+        from experiments.blp_observer import observe_verification, prepare_action
+        record = SimpleNamespace(position=[1, 0, 0], semantic_score=.25)
+        batch = SimpleNamespace(scene_id='s', episode_id='0', records_for_task=lambda _: [record])
+        with TemporaryDirectory() as folder:
+            planning = SimpleNamespace(blp_directory=Path(folder), blp_parameters=BeliefParameters(),
+                       blp_context={'batch': batch, 't': 1, 'path_m': 0.})
+            agent = SimpleNamespace(gs_poses={0: [[1, 0, 0]]}, frontier_flag={0: 0},
+                                    candidate_evidence=CandidateEvidenceBank())
+            evaluator = SimpleNamespace(get_episode_metrics=lambda: {'goat_sub-task_success': 0},
+                         label_candidate=lambda *_: {'y': 0, 'criterion': 'test'})
+            prepare_action(planning, agent, 0)
+            planning.blp_context['path_m'] = 2.
+            metadata = {'verification_event': {'candidate_position': [1, 0, 0], 'task_idx': 0, 'confirmed': False}}
+            observe_verification(planning, agent, evaluator, metadata)
+            observe_verification(planning, agent, evaluator, metadata)
+            path = Path(folder) / 'blp_events.jsonl'
+            rows = [json.loads(line) for line in path.read_text().splitlines()]
+            self.assertEqual(sum(r['event'] == 'verification_final' for r in rows), 0)
+            agent.gs_poses[0] = [[3, 0, 0]]
+            observe_verification(planning, agent, evaluator, {})
+            observe_verification(planning, agent, evaluator, {})
+            rows = [json.loads(line) for line in path.read_text().splitlines()]
+            finalized = [r for r in rows if r['event'] == 'verification_final']
+            self.assertEqual(len(finalized), 1)
+            self.assertEqual(finalized[0]['v'], 0)
+            self.assertEqual(finalized[0]['verification_path_m'], 2.)
+
 
 if __name__ == '__main__':
     unittest.main()
