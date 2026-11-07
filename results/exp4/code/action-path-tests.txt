@@ -1,0 +1,15 @@
+test_legacy_is_explicit_and_partial_recording_is_rejected (test_action_path_metrics.ActionPathTests) ... ok
+test_missing_or_non_native_gt_cannot_populate_cost (test_action_path_metrics.ActionPathTests) ... ok
+test_missing_terminal_stop_is_not_treated_as_a_complete_path (test_action_path_metrics.ActionPathTests) ... ok
+test_mixed_labels_confirmation_and_recovery_have_exact_nonoverlapping_cost (test_action_path_metrics.ActionPathTests) ... ok
+test_native_path_mismatch_is_rejected (test_action_path_metrics.ActionPathTests) ... ok
+test_recorded_after_pose_is_used_and_checked_against_next_observation (test_action_path_metrics.ActionPathTests) ... ok
+test_stop_transition_keeps_displacement_in_the_pre_stop_stage (test_action_path_metrics.ActionPathTests) ... ok
+test_unresolved_identity_stays_in_the_path_partition_and_blocks_completion (test_action_path_metrics.ActionPathTests) ... ok
+test_valid_unchecked_and_frontier_costs_stay_outside_invalid_cost (test_action_path_metrics.ActionPathTests) ... ok
+test_verification_identity_disagreement_is_not_silently_relabelled (test_action_path_metrics.ActionPathTests) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.001s
+
+OK

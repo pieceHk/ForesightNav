@@ -8,6 +8,6 @@ test_smoke_accepts_only_completed_source_bound_self_calibration (test_evaluate_s
 test_unfinished_calibration_scene_is_not_inferred_complete_from_ledger (test_evaluate_sequence.EvaluationSequenceTests) ... ok
 
 ----------------------------------------------------------------------
-Ran 8 tests in 0.437s
+Ran 8 tests in 0.153s
 
 OK

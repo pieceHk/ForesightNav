@@ -1,0 +1,199 @@
+{
+  "scope": "native offline GT reproducibility, no fitting or policy execution",
+  "analysis_source_sha256": "e2620454fe45d54933294286a518440ef16ec961c0eb0ca5aafe5ec2587a21a3",
+  "candidate_verifications": 1064,
+  "recovery_verifications": 1404,
+  "max_distance_error_m": 0.0,
+  "checks": [
+    {
+      "run_directory": "/nvme/khy/ForesightNav_exp4/results/exp4/runs/20261108_000733_439246_exp4_calibration_calibration-a2-fold0-6s7QHgap2fW",
+      "candidate_verifications": 425,
+      "recovery_verifications": 596,
+      "max_distance_error_m": 0.0,
+      "native_gt_provenance": {
+        "method": "native GOAT measures and geodesic wrapper on CPU PathFinder",
+        "habitat_source": {
+          "revision": "8df2661e5b2203c0ddc47798d5da0132d5686bbe",
+          "kind": "archive",
+          "files": 550,
+          "content_sha256": "31226fdca10c6ea69c23b6c3dbf707745210f7df5785c1c7116eda98c6dfc77c"
+        },
+        "measurements": {
+          "distance": {
+            "type": "GOATDistanceToSubGoal",
+            "distance_to": "VIEW_POINTS",
+            "goals_attr": "goals",
+            "distance_from": "BASE"
+          },
+          "success": {
+            "type": "GOATSubTaskSuccess",
+            "success_distance": 1.0
+          }
+        },
+        "dataset_manifest_sha256": "dfcf14d1fe7edef9c9d7bd8286dfe8067c91f56ef46ca2be4524d7e01461ac62",
+        "queries": 1021,
+        "cache_hits": 572,
+        "distinct_positions": 449,
+        "scenes": {
+          "6s7QHgap2fW": {
+            "content_sha256": "9840a55a003c4dbe19b99be558f79d26b41bfd87b049c4f3c2cf79683fca84f0",
+            "navmesh": "/nvme/khy/PBSP-open-source/data/scenes/hm3dv1/hm3d/val/00890-6s7QHgap2fW/6s7QHgap2fW.basis.navmesh",
+            "navmesh_sha256": "127c2fa57e01105442bb7019bca4692ed12aba6fae3b1bc13c2a557d3095ffe0"
+          }
+        }
+      }
+    },
+    {
+      "run_directory": "/nvme/khy/ForesightNav_exp4/results/exp4/runs/20261108_000733_533484_exp4_calibration_calibration-a2-fold0-TEEsavR23oF",
+      "candidate_verifications": 377,
+      "recovery_verifications": 473,
+      "max_distance_error_m": 0.0,
+      "native_gt_provenance": {
+        "method": "native GOAT measures and geodesic wrapper on CPU PathFinder",
+        "habitat_source": {
+          "revision": "8df2661e5b2203c0ddc47798d5da0132d5686bbe",
+          "kind": "archive",
+          "files": 550,
+          "content_sha256": "31226fdca10c6ea69c23b6c3dbf707745210f7df5785c1c7116eda98c6dfc77c"
+        },
+        "measurements": {
+          "distance": {
+            "type": "GOATDistanceToSubGoal",
+            "distance_to": "VIEW_POINTS",
+            "goals_attr": "goals",
+            "distance_from": "BASE"
+          },
+          "success": {
+            "type": "GOATSubTaskSuccess",
+            "success_distance": 1.0
+          }
+        },
+        "dataset_manifest_sha256": "dfcf14d1fe7edef9c9d7bd8286dfe8067c91f56ef46ca2be4524d7e01461ac62",
+        "queries": 850,
+        "cache_hits": 459,
+        "distinct_positions": 391,
+        "scenes": {
+          "TEEsavR23oF": {
+            "content_sha256": "bdaad88d1e23ba53c2619c75eaa66c543f2497153d3f91333aed4f7c62d48927",
+            "navmesh": "/nvme/khy/PBSP-open-source/data/scenes/hm3dv1/hm3d/val/00800-TEEsavR23oF/TEEsavR23oF.basis.navmesh",
+            "navmesh_sha256": "954b52bde8437a7180d2743584f287c9283bb5c9aaac9111fccf8992cb96bbd6"
+          }
+        }
+      }
+    },
+    {
+      "run_directory": "/nvme/khy/ForesightNav_exp4/results/exp4/runs/20261108_032022_013835_exp4_calibration_calibration-a2-fold0-QaLdnwvtxbs",
+      "candidate_verifications": 231,
+      "recovery_verifications": 309,
+      "max_distance_error_m": 0.0,
+      "native_gt_provenance": {
+        "method": "native GOAT measures and geodesic wrapper on CPU PathFinder",
+        "habitat_source": {
+          "revision": "8df2661e5b2203c0ddc47798d5da0132d5686bbe",
+          "kind": "archive",
+          "files": 550,
+          "content_sha256": "31226fdca10c6ea69c23b6c3dbf707745210f7df5785c1c7116eda98c6dfc77c"
+        },
+        "measurements": {
+          "distance": {
+            "type": "GOATDistanceToSubGoal",
+            "distance_to": "VIEW_POINTS",
+            "goals_attr": "goals",
+            "distance_from": "BASE"
+          },
+          "success": {
+            "type": "GOATSubTaskSuccess",
+            "success_distance": 1.0
+          }
+        },
+        "dataset_manifest_sha256": "dfcf14d1fe7edef9c9d7bd8286dfe8067c91f56ef46ca2be4524d7e01461ac62",
+        "queries": 540,
+        "cache_hits": 300,
+        "distinct_positions": 240,
+        "scenes": {
+          "QaLdnwvtxbs": {
+            "content_sha256": "12bf29f15c9a85b1afd53bf518d8a79521c63c2d3d84e4ac6439d44d285a5c61",
+            "navmesh": "/nvme/khy/PBSP-open-source/data/scenes/hm3dv1/hm3d/val/00829-QaLdnwvtxbs/QaLdnwvtxbs.basis.navmesh",
+            "navmesh_sha256": "9dbbfcd516ddd1da9ccadf0efd0a7e0ff89e6d3bc794d5bc6f2515e2d7742d97"
+          }
+        }
+      }
+    },
+    {
+      "run_directory": "/nvme/khy/ForesightNav_exp4/results/exp4/diagnostics/action-trace-plumbing/runs/20261108_043756_578726_exp4_calibration_action-trace-plumbing",
+      "candidate_verifications": 2,
+      "recovery_verifications": 0,
+      "max_distance_error_m": 0.0,
+      "native_gt_provenance": {
+        "method": "native GOAT measures and geodesic wrapper on CPU PathFinder",
+        "habitat_source": {
+          "revision": "8df2661e5b2203c0ddc47798d5da0132d5686bbe",
+          "kind": "archive",
+          "files": 550,
+          "content_sha256": "31226fdca10c6ea69c23b6c3dbf707745210f7df5785c1c7116eda98c6dfc77c"
+        },
+        "measurements": {
+          "distance": {
+            "type": "GOATDistanceToSubGoal",
+            "distance_to": "VIEW_POINTS",
+            "goals_attr": "goals",
+            "distance_from": "BASE"
+          },
+          "success": {
+            "type": "GOATSubTaskSuccess",
+            "success_distance": 1.0
+          }
+        },
+        "dataset_manifest_sha256": "dfcf14d1fe7edef9c9d7bd8286dfe8067c91f56ef46ca2be4524d7e01461ac62",
+        "queries": 2,
+        "cache_hits": 0,
+        "distinct_positions": 2,
+        "scenes": {
+          "6s7QHgap2fW": {
+            "content_sha256": "9840a55a003c4dbe19b99be558f79d26b41bfd87b049c4f3c2cf79683fca84f0",
+            "navmesh": "/nvme/khy/PBSP-open-source/data/scenes/hm3dv1/hm3d/val/00890-6s7QHgap2fW/6s7QHgap2fW.basis.navmesh",
+            "navmesh_sha256": "127c2fa57e01105442bb7019bca4692ed12aba6fae3b1bc13c2a557d3095ffe0"
+          }
+        }
+      }
+    },
+    {
+      "run_directory": "/nvme/khy/ForesightNav_exp4/results/exp4/diagnostics/action-trace-confirmation-switch/runs/20261108_044225_726193_exp4_calibration_action-trace-confirmation-switch",
+      "candidate_verifications": 29,
+      "recovery_verifications": 26,
+      "max_distance_error_m": 0.0,
+      "native_gt_provenance": {
+        "method": "native GOAT measures and geodesic wrapper on CPU PathFinder",
+        "habitat_source": {
+          "revision": "8df2661e5b2203c0ddc47798d5da0132d5686bbe",
+          "kind": "archive",
+          "files": 550,
+          "content_sha256": "31226fdca10c6ea69c23b6c3dbf707745210f7df5785c1c7116eda98c6dfc77c"
+        },
+        "measurements": {
+          "distance": {
+            "type": "GOATDistanceToSubGoal",
+            "distance_to": "VIEW_POINTS",
+            "goals_attr": "goals",
+            "distance_from": "BASE"
+          },
+          "success": {
+            "type": "GOATSubTaskSuccess",
+            "success_distance": 1.0
+          }
+        },
+        "dataset_manifest_sha256": "dfcf14d1fe7edef9c9d7bd8286dfe8067c91f56ef46ca2be4524d7e01461ac62",
+        "queries": 55,
+        "cache_hits": 25,
+        "distinct_positions": 30,
+        "scenes": {
+          "TEEsavR23oF": {
+            "content_sha256": "bdaad88d1e23ba53c2619c75eaa66c543f2497153d3f91333aed4f7c62d48927",
+            "navmesh": "/nvme/khy/PBSP-open-source/data/scenes/hm3dv1/hm3d/val/00800-TEEsavR23oF/TEEsavR23oF.basis.navmesh",
+            "navmesh_sha256": "954b52bde8437a7180d2743584f287c9283bb5c9aaac9111fccf8992cb96bbd6"
+          }
+        }
+      }
+    }
+  ]
+}

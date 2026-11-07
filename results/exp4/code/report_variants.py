@@ -9,6 +9,7 @@ from __future__ import annotations
 import argparse
 from collections import Counter, defaultdict
 import csv
+import hashlib
 import itertools
 import json
 import math
@@ -16,6 +17,10 @@ from pathlib import Path
 import statistics
 
 from experiments.metrics import merge_episode_metric_files, summarize_records
+from action_path_metrics import action_paths, SOURCE_SHA256 as ACTION_SOURCE_SHA256
+from native_candidate_gt import NativeCandidateGT, SOURCE_SHA256 as GT_SOURCE_SHA256
+
+SOURCE_SHA256 = hashlib.sha256(Path(__file__).read_bytes()).hexdigest()
 
 
 def read_jsonl(path):
@@ -100,7 +105,8 @@ def interval_union_length(intervals):
     return total
 
 
-def process_metrics(events, decisions, dispatches, traces, episode_keys):
+def process_metrics(events, decisions, dispatches, traces, episode_keys,
+                    gt_label=None, native_stage_paths=None):
     final = [e for e in events if e['event'] == 'verification_final']
     invalid = [e for e in final if e['y'] == 0]
     invalid_distinct = {(e['scene_id'], e['episode_id'], e['k'], e['candidate_id']) for e in invalid}
@@ -151,7 +157,7 @@ def process_metrics(events, decisions, dispatches, traces, episode_keys):
     dispatched = sum(e['selected_raw_ranks']['dispatched'] != e['blp']['nearest_raw_rank'] for e in realized)
     percentage = lambda numerator, denominator: 100. * numerator / denominator if denominator else None
     n = len(episode_keys)
-    return {'Invalid_visits_per_ep': len(invalid_distinct) / n,
+    value = {'Invalid_visits_per_ep': len(invalid_distinct) / n,
             'invalid_visit_events_per_ep': len(invalid) / n,
             'checked_distinct_candidates': len(checked_distinct),
             'invalid_approach_and_verification_path_m': measured_path,
@@ -173,6 +179,15 @@ def process_metrics(events, decisions, dispatches, traces, episode_keys):
             'fallback_memo_state_counts': dict(state_counts),
             'fallback_count_definition': 'root decisions and per-decision incidence are separate from recursion-state counts',
             'n_computed_snapshots': len(decisions), 'n_recorded_dispatch_events': len(dispatches)}
+    paths = action_paths(events, traces, gt_label, native_stage_paths)
+    if paths is not None:
+        value['legacy_interval_diagnostics'] = {k: value[k] for k in (
+            'invalid_visit_path_m', 'invalid_path_complete', 'invalid_path_association_gaps',
+            'invalid_path_definition')}
+        value.update(paths)
+    else:
+        value['invalid_path_source'] = 'legacy_visit_intervals'
+    return value
 
 
 def normalize(variant, runs, expected=None, allow_diagnostic=False, parameters=None):
@@ -181,6 +196,7 @@ def normalize(variant, runs, expected=None, allow_diagnostic=False, parameters=N
     task_count = None
     commits = set()
     record_commits = {}
+    gt_by_episode, native_gt_runs = {}, []
     if not allow_diagnostic and parameters is None:
         raise ValueError('Formal analysis requires the frozen calibration parameters')
     if not allow_diagnostic and expected is None:
@@ -212,21 +228,35 @@ def normalize(variant, runs, expected=None, allow_diagnostic=False, parameters=N
             raise ValueError('Native selected/result identity mismatch')
         records.update(raw)
         record_commits.update({key: plan['source_commit'] for key in raw})
+        run_traces = {}
         for path in run.rglob('trajectory.jsonl'):
             identity = json.loads(path.with_name('identity.json').read_text())['identity']
             key = (str(identity['scene_id']), str(identity['runtime_episode_id']))
             if key not in selected or key in traces:
                 raise ValueError('Unknown or duplicated trajectory')
-            traces[key] = read_jsonl(path)
-        events.extend(e for p in run.rglob('blp_events.jsonl') for e in read_jsonl(p))
-        decisions.extend(e for p in run.rglob('blp_decisions.jsonl') for e in read_jsonl(p))
-        dispatches.extend(e for p in run.rglob('scsp_decisions.jsonl') for e in read_jsonl(p))
+            traces[key] = run_traces[key] = read_jsonl(path)
+        run_events = [e for p in run.rglob('blp_events.jsonl') for e in read_jsonl(p)]
+        events.extend(run_events)
+        has_targets = ['blp_action_target' in row for rows in run_traces.values() for row in rows]
+        if any(has_targets) and not all(has_targets):
+            raise ValueError('A run mixes incompatible action-target recording versions')
+        if not allow_diagnostic and (not has_targets or not all(has_targets)):
+            raise ValueError('Formal evaluation requires complete accepted-action target records')
         if not allow_diagnostic:
             snapshots = [e for p in run.rglob('blp_snapshots.jsonl') for e in read_jsonl(p)]
             if not snapshots or any(e['parameters'] != parameters for e in snapshots):
                 raise ValueError('Observed parameters differ from the frozen calibration')
+            if any(e.get('shadow') is not False for e in snapshots):
+                raise ValueError('Shadow snapshots cannot populate a formal ablation')
             if {(s['scene_id'], str(s['episode_id'])) for s in snapshots} != set(selected):
                 raise ValueError('Not every selected episode has BLP planning snapshots')
+        if has_targets and all(has_targets):
+            native_gt = NativeCandidateGT(run)
+            verified = native_gt.verify_events(run_events)
+            native_gt_runs.append((run, native_gt, verified))
+            gt_by_episode.update({key: native_gt for key in run_traces})
+        decisions.extend(e for p in run.rglob('blp_decisions.jsonl') for e in read_jsonl(p))
+        dispatches.extend(e for p in run.rglob('scsp_decisions.jsonl') for e in read_jsonl(p))
     if expected is not None:
         wanted = {(str(r['scene_id']), str(r['runtime_episode_id'])) for r in expected}
         if len(wanted) != len(expected):
@@ -292,14 +322,28 @@ def normalize(variant, runs, expected=None, allow_diagnostic=False, parameters=N
     for k, name in enumerate(('P_C1', 'P_C2_given_C1', 'P_C3_given_C1C2', 'P_C4_given_C1C2C3')):
         scores[name] = 100. * rates[k] if k < len(rates) and rates[k] is not None else None
     scores['Joint'] = 100. * conditional['Joint']
+    native_paths = {(r['scene_id'], str(r['episode_id']), k): s['path_length_m']
+                    for r in normalized for k, s in enumerate(r['stages'])}
+    gt_label = (lambda scene, episode, k, position:
+                gt_by_episode[str(scene), str(episode)](scene, episode, k, position)) if gt_by_episode else None
+    process = process_metrics(events, decisions, dispatches, traces, set(identities),
+                              gt_label=gt_label, native_stage_paths=native_paths)
+    if native_gt_runs:
+        process['native_target_gt_provenance'] = [
+            {'run_directory': str(run), 'recorded_label_verification': verified,
+             **native_gt.provenance()} for run, native_gt, verified in native_gt_runs]
     summary = {'method': 'ForesightNav', 'variant': variant, 'task': f'{task_count}-MON',
                'n_episodes': len(normalized), 'n_error': 0, **scores,
                'PPL_implementation': 'new supplementary implementation: all-stage PR times successful-prefix path efficiency',
                'conditional_counts': conditional, 'native_aggregate': aggregate,
-               'process': process_metrics(events, decisions, dispatches, traces, set(identities)),
+               'process': process,
+               'analysis_sources_sha256': {'report_variants.py': SOURCE_SHA256,
+                   'action_path_metrics.py': ACTION_SOURCE_SHA256, 'native_candidate_gt.py': GT_SOURCE_SHA256},
                'source_commits': sorted(commits), 'diagnostic_only': bool(allow_diagnostic)}
     if not allow_diagnostic and not summary['process']['invalid_path_complete']:
         raise ValueError('Ambiguous invalid-visit path association requires action-level audit before publication')
+    if not allow_diagnostic and summary['process']['invalid_path_source'] != 'blp_action_target_v1_native_gt':
+        raise ValueError('Formal path metrics require native-GT-labelled accepted-action targets')
     return normalized, decisions, summary
 
 
@@ -309,6 +353,9 @@ def effects_and_pairs(variants):
         raise ValueError('All four canonical variants are required')
     if any(value[2].get('diagnostic_only') for value in variants.values()):
         raise ValueError('Diagnostic runs cannot populate the formal comparison table')
+    versions = [value[2].get('analysis_sources_sha256') for value in variants.values()]
+    if any(versions) and any(v != versions[0] for v in versions):
+        raise ValueError('Reanalyze all variants with the same loaded analysis sources')
     identities = [{(r['scene_id'], r['episode_id']) for r in variants[n][0]} for n in names]
     if any(s != identities[0] for s in identities):
         raise ValueError('Paired comparisons require identical episode identities')

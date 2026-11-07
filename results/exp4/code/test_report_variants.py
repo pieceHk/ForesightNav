@@ -1,12 +1,54 @@
 """Golden supplementary-metric cases and actual native-artifact checks."""
 from pathlib import Path
+import json
 import math
+import tempfile
 import unittest
+from unittest.mock import patch
 
-from report_variants import conditional_rates, effects_and_pairs, prefix_metrics, summarize_distribution, interval_union_length, process_metrics
+from report_variants import conditional_rates, effects_and_pairs, prefix_metrics, summarize_distribution, interval_union_length, process_metrics, normalize
 
 
 class ReportingTests(unittest.TestCase):
+    def format_rejection_fixture(self, folder, with_target):
+        """Incomplete rejection-only fixture; cannot reach score computation."""
+        root = Path(folder)
+        identity = dict(scene_id='s', runtime_episode_id='0', ordered_categories=['a', 'b'],
+                        source_episode_ids=['source-a', 'source-b'], dataset_manifest_sha256='synthetic')
+        plan = {'source_commit': 'rejection-fixture-only', 'identities': [identity],
+                'configuration': {'method': {'suffix': {'mode': 'blp_eq13', 'blp_variant': 'full'}}}}
+        (root/'status.json').write_text(json.dumps({'status': 'completed'}))
+        (root/'launch.json').write_text(json.dumps(plan))
+        episode = root/'results_fixture/episodes/s/0'
+        episode.mkdir(parents=True)
+        (episode/'identity.json').write_text(json.dumps({'identity': identity}))
+        row = {'scene_id': 's', 'episode_id': '0', 'frame_index': 1, 'subtask_index': 0,
+               'is_stop': True, 'world_pose': [1., 0., 0., 0., 0., 0., 0.]}
+        if with_target:
+            row['blp_action_target'] = {}
+        (episode/'trajectory.jsonl').write_text(json.dumps(row)+'\n')
+        (root/'blp_snapshots.jsonl').write_text(json.dumps({
+            'scene_id': 's', 'episode_id': '0', 'parameters': {}, 'shadow': True})+'\n')
+        return identity
+
+    def test_formal_rejects_legacy_trace_before_loading_ground_truth(self):
+        with tempfile.TemporaryDirectory() as folder:
+            identity = self.format_rejection_fixture(folder, False)
+            with patch('report_variants.merge_episode_metric_files', return_value={'s_0': {}}), \
+                    patch('report_variants.NativeCandidateGT') as native:
+                with self.assertRaisesRegex(ValueError, 'accepted-action target records'):
+                    normalize('full', [folder], expected=[identity], parameters={})
+                native.assert_not_called()
+
+    def test_formal_rejects_shadow_snapshots_before_loading_ground_truth(self):
+        with tempfile.TemporaryDirectory() as folder:
+            identity = self.format_rejection_fixture(folder, True)
+            with patch('report_variants.merge_episode_metric_files', return_value={'s_0': {}}), \
+                    patch('report_variants.NativeCandidateGT') as native:
+                with self.assertRaisesRegex(ValueError, 'Shadow snapshots'):
+                    normalize('full', [folder], expected=[identity], parameters={})
+                native.assert_not_called()
+
     def test_post_failure_success_is_not_a_successful_prefix(self):
         stages = [{'goat_sub-task_success': s, 'goat_sub-task_path_length_m': p,
                    'goat_sub-task_shortest_path_length_m': d}
@@ -49,6 +91,14 @@ class ReportingTests(unittest.TestCase):
         result = summarize_distribution([1., 2., 3., 4., 5.])
         self.assertEqual(result['median'], 3.)
         self.assertAlmostEqual(result['p95'], 4.8)
+
+    def test_comparison_requires_the_same_loaded_analysis_implementation(self):
+        variants = {name: ([dict(scene_id='s', episode_id='0', episode_success=True)], [],
+                    {'SR': 100., 'SPL': 100., 'analysis_sources_sha256': {'processor': 'same'}})
+                    for name in ('nearest', 'suffix_only', 'myopic', 'full')}
+        variants['full'][2]['analysis_sources_sha256'] = {'processor': 'different'}
+        with self.assertRaisesRegex(ValueError, 'same loaded analysis sources'):
+            effects_and_pairs(variants)
 
     def test_overlapping_visits_do_not_double_count_the_physical_path(self):
         self.assertEqual(interval_union_length([(0., 2.), (1., 3.), (5., 7.)]), 5.)
