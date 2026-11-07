@@ -1,0 +1,86 @@
+{
+  "attempt": "a1",
+  "reason": "recording query evidence for a non-query recovery waypoint",
+  "exclude_entire_attempt_from_fit": true,
+  "rerun_scenes": [
+    "6s7QHgap2fW",
+    "TEEsavR23oF"
+  ],
+  "completed_episodes": [
+    "6s7QHgap2fW_0"
+  ],
+  "files": {
+    "/nvme/khy/ForesightNav_exp4/results/exp4/runs/20261107_235932_493509_exp4_calibration_calibration-fold0-6s7QHgap2fW/results_6s7QHgap2fW/openvocab_v0.1.1_gt_semantics_600_2/blp_events.jsonl": {
+      "bytes": 10771,
+      "sha256": "661c3766ac4d4a025121ee1f71064eb5e46940e0c5099b8e9a0d5bf3882ff72c"
+    },
+    "/nvme/khy/ForesightNav_exp4/results/exp4/runs/20261107_235932_493509_exp4_calibration_calibration-fold0-6s7QHgap2fW/results_6s7QHgap2fW/openvocab_v0.1.1_gt_semantics_600_2/blp_snapshots.jsonl": {
+      "bytes": 30322,
+      "sha256": "10f5d3f3ecbd106711f6f08aeba639183f4ee42d07b3ff174d03d89bff1833e1"
+    },
+    "/nvme/khy/ForesightNav_exp4/results/exp4/runs/20261107_235932_493509_exp4_calibration_calibration-fold0-6s7QHgap2fW/results_6s7QHgap2fW/openvocab_v0.1.1_gt_semantics_600_2/blp_decisions.jsonl": {
+      "bytes": 13494,
+      "sha256": "926a1f7746d987cbc6197d3b45fb6e8ddaa6624772608f2382f22cf87ca39eb8"
+    },
+    "/nvme/khy/ForesightNav_exp4/results/exp4/runs/20261107_235932_493509_exp4_calibration_calibration-fold0-6s7QHgap2fW/results_6s7QHgap2fW/openvocab_v0.1.1_gt_semantics_600_2/episodes/6s7QHgap2fW/0/trajectory.jsonl": {
+      "bytes": 15776,
+      "sha256": "92839df79a85eaae015f824803f59e5d5f5bc0925df4d7f404fa14c2c8dfb970"
+    },
+    "/nvme/khy/ForesightNav_exp4/results/exp4/runs/20261107_235932_493509_exp4_calibration_calibration-fold0-6s7QHgap2fW/results_6s7QHgap2fW/openvocab_v0.1.1_gt_semantics_600_2/episodes/6s7QHgap2fW/1/trajectory.jsonl": {
+      "bytes": 12726,
+      "sha256": "2316eeae54d3ab65aa728e42e6f860919f3c23bbcbc395618b3becb04280cfeb"
+    },
+    "/nvme/khy/ForesightNav_exp4/results/exp4/runs/20261107_235932_493509_exp4_calibration_calibration-fold0-6s7QHgap2fW/results_6s7QHgap2fW/openvocab_v0.1.1_gt_semantics_600_2/per_episode_metrics.json": {
+      "bytes": 9265,
+      "sha256": "e0e54dae6b5a2b72e31b43ef8ea22d357b1ea1bf864033de6cc1fa93a6177c06"
+    },
+    "/nvme/khy/ForesightNav_exp4/results/exp4/runs/20261107_235932_493509_exp4_calibration_calibration-fold0-6s7QHgap2fW/status.json": {
+      "bytes": 106,
+      "sha256": "82bda5d7f98b4a4bc71edbf5af0937e027886b05dff7dc309006e6575371e4a6"
+    },
+    "/nvme/khy/ForesightNav_exp4/results/exp4/runs/20261107_235932_493509_exp4_calibration_calibration-fold0-6s7QHgap2fW/launch.json": {
+      "bytes": 15950,
+      "sha256": "6154d00f2d170499213efb2e8c3823c3cf5581964f7f2c71549705ff83d53394"
+    },
+    "/nvme/khy/ForesightNav_exp4/results/exp4/runs/20261107_235932_493509_exp4_calibration_calibration-fold0-6s7QHgap2fW/provenance.json": {
+      "bytes": 6067,
+      "sha256": "1eca17509a5d2faba22d92a3a81e704b327aa5cd2f5d573c0bdf9eb9c178a7e5"
+    },
+    "/nvme/khy/ForesightNav_exp4/results/exp4/runs/20261107_235932_493509_exp4_calibration_calibration-fold0-6s7QHgap2fW/logs/navigation_6s7QHgap2fW.log": {
+      "bytes": 48423,
+      "sha256": "b974f5c7bd0bdc756d157d82759f673739c0ca95e500d8542bc88cf230799658"
+    },
+    "/nvme/khy/ForesightNav_exp4/results/exp4/runs/20261107_235932_578022_exp4_calibration_calibration-fold0-TEEsavR23oF/results_TEEsavR23oF/openvocab_v0.1.1_gt_semantics_600_7/blp_events.jsonl": {
+      "bytes": 7985,
+      "sha256": "7e4ce3bde9084d19b73614a493cea961cb0245480b34b11957d6cfd41cbb7dc7"
+    },
+    "/nvme/khy/ForesightNav_exp4/results/exp4/runs/20261107_235932_578022_exp4_calibration_calibration-fold0-TEEsavR23oF/results_TEEsavR23oF/openvocab_v0.1.1_gt_semantics_600_7/blp_snapshots.jsonl": {
+      "bytes": 47068,
+      "sha256": "17f381630c19e8d8071d81081f0287dc7d6c39eba91a773866d9993b3e271357"
+    },
+    "/nvme/khy/ForesightNav_exp4/results/exp4/runs/20261107_235932_578022_exp4_calibration_calibration-fold0-TEEsavR23oF/results_TEEsavR23oF/openvocab_v0.1.1_gt_semantics_600_7/blp_decisions.jsonl": {
+      "bytes": 12397,
+      "sha256": "7b7c7fc091eade264c4d76e33ee3be75983c44b6ca38945afe4d6b1d5723d90e"
+    },
+    "/nvme/khy/ForesightNav_exp4/results/exp4/runs/20261107_235932_578022_exp4_calibration_calibration-fold0-TEEsavR23oF/results_TEEsavR23oF/openvocab_v0.1.1_gt_semantics_600_7/episodes/TEEsavR23oF/0/trajectory.jsonl": {
+      "bytes": 35117,
+      "sha256": "1e139607f200915c0b18b4e0aae5254ab851392644223ef5efd298d30b224bea"
+    },
+    "/nvme/khy/ForesightNav_exp4/results/exp4/runs/20261107_235932_578022_exp4_calibration_calibration-fold0-TEEsavR23oF/status.json": {
+      "bytes": 150,
+      "sha256": "00a1c6a46042ef02b041d453c23fd241bf7cd7eb4a7abdcaf0148de3c6bc8f33"
+    },
+    "/nvme/khy/ForesightNav_exp4/results/exp4/runs/20261107_235932_578022_exp4_calibration_calibration-fold0-TEEsavR23oF/launch.json": {
+      "bytes": 15979,
+      "sha256": "ca25af9b2293c960e61f0fdfe3de9b4472c1be1daa13c435353a7099be2c5caa"
+    },
+    "/nvme/khy/ForesightNav_exp4/results/exp4/runs/20261107_235932_578022_exp4_calibration_calibration-fold0-TEEsavR23oF/provenance.json": {
+      "bytes": 6067,
+      "sha256": "5b788ac35c57c2f39cd23efba63dfba14a023a027f60e3345a6147f5e82d8e16"
+    },
+    "/nvme/khy/ForesightNav_exp4/results/exp4/runs/20261107_235932_578022_exp4_calibration_calibration-fold0-TEEsavR23oF/logs/navigation_TEEsavR23oF.log": {
+      "bytes": 56045,
+      "sha256": "3a1d887a83643da1cd3c0554134a11bef78fae4ef151c5365d6ca0f9bc8ee51a"
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "checked_at_utc": "2026-11-07T16:11:36.463190+00:00",
+  "controller_status": "running",
+  "source_fingerprint_unchanged": true,
+  "old_prefix_actions": 107,
+  "new_actions": 212,
+  "old_trajectory_prefix_unchanged": true,
+  "noncandidate_verification_events": 26,
+  "first_noncandidate_t": 108,
+  "shadow_error_bytes": 0
+}
