@@ -55,6 +55,10 @@ def _keys(value, expected, context):
 
 
 def _typed(cls, value):
+    if cls is SuffixSettings:
+        value = dict(value)
+        for name in ('blp_variant', 'blp_shadow', 'blp_calibration'):
+            value.setdefault(name, next(f.default for f in fields(cls) if f.name == name))
     _keys(value, (field.name for field in fields(cls)), cls.__name__)
     try:
         return cls(**value)

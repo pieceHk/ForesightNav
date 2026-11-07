@@ -334,14 +334,18 @@ def apply_runtime_order(projected_goals, decision, runtime_mode):
         except Exception as exc:
             metadata["legacy_order_error"] = f"{type(exc).__name__}: {exc}"
     if (
-        runtime_mode not in {"idea1_only", "ordered_suffix_mvp"}
+        runtime_mode not in {"idea1_only", "ordered_suffix_mvp", "blp_eq13"}
         or decision.get("status") != "planned"
         or gate.get("would_invalidate", True)
     ):
         return (goals, metadata)
     try:
         candidate_batch = decision["candidate_batch"]
-        if runtime_mode == "idea1_only":
+        if runtime_mode == 'blp_eq13':
+            source = 'blp'
+            raw_ranks = tuple(decision['blp']['ordered_raw_ranks'])
+            metadata['reason'] = 'version_valid_blp'
+        elif runtime_mode == "idea1_only":
             source = "idea1"
             raw_ranks = tuple(decision["idea1_order"][current_task])
             metadata["reason"] = "version_valid_idea1"
@@ -557,7 +561,7 @@ def prepare_candidate_refresh(
     The remaining callbacks supply geometry, fallback diagnostics and the new
     provider snapshot. File output and experiment provenance belong to callers.
     """
-    active = runtime_mode in {"idea1_only", "ordered_suffix_mvp"}
+    active = runtime_mode in {"idea1_only", "ordered_suffix_mvp", "blp_eq13"}
     retry_provider_events = []
     attempts = []
     refresh_payload = raw_goals

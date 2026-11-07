@@ -24,3 +24,8 @@ experiments/history.tar
 experiments/mfmon_revision*.json
 experiments/mfmon_revision*.log
 experiments/diagnostics/
+
+# Local exp4 artifacts and machine resources
+results/
+experiments/analysis/
+runtime.exp4.local.yaml

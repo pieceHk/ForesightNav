@@ -61,9 +61,10 @@ class PlanningRunSettings:
     idea1_config: Mapping
     provenance: Mapping
     episode_identities: Mapping
+    blp_config: Mapping = field(default_factory=dict)
 
     def __post_init__(self):
-        if self.mode not in {"off", "shadow", "idea1_only", "ordered_suffix_mvp"}:
+        if self.mode not in {"off", "shadow", "idea1_only", "ordered_suffix_mvp", "blp_eq13"}:
             raise ValueError("Unknown planning mode")
         if self.mode != "off" and self.ordered_subtasks < 1:
             raise ValueError("Active planning requires an ordered task count")
@@ -147,12 +148,17 @@ def run_episodes(
         if hasattr(env, "policy_identity") and scsp_episode_identity is not None:
             scsp_episode_identity = env.policy_identity(scsp_episode_identity)
         candidate_provider.reset_episode(scene_id, episode_id)
+        if getattr(candidate_provider, 'current_only_task', None) is not None:
+            candidate_provider.current_only_task = 0
         candidate_provider.invalidate_cache()
 
         agent.reset(start_position=episode.start_position,
                     start_rotation=episode.start_rotation,
                     candidate_provider=candidate_provider)
         agent.set_runtime_context(scene_id, episode_id)
+        if getattr(agent, 'blp_enabled', False):
+            agent.blp_frontier_world = None
+            planning.blp_context.clear()
         category_cooldown.reset()
         scsp_reranker.reset()
         scsp_distance_cache.clear()
@@ -209,6 +215,10 @@ def run_episodes(
         n_subtasks = None  # Read from the first observation.
         while not env.episode_over:
             current_task_idx = task_index(env)
+            if getattr(candidate_provider, 'current_only_task', None) is not None:
+                if candidate_provider.current_only_task != current_task_idx:
+                    candidate_provider.current_only_task = current_task_idx
+                    candidate_provider.invalidate_cache()
             # Habitat can advance the task index before episode_over becomes true.
             if n_subtasks is not None and current_task_idx >= n_subtasks:
                 print(f'[P6 boundary] current_task_idx={current_task_idx} >= '
@@ -224,7 +234,7 @@ def run_episodes(
                 scsp_last_task_idx = int(current_task_idx)
                 scsp_subtask_reset_count += 1
                 scsp_boundary_replan_pending = scsp_runtime_mode in {
-                    'idea1_only', 'ordered_suffix_mvp'
+                    'idea1_only', 'ordered_suffix_mvp', 'blp_eq13'
                 }
                 print(
                     '[SCSP_RUNTIME] cleared plan state for '
@@ -236,6 +246,9 @@ def run_episodes(
             t_step_start = time.perf_counter()
 
             obs = env.get_observation()
+            if getattr(agent, 'blp_enabled', False):
+                from experiments.blp_observer import observe_frame
+                observe_frame(planning, agent, env, obs, t, current_task_idx)
             if t == 1:
                 obs_tasks = []
                 for task in obs.task_observations['tasks']:
@@ -418,6 +431,8 @@ def run_episodes(
                 query_error = None
                 if scsp_boundary_replan_pending and not periodic_refresh_due:
                     try:
+                        if getattr(candidate_provider, 'current_only_task', None) is not None:
+                            candidate_provider.get_all_goals()
                         cached_batch = candidate_provider.get_candidate_batch()
                         if cached_batch is not None:
                             new_goals = {
@@ -564,10 +579,16 @@ def run_episodes(
                 scsp_boundary_replan_pending = False
 
             # ── agent act ───────────────────────────────────────────────
+            if getattr(agent, 'blp_enabled', False):
+                from experiments.blp_observer import prepare_action
+                prepare_action(planning, agent, current_task_idx)
             t0 = time.perf_counter()
             action, info = agent.act(obs)
             dt_act = (time.perf_counter() - t0) * 1000
             action_metadata = getattr(agent, 'last_action_metadata', {})
+            if getattr(agent, 'blp_enabled', False):
+                from experiments.blp_observer import observe_verification
+                observe_verification(planning, agent, evaluator, action_metadata)
             stop_reason = action_metadata.get('stop_reason')
             planner_error = action_metadata.get('planner_error')
             pathfinder = env.habitat_env.sim.pathfinder
@@ -696,6 +717,9 @@ def run_episodes(
                 f'incomplete MON episode {scene_ep_id}: '
                 f'captured={len(all_subtask_metrics)} expected={n_subtasks}'
             )
+        if getattr(agent, 'blp_enabled', False):
+            from experiments.blp_observer import finalize_visit
+            finalize_visit(planning, 'episode_end')
         metrics[scene_ep_id] = {'metrics': all_subtask_metrics}
         metrics[scene_ep_id]['total_num_steps'] = t
         metrics[scene_ep_id]['sub_task_timesteps'] = agent.sub_task_timesteps[0]

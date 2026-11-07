@@ -62,6 +62,7 @@ class _SpatialTrack:
     position: np.ndarray
     observations: int
     last_refresh: int
+    view_mask: int = 0
 
 
 @dataclass
@@ -74,10 +75,55 @@ class CandidateEvidenceBank:
     enabled: bool = True
     _refresh: int = field(default=0, init=False)
     _tracks: dict[int, list[_SpatialTrack]] = field(default_factory=dict, init=False)
+    _coverage_history: dict[int, list[_SpatialTrack]] = field(default_factory=dict, init=False)
 
-    def reset(self) -> None:
+    def reset(self, preserve_coverage=False) -> None:
+        if preserve_coverage:
+            self._coverage_history.update(self._tracks)
+        else:
+            self._coverage_history.clear()
         self._refresh = 0
         self._tracks.clear()
+
+    def coverage_views(self, task_idx, position):
+        tracks = self._tracks.get(int(task_idx), ()) or self._coverage_history.get(int(task_idx), ())
+        if not tracks:
+            return 0
+        point = np.asarray(position, dtype=np.float32)
+        track = min(tracks, key=lambda t: self._distance(point, t.position))
+        if self._distance(point, track.position) > self.match_radius_m:
+            return 0
+        return bin(track.view_mask).count('1')
+
+    def observe_coverage(self, camera_position, world_to_camera, depth, hfov_deg):
+        """Set bearing bits only for centres satisfying the RGB-D visibility test."""
+        camera = np.asarray(camera_position, dtype=float)
+        rotation = np.asarray(world_to_camera, dtype=float)
+        image = np.asarray(depth).squeeze()
+        height, width = image.shape
+        focal = width / (2 * np.tan(np.radians(hfov_deg) / 2))
+        groups = list(self._tracks.values()) + [v for k, v in self._coverage_history.items()
+                                               if k not in self._tracks]
+        for tracks in groups:
+            for track in tracks:
+                delta = track.position - camera
+                distance = float(np.linalg.norm(delta))
+                if not 0.5 <= distance <= 5.0:
+                    continue
+                local = rotation @ delta
+                if local[2] >= 0:
+                    continue
+                u = focal * local[0] / -local[2] + (width - 1) / 2
+                v = -focal * local[1] / -local[2] + (height - 1) / 2
+                if not (0 <= u < width and 0 <= v < height):
+                    continue
+                measured = float(image[int(v), int(u)])
+                if not np.isfinite(measured) or measured < distance - 0.3:
+                    continue
+                phi = np.arctan2(camera[2] - track.position[2],
+                                 camera[0] - track.position[0]) % (2 * np.pi)
+                index = min(11, int(np.floor(phi / (np.pi / 6))))
+                track.view_mask |= 1 << index
 
     @staticmethod
     def _distance(first: np.ndarray, second: np.ndarray) -> float:
@@ -105,6 +151,12 @@ class CandidateEvidenceBank:
                 matched_tracks.add(index)
             else:
                 track = _SpatialTrack(point.copy(), 1, self._refresh)
+                history = self._coverage_history.get(task_idx, ())
+                eligible_history = [t for t in history
+                                    if self._distance(point, t.position) <= self.match_radius_m]
+                if eligible_history:
+                    previous = min(eligible_history, key=lambda t: self._distance(point, t.position))
+                    track.view_mask = previous.view_mask
                 tracks.append(track)
                 matched_tracks.add(len(tracks) - 1)
             ranked_items.append((point, track, raw_rank))

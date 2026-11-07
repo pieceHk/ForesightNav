@@ -47,6 +47,7 @@ class MappingClient:
         self.n_live_frames: int = 0  # frames sent via push_live_frame
         self._live_mode: bool = live_mode
         self.strict_errors = strict_errors
+        self.current_only_task = None
 
     # ── connection ──────────────────────────────────────────────────────
 
@@ -264,7 +265,9 @@ class MappingClient:
             return {}
 
         task_categories = [self._task_category(t) for t in self._tasks]
-        unique_cats = list(dict.fromkeys(c for c in task_categories if c))
+        query_categories = (task_categories if self.current_only_task is None
+                            else [task_categories[self.current_only_task]])
+        unique_cats = list(dict.fromkeys(c for c in query_categories if c))
 
         t_start = time.perf_counter()
         pre_status, pre_status_error = self._capture_status_view()
@@ -314,6 +317,12 @@ class MappingClient:
         result = {}
         records_by_task = {}
         for task_idx, cat in enumerate(task_categories):
+            if self.current_only_task is not None and task_idx != self.current_only_task:
+                result[task_idx] = []
+                records_by_task[task_idx] = []
+                self._goals_cache[task_idx] = []
+                self._candidate_records_cache[task_idx] = []
+                continue
             if cat not in cat_results:
                 payload_errors.append(f'results is missing category {cat!r}')
             if cat not in cat_records:
@@ -717,6 +726,12 @@ class MappingClient:
             pre_status, pre_status_error = self._capture_status_view()
         result = {}
         for task_idx, task in enumerate(self._tasks):
+            if self.current_only_task is not None and task_idx != self.current_only_task:
+                result[task_idx] = []
+                self._goals_cache[task_idx] = []
+                self._candidate_records_cache[task_idx] = []
+                self._query_success_by_task[task_idx] = True
+                continue
             category = self._task_category(task)
             if not category:
                 continue

@@ -4,6 +4,8 @@
 # Upstream MIT terms and provenance are retained in THIRD_PARTY_NOTICES.md.
 
 import numpy as np
+from copy import copy
+from types import SimpleNamespace
 
 
 class GoatEvaluator:
@@ -14,6 +16,38 @@ class GoatEvaluator:
 
     def get_episode_metrics(self):
         return self.habitat_env.get_metrics()
+
+    def label_candidate(self, position, task_idx):
+        """Apply the pinned evaluator at a virtual candidate pose for diagnostics.
+
+        Copies of both measures use a read-only simulator proxy. Neither the
+        physical agent, real measure state nor episode goal order is modified.
+        """
+        original_sim = self.habitat_env.sim
+
+        class VirtualPosition:
+            def get_agent_state(self, *args, **kwargs):
+                return SimpleNamespace(position=np.asarray(position, dtype=np.float32))
+
+            def __getattr__(self, name):
+                return getattr(original_sim, name)
+
+        measures = self.habitat_env.task.measurements.measures
+        distance = copy(measures['goat_distance_to_sub-goal'])
+        distance._sim = VirtualPosition()
+        distance._previous_position = None
+        distance.force_metric_update = True
+        episode = self.habitat_env.current_episode
+        distance.update_goal_viewpoints(episode, current_goal_idx=int(task_idx))
+        task = SimpleNamespace(update_goal=False, is_stop_called=False,
+                               measurements=SimpleNamespace(measures={'goat_distance_to_sub-goal': distance}))
+        distance.update_metric(episode=episode, task=task)
+        success = copy(measures['goat_sub-task_success'])
+        success.update_metric(episode=episode, task=task)
+        value = float(distance.get_metric())
+        return {'y': int(bool(success.get_metric())),
+                'distance_to_goal_m': value if np.isfinite(value) else None,
+                'criterion': 'pinned_GOAT_measures_at_candidate_position'}
 
     def top_down_map(self):
         return self.get_episode_metrics()["goat_top_down_map"]

@@ -1,0 +1,5 @@
+name: exp4_myopic
+method: ../methods/exp4_myopic.yaml
+dataset: ../datasets/hm3d_3mon.yaml
+evaluation: ../evaluation/standard.yaml
+seed: 1

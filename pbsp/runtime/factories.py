@@ -123,5 +123,11 @@ def navigation_request(plan, scene):
                 "identity_sidecar_sha256": plan.identity_sha256,
             },
             episode_identities=identities,
+            blp_config={
+                'variant': suffix.blp_variant,
+                'shadow': suffix.blp_shadow,
+                'calibration': (suffix.blp_calibration if suffix.blp_calibration == 'uncalibrated'
+                                else str((plan.resources.root / suffix.blp_calibration).resolve())),
+            },
         ),
     )

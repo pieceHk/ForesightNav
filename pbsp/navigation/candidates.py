@@ -148,14 +148,16 @@ class CandidateTracking:
         missing = sorted(required - set(metadata))
         if missing:
             raise ValueError(f"external ranking metadata is missing required fields: {missing}")
-        if metadata["mode"] not in {"idea1_only", "ordered_suffix_mvp"}:
+        if metadata["mode"] not in {"idea1_only", "ordered_suffix_mvp", "blp_eq13"}:
             raise ValueError("external ranking mode must be active")
-        if metadata["source"] not in {"idea1", "idea1_fallback", "suffix"}:
+        if metadata["source"] not in {"idea1", "idea1_fallback", "suffix", "blp"}:
             raise ValueError("external ranking source is invalid")
         if (
             metadata["mode"] == "idea1_only"
             and metadata["source"] != "idea1"
             or (metadata["source"] == "suffix" and metadata["mode"] != "ordered_suffix_mvp")
+            or (metadata['source'] == 'blp' and metadata['mode'] != 'blp_eq13')
+            or (metadata['mode'] == 'blp_eq13' and metadata['source'] != 'blp')
         ):
             raise ValueError("external ranking mode/source combination is invalid")
         task_idx = metadata["task_idx"]

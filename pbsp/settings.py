@@ -123,11 +123,16 @@ class SuffixSettings:
     strict_geodesic: bool
     euclidean_fallback: bool
     mvp_evidence_states: tuple[str, ...]
+    blp_variant: str = 'full'
+    blp_shadow: bool = False
+    blp_calibration: str = 'uncalibrated'
 
     def __post_init__(self):
         _validate_scalars(self)
-        if self.mode not in {"ordered_suffix_mvp", "idea1_only"}:
+        if self.mode not in {"ordered_suffix_mvp", "idea1_only", "blp_eq13"}:
             raise ValueError("Unknown suffix mode")
+        if self.blp_variant not in {'full', 'nearest', 'myopic', 'suffix_only'}:
+            raise ValueError('Unknown BLP variant')
         if not 1 <= self.candidate_cap <= 5:
             raise ValueError("candidate_cap must be in [1, 5]")
         if not self.strict_geodesic or self.euclidean_fallback:

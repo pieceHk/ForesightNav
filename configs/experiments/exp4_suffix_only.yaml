@@ -1,0 +1,5 @@
+name: exp4_suffix_only
+method: ../methods/exp4_suffix_only.yaml
+dataset: ../datasets/hm3d_3mon.yaml
+evaluation: ../evaluation/standard.yaml
+seed: 1

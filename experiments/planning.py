@@ -18,10 +18,12 @@ from pbsp.types import FallbackReason, SCSPContractError
 class PlanningBridge:
     """Bind geometry and a clock; retain event and fallback semantics."""
 
-    def __init__(self, *, project_goals, geodesic, clock=time):
+    def __init__(self, *, project_goals, geodesic, clock=time, blp_config=None):
         self.project_goals = project_goals
         self.geodesic = geodesic
         self.clock = clock
+        self.blp_config = dict(blp_config or {})
+        self.blp_context = {}
 
     def _fallback_event(self, **kwargs):
         return _scsp_shadow_fallback_event(clock=self.clock.perf_counter, **kwargs)
@@ -87,6 +89,26 @@ class PlanningBridge:
                 episode_identity=episode_identity,
             )
         try:
+            if self.blp_config.get('enabled') or self.blp_config.get('shadow'):
+                from experiments.blp_observer import compute_blp_event
+                try:
+                    blp_event = compute_blp_event(
+                        self, phase=phase, arm=arm, candidate_batch=candidate_batch,
+                        projected_goals=projected_goals, projected_indices=projected_indices,
+                        current_task=current_task, origin=origin, pathfinder=pathfinder,
+                        agent=agent, distance_cache=distance_cache,
+                        version_gate=version_gate, provenance=provenance,
+                        episode_identity=episode_identity)
+                except Exception as exc:
+                    if self.blp_config.get('enabled'):
+                        raise
+                    from experiments.blp_observer import append
+                    append(self, 'blp_errors.jsonl', {
+                        'phase': phase, 'current_task': current_task,
+                        'error': f'{type(exc).__name__}: {exc}'})
+                    blp_event = None
+                if self.blp_config.get('enabled'):
+                    return blp_event
             from pbsp.navigation.planning import compute_candidate_plan
 
             calculation = compute_candidate_plan(

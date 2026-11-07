@@ -322,6 +322,8 @@ def run_navigation(request, *, services_factory=build_services):
             project_goals_to_navigable, max_distance=settings.projection_tolerance_m
         ),
         geodesic=strict_geodesic_distance,
+        blp_config=dict(request.planning_settings.blp_config,
+                        enabled=request.planning_settings.mode == 'blp_eq13'),
     )
     sampler = partial(
         sample_navmesh_goal,
@@ -335,6 +337,11 @@ def run_navigation(request, *, services_factory=build_services):
         services = services_factory(request, stack)
         results = request.output / f"results_{request.scene}" / services.config.EXP_NAME
         artifacts = RunArtifacts(results)
+        if planning.blp_config.get('enabled') or planning.blp_config.get('shadow'):
+            from experiments.blp_observer import initialize_blp
+            initialize_blp(planning, services.agent, results)
+            if planning.blp_config.get('enabled') and planning.blp_config.get('variant') == 'myopic':
+                services.candidate_provider.current_only_task = 0
         from experiments.trajectory import TrajectoryEnvironment
 
         recorded_environment = TrajectoryEnvironment(

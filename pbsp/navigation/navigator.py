@@ -63,7 +63,7 @@ class Navigator(CandidateTracking, GoalVerifier, RecoveryState, LocalMapState, G
         self.stuck_num = 0
         self.see_around = 0
         self._clear_seem_verification_state()
-        self.candidate_evidence.reset()
+        self.candidate_evidence.reset(preserve_coverage=getattr(self, 'blp_enabled', False))
         self.candidate_evidence_diagnostics = {}
         self.last_external_ranking_metadata = None
         self.frontier_reranker.reset()
@@ -183,6 +183,9 @@ class Navigator(CandidateTracking, GoalVerifier, RecoveryState, LocalMapState, G
                     vis_inputs[0]["frontiers"] = filtered_frontiers
         except (IndexError, KeyError, TypeError, ValueError) as error:
             LOGGER.warning("Frontier blacklist filtering skipped: %s", error, exc_info=True)
+        if getattr(self, 'blp_enabled', False):
+            from experiments.blp_observer import observe_frontier
+            observe_frontier(self, obs, planner_inputs[0])
         match_score = 0
         goal_global_pose = None
         frontier_global_pose = None
@@ -439,6 +442,9 @@ class Navigator(CandidateTracking, GoalVerifier, RecoveryState, LocalMapState, G
                                 min_observer_yaw_deg=self.verification_min_observer_yaw_deg,
                             )
                             verification_event = {
+                                **({'candidate_position': list(map(float, frontier_global_pose)),
+                                    'task_idx': int(self.current_task_idx)}
+                                   if getattr(self, 'blp_enabled', False) else {}),
                                 "triggered": bool(self._last_verification_triggered),
                                 "confirmed": bool(confirmed),
                                 "support": len(supporting),
