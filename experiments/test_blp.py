@@ -224,6 +224,7 @@ class BLPTests(unittest.TestCase):
             events.append(dict(event='verification_final', E=e, v=label, y=label,
                                scene_id='s', episode_id=str(i), k=0, candidate_id='0:0'))
         events.append(dict(event='empty_activation', path_to_first_candidate_m=5.))
+        events.append(dict(events[0]))  # A second failed visit is not a new candidate.
         theta = fit(events)
         self.assertGreater(theta.a, 0.)
         self.assertEqual(theta.pi, .5)
@@ -231,7 +232,16 @@ class BLPTests(unittest.TestCase):
         diagnostic = diagnose(events, theta)
         self.assertEqual(diagnostic['fp'], 0)
         self.assertEqual(diagnostic['fn'], 0)
-        self.assertEqual(sum(b['n'] for b in diagnostic['reliability_bins']), 6)
+        self.assertEqual(sum(b['n'] for b in diagnostic['reliability_bins']), 7)
+
+    def test_separated_calibration_refuses_invented_finite_fit(self):
+        from experiments.blp_calibration import fit, CalibrationDataError
+        events = [dict(event='verification_final', E=e, v=v, y=v, scene_id='s',
+                       episode_id=str(i), k=0, candidate_id='0:0')
+                  for i, (e, v) in enumerate([(.1, 0), (.2, 0), (.3, 1), (.4, 1)])]
+        events.append(dict(event='empty_activation', path_to_first_candidate_m=2.))
+        with self.assertRaises(CalibrationDataError):
+            fit(events)
 
     def test_negative_check_finalizes_once_on_abandonment(self):
         import json

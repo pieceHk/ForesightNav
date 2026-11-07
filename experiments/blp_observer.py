@@ -206,7 +206,10 @@ def observe_verification(planning, agent, evaluator, metadata):
         append(planning, 'blp_events.jsonl', dict(visit, event='candidate_checked'))
     metrics = evaluator.get_episode_metrics()
     diagnostic = evaluator.label_candidate(position, task)
+    n_views = agent.candidate_evidence.coverage_views(task, position)
+    s, _, _ = planning.blp_parameters.evidence(record.semantic_score, n_views)
     visit.update(v=int(bool(event['confirmed'])), y=diagnostic['y'],
+                 E=record.semantic_score, N_views=n_views, S=s, position=list(position),
                  gt_diagnostic=diagnostic,
                  y_agent_at_check=int(bool(metrics['goat_sub-task_success'])),
                  last_t=planning.blp_context['t'], verification=event)

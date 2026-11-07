@@ -25,6 +25,10 @@ def fit(events, label='v'):
     y = np.array([r[label] for r in checked], dtype=float)
     if len(set(y)) != 2:
         raise CalibrationDataError(f'Cannot identify logistic slope with one label class ({label})')
+    if float(np.ptp(e)) < 1e-10:
+        raise CalibrationDataError('Semantic evidence has no variation; slope is unidentified')
+    if float(e[y == 0].max()) < float(e[y == 1].min()):
+        raise CalibrationDataError('Complete positive separation has no finite logistic MLE')
     center, scale = float(e.mean()), max(float(e.std()), 1e-8)
     x = (e - center) / scale
     def objective(theta):
