@@ -261,6 +261,7 @@ def normalize(variant, runs, expected=None, allow_diagnostic=False, parameters=N
             raise ValueError('Trajectory length does not match native step count')
         row = {'method': 'ForesightNav', 'variant': variant, 'task': f'{task_count}-MON',
                'scene_id': scene, 'episode_id': episode, 'goals': list(identity['ordered_categories']),
+               'source_episode_ids': list(identity['source_episode_ids']),
                'episode_success': all(success), 'total_steps': raw['total_num_steps'],
                'code_commit': record_commits[scene + '_' + episode],
                'code_commits': sorted(commits), 'stages': [],
