@@ -1,0 +1,69 @@
+{
+  "checked_at_utc": "2026-11-07T20:41:09.313083+00:00",
+  "scope": "one fixed excluded 2-MON plumbing episode; not Full BLP or CP3",
+  "run_directory": "/nvme/khy/ForesightNav_exp4/results/exp4/diagnostics/action-trace-plumbing/runs/20261108_043756_578726_exp4_calibration_action-trace-plumbing",
+  "native_returncode": 0,
+  "accepted_action_rows": 48,
+  "every_row_has_matching_frame_and_pre_STOP_task": true,
+  "query_target_identities_all_resolved": true,
+  "target_sources": {
+    "frontier": 9,
+    "query_candidate": 39
+  },
+  "confirmed_visual_parent_rows": 11,
+  "STOP_rows": [
+    {
+      "frame_index": 23,
+      "subtask_index": 0,
+      "stop_reason": "verified_target",
+      "blp_action_target": {
+        "schema_version": "blp_action_target_v1",
+        "task_idx": 0,
+        "source": "query_candidate",
+        "position": [
+          10.487312316894531,
+          0.09943601489067078,
+          -1.9407646656036377
+        ],
+        "pursuit_mode": "confirmed_visual_goal",
+        "candidate_id": "0:0",
+        "frame_index": 23,
+        "query_identity_status": "resolved"
+      }
+    },
+    {
+      "frame_index": 48,
+      "subtask_index": 1,
+      "stop_reason": "verified_target",
+      "blp_action_target": {
+        "schema_version": "blp_action_target_v1",
+        "task_idx": 1,
+        "source": "query_candidate",
+        "position": [
+          6.6971235275268555,
+          0.09943601489067078,
+          -2.347459077835083
+        ],
+        "pursuit_mode": "confirmed_visual_goal",
+        "candidate_id": "1:8",
+        "frame_index": 48,
+        "query_identity_status": "resolved"
+      }
+    }
+  ],
+  "baseline_reference": "results/exp4/runs/20261107_234611_495499_exp4_calibration_plumbing-v2",
+  "all_native_action_pose_fields_exactly_identical_to_reference": true,
+  "excluded_from_primary_calibration_ledger": true,
+  "primary_calibration_source_not_patched": true,
+  "remaining_limits": [
+    "not a complete Navigator regression",
+    "not a long confirmation-then-switch reproduction",
+    "formal process summary has not been changed to consume action targets"
+  ],
+  "artifact_sha256": {
+    "status.json": "0d7246dfd66a12ac9e94872f1ded6975de21c2593ba1537074813ff7221780d4",
+    "launch.json": "f57355322720c26007d3e2523d40aa29515689095ef9fe811c9ee82024f47d9c",
+    "mon_metrics.json": "6d0b569cbabbe1c50d55b24c252b30c8d4be91006efe8b9cebe2d89ef1e4aefa"
+  },
+  "primary_frozen_source_verified_again_at_utc": "2026-11-07T20:57:00.484994+00:00"
+}

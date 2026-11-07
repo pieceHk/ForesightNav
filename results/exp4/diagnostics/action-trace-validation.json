@@ -1,0 +1,31 @@
+{
+  "checked_at_utc": "2026-11-07T20:58:26.573632+00:00",
+  "primary_calibration_completed_episodes": 104,
+  "primary_controller_live_and_matching": true,
+  "primary_157_runtime_files_unchanged": true,
+  "primary_fingerprint_sha256": "d00ef69a18400dcb3dda512b2a80cfe7f5ca1afb487daabd7bf3ff4e802bc2f5",
+  "isolated_worktree": "/nvme/khy/ForesightNav_exp4_tracecheck",
+  "isolated_trace_patch_applied_only_there": true,
+  "isolated_source_sha256": {
+    "pbsp/navigation/navigator.py": "c3e7794ae1c6e9017cf412c69dc73e8804cbea9fc35b4a32bc9a131265913125",
+    "experiments/blp_observer.py": "f4bd2a8b651f07dc7ef1263f0a34f46ea318fcbe2342c97a9f1aa3a0ff930755",
+    "experiments/runner.py": "13fb31e3ad79e20671dc80ae0521130a510410abce92496690a381df3788bca3",
+    "experiments/trajectory.py": "9f3e93c9a93466a290384b943d92f606d52cef6d2334aa74f8c8fac3c0106efe"
+  },
+  "proposed_patch_sha256": "5ce1eeec57b2a964527d81c56541fbf8c2fbb114b6403cc7741cd0d274ef1125",
+  "successful_excluded_logging_runs": {
+    "action-trace-plumbing": {
+      "accepted_actions": 48,
+      "native_returncode": 0,
+      "scope": "one fixed excluded 2-MON plumbing episode; not Full BLP or CP3"
+    },
+    "action-trace-confirmation-switch": {
+      "accepted_actions": 1000,
+      "native_returncode": 0,
+      "scope": "excluded 2-MON logging stress check, not Full BLP or CP3"
+    }
+  },
+  "total_accepted_diagnostic_actions": 1048,
+  "formal_action_path_consumer_implemented": false,
+  "not_CP3_or_Full_BLP_evaluation": true
+}

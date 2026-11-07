@@ -1,8 +1,8 @@
 {
-  "checked_at_utc": "2026-11-07T19:27:04.963420+00:00",
+  "checked_at_utc": "2026-11-07T20:42:56.104627+00:00",
   "scope": "completed 2-MON calibration integrity only; no fitting, no 3-MON table",
   "frozen_runtime_unchanged": true,
-  "complete_episodes": 60,
+  "complete_episodes": 90,
   "completed_scenes": [
     {
       "scene": "6s7QHgap2fW",
@@ -66,6 +66,35 @@
         "status.json": "78f75f7efae834dc1166fea6739d7eaf5feed9c18b037b17288070ac439e3935",
         "launch.json": "e8cd711b02cc39715d66d444dabb51398ab1e06d6dcd52d2d239e669e385b735",
         "mon_metrics.json": "88e1f46324f53f0c7f86cd3425429795a58ff46895fdd620e102c62d0d22fdff"
+      }
+    },
+    {
+      "scene": "QaLdnwvtxbs",
+      "run_directory": "/nvme/khy/ForesightNav_exp4/results/exp4/runs/20261108_032022_013835_exp4_calibration_calibration-a2-fold0-QaLdnwvtxbs",
+      "native_exit_code": 0,
+      "complete_episodes": 30,
+      "targets_per_episode": 2,
+      "actual_identity_files_checked": 30,
+      "frozen_manifest_source_ids_ordered_categories_match": true,
+      "complete_trajectory_and_terminal_STOP_checks_passed": true,
+      "candidate_checks": 231,
+      "final_labels": 231,
+      "check_to_final_event_keys_match": true,
+      "shadow_snapshots": 711,
+      "shadow_errors": 0,
+      "process_path_complete_under_legacy_logs": false,
+      "path_association_gaps": [
+        {
+          "scene_id": "QaLdnwvtxbs",
+          "episode_id": "7",
+          "k": 1,
+          "reason": "confirmed_invalid_visit_followed_by_further_checks"
+        }
+      ],
+      "artifact_sha256": {
+        "status.json": "4a3adb20e391a7e534017276d5a403ca52df05ad7b35148a6deae230c9f19c9b",
+        "launch.json": "d8dd6ece9cb7773e66ef28c2aa47f9424a38259815f8b44f1064530a0d83d6e1",
+        "mon_metrics.json": "54311f01cba107e2e277063e4811080836649c6d5672499e6a374a5f95149ff6"
       }
     }
   ]

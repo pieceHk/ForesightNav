@@ -1,0 +1,28 @@
+{
+  "scope": "fixed 2-MON plumbing only; excluded from calibration and 3-MON",
+  "status": "failed",
+  "primary_controller_pid": 1979824,
+  "guard_pid": 2012495,
+  "command": [
+    "/nvme/khy/conda_envs/pbsp/navigation/bin/python",
+    "/nvme/khy/ForesightNav_exp4_tracecheck/run.py",
+    "--config",
+    "configs/experiments/exp4_calibration.yaml",
+    "--runtime",
+    "runtime.tracecheck.local.yaml",
+    "--gpus",
+    "3,3",
+    "--scene",
+    "6s7QHgap2fW",
+    "--episode",
+    "0",
+    "--tag",
+    "action-trace-plumbing"
+  ],
+  "worktree": "/nvme/khy/ForesightNav_exp4_tracecheck",
+  "log": "/nvme/khy/ForesightNav_exp4/results/exp4/diagnostics/action-trace-plumbing/native.log",
+  "fixed_timeout_s": 900,
+  "launcher_pid": 2012499,
+  "returncode": 1,
+  "run_directory": null
+}

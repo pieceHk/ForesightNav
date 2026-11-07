@@ -1,0 +1,79 @@
+{
+  "checked_at_utc": "2026-11-07T20:57:00.484994+00:00",
+  "scope": "excluded 2-MON logging stress check, not Full BLP or CP3",
+  "run_directory": "/nvme/khy/ForesightNav_exp4/results/exp4/diagnostics/action-trace-confirmation-switch/runs/20261108_044225_726193_exp4_calibration_action-trace-confirmation-switch",
+  "native_returncode": 0,
+  "accepted_action_rows": 1000,
+  "complete_stages": 2,
+  "actual_source_identity_and_order_verified": true,
+  "all_action_frame_and_pre_STOP_tasks_match": true,
+  "all_query_target_identities_resolved": true,
+  "query_verification_identities_match_action_targets": true,
+  "verification_followed_by_runner_recovery_count": 1,
+  "candidate_checks_and_final_labels": 29,
+  "target_sources": {
+    "frontier": 78,
+    "query_candidate": 855,
+    "navmesh_override": 67
+  },
+  "confirmed_visual_parent_rows": 1,
+  "invalid_query_confirmation_followed_by_other_checks": [
+    {
+      "k": 1,
+      "confirmed_frame": 547,
+      "confirmed_id": "1:3",
+      "next_check_frame": 585,
+      "next_id": "1:12"
+    }
+  ],
+  "stop_rows": [
+    {
+      "frame_index": 500,
+      "subtask_index": 0,
+      "stop_reason": "max_steps",
+      "blp_action_target": {
+        "schema_version": "blp_action_target_v1",
+        "task_idx": 0,
+        "source": "query_candidate",
+        "position": [
+          -3.985226631164551,
+          3.163379192352295,
+          -1.0868468284606934
+        ],
+        "frame_index": 500,
+        "candidate_id": "0:23",
+        "query_identity_status": "resolved"
+      }
+    },
+    {
+      "frame_index": 1000,
+      "subtask_index": 1,
+      "stop_reason": "max_steps",
+      "blp_action_target": {
+        "schema_version": "blp_action_target_v1",
+        "task_idx": 1,
+        "source": "query_candidate",
+        "position": [
+          -2.4410924911499023,
+          0.16337910294532776,
+          -3.3728785514831543
+        ],
+        "frame_index": 1000,
+        "candidate_id": "1:2",
+        "query_identity_status": "resolved"
+      }
+    }
+  ],
+  "first_pose_equals_original_scene_run": true,
+  "entire_action_pose_trace_equals_original_scene_run": false,
+  "independent_invocation_not_matched_input_regression": true,
+  "primary_frozen_source_unchanged": true,
+  "excluded_from_primary_calibration_ledger": true,
+  "legacy_summary_path_complete": false,
+  "formal_action_path_consumer_implemented": false,
+  "artifact_sha256": {
+    "status.json": "3cfbb1552615b25005ddaa2deef58c80cd592b7d7a6295b614500b002cab81c7",
+    "launch.json": "b935449ec96e4707f0d3d26b828cde5a9452503f2fcd7c317c0abc1133cff1d6",
+    "mon_metrics.json": "924a9623763d35ddf1449c4f057bd8675d7d844d20f882cc5d00243a53d01232"
+  }
+}

@@ -138,3 +138,17 @@ a2 当前 launcher PID 为 `1979825`（GPU2）及 `1979826`（GPU3），控制�
 8项测试仅对提案的辅助函数和真实TrajectoryEnvironment适配器在临时模拟环境验证：描述复制、来源分类、只读身份匹配、确认父身份延续、恢复覆盖、STOP原阶段、拒绝动作不落盘、帧任务匹配及旧模式行兼容。没有验证完整Navigator、GPU行为或正式路径统计；不能把准备补丁当成运行修复已完成。
 
 仍须等标定收集结束后再审查和应用，重做219次旧模式回归并更新源指纹及CP2b绑定。正式汇总消费该字段、按原生GT判据处理同一候选重复检查／标签变化并计算逐动作路径的部分尚未实现。旧数据的3处gap继续保留，不得清空或宣称已修复。README明确这些限制；基准及提案的完整副本不必入Git，生成器可按SHA从当前源码或d94ca7d恢复，diff和测试需同步。
+
+## 隔离GPU验证已完成（04:58）
+
+正式标定104/360，前三个场景各30条已完整结束，cvZr5TUy5C5为14/30（launcher2004691，动作8718），控制器1979824真实存活，157项源码指纹未变、错误0。独立完整审计覆盖90条，1033次候选检查与最终标签逐项匹配。QaLdnwvtxbs新增1处旧式路径归属缺口，前三场景共4处；都保留，不影响标定E/S/v/y/C_exp。
+
+利用GPU3组内等待，在独立worktree `/nvme/khy/ForesightNav_exp4_tracecheck`（detached1041d41）应用了77行被动记录补丁，正式主工作区没有应用。`code/run_tracecheck.py`只允许固定2-MON身份，在独立diagnostics输出，每2秒核查主收集器和GPU3是否被收回，预设900秒上限，只终止自己拥有的试跑。两个试跑及保护程序都已正常退出；没有仍需等待的临时exec会话。
+
+短管线6s7QHgap2fW/0：48条动作、39查询/9frontier、11条确认视觉父目标记录，全部帧号、STOP前阶段和身份解析正确；除新增字段外的完整动作位姿与原plumbing-v2逐项完全相同。证据 `diagnostics/action-trace-plumbing/audit.json`，运行目录从其controller.json读取。首次预检因worktree缺少原Habitat链接失败，未启动GPU运行；已链接原固定依赖（habitat-lab、weights、superglue），失败记录和哈希保留在该目录attempt1-preflight-missing-dependency下。
+
+长验证TEEsavR23oF/8：1000条动作、855查询/67恢复/78frontier、29次候选检查及最终标签；所有查询身份解析及验证身份匹配通过，1次验证后被Runner替换为恢复动作已正确区分。实际覆盖t547确认无效候选1:3、t585改查1:12，两个max_steps STOP在500/1000帧正确保存0/1阶段。新旧运行身份、初始位姿相同，整条轨迹不同；这是独立调用，不能声称长轨迹等价。证据 `diagnostics/action-trace-confirmation-switch/audit.json`。
+
+隔离提案的关闭模式回归也已完成：219次匹配输入调用全部一致、完整覆盖3个原生基线回合。证据 `diagnostics/action-trace-regression.json`；原输入与regression_source只在worktree建立只读链接。当前已测4份源hash及主冻结指纹证明见 `diagnostics/action-trace-validation.json`。详见 `reports/action_trace_isolated_validation.md`。
+
+下一步仍是继续收齐固定三组；可在不改主源码的前提下实现正式汇总对新轨迹字段的消费。需要区分查询/恢复/frontier、确认视觉父目标、重复检查及同一空间身份的GT标签变化，不能直接把整个ID的所有路径都当无效而忽略混合标签。现有正式汇总仍拒绝旧数据的不完整路径。正式采纳源码时核对与已测hash一致；若合并cross-fit等新代码，需要重新验证，然后更新CP2b绑定。两次GPU验证均排除拟合、不是Full BLP/CP3，参数仍未拟合或冻结。
