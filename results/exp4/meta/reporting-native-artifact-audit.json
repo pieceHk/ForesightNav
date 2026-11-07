@@ -1,0 +1,9 @@
+{
+  "legacy_episodes": 3,
+  "native_SR_SPL_PR_exactly_reused": true,
+  "conditional_joint_equals_SR": true,
+  "pilot_invalid_visit_path_m": 1.0000004581269448,
+  "pilot_native_failed_stage_path_m": 1.000004418194294,
+  "native_stage_lengths_and_terminal_STOP_valid": true,
+  "diagnostic_only": true
+}

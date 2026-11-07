@@ -1,0 +1,122 @@
+{
+  "calibration_2mon_episodes": 360,
+  "evaluation_3mon_episodes": 400,
+  "calibration_scenes": 12,
+  "shared_scenes": 12,
+  "unique_calibration_source_episodes": 720,
+  "unique_evaluation_source_episodes": 1200,
+  "shared_source_episodes": 720,
+  "evaluation_ordered_first_two_targets_equal_calibration_sequence": 12,
+  "matched_prefix_identities": [
+    {
+      "scene_id": "4ok3usBNeis",
+      "episode_id": "18",
+      "source_episode_ids": [
+        "89",
+        "60",
+        "72"
+      ]
+    },
+    {
+      "scene_id": "6s7QHgap2fW",
+      "episode_id": "8",
+      "source_episode_ids": [
+        "46",
+        "94",
+        "67"
+      ]
+    },
+    {
+      "scene_id": "6s7QHgap2fW",
+      "episode_id": "12",
+      "source_episode_ids": [
+        "47",
+        "97",
+        "62"
+      ]
+    },
+    {
+      "scene_id": "DYehNKdT76V",
+      "episode_id": "9",
+      "source_episode_ids": [
+        "7",
+        "29",
+        "45"
+      ]
+    },
+    {
+      "scene_id": "Nfvxx8J5NCo",
+      "episode_id": "5",
+      "source_episode_ids": [
+        "51",
+        "76",
+        "66"
+      ]
+    },
+    {
+      "scene_id": "Nfvxx8J5NCo",
+      "episode_id": "10",
+      "source_episode_ids": [
+        "59",
+        "60",
+        "78"
+      ]
+    },
+    {
+      "scene_id": "Nfvxx8J5NCo",
+      "episode_id": "11",
+      "source_episode_ids": [
+        "5",
+        "88",
+        "52"
+      ]
+    },
+    {
+      "scene_id": "QaLdnwvtxbs",
+      "episode_id": "14",
+      "source_episode_ids": [
+        "72",
+        "70",
+        "95"
+      ]
+    },
+    {
+      "scene_id": "cvZr5TUy5C5",
+      "episode_id": "14",
+      "source_episode_ids": [
+        "33",
+        "77",
+        "50"
+      ]
+    },
+    {
+      "scene_id": "cvZr5TUy5C5",
+      "episode_id": "19",
+      "source_episode_ids": [
+        "84",
+        "97",
+        "17"
+      ]
+    },
+    {
+      "scene_id": "p53SfW6mjZe",
+      "episode_id": "5",
+      "source_episode_ids": [
+        "91",
+        "73",
+        "74"
+      ]
+    },
+    {
+      "scene_id": "wcojb4TFT35",
+      "episode_id": "10",
+      "source_episode_ids": [
+        "43",
+        "58",
+        "85"
+      ]
+    }
+  ],
+  "scope": "Follows supplied 2-MON calibration / 3-MON evaluation design; independent ordered episode files do not imply held-out scenes or underlying source goals.",
+  "uses_evaluation_outcomes": false
+}
