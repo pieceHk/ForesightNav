@@ -342,7 +342,7 @@ def export_comparison(output, variants):
     write_json(output / 'effects.json', effects_and_pairs(variants))
     columns = ['method', 'variant', 'task', 'n_episodes', 'n_error', 'future_suffix',
                'validity_belief', 'SR', 'SPL', 'PR', 'PPL', 'P_C1', 'P_C2_given_C1',
-               'P_C3_given_C1C2', 'Joint', 'Invalid_visits_per_ep',
+               'P_C3_given_C1C2', 'P_C4_given_C1C2C3', 'Joint', 'Invalid_visits_per_ep',
                'deviation_from_nearest_proposal_pct', 'deviation_from_nearest_after_hysteresis_pct',
                'deviation_from_nearest_realized_pct']
     with (output / 'all.csv').open('w', newline='') as stream:
