@@ -1,0 +1,30 @@
+{
+  "checked_at_utc": "2026-11-08T10:22:56.099435+00:00",
+  "scope": "isolated CPU preparation only; no selected or frozen experimental parameters",
+  "branch": "exp4/crossfit-prep",
+  "base_commit": "4994fcc344ad5f7c8dcc4e1716b4a85885702994",
+  "unit_tests": 49,
+  "baseline_planner_calls": 219,
+  "all_disabled_decisions_identical": true,
+  "main_calibration_source_fingerprint_unchanged": true,
+  "main_parameter_file_exists": false,
+  "main_evaluation_ledger_exists": false,
+  "user_choice_pending": true,
+  "source_sha256": {
+    "experiments/blp_observer.py": "fb5ada3f327e1a7ddaf5b9c2f743e5d462c7d64416766d85f9385b9c92952117",
+    "experiments/runner.py": "13fb31e3ad79e20671dc80ae0521130a510410abce92496690a381df3788bca3",
+    "experiments/trajectory.py": "9f3e93c9a93466a290384b943d92f606d52cef6d2334aa74f8c8fac3c0106efe",
+    "pbsp/navigation/navigator.py": "c3e7794ae1c6e9017cf412c69dc73e8804cbea9fc35b4a32bc9a131265913125",
+    "pbsp/runtime/navigation_worker.py": "4db3707c83de4b9a643a863d020f25fc8551e158ce68a0482b4d079223ee092b",
+    "results/exp4/code/evaluate_sequence.py": "d238350a2733b56d258e774e5ca4f1537f09818cd34a313a638b9ec483c0b82f",
+    "results/exp4/code/report_variants.py": "0fd565b0649a928c9108db5a706d6d67ee7e7bbbfb6d9bc2da152fa32897a259",
+    "results/exp4/code/test_evaluate_sequence.py": "8e050f76760afc4f746337eaae76622a984e12785487a834dd5bffd5b5d18854",
+    "results/exp4/code/test_report_variants.py": "db265cbd7b0b809742e215f8292ac1f8477e9aba831bb5d19e018b3be8886b5e",
+    "pbsp/navigation/blp_parameters.py": "039c6a660ab2a7cf2b6e9e78e810bfb44f32731e6c52a9194dc20f82daa63bad",
+    "experiments/test_blp_parameters.py": "c8579f7bc4fe31d7d4720e836219b4009150f90facce0b0430e8d9a47c3a6544"
+  },
+  "evidence_sha256": {
+    "code/crossfit-preparation-tests.txt": "03bb390642656b01b49ad18dcd2ae04fdf4a56da9b68d69aa9fbb5c7711646c5",
+    "diagnostics/crossfit-preparation-regression.json": "99851e53b6261d9fca3190af35ae6c18b099590d362258ec7350771f5c1353b4"
+  }
+}

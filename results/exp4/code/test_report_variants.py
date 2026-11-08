@@ -5,11 +5,17 @@ import math
 import tempfile
 import unittest
 from unittest.mock import patch
+from copy import deepcopy
 
-from report_variants import conditional_rates, effects_and_pairs, prefix_metrics, summarize_distribution, interval_union_length, process_metrics, normalize
+from experiments.test_blp_parameters import frozen_fixture
+from pbsp.navigation.blp_parameters import CalibrationDocument
+
+from report_variants import conditional_rates, effects_and_pairs, prefix_metrics, summarize_distribution, interval_union_length, process_metrics, normalize, validate_snapshot_parameters
 
 
 class ReportingTests(unittest.TestCase):
+    pooled = {'frozen': True, 'label_source': 'system_verification',
+              'parameters': {'a': 1., 'b0': -1., 'pi': .5, 'c_exp': 2.}}
     def format_rejection_fixture(self, folder, with_target):
         """Incomplete rejection-only fixture; cannot reach score computation."""
         root = Path(folder)
@@ -37,7 +43,7 @@ class ReportingTests(unittest.TestCase):
             with patch('report_variants.merge_episode_metric_files', return_value={'s_0': {}}), \
                     patch('report_variants.NativeCandidateGT') as native:
                 with self.assertRaisesRegex(ValueError, 'accepted-action target records'):
-                    normalize('full', [folder], expected=[identity], parameters={})
+                    normalize('full', [folder], expected=[identity], calibration=self.pooled)
                 native.assert_not_called()
 
     def test_formal_rejects_shadow_snapshots_before_loading_ground_truth(self):
@@ -46,8 +52,40 @@ class ReportingTests(unittest.TestCase):
             with patch('report_variants.merge_episode_metric_files', return_value={'s_0': {}}), \
                     patch('report_variants.NativeCandidateGT') as native:
                 with self.assertRaisesRegex(ValueError, 'Shadow snapshots'):
-                    normalize('full', [folder], expected=[identity], parameters={})
+                    normalize('full', [folder], expected=[identity], calibration=self.pooled)
                 native.assert_not_called()
+
+    def test_crossfit_snapshot_binding_rejects_wrong_group_scene_hash_and_training_set(self):
+        value = frozen_fixture()
+        document = CalibrationDocument.from_mapping(value)
+        rows, selected = [], set()
+        for f in range(5):
+            scene = f'synthetic_{f}_0'
+            parameters = value['parameters_excluding_fold'][str(f)] if f < 3 else value['parameters_for_uncollected_folds']
+            rows.append({'scene_id': scene, 'episode_id': '0', 'shadow': False,
+                'parameters': dict(parameters), 'parameter_binding': {'selection': 'cross_fit',
+                    'scene_id': scene, 'scene_fold': f, 'excluded_fold': f if f < 3 else None,
+                    'training_folds': [x for x in range(3) if x != f], 'calibration_sha256': 'a'*64}})
+            selected.add((scene, '0'))
+        validate_snapshot_parameters(rows, document, 'a'*64, selected)
+        mutations = [lambda r: r[0]['parameters'].update(value['parameters_for_uncollected_folds']),
+                     lambda r: r[0]['parameter_binding'].update(training_folds=[0, 1, 2]),
+                     lambda r: r[0]['parameter_binding'].update(scene_id='synthetic_1_0'),
+                     lambda r: r[0]['parameter_binding'].update(calibration_sha256='b'*64)]
+        for mutate in mutations:
+            broken = deepcopy(rows); mutate(broken)
+            with self.assertRaises(ValueError):
+                validate_snapshot_parameters(broken, document, 'a'*64, selected)
+        with self.assertRaises(ValueError):
+            validate_snapshot_parameters(rows[:-1], document, 'a'*64, selected)
+
+    def test_comparison_rejects_different_scene_specific_parameter_assignments(self):
+        variants = {name: ([dict(scene_id='s', episode_id='0', episode_success=True)], [],
+                    {'SR': 100., 'SPL': 100., 'calibration_binding': {'parameter_sha256': 'same'}})
+                    for name in ('nearest', 'suffix_only', 'myopic', 'full')}
+        variants['full'][2]['calibration_binding'] = {'parameter_sha256': 'changed'}
+        with self.assertRaisesRegex(ValueError, 'same frozen scene-specific'):
+            effects_and_pairs(variants)
 
     def test_post_failure_success_is_not_a_successful_prefix(self):
         stages = [{'goat_sub-task_success': s, 'goat_sub-task_path_length_m': p,

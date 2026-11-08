@@ -111,6 +111,11 @@ class TrajectoryEnvironment:
                "action_id": action_id, "action_name": str(action_name),
                "is_stop": is_stop, "stop_reason": self.action_metadata().get("stop_reason") if is_stop else None,
                "world_pose": list(self.pose)}
+        target = self.action_metadata().get('blp_action_target')
+        if target is not None:
+            if target['task_idx'] != task or target['frame_index'] != self.frame + 1:
+                raise ValueError('BLP target and accepted-action trajectory disagree')
+            row['blp_action_target'] = json.loads(json.dumps(target, allow_nan=False))
         encoded = json.dumps(row, allow_nan=False, separators=(",", ":")) + "\n"
         result = self.environment.apply_action(action, info=info, **kwargs)
         end_pose = getattr(self.environment, 'action_end_pose', None)

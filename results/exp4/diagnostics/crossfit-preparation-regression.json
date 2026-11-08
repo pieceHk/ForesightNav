@@ -1,0 +1,11 @@
+{
+  "episodes": 3,
+  "calls_per_episode": {
+    "0.pkl.gz": 33,
+    "1.pkl.gz": 85,
+    "2.pkl.gz": 101
+  },
+  "all_decisions_identical": true,
+  "coverage_complete": true,
+  "baseline_run_directory": "/nvme/khy/PBSP-open-source/experiments/runs/20261107_233046_569437_hm3d_3mon_full_pbsp_exp4-regression-before"
+}

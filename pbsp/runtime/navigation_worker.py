@@ -339,7 +339,7 @@ def run_navigation(request, *, services_factory=build_services):
         artifacts = RunArtifacts(results)
         if planning.blp_config.get('enabled') or planning.blp_config.get('shadow'):
             from experiments.blp_observer import initialize_blp
-            initialize_blp(planning, services.agent, results)
+            initialize_blp(planning, services.agent, results, scene_id=request.scene)
             if planning.blp_config.get('enabled') and planning.blp_config.get('variant') == 'myopic':
                 services.candidate_provider.current_only_task = 0
         from experiments.trajectory import TrajectoryEnvironment

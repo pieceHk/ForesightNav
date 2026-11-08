@@ -4,6 +4,7 @@ Each invocation executes one stage. Check mode never launches workers. Smoke
 artifacts have an isolated directory and cannot overwrite Full-400 results.
 """
 from collections import defaultdict
+from dataclasses import asdict
 import argparse
 import hashlib
 import json
@@ -17,7 +18,7 @@ import time
 
 from experiments.exp4_collect import source_fingerprint, run_path, write
 from report_variants import normalize, format_summary, write_json, export_comparison
-from pbsp.navigation.blp import BeliefParameters
+from pbsp.navigation.blp_parameters import CalibrationDocument
 
 REPO = Path(__file__).resolve().parents[3]
 OUT = REPO/'results/exp4'
@@ -108,6 +109,12 @@ def validate_stage_proof(stage, out):
     actual = {(r['scene_id'], str(r['episode_id'])) for r in rows}
     if len(rows) != n or actual != set(wanted):
         raise GateError('Preceding normalized episodes do not cover the fixed identities')
+    document = CalibrationDocument.from_mapping(load(out/'meta/calibration.json'))
+    binding = {'selection': document.selection,
+               'parameter_sha256': digest(out/'meta/calibration.json'),
+               'parameters_by_scene': {s: asdict(document.resolve(s)[0]) for s in sorted({s for s, e in actual})}}
+    if summary.get('calibration_binding') != binding:
+        raise GateError('Preceding normalized parameter assignment differs from the frozen scene mapping')
     for row in rows:
         identity = wanted[row['scene_id'], str(row['episode_id'])]
         if row['goals'] != identity['ordered_categories'] or row['source_episode_ids'] != identity['source_episode_ids'] or len(row['stages']) != 3:
@@ -125,14 +132,19 @@ def validate_gate(stage, out=OUT, fingerprint_reader=source_fingerprint):
     validate_calibration_coverage(out, load(cal_path))
     parameter_path = out/'meta/calibration.json'
     parameters = load(parameter_path)
-    if parameters.get('frozen') is not True or parameters.get('label_source') != 'system_verification':
-        raise GateError('Evaluation requires frozen self-verification parameters')
-    if 'parameters_by_scene' in parameters or parameters.get('selection') in {'cross_fit', 'crossfit'}:
-        raise GateError('Cross-fitting must first be enabled and tested in the runtime loader and analysis')
     try:
-        BeliefParameters(**parameters['parameters'])
+        document = CalibrationDocument.from_mapping(parameters)
     except (KeyError, TypeError, ValueError) as error:
-        raise GateError('Frozen pooled-parameter schema is invalid or needs cross-fit support') from error
+        kind = 'Cross-fitting' if parameters.get('selection') == 'cross_fit' else 'Pooled'
+        raise GateError(f'{kind} frozen calibration schema is invalid: {error}') from error
+    if document.selection == 'cross_fit':
+        fixed_folds = load(out/'meta/folds.json')['folds']
+        wanted = {scene: f for f, scenes in enumerate(fixed_folds) for scene in scenes}
+        if dict(document.scene_to_fold) != wanted:
+            raise GateError('Cross-fit scene assignments differ from the fixed benchmark folds')
+        collected = {j['fold'] for j in load(cal_path)['jobs']}
+        if set(document.collected_folds) != collected:
+            raise GateError('Cross-fit training folds differ from the completed calibration coverage')
     cp2 = load(out/'meta/CP2b_acceptance.json')
     fingerprint = fingerprint_reader()
     if cp2.get('accepted') is not True or cp2.get('source_fingerprint') != fingerprint:
@@ -164,7 +176,8 @@ def validate_gate(stage, out=OUT, fingerprint_reader=source_fingerprint):
             if reported.get('reported') is not True or reported.get('summary_sha256') != digest(out/'summary/full.json'):
                 raise GateError('Report CP4 before proceeding to the other three variants')
     return {'source_fingerprint': fingerprint, 'parameter_sha256': digest(parameter_path),
-            'calibration_ledger_sha256': digest(cal_path), 'parameters': parameters['parameters']}
+            'calibration_ledger_sha256': digest(cal_path), 'parameters': asdict(document.pooled),
+            'calibration_selection': document.selection}
 
 
 def expected_identities(stage, out=OUT):
@@ -203,7 +216,8 @@ def finalize(stage, ledger, out=OUT):
     variant = 'full' if stage == 'smoke' else stage
     calibration = load(out/'meta/calibration.json')
     rows, decisions, summary = normalize(variant, [j['run_directory'] for j in ledger['jobs']],
-        expected=expected_identities(stage, out), parameters=calibration['parameters'])
+        expected=expected_identities(stage, out), calibration=calibration,
+        parameter_sha256=digest(out/'meta/calibration.json'))
     destination = out/'diagnostics/CP3' if stage == 'smoke' else out
     write_json(destination/'summary'/f'{variant}.json', format_summary(summary))
     (destination/'logs').mkdir(parents=True, exist_ok=True)
