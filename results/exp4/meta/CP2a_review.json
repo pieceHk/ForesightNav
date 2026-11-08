@@ -18,5 +18,13 @@
   "active_matching_calibration_processes": 0,
   "frozen_calibration_file_exists": false,
   "runtime_crossfit_support_implemented": false,
-  "gpu_2_3_other_compute_process_count": 2
+  "gpu_2_3_other_compute_process_count": 2,
+  "isolated_preparation": {
+    "branch": "exp4/crossfit-prep",
+    "commit": "72be3e62a99d208da1ee362e15013ae24da139f7",
+    "unit_tests": 49,
+    "identical_disabled_planner_calls": 219,
+    "applied_to_main": false,
+    "starts_evaluation": false
+  }
 }

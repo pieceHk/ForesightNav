@@ -1,13 +1,13 @@
 # Exp4 接续状态
 
-目标仍在进行。CP1及前三组360条标定、真实CP2a拟合均已完成。C_exp区间未通过组间重叠规则，当前提议三组交叉拟合，待用户选择；尚未冻结参数、实现交叉拟合加载或启动 Full 3-MON。不要重复启动已正常结束的收集器。
+目标仍在进行。CP1及前三组360条标定、真实CP2a拟合均已完成。C_exp区间未通过组间重叠规则，当前提议三组交叉拟合，待用户选择；尚未冻结参数或启动 Full 3-MON。交叉拟合加载已在独立分支准备并通过CPU检查，尚未采纳到主工作区。不要重复启动已正常结束的收集器。
 
 ## 工作区与连接
 
 - 本机材料：`/Users/hikong/Documents/ChatGPT/30服务器/ForesightNav-exp4-20261107`。
 - 服务器：`/nvme/khy/ForesightNav_exp4`；结果：`results/exp4`。
 - 权威基线来自原 `/nvme/khy/PBSP-open-source` 实际工作树，含未提交改动，保存为 `7c7e9f4`。原工作区留给其他实验。
-- GitHub 分支 `exp4/blp-eq13`。标定运行源码冻结在 `d94ca7d`；之后的提交仅涉及分析和结果材料。此前300条审计已推送 `4651319`；本次新增完整360条、真实拟合、日志压缩包和CP2a报告。
+- GitHub 主实验分支 `exp4/blp-eq13`，CP2a及完整日志已推送 `4994fcc`。标定运行源码仍为 `d94ca7d` 的同一指纹。隔离准备分支 `exp4/crossfit-prep` 已推送 `72be3e6`，尚未合入主工作区。
 - SSH：`ssh -S /tmp/codex-onemap30-20261107.sock 10.29.150.30`。普通直连被重置，现有复用连接可用。
 - GitHub 可写 deploy key 已获用户授权并实际推送成功。仓库 core.sshCommand 使用 `/home/htz/.ssh/foresightnav_exp4`、`/tmp/exp4_github_proxy.py` 和代理 `127.0.0.1:19181`；不再索要凭据，不输出私钥。
 - NAV Python：`/nvme/khy/conda_envs/pbsp/navigation/bin/python`；MAP Python：`/nvme/khy/conda_envs/pbsp/mapping/bin/python3.10`。
@@ -75,17 +75,27 @@ CPU原生复核已扩至全部360条标定与两次隔离数据：3880个候选�
 - θ_pool=(45.2470468461, -12.2367842831, 0.1528218136, 1.1948893037)，依次为a、b0、π、C_exp，仅为未冻结提案。
 - 三组翻转率0.6734%、0.4215%、0.6169%，分母19453；非空分母15666另报。self与GT诊断池翻转率1.4856%。
 - a、b0、π的组区间重叠；C_exp不重叠：Fold1=[1.099441,2.572049]、Fold2=[0.643488,1.024613]米，故pooled规则不通过。
-- 建议三组交叉拟合；具体四套参数及20场景映射在 `meta/calibration.crossfit.proposed.json`，frozen=false。Fold0/1/2分别排除自身组，未收集的Fold3/4使用pool；GT参数只作诊断。当前运行加载器、正式汇总与调度仍只支持pooled，需要实现后才能评估。
+- 建议三组交叉拟合；具体四套参数及20场景映射在 `meta/calibration.crossfit.proposed.json`，frozen=false。Fold0/1/2分别排除自身组，未收集的Fold3/4使用pool；GT参数只作诊断。主工作区当前仍只支持pooled；通用三/五组交叉拟合加载、汇总和调度已在隔离分支实现，采用后才能评估。
 - 报告 `reports/CP2a.md` 已含各组/GT参数、600次bootstrap区间、组间统计、混淆矩阵、可靠性、翻转表及三张已视觉检查的图。`code/report_calibration.py`可复现，不重新拟合。
 - 探索事件363次启动、361次完成；两条未完成记录未虚构0米，报告披露删失限制。
 - 六份完整事件/快照日志压缩为约11.9MB，原始77.4MB，gzip解压SHA全部一致；`meta/calibration-log-archive.json`列出原始及压缩哈希，原文件仍在服务器。`code/archive_calibration_logs.py`可复现。
 
 设计第2.5节对不稳定时改交叉拟合明确要求“停下汇报，等待确认”，CP2a/CP2b/CP3也标注【需确认】。已准备可审阅材料，`meta/CP2a_review.json`状态为awaiting_user_choice、accepted=false，并绑定报告/参数/ledger/分组/日志压缩清单SHA。下一步请用户选择：采用上述三组交叉拟合参数，完成实现和冻结后进入固定20条Full冒烟；或先补240条2-MON到五组再重审。新增组不会消除原三组已有的C_exp区间不重叠。
 
+## 等待选择期间完成的隔离准备
+
+服务器 `/nvme/khy/ForesightNav_exp4_crossfit`，分支 `exp4/crossfit-prep`，提交 `72be3e62a99d208da1ee362e15013ae24da139f7`。它从4994fcc创建，包含已测77行逐动作补丁及新的scene参数加载，不要在采用后再次强行套同一补丁。
+
+新增 `pbsp/navigation/blp_parameters.py`：严格识别冻结v1参数文件、固定20场景映射、3/5个完整标定组；已收集组排除自身，未收集组用pool，未知场景拒绝。`request.scene`原样传入初始化；快照记录参数、scene/fold、训练组和文件SHA。正式汇总和调度使用同一解析器，拒绝错组/错SHA，跨变体必须同一场景分配。
+
+CPU检查49项通过（原18+参数9+汇总11+调度11），关闭模式219次匹配输入回放全部一致。无GPU仿真或实际成绩；检查仍因缺冻结文件返回ready=false。证据在该分支 `results/exp4/diagnostics/crossfit-preparation*.json`、`code/crossfit-preparation-tests.txt`，说明 `reports/crossfit_preparation.md`。主工作区原157项指纹再次核对未变、没有calibration.json或评估ledger。
+
+CP2a选择请求已发出一次，尚未收到回复；不要重复提问，也不要把工具的accepted=true当成用户已选择。该通用准备不选择最终参数，三组/五组选项均可复用。
+
 ## 确认后的剩余工作
 
 1. 不重复提出已确认的E、共享滞回或GitHub权限问题；已有CP2a待答请求时不要重复索要。没有用户选择前，不冻结参数或启动3-MON。
-2. 若选三组交叉拟合，实现按scene解析参数、按scene校验快照的汇总/调度支持，合并已测逐动作记录补丁，验证后形成CP2b源码及参数绑定。保留原标定ledger，不把过去的源哈希改成新值。若选五组，保留360条，加收未收集的八场景240条，更新拟合以支持五组。
+2. 若选三组交叉拟合，审阅并采纳隔离提交72be3e6，按已确认的四套数值形成冻结v1文件和CP2b源码/参数绑定。主分支仅新增状态记录时可cherry-pick该提交；它已含记录补丁。保留原标定ledger，不改过去源哈希。若选五组，主工作区保持原标定源，保留360条，加收八场景240条并扩展拟合到五组，之后再采用通用加载支持。
 3. 采纳记录补丁时核对已测4份SHA；若与cross-fit修改相交，合并后重审、重做有针对性的回归，不盲目覆盖全文件。
 4. `code/evaluate_sequence.py`每次一阶段：smoke固定20条→Full400→Nearest400→Myopic400→Suffix-only400。必须保持固定身份、参数绑定、原生完整状态及前阶段审阅证明；首次真实GPU阶段持续监督。
 5. CP3要有真实20条、两张俯视图、过程统计及行为审阅；之后Full400写CP4，再其余变体写CP5四行指标、2×2主效应/交互项和6对配对比较，持续同步GitHub。全部真实实验及报告完成前，goal不能标记complete。
