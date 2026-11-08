@@ -1,0 +1,136 @@
+{
+  "generated_at_utc": "2026-11-08T10:02:45.311993+00:00",
+  "scope": "completed three-fold CP2a; no evaluation outcomes and no parameter freeze",
+  "cohorts": [
+    {
+      "fold": 0,
+      "episodes": 120,
+      "scenes": [
+        "6s7QHgap2fW",
+        "TEEsavR23oF",
+        "QaLdnwvtxbs",
+        "cvZr5TUy5C5"
+      ],
+      "event_counts": {
+        "empty_activation_started": 120,
+        "empty_activation": 120,
+        "candidate_first_appearance": 4650,
+        "candidate_checked": 1446,
+        "verification_final": 1446,
+        "noncandidate_verification": 2079
+      },
+      "verification_events": 1446,
+      "distinct_checked": 1199,
+      "distinct_confirmed": 169,
+      "distinct_GT_valid": 160,
+      "v_counts": {
+        "1": 169,
+        "0": 1277
+      },
+      "y_counts": {
+        "0": 1273,
+        "1": 173
+      },
+      "uncompleted_empty_activations": []
+    },
+    {
+      "fold": 1,
+      "episodes": 120,
+      "scenes": [
+        "Nfvxx8J5NCo",
+        "p53SfW6mjZe",
+        "4ok3usBNeis",
+        "zt1RVoi7PcG"
+      ],
+      "event_counts": {
+        "empty_activation_started": 120,
+        "empty_activation": 120,
+        "candidate_first_appearance": 4678,
+        "candidate_checked": 1357,
+        "verification_final": 1357,
+        "noncandidate_verification": 2368
+      },
+      "verification_events": 1357,
+      "distinct_checked": 1106,
+      "distinct_confirmed": 179,
+      "distinct_GT_valid": 223,
+      "v_counts": {
+        "0": 1178,
+        "1": 179
+      },
+      "y_counts": {
+        "0": 1116,
+        "1": 241
+      },
+      "uncompleted_empty_activations": []
+    },
+    {
+      "fold": 2,
+      "episodes": 120,
+      "scenes": [
+        "XB4GS9ShBRE",
+        "svBbv1Pavdk",
+        "wcojb4TFT35",
+        "DYehNKdT76V"
+      ],
+      "event_counts": {
+        "empty_activation_started": 123,
+        "empty_activation": 121,
+        "candidate_first_appearance": 4192,
+        "candidate_checked": 1046,
+        "verification_final": 1046,
+        "noncandidate_verification": 2773
+      },
+      "verification_events": 1046,
+      "distinct_checked": 849,
+      "distinct_confirmed": 134,
+      "distinct_GT_valid": 172,
+      "v_counts": {
+        "0": 912,
+        "1": 134
+      },
+      "y_counts": {
+        "0": 853,
+        "1": 193
+      },
+      "uncompleted_empty_activations": [
+        {
+          "episode_id": "5",
+          "event": "empty_activation_started",
+          "k": 0,
+          "path_m": 0.0,
+          "scene_id": "DYehNKdT76V",
+          "t": 1
+        },
+        {
+          "episode_id": "17",
+          "event": "empty_activation_started",
+          "k": 1,
+          "path_m": 0.6281775515917867,
+          "scene_id": "wcojb4TFT35",
+          "t": 501
+        }
+      ]
+    }
+  ],
+  "evidence_sha256": {
+    "logs/calibration_fold0_events.jsonl": "410a0333dd874ef07b3203b1fcfe2253fc559b1261882c6ac7e19cae3aac95d4",
+    "logs/calibration_fold0_snapshots.jsonl": "76596cc28ed1ded22a0d4b5375633ec97f195a19febc7b6792410b884e390806",
+    "logs/calibration_fold1_events.jsonl": "a86850455df730125ec7944604e789d3cac8f71b28b533c8d13277c2fcbbdbbd",
+    "logs/calibration_fold1_snapshots.jsonl": "b6eaaa4dca01b51ce735598ccb38f42a15a6e4e59e76cdddfd28872660a907f7",
+    "logs/calibration_fold2_events.jsonl": "5a17449f82d40a9f09921bf08c3bcaa5a9feec9e02bc59ac5e5dfc2ba22fc101",
+    "logs/calibration_fold2_snapshots.jsonl": "10a3f2a812d13a82406d214c498c5097d8131021fb02b36bc93d371cd49c8997",
+    "meta/calibration_per_fold.json": "dc498a1a0b225c35fbba98447bc8e17e7ed7b6c3543960e405acdfa2dac68c6d",
+    "meta/calibration_runs.json": "6991fe71c9141363e7a66711f37f9ffba3004bd65333ca413cc4afa73fe291d4",
+    "meta/folds.json": "e5984774614e3eef936728637c494a88f11269bf1508d719e87cf17879f2590b",
+    "meta/completed-calibration-scene-audits.json": "ce7f12e60d8020e513c80c32b720f77f097f2b4e6e335d99f2d9ad567906a7af",
+    "meta/calibration-overlap-audit.json": "00c9cd15e4e93d5dc4d2400bbe791b12ef700272afa231ce2c8c63f7a67a8405",
+    "meta/protocol_decisions.json": "c4596befc6337dab5a9963c69f4416992f7b0108f8d0c69c9e77cfa8f39c69ed",
+    "diagnostics/native-offline-gt-check.json": "b1e9cd1a0fd6219a18e962e482232abf95070e5d78075c51a7d43c53d46ab0e1",
+    "meta/calibration-log-archive.json": "de277450b328a3a0da4c34eab83e4ef4d022786332fac10b00ad01cbd9aea044",
+    "code/archive_calibration_logs.py": "f3e67a984650e44214d6b5ae1c4e9b077a37fd7019f4b0583c00f7ceadcfb37d",
+    "code/fit_calibration_reviewed.py": "05577d2ecc4467a265e5705b5f549cbd1edc7e67127fdaf304da2ca3392170e8",
+    "code/report_calibration.py": "e2ee394f5a61bfd7d04dd55b91ac4a6c8bae00106888339a1bc93b88ebecb71b"
+  },
+  "recommendation": "three_fold_cross_fit_pending_user_confirmation"
+}

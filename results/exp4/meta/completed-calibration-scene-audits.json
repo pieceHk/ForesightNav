@@ -1,8 +1,8 @@
 {
-  "checked_at_utc": "2026-11-08T07:13:50.421764+00:00",
+  "checked_at_utc": "2026-11-08T09:51:46.550253+00:00",
   "scope": "completed 2-MON calibration integrity only; no fitting, no 3-MON table",
   "frozen_runtime_unchanged": true,
-  "complete_episodes": 300,
+  "complete_episodes": 360,
   "completed_scenes": [
     {
       "scene": "6s7QHgap2fW",
@@ -295,6 +295,63 @@
         "status.json": "3d4f5961e0ce62206d6f6efa3cba9feabe3134185f7f2219aece09d69903124d",
         "launch.json": "827d11721dd8387c0e25f3f5b466ab1d6e40fec529d616c8f4004958c2e9f310",
         "mon_metrics.json": "f2af736997156f3780f4fe7b39465b1fc781dfd17f9430816138ccba2079f8a4"
+      }
+    },
+    {
+      "scene": "wcojb4TFT35",
+      "run_directory": "/nvme/khy/ForesightNav_exp4/results/exp4/runs/20261108_134804_162117_exp4_calibration_calibration-a2-fold2-wcojb4TFT35",
+      "native_exit_code": 0,
+      "complete_episodes": 30,
+      "targets_per_episode": 2,
+      "actual_identity_files_checked": 30,
+      "frozen_manifest_source_ids_ordered_categories_match": true,
+      "complete_trajectory_and_terminal_STOP_checks_passed": true,
+      "candidate_checks": 270,
+      "final_labels": 270,
+      "check_to_final_event_keys_match": true,
+      "shadow_snapshots": 2157,
+      "shadow_errors": 0,
+      "process_path_complete_under_legacy_logs": true,
+      "path_association_gaps": [],
+      "artifact_sha256": {
+        "status.json": "8d074282ebe0f9acb739b50973e11deabfe386b0cd5a0231bfa2f6671907a5ee",
+        "launch.json": "ed872e6aec3a71154875e235df48f137bd62aedf633aa3b8a3c8f0e3b9472ac3",
+        "mon_metrics.json": "da0996e73190d22795147cb93d0cf9d86981f011f3454b4ecd2584f53ff11c75"
+      }
+    },
+    {
+      "scene": "DYehNKdT76V",
+      "run_directory": "/nvme/khy/ForesightNav_exp4/results/exp4/runs/20261108_151227_457009_exp4_calibration_calibration-a2-fold2-DYehNKdT76V",
+      "native_exit_code": 0,
+      "complete_episodes": 30,
+      "targets_per_episode": 2,
+      "actual_identity_files_checked": 30,
+      "frozen_manifest_source_ids_ordered_categories_match": true,
+      "complete_trajectory_and_terminal_STOP_checks_passed": true,
+      "candidate_checks": 292,
+      "final_labels": 292,
+      "check_to_final_event_keys_match": true,
+      "shadow_snapshots": 1576,
+      "shadow_errors": 0,
+      "process_path_complete_under_legacy_logs": false,
+      "path_association_gaps": [
+        {
+          "scene_id": "DYehNKdT76V",
+          "episode_id": "4",
+          "k": 0,
+          "reason": "confirmed_invalid_visit_followed_by_further_checks"
+        },
+        {
+          "scene_id": "DYehNKdT76V",
+          "episode_id": "25",
+          "k": 0,
+          "reason": "confirmed_invalid_visit_followed_by_further_checks"
+        }
+      ],
+      "artifact_sha256": {
+        "status.json": "11ce43138536b90c274c357c148cc8471b66afeaf2a1f6e500d08e4dbbdb680e",
+        "launch.json": "cdd1b992f9d2d12ebac7761e73e427d6f7628c3abe5625e60608c93d485a0e09",
+        "mon_metrics.json": "6989959d11bcc4c487b78854cb1c67aed20249b4fb6630fade20792d481835f7"
       }
     }
   ]

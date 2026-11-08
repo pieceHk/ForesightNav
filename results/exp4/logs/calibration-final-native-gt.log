@@ -1,0 +1,8 @@
+{
+  "native_GT_candidate_checks": 3880,
+  "native_GT_recovery_checks": 7246,
+  "native_GT_max_distance_error_m": 0.0,
+  "native_path_stage_checks": 4,
+  "native_path_max_error_m": 6.447233644735206e-07,
+  "accepted_steps": 1048
+}

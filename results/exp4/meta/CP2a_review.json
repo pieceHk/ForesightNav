@@ -1,0 +1,22 @@
+{
+  "status": "awaiting_user_choice",
+  "accepted": false,
+  "checked_at_utc": "2026-11-08T10:06:09.190124+00:00",
+  "required_by": "exp4_blp_2x2.md section 2.5: 此时停下汇报，等待确认",
+  "recommended_choice": "three_fold_cross_fit",
+  "alternative_choice": "collect_remaining_two_folds_then_review",
+  "evidence_sha256": {
+    "reports/CP2a.md": "83cb53c3ac101a46fd7afd332428ffe58d848aa50f7ac172266f92488cecf583",
+    "meta/calibration_per_fold.json": "dc498a1a0b225c35fbba98447bc8e17e7ed7b6c3543960e405acdfa2dac68c6d",
+    "meta/calibration.crossfit.proposed.json": "d4938c0b3b7450ab73c36031316ca74d26e5195365ce6b7e272bb548ca174929",
+    "meta/calibration_runs.json": "6991fe71c9141363e7a66711f37f9ffba3004bd65333ca413cc4afa73fe291d4",
+    "meta/folds.json": "e5984774614e3eef936728637c494a88f11269bf1508d719e87cf17879f2590b",
+    "meta/calibration-log-archive.json": "de277450b328a3a0da4c34eab83e4ef4d022786332fac10b00ad01cbd9aea044"
+  },
+  "collection_status": "completed_three_folds_pending_CP2a",
+  "completed_episodes": 360,
+  "active_matching_calibration_processes": 0,
+  "frozen_calibration_file_exists": false,
+  "runtime_crossfit_support_implemented": false,
+  "gpu_2_3_other_compute_process_count": 2
+}

@@ -1,0 +1,11 @@
+{
+  "frozen": false,
+  "label_source": "system_verification",
+  "parameters": {
+    "a": 45.247046846062844,
+    "b0": -12.236784283062185,
+    "pi": 0.15282181357006974,
+    "c_exp": 1.1948893036836603
+  },
+  "stable_under_protocol_rule": false
+}

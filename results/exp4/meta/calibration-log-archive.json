@@ -1,0 +1,66 @@
+{
+  "scope": "complete three-fold calibration events and replay snapshots; raw files retained",
+  "gzip_settings": {
+    "level": 6,
+    "mtime": 0,
+    "filename": ""
+  },
+  "raw_bytes_total": 77396800,
+  "gzip_bytes_total": 11932106,
+  "files": [
+    {
+      "raw": "logs/calibration_fold0_events.jsonl",
+      "gzip": "logs/calibration_fold0_events.jsonl.gz",
+      "raw_bytes": 3901240,
+      "gzip_bytes": 376448,
+      "raw_sha256": "410a0333dd874ef07b3203b1fcfe2253fc559b1261882c6ac7e19cae3aac95d4",
+      "gzip_sha256": "b3ccb1b1550bf35c404d44fa1857cd76186d696d5b6a19cbf7afefb41d258fef",
+      "round_trip_sha256_matches": true
+    },
+    {
+      "raw": "logs/calibration_fold0_snapshots.jsonl",
+      "gzip": "logs/calibration_fold0_snapshots.jsonl.gz",
+      "raw_bytes": 21136779,
+      "gzip_bytes": 3732819,
+      "raw_sha256": "76596cc28ed1ded22a0d4b5375633ec97f195a19febc7b6792410b884e390806",
+      "gzip_sha256": "76b0c1a5953bd412ce87177105fc2afe0d5639266ae0e2e1a373b94f21892af7",
+      "round_trip_sha256_matches": true
+    },
+    {
+      "raw": "logs/calibration_fold1_events.jsonl",
+      "gzip": "logs/calibration_fold1_events.jsonl.gz",
+      "raw_bytes": 3899772,
+      "gzip_bytes": 368211,
+      "raw_sha256": "a86850455df730125ec7944604e789d3cac8f71b28b533c8d13277c2fcbbdbbd",
+      "gzip_sha256": "637237e12b6783235944cc0532ace0ce855ba21e36a32ccc41e51b261f241513",
+      "round_trip_sha256_matches": true
+    },
+    {
+      "raw": "logs/calibration_fold1_snapshots.jsonl",
+      "gzip": "logs/calibration_fold1_snapshots.jsonl.gz",
+      "raw_bytes": 22357905,
+      "gzip_bytes": 3799043,
+      "raw_sha256": "b6eaaa4dca01b51ce735598ccb38f42a15a6e4e59e76cdddfd28872660a907f7",
+      "gzip_sha256": "9041c5bba8e1c30348df5f77f37f30ddd4e5fd552e5b579eb2f129f45ad85323",
+      "round_trip_sha256_matches": true
+    },
+    {
+      "raw": "logs/calibration_fold2_events.jsonl",
+      "gzip": "logs/calibration_fold2_events.jsonl.gz",
+      "raw_bytes": 3532747,
+      "gzip_bytes": 323171,
+      "raw_sha256": "5a17449f82d40a9f09921bf08c3bcaa5a9feec9e02bc59ac5e5dfc2ba22fc101",
+      "gzip_sha256": "1096f5cb39f966800709b4c2b08e88b3d80e99e410cd20c545bda91af51995e1",
+      "round_trip_sha256_matches": true
+    },
+    {
+      "raw": "logs/calibration_fold2_snapshots.jsonl",
+      "gzip": "logs/calibration_fold2_snapshots.jsonl.gz",
+      "raw_bytes": 22568357,
+      "gzip_bytes": 3332414,
+      "raw_sha256": "10a3f2a812d13a82406d214c498c5097d8131021fb02b36bc93d371cd49c8997",
+      "gzip_sha256": "93f8bec28bb1a7479dd50beb296ac84036a4b88da75cea8e3c4c3c3276858876",
+      "round_trip_sha256_matches": true
+    }
+  ]
+}
