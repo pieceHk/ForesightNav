@@ -7,7 +7,7 @@
 - 本机材料：`/Users/hikong/Documents/ChatGPT/30服务器/ForesightNav-exp4-20261107`。
 - 服务器：`/nvme/khy/ForesightNav_exp4`；结果：`results/exp4`。
 - 权威基线来自原 `/nvme/khy/PBSP-open-source` 实际工作树，含未提交改动，保存为 `7c7e9f4`。原工作区留给其他实验。
-- GitHub 分支 `exp4/blp-eq13`。实际运行源码冻结在 `d94ca7d`；之后的提交仅涉及分析和结果材料。逐动作分析消费与验证证据已推送 `98727ee`，240条完整审计已推送 `e5892f1`。
+- GitHub 分支 `exp4/blp-eq13`。实际运行源码冻结在 `d94ca7d`；之后的提交仅涉及分析和结果材料。逐动作分析消费与验证证据已推送 `98727ee`，九场景270条完整审计已推送 `95ba8ff`。
 - SSH：`ssh -S /tmp/codex-onemap30-20261107.sock 10.29.150.30`。普通直连被重置，现有复用连接可用。
 - GitHub 可写 deploy key 已获用户授权并实际推送成功。仓库 core.sshCommand 使用 `/home/htz/.ssh/foresightnav_exp4`、`/tmp/exp4_github_proxy.py` 和代理 `127.0.0.1:19181`；不再索要凭据，不输出私钥。
 - NAV Python：`/nvme/khy/conda_envs/pbsp/navigation/bin/python`；MAP Python：`/nvme/khy/conda_envs/pbsp/mapping/bin/python3.10`。
@@ -20,9 +20,9 @@
 
 ## 当前正式收集与监督
 
-2026-11-08 13:54 CST 实测完成 **290/360**：fold0、fold1及fold2的svBbv1Pavdk共九场景均30条正常结束，其launcher均退出。当前GPU2 的XB4GS9ShBRE launcher2069484已完成20/30条、接受13421条动作；GPU3接续的wcojb4TFT35 launcher2083822已接受500条动作，首回合进行中。控制器1979824和两项launcher的真实 /proc 身份匹配，boot_id一致，冻结文件未变、错误0，最近各10个快照可重放。不要用已退出launcher判断任务，也不要重启健康进程。
+2026-11-08 15:15 CST 实测完成 **310/360**：fold0、fold1及fold2的svBbv1Pavdk、XB4GS9ShBRE共十场景均30条正常结束，其launcher均退出。当前GPU3 的wcojb4TFT35 launcher2083822已完成10/30条、接受8583条动作；GPU2接续的最后一个场景DYehNKdT76V launcher2093277已接受131条动作，首回合进行中。控制器1979824和两项launcher的真实 /proc 身份匹配，boot_id一致，冻结文件未变、错误0，最近各10个快照可重放。不要用已退出launcher判断任务，也不要重启健康进程。
 
-本轮连续监督约2小时，完成数由240增至290；只读观察会话49319已自然结束，无待恢复工具会话。正式收集器及上述两项GPU任务继续运行；未改运行代码、未提前拟合或运行3-MON。
+本轮连续监督约1小时20分钟，完成数由290增至310；只读观察会话51395、完整审计会话54018均自然结束，无待恢复工具会话。正式收集器及上述两项GPU任务继续运行；未改运行代码、未提前拟合或运行3-MON。
 
 Ledger：`meta/calibration_runs.json`；日志：`logs/calibration-controller-a2.log`。控制器 `python -m experiments.exp4_collect` 每10秒检查157项源码/配置/固定清单及错误；先收前三组12场景，每场景30条2-MON，共360条。每卡一个建图与导航共置 worker，GPU2/2、3/3；组间有屏障。不要另加常规 worker 或碰其他GPU。
 
@@ -41,8 +41,8 @@ PYTHONPATH=. /nvme/khy/conda_envs/pbsp/navigation/bin/python results/exp4/code/w
 
 - CP1 核心18项测试；原生固定4ok3usBNeis/{0,1,2}三个完整3-MON共219次规划调用，关闭模式匹配输入回放全部一致。原输入 `code/regression_inputs/*.pkl.gz`，入口 `python -m experiments.exp4_regression --require-complete`。不能据此声称独立轨迹逐帧相同。
 - 首次标定在TEEs/0第108步把非查询脱困waypoint误当查询候选，已整体归档排除；d94ca7d按candidate_source区分、保留历史查询E和非候选诊断。a2实际重放前107步相同，第108步正确记录并越过。见 `meta/recovery-waypoint-fix-audit.json`、`meta/calibration_runs.attempt1.json`、归档SHA证明。不要再重收这项修复。
-- 已完整完成的九个场景270条均独立核对 actual identity、manifest/source IDs/目标顺序、轨迹/STOP/native计数，3005次候选检查与最终标签逐项匹配，13574个影子快照、错误0。见 `meta/completed-calibration-scene-audits.json`。实时完成总数290还含XB的20条，完整场景审计与实时总数范围分开。
-- 旧式过程路径归属现共9处缺口：6s7的6/k0、26/k1，TEEs的8/k1，Qa的7/k1，cv的0/k1、1/k0、9/k0，Nfv的11/k1，zt的18/k0。全部继续保留 invalid_path_complete=false，不影响标定E/S/v/y/C_exp。p53、4ok和sv没有这种旧式缺口。不能清空缺口来放行正式成绩。
+- 已完整完成的十个场景300条均独立核对 actual identity、manifest/source IDs/目标顺序、轨迹/STOP/native计数，3287次候选检查与最终标签逐项匹配，15720个影子快照、错误0。见 `meta/completed-calibration-scene-audits.json`。实时完成总数310还含wco的10条，完整场景审计与实时总数范围分开。
+- 旧式过程路径归属现共11处缺口：6s7的6/k0、26/k1，TEEs的8/k1，Qa的7/k1，cv的0/k1、1/k0、9/k0，Nfv的11/k1，zt的18/k0，XB的25/k0、28/k0。全部继续保留 invalid_path_complete=false，不影响标定E/S/v/y/C_exp。p53、4ok和sv没有这种旧式缺口。不能清空缺口来放行正式成绩。
 
 ## 已测但主工作区尚未采纳的记录补丁
 

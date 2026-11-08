@@ -1,8 +1,8 @@
 {
-  "checked_at_utc": "2026-11-08T05:54:25.399549+00:00",
+  "checked_at_utc": "2026-11-08T07:13:50.421764+00:00",
   "scope": "completed 2-MON calibration integrity only; no fitting, no 3-MON table",
   "frozen_runtime_unchanged": true,
-  "complete_episodes": 270,
+  "complete_episodes": 300,
   "completed_scenes": [
     {
       "scene": "6s7QHgap2fW",
@@ -238,6 +238,41 @@
         "status.json": "098e5ad561e14c7fe2e9c899ffd75cf88c2ce6d96e63fec601ebfda579f557ff",
         "launch.json": "01bc3ca09dd3bb2def6b65d8b3662c66c7ac62cda38e11387e6ff2aea9d9990b",
         "mon_metrics.json": "3c2ec00d9d79bef5b4c0cf26bee324ef2b23eded31aa13b16d826edef0f5eaa8"
+      }
+    },
+    {
+      "scene": "XB4GS9ShBRE",
+      "run_directory": "/nvme/khy/ForesightNav_exp4/results/exp4/runs/20261108_114435_933042_exp4_calibration_calibration-a2-fold2-XB4GS9ShBRE",
+      "native_exit_code": 0,
+      "complete_episodes": 30,
+      "targets_per_episode": 2,
+      "actual_identity_files_checked": 30,
+      "frozen_manifest_source_ids_ordered_categories_match": true,
+      "complete_trajectory_and_terminal_STOP_checks_passed": true,
+      "candidate_checks": 282,
+      "final_labels": 282,
+      "check_to_final_event_keys_match": true,
+      "shadow_snapshots": 2146,
+      "shadow_errors": 0,
+      "process_path_complete_under_legacy_logs": false,
+      "path_association_gaps": [
+        {
+          "scene_id": "XB4GS9ShBRE",
+          "episode_id": "25",
+          "k": 0,
+          "reason": "confirmed_invalid_visit_followed_by_further_checks"
+        },
+        {
+          "scene_id": "XB4GS9ShBRE",
+          "episode_id": "28",
+          "k": 0,
+          "reason": "confirmed_invalid_visit_followed_by_further_checks"
+        }
+      ],
+      "artifact_sha256": {
+        "status.json": "a3657027293a1aa22ee32d180ff12fd81ff19fa4d2f818c7aeeebef19a9faf1a",
+        "launch.json": "d0ca039c6cc8b1eb7835030a80345e87a1d6f0953f07de31b20c9c90a2915e6d",
+        "mon_metrics.json": "92602513c59d52a2985aae991ccedc3b311ef7606e5b21b642731d34c04d2b75"
       }
     },
     {
