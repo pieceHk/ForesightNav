@@ -1,8 +1,8 @@
 {
-  "checked_at_utc": "2026-11-07T22:35:26.103099+00:00",
+  "checked_at_utc": "2026-11-08T01:18:06.700679+00:00",
   "scope": "completed 2-MON calibration integrity only; no fitting, no 3-MON table",
   "frozen_runtime_unchanged": true,
-  "complete_episodes": 120,
+  "complete_episodes": 180,
   "completed_scenes": [
     {
       "scene": "6s7QHgap2fW",
@@ -136,6 +136,57 @@
         "status.json": "763c64b1cb7970c479a3414c5097d99b2e965e17bb17435a7fad631a050abea9",
         "launch.json": "f812aacdec97071e5801330716b969c2febf0a1217ba94857e59b0e01deee966",
         "mon_metrics.json": "defd340ebec439ed399eb0ecfc655e74eaa75994011c29408a0f24b4bec50d95"
+      }
+    },
+    {
+      "scene": "Nfvxx8J5NCo",
+      "run_directory": "/nvme/khy/ForesightNav_exp4/results/exp4/runs/20261108_063419_509052_exp4_calibration_calibration-a2-fold1-Nfvxx8J5NCo",
+      "native_exit_code": 0,
+      "complete_episodes": 30,
+      "targets_per_episode": 2,
+      "actual_identity_files_checked": 30,
+      "frozen_manifest_source_ids_ordered_categories_match": true,
+      "complete_trajectory_and_terminal_STOP_checks_passed": true,
+      "candidate_checks": 329,
+      "final_labels": 329,
+      "check_to_final_event_keys_match": true,
+      "shadow_snapshots": 1680,
+      "shadow_errors": 0,
+      "process_path_complete_under_legacy_logs": false,
+      "path_association_gaps": [
+        {
+          "scene_id": "Nfvxx8J5NCo",
+          "episode_id": "11",
+          "k": 1,
+          "reason": "confirmed_invalid_visit_followed_by_further_checks"
+        }
+      ],
+      "artifact_sha256": {
+        "status.json": "5ad12fba8f4580c1c287b19195e49e16e9ace24f331a7071e1780664c877cee2",
+        "launch.json": "65a3252eaed24c5bec95f7813a971b7267ff6e1768d8286e9f7202b9d573a1eb",
+        "mon_metrics.json": "54a72d0b69eda17e856c15ca5c11e08169f267d698010914a309fa53f8852ecb"
+      }
+    },
+    {
+      "scene": "p53SfW6mjZe",
+      "run_directory": "/nvme/khy/ForesightNav_exp4/results/exp4/runs/20261108_063419_648945_exp4_calibration_calibration-a2-fold1-p53SfW6mjZe",
+      "native_exit_code": 0,
+      "complete_episodes": 30,
+      "targets_per_episode": 2,
+      "actual_identity_files_checked": 30,
+      "frozen_manifest_source_ids_ordered_categories_match": true,
+      "complete_trajectory_and_terminal_STOP_checks_passed": true,
+      "candidate_checks": 349,
+      "final_labels": 349,
+      "check_to_final_event_keys_match": true,
+      "shadow_snapshots": 1786,
+      "shadow_errors": 0,
+      "process_path_complete_under_legacy_logs": true,
+      "path_association_gaps": [],
+      "artifact_sha256": {
+        "status.json": "877ea35a7bdf07d639abe1c6f40f8d700968f31d8e7a7b6c88fd26bd090e955a",
+        "launch.json": "4e947fcea1665baf4d7c78ec73f31648ccc0e39770038680badc29b9c2590a83",
+        "mon_metrics.json": "2f7f6f855c4b1b6030accce32f8cbea0b3fc481eaafbc141a1813ec29552b5c4"
       }
     }
   ]

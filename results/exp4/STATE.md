@@ -7,7 +7,7 @@
 - 本机材料：`/Users/hikong/Documents/ChatGPT/30服务器/ForesightNav-exp4-20261107`。
 - 服务器：`/nvme/khy/ForesightNav_exp4`；结果：`results/exp4`。
 - 权威基线来自原 `/nvme/khy/PBSP-open-source` 实际工作树，含未提交改动，保存为 `7c7e9f4`。原工作区留给其他实验。
-- GitHub 分支 `exp4/blp-eq13`。实际运行源码冻结在 `d94ca7d`；之后的提交仅涉及分析和结果材料。逐动作分析消费与验证证据已推送 `98727ee`。
+- GitHub 分支 `exp4/blp-eq13`。实际运行源码冻结在 `d94ca7d`；之后的提交仅涉及分析和结果材料。逐动作分析消费与验证证据已推送 `98727ee`，首组完整审计已推送 `1d91094`。
 - SSH：`ssh -S /tmp/codex-onemap30-20261107.sock 10.29.150.30`。普通直连被重置，现有复用连接可用。
 - GitHub 可写 deploy key 已获用户授权并实际推送成功。仓库 core.sshCommand 使用 `/home/htz/.ssh/foresightnav_exp4`、`/tmp/exp4_github_proxy.py` 和代理 `127.0.0.1:19181`；不再索要凭据，不输出私钥。
 - NAV Python：`/nvme/khy/conda_envs/pbsp/navigation/bin/python`；MAP Python：`/nvme/khy/conda_envs/pbsp/mapping/bin/python3.10`。
@@ -20,7 +20,9 @@
 
 ## 当前正式收集与监督
 
-2026-11-08 06:36 CST 实测完成 **120/360**：fold0 四场景均30条正常结束，旧launcher均退出。fold1 已自动启动：GPU2 的 Nfvxx8J5NCo launcher2023735，GPU3 的 p53SfW6mjZe launcher2023736，已分别接受96/89条动作。控制器1979824和两项新launcher的真实 /proc 身份匹配，boot_id一致，冻结文件未变，错误0，最近各10快照可重放。不要用已退出 launcher 判断任务，也不要重启健康进程。本轮临时只读观察会话4237已自然退出，没有仍待恢复的工具会话。
+2026-11-08 09:17 CST 实测完成 **180/360**：fold0 四场景及fold1的Nfvxx8J5NCo、p53SfW6mjZe均30条正常结束，其launcher均退出。fold1后两个场景已自动接续：GPU2 的4ok3usBNeis launcher2049358，GPU3 的zt1RVoi7PcG launcher2050839，已分别接受561/52条动作。控制器1979824和两项新launcher的真实 /proc 身份匹配，冻结文件未变、错误0，最新快照可重放。不要用已退出launcher判断任务，也不要重启健康进程。
+
+本轮连续监督约2小时40分钟，完成数由120增至180；只读观察会话40805、19729、17156均自然结束，无待恢复工具会话。正式收集器及上述两项GPU任务继续运行；未改运行代码、未提前拟合或运行3-MON。
 
 Ledger：`meta/calibration_runs.json`；日志：`logs/calibration-controller-a2.log`。控制器 `python -m experiments.exp4_collect` 每10秒检查157项源码/配置/固定清单及错误；先收前三组12场景，每场景30条2-MON，共360条。每卡一个建图与导航共置 worker，GPU2/2、3/3；组间有屏障。不要另加常规 worker 或碰其他GPU。
 
@@ -39,8 +41,8 @@ PYTHONPATH=. /nvme/khy/conda_envs/pbsp/navigation/bin/python results/exp4/code/w
 
 - CP1 核心18项测试；原生固定4ok3usBNeis/{0,1,2}三个完整3-MON共219次规划调用，关闭模式匹配输入回放全部一致。原输入 `code/regression_inputs/*.pkl.gz`，入口 `python -m experiments.exp4_regression --require-complete`。不能据此声称独立轨迹逐帧相同。
 - 首次标定在TEEs/0第108步把非查询脱困waypoint误当查询候选，已整体归档排除；d94ca7d按candidate_source区分、保留历史查询E和非候选诊断。a2实际重放前107步相同，第108步正确记录并越过。见 `meta/recovery-waypoint-fix-audit.json`、`meta/calibration_runs.attempt1.json`、归档SHA证明。不要再重收这项修复。
-- 首组四个完整场景120条已独立核对 actual identity、manifest/source IDs/目标顺序、轨迹/STOP/native计数，1446次候选检查与最终标签逐项匹配，6105个影子快照、错误0。见 `meta/completed-calibration-scene-audits.json`。
-- 旧式过程路径归属现共7处缺口：6s7的6/k0、26/k1，TEEs的8/k1，Qa的7/k1，cv的0/k1、1/k0、9/k0。全部继续保留 invalid_path_complete=false，不影响标定E/S/v/y/C_exp。不能清空缺口来放行正式成绩。
+- 已完成的六个场景180条均独立核对 actual identity、manifest/source IDs/目标顺序、轨迹/STOP/native计数，2124次候选检查与最终标签逐项匹配，9571个影子快照、错误0。见 `meta/completed-calibration-scene-audits.json`。
+- 旧式过程路径归属现共8处缺口：6s7的6/k0、26/k1，TEEs的8/k1，Qa的7/k1，cv的0/k1、1/k0、9/k0，Nfv的11/k1。全部继续保留 invalid_path_complete=false，不影响标定E/S/v/y/C_exp。p53没有这种旧式缺口。不能清空缺口来放行正式成绩。
 
 ## 已测但主工作区尚未采纳的记录补丁
 
