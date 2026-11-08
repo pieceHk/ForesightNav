@@ -1,10 +1,13 @@
 """Checkpoint and assignment tests; fixtures never start simulation workers."""
 import json
+from dataclasses import asdict
 from pathlib import Path
 from tempfile import TemporaryDirectory
 import unittest
 
 from evaluate_sequence import build_jobs, validate_gate, GateError, digest
+from experiments.test_blp_parameters import frozen_fixture
+from pbsp.navigation.blp_parameters import CalibrationDocument
 
 
 def save(path, value):
@@ -35,8 +38,9 @@ def fixture(root):
 
 def smoke_proof(root, fp):
     identities, jobs, rows, decisions = [], [], [], []
+    scenes = [s for group in json.loads((root/'meta/folds.json').read_text())['folds'] for s in group]
     for i in range(20):
-        identity = {'scene_id': f'eval_scene{i}', 'runtime_episode_id': '0',
+        identity = {'scene_id': scenes[i], 'runtime_episode_id': '0',
                     'ordered_categories': ['chair', 'bed', 'plant'],
                     'source_episode_ids': [f'{i}a', f'{i}b', f'{i}c']}
         identities.append(identity)
@@ -52,7 +56,11 @@ def smoke_proof(root, fp):
         decisions.append({'scene_id': identity['scene_id'], 'episode_id': '0', 'variant': 'full'})
     save(root/'meta/smoke-20-identities.json', identities)
     destination = root/'diagnostics/CP3'
-    save(destination/'summary/full.json', {'n_episodes': 20, 'variant': 'full', 'diagnostic_only': False})
+    document = CalibrationDocument.from_mapping(json.loads((root/'meta/calibration.json').read_text()))
+    binding = {'selection': document.selection, 'parameter_sha256': digest(root/'meta/calibration.json'),
+               'parameters_by_scene': {s: asdict(document.resolve(s)[0]) for s in sorted(scenes)}}
+    save(destination/'summary/full.json', {'n_episodes': 20, 'variant': 'full', 'diagnostic_only': False,
+                                         'calibration_binding': binding})
     (destination/'logs').mkdir()
     for name, values in [('episodes', rows), ('decisions', decisions)]:
         (destination/f'logs/full_{name}.jsonl').write_text(''.join(json.dumps(v)+'\n' for v in values))
@@ -68,6 +76,67 @@ def smoke_proof(root, fp):
 
 
 class EvaluationSequenceTests(unittest.TestCase):
+    def bind_test_parameters(self, root, value):
+        """Only synthetic checkpoint files inside TemporaryDirectory."""
+        path = root/'meta/calibration.json'
+        save(path, value)
+        review = json.loads((root/'meta/CP2b_acceptance.json').read_text())
+        review['parameter_sha256'] = digest(path)
+        review['calibration_ledger_sha256'] = digest(root/'meta/calibration_runs.json')
+        save(root/'meta/CP2b_acceptance.json', review)
+
+    def test_crossfit_gate_accepts_only_exact_fixed_scene_and_collected_fold_binding(self):
+        with TemporaryDirectory(prefix='exp4_crossfit_gate_test_') as folder:
+            root = Path(folder); fp = fixture(root)
+            value = frozen_fixture()
+            self.bind_test_parameters(root, value)
+            gate = validate_gate('smoke', root, lambda: fp)
+            self.assertEqual(gate['calibration_selection'], 'cross_fit')
+            value['scene_to_fold']['synthetic_0_0'] = 1
+            value['scene_to_fold']['synthetic_1_0'] = 0
+            self.bind_test_parameters(root, value)
+            with self.assertRaisesRegex(GateError, 'fixed benchmark folds'):
+                validate_gate('smoke', root, lambda: fp)
+            self.bind_test_parameters(root, frozen_fixture(5))
+            with self.assertRaisesRegex(GateError, 'completed calibration coverage'):
+                validate_gate('smoke', root, lambda: fp)
+
+    def test_five_fold_crossfit_gate_requires_all_twenty_completed_calibration_scenes(self):
+        with TemporaryDirectory(prefix='exp4_crossfit_gate_test_') as folder:
+            root = Path(folder); fp = fixture(root)
+            ledger_path = root/'meta/calibration_runs.json'
+            ledger = json.loads(ledger_path.read_text())
+            for f in (3, 4):
+                for i in range(4):
+                    scene = f'synthetic_{f}_{i}'; run = root/'native-calibration'/scene
+                    save(run/'status.json', {'status': 'completed'})
+                    save(run/'mon_metrics.json', {'counts': {'completed_episodes': 30, 'targets_per_episode': 2}})
+                    ledger['jobs'].append({'fold': f, 'scene': scene, 'status': 'completed', 'run_directory': str(run)})
+            ledger['status'] = 'completed_five_folds_pending_CP2a'
+            save(ledger_path, ledger)
+            self.bind_test_parameters(root, frozen_fixture(5))
+            self.assertEqual(validate_gate('smoke', root, lambda: fp)['calibration_selection'], 'cross_fit')
+
+    def test_full_crossfit_rejects_a_pooled_assignment_even_with_consistent_artifact_hashes(self):
+        with TemporaryDirectory(prefix='exp4_crossfit_gate_test_') as folder:
+            root = Path(folder); fp = fixture(root)
+            value = frozen_fixture(); self.bind_test_parameters(root, value)
+            smoke_proof(root, fp)
+            self.assertEqual(validate_gate('full', root, lambda: fp)['calibration_selection'], 'cross_fit')
+            path = root/'diagnostics/CP3/summary/full.json'
+            summary = json.loads(path.read_text())
+            summary['calibration_binding']['parameters_by_scene']['synthetic_0_0'] = value['parameters_for_uncollected_folds']
+            save(path, summary)
+            ledger_path = root/'meta/evaluation-smoke-runs.json'
+            ledger = json.loads(ledger_path.read_text())
+            ledger['artifact_sha256']['summary/full.json'] = digest(path)
+            save(ledger_path, ledger)
+            review_path = root/'meta/CP3_acceptance.json'
+            review = json.loads(review_path.read_text()); review['smoke_ledger_sha256'] = digest(ledger_path)
+            save(review_path, review)
+            with self.assertRaisesRegex(GateError, 'normalized parameter assignment'):
+                validate_gate('full', root, lambda: fp)
+
     def test_assignments_are_twenty_scenes_and_exact_fixed_coverage(self):
         full = [{'scene_id': f'scene{s}', 'runtime_episode_id': str(e),
                  'ordered_categories': ['chair', 'bed', 'plant'], 'source_episode_ids': ['a', 'b', 'c']}

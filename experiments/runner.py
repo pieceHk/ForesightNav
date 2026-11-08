@@ -603,6 +603,9 @@ def run_episodes(
                 trapped_event['escape'] = escape_details
                 if escape_goal is not None:
                     agent.set_navmesh_override_goal(escape_goal, 'escape')
+                    if getattr(agent, 'blp_enabled', False):
+                        action_metadata['blp_effective_recovery'] = {
+                            'mode': 'escape', 'position': list(map(float, escape_goal))}
                     action = DiscreteNavigationAction.TURN_RIGHT
                 else:
                     agent.clear_local_navigation_state()
@@ -619,6 +622,9 @@ def run_episodes(
                 )
                 if random_goal is not None:
                     agent.set_navmesh_override_goal(random_goal, 'random')
+                    if getattr(agent, 'blp_enabled', False):
+                        action_metadata['blp_effective_recovery'] = {
+                            'mode': 'random', 'position': list(map(float, random_goal))}
                     action = DiscreteNavigationAction.TURN_RIGHT
                 print(
                     '[RANDOM_EXPLORATION_GOAL] '
@@ -634,6 +640,14 @@ def run_episodes(
                     f'planner_error={planner_error!r}'
                 )
 
+            if getattr(agent, 'blp_enabled', False):
+                from experiments.blp_observer import bind_action_target
+                original_target = action_metadata['blp_action_target']
+                bound_target = bind_action_target(
+                    planning, action_metadata, current_task_idx, t)
+                if bound_target['source'] == 'query_candidate' and bound_target['candidate_id'] is not None:
+                    original_target['candidate_id'] = bound_target['candidate_id']
+                action_metadata['blp_action_target'] = bound_target
             env.apply_action(action, info=info)
 
             dt_total = (time.perf_counter() - t_step_start) * 1000

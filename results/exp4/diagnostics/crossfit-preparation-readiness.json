@@ -1,0 +1,8 @@
+{
+  "stage": "smoke",
+  "ready": false,
+  "reason": "Missing checkpoint artifact: /nvme/khy/ForesightNav_exp4_crossfit/results/exp4/meta/calibration.json",
+  "scenes": 20,
+  "episodes": 20,
+  "launches_workers": false
+}

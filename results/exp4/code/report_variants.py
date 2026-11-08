@@ -9,6 +9,7 @@ from __future__ import annotations
 import argparse
 from collections import Counter, defaultdict
 import csv
+from dataclasses import asdict
 import hashlib
 import itertools
 import json
@@ -19,6 +20,7 @@ import statistics
 from experiments.metrics import merge_episode_metric_files, summarize_records
 from action_path_metrics import action_paths, SOURCE_SHA256 as ACTION_SOURCE_SHA256
 from native_candidate_gt import NativeCandidateGT, SOURCE_SHA256 as GT_SOURCE_SHA256
+from pbsp.navigation.blp_parameters import CalibrationDocument, SOURCE_SHA256 as PARAMETER_SOURCE_SHA256
 
 SOURCE_SHA256 = hashlib.sha256(Path(__file__).read_bytes()).hexdigest()
 
@@ -190,17 +192,37 @@ def process_metrics(events, decisions, dispatches, traces, episode_keys,
     return value
 
 
-def normalize(variant, runs, expected=None, allow_diagnostic=False, parameters=None):
+def validate_snapshot_parameters(snapshots, document, parameter_sha256, selected):
+    if not snapshots:
+        raise ValueError('Every selected episode needs active BLP snapshots')
+    if any(s.get('shadow') is not False for s in snapshots):
+        raise ValueError('Shadow snapshots cannot populate a formal ablation')
+    if not isinstance(parameter_sha256, str) or len(parameter_sha256) != 64:
+        raise ValueError('Formal snapshots require the frozen parameter-file SHA256')
+    for row in snapshots:
+        scene = str(row['scene_id'])
+        values, binding = document.resolve(scene)
+        if row['parameters'] != asdict(values):
+            raise ValueError('Observed parameters differ from the frozen scene assignment')
+        if row.get('parameter_binding') != dict(binding, calibration_sha256=parameter_sha256):
+            raise ValueError('Snapshot parameter source, scene, or held-out-fold binding differs')
+    if {(str(s['scene_id']), str(s['episode_id'])) for s in snapshots} != set(selected):
+        raise ValueError('Not every selected episode has BLP planning snapshots')
+
+
+def normalize(variant, runs, expected=None, allow_diagnostic=False, calibration=None,
+              parameter_sha256=None):
     records, identities, traces = {}, {}, {}
     events, decisions, dispatches = [], [], []
     task_count = None
     commits = set()
     record_commits = {}
     gt_by_episode, native_gt_runs = {}, []
-    if not allow_diagnostic and parameters is None:
-        raise ValueError('Formal analysis requires the frozen calibration parameters')
+    if not allow_diagnostic and calibration is None:
+        raise ValueError('Formal analysis requires the full frozen self-calibration artifact')
     if not allow_diagnostic and expected is None:
         raise ValueError('Formal analysis requires the frozen episode identity list')
+    document = CalibrationDocument.from_mapping(calibration) if calibration is not None else None
     for run in map(Path, runs):
         status = json.loads((run / 'status.json').read_text())
         if status['status'] != 'completed':
@@ -244,12 +266,7 @@ def normalize(variant, runs, expected=None, allow_diagnostic=False, parameters=N
             raise ValueError('Formal evaluation requires complete accepted-action target records')
         if not allow_diagnostic:
             snapshots = [e for p in run.rglob('blp_snapshots.jsonl') for e in read_jsonl(p)]
-            if not snapshots or any(e['parameters'] != parameters for e in snapshots):
-                raise ValueError('Observed parameters differ from the frozen calibration')
-            if any(e.get('shadow') is not False for e in snapshots):
-                raise ValueError('Shadow snapshots cannot populate a formal ablation')
-            if {(s['scene_id'], str(s['episode_id'])) for s in snapshots} != set(selected):
-                raise ValueError('Not every selected episode has BLP planning snapshots')
+            validate_snapshot_parameters(snapshots, document, parameter_sha256, selected)
         if has_targets and all(has_targets):
             native_gt = NativeCandidateGT(run)
             verified = native_gt.verify_events(run_events)
@@ -338,8 +355,13 @@ def normalize(variant, runs, expected=None, allow_diagnostic=False, parameters=N
                'conditional_counts': conditional, 'native_aggregate': aggregate,
                'process': process,
                'analysis_sources_sha256': {'report_variants.py': SOURCE_SHA256,
-                   'action_path_metrics.py': ACTION_SOURCE_SHA256, 'native_candidate_gt.py': GT_SOURCE_SHA256},
+                   'action_path_metrics.py': ACTION_SOURCE_SHA256, 'native_candidate_gt.py': GT_SOURCE_SHA256,
+                   'blp_parameters.py': PARAMETER_SOURCE_SHA256},
                'source_commits': sorted(commits), 'diagnostic_only': bool(allow_diagnostic)}
+    if document is not None:
+        summary['calibration_binding'] = {'selection': document.selection,
+            'parameter_sha256': parameter_sha256,
+            'parameters_by_scene': {s: asdict(document.resolve(s)[0]) for s in sorted({s for s, e in identities})}}
     if not allow_diagnostic and not summary['process']['invalid_path_complete']:
         raise ValueError('Ambiguous invalid-visit path association requires action-level audit before publication')
     if not allow_diagnostic and summary['process']['invalid_path_source'] != 'blp_action_target_v1_native_gt':
@@ -356,6 +378,9 @@ def effects_and_pairs(variants):
     versions = [value[2].get('analysis_sources_sha256') for value in variants.values()]
     if any(versions) and any(v != versions[0] for v in versions):
         raise ValueError('Reanalyze all variants with the same loaded analysis sources')
+    bindings = [value[2].get('calibration_binding') for value in variants.values()]
+    if any(bindings) and any(b != bindings[0] for b in bindings):
+        raise ValueError('Variants must use the same frozen scene-specific parameter assignment')
     identities = [{(r['scene_id'], r['episode_id']) for r in variants[n][0]} for n in names]
     if any(s != identities[0] for s in identities):
         raise ValueError('Paired comparisons require identical episode identities')
@@ -415,13 +440,13 @@ def main():
     parser.add_argument('--calibration', type=Path)
     args = parser.parse_args()
     expected = json.loads(args.expected_identities.read_text()) if args.expected_identities else None
-    parameters = None
+    calibration, parameter_hash = None, None
     if args.calibration:
-        calibration = json.loads(args.calibration.read_text())
-        if not calibration.get('frozen') or calibration.get('label_source') != 'system_verification':
-            raise ValueError('Expected frozen self-calibration')
-        parameters = calibration['parameters']
-    episodes, decisions, summary = normalize(args.variant, args.run, expected, args.diagnostic_only, parameters)
+        blob = args.calibration.read_bytes()
+        calibration = json.loads(blob)
+        parameter_hash = hashlib.sha256(blob).hexdigest()
+    episodes, decisions, summary = normalize(args.variant, args.run, expected, args.diagnostic_only,
+                                             calibration, parameter_hash)
     args.output.mkdir(parents=True, exist_ok=True)
     write_json(args.output / 'summary' / f'{args.variant}.json', format_summary(summary))
     (args.output / 'logs').mkdir(exist_ok=True)

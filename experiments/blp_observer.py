@@ -1,6 +1,5 @@
 """BLP runtime binding and passive, replayable calibration records."""
 from dataclasses import asdict
-import json
 from pathlib import Path
 import time
 from types import SimpleNamespace
@@ -8,11 +7,12 @@ from types import SimpleNamespace
 import numpy as np
 
 from pbsp.navigation.blp import BeliefParameters, build_snapshot, solve_snapshot
+from pbsp.navigation.blp_parameters import load_frozen_calibration
 from pbsp.navigation.planning import active_candidate, subtask_has_acted
 from experiments.telemetry import dumps_json_strict
 
 
-def initialize_blp(planning, agent, directory):
+def initialize_blp(planning, agent, directory, *, scene_id=None):
     agent.blp_enabled = True
     planning.blp_directory = Path(directory)
     calibration = planning.blp_config.get('calibration', 'uncalibrated')
@@ -20,11 +20,11 @@ def initialize_blp(planning, agent, directory):
         raise ValueError('Active BLP evaluation requires frozen self-calibration')
     if calibration == 'uncalibrated':
         planning.blp_parameters = BeliefParameters()
+        planning.blp_parameter_binding = {'selection': 'uncalibrated_shadow',
+                                          'scene_id': scene_id, 'calibration_sha256': None}
     else:
-        value = json.loads(Path(calibration).read_text())
-        if value.get('frozen') is not True or value.get('label_source') != 'system_verification':
-            raise ValueError('Calibration must be frozen and use system verification labels')
-        planning.blp_parameters = BeliefParameters(**value['parameters'])
+        planning.blp_parameters, planning.blp_parameter_binding = load_frozen_calibration(
+            calibration, scene_id)
 
 
 def append(planning, filename, payload):
@@ -98,6 +98,7 @@ def compute_blp_event(planning, *, phase, arm, candidate_batch, projected_goals,
                 'path_m': planning.blp_context.get('path_m', 0.0)}
     append(planning, 'blp_snapshots.jsonl', dict(identity, snapshot=snapshot,
            active_raw_rank=active_rank, parameters=asdict(planning.blp_parameters),
+           parameter_binding=getattr(planning, 'blp_parameter_binding', None),
            shadow=bool(planning.blp_config.get('shadow'))))
     append(planning, 'blp_decisions.jsonl', dict(identity, **{k: v for k, v in result.items() if k != 'k'}))
     raw_orders = tuple(tuple(r.raw_rank for r in batch.records_for_task(task))
@@ -243,3 +244,47 @@ def observe_verification(planning, agent, evaluator, metadata):
                  last_t=planning.blp_context['t'], verification=event)
     if event['confirmed']:
         finalize_visit(planning, 'confirmed')
+
+
+def action_target_descriptor(agent, task_idx, position):
+    """Copy the selected target before STOP can advance the policy task."""
+    point = None if position is None else np.asarray(position, dtype=float)
+    if point is not None and (point.shape != (3,) or not np.all(np.isfinite(point))):
+        raise ValueError('Action target must be a finite world XYZ point')
+    override = getattr(agent, 'navmesh_override_goal', None)
+    source = ('frontier' if point is None else 'navmesh_override'
+              if override is not None and np.allclose(point, override, rtol=0., atol=1e-6)
+              else 'query_candidate')
+    return {'schema_version': 'blp_action_target_v1', 'task_idx': int(task_idx),
+            'source': source, 'position': None if point is None else point.tolist()}
+
+
+def bind_action_target(planning, metadata, task_idx, frame_index):
+    """Read existing identities without registering candidates or changing rank."""
+    target = dict(metadata['blp_action_target'])
+    if target['task_idx'] != int(task_idx):
+        raise ValueError('Action target belongs to a different pre-STOP task')
+    recovery = metadata.get('blp_effective_recovery')
+    if recovery is not None:
+        target.update(source='navmesh_override', position=list(recovery['position']),
+                      runner_recovery_mode=recovery['mode'])
+    saved_id = target.get('candidate_id') if recovery is None else None
+    target.update(frame_index=int(frame_index), candidate_id=None,
+                  query_identity_status='not_query')
+    if target['source'] == 'query_candidate':
+        point = np.asarray(target['position'], dtype=float)
+        registry = planning.blp_context.get('candidate_registry', {}).get(int(task_idx), [])
+        if saved_id is not None:
+            if not any(r['candidate_id'] == saved_id for r in registry):
+                raise ValueError('Confirmed visual parent is absent from episode registry')
+            target.update(candidate_id=saved_id, query_identity_status='resolved')
+            return target
+        distances = [(float(np.linalg.norm((np.asarray(r['position']) - point)[[0, 2]])), r)
+                     for r in registry]
+        matches = [(distance, r) for distance, r in distances if distance <= .75]
+        if matches:
+            _, match = min(matches, key=lambda item: (item[0], item[1]['candidate_id']))
+            target.update(candidate_id=match['candidate_id'], query_identity_status='resolved')
+        else:
+            target['query_identity_status'] = 'unresolved'
+    return target

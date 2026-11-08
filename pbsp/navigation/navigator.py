@@ -235,6 +235,12 @@ class Navigator(CandidateTracking, GoalVerifier, RecoveryState, LocalMapState, G
                 self._clear_navmesh_override_goal()
             else:
                 frontier_global_pose = override_goal
+        if getattr(self, 'blp_enabled', False):
+            from experiments.blp_observer import action_target_descriptor
+            if not self.stop_by_seem:
+                self.blp_visual_parent = None
+            blp_action_target = action_target_descriptor(
+                self, self.current_task_idx, frontier_global_pose)
         if frontier_global_pose is None and self.frontier_reranker.enabled:
             (ranked_frontier, self.frontier_rerank_diagnostics) = self.frontier_reranker.rank(
                 planner_inputs[0]["frontier_map"],
@@ -279,6 +285,9 @@ class Navigator(CandidateTracking, GoalVerifier, RecoveryState, LocalMapState, G
                 )
                 self._clear_seem_verification_state()
         if self.stop_by_seem:
+            if getattr(self, 'blp_enabled', False):
+                blp_action_target = getattr(self, 'blp_visual_parent', None) or blp_action_target
+                blp_action_target['pursuit_mode'] = 'confirmed_visual_goal'
             min_dist = 1000000.0
             best_goal_idx = -1
             for idx, seem_goal in enumerate(self.seem_goal_pose):
@@ -483,6 +492,9 @@ class Navigator(CandidateTracking, GoalVerifier, RecoveryState, LocalMapState, G
                                     }
                                 )
                             if confirmed:
+                                if getattr(self, 'blp_enabled', False):
+                                    blp_action_target['pursuit_mode'] = 'confirmed_visual_goal'
+                                    self.blp_visual_parent = blp_action_target
                                 if '_mfmon_camera' in obs.task_observations:
                                     from experiments.mfmon import project_detection
                                     point = project_detection(seem_mask, obs)
@@ -684,6 +696,8 @@ class Navigator(CandidateTracking, GoalVerifier, RecoveryState, LocalMapState, G
                 self.reset_sub_episode()
         self.prev_task_type = task_type
         self.last_action_metadata = {
+            **({'blp_action_target': blp_action_target}
+               if getattr(self, 'blp_enabled', False) else {}),
             "mfmon_detection_position": mfmon_detection,
             "stop_reason": stop_reason,
             "planner_error": planner_error,

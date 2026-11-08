@@ -1,0 +1,57 @@
+test_bearing_coverage_rotation_and_full_circle (experiments.test_blp.BLPTests) ... ok
+test_blp_dispatch_preserves_future_and_gate (experiments.test_blp.BLPTests) ... ok
+test_frontier_boundary_and_no_frontier (experiments.test_blp.BLPTests) ... ok
+test_frontier_world_round_trip (experiments.test_blp.BLPTests) ... ok
+test_last_goal_equalities (experiments.test_blp.BLPTests) ... ok
+test_memo_matches_independent_brute (experiments.test_blp.BLPTests) ... ok
+test_myopic_does_not_query_future_categories (experiments.test_blp.BLPTests) ... [OnlineESProvider] get_all_goals: batch querying 1 unique categories (3 tasks)...
+  task 1 [bed]: 0 candidates []
+  task 1 [bed]: 0 candidates
+ok
+test_myopic_ignores_all_future_layers (experiments.test_blp.BLPTests) ... ok
+test_negative_check_finalizes_once_on_abandonment (experiments.test_blp.BLPTests) ... ok
+test_nonquery_recovery_verification_is_logged_without_fabricating_evidence (experiments.test_blp.BLPTests) ... ok
+test_permutation_and_hysteresis (experiments.test_blp.BLPTests) ... ok
+test_positive_slope_fit_and_unique_candidate_prior (experiments.test_blp.BLPTests) ... ok
+test_protected_old_candidate_uses_recorded_query_evidence (experiments.test_blp.BLPTests) ... ok
+test_raw_rank_cap_blacklist_and_unreachable (experiments.test_blp.BLPTests) ... ok
+test_separated_calibration_refuses_invented_finite_fit (experiments.test_blp.BLPTests) ... ok
+test_uncalibrated_active_mode_is_rejected (experiments.test_blp.BLPTests) ... ok
+test_unit_belief_reduces_to_deterministic (experiments.test_blp.BLPTests) ... ok
+test_visibility_occlusion_range_and_fov (experiments.test_blp.BLPTests) ... ok
+test_all_twenty_scenes_use_their_held_out_group_or_uncollected_fallback (experiments.test_blp_parameters.BlpParameterTests) ... ok
+test_five_fold_mode_excludes_each_target_group_without_pooled_fallback (experiments.test_blp_parameters.BlpParameterTests) ... ok
+test_invalid_parameter_values_are_rejected_in_every_parameter_set (experiments.test_blp_parameters.BlpParameterTests) ... ok
+test_legacy_pooled_schema_preserves_exact_parameters (experiments.test_blp_parameters.BlpParameterTests) ... ok
+test_loaded_plan_is_independent_of_mutations_to_the_input_mapping (experiments.test_blp_parameters.BlpParameterTests) ... ok
+test_malformed_group_coverage_and_missing_held_out_parameters_are_rejected (experiments.test_blp_parameters.BlpParameterTests) ... ok
+test_runtime_initialization_uses_scene_and_records_exact_file_hash_for_every_variant (experiments.test_blp_parameters.BlpParameterTests) ... ok
+test_unfrozen_gt_label_and_proposal_schema_cannot_activate_evaluation (experiments.test_blp_parameters.BlpParameterTests) ... ok
+test_unknown_scene_cannot_silently_fall_back_or_be_guessed_from_a_path (experiments.test_blp_parameters.BlpParameterTests) ... ok
+test_comparison_rejects_different_scene_specific_parameter_assignments (test_report_variants.ReportingTests) ... ok
+test_comparison_requires_the_same_loaded_analysis_implementation (test_report_variants.ReportingTests) ... ok
+test_conditional_denominators_and_undefined_tail (test_report_variants.ReportingTests) ... ok
+test_crossfit_snapshot_binding_rejects_wrong_group_scene_hash_and_training_set (test_report_variants.ReportingTests) ... ok
+test_formal_rejects_legacy_trace_before_loading_ground_truth (test_report_variants.ReportingTests) ... ok
+test_formal_rejects_shadow_snapshots_before_loading_ground_truth (test_report_variants.ReportingTests) ... ok
+test_invalid_confirmed_approach_tail_is_counted_even_at_budget_stop (test_report_variants.ReportingTests) ... ok
+test_latency_quantile (test_report_variants.ReportingTests) ... ok
+test_overlapping_visits_do_not_double_count_the_physical_path (test_report_variants.ReportingTests) ... ok
+test_post_failure_success_is_not_a_successful_prefix (test_report_variants.ReportingTests) ... ok
+test_two_by_two_effects_and_paired_discordance (test_report_variants.ReportingTests) ... ok
+test_assignments_are_twenty_scenes_and_exact_fixed_coverage (test_evaluate_sequence.EvaluationSequenceTests) ... ok
+test_crossfit_file_cannot_silently_run_as_pooled_parameters (test_evaluate_sequence.EvaluationSequenceTests) ... ok
+test_crossfit_gate_accepts_only_exact_fixed_scene_and_collected_fold_binding (test_evaluate_sequence.EvaluationSequenceTests) ... ok
+test_five_fold_crossfit_gate_requires_all_twenty_completed_calibration_scenes (test_evaluate_sequence.EvaluationSequenceTests) ... ok
+test_full_accepts_only_current_native_and_normalized_smoke_evidence (test_evaluate_sequence.EvaluationSequenceTests) ... ok
+test_full_crossfit_rejects_a_pooled_assignment_even_with_consistent_artifact_hashes (test_evaluate_sequence.EvaluationSequenceTests) ... ok
+test_full_is_not_authorized_by_CP2b_alone (test_evaluate_sequence.EvaluationSequenceTests) ... ok
+test_missing_behavior_review_does_not_launch_full (test_evaluate_sequence.EvaluationSequenceTests) ... ok
+test_parameter_mutation_and_incomplete_calibration_are_rejected (test_evaluate_sequence.EvaluationSequenceTests) ... ok
+test_smoke_accepts_only_completed_source_bound_self_calibration (test_evaluate_sequence.EvaluationSequenceTests) ... ok
+test_unfinished_calibration_scene_is_not_inferred_complete_from_ledger (test_evaluate_sequence.EvaluationSequenceTests) ... ok
+
+----------------------------------------------------------------------
+Ran 49 tests in 0.451s
+
+OK
