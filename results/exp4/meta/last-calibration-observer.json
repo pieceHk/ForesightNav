@@ -1,9 +1,9 @@
 {
-  "observer_pid": 145086,
-  "started_at_utc": "2026-11-09T11:34:22.377847+00:00",
-  "max_polls": 1,
+  "observer_pid": 145377,
+  "started_at_utc": "2026-11-09T11:38:14.957280+00:00",
+  "max_polls": 80,
   "interval_seconds": 45,
-  "log": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/logs/calibration-observer-a3-20261109T113422Z.jsonl",
+  "log": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/logs/calibration-observer-a3-20261109T113814Z.jsonl",
   "observer_script_sha256": "1967fe8f7d81c943f3a8d6784bd21e5fc3c1012911c1eada24f7d045f282fbe8",
   "scope": "bounded read-only supervision of controller31036 and CPU122348; stop on new closed scene"
 }

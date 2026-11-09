@@ -1,0 +1,99 @@
+{
+  "recorded_at_utc": "2026-11-09T12:41:20.238877+00:00",
+  "scope": "eighty completed read-only polls; native collection remains active",
+  "observer_metadata": {
+    "observer_pid": 145377,
+    "started_at_utc": "2026-11-09T11:38:14.957280+00:00",
+    "max_polls": 80,
+    "interval_seconds": 45,
+    "log": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/logs/calibration-observer-a3-20261109T113814Z.jsonl",
+    "observer_script_sha256": "1967fe8f7d81c943f3a8d6784bd21e5fc3c1012911c1eada24f7d045f282fbe8",
+    "scope": "bounded read-only supervision of controller31036 and CPU122348; stop on new closed scene"
+  },
+  "successful_polls": 80,
+  "first": {
+    "poll": 1,
+    "checked_at_utc": "2026-11-09T11:38:15.301592+00:00",
+    "completed": 116,
+    "controller_live_matching": true,
+    "boot_matches": true,
+    "source_unchanged": true,
+    "active_jobs": [
+      {
+        "scene": "cvZr5TUy5C5",
+        "gpu": 2,
+        "pid": 110996,
+        "completed": 26,
+        "accepted_actions": 15320,
+        "snapshots": 1577,
+        "live_matching": true,
+        "shadow_error_bytes": 0
+      }
+    ],
+    "CPU_pid": 122348,
+    "CPU_live_matching": true,
+    "CPU_status": "waiting_for_complete_collection",
+    "host_cpu": {
+      "logical_cpus": 384,
+      "load_average": [
+        2086.07,
+        2083.06,
+        1942.07
+      ],
+      "pressure": "some avg10=82.95 avg60=82.61 avg300=81.15 total=2073797958\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=0"
+    }
+  },
+  "last": {
+    "poll": 80,
+    "checked_at_utc": "2026-11-09T12:40:46.806551+00:00",
+    "completed": 118,
+    "controller_live_matching": true,
+    "boot_matches": true,
+    "source_unchanged": true,
+    "active_jobs": [
+      {
+        "scene": "cvZr5TUy5C5",
+        "gpu": 2,
+        "pid": 110996,
+        "completed": 28,
+        "accepted_actions": 17070,
+        "snapshots": 1755,
+        "live_matching": true,
+        "shadow_error_bytes": 0
+      }
+    ],
+    "CPU_pid": 122348,
+    "CPU_live_matching": true,
+    "CPU_status": "waiting_for_complete_collection",
+    "host_cpu": {
+      "logical_cpus": 384,
+      "load_average": [
+        2113.27,
+        1994.8,
+        1854.62
+      ],
+      "pressure": "some avg10=77.90 avg60=77.53 avg300=75.46 total=4644267149\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=0"
+    }
+  },
+  "tool_session": 99808,
+  "observer_tool_exit_code": 0,
+  "log_sha256": "efe14905f55b1c597b25281fd338d84541e8918aea1ae3eb389cd9303fb85d7a",
+  "observer_script_sha256": "1967fe8f7d81c943f3a8d6784bd21e5fc3c1012911c1eada24f7d045f282fbe8",
+  "runtime_inputs_unchanged_in_all_polls": true,
+  "all11_CPU_bound_scripts_unchanged": true,
+  "CPU_script_checks": {
+    "audit_completed_calibration.py": true,
+    "verify_action_path_pipeline.py": true,
+    "archive_calibration_logs.py": true,
+    "fit_calibration_reviewed.py": true,
+    "report_calibration.py": true,
+    "report_variants.py": true,
+    "native_candidate_gt.py": true,
+    "action_path_metrics.py": true,
+    "evaluate_sequence.py": true,
+    "finish_calibration.py": true,
+    "candidate_identities.py": true
+  },
+  "native_workers_restarted": false,
+  "parameters_fitted": false
+}

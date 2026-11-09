@@ -1,11 +1,11 @@
 {
-  "checked_at_utc": "2026-11-09T11:34:22.725456+00:00",
+  "checked_at_utc": "2026-11-09T12:40:46.806551+00:00",
   "controller_status": "running",
   "controller_pid": 31036,
   "controller_live_and_matching": true,
   "boot_id_matches": true,
   "frozen_files_unchanged": true,
-  "completed_episodes": 116,
+  "completed_episodes": 118,
   "assigned_episodes": 360,
   "jobs": [
     {
@@ -93,23 +93,23 @@
       "pid": 110996,
       "status": "running",
       "launcher_live_and_matching": true,
-      "completed_episodes": 26,
-      "accepted_actions": 15208,
-      "snapshots": 1566,
+      "completed_episodes": 28,
+      "accepted_actions": 17070,
+      "snapshots": 1755,
       "latest_replays_checked": 10,
       "event_counts": {
-        "empty_activation_started": 27,
-        "empty_activation": 27,
-        "candidate_first_appearance": 1124,
-        "candidate_checked": 343,
-        "verification_final": 342,
-        "noncandidate_verification": 558
+        "empty_activation_started": 29,
+        "empty_activation": 29,
+        "candidate_first_appearance": 1219,
+        "candidate_checked": 389,
+        "verification_final": 388,
+        "noncandidate_verification": 662
       },
       "labels_v": {
-        "0": 307,
-        "1": 35
+        "0": 352,
+        "1": 36
       },
-      "completed_episode_verification_events": 339,
+      "completed_episode_verification_events": 374,
       "shadow_error_bytes": 0
     }
   ]

@@ -1,0 +1,33 @@
+{
+  "checked_at_utc": "2026-11-09T12:41:20.239448+00:00",
+  "scope": "last up to 128KiB of current native log files, not full-run error certification",
+  "files": [
+    {
+      "scene": "cvZr5TUy5C5",
+      "file": "runs/20261109_161312_340221_exp4_calibration_calibration-a3-fold0-cvZr5TUy5C5/logs/monitor.log",
+      "file_bytes": 0,
+      "tail_bytes": 0,
+      "tail_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "keyword_hits": 0,
+      "examples": []
+    },
+    {
+      "scene": "cvZr5TUy5C5",
+      "file": "runs/20261109_161312_340221_exp4_calibration_calibration-a3-fold0-cvZr5TUy5C5/logs/navigation_cvZr5TUy5C5.log",
+      "file_bytes": 8315080,
+      "tail_bytes": 131072,
+      "tail_sha256": "22a4c1df9bfd566e093da189a0cf474e0d607050c87b726c7c3cdf5f03462c9a",
+      "keyword_hits": 0,
+      "examples": []
+    },
+    {
+      "scene": "cvZr5TUy5C5",
+      "file": "runs/20261109_161312_340221_exp4_calibration_calibration-a3-fold0-cvZr5TUy5C5/logs/mapping.log",
+      "file_bytes": 3934464,
+      "tail_bytes": 131072,
+      "tail_sha256": "ee1bdcc8454d45c073c7913d5d98c76d17d50230e5ec20ef4248fc1c390f1e47",
+      "keyword_hits": 0,
+      "examples": []
+    }
+  ]
+}
