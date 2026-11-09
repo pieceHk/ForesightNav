@@ -1,0 +1,9 @@
+test_complete_fixture_renders_but_never_authorizes_or_reports_in_chat (test_report_full_evaluation.FullPublicationTests) ... ok
+test_partial_coverage_is_rejected_even_if_hashes_are_updated (test_report_full_evaluation.FullPublicationTests) ... ok
+test_stale_csv_scores_are_rejected_with_correct_variant_names (test_report_full_evaluation.FullPublicationTests) ... ok
+test_stale_effects_are_rejected (test_report_full_evaluation.FullPublicationTests) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.833s
+
+OK

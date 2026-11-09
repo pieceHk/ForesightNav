@@ -1,0 +1,10 @@
+{
+  "observer_pid": 40873,
+  "started_at_utc": "2026-11-09T05:35:50.302298+00:00",
+  "boot_id": "23443655-6f2f-4063-a412-e255f3a91e62",
+  "expected_controller_pid": 31036,
+  "max_polls": 20,
+  "interval_seconds": 45,
+  "log": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/logs/calibration-observer-a3-20261109T053550Z.jsonl",
+  "scope": "bounded read-only supervision; never starts or stops native workers"
+}

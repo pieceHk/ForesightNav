@@ -113,7 +113,7 @@ def render(ledger, summary, episodes, decisions, figures):
     plt.close(figure)
     process, conditional = summary['process'], summary['conditional_counts']
     lines = ['# Exp4 CP3：固定20条Full冒烟', '', '## 完成了什么', '',
-        '固定20个场景各1条3-MON全部完成。场景、source episode和目标顺序与冻结清单一致，三组交叉拟合参数按场景加载；未使用GT调参。四变体全量评估尚未启动。', '',
+        f'固定20个场景各1条3-MON全部完成。场景、source episode和目标顺序与冻结清单一致，参数采用{summary["calibration_binding"]["selection"]}，按冻结分配加载；未使用GT调参。四变体全量评估尚未启动。', '',
         f'运行提交：`{summary["source_commits"][0]}`。源码指纹、参数SHA、原生完成状态、60阶段路径及全部规范化日志已核对。', '',
         '[本阶段环境与GPU配置](../meta/environment-smoke.json)覆盖全部20条，角色Python、锁文件及包清单一致；每条原生run还保留独立环境文件。[观测覆盖检查](../diagnostics/CP3/evidence-coverage-audit.json)分别统计当前与未来目标的有效视角，不使用GT。', '',
         '## 关键数字', '', '| 指标 | 结果 |', '| --- | --- |']
@@ -158,7 +158,7 @@ def render(ledger, summary, episodes, decisions, figures):
                   number(100 * row['native_mon_metrics']['spl']), number(100 * row['PR']), number(100 * row['PPL'])]
         lines.append('| ' + ' | '.join(values) + ' |')
     lines += ['', '## 问题、差异与下一步', '',
-        'E沿用已确认的候选高斯分数，S为候选级方位覆盖；共享滞回和类别冷却按三个层级分别报告偏离率。标定与评估存在共享场景及source目标，交叉拟合及其泛化限制见CP2a/CP2b与deviations.md。', '',
+        'E沿用已确认的候选高斯分数，S为候选级方位覆盖；共享滞回和类别冷却按三个层级分别报告偏离率。标定与评估存在共享场景及source目标，参数分配及其泛化限制见CP2a/CP2b与deviations.md。', '',
         '20条用于检查管线、行为与计算开销；当前尚无四变体完整在线比较，不能据此给出Full的机制增益结论。按设计CP3的【需确认】检查点提交审阅，通过后运行Full400，再依次运行Nearest、Myopic和Suffix-only各400条。', '',
         '[完整汇总](../diagnostics/CP3/summary/full.json)、[逐episode日志](../diagnostics/CP3/logs/full_episodes.jsonl)、[逐决策日志](../diagnostics/CP3/logs/full_decisions.jsonl)、[行为审查](../diagnostics/CP3/completed-behavior-review.json)。', '']
     (ROOT / 'reports/CP3.md').write_text('\n'.join(lines))

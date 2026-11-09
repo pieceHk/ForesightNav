@@ -1,0 +1,24 @@
+{
+  "recorded_at_utc": "2026-11-09T05:51:45.320759+00:00",
+  "local_old_control_socket_disappeared": true,
+  "observation_exec_session": 87613,
+  "observation_exec_exit_code": 255,
+  "observer_pid": 40873,
+  "observer_still_live": false,
+  "successful_observer_polls_before_transport_loss": 13,
+  "last_observer_record_utc": "2026-11-09T05:44:53.284978+00:00",
+  "observer_log_sha256": "02547c223c5a230b2a5d8048a11d6edca34cb27425e88759d35c32e90287a8a2",
+  "control_socket_rebuilt": "/tmp/codex-exp4-20261109.sock",
+  "new_local_master_pid": 51843,
+  "reverse_proxy_port": 19181,
+  "server_boot_unchanged": true,
+  "same_controller_pid": 31036,
+  "same_native_launcher_pids": [
+    31038,
+    31039
+  ],
+  "completed_after_reconnect": 16,
+  "native_workers_restarted": false,
+  "native_run_error_inferred_from_transport": false,
+  "credential_values_saved_in_event": false
+}

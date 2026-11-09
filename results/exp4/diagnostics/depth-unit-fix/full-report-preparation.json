@@ -1,0 +1,18 @@
+{
+  "checked_at_utc": "2026-11-09T05:50:04.788606+00:00",
+  "tests_passed": 4,
+  "scope": "synthetic 4x400 publication fixtures in TemporaryDirectory; no actual evaluation data",
+  "partial_coverage_rejected": true,
+  "stale_effects_rejected": true,
+  "stale_csv_primary_and_process_scores_rejected": true,
+  "CP4_CP5_rendering_checked_with_synthetic_inputs": true,
+  "temporary_test_reports_removed": true,
+  "real_CP4_CP5_reports_created": false,
+  "next_stage_authorized": false,
+  "workers_launched": false,
+  "source_sha256": {
+    "report_full_evaluation.py": "3bc54b54064a312d133bbb60493db626463802f19c3b7fe2b3a9a488a16dab7d",
+    "test_report_full_evaluation.py": "3eac15f382e88637f224b506b2760bb15fb8dc144af0816aca0737cfa2c3b13e",
+    "report_cp3.py": "7bfaa21c0d595d63b613a85c16e63c5b1eee8e7b7bfcdfa8f9b860d92b4b1518"
+  }
+}
