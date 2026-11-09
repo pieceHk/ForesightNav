@@ -1,8 +1,8 @@
 {
-  "checked_at_utc": "2026-11-09T08:22:58.051179+00:00",
+  "checked_at_utc": "2026-11-09T09:29:23.650551+00:00",
   "scope": "completed 2-MON calibration integrity only; no fitting, no 3-MON table",
   "frozen_runtime_unchanged": true,
-  "complete_episodes": 60,
+  "complete_episodes": 90,
   "completed_scenes": [
     {
       "scene": "6s7QHgap2fW",
@@ -46,6 +46,99 @@
         "status.json": "7face87fe01957ba00f5b9ef28556df25a6d049a8410438375e3ce8496d80ee0",
         "launch.json": "5435d53314ce2aaaa16abc3ad4c18030676984b5716074c2e14e9d7ac7597a79",
         "mon_metrics.json": "d2126cdcb2440f7f3bee2b487a58aacfb79a439893d9c72aaf30fde952811bcd"
+      }
+    },
+    {
+      "scene": "QaLdnwvtxbs",
+      "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261109_160731_469662_exp4_calibration_calibration-a3-fold0-QaLdnwvtxbs",
+      "native_exit_code": 0,
+      "complete_episodes": 30,
+      "targets_per_episode": 2,
+      "actual_identity_files_checked": 30,
+      "frozen_manifest_source_ids_ordered_categories_match": true,
+      "complete_trajectory_and_terminal_STOP_checks_passed": true,
+      "candidate_checks": 231,
+      "final_labels": 231,
+      "check_to_final_event_keys_match": true,
+      "shadow_snapshots": 711,
+      "shadow_errors": 0,
+      "process_path_complete_under_legacy_logs": false,
+      "path_association_gaps": [
+        {
+          "scene_id": "QaLdnwvtxbs",
+          "episode_id": "18",
+          "k": 0,
+          "frame": 10,
+          "reason": "unresolved_or_unknown_query_identity"
+        },
+        {
+          "scene_id": "QaLdnwvtxbs",
+          "episode_id": "18",
+          "k": 0,
+          "frame": 11,
+          "reason": "unresolved_or_unknown_query_identity"
+        },
+        {
+          "scene_id": "QaLdnwvtxbs",
+          "episode_id": "18",
+          "k": 0,
+          "frame": 12,
+          "reason": "unresolved_or_unknown_query_identity"
+        },
+        {
+          "scene_id": "QaLdnwvtxbs",
+          "episode_id": "18",
+          "k": 0,
+          "frame": 13,
+          "reason": "unresolved_or_unknown_query_identity"
+        },
+        {
+          "scene_id": "QaLdnwvtxbs",
+          "episode_id": "18",
+          "k": 0,
+          "frame": 14,
+          "reason": "unresolved_or_unknown_query_identity"
+        },
+        {
+          "scene_id": "QaLdnwvtxbs",
+          "episode_id": "18",
+          "k": 0,
+          "frame": 15,
+          "reason": "unresolved_or_unknown_query_identity"
+        },
+        {
+          "scene_id": "QaLdnwvtxbs",
+          "episode_id": "18",
+          "k": 0,
+          "frame": 16,
+          "reason": "unresolved_or_unknown_query_identity"
+        },
+        {
+          "scene_id": "QaLdnwvtxbs",
+          "episode_id": "18",
+          "k": 0,
+          "frame": 17,
+          "reason": "unresolved_or_unknown_query_identity"
+        },
+        {
+          "scene_id": "QaLdnwvtxbs",
+          "episode_id": "18",
+          "k": 0,
+          "frame": 18,
+          "reason": "unresolved_or_unknown_query_identity"
+        },
+        {
+          "scene_id": "QaLdnwvtxbs",
+          "episode_id": "18",
+          "k": 0,
+          "frame": 19,
+          "reason": "unresolved_or_unknown_query_identity"
+        }
+      ],
+      "artifact_sha256": {
+        "status.json": "c63353c8ddbf24ac0c0c6bcebcdc2d12a18d9d3bfa804d59203ee69954afed46",
+        "launch.json": "b267e7dfc6fe84114a004af1ba272a0d8236c0f76552792ea1e782fe9208aaeb",
+        "mon_metrics.json": "8d4cff21a8b878fbd8225ae40b3306db357dadea35f0ccffe34e1849442325eb"
       }
     }
   ]

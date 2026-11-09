@@ -1,0 +1,430 @@
+{
+  "scope": "read-only actual registry replay for Qa18 first three queries; excludes verification-time registration",
+  "first_appearance_events_exact_match": 12,
+  "states": [
+    {
+      "t": 1,
+      "batch_records": 0,
+      "zero_identity_moves": [],
+      "registry_task0": [],
+      "recorded_action_target": {
+        "schema_version": "blp_action_target_v1",
+        "task_idx": 0,
+        "source": "frontier",
+        "position": null,
+        "frame_index": 1,
+        "candidate_id": null,
+        "query_identity_status": "not_query"
+      },
+      "replayed_action_target": {
+        "schema_version": "blp_action_target_v1",
+        "task_idx": 0,
+        "source": "frontier",
+        "position": null,
+        "frame_index": 1,
+        "candidate_id": null,
+        "query_identity_status": "not_query"
+      },
+      "nearest_distance_to_target_m": null
+    },
+    {
+      "t": 10,
+      "batch_records": 14,
+      "zero_identity_moves": [
+        {
+          "raw_rank": 0,
+          "position": [
+            5.5781660079956055,
+            0.1357390433549881,
+            2.0721964836120605
+          ],
+          "previous": null
+        },
+        {
+          "raw_rank": 2948,
+          "position": [
+            5.625705718994141,
+            0.1357390433549881,
+            1.3864102363586426
+          ],
+          "previous": [
+            5.5781660079956055,
+            0.1357390433549881,
+            2.0721964836120605
+          ]
+        },
+        {
+          "raw_rank": 3107,
+          "position": [
+            5.961557388305664,
+            0.1357390433549881,
+            1.3303537368774414
+          ],
+          "previous": [
+            5.625705718994141,
+            0.1357390433549881,
+            1.3864102363586426
+          ]
+        }
+      ],
+      "registry_task0": [
+        {
+          "candidate_id": "0:0",
+          "position": [
+            5.961557388305664,
+            0.1357390433549881,
+            1.3303537368774414
+          ],
+          "E": 0.18320836126804352,
+          "first_t": 10,
+          "checked": false
+        },
+        {
+          "candidate_id": "0:1",
+          "position": [
+            4.211557388305664,
+            0.1357390433549881,
+            -0.519646167755127
+          ],
+          "E": 0.21778462827205658,
+          "first_t": 10,
+          "checked": false
+        },
+        {
+          "candidate_id": "0:2",
+          "position": [
+            3.623535633087158,
+            0.1357390433549881,
+            0.5882404446601868
+          ],
+          "E": 0.21778462827205658,
+          "first_t": 10,
+          "checked": false
+        },
+        {
+          "candidate_id": "0:3",
+          "position": [
+            4.621898174285889,
+            0.1357390433549881,
+            3.230353832244873
+          ],
+          "E": 0.21046708524227142,
+          "first_t": 10,
+          "checked": false
+        },
+        {
+          "candidate_id": "0:4",
+          "position": [
+            4.5505852699279785,
+            0.1357390433549881,
+            1.7750957012176514
+          ],
+          "E": 0.21230584383010864,
+          "first_t": 10,
+          "checked": false
+        },
+        {
+          "candidate_id": "0:5",
+          "position": [
+            5.961557388305664,
+            0.1357390433549881,
+            -0.8696460723876953
+          ],
+          "E": 0.18320836126804352,
+          "first_t": 10,
+          "checked": false
+        }
+      ],
+      "recorded_action_target": {
+        "schema_version": "blp_action_target_v1",
+        "task_idx": 0,
+        "source": "query_candidate",
+        "position": [
+          5.5781660079956055,
+          0.1357390433549881,
+          2.0721964836120605
+        ],
+        "frame_index": 10,
+        "candidate_id": null,
+        "query_identity_status": "unresolved"
+      },
+      "replayed_action_target": {
+        "schema_version": "blp_action_target_v1",
+        "task_idx": 0,
+        "source": "query_candidate",
+        "position": [
+          5.5781660079956055,
+          0.1357390433549881,
+          2.0721964836120605
+        ],
+        "frame_index": 10,
+        "candidate_id": null,
+        "query_identity_status": "unresolved"
+      },
+      "nearest_distance_to_target_m": 0.8350566515984507
+    },
+    {
+      "t": 20,
+      "batch_records": 14,
+      "zero_identity_moves": [
+        {
+          "raw_rank": 2948,
+          "position": [
+            5.625705718994141,
+            0.1357390433549881,
+            1.3864102363586426
+          ],
+          "previous": [
+            5.961557388305664,
+            0.1357390433549881,
+            1.3303537368774414
+          ]
+        },
+        {
+          "raw_rank": 3107,
+          "position": [
+            5.961557388305664,
+            0.1357390433549881,
+            1.3303537368774414
+          ],
+          "previous": [
+            5.625705718994141,
+            0.1357390433549881,
+            1.3864102363586426
+          ]
+        }
+      ],
+      "registry_task0": [
+        {
+          "candidate_id": "0:0",
+          "position": [
+            5.961557388305664,
+            0.1357390433549881,
+            1.3303537368774414
+          ],
+          "E": 0.18320836126804352,
+          "first_t": 10,
+          "checked": false
+        },
+        {
+          "candidate_id": "0:1",
+          "position": [
+            4.211557388305664,
+            0.1357390433549881,
+            -0.519646167755127
+          ],
+          "E": 0.21778462827205658,
+          "first_t": 10,
+          "checked": false
+        },
+        {
+          "candidate_id": "0:2",
+          "position": [
+            3.623535633087158,
+            0.1357390433549881,
+            0.5882404446601868
+          ],
+          "E": 0.21778462827205658,
+          "first_t": 10,
+          "checked": false
+        },
+        {
+          "candidate_id": "0:3",
+          "position": [
+            4.621898174285889,
+            0.1357390433549881,
+            3.230353832244873
+          ],
+          "E": 0.21046708524227142,
+          "first_t": 10,
+          "checked": false
+        },
+        {
+          "candidate_id": "0:4",
+          "position": [
+            4.5505852699279785,
+            0.1357390433549881,
+            1.7750957012176514
+          ],
+          "E": 0.21230584383010864,
+          "first_t": 10,
+          "checked": false
+        },
+        {
+          "candidate_id": "0:5",
+          "position": [
+            5.961557388305664,
+            0.1357390433549881,
+            -0.8696460723876953
+          ],
+          "E": 0.18320836126804352,
+          "first_t": 10,
+          "checked": false
+        },
+        {
+          "candidate_id": "0:6",
+          "position": [
+            5.5781660079956055,
+            0.1357390433549881,
+            2.0721964836120605
+          ],
+          "E": 0.22809183597564697,
+          "first_t": 20,
+          "checked": false
+        }
+      ],
+      "recorded_action_target": {
+        "schema_version": "blp_action_target_v1",
+        "task_idx": 0,
+        "source": "query_candidate",
+        "position": [
+          5.5781660079956055,
+          0.1357390433549881,
+          2.0721964836120605
+        ],
+        "frame_index": 20,
+        "candidate_id": "0:6",
+        "query_identity_status": "resolved"
+      },
+      "replayed_action_target": {
+        "schema_version": "blp_action_target_v1",
+        "task_idx": 0,
+        "source": "query_candidate",
+        "position": [
+          5.5781660079956055,
+          0.1357390433549881,
+          2.0721964836120605
+        ],
+        "frame_index": 20,
+        "candidate_id": "0:6",
+        "query_identity_status": "resolved"
+      },
+      "nearest_distance_to_target_m": 0.0
+    }
+  ],
+  "verification_events": [
+    {
+      "event": "candidate_checked",
+      "candidate_id": "0:4",
+      "k": 0,
+      "t": 38,
+      "last_t": null,
+      "position": [
+        4.4470343589782715,
+        0.1357390433549881,
+        2.0481297969818115
+      ],
+      "E": 0.23863714933395386,
+      "v": 0,
+      "y": 0
+    },
+    {
+      "event": "verification_final",
+      "candidate_id": "0:4",
+      "k": 0,
+      "t": 38,
+      "last_t": 39,
+      "position": [
+        4.4470343589782715,
+        0.1357390433549881,
+        2.0481297969818115
+      ],
+      "E": 0.23863714933395386,
+      "v": 1,
+      "y": 1
+    },
+    {
+      "event": "candidate_checked",
+      "candidate_id": "1:0",
+      "k": 1,
+      "t": 44,
+      "last_t": null,
+      "position": [
+        3.181464195251465,
+        0.1357390433549881,
+        0.950260579586029
+      ],
+      "E": 0.22313910722732544,
+      "v": 0,
+      "y": 0
+    },
+    {
+      "event": "verification_final",
+      "candidate_id": "1:0",
+      "k": 1,
+      "t": 44,
+      "last_t": 55,
+      "position": [
+        3.3324530124664307,
+        0.1357390433549881,
+        1.1012494564056396
+      ],
+      "E": 0.235250324010849,
+      "v": 1,
+      "y": 1
+    }
+  ],
+  "empty_activation_events": [
+    {
+      "episode_id": "18",
+      "event": "empty_activation_started",
+      "k": 0,
+      "path_m": 0.0,
+      "scene_id": "QaLdnwvtxbs",
+      "t": 1
+    },
+    {
+      "episode_id": "18",
+      "event": "empty_activation",
+      "k": 0,
+      "path_m": 9.5367431640625e-07,
+      "path_to_first_candidate_m": 9.5367431640625e-07,
+      "scene_id": "QaLdnwvtxbs",
+      "t": 10
+    }
+  ],
+  "trace_query_positions_unique_first30": [
+    [
+      4.4470343589782715,
+      0.1357390433549881,
+      2.0481297969818115
+    ],
+    [
+      5.5781660079956055,
+      0.1357390433549881,
+      2.0721964836120605
+    ]
+  ],
+  "runtime_source_changed": false,
+  "uses_GT_to_select_identity": false,
+  "impact_checked_episode": {
+    "missing_frames": [
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "missing_candidate_target_position_recorded": true,
+    "first_candidate_at_t10_recorded": true,
+    "missing_segment_ids_zero_and_six_never_checked": true,
+    "verification_final_identities": [
+      [
+        0,
+        "0:4"
+      ],
+      [
+        1,
+        "1:0"
+      ]
+    ],
+    "C_exp_uses_empty_activation_snapshot_not_action_candidate_id": true,
+    "pi_identity_deduplication_uses_registry_ids_general_drift_impact_not_yet_audited": true,
+    "no_calibration_parameters_fitted": true
+  }
+}

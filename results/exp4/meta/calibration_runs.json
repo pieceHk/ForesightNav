@@ -317,7 +317,7 @@
       "gpu": 3,
       "pid": 110045,
       "log": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/logs/calibration-a3-fold0-QaLdnwvtxbs.controller.log",
-      "status": "running",
+      "status": "completed",
       "command": [
         "/nvme/khy/ForesightNav_exp4_depthfix/run.py",
         "--config",
@@ -331,7 +331,49 @@
         "--tag",
         "calibration-a3-fold0-QaLdnwvtxbs"
       ],
-      "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261109_160731_469662_exp4_calibration_calibration-a3-fold0-QaLdnwvtxbs"
+      "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261109_160731_469662_exp4_calibration_calibration-a3-fold0-QaLdnwvtxbs",
+      "audit": {
+        "events": 1805,
+        "snapshots": 711,
+        "verification_events": 231,
+        "native_metrics": {
+          "pespl": 0.36000894071853246,
+          "pespl_denominator": 60,
+          "pespl_numerator": 21.60053644311195,
+          "psr": 0.8666666666666667,
+          "psr_by_category": {
+            "bed": {
+              "psr_contribution": 0.15,
+              "success_rate": 0.5625,
+              "successes": 9,
+              "targets": 16
+            },
+            "chair": {
+              "psr_contribution": 0.25,
+              "success_rate": 1.0,
+              "successes": 15,
+              "targets": 15
+            },
+            "couch": {
+              "psr_contribution": 0.23333333333333334,
+              "success_rate": 0.9333333333333333,
+              "successes": 14,
+              "targets": 15
+            },
+            "tv": {
+              "psr_contribution": 0.23333333333333334,
+              "success_rate": 1.0,
+              "successes": 14,
+              "targets": 14
+            }
+          },
+          "psr_denominator": 60,
+          "psr_numerator": 52,
+          "spl": 0.2960154518405747,
+          "sr": 0.7666666666666667
+        }
+      },
+      "returncode": 0
     },
     {
       "fold": 0,
