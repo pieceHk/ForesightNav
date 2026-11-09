@@ -7,10 +7,11 @@
       "n_episodes": 1,
       "accepted_steps": 48,
       "analysis_sources_sha256": {
-        "report_variants.py": "0fd565b0649a928c9108db5a706d6d67ee7e7bbbfb6d9bc2da152fa32897a259",
+        "report_variants.py": "d3d8617a83ccbd1ccebf18cf2b4149fd745be23c962e3dabeb42b057ad7626c3",
         "action_path_metrics.py": "a89afc6504fcb5520bb8c227928961b3d7814bcfcc98c23c6311e35254089f1e",
         "native_candidate_gt.py": "e2620454fe45d54933294286a518440ef16ec961c0eb0ca5aafe5ec2587a21a3",
-        "blp_parameters.py": "039c6a660ab2a7cf2b6e9e78e810bfb44f32731e6c52a9194dc20f82daa63bad"
+        "blp_parameters.py": "039c6a660ab2a7cf2b6e9e78e810bfb44f32731e6c52a9194dc20f82daa63bad",
+        "candidate_identities.py": "a209d9e9f1ffab098198c8466c5b64b81dfd9577e105a89df448c91ba9d7a24d"
       },
       "process": {
         "Invalid_visits_per_ep": 1.0,
@@ -84,6 +85,16 @@
         },
         "last_STOP_without_after_pose_assumed_stationary": 1,
         "verification_then_effective_recovery_actions": 0,
+        "checked_candidate_identity": {
+          "definition": "recorded registry identity, merging checked IDs sharing an exact full-XYZ final-check coordinate within one scene/episode/task/resample",
+          "source_sha256": "a209d9e9f1ffab098198c8466c5b64b81dfd9577e105a89df448c91ba9d7a24d",
+          "raw_checked_registry_identities": 2,
+          "canonical_checked_identities": 2,
+          "identities_merged": 0,
+          "verification_rows_retained": 2,
+          "GT_or_labels_used_to_group": false,
+          "raw_events_modified": false
+        },
         "native_target_gt_provenance": [
           {
             "run_directory": "/nvme/khy/ForesightNav_exp4/results/exp4/diagnostics/action-trace-plumbing/runs/20261108_043756_578726_exp4_calibration_action-trace-plumbing",
@@ -133,10 +144,11 @@
       "n_episodes": 1,
       "accepted_steps": 1000,
       "analysis_sources_sha256": {
-        "report_variants.py": "0fd565b0649a928c9108db5a706d6d67ee7e7bbbfb6d9bc2da152fa32897a259",
+        "report_variants.py": "d3d8617a83ccbd1ccebf18cf2b4149fd745be23c962e3dabeb42b057ad7626c3",
         "action_path_metrics.py": "a89afc6504fcb5520bb8c227928961b3d7814bcfcc98c23c6311e35254089f1e",
         "native_candidate_gt.py": "e2620454fe45d54933294286a518440ef16ec961c0eb0ca5aafe5ec2587a21a3",
-        "blp_parameters.py": "039c6a660ab2a7cf2b6e9e78e810bfb44f32731e6c52a9194dc20f82daa63bad"
+        "blp_parameters.py": "039c6a660ab2a7cf2b6e9e78e810bfb44f32731e6c52a9194dc20f82daa63bad",
+        "candidate_identities.py": "a209d9e9f1ffab098198c8466c5b64b81dfd9577e105a89df448c91ba9d7a24d"
       },
       "process": {
         "Invalid_visits_per_ep": 22.0,
@@ -219,6 +231,16 @@
         },
         "last_STOP_without_after_pose_assumed_stationary": 1,
         "verification_then_effective_recovery_actions": 1,
+        "checked_candidate_identity": {
+          "definition": "recorded registry identity, merging checked IDs sharing an exact full-XYZ final-check coordinate within one scene/episode/task/resample",
+          "source_sha256": "a209d9e9f1ffab098198c8466c5b64b81dfd9577e105a89df448c91ba9d7a24d",
+          "raw_checked_registry_identities": 22,
+          "canonical_checked_identities": 22,
+          "identities_merged": 0,
+          "verification_rows_retained": 29,
+          "GT_or_labels_used_to_group": false,
+          "raw_events_modified": false
+        },
         "native_target_gt_provenance": [
           {
             "run_directory": "/nvme/khy/ForesightNav_exp4/results/exp4/diagnostics/action-trace-confirmation-switch/runs/20261108_044225_726193_exp4_calibration_action-trace-confirmation-switch",

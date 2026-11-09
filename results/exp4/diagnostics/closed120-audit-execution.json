@@ -1,0 +1,16 @@
+{
+  "recorded_at_utc": "2026-11-09T13:26:29.909023+00:00",
+  "steps": [
+    {
+      "script": "audit_completed_calibration.py",
+      "returncode": 0,
+      "log": "logs/closed120-20261109T132518Z-audit_completed_calibration.py.log"
+    },
+    {
+      "script": "verify_action_path_pipeline.py",
+      "returncode": 0,
+      "log": "logs/closed120-20261109T132518Z-verify_action_path_pipeline.py.log"
+    }
+  ],
+  "scope": "120 closed native calibration episodes plus separately excluded path diagnostics; no fit or policy execution"
+}

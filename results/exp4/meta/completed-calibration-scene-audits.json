@@ -1,8 +1,8 @@
 {
-  "checked_at_utc": "2026-11-09T09:29:23.650551+00:00",
+  "checked_at_utc": "2026-11-09T13:25:59.996257+00:00",
   "scope": "completed 2-MON calibration integrity only; no fitting, no 3-MON table",
   "frozen_runtime_unchanged": true,
-  "complete_episodes": 90,
+  "complete_episodes": 120,
   "completed_scenes": [
     {
       "scene": "6s7QHgap2fW",
@@ -139,6 +139,28 @@
         "status.json": "c63353c8ddbf24ac0c0c6bcebcdc2d12a18d9d3bfa804d59203ee69954afed46",
         "launch.json": "b267e7dfc6fe84114a004af1ba272a0d8236c0f76552792ea1e782fe9208aaeb",
         "mon_metrics.json": "8d4cff21a8b878fbd8225ae40b3306db357dadea35f0ccffe34e1849442325eb"
+      }
+    },
+    {
+      "scene": "cvZr5TUy5C5",
+      "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261109_161312_340221_exp4_calibration_calibration-a3-fold0-cvZr5TUy5C5",
+      "native_exit_code": 0,
+      "complete_episodes": 30,
+      "targets_per_episode": 2,
+      "actual_identity_files_checked": 30,
+      "frozen_manifest_source_ids_ordered_categories_match": true,
+      "complete_trajectory_and_terminal_STOP_checks_passed": true,
+      "candidate_checks": 413,
+      "final_labels": 413,
+      "check_to_final_event_keys_match": true,
+      "shadow_snapshots": 1847,
+      "shadow_errors": 0,
+      "process_path_complete_under_legacy_logs": true,
+      "path_association_gaps": [],
+      "artifact_sha256": {
+        "status.json": "17b0dc21b97d0ba49299937010770323fb1d84d546d83e6c834e5a50421ddc7d",
+        "launch.json": "c00a7296de0d9cd0a3251f40c468f44dcd41c83f75bad70cf81de0cfc8713f7a",
+        "mon_metrics.json": "1abca72b6209c3b9fc0a45553bdb43f3345b47d67d6024d9c8ac1ed40fad7b1d"
       }
     }
   ]
