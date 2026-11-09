@@ -240,5 +240,6 @@
     1,
     2
   ],
-  "new_calibration_started": false
+  "new_calibration_started": true,
+  "start_metadata": "meta/calibration-start-a3.json"
 }

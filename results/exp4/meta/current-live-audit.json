@@ -1,0 +1,44 @@
+{
+  "checked_at_utc": "2026-11-09T04:58:22.356322+00:00",
+  "controller_status": "running",
+  "controller_pid": 31036,
+  "controller_live_and_matching": true,
+  "boot_id_matches": true,
+  "frozen_files_unchanged": true,
+  "completed_episodes": 0,
+  "assigned_episodes": 360,
+  "jobs": [
+    {
+      "fold": 0,
+      "scene": "6s7QHgap2fW",
+      "gpu": 2,
+      "pid": 31038,
+      "status": "running",
+      "launcher_live_and_matching": true,
+      "completed_episodes": 0,
+      "accepted_actions": 0,
+      "snapshots": 0,
+      "latest_replays_checked": 0,
+      "event_counts": {},
+      "labels_v": {},
+      "completed_episode_verification_events": 0,
+      "shadow_error_bytes": 0
+    },
+    {
+      "fold": 0,
+      "scene": "TEEsavR23oF",
+      "gpu": 3,
+      "pid": 31039,
+      "status": "running",
+      "launcher_live_and_matching": true,
+      "completed_episodes": 0,
+      "accepted_actions": 0,
+      "snapshots": 0,
+      "latest_replays_checked": 0,
+      "event_counts": {},
+      "labels_v": {},
+      "completed_episode_verification_events": 0,
+      "shadow_error_bytes": 0
+    }
+  ]
+}
