@@ -1,39 +1,43 @@
 {
-  "checked_at_utc": "2026-11-09T05:50:53.259699+00:00",
+  "checked_at_utc": "2026-11-09T08:26:58.553709+00:00",
   "scope": "live a3 shadow inputs; no GT, fitted parameters, or evaluation performance",
   "histogram_unit": "candidate occurrence in a planning snapshot, not distinct candidates",
   "scene_snapshots": {
-    "6s7QHgap2fW": 466,
-    "TEEsavR23oF": 553
+    "6s7QHgap2fW": 1687,
+    "TEEsavR23oF": 1860,
+    "QaLdnwvtxbs": 166,
+    "cvZr5TUy5C5": 102
   },
   "counts": {
-    "snapshots": 1019,
-    "nonempty_current_roots": 805,
-    "multiple_current_candidates": 665,
-    "pre_final_roots": 583,
-    "pre_final_with_any_future_candidates": 554,
-    "current_q_S_B_records_checked": 2809
+    "snapshots": 3815,
+    "nonempty_current_roots": 3035,
+    "multiple_current_candidates": 2504,
+    "pre_final_roots": 2154,
+    "pre_final_with_any_future_candidates": 2025,
+    "current_q_S_B_records_checked": 10624
   },
   "N_views_histograms": {
     "current_candidate_occurrences": {
-      "0": 1075,
-      "1": 851,
-      "2": 462,
-      "3": 232,
-      "4": 117,
-      "5": 39,
-      "6": 19,
-      "7": 14
+      "0": 3538,
+      "1": 3185,
+      "2": 2064,
+      "3": 1055,
+      "4": 370,
+      "5": 224,
+      "6": 125,
+      "7": 43,
+      "8": 19,
+      "9": 1
     },
     "future_candidate_occurrences": {
-      "0": 868,
-      "1": 645,
-      "2": 541,
-      "3": 351,
-      "4": 175,
-      "5": 53,
-      "6": 7,
-      "7": 8
+      "0": 2698,
+      "1": 2642,
+      "2": 2138,
+      "3": 1261,
+      "4": 576,
+      "5": 216,
+      "6": 86,
+      "7": 21
     }
   },
   "violations": [],

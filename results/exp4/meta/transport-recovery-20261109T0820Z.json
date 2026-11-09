@@ -1,0 +1,39 @@
+{
+  "recorded_at_utc": "2026-11-09T08:35:46.211673+00:00",
+  "user_reported_Mac_unlocked_and_VPN_connected": true,
+  "VPN_app_UI_readable": true,
+  "CUA_handoff_completed": true,
+  "tcp_ssh_access_restored": true,
+  "local_control_master_pid": 63552,
+  "reverse_proxy_port": 19181,
+  "goal_active_verified_after_user_resume": true,
+  "blocked_audit_counter_reset": 0,
+  "same_server_boot": true,
+  "same_controller_pid": 31036,
+  "runtime_source_commit": "eaa29e5f8f46782554d31226a8d619ec2534c34a",
+  "source_fingerprint_unchanged": true,
+  "completed_at_check": 69,
+  "completed_scene_audit_episodes": 60,
+  "current_candidate_verifications": 802,
+  "current_recovery_verifications": 1069,
+  "current_GT_max_distance_error_m": 0.0,
+  "active_launchers": [
+    {
+      "scene": "QaLdnwvtxbs",
+      "gpu": 3,
+      "pid": 110045
+    },
+    {
+      "scene": "cvZr5TUy5C5",
+      "gpu": 2,
+      "pid": 110996
+    }
+  ],
+  "prior_observer_pid": 45875,
+  "prior_observer_proc_present": false,
+  "prior_observer_polls_saved": 31,
+  "prior_observer_last_record_utc": "2026-11-09T06:18:07.608965+00:00",
+  "prior_observer_last_completed": 24,
+  "prior_observer_log_sha256": "24dfecd0f75abe00df6e215a726fff1f8a5e63404cb2f260a62ab072fd4b2a12",
+  "native_jobs_stopped_or_restarted_by_agent": false
+}
