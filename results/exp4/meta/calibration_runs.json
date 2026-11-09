@@ -619,7 +619,7 @@
       "gpu": 3,
       "pid": 207102,
       "log": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/logs/calibration-a3-fold1-zt1RVoi7PcG.controller.log",
-      "status": "running",
+      "status": "completed",
       "command": [
         "/nvme/khy/ForesightNav_exp4_depthfix/run.py",
         "--config",
@@ -633,7 +633,55 @@
         "--tag",
         "calibration-a3-fold1-zt1RVoi7PcG"
       ],
-      "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_002431_095619_exp4_calibration_calibration-a3-fold1-zt1RVoi7PcG"
+      "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_002431_095619_exp4_calibration_calibration-a3-fold1-zt1RVoi7PcG",
+      "audit": {
+        "events": 2393,
+        "snapshots": 1221,
+        "verification_events": 316,
+        "native_metrics": {
+          "pespl": 0.24061988923312375,
+          "pespl_denominator": 60,
+          "pespl_numerator": 14.437193353987425,
+          "psr": 0.55,
+          "psr_by_category": {
+            "bed": {
+              "psr_contribution": 0.13333333333333333,
+              "success_rate": 0.6666666666666666,
+              "successes": 8,
+              "targets": 12
+            },
+            "chair": {
+              "psr_contribution": 0.13333333333333333,
+              "success_rate": 0.6666666666666666,
+              "successes": 8,
+              "targets": 12
+            },
+            "couch": {
+              "psr_contribution": 0.15,
+              "success_rate": 0.75,
+              "successes": 9,
+              "targets": 12
+            },
+            "toilet": {
+              "psr_contribution": 0.11666666666666667,
+              "success_rate": 0.5833333333333334,
+              "successes": 7,
+              "targets": 12
+            },
+            "tv": {
+              "psr_contribution": 0.016666666666666666,
+              "success_rate": 0.08333333333333333,
+              "successes": 1,
+              "targets": 12
+            }
+          },
+          "psr_denominator": 60,
+          "psr_numerator": 33,
+          "spl": 0.11135556340289489,
+          "sr": 0.3
+        }
+      },
+      "returncode": 0
     }
   ]
 }
