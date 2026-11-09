@@ -1,11 +1,11 @@
 {
-  "checked_at_utc": "2026-11-09T19:10:12.488768+00:00",
+  "checked_at_utc": "2026-11-09T21:13:43.741890+00:00",
   "controller_status": "running",
   "controller_pid": 31036,
   "controller_live_and_matching": true,
   "boot_id_matches": true,
   "frozen_files_unchanged": true,
-  "completed_episodes": 240,
+  "completed_episodes": 285,
   "assigned_episodes": 360,
   "jobs": [
     {
@@ -232,22 +232,23 @@
       "status": "running",
       "launcher_live_and_matching": true,
       "telemetry_status": "available",
-      "completed_episodes": 0,
-      "accepted_actions": 119,
-      "snapshots": 13,
+      "completed_episodes": 18,
+      "accepted_actions": 12025,
+      "snapshots": 1233,
       "latest_replays_checked": 10,
       "event_counts": {
-        "empty_activation_started": 1,
-        "empty_activation": 1,
-        "candidate_first_appearance": 22,
-        "candidate_checked": 3,
-        "verification_final": 3,
-        "noncandidate_verification": 17
+        "empty_activation_started": 19,
+        "empty_activation": 19,
+        "candidate_first_appearance": 557,
+        "candidate_checked": 140,
+        "verification_final": 140,
+        "noncandidate_verification": 620
       },
       "labels_v": {
-        "0": 3
+        "0": 128,
+        "1": 12
       },
-      "completed_episode_verification_events": 0,
+      "completed_episode_verification_events": 129,
       "shadow_error_bytes": 0
     },
     {
@@ -258,22 +259,23 @@
       "status": "running",
       "launcher_live_and_matching": true,
       "telemetry_status": "available",
-      "completed_episodes": 0,
-      "accepted_actions": 148,
-      "snapshots": 15,
+      "completed_episodes": 27,
+      "accepted_actions": 12570,
+      "snapshots": 1299,
       "latest_replays_checked": 10,
       "event_counts": {
-        "empty_activation_started": 1,
-        "empty_activation": 1,
-        "candidate_first_appearance": 42,
-        "candidate_checked": 3,
-        "verification_final": 3
+        "empty_activation_started": 28,
+        "empty_activation": 28,
+        "candidate_first_appearance": 1110,
+        "candidate_checked": 184,
+        "verification_final": 184,
+        "noncandidate_verification": 301
       },
       "labels_v": {
-        "0": 2,
-        "1": 1
+        "0": 141,
+        "1": 43
       },
-      "completed_episode_verification_events": 0,
+      "completed_episode_verification_events": 184,
       "shadow_error_bytes": 0
     }
   ]
