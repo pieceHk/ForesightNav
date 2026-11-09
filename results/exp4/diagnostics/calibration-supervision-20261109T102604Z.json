@@ -1,0 +1,72 @@
+{
+  "recorded_at_utc": "2026-11-09T10:41:10.461392+00:00",
+  "goal_turn_classification": "verified_wait",
+  "scope": "read-only continued supervision, no source changes or repeated tests",
+  "observer_metadata": {
+    "observer_pid": 128422,
+    "started_at_utc": "2026-11-09T10:26:04.165656+00:00",
+    "max_polls": 20,
+    "interval_seconds": 45,
+    "log": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/logs/calibration-observer-a3-20261109T102604Z.jsonl",
+    "scope": "bounded read-only supervision of controller31036 and CPU122348; stop on new closed scene"
+  },
+  "successful_polls": 20,
+  "first": {
+    "poll": 1,
+    "checked_at_utc": "2026-11-09T10:26:04.248627+00:00",
+    "completed": 110,
+    "controller_live_matching": true,
+    "boot_matches": true,
+    "source_unchanged": true,
+    "active_jobs": [
+      {
+        "scene": "cvZr5TUy5C5",
+        "gpu": 2,
+        "pid": 110996,
+        "completed": 20,
+        "accepted_actions": 11238,
+        "snapshots": 1159,
+        "live_matching": true,
+        "shadow_error_bytes": 0
+      }
+    ],
+    "CPU_pid": 122348,
+    "CPU_live_matching": true,
+    "CPU_status": "waiting_for_complete_collection"
+  },
+  "last": {
+    "poll": 20,
+    "checked_at_utc": "2026-11-09T10:40:36.191308+00:00",
+    "completed": 112,
+    "controller_live_matching": true,
+    "boot_matches": true,
+    "source_unchanged": true,
+    "active_jobs": [
+      {
+        "scene": "cvZr5TUy5C5",
+        "gpu": 2,
+        "pid": 110996,
+        "completed": 22,
+        "accepted_actions": 12478,
+        "snapshots": 1285,
+        "live_matching": true,
+        "shadow_error_bytes": 0
+      }
+    ],
+    "CPU_pid": 122348,
+    "CPU_live_matching": true,
+    "CPU_status": "waiting_for_complete_collection"
+  },
+  "tool_session": 77938,
+  "observer_tool_exit_code": 0,
+  "observer_script_sha256": "184d451291db7bc952db11f48bf17c24862669ab69b6df6c22ab8988df9825f2",
+  "log_sha256": "7d5e8075526c0f1d638d9b0419805595f8f631e68a5fe80c67cf78e05db6cb9d",
+  "CPU_pid": 122348,
+  "CPU_start_ticks": "2658437",
+  "CPU_heartbeat": "2026-11-09T10:40:50.680248+00:00",
+  "all11_bound_scripts_unchanged": true,
+  "native_workers_restarted": false,
+  "parameters_fitted": false,
+  "new_completed_native_scene": false,
+  "closed_native_audit_still_90_episodes": true
+}

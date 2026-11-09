@@ -1,0 +1,72 @@
+{
+  "recorded_at_utc": "2026-11-09T10:57:05.147994+00:00",
+  "goal_turn_classification": "verified_wait",
+  "scope": "read-only continuation of the original calibration, no source edits or repeated tests",
+  "observer_metadata": {
+    "observer_pid": 130154,
+    "started_at_utc": "2026-11-09T10:42:04.222566+00:00",
+    "max_polls": 20,
+    "interval_seconds": 45,
+    "log": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/logs/calibration-observer-a3-20261109T104204Z.jsonl",
+    "scope": "bounded read-only supervision of controller31036 and CPU122348; stop on new closed scene"
+  },
+  "successful_polls": 20,
+  "first": {
+    "poll": 1,
+    "checked_at_utc": "2026-11-09T10:42:04.307579+00:00",
+    "completed": 112,
+    "controller_live_matching": true,
+    "boot_matches": true,
+    "source_unchanged": true,
+    "active_jobs": [
+      {
+        "scene": "cvZr5TUy5C5",
+        "gpu": 2,
+        "pid": 110996,
+        "completed": 22,
+        "accepted_actions": 12613,
+        "snapshots": 1298,
+        "live_matching": true,
+        "shadow_error_bytes": 0
+      }
+    ],
+    "CPU_pid": 122348,
+    "CPU_live_matching": true,
+    "CPU_status": "waiting_for_complete_collection"
+  },
+  "last": {
+    "poll": 20,
+    "checked_at_utc": "2026-11-09T10:56:37.379896+00:00",
+    "completed": 114,
+    "controller_live_matching": true,
+    "boot_matches": true,
+    "source_unchanged": true,
+    "active_jobs": [
+      {
+        "scene": "cvZr5TUy5C5",
+        "gpu": 2,
+        "pid": 110996,
+        "completed": 24,
+        "accepted_actions": 13807,
+        "snapshots": 1422,
+        "live_matching": true,
+        "shadow_error_bytes": 0
+      }
+    ],
+    "CPU_pid": 122348,
+    "CPU_live_matching": true,
+    "CPU_status": "waiting_for_complete_collection"
+  },
+  "tool_session": 1185,
+  "observer_tool_exit_code": 0,
+  "observer_script_sha256": "184d451291db7bc952db11f48bf17c24862669ab69b6df6c22ab8988df9825f2",
+  "log_sha256": "17ed4e3ef1ae2a7877577bd8fa6bf776e557a4f6dfe4c0013933ca8e66030182",
+  "CPU_pid": 122348,
+  "CPU_start_ticks": "2658437",
+  "CPU_heartbeat": "2026-11-09T10:56:51.863340+00:00",
+  "all11_bound_scripts_unchanged": true,
+  "native_workers_restarted": false,
+  "parameters_fitted": false,
+  "new_complete_native_scene": false,
+  "closed_native_audit_episodes": 90
+}

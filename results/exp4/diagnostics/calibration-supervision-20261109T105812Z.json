@@ -1,0 +1,71 @@
+{
+  "recorded_at_utc": "2026-11-09T11:15:05.677993+00:00",
+  "goal_turn_classification": "verified_wait_with_resource_diagnosis",
+  "scope": "20 read-only supervision polls; no source edits or repeated tests",
+  "observer_metadata": {
+    "observer_pid": 139808,
+    "started_at_utc": "2026-11-09T10:58:12.169799+00:00",
+    "max_polls": 20,
+    "interval_seconds": 45,
+    "log": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/logs/calibration-observer-a3-20261109T105812Z.jsonl",
+    "scope": "bounded read-only supervision of controller31036 and CPU122348; stop on new closed scene"
+  },
+  "successful_polls": 20,
+  "first": {
+    "poll": 1,
+    "checked_at_utc": "2026-11-09T10:58:12.372203+00:00",
+    "completed": 114,
+    "controller_live_matching": true,
+    "boot_matches": true,
+    "source_unchanged": true,
+    "active_jobs": [
+      {
+        "scene": "cvZr5TUy5C5",
+        "gpu": 2,
+        "pid": 110996,
+        "completed": 24,
+        "accepted_actions": 13858,
+        "snapshots": 1427,
+        "live_matching": true,
+        "shadow_error_bytes": 0
+      }
+    ],
+    "CPU_pid": 122348,
+    "CPU_live_matching": true,
+    "CPU_status": "waiting_for_complete_collection"
+  },
+  "last": {
+    "poll": 20,
+    "checked_at_utc": "2026-11-09T11:13:36.580486+00:00",
+    "completed": 115,
+    "controller_live_matching": true,
+    "boot_matches": true,
+    "source_unchanged": true,
+    "active_jobs": [
+      {
+        "scene": "cvZr5TUy5C5",
+        "gpu": 2,
+        "pid": 110996,
+        "completed": 25,
+        "accepted_actions": 14350,
+        "snapshots": 1477,
+        "live_matching": true,
+        "shadow_error_bytes": 0
+      }
+    ],
+    "CPU_pid": 122348,
+    "CPU_live_matching": true,
+    "CPU_status": "waiting_for_complete_collection"
+  },
+  "tool_session": 13625,
+  "observer_tool_exit_code": 0,
+  "log_sha256": "a94f39cd509c520364d898cd2f105f5669408fae0034b9b2c7edcda57ac96096",
+  "CPU_pid": 122348,
+  "CPU_start_ticks": "2658437",
+  "CPU_heartbeat": "2026-11-09T11:14:53.179633+00:00",
+  "all11_bound_scripts_unchanged": true,
+  "native_workers_restarted": false,
+  "parameters_fitted": false,
+  "new_complete_native_scene": false,
+  "closed_native_audit_episodes": 90
+}

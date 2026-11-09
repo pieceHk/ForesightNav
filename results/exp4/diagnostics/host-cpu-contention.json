@@ -1,0 +1,37 @@
+{
+  "checked_at_utc": "2026-11-09T11:13:00.490235+00:00",
+  "scope": "host resource diagnosis during continuing a3 calibration; not a formal planner latency result",
+  "cpu_count": 384,
+  "pressure": {
+    "cpu": "some avg10=78.38 avg60=81.62 avg300=77.80 total=866072332\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=0",
+    "memory": "some avg10=0.00 avg60=0.00 avg300=0.04 total=126815\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=83728",
+    "io": "some avg10=0.00 avg60=0.00 avg300=0.00 total=804610877\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=799619155"
+  },
+  "memory_kib": {
+    "MemTotal": "792202848 kB",
+    "MemAvailable": "239571380 kB",
+    "SwapTotal": "2097148 kB",
+    "SwapFree": "2092504 kB"
+  },
+  "current_scene": "cvZr5TUy5C5",
+  "shadow_planner_sample": {
+    "count": 20,
+    "min_ms": 3.0664580008306075,
+    "median_ms": 18.21429849769629,
+    "max_ms": 44.29322899886756,
+    "latest_episode": "25",
+    "latest_t": 230,
+    "latest_k": 0
+  },
+  "native_source_or_environment_changed": false,
+  "external_processes_signalled": false,
+  "user_coordination_requested": true,
+  "coordination_optional_native_collection_continues": true,
+  "load_average_1_5_15_minutes": [
+    2150.1,
+    1982.46,
+    1415.06
+  ],
+  "observed_external_194_thread_workers": 16,
+  "interpretation": "Heavy host CPU contention likely reduces native throughput. This is an infrastructure diagnosis, not a BLP correctness failure or a formal latency result."
+}
