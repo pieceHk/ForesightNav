@@ -32,6 +32,15 @@ def append(planning, filename, payload):
         stream.write(dumps_json_strict(payload) + '\n')
 
 
+def coverage_depth_metres(env, depth):
+    """Convert raw Habitat sensor depth for the passive coverage observer."""
+    sensor = env.config.habitat.simulator.agents.main_agent.sim_sensors.depth_sensor
+    values = np.asarray(depth)
+    if sensor.normalize_depth:
+        values = float(sensor.min_depth) + values * (float(sensor.max_depth) - float(sensor.min_depth))
+    return values, float(sensor.hfov)
+
+
 def observe_frame(planning, agent, env, obs, t, task_idx):
     import quaternion
     state = env.habitat_env.sim.get_agent_state()
@@ -39,7 +48,8 @@ def observe_frame(planning, agent, env, obs, t, task_idx):
     key = next(name for name in sensors if 'depth' in name.lower())
     camera = sensors[key]
     rotation = quaternion.as_rotation_matrix(camera.rotation).T
-    agent.candidate_evidence.observe_coverage(camera.position, rotation, obs.depth, 79.0)
+    depth_metres, hfov = coverage_depth_metres(env, obs.depth)
+    agent.candidate_evidence.observe_coverage(camera.position, rotation, depth_metres, hfov)
     previous = planning.blp_context.get('position')
     position = np.asarray(obs.globalpose[4:], dtype=float)
     path = planning.blp_context.get('path_m', 0.0)
