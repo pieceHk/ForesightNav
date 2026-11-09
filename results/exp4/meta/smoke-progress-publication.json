@@ -1,6 +1,6 @@
 {
   "created_at_utc": "2026-11-09T03:39:16.581021+00:00",
-  "scope": "initial two fixed smoke examples only; Full20 and CP3 not complete",
+  "scope": "first 6 fixed smoke cases audited; Full20 and CP3 not complete",
   "runtime_commit": "2c0037a985c65d25698728a31b8339682fb4bdd6",
   "runtime_source_unchanged": true,
   "parameter_sha256": "422a5660e9ff0b70fc70ed3b9f2a0a87aba5613a336180ad90e1eef7912c4ef7",
@@ -9,8 +9,8 @@
     "code/audit_smoke_mechanisms.py": "0ebe2c2fa8ea333b1b6b209e895727c8a10a7979b316e7f298ce2028105c9238",
     "code/plot_blp_episode.py": "e7d6d9e2602a41f965cc380ba0eaf009db375db7ebd04a118223992ae8d3531b",
     "meta/smoke_start.json": "7dcaf5fd3cd5daa1a755f4255d1894dfaddb43d4fe126454174cd860dfc3c7e0",
-    "reports/CP3_progress.md": "34932461289df19b3050a2a64bd51029bf31686df3724873002d6baf26038e5a",
-    "diagnostics/CP3/mechanism-audit.json": "6d12ce4900433249c7e884c1b242a5929f216fc3ea63f544062fd2a05555ad3c",
+    "reports/CP3_progress.md": "4b226365f778d4fcb9a40c0ac42aff616e144baf4e94cfe5354bbe2d2f494623",
+    "diagnostics/CP3/mechanism-audit.json": "7f402d6bedc03dad8263d658d1b1287fc159a81eac7ec3c03d7289874a527c10",
     "diagnostics/CP3/figure-review.json": "8b67ed76b6d0c02430e6145fab72c20e2d31dc65086296ca838a91756ec35525",
     "diagnostics/CP3/early-behavior-review.json": "2959a56dd63a215c095cb2b235056d17d1899c7a28c35e24b364cdef3a1421b8",
     "figures/CP3/4ok3usBNeis_0.png": "d587267eb2a4ff18ff223233510ca39ff855d9936a8abdb6a4fb728d2b85cc2d",
@@ -21,6 +21,20 @@
     "figures/CP3/5cdEh9F2hJL_0.json": "160d77974b0d142e7deee937b8c5c6cb8a9c1cfaf080a1de5ebfd1f00678f0ee",
     "diagnostics/CP3/early/5cdEh9F2hJL/summary.json": "0a66e58c8765814de6028ab1a7e5a9d733a0b042a825c98f6392c695c64494b3",
     "diagnostics/CP3/early/5cdEh9F2hJL/episodes.json": "eccbc2a5a48e73b23f930b671dc731445785f935d5712844dba22fd1ebef547a",
-    "deviations.md": "d4abb83cf3fcd73eb16d5ae4937bccef64af900083450a06ce2e481f04b0c644"
-  }
+    "deviations.md": "d4abb83cf3fcd73eb16d5ae4937bccef64af900083450a06ce2e481f04b0c644",
+    "code/audit_completed_smoke.py": "53a73e301a462ac680148810ce3d6a23708f0a48e50bab5810463f2d2f39bc3c",
+    "code/report_cp3.py": "a1afa17665572a209364b680589e28cac5ef2ed56bcd871199fa32ec970724fc",
+    "diagnostics/CP3/completed-behavior-review.json": "60a8990c9dee79e4b459c0f1b88276eb430d47a15cfabf305633caa7ccf53bfe",
+    "diagnostics/CP3/early/6s7QHgap2fW/summary.json": "ba24bf2d3545d38bf48019f478a1f41c6165a7d7f3e1442bc4ef4973ec6ea89f",
+    "diagnostics/CP3/early/6s7QHgap2fW/episodes.json": "4f378c31fe9ec3a123f409defef85c0da79cb0004485cda414074d3df945cbff",
+    "diagnostics/CP3/early/DYehNKdT76V/summary.json": "8741852ac51f6a7574c7c1616c27023b78f72d3576624414cfe519c1e8f5640c",
+    "diagnostics/CP3/early/DYehNKdT76V/episodes.json": "3b2f7cefb755c9284e4964550ccf7848cb2c552bbfb8e8947c8fc1a6d912e256",
+    "diagnostics/CP3/early/Dd4bFSTQ8gi/summary.json": "0347491f31d3eb765dd1f2518de9721e7f08ac9df92c097a01b2bf4b4b486dba",
+    "diagnostics/CP3/early/Dd4bFSTQ8gi/episodes.json": "084c104634e0df53f9087895f30dcf8ab6d447082e2a98a7246f244f4920d63e",
+    "diagnostics/CP3/early/Nfvxx8J5NCo/summary.json": "e72e6ef103d5e314919a8b0b63ba139ef36f88a45fe2207b2996aab2b2618ddb",
+    "diagnostics/CP3/early/Nfvxx8J5NCo/episodes.json": "40dd76b02e1921f60641e84b4421684aee9407fc89508f147ba4cc8a148de1a9"
+  },
+  "updated_at_utc": "2026-11-09T03:53:55.607308+00:00",
+  "completed_scenes_at_publication": 6,
+  "audited_scenes": 6
 }

@@ -1,0 +1,261 @@
+{
+  "method": "ForesightNav",
+  "variant": "full",
+  "task": "3-MON",
+  "n_episodes": 1,
+  "n_error": 0,
+  "SR": 0.0,
+  "SPL": 0.0,
+  "PR": 33.33,
+  "PSR": 33.33,
+  "PeSPL": 14.86,
+  "PPL": 0.0,
+  "P_C1": 0.0,
+  "P_C2_given_C1": null,
+  "P_C3_given_C1C2": null,
+  "P_C4_given_C1C2C3": null,
+  "Joint": 0.0,
+  "PPL_implementation": "new supplementary implementation: all-stage PR times successful-prefix path efficiency",
+  "conditional_counts": {
+    "rates": [
+      0.0,
+      null,
+      null
+    ],
+    "successes": [
+      0,
+      0,
+      0
+    ],
+    "conditioned_episodes": [
+      1,
+      0,
+      0
+    ],
+    "Joint": 0.0,
+    "definition": "conditioned on prior successes, not prior execution"
+  },
+  "native_aggregate": {
+    "schema_version": "mon_metrics_v3",
+    "counts": {
+      "completed_episodes": 1,
+      "completed_subtasks": 3,
+      "targets_per_episode": 3,
+      "successful_episodes": 0,
+      "successful_subtasks": 1,
+      "finite_shortest_path_episodes": 1,
+      "episodes_with_unreachable": 0,
+      "finite_shortest_path_subtasks": 3,
+      "unreachable_subtasks": 0
+    },
+    "mon_metrics": {
+      "sr": 0.0,
+      "spl": 0.0,
+      "pespl": 0.14864992653740058,
+      "psr": 0.3333333333333333,
+      "pespl_numerator": 0.4459497796122017,
+      "pespl_denominator": 3,
+      "psr_numerator": 1,
+      "psr_denominator": 3,
+      "psr_by_category": {
+        "chair": {
+          "targets": 1,
+          "successes": 1,
+          "success_rate": 1.0,
+          "psr_contribution": 0.3333333333333333
+        },
+        "plant": {
+          "targets": 1,
+          "successes": 0,
+          "success_rate": 0.0,
+          "psr_contribution": 0.0
+        },
+        "toilet": {
+          "targets": 1,
+          "successes": 0,
+          "success_rate": 0.0,
+          "psr_contribution": 0.0
+        }
+      }
+    },
+    "navigation_efficiency": {
+      "total_actual_path_length_m": 99.5000114813447,
+      "total_shortest_path_length_m": 33.22077918052673,
+      "shortest_path_status": "finite",
+      "aggregate_path_efficiency": 0.3338771391675197,
+      "mean_episode_path_efficiency": 0.3338771391675197,
+      "mean_subtask_path_efficiency": 0.39531218898302245,
+      "finite_actual_path_length_m": 99.5000114813447,
+      "finite_shortest_path_length_m": 33.22077918052673,
+      "finite_aggregate_path_efficiency": 0.3338771391675197,
+      "mean_finite_episode_path_efficiency": 0.3338771391675197,
+      "mean_finite_subtask_path_efficiency": 0.39531218898302245,
+      "finite_shortest_path_subtask_count": 3,
+      "unreachable_subtask_count": 0,
+      "finite_shortest_path_episode_count": 1,
+      "episodes_with_unreachable": 0,
+      "finite_shortest_path_coverage": 1.0,
+      "mean_episode_steps": 1064.0,
+      "mean_subtask_steps": 354.6666666666667,
+      "successful_subtasks_per_100_steps": 0.09398496240601503,
+      "max_steps_rate": 0.6666666666666666
+    },
+    "frame_timing": {
+      "frame_count": 1064,
+      "frame_time_sum_ms": 777934.2883749955,
+      "mean_frame_time_ms": 731.1412484727401,
+      "median_frame_time_ms": null,
+      "p95_frame_time_ms": null,
+      "fps": 1.3677247756009816
+    }
+  },
+  "process": {
+    "Invalid_visits_per_ep": 23.0,
+    "invalid_visit_events_per_ep": 28.0,
+    "checked_distinct_candidates": 26,
+    "invalid_approach_and_verification_path_m": 46.75000454318634,
+    "invalid_confirmed_approach_tail_m": 0.0,
+    "invalid_visit_path_m": 46.75000454318634,
+    "invalid_visit_path_m_per_ep": 46.75000454318634,
+    "invalid_path_association_gaps": [],
+    "invalid_path_complete": true,
+    "invalid_path_definition": "accepted displacement pursuing a checked-invalid query identity while its recorded target coordinate is native-GT-invalid; confirmed visual continuation retains the parent; recovery/frontier excluded",
+    "invalid_visit_definition": "distinct checked (episode, task, persistent spatial identity) with GT-invalid verification; event count also retained",
+    "nonquery_recovery_verification_frames": 26,
+    "deviation_from_nearest_proposal_pct": 13.829787234042554,
+    "deviation_from_nearest_after_hysteresis_pct": 18.085106382978722,
+    "deviation_from_nearest_realized_pct": 22.340425531914892,
+    "eligible_proposals": 94,
+    "eligible_realized_dispatches": 94,
+    "planning_ms": {
+      "n": 109,
+      "median": 10.744402000000264,
+      "p95": 17.226900599871442
+    },
+    "fallback_root_decisions": {
+      "empty_candidates": 15
+    },
+    "fallback_decision_incidence": {
+      "empty_candidates": 94
+    },
+    "fallback_memo_state_counts": {
+      "empty_candidates": 927,
+      "frontier_coordinates_unavailable": 0,
+      "no_reachable_frontier": 0
+    },
+    "fallback_count_definition": "root decisions and per-decision incidence are separate from recursion-state counts",
+    "n_computed_snapshots": 109,
+    "n_recorded_dispatch_events": 109,
+    "legacy_interval_diagnostics": {
+      "invalid_visit_path_m": 47.500004971721125,
+      "invalid_path_complete": true,
+      "invalid_path_association_gaps": [],
+      "invalid_path_definition": "union of recorded active-candidate approach/check path intervals plus an unambiguous final confirmation-to-STOP tail"
+    },
+    "invalid_path_source": "blp_action_target_v1_native_gt",
+    "invalid_identity_pursuit_path_m": 46.75000454318634,
+    "invalid_identity_pursuit_path_m_per_ep": 46.75000454318634,
+    "checked_invalid_identity_but_current_target_GT_valid_path_m": 0.0,
+    "checked_invalid_identities_with_current_valid_targets": 0,
+    "mixed_GT_checked_identities": [],
+    "invalid_identity_pursuit_definition": "all accepted displacement pursuing identities that had at least one GT-invalid check; explicit upper bound, including any later GT-valid coordinates",
+    "accepted_action_path_m": 99.50001270023536,
+    "accepted_action_path_partition_m": {
+      "invalid_identity_upper": 46.75000454318634,
+      "checked_valid": 19.249998848949026,
+      "unchecked_query": 3.0000004660132134,
+      "unresolved_query": 0.0,
+      "recovery": 10.499998725235004,
+      "frontier": 20.00001011685181
+    },
+    "accepted_action_rows_by_source": {
+      "frontier": 142,
+      "query_candidate": 824,
+      "navmesh_override": 98
+    },
+    "native_target_GT_labelled_action_rows": 629,
+    "native_stage_path_max_abs_error_m": 8.020223205562615e-07,
+    "native_stage_path_check_count": 3,
+    "native_stage_path_check_tolerance": {
+      "abs_m": 0.001,
+      "relative": 1e-06
+    },
+    "last_STOP_without_after_pose_assumed_stationary": 1,
+    "verification_then_effective_recovery_actions": 0,
+    "native_target_gt_provenance": [
+      {
+        "run_directory": "/nvme/khy/ForesightNav_exp4/results/exp4/runs/20261109_112845_001173_exp4_full_exp4-smoke-a1-6s7QHgap2fW",
+        "recorded_label_verification": {
+          "candidate_verifications": 31,
+          "recovery_verifications": 26,
+          "max_distance_error_m": 0.0
+        },
+        "method": "native GOAT measures and geodesic wrapper on CPU PathFinder",
+        "habitat_source": {
+          "revision": "8df2661e5b2203c0ddc47798d5da0132d5686bbe",
+          "kind": "archive",
+          "files": 550,
+          "content_sha256": "31226fdca10c6ea69c23b6c3dbf707745210f7df5785c1c7116eda98c6dfc77c"
+        },
+        "measurements": {
+          "distance": {
+            "type": "GOATDistanceToSubGoal",
+            "distance_to": "VIEW_POINTS",
+            "goals_attr": "goals",
+            "distance_from": "BASE"
+          },
+          "success": {
+            "type": "GOATSubTaskSuccess",
+            "success_distance": 1.0
+          }
+        },
+        "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+        "queries": 686,
+        "cache_hits": 639,
+        "distinct_positions": 47,
+        "scenes": {
+          "6s7QHgap2fW": {
+            "content_sha256": "194d2833eff5688c8a62eed50cd4856d6eb9514fa1a5578daa31e961a0e91108",
+            "navmesh": "/nvme/khy/PBSP-open-source/data/scenes/hm3dv1/hm3d/val/00890-6s7QHgap2fW/6s7QHgap2fW.basis.navmesh",
+            "navmesh_sha256": "127c2fa57e01105442bb7019bca4692ed12aba6fae3b1bc13c2a557d3095ffe0"
+          }
+        }
+      }
+    ]
+  },
+  "analysis_sources_sha256": {
+    "report_variants.py": "0fd565b0649a928c9108db5a706d6d67ee7e7bbbfb6d9bc2da152fa32897a259",
+    "action_path_metrics.py": "a89afc6504fcb5520bb8c227928961b3d7814bcfcc98c23c6311e35254089f1e",
+    "native_candidate_gt.py": "e2620454fe45d54933294286a518440ef16ec961c0eb0ca5aafe5ec2587a21a3",
+    "blp_parameters.py": "039c6a660ab2a7cf2b6e9e78e810bfb44f32731e6c52a9194dc20f82daa63bad"
+  },
+  "source_commits": [
+    "2c0037a985c65d25698728a31b8339682fb4bdd6"
+  ],
+  "diagnostic_only": false,
+  "calibration_binding": {
+    "selection": "cross_fit",
+    "parameter_sha256": "422a5660e9ff0b70fc70ed3b9f2a0a87aba5613a336180ad90e1eef7912c4ef7",
+    "parameters_by_scene": {
+      "6s7QHgap2fW": {
+        "a": 48.11459908252667,
+        "b0": -12.856439210146924,
+        "pi": 0.16010230179028134,
+        "c_exp": 1.2759422599453465
+      }
+    }
+  },
+  "rates_pct_unrounded": {
+    "SR": 0.0,
+    "SPL": 0.0,
+    "PR": 33.33333333333333,
+    "PPL": 0.0,
+    "PSR": 33.33333333333333,
+    "PeSPL": 14.864992653740059,
+    "P_C1": 0.0,
+    "P_C2_given_C1": null,
+    "P_C3_given_C1C2": null,
+    "P_C4_given_C1C2C3": null,
+    "Joint": 0.0
+  }
+}
