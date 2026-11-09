@@ -1,0 +1,14 @@
+{
+  "server_baseline_commit": "7c7e9f4",
+  "original_head": "ef9ecd7b3674673791746c9a6a31c8e512ddeec7",
+  "dataset_counts": {
+    "2mon": 600,
+    "3mon": 400
+  },
+  "calibration_episode_count_per_fold": 120,
+  "gpu_indices": [
+    2,
+    3
+  ],
+  "scene_fold_sha256": "e5984774614e3eef936728637c494a88f11269bf1508d719e87cf17879f2590b"
+}

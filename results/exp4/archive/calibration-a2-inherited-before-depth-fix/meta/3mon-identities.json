@@ -1,0 +1,6002 @@
+[
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "4ok3usBNeis",
+    "runtime_episode_id": "0",
+    "source_episode_ids": [
+      "71",
+      "53",
+      "20"
+    ],
+    "ordered_categories": [
+      "couch",
+      "bed",
+      "chair"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "4ok3usBNeis",
+    "runtime_episode_id": "1",
+    "source_episode_ids": [
+      "23",
+      "76",
+      "67"
+    ],
+    "ordered_categories": [
+      "chair",
+      "toilet",
+      "bed"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "4ok3usBNeis",
+    "runtime_episode_id": "2",
+    "source_episode_ids": [
+      "59",
+      "74",
+      "46"
+    ],
+    "ordered_categories": [
+      "chair",
+      "tv",
+      "chair"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "4ok3usBNeis",
+    "runtime_episode_id": "3",
+    "source_episode_ids": [
+      "94",
+      "54",
+      "87"
+    ],
+    "ordered_categories": [
+      "couch",
+      "toilet",
+      "couch"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "4ok3usBNeis",
+    "runtime_episode_id": "4",
+    "source_episode_ids": [
+      "86",
+      "79",
+      "77"
+    ],
+    "ordered_categories": [
+      "tv",
+      "bed",
+      "couch"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "4ok3usBNeis",
+    "runtime_episode_id": "5",
+    "source_episode_ids": [
+      "44",
+      "26",
+      "91"
+    ],
+    "ordered_categories": [
+      "toilet",
+      "bed",
+      "tv"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "4ok3usBNeis",
+    "runtime_episode_id": "6",
+    "source_episode_ids": [
+      "35",
+      "82",
+      "30"
+    ],
+    "ordered_categories": [
+      "couch",
+      "chair",
+      "bed"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "4ok3usBNeis",
+    "runtime_episode_id": "7",
+    "source_episode_ids": [
+      "58",
+      "63",
+      "31"
+    ],
+    "ordered_categories": [
+      "toilet",
+      "couch",
+      "chair"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "4ok3usBNeis",
+    "runtime_episode_id": "8",
+    "source_episode_ids": [
+      "13",
+      "29",
+      "42"
+    ],
+    "ordered_categories": [
+      "toilet",
+      "tv",
+      "bed"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "4ok3usBNeis",
+    "runtime_episode_id": "9",
+    "source_episode_ids": [
+      "85",
+      "48",
+      "83"
+    ],
+    "ordered_categories": [
+      "chair",
+      "bed",
+      "chair"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "4ok3usBNeis",
+    "runtime_episode_id": "10",
+    "source_episode_ids": [
+      "84",
+      "41",
+      "24"
+    ],
+    "ordered_categories": [
+      "bed",
+      "toilet",
+      "tv"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "4ok3usBNeis",
+    "runtime_episode_id": "11",
+    "source_episode_ids": [
+      "51",
+      "52",
+      "61"
+    ],
+    "ordered_categories": [
+      "bed",
+      "toilet",
+      "tv"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "4ok3usBNeis",
+    "runtime_episode_id": "12",
+    "source_episode_ids": [
+      "62",
+      "81",
+      "56"
+    ],
+    "ordered_categories": [
+      "bed",
+      "chair",
+      "couch"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "4ok3usBNeis",
+    "runtime_episode_id": "13",
+    "source_episode_ids": [
+      "96",
+      "97",
+      "65"
+    ],
+    "ordered_categories": [
+      "tv",
+      "toilet",
+      "couch"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "4ok3usBNeis",
+    "runtime_episode_id": "14",
+    "source_episode_ids": [
+      "98",
+      "90",
+      "40"
+    ],
+    "ordered_categories": [
+      "bed",
+      "chair",
+      "toilet"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "4ok3usBNeis",
+    "runtime_episode_id": "15",
+    "source_episode_ids": [
+      "69",
+      "68",
+      "50"
+    ],
+    "ordered_categories": [
+      "toilet",
+      "couch",
+      "tv"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "4ok3usBNeis",
+    "runtime_episode_id": "16",
+    "source_episode_ids": [
+      "75",
+      "43",
+      "16"
+    ],
+    "ordered_categories": [
+      "couch",
+      "toilet",
+      "couch"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "4ok3usBNeis",
+    "runtime_episode_id": "17",
+    "source_episode_ids": [
+      "93",
+      "64",
+      "88"
+    ],
+    "ordered_categories": [
+      "tv",
+      "bed",
+      "toilet"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "4ok3usBNeis",
+    "runtime_episode_id": "18",
+    "source_episode_ids": [
+      "89",
+      "60",
+      "72"
+    ],
+    "ordered_categories": [
+      "bed",
+      "couch",
+      "tv"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "4ok3usBNeis",
+    "runtime_episode_id": "19",
+    "source_episode_ids": [
+      "95",
+      "73",
+      "92"
+    ],
+    "ordered_categories": [
+      "chair",
+      "toilet",
+      "bed"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "5cdEh9F2hJL",
+    "runtime_episode_id": "0",
+    "source_episode_ids": [
+      "98",
+      "77",
+      "81"
+    ],
+    "ordered_categories": [
+      "chair",
+      "couch",
+      "tv"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "5cdEh9F2hJL",
+    "runtime_episode_id": "1",
+    "source_episode_ids": [
+      "70",
+      "60",
+      "50"
+    ],
+    "ordered_categories": [
+      "tv",
+      "chair",
+      "bed"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "5cdEh9F2hJL",
+    "runtime_episode_id": "2",
+    "source_episode_ids": [
+      "56",
+      "54",
+      "84"
+    ],
+    "ordered_categories": [
+      "chair",
+      "bed",
+      "chair"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "5cdEh9F2hJL",
+    "runtime_episode_id": "3",
+    "source_episode_ids": [
+      "80",
+      "68",
+      "39"
+    ],
+    "ordered_categories": [
+      "toilet",
+      "couch",
+      "bed"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "5cdEh9F2hJL",
+    "runtime_episode_id": "4",
+    "source_episode_ids": [
+      "19",
+      "24",
+      "55"
+    ],
+    "ordered_categories": [
+      "chair",
+      "tv",
+      "bed"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "5cdEh9F2hJL",
+    "runtime_episode_id": "5",
+    "source_episode_ids": [
+      "43",
+      "9",
+      "25"
+    ],
+    "ordered_categories": [
+      "couch",
+      "chair",
+      "couch"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "5cdEh9F2hJL",
+    "runtime_episode_id": "6",
+    "source_episode_ids": [
+      "93",
+      "59",
+      "83"
+    ],
+    "ordered_categories": [
+      "bed",
+      "tv",
+      "chair"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "5cdEh9F2hJL",
+    "runtime_episode_id": "7",
+    "source_episode_ids": [
+      "75",
+      "29",
+      "38"
+    ],
+    "ordered_categories": [
+      "tv",
+      "couch",
+      "bed"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "5cdEh9F2hJL",
+    "runtime_episode_id": "8",
+    "source_episode_ids": [
+      "26",
+      "42",
+      "41"
+    ],
+    "ordered_categories": [
+      "chair",
+      "tv",
+      "chair"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "5cdEh9F2hJL",
+    "runtime_episode_id": "9",
+    "source_episode_ids": [
+      "37",
+      "76",
+      "66"
+    ],
+    "ordered_categories": [
+      "couch",
+      "chair",
+      "toilet"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "5cdEh9F2hJL",
+    "runtime_episode_id": "10",
+    "source_episode_ids": [
+      "62",
+      "91",
+      "71"
+    ],
+    "ordered_categories": [
+      "tv",
+      "couch",
+      "toilet"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "5cdEh9F2hJL",
+    "runtime_episode_id": "11",
+    "source_episode_ids": [
+      "34",
+      "11",
+      "92"
+    ],
+    "ordered_categories": [
+      "toilet",
+      "bed",
+      "chair"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "5cdEh9F2hJL",
+    "runtime_episode_id": "12",
+    "source_episode_ids": [
+      "79",
+      "96",
+      "90"
+    ],
+    "ordered_categories": [
+      "bed",
+      "toilet",
+      "couch"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "5cdEh9F2hJL",
+    "runtime_episode_id": "13",
+    "source_episode_ids": [
+      "72",
+      "7",
+      "86"
+    ],
+    "ordered_categories": [
+      "tv",
+      "chair",
+      "couch"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "5cdEh9F2hJL",
+    "runtime_episode_id": "14",
+    "source_episode_ids": [
+      "53",
+      "74",
+      "67"
+    ],
+    "ordered_categories": [
+      "bed",
+      "chair",
+      "toilet"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "5cdEh9F2hJL",
+    "runtime_episode_id": "15",
+    "source_episode_ids": [
+      "58",
+      "48",
+      "89"
+    ],
+    "ordered_categories": [
+      "couch",
+      "toilet",
+      "couch"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "5cdEh9F2hJL",
+    "runtime_episode_id": "16",
+    "source_episode_ids": [
+      "78",
+      "44",
+      "63"
+    ],
+    "ordered_categories": [
+      "bed",
+      "couch",
+      "tv"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "5cdEh9F2hJL",
+    "runtime_episode_id": "17",
+    "source_episode_ids": [
+      "36",
+      "87",
+      "88"
+    ],
+    "ordered_categories": [
+      "toilet",
+      "tv",
+      "toilet"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "5cdEh9F2hJL",
+    "runtime_episode_id": "18",
+    "source_episode_ids": [
+      "82",
+      "27",
+      "73"
+    ],
+    "ordered_categories": [
+      "couch",
+      "bed",
+      "tv"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "5cdEh9F2hJL",
+    "runtime_episode_id": "19",
+    "source_episode_ids": [
+      "51",
+      "33",
+      "65"
+    ],
+    "ordered_categories": [
+      "couch",
+      "toilet",
+      "tv"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "6s7QHgap2fW",
+    "runtime_episode_id": "0",
+    "source_episode_ids": [
+      "82",
+      "35",
+      "44"
+    ],
+    "ordered_categories": [
+      "toilet",
+      "plant",
+      "chair"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "6s7QHgap2fW",
+    "runtime_episode_id": "1",
+    "source_episode_ids": [
+      "56",
+      "87",
+      "31"
+    ],
+    "ordered_categories": [
+      "toilet",
+      "chair",
+      "tv"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "6s7QHgap2fW",
+    "runtime_episode_id": "2",
+    "source_episode_ids": [
+      "77",
+      "74",
+      "72"
+    ],
+    "ordered_categories": [
+      "toilet",
+      "tv",
+      "couch"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "6s7QHgap2fW",
+    "runtime_episode_id": "3",
+    "source_episode_ids": [
+      "73",
+      "61",
+      "51"
+    ],
+    "ordered_categories": [
+      "tv",
+      "bed",
+      "tv"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "6s7QHgap2fW",
+    "runtime_episode_id": "4",
+    "source_episode_ids": [
+      "70",
+      "95",
+      "85"
+    ],
+    "ordered_categories": [
+      "chair",
+      "couch",
+      "chair"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "6s7QHgap2fW",
+    "runtime_episode_id": "5",
+    "source_episode_ids": [
+      "57",
+      "60",
+      "91"
+    ],
+    "ordered_categories": [
+      "plant",
+      "bed",
+      "chair"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "6s7QHgap2fW",
+    "runtime_episode_id": "6",
+    "source_episode_ids": [
+      "86",
+      "54",
+      "66"
+    ],
+    "ordered_categories": [
+      "chair",
+      "tv",
+      "toilet"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "6s7QHgap2fW",
+    "runtime_episode_id": "7",
+    "source_episode_ids": [
+      "5",
+      "34",
+      "14"
+    ],
+    "ordered_categories": [
+      "couch",
+      "toilet",
+      "chair"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "6s7QHgap2fW",
+    "runtime_episode_id": "8",
+    "source_episode_ids": [
+      "46",
+      "94",
+      "67"
+    ],
+    "ordered_categories": [
+      "bed",
+      "plant",
+      "toilet"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "6s7QHgap2fW",
+    "runtime_episode_id": "9",
+    "source_episode_ids": [
+      "55",
+      "96",
+      "92"
+    ],
+    "ordered_categories": [
+      "tv",
+      "toilet",
+      "plant"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "6s7QHgap2fW",
+    "runtime_episode_id": "10",
+    "source_episode_ids": [
+      "89",
+      "39",
+      "33"
+    ],
+    "ordered_categories": [
+      "bed",
+      "chair",
+      "plant"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "6s7QHgap2fW",
+    "runtime_episode_id": "11",
+    "source_episode_ids": [
+      "65",
+      "75",
+      "98"
+    ],
+    "ordered_categories": [
+      "couch",
+      "bed",
+      "couch"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "6s7QHgap2fW",
+    "runtime_episode_id": "12",
+    "source_episode_ids": [
+      "47",
+      "97",
+      "62"
+    ],
+    "ordered_categories": [
+      "plant",
+      "bed",
+      "couch"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "6s7QHgap2fW",
+    "runtime_episode_id": "13",
+    "source_episode_ids": [
+      "83",
+      "93",
+      "78"
+    ],
+    "ordered_categories": [
+      "chair",
+      "toilet",
+      "plant"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "6s7QHgap2fW",
+    "runtime_episode_id": "14",
+    "source_episode_ids": [
+      "22",
+      "52",
+      "26"
+    ],
+    "ordered_categories": [
+      "plant",
+      "bed",
+      "couch"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "6s7QHgap2fW",
+    "runtime_episode_id": "15",
+    "source_episode_ids": [
+      "68",
+      "59",
+      "80"
+    ],
+    "ordered_categories": [
+      "tv",
+      "couch",
+      "tv"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "6s7QHgap2fW",
+    "runtime_episode_id": "16",
+    "source_episode_ids": [
+      "81",
+      "25",
+      "84"
+    ],
+    "ordered_categories": [
+      "tv",
+      "toilet",
+      "tv"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "6s7QHgap2fW",
+    "runtime_episode_id": "17",
+    "source_episode_ids": [
+      "63",
+      "88",
+      "43"
+    ],
+    "ordered_categories": [
+      "bed",
+      "toilet",
+      "bed"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "6s7QHgap2fW",
+    "runtime_episode_id": "18",
+    "source_episode_ids": [
+      "76",
+      "27",
+      "90"
+    ],
+    "ordered_categories": [
+      "couch",
+      "tv",
+      "chair"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "6s7QHgap2fW",
+    "runtime_episode_id": "19",
+    "source_episode_ids": [
+      "79",
+      "71",
+      "69"
+    ],
+    "ordered_categories": [
+      "chair",
+      "bed",
+      "plant"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "DYehNKdT76V",
+    "runtime_episode_id": "0",
+    "source_episode_ids": [
+      "80",
+      "93",
+      "49"
+    ],
+    "ordered_categories": [
+      "couch",
+      "toilet",
+      "chair"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "DYehNKdT76V",
+    "runtime_episode_id": "1",
+    "source_episode_ids": [
+      "90",
+      "82",
+      "83"
+    ],
+    "ordered_categories": [
+      "bed",
+      "toilet",
+      "chair"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "DYehNKdT76V",
+    "runtime_episode_id": "2",
+    "source_episode_ids": [
+      "85",
+      "19",
+      "58"
+    ],
+    "ordered_categories": [
+      "bed",
+      "couch",
+      "toilet"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "DYehNKdT76V",
+    "runtime_episode_id": "3",
+    "source_episode_ids": [
+      "31",
+      "97",
+      "67"
+    ],
+    "ordered_categories": [
+      "chair",
+      "toilet",
+      "bed"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "DYehNKdT76V",
+    "runtime_episode_id": "4",
+    "source_episode_ids": [
+      "47",
+      "46",
+      "39"
+    ],
+    "ordered_categories": [
+      "toilet",
+      "chair",
+      "bed"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "DYehNKdT76V",
+    "runtime_episode_id": "5",
+    "source_episode_ids": [
+      "6",
+      "42",
+      "79"
+    ],
+    "ordered_categories": [
+      "couch",
+      "chair",
+      "toilet"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "DYehNKdT76V",
+    "runtime_episode_id": "6",
+    "source_episode_ids": [
+      "92",
+      "68",
+      "14"
+    ],
+    "ordered_categories": [
+      "couch",
+      "toilet",
+      "couch"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "DYehNKdT76V",
+    "runtime_episode_id": "7",
+    "source_episode_ids": [
+      "70",
+      "21",
+      "38"
+    ],
+    "ordered_categories": [
+      "bed",
+      "couch",
+      "chair"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "DYehNKdT76V",
+    "runtime_episode_id": "8",
+    "source_episode_ids": [
+      "57",
+      "81",
+      "25"
+    ],
+    "ordered_categories": [
+      "couch",
+      "chair",
+      "toilet"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "DYehNKdT76V",
+    "runtime_episode_id": "9",
+    "source_episode_ids": [
+      "7",
+      "29",
+      "45"
+    ],
+    "ordered_categories": [
+      "toilet",
+      "couch",
+      "bed"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "DYehNKdT76V",
+    "runtime_episode_id": "10",
+    "source_episode_ids": [
+      "56",
+      "94",
+      "78"
+    ],
+    "ordered_categories": [
+      "couch",
+      "chair",
+      "bed"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "DYehNKdT76V",
+    "runtime_episode_id": "11",
+    "source_episode_ids": [
+      "65",
+      "11",
+      "75"
+    ],
+    "ordered_categories": [
+      "chair",
+      "toilet",
+      "couch"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "DYehNKdT76V",
+    "runtime_episode_id": "12",
+    "source_episode_ids": [
+      "52",
+      "63",
+      "60"
+    ],
+    "ordered_categories": [
+      "bed",
+      "couch",
+      "chair"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "DYehNKdT76V",
+    "runtime_episode_id": "13",
+    "source_episode_ids": [
+      "62",
+      "87",
+      "69"
+    ],
+    "ordered_categories": [
+      "bed",
+      "toilet",
+      "bed"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "DYehNKdT76V",
+    "runtime_episode_id": "14",
+    "source_episode_ids": [
+      "89",
+      "74",
+      "71"
+    ],
+    "ordered_categories": [
+      "chair",
+      "bed",
+      "toilet"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "DYehNKdT76V",
+    "runtime_episode_id": "15",
+    "source_episode_ids": [
+      "64",
+      "95",
+      "76"
+    ],
+    "ordered_categories": [
+      "toilet",
+      "chair",
+      "bed"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "DYehNKdT76V",
+    "runtime_episode_id": "16",
+    "source_episode_ids": [
+      "15",
+      "84",
+      "61"
+    ],
+    "ordered_categories": [
+      "chair",
+      "bed",
+      "couch"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "DYehNKdT76V",
+    "runtime_episode_id": "17",
+    "source_episode_ids": [
+      "73",
+      "91",
+      "86"
+    ],
+    "ordered_categories": [
+      "toilet",
+      "chair",
+      "toilet"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "DYehNKdT76V",
+    "runtime_episode_id": "18",
+    "source_episode_ids": [
+      "96",
+      "41",
+      "36"
+    ],
+    "ordered_categories": [
+      "chair",
+      "bed",
+      "couch"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "DYehNKdT76V",
+    "runtime_episode_id": "19",
+    "source_episode_ids": [
+      "88",
+      "77",
+      "54"
+    ],
+    "ordered_categories": [
+      "toilet",
+      "couch",
+      "chair"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "Dd4bFSTQ8gi",
+    "runtime_episode_id": "0",
+    "source_episode_ids": [
+      "24",
+      "79",
+      "78"
+    ],
+    "ordered_categories": [
+      "bed",
+      "toilet",
+      "chair"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "Dd4bFSTQ8gi",
+    "runtime_episode_id": "1",
+    "source_episode_ids": [
+      "23",
+      "82",
+      "46"
+    ],
+    "ordered_categories": [
+      "couch",
+      "toilet",
+      "bed"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "Dd4bFSTQ8gi",
+    "runtime_episode_id": "2",
+    "source_episode_ids": [
+      "60",
+      "39",
+      "49"
+    ],
+    "ordered_categories": [
+      "chair",
+      "bed",
+      "toilet"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "Dd4bFSTQ8gi",
+    "runtime_episode_id": "3",
+    "source_episode_ids": [
+      "65",
+      "69",
+      "68"
+    ],
+    "ordered_categories": [
+      "chair",
+      "toilet",
+      "bed"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "Dd4bFSTQ8gi",
+    "runtime_episode_id": "4",
+    "source_episode_ids": [
+      "51",
+      "66",
+      "83"
+    ],
+    "ordered_categories": [
+      "bed",
+      "toilet",
+      "chair"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "Dd4bFSTQ8gi",
+    "runtime_episode_id": "5",
+    "source_episode_ids": [
+      "29",
+      "84",
+      "85"
+    ],
+    "ordered_categories": [
+      "couch",
+      "chair",
+      "couch"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "Dd4bFSTQ8gi",
+    "runtime_episode_id": "6",
+    "source_episode_ids": [
+      "48",
+      "71",
+      "77"
+    ],
+    "ordered_categories": [
+      "bed",
+      "chair",
+      "toilet"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "Dd4bFSTQ8gi",
+    "runtime_episode_id": "7",
+    "source_episode_ids": [
+      "1",
+      "74",
+      "93"
+    ],
+    "ordered_categories": [
+      "couch",
+      "chair",
+      "couch"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "Dd4bFSTQ8gi",
+    "runtime_episode_id": "8",
+    "source_episode_ids": [
+      "97",
+      "80",
+      "89"
+    ],
+    "ordered_categories": [
+      "chair",
+      "bed",
+      "chair"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "Dd4bFSTQ8gi",
+    "runtime_episode_id": "9",
+    "source_episode_ids": [
+      "63",
+      "86",
+      "33"
+    ],
+    "ordered_categories": [
+      "bed",
+      "toilet",
+      "couch"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "Dd4bFSTQ8gi",
+    "runtime_episode_id": "10",
+    "source_episode_ids": [
+      "62",
+      "55",
+      "16"
+    ],
+    "ordered_categories": [
+      "bed",
+      "toilet",
+      "couch"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "Dd4bFSTQ8gi",
+    "runtime_episode_id": "11",
+    "source_episode_ids": [
+      "52",
+      "90",
+      "98"
+    ],
+    "ordered_categories": [
+      "toilet",
+      "couch",
+      "chair"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "Dd4bFSTQ8gi",
+    "runtime_episode_id": "12",
+    "source_episode_ids": [
+      "61",
+      "72",
+      "64"
+    ],
+    "ordered_categories": [
+      "chair",
+      "toilet",
+      "chair"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "Dd4bFSTQ8gi",
+    "runtime_episode_id": "13",
+    "source_episode_ids": [
+      "73",
+      "54",
+      "91"
+    ],
+    "ordered_categories": [
+      "chair",
+      "bed",
+      "couch"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "Dd4bFSTQ8gi",
+    "runtime_episode_id": "14",
+    "source_episode_ids": [
+      "88",
+      "20",
+      "96"
+    ],
+    "ordered_categories": [
+      "toilet",
+      "bed",
+      "couch"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "Dd4bFSTQ8gi",
+    "runtime_episode_id": "15",
+    "source_episode_ids": [
+      "40",
+      "94",
+      "34"
+    ],
+    "ordered_categories": [
+      "toilet",
+      "chair",
+      "bed"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "Dd4bFSTQ8gi",
+    "runtime_episode_id": "16",
+    "source_episode_ids": [
+      "45",
+      "15",
+      "57"
+    ],
+    "ordered_categories": [
+      "bed",
+      "couch",
+      "bed"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "Dd4bFSTQ8gi",
+    "runtime_episode_id": "17",
+    "source_episode_ids": [
+      "58",
+      "56",
+      "76"
+    ],
+    "ordered_categories": [
+      "toilet",
+      "chair",
+      "bed"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "Dd4bFSTQ8gi",
+    "runtime_episode_id": "18",
+    "source_episode_ids": [
+      "92",
+      "81",
+      "50"
+    ],
+    "ordered_categories": [
+      "toilet",
+      "chair",
+      "bed"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "Dd4bFSTQ8gi",
+    "runtime_episode_id": "19",
+    "source_episode_ids": [
+      "75",
+      "95",
+      "59"
+    ],
+    "ordered_categories": [
+      "couch",
+      "bed",
+      "toilet"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "Nfvxx8J5NCo",
+    "runtime_episode_id": "0",
+    "source_episode_ids": [
+      "83",
+      "41",
+      "11"
+    ],
+    "ordered_categories": [
+      "tv",
+      "bed",
+      "couch"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "Nfvxx8J5NCo",
+    "runtime_episode_id": "1",
+    "source_episode_ids": [
+      "48",
+      "42",
+      "98"
+    ],
+    "ordered_categories": [
+      "tv",
+      "bed",
+      "tv"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "Nfvxx8J5NCo",
+    "runtime_episode_id": "2",
+    "source_episode_ids": [
+      "75",
+      "87",
+      "65"
+    ],
+    "ordered_categories": [
+      "chair",
+      "toilet",
+      "couch"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "Nfvxx8J5NCo",
+    "runtime_episode_id": "3",
+    "source_episode_ids": [
+      "33",
+      "77",
+      "71"
+    ],
+    "ordered_categories": [
+      "couch",
+      "tv",
+      "toilet"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "Nfvxx8J5NCo",
+    "runtime_episode_id": "4",
+    "source_episode_ids": [
+      "27",
+      "40",
+      "50"
+    ],
+    "ordered_categories": [
+      "bed",
+      "toilet",
+      "bed"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "Nfvxx8J5NCo",
+    "runtime_episode_id": "5",
+    "source_episode_ids": [
+      "51",
+      "76",
+      "66"
+    ],
+    "ordered_categories": [
+      "chair",
+      "bed",
+      "tv"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "Nfvxx8J5NCo",
+    "runtime_episode_id": "6",
+    "source_episode_ids": [
+      "79",
+      "37",
+      "69"
+    ],
+    "ordered_categories": [
+      "toilet",
+      "bed",
+      "couch"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "Nfvxx8J5NCo",
+    "runtime_episode_id": "7",
+    "source_episode_ids": [
+      "80",
+      "92",
+      "94"
+    ],
+    "ordered_categories": [
+      "couch",
+      "tv",
+      "chair"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "Nfvxx8J5NCo",
+    "runtime_episode_id": "8",
+    "source_episode_ids": [
+      "81",
+      "84",
+      "93"
+    ],
+    "ordered_categories": [
+      "chair",
+      "toilet",
+      "tv"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "Nfvxx8J5NCo",
+    "runtime_episode_id": "9",
+    "source_episode_ids": [
+      "96",
+      "56",
+      "9"
+    ],
+    "ordered_categories": [
+      "toilet",
+      "chair",
+      "tv"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "Nfvxx8J5NCo",
+    "runtime_episode_id": "10",
+    "source_episode_ids": [
+      "59",
+      "60",
+      "78"
+    ],
+    "ordered_categories": [
+      "toilet",
+      "couch",
+      "tv"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "Nfvxx8J5NCo",
+    "runtime_episode_id": "11",
+    "source_episode_ids": [
+      "5",
+      "88",
+      "52"
+    ],
+    "ordered_categories": [
+      "toilet",
+      "couch",
+      "chair"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "Nfvxx8J5NCo",
+    "runtime_episode_id": "12",
+    "source_episode_ids": [
+      "86",
+      "44",
+      "31"
+    ],
+    "ordered_categories": [
+      "couch",
+      "chair",
+      "bed"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "Nfvxx8J5NCo",
+    "runtime_episode_id": "13",
+    "source_episode_ids": [
+      "82",
+      "91",
+      "90"
+    ],
+    "ordered_categories": [
+      "bed",
+      "chair",
+      "bed"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "Nfvxx8J5NCo",
+    "runtime_episode_id": "14",
+    "source_episode_ids": [
+      "70",
+      "85",
+      "32"
+    ],
+    "ordered_categories": [
+      "couch",
+      "toilet",
+      "bed"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "Nfvxx8J5NCo",
+    "runtime_episode_id": "15",
+    "source_episode_ids": [
+      "45",
+      "57",
+      "73"
+    ],
+    "ordered_categories": [
+      "chair",
+      "tv",
+      "toilet"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "Nfvxx8J5NCo",
+    "runtime_episode_id": "16",
+    "source_episode_ids": [
+      "72",
+      "97",
+      "18"
+    ],
+    "ordered_categories": [
+      "tv",
+      "bed",
+      "couch"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "Nfvxx8J5NCo",
+    "runtime_episode_id": "17",
+    "source_episode_ids": [
+      "54",
+      "49",
+      "89"
+    ],
+    "ordered_categories": [
+      "bed",
+      "tv",
+      "chair"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "Nfvxx8J5NCo",
+    "runtime_episode_id": "18",
+    "source_episode_ids": [
+      "74",
+      "46",
+      "0"
+    ],
+    "ordered_categories": [
+      "tv",
+      "chair",
+      "toilet"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "Nfvxx8J5NCo",
+    "runtime_episode_id": "19",
+    "source_episode_ids": [
+      "61",
+      "21",
+      "95"
+    ],
+    "ordered_categories": [
+      "bed",
+      "toilet",
+      "chair"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "QaLdnwvtxbs",
+    "runtime_episode_id": "0",
+    "source_episode_ids": [
+      "96",
+      "82",
+      "75"
+    ],
+    "ordered_categories": [
+      "bed",
+      "tv",
+      "bed"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "QaLdnwvtxbs",
+    "runtime_episode_id": "1",
+    "source_episode_ids": [
+      "71",
+      "92",
+      "45"
+    ],
+    "ordered_categories": [
+      "couch",
+      "tv",
+      "bed"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "QaLdnwvtxbs",
+    "runtime_episode_id": "2",
+    "source_episode_ids": [
+      "53",
+      "8",
+      "86"
+    ],
+    "ordered_categories": [
+      "bed",
+      "chair",
+      "couch"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "QaLdnwvtxbs",
+    "runtime_episode_id": "3",
+    "source_episode_ids": [
+      "69",
+      "91",
+      "88"
+    ],
+    "ordered_categories": [
+      "chair",
+      "tv",
+      "couch"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "QaLdnwvtxbs",
+    "runtime_episode_id": "4",
+    "source_episode_ids": [
+      "43",
+      "68",
+      "74"
+    ],
+    "ordered_categories": [
+      "tv",
+      "bed",
+      "chair"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "QaLdnwvtxbs",
+    "runtime_episode_id": "5",
+    "source_episode_ids": [
+      "38",
+      "67",
+      "52"
+    ],
+    "ordered_categories": [
+      "tv",
+      "couch",
+      "bed"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "QaLdnwvtxbs",
+    "runtime_episode_id": "6",
+    "source_episode_ids": [
+      "55",
+      "57",
+      "77"
+    ],
+    "ordered_categories": [
+      "bed",
+      "couch",
+      "bed"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "QaLdnwvtxbs",
+    "runtime_episode_id": "7",
+    "source_episode_ids": [
+      "85",
+      "36",
+      "78"
+    ],
+    "ordered_categories": [
+      "couch",
+      "bed",
+      "tv"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "QaLdnwvtxbs",
+    "runtime_episode_id": "8",
+    "source_episode_ids": [
+      "81",
+      "98",
+      "65"
+    ],
+    "ordered_categories": [
+      "chair",
+      "bed",
+      "couch"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "QaLdnwvtxbs",
+    "runtime_episode_id": "9",
+    "source_episode_ids": [
+      "80",
+      "46",
+      "34"
+    ],
+    "ordered_categories": [
+      "chair",
+      "tv",
+      "couch"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "QaLdnwvtxbs",
+    "runtime_episode_id": "10",
+    "source_episode_ids": [
+      "83",
+      "97",
+      "62"
+    ],
+    "ordered_categories": [
+      "tv",
+      "bed",
+      "chair"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "QaLdnwvtxbs",
+    "runtime_episode_id": "11",
+    "source_episode_ids": [
+      "31",
+      "21",
+      "42"
+    ],
+    "ordered_categories": [
+      "chair",
+      "bed",
+      "tv"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "QaLdnwvtxbs",
+    "runtime_episode_id": "12",
+    "source_episode_ids": [
+      "51",
+      "90",
+      "61"
+    ],
+    "ordered_categories": [
+      "tv",
+      "chair",
+      "couch"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "QaLdnwvtxbs",
+    "runtime_episode_id": "13",
+    "source_episode_ids": [
+      "5",
+      "93",
+      "87"
+    ],
+    "ordered_categories": [
+      "chair",
+      "bed",
+      "chair"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "QaLdnwvtxbs",
+    "runtime_episode_id": "14",
+    "source_episode_ids": [
+      "72",
+      "70",
+      "95"
+    ],
+    "ordered_categories": [
+      "couch",
+      "chair",
+      "tv"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "QaLdnwvtxbs",
+    "runtime_episode_id": "15",
+    "source_episode_ids": [
+      "73",
+      "94",
+      "41"
+    ],
+    "ordered_categories": [
+      "bed",
+      "tv",
+      "couch"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "QaLdnwvtxbs",
+    "runtime_episode_id": "16",
+    "source_episode_ids": [
+      "76",
+      "59",
+      "89"
+    ],
+    "ordered_categories": [
+      "tv",
+      "chair",
+      "couch"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "QaLdnwvtxbs",
+    "runtime_episode_id": "17",
+    "source_episode_ids": [
+      "60",
+      "79",
+      "39"
+    ],
+    "ordered_categories": [
+      "couch",
+      "chair",
+      "bed"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "QaLdnwvtxbs",
+    "runtime_episode_id": "18",
+    "source_episode_ids": [
+      "35",
+      "63",
+      "64"
+    ],
+    "ordered_categories": [
+      "couch",
+      "tv",
+      "chair"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "QaLdnwvtxbs",
+    "runtime_episode_id": "19",
+    "source_episode_ids": [
+      "25",
+      "33",
+      "66"
+    ],
+    "ordered_categories": [
+      "bed",
+      "chair",
+      "couch"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "TEEsavR23oF",
+    "runtime_episode_id": "0",
+    "source_episode_ids": [
+      "90",
+      "43",
+      "97"
+    ],
+    "ordered_categories": [
+      "chair",
+      "toilet",
+      "plant"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "TEEsavR23oF",
+    "runtime_episode_id": "1",
+    "source_episode_ids": [
+      "71",
+      "76",
+      "55"
+    ],
+    "ordered_categories": [
+      "couch",
+      "chair",
+      "toilet"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "TEEsavR23oF",
+    "runtime_episode_id": "2",
+    "source_episode_ids": [
+      "52",
+      "78",
+      "15"
+    ],
+    "ordered_categories": [
+      "couch",
+      "bed",
+      "toilet"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "TEEsavR23oF",
+    "runtime_episode_id": "3",
+    "source_episode_ids": [
+      "2",
+      "63",
+      "64"
+    ],
+    "ordered_categories": [
+      "couch",
+      "bed",
+      "plant"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "TEEsavR23oF",
+    "runtime_episode_id": "4",
+    "source_episode_ids": [
+      "84",
+      "79",
+      "70"
+    ],
+    "ordered_categories": [
+      "plant",
+      "bed",
+      "chair"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "TEEsavR23oF",
+    "runtime_episode_id": "5",
+    "source_episode_ids": [
+      "38",
+      "33",
+      "75"
+    ],
+    "ordered_categories": [
+      "plant",
+      "bed",
+      "couch"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "TEEsavR23oF",
+    "runtime_episode_id": "6",
+    "source_episode_ids": [
+      "93",
+      "82",
+      "47"
+    ],
+    "ordered_categories": [
+      "bed",
+      "chair",
+      "couch"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "TEEsavR23oF",
+    "runtime_episode_id": "7",
+    "source_episode_ids": [
+      "20",
+      "19",
+      "16"
+    ],
+    "ordered_categories": [
+      "toilet",
+      "couch",
+      "bed"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "TEEsavR23oF",
+    "runtime_episode_id": "8",
+    "source_episode_ids": [
+      "74",
+      "51",
+      "48"
+    ],
+    "ordered_categories": [
+      "plant",
+      "couch",
+      "bed"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "TEEsavR23oF",
+    "runtime_episode_id": "9",
+    "source_episode_ids": [
+      "12",
+      "60",
+      "40"
+    ],
+    "ordered_categories": [
+      "bed",
+      "chair",
+      "toilet"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "TEEsavR23oF",
+    "runtime_episode_id": "10",
+    "source_episode_ids": [
+      "72",
+      "58",
+      "54"
+    ],
+    "ordered_categories": [
+      "plant",
+      "chair",
+      "couch"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "TEEsavR23oF",
+    "runtime_episode_id": "11",
+    "source_episode_ids": [
+      "25",
+      "96",
+      "86"
+    ],
+    "ordered_categories": [
+      "bed",
+      "toilet",
+      "plant"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "TEEsavR23oF",
+    "runtime_episode_id": "12",
+    "source_episode_ids": [
+      "91",
+      "31",
+      "11"
+    ],
+    "ordered_categories": [
+      "chair",
+      "couch",
+      "toilet"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "TEEsavR23oF",
+    "runtime_episode_id": "13",
+    "source_episode_ids": [
+      "44",
+      "89",
+      "45"
+    ],
+    "ordered_categories": [
+      "toilet",
+      "plant",
+      "toilet"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "TEEsavR23oF",
+    "runtime_episode_id": "14",
+    "source_episode_ids": [
+      "42",
+      "49",
+      "95"
+    ],
+    "ordered_categories": [
+      "bed",
+      "plant",
+      "bed"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "TEEsavR23oF",
+    "runtime_episode_id": "15",
+    "source_episode_ids": [
+      "65",
+      "73",
+      "37"
+    ],
+    "ordered_categories": [
+      "chair",
+      "plant",
+      "chair"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "TEEsavR23oF",
+    "runtime_episode_id": "16",
+    "source_episode_ids": [
+      "77",
+      "9",
+      "36"
+    ],
+    "ordered_categories": [
+      "toilet",
+      "bed",
+      "plant"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "TEEsavR23oF",
+    "runtime_episode_id": "17",
+    "source_episode_ids": [
+      "88",
+      "66",
+      "56"
+    ],
+    "ordered_categories": [
+      "chair",
+      "couch",
+      "chair"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "TEEsavR23oF",
+    "runtime_episode_id": "18",
+    "source_episode_ids": [
+      "39",
+      "68",
+      "62"
+    ],
+    "ordered_categories": [
+      "toilet",
+      "chair",
+      "plant"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "TEEsavR23oF",
+    "runtime_episode_id": "19",
+    "source_episode_ids": [
+      "69",
+      "61",
+      "92"
+    ],
+    "ordered_categories": [
+      "couch",
+      "plant",
+      "couch"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "XB4GS9ShBRE",
+    "runtime_episode_id": "0",
+    "source_episode_ids": [
+      "23",
+      "35",
+      "47"
+    ],
+    "ordered_categories": [
+      "chair",
+      "toilet",
+      "couch"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "XB4GS9ShBRE",
+    "runtime_episode_id": "1",
+    "source_episode_ids": [
+      "89",
+      "58",
+      "77"
+    ],
+    "ordered_categories": [
+      "toilet",
+      "bed",
+      "toilet"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "XB4GS9ShBRE",
+    "runtime_episode_id": "2",
+    "source_episode_ids": [
+      "29",
+      "42",
+      "55"
+    ],
+    "ordered_categories": [
+      "chair",
+      "bed",
+      "toilet"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "XB4GS9ShBRE",
+    "runtime_episode_id": "3",
+    "source_episode_ids": [
+      "46",
+      "2",
+      "60"
+    ],
+    "ordered_categories": [
+      "bed",
+      "couch",
+      "toilet"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "XB4GS9ShBRE",
+    "runtime_episode_id": "4",
+    "source_episode_ids": [
+      "70",
+      "50",
+      "41"
+    ],
+    "ordered_categories": [
+      "chair",
+      "couch",
+      "chair"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "XB4GS9ShBRE",
+    "runtime_episode_id": "5",
+    "source_episode_ids": [
+      "90",
+      "85",
+      "59"
+    ],
+    "ordered_categories": [
+      "couch",
+      "chair",
+      "bed"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "XB4GS9ShBRE",
+    "runtime_episode_id": "6",
+    "source_episode_ids": [
+      "54",
+      "25",
+      "8"
+    ],
+    "ordered_categories": [
+      "couch",
+      "chair",
+      "toilet"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "XB4GS9ShBRE",
+    "runtime_episode_id": "7",
+    "source_episode_ids": [
+      "81",
+      "33",
+      "40"
+    ],
+    "ordered_categories": [
+      "toilet",
+      "chair",
+      "bed"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "XB4GS9ShBRE",
+    "runtime_episode_id": "8",
+    "source_episode_ids": [
+      "96",
+      "80",
+      "78"
+    ],
+    "ordered_categories": [
+      "couch",
+      "chair",
+      "toilet"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "XB4GS9ShBRE",
+    "runtime_episode_id": "9",
+    "source_episode_ids": [
+      "64",
+      "82",
+      "79"
+    ],
+    "ordered_categories": [
+      "toilet",
+      "chair",
+      "toilet"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "XB4GS9ShBRE",
+    "runtime_episode_id": "10",
+    "source_episode_ids": [
+      "97",
+      "73",
+      "56"
+    ],
+    "ordered_categories": [
+      "couch",
+      "bed",
+      "chair"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "XB4GS9ShBRE",
+    "runtime_episode_id": "11",
+    "source_episode_ids": [
+      "51",
+      "94",
+      "61"
+    ],
+    "ordered_categories": [
+      "bed",
+      "toilet",
+      "bed"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "XB4GS9ShBRE",
+    "runtime_episode_id": "12",
+    "source_episode_ids": [
+      "39",
+      "84",
+      "76"
+    ],
+    "ordered_categories": [
+      "chair",
+      "couch",
+      "bed"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "XB4GS9ShBRE",
+    "runtime_episode_id": "13",
+    "source_episode_ids": [
+      "68",
+      "91",
+      "83"
+    ],
+    "ordered_categories": [
+      "bed",
+      "chair",
+      "couch"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "XB4GS9ShBRE",
+    "runtime_episode_id": "14",
+    "source_episode_ids": [
+      "88",
+      "45",
+      "87"
+    ],
+    "ordered_categories": [
+      "bed",
+      "couch",
+      "bed"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "XB4GS9ShBRE",
+    "runtime_episode_id": "15",
+    "source_episode_ids": [
+      "95",
+      "92",
+      "69"
+    ],
+    "ordered_categories": [
+      "toilet",
+      "couch",
+      "bed"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "XB4GS9ShBRE",
+    "runtime_episode_id": "16",
+    "source_episode_ids": [
+      "49",
+      "62",
+      "34"
+    ],
+    "ordered_categories": [
+      "bed",
+      "toilet",
+      "bed"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "XB4GS9ShBRE",
+    "runtime_episode_id": "17",
+    "source_episode_ids": [
+      "98",
+      "67",
+      "75"
+    ],
+    "ordered_categories": [
+      "couch",
+      "bed",
+      "couch"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "XB4GS9ShBRE",
+    "runtime_episode_id": "18",
+    "source_episode_ids": [
+      "65",
+      "93",
+      "74"
+    ],
+    "ordered_categories": [
+      "toilet",
+      "couch",
+      "chair"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "XB4GS9ShBRE",
+    "runtime_episode_id": "19",
+    "source_episode_ids": [
+      "37",
+      "72",
+      "86"
+    ],
+    "ordered_categories": [
+      "chair",
+      "couch",
+      "toilet"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "bxsVRursffK",
+    "runtime_episode_id": "0",
+    "source_episode_ids": [
+      "69",
+      "58",
+      "51"
+    ],
+    "ordered_categories": [
+      "chair",
+      "bed",
+      "chair"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "bxsVRursffK",
+    "runtime_episode_id": "1",
+    "source_episode_ids": [
+      "31",
+      "87",
+      "82"
+    ],
+    "ordered_categories": [
+      "toilet",
+      "bed",
+      "toilet"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "bxsVRursffK",
+    "runtime_episode_id": "2",
+    "source_episode_ids": [
+      "34",
+      "93",
+      "49"
+    ],
+    "ordered_categories": [
+      "bed",
+      "toilet",
+      "chair"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "bxsVRursffK",
+    "runtime_episode_id": "3",
+    "source_episode_ids": [
+      "19",
+      "71",
+      "46"
+    ],
+    "ordered_categories": [
+      "chair",
+      "bed",
+      "toilet"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "bxsVRursffK",
+    "runtime_episode_id": "4",
+    "source_episode_ids": [
+      "63",
+      "97",
+      "89"
+    ],
+    "ordered_categories": [
+      "chair",
+      "bed",
+      "chair"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "bxsVRursffK",
+    "runtime_episode_id": "5",
+    "source_episode_ids": [
+      "80",
+      "68",
+      "39"
+    ],
+    "ordered_categories": [
+      "bed",
+      "chair",
+      "toilet"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "bxsVRursffK",
+    "runtime_episode_id": "6",
+    "source_episode_ids": [
+      "85",
+      "57",
+      "84"
+    ],
+    "ordered_categories": [
+      "bed",
+      "chair",
+      "toilet"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "bxsVRursffK",
+    "runtime_episode_id": "7",
+    "source_episode_ids": [
+      "60",
+      "72",
+      "27"
+    ],
+    "ordered_categories": [
+      "bed",
+      "chair",
+      "toilet"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "bxsVRursffK",
+    "runtime_episode_id": "8",
+    "source_episode_ids": [
+      "81",
+      "38",
+      "42"
+    ],
+    "ordered_categories": [
+      "toilet",
+      "bed",
+      "toilet"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "bxsVRursffK",
+    "runtime_episode_id": "9",
+    "source_episode_ids": [
+      "67",
+      "52",
+      "74"
+    ],
+    "ordered_categories": [
+      "chair",
+      "toilet",
+      "chair"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "bxsVRursffK",
+    "runtime_episode_id": "10",
+    "source_episode_ids": [
+      "10",
+      "75",
+      "47"
+    ],
+    "ordered_categories": [
+      "toilet",
+      "chair",
+      "bed"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "bxsVRursffK",
+    "runtime_episode_id": "11",
+    "source_episode_ids": [
+      "96",
+      "62",
+      "55"
+    ],
+    "ordered_categories": [
+      "bed",
+      "toilet",
+      "bed"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "bxsVRursffK",
+    "runtime_episode_id": "12",
+    "source_episode_ids": [
+      "3",
+      "44",
+      "91"
+    ],
+    "ordered_categories": [
+      "toilet",
+      "chair",
+      "bed"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "bxsVRursffK",
+    "runtime_episode_id": "13",
+    "source_episode_ids": [
+      "90",
+      "30",
+      "50"
+    ],
+    "ordered_categories": [
+      "chair",
+      "bed",
+      "chair"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "bxsVRursffK",
+    "runtime_episode_id": "14",
+    "source_episode_ids": [
+      "79",
+      "98",
+      "73"
+    ],
+    "ordered_categories": [
+      "bed",
+      "toilet",
+      "chair"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "bxsVRursffK",
+    "runtime_episode_id": "15",
+    "source_episode_ids": [
+      "86",
+      "64",
+      "9"
+    ],
+    "ordered_categories": [
+      "toilet",
+      "chair",
+      "toilet"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "bxsVRursffK",
+    "runtime_episode_id": "16",
+    "source_episode_ids": [
+      "65",
+      "92",
+      "78"
+    ],
+    "ordered_categories": [
+      "chair",
+      "bed",
+      "chair"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "bxsVRursffK",
+    "runtime_episode_id": "17",
+    "source_episode_ids": [
+      "88",
+      "43",
+      "95"
+    ],
+    "ordered_categories": [
+      "chair",
+      "bed",
+      "chair"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "bxsVRursffK",
+    "runtime_episode_id": "18",
+    "source_episode_ids": [
+      "76",
+      "77",
+      "83"
+    ],
+    "ordered_categories": [
+      "toilet",
+      "bed",
+      "toilet"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "bxsVRursffK",
+    "runtime_episode_id": "19",
+    "source_episode_ids": [
+      "61",
+      "22",
+      "94"
+    ],
+    "ordered_categories": [
+      "bed",
+      "toilet",
+      "bed"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "cvZr5TUy5C5",
+    "runtime_episode_id": "0",
+    "source_episode_ids": [
+      "89",
+      "85",
+      "56"
+    ],
+    "ordered_categories": [
+      "toilet",
+      "bed",
+      "chair"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "cvZr5TUy5C5",
+    "runtime_episode_id": "1",
+    "source_episode_ids": [
+      "53",
+      "92",
+      "75"
+    ],
+    "ordered_categories": [
+      "chair",
+      "bed",
+      "tv"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "cvZr5TUy5C5",
+    "runtime_episode_id": "2",
+    "source_episode_ids": [
+      "87",
+      "57",
+      "70"
+    ],
+    "ordered_categories": [
+      "bed",
+      "plant",
+      "bed"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "cvZr5TUy5C5",
+    "runtime_episode_id": "3",
+    "source_episode_ids": [
+      "98",
+      "32",
+      "64"
+    ],
+    "ordered_categories": [
+      "tv",
+      "plant",
+      "chair"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "cvZr5TUy5C5",
+    "runtime_episode_id": "4",
+    "source_episode_ids": [
+      "23",
+      "58",
+      "71"
+    ],
+    "ordered_categories": [
+      "chair",
+      "tv",
+      "bed"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "cvZr5TUy5C5",
+    "runtime_episode_id": "5",
+    "source_episode_ids": [
+      "30",
+      "91",
+      "24"
+    ],
+    "ordered_categories": [
+      "plant",
+      "couch",
+      "toilet"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "cvZr5TUy5C5",
+    "runtime_episode_id": "6",
+    "source_episode_ids": [
+      "82",
+      "61",
+      "47"
+    ],
+    "ordered_categories": [
+      "couch",
+      "tv",
+      "toilet"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "cvZr5TUy5C5",
+    "runtime_episode_id": "7",
+    "source_episode_ids": [
+      "0",
+      "52",
+      "88"
+    ],
+    "ordered_categories": [
+      "couch",
+      "plant",
+      "bed"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "cvZr5TUy5C5",
+    "runtime_episode_id": "8",
+    "source_episode_ids": [
+      "37",
+      "14",
+      "73"
+    ],
+    "ordered_categories": [
+      "plant",
+      "toilet",
+      "bed"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "cvZr5TUy5C5",
+    "runtime_episode_id": "9",
+    "source_episode_ids": [
+      "62",
+      "44",
+      "65"
+    ],
+    "ordered_categories": [
+      "chair",
+      "couch",
+      "plant"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "cvZr5TUy5C5",
+    "runtime_episode_id": "10",
+    "source_episode_ids": [
+      "94",
+      "95",
+      "6"
+    ],
+    "ordered_categories": [
+      "bed",
+      "plant",
+      "toilet"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "cvZr5TUy5C5",
+    "runtime_episode_id": "11",
+    "source_episode_ids": [
+      "74",
+      "59",
+      "22"
+    ],
+    "ordered_categories": [
+      "bed",
+      "tv",
+      "couch"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "cvZr5TUy5C5",
+    "runtime_episode_id": "12",
+    "source_episode_ids": [
+      "78",
+      "83",
+      "28"
+    ],
+    "ordered_categories": [
+      "tv",
+      "chair",
+      "couch"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "cvZr5TUy5C5",
+    "runtime_episode_id": "13",
+    "source_episode_ids": [
+      "38",
+      "79",
+      "67"
+    ],
+    "ordered_categories": [
+      "chair",
+      "toilet",
+      "tv"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "cvZr5TUy5C5",
+    "runtime_episode_id": "14",
+    "source_episode_ids": [
+      "33",
+      "77",
+      "50"
+    ],
+    "ordered_categories": [
+      "toilet",
+      "tv",
+      "toilet"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "cvZr5TUy5C5",
+    "runtime_episode_id": "15",
+    "source_episode_ids": [
+      "81",
+      "63",
+      "55"
+    ],
+    "ordered_categories": [
+      "toilet",
+      "couch",
+      "chair"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "cvZr5TUy5C5",
+    "runtime_episode_id": "16",
+    "source_episode_ids": [
+      "96",
+      "27",
+      "66"
+    ],
+    "ordered_categories": [
+      "couch",
+      "toilet",
+      "chair"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "cvZr5TUy5C5",
+    "runtime_episode_id": "17",
+    "source_episode_ids": [
+      "86",
+      "93",
+      "39"
+    ],
+    "ordered_categories": [
+      "toilet",
+      "tv",
+      "chair"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "cvZr5TUy5C5",
+    "runtime_episode_id": "18",
+    "source_episode_ids": [
+      "72",
+      "68",
+      "45"
+    ],
+    "ordered_categories": [
+      "plant",
+      "chair",
+      "couch"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "cvZr5TUy5C5",
+    "runtime_episode_id": "19",
+    "source_episode_ids": [
+      "84",
+      "97",
+      "17"
+    ],
+    "ordered_categories": [
+      "tv",
+      "toilet",
+      "couch"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "mL8ThkuaVTM",
+    "runtime_episode_id": "0",
+    "source_episode_ids": [
+      "32",
+      "53",
+      "84"
+    ],
+    "ordered_categories": [
+      "toilet",
+      "chair",
+      "toilet"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "mL8ThkuaVTM",
+    "runtime_episode_id": "1",
+    "source_episode_ids": [
+      "24",
+      "88",
+      "42"
+    ],
+    "ordered_categories": [
+      "toilet",
+      "bed",
+      "couch"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "mL8ThkuaVTM",
+    "runtime_episode_id": "2",
+    "source_episode_ids": [
+      "76",
+      "21",
+      "30"
+    ],
+    "ordered_categories": [
+      "bed",
+      "toilet",
+      "bed"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "mL8ThkuaVTM",
+    "runtime_episode_id": "3",
+    "source_episode_ids": [
+      "56",
+      "82",
+      "60"
+    ],
+    "ordered_categories": [
+      "toilet",
+      "bed",
+      "chair"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "mL8ThkuaVTM",
+    "runtime_episode_id": "4",
+    "source_episode_ids": [
+      "80",
+      "83",
+      "78"
+    ],
+    "ordered_categories": [
+      "bed",
+      "couch",
+      "toilet"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "mL8ThkuaVTM",
+    "runtime_episode_id": "5",
+    "source_episode_ids": [
+      "45",
+      "38",
+      "93"
+    ],
+    "ordered_categories": [
+      "chair",
+      "couch",
+      "toilet"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "mL8ThkuaVTM",
+    "runtime_episode_id": "6",
+    "source_episode_ids": [
+      "81",
+      "57",
+      "91"
+    ],
+    "ordered_categories": [
+      "toilet",
+      "chair",
+      "couch"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "mL8ThkuaVTM",
+    "runtime_episode_id": "7",
+    "source_episode_ids": [
+      "89",
+      "86",
+      "70"
+    ],
+    "ordered_categories": [
+      "couch",
+      "bed",
+      "couch"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "mL8ThkuaVTM",
+    "runtime_episode_id": "8",
+    "source_episode_ids": [
+      "67",
+      "69",
+      "87"
+    ],
+    "ordered_categories": [
+      "couch",
+      "bed",
+      "toilet"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "mL8ThkuaVTM",
+    "runtime_episode_id": "9",
+    "source_episode_ids": [
+      "51",
+      "92",
+      "4"
+    ],
+    "ordered_categories": [
+      "chair",
+      "bed",
+      "couch"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "mL8ThkuaVTM",
+    "runtime_episode_id": "10",
+    "source_episode_ids": [
+      "75",
+      "77",
+      "79"
+    ],
+    "ordered_categories": [
+      "couch",
+      "bed",
+      "chair"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "mL8ThkuaVTM",
+    "runtime_episode_id": "11",
+    "source_episode_ids": [
+      "72",
+      "54",
+      "97"
+    ],
+    "ordered_categories": [
+      "couch",
+      "chair",
+      "couch"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "mL8ThkuaVTM",
+    "runtime_episode_id": "12",
+    "source_episode_ids": [
+      "96",
+      "37",
+      "49"
+    ],
+    "ordered_categories": [
+      "toilet",
+      "bed",
+      "toilet"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "mL8ThkuaVTM",
+    "runtime_episode_id": "13",
+    "source_episode_ids": [
+      "68",
+      "58",
+      "47"
+    ],
+    "ordered_categories": [
+      "couch",
+      "toilet",
+      "chair"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "mL8ThkuaVTM",
+    "runtime_episode_id": "14",
+    "source_episode_ids": [
+      "73",
+      "90",
+      "74"
+    ],
+    "ordered_categories": [
+      "bed",
+      "couch",
+      "chair"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "mL8ThkuaVTM",
+    "runtime_episode_id": "15",
+    "source_episode_ids": [
+      "39",
+      "63",
+      "50"
+    ],
+    "ordered_categories": [
+      "chair",
+      "toilet",
+      "bed"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "mL8ThkuaVTM",
+    "runtime_episode_id": "16",
+    "source_episode_ids": [
+      "46",
+      "9",
+      "66"
+    ],
+    "ordered_categories": [
+      "bed",
+      "couch",
+      "toilet"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "mL8ThkuaVTM",
+    "runtime_episode_id": "17",
+    "source_episode_ids": [
+      "71",
+      "94",
+      "98"
+    ],
+    "ordered_categories": [
+      "toilet",
+      "chair",
+      "couch"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "mL8ThkuaVTM",
+    "runtime_episode_id": "18",
+    "source_episode_ids": [
+      "40",
+      "65",
+      "85"
+    ],
+    "ordered_categories": [
+      "bed",
+      "chair",
+      "bed"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "mL8ThkuaVTM",
+    "runtime_episode_id": "19",
+    "source_episode_ids": [
+      "41",
+      "48",
+      "59"
+    ],
+    "ordered_categories": [
+      "chair",
+      "toilet",
+      "bed"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "mv2HUxq3B53",
+    "runtime_episode_id": "0",
+    "source_episode_ids": [
+      "74",
+      "44",
+      "77"
+    ],
+    "ordered_categories": [
+      "toilet",
+      "bed",
+      "couch"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "mv2HUxq3B53",
+    "runtime_episode_id": "1",
+    "source_episode_ids": [
+      "8",
+      "84",
+      "62"
+    ],
+    "ordered_categories": [
+      "couch",
+      "chair",
+      "couch"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "mv2HUxq3B53",
+    "runtime_episode_id": "2",
+    "source_episode_ids": [
+      "78",
+      "43",
+      "85"
+    ],
+    "ordered_categories": [
+      "couch",
+      "chair",
+      "toilet"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "mv2HUxq3B53",
+    "runtime_episode_id": "3",
+    "source_episode_ids": [
+      "87",
+      "45",
+      "89"
+    ],
+    "ordered_categories": [
+      "bed",
+      "tv",
+      "chair"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "mv2HUxq3B53",
+    "runtime_episode_id": "4",
+    "source_episode_ids": [
+      "17",
+      "60",
+      "70"
+    ],
+    "ordered_categories": [
+      "toilet",
+      "tv",
+      "toilet"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "mv2HUxq3B53",
+    "runtime_episode_id": "5",
+    "source_episode_ids": [
+      "82",
+      "58",
+      "1"
+    ],
+    "ordered_categories": [
+      "tv",
+      "toilet",
+      "couch"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "mv2HUxq3B53",
+    "runtime_episode_id": "6",
+    "source_episode_ids": [
+      "91",
+      "71",
+      "95"
+    ],
+    "ordered_categories": [
+      "couch",
+      "tv",
+      "chair"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "mv2HUxq3B53",
+    "runtime_episode_id": "7",
+    "source_episode_ids": [
+      "81",
+      "20",
+      "90"
+    ],
+    "ordered_categories": [
+      "chair",
+      "toilet",
+      "bed"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "mv2HUxq3B53",
+    "runtime_episode_id": "8",
+    "source_episode_ids": [
+      "67",
+      "53",
+      "66"
+    ],
+    "ordered_categories": [
+      "couch",
+      "toilet",
+      "bed"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "mv2HUxq3B53",
+    "runtime_episode_id": "9",
+    "source_episode_ids": [
+      "96",
+      "93",
+      "64"
+    ],
+    "ordered_categories": [
+      "toilet",
+      "bed",
+      "chair"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "mv2HUxq3B53",
+    "runtime_episode_id": "10",
+    "source_episode_ids": [
+      "37",
+      "40",
+      "98"
+    ],
+    "ordered_categories": [
+      "bed",
+      "couch",
+      "toilet"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "mv2HUxq3B53",
+    "runtime_episode_id": "11",
+    "source_episode_ids": [
+      "33",
+      "83",
+      "76"
+    ],
+    "ordered_categories": [
+      "chair",
+      "bed",
+      "couch"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "mv2HUxq3B53",
+    "runtime_episode_id": "12",
+    "source_episode_ids": [
+      "92",
+      "54",
+      "73"
+    ],
+    "ordered_categories": [
+      "toilet",
+      "chair",
+      "couch"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "mv2HUxq3B53",
+    "runtime_episode_id": "13",
+    "source_episode_ids": [
+      "26",
+      "63",
+      "94"
+    ],
+    "ordered_categories": [
+      "bed",
+      "chair",
+      "tv"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "mv2HUxq3B53",
+    "runtime_episode_id": "14",
+    "source_episode_ids": [
+      "97",
+      "88",
+      "22"
+    ],
+    "ordered_categories": [
+      "tv",
+      "chair",
+      "tv"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "mv2HUxq3B53",
+    "runtime_episode_id": "15",
+    "source_episode_ids": [
+      "80",
+      "2",
+      "42"
+    ],
+    "ordered_categories": [
+      "chair",
+      "couch",
+      "tv"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "mv2HUxq3B53",
+    "runtime_episode_id": "16",
+    "source_episode_ids": [
+      "55",
+      "61",
+      "48"
+    ],
+    "ordered_categories": [
+      "tv",
+      "bed",
+      "toilet"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "mv2HUxq3B53",
+    "runtime_episode_id": "17",
+    "source_episode_ids": [
+      "51",
+      "65",
+      "3"
+    ],
+    "ordered_categories": [
+      "chair",
+      "toilet",
+      "tv"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "mv2HUxq3B53",
+    "runtime_episode_id": "18",
+    "source_episode_ids": [
+      "86",
+      "79",
+      "46"
+    ],
+    "ordered_categories": [
+      "tv",
+      "chair",
+      "tv"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "mv2HUxq3B53",
+    "runtime_episode_id": "19",
+    "source_episode_ids": [
+      "52",
+      "57",
+      "72"
+    ],
+    "ordered_categories": [
+      "bed",
+      "couch",
+      "bed"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "p53SfW6mjZe",
+    "runtime_episode_id": "0",
+    "source_episode_ids": [
+      "68",
+      "50",
+      "63"
+    ],
+    "ordered_categories": [
+      "couch",
+      "toilet",
+      "chair"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "p53SfW6mjZe",
+    "runtime_episode_id": "1",
+    "source_episode_ids": [
+      "58",
+      "87",
+      "4"
+    ],
+    "ordered_categories": [
+      "toilet",
+      "bed",
+      "toilet"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "p53SfW6mjZe",
+    "runtime_episode_id": "2",
+    "source_episode_ids": [
+      "69",
+      "32",
+      "54"
+    ],
+    "ordered_categories": [
+      "chair",
+      "couch",
+      "chair"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "p53SfW6mjZe",
+    "runtime_episode_id": "3",
+    "source_episode_ids": [
+      "57",
+      "46",
+      "43"
+    ],
+    "ordered_categories": [
+      "tv",
+      "toilet",
+      "couch"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "p53SfW6mjZe",
+    "runtime_episode_id": "4",
+    "source_episode_ids": [
+      "10",
+      "79",
+      "89"
+    ],
+    "ordered_categories": [
+      "bed",
+      "tv",
+      "chair"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "p53SfW6mjZe",
+    "runtime_episode_id": "5",
+    "source_episode_ids": [
+      "91",
+      "73",
+      "74"
+    ],
+    "ordered_categories": [
+      "toilet",
+      "tv",
+      "couch"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "p53SfW6mjZe",
+    "runtime_episode_id": "6",
+    "source_episode_ids": [
+      "56",
+      "90",
+      "44"
+    ],
+    "ordered_categories": [
+      "toilet",
+      "bed",
+      "tv"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "p53SfW6mjZe",
+    "runtime_episode_id": "7",
+    "source_episode_ids": [
+      "61",
+      "27",
+      "52"
+    ],
+    "ordered_categories": [
+      "couch",
+      "chair",
+      "bed"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "p53SfW6mjZe",
+    "runtime_episode_id": "8",
+    "source_episode_ids": [
+      "97",
+      "17",
+      "47"
+    ],
+    "ordered_categories": [
+      "bed",
+      "chair",
+      "tv"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "p53SfW6mjZe",
+    "runtime_episode_id": "9",
+    "source_episode_ids": [
+      "96",
+      "75",
+      "76"
+    ],
+    "ordered_categories": [
+      "tv",
+      "couch",
+      "toilet"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "p53SfW6mjZe",
+    "runtime_episode_id": "10",
+    "source_episode_ids": [
+      "64",
+      "65",
+      "84"
+    ],
+    "ordered_categories": [
+      "tv",
+      "couch",
+      "tv"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "p53SfW6mjZe",
+    "runtime_episode_id": "11",
+    "source_episode_ids": [
+      "95",
+      "70",
+      "78"
+    ],
+    "ordered_categories": [
+      "tv",
+      "bed",
+      "couch"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "p53SfW6mjZe",
+    "runtime_episode_id": "12",
+    "source_episode_ids": [
+      "83",
+      "49",
+      "55"
+    ],
+    "ordered_categories": [
+      "chair",
+      "bed",
+      "toilet"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "p53SfW6mjZe",
+    "runtime_episode_id": "13",
+    "source_episode_ids": [
+      "86",
+      "35",
+      "98"
+    ],
+    "ordered_categories": [
+      "bed",
+      "couch",
+      "bed"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "p53SfW6mjZe",
+    "runtime_episode_id": "14",
+    "source_episode_ids": [
+      "19",
+      "24",
+      "77"
+    ],
+    "ordered_categories": [
+      "chair",
+      "tv",
+      "toilet"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "p53SfW6mjZe",
+    "runtime_episode_id": "15",
+    "source_episode_ids": [
+      "45",
+      "62",
+      "85"
+    ],
+    "ordered_categories": [
+      "couch",
+      "toilet",
+      "tv"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "p53SfW6mjZe",
+    "runtime_episode_id": "16",
+    "source_episode_ids": [
+      "59",
+      "40",
+      "60"
+    ],
+    "ordered_categories": [
+      "toilet",
+      "tv",
+      "chair"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "p53SfW6mjZe",
+    "runtime_episode_id": "17",
+    "source_episode_ids": [
+      "20",
+      "71",
+      "88"
+    ],
+    "ordered_categories": [
+      "tv",
+      "toilet",
+      "bed"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "p53SfW6mjZe",
+    "runtime_episode_id": "18",
+    "source_episode_ids": [
+      "18",
+      "72",
+      "94"
+    ],
+    "ordered_categories": [
+      "bed",
+      "chair",
+      "bed"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "p53SfW6mjZe",
+    "runtime_episode_id": "19",
+    "source_episode_ids": [
+      "81",
+      "51",
+      "37"
+    ],
+    "ordered_categories": [
+      "chair",
+      "tv",
+      "bed"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "q3zU7Yy5E5s",
+    "runtime_episode_id": "0",
+    "source_episode_ids": [
+      "88",
+      "54",
+      "64"
+    ],
+    "ordered_categories": [
+      "toilet",
+      "couch",
+      "chair"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "q3zU7Yy5E5s",
+    "runtime_episode_id": "1",
+    "source_episode_ids": [
+      "68",
+      "76",
+      "80"
+    ],
+    "ordered_categories": [
+      "tv",
+      "bed",
+      "tv"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "q3zU7Yy5E5s",
+    "runtime_episode_id": "2",
+    "source_episode_ids": [
+      "82",
+      "23",
+      "62"
+    ],
+    "ordered_categories": [
+      "tv",
+      "bed",
+      "chair"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "q3zU7Yy5E5s",
+    "runtime_episode_id": "3",
+    "source_episode_ids": [
+      "97",
+      "51",
+      "87"
+    ],
+    "ordered_categories": [
+      "chair",
+      "tv",
+      "chair"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "q3zU7Yy5E5s",
+    "runtime_episode_id": "4",
+    "source_episode_ids": [
+      "16",
+      "66",
+      "38"
+    ],
+    "ordered_categories": [
+      "chair",
+      "couch",
+      "tv"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "q3zU7Yy5E5s",
+    "runtime_episode_id": "5",
+    "source_episode_ids": [
+      "45",
+      "84",
+      "85"
+    ],
+    "ordered_categories": [
+      "chair",
+      "couch",
+      "tv"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "q3zU7Yy5E5s",
+    "runtime_episode_id": "6",
+    "source_episode_ids": [
+      "52",
+      "50",
+      "74"
+    ],
+    "ordered_categories": [
+      "couch",
+      "toilet",
+      "couch"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "q3zU7Yy5E5s",
+    "runtime_episode_id": "7",
+    "source_episode_ids": [
+      "96",
+      "73",
+      "35"
+    ],
+    "ordered_categories": [
+      "couch",
+      "bed",
+      "chair"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "q3zU7Yy5E5s",
+    "runtime_episode_id": "8",
+    "source_episode_ids": [
+      "77",
+      "71",
+      "43"
+    ],
+    "ordered_categories": [
+      "couch",
+      "bed",
+      "tv"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "q3zU7Yy5E5s",
+    "runtime_episode_id": "9",
+    "source_episode_ids": [
+      "33",
+      "49",
+      "65"
+    ],
+    "ordered_categories": [
+      "tv",
+      "couch",
+      "bed"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "q3zU7Yy5E5s",
+    "runtime_episode_id": "10",
+    "source_episode_ids": [
+      "47",
+      "30",
+      "79"
+    ],
+    "ordered_categories": [
+      "tv",
+      "toilet",
+      "tv"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "q3zU7Yy5E5s",
+    "runtime_episode_id": "11",
+    "source_episode_ids": [
+      "37",
+      "92",
+      "90"
+    ],
+    "ordered_categories": [
+      "bed",
+      "toilet",
+      "couch"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "q3zU7Yy5E5s",
+    "runtime_episode_id": "12",
+    "source_episode_ids": [
+      "75",
+      "26",
+      "78"
+    ],
+    "ordered_categories": [
+      "toilet",
+      "chair",
+      "couch"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "q3zU7Yy5E5s",
+    "runtime_episode_id": "13",
+    "source_episode_ids": [
+      "46",
+      "89",
+      "83"
+    ],
+    "ordered_categories": [
+      "toilet",
+      "tv",
+      "toilet"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "q3zU7Yy5E5s",
+    "runtime_episode_id": "14",
+    "source_episode_ids": [
+      "0",
+      "69",
+      "93"
+    ],
+    "ordered_categories": [
+      "couch",
+      "tv",
+      "bed"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "q3zU7Yy5E5s",
+    "runtime_episode_id": "15",
+    "source_episode_ids": [
+      "91",
+      "7",
+      "70"
+    ],
+    "ordered_categories": [
+      "chair",
+      "couch",
+      "toilet"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "q3zU7Yy5E5s",
+    "runtime_episode_id": "16",
+    "source_episode_ids": [
+      "94",
+      "95",
+      "63"
+    ],
+    "ordered_categories": [
+      "bed",
+      "chair",
+      "bed"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "q3zU7Yy5E5s",
+    "runtime_episode_id": "17",
+    "source_episode_ids": [
+      "81",
+      "60",
+      "56"
+    ],
+    "ordered_categories": [
+      "bed",
+      "toilet",
+      "tv"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "q3zU7Yy5E5s",
+    "runtime_episode_id": "18",
+    "source_episode_ids": [
+      "57",
+      "44",
+      "98"
+    ],
+    "ordered_categories": [
+      "toilet",
+      "bed",
+      "toilet"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "q3zU7Yy5E5s",
+    "runtime_episode_id": "19",
+    "source_episode_ids": [
+      "53",
+      "61",
+      "12"
+    ],
+    "ordered_categories": [
+      "bed",
+      "chair",
+      "couch"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "qyAac8rV8Zk",
+    "runtime_episode_id": "0",
+    "source_episode_ids": [
+      "44",
+      "97",
+      "45"
+    ],
+    "ordered_categories": [
+      "bed",
+      "tv",
+      "toilet"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "qyAac8rV8Zk",
+    "runtime_episode_id": "1",
+    "source_episode_ids": [
+      "64",
+      "86",
+      "47"
+    ],
+    "ordered_categories": [
+      "couch",
+      "bed",
+      "tv"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "qyAac8rV8Zk",
+    "runtime_episode_id": "2",
+    "source_episode_ids": [
+      "36",
+      "42",
+      "41"
+    ],
+    "ordered_categories": [
+      "toilet",
+      "bed",
+      "tv"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "qyAac8rV8Zk",
+    "runtime_episode_id": "3",
+    "source_episode_ids": [
+      "75",
+      "84",
+      "82"
+    ],
+    "ordered_categories": [
+      "tv",
+      "bed",
+      "chair"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "qyAac8rV8Zk",
+    "runtime_episode_id": "4",
+    "source_episode_ids": [
+      "90",
+      "72",
+      "87"
+    ],
+    "ordered_categories": [
+      "chair",
+      "toilet",
+      "tv"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "qyAac8rV8Zk",
+    "runtime_episode_id": "5",
+    "source_episode_ids": [
+      "63",
+      "62",
+      "56"
+    ],
+    "ordered_categories": [
+      "tv",
+      "couch",
+      "bed"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "qyAac8rV8Zk",
+    "runtime_episode_id": "6",
+    "source_episode_ids": [
+      "93",
+      "54",
+      "91"
+    ],
+    "ordered_categories": [
+      "tv",
+      "couch",
+      "toilet"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "qyAac8rV8Zk",
+    "runtime_episode_id": "7",
+    "source_episode_ids": [
+      "65",
+      "70",
+      "59"
+    ],
+    "ordered_categories": [
+      "tv",
+      "couch",
+      "chair"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "qyAac8rV8Zk",
+    "runtime_episode_id": "8",
+    "source_episode_ids": [
+      "98",
+      "68",
+      "0"
+    ],
+    "ordered_categories": [
+      "bed",
+      "toilet",
+      "tv"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "qyAac8rV8Zk",
+    "runtime_episode_id": "9",
+    "source_episode_ids": [
+      "77",
+      "58",
+      "88"
+    ],
+    "ordered_categories": [
+      "chair",
+      "toilet",
+      "chair"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "qyAac8rV8Zk",
+    "runtime_episode_id": "10",
+    "source_episode_ids": [
+      "25",
+      "20",
+      "79"
+    ],
+    "ordered_categories": [
+      "couch",
+      "chair",
+      "bed"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "qyAac8rV8Zk",
+    "runtime_episode_id": "11",
+    "source_episode_ids": [
+      "73",
+      "89",
+      "80"
+    ],
+    "ordered_categories": [
+      "bed",
+      "chair",
+      "tv"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "qyAac8rV8Zk",
+    "runtime_episode_id": "12",
+    "source_episode_ids": [
+      "55",
+      "35",
+      "61"
+    ],
+    "ordered_categories": [
+      "tv",
+      "couch",
+      "bed"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "qyAac8rV8Zk",
+    "runtime_episode_id": "13",
+    "source_episode_ids": [
+      "43",
+      "94",
+      "28"
+    ],
+    "ordered_categories": [
+      "toilet",
+      "bed",
+      "chair"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "qyAac8rV8Zk",
+    "runtime_episode_id": "14",
+    "source_episode_ids": [
+      "76",
+      "49",
+      "74"
+    ],
+    "ordered_categories": [
+      "toilet",
+      "bed",
+      "tv"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "qyAac8rV8Zk",
+    "runtime_episode_id": "15",
+    "source_episode_ids": [
+      "96",
+      "67",
+      "19"
+    ],
+    "ordered_categories": [
+      "chair",
+      "toilet",
+      "chair"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "qyAac8rV8Zk",
+    "runtime_episode_id": "16",
+    "source_episode_ids": [
+      "53",
+      "24",
+      "66"
+    ],
+    "ordered_categories": [
+      "toilet",
+      "couch",
+      "toilet"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "qyAac8rV8Zk",
+    "runtime_episode_id": "17",
+    "source_episode_ids": [
+      "81",
+      "83",
+      "95"
+    ],
+    "ordered_categories": [
+      "couch",
+      "tv",
+      "bed"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "qyAac8rV8Zk",
+    "runtime_episode_id": "18",
+    "source_episode_ids": [
+      "60",
+      "85",
+      "71"
+    ],
+    "ordered_categories": [
+      "bed",
+      "couch",
+      "chair"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "qyAac8rV8Zk",
+    "runtime_episode_id": "19",
+    "source_episode_ids": [
+      "52",
+      "78",
+      "92"
+    ],
+    "ordered_categories": [
+      "chair",
+      "toilet",
+      "couch"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "svBbv1Pavdk",
+    "runtime_episode_id": "0",
+    "source_episode_ids": [
+      "28",
+      "86",
+      "42"
+    ],
+    "ordered_categories": [
+      "plant",
+      "couch",
+      "bed"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "svBbv1Pavdk",
+    "runtime_episode_id": "1",
+    "source_episode_ids": [
+      "57",
+      "26",
+      "36"
+    ],
+    "ordered_categories": [
+      "tv",
+      "toilet",
+      "couch"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "svBbv1Pavdk",
+    "runtime_episode_id": "2",
+    "source_episode_ids": [
+      "96",
+      "11",
+      "95"
+    ],
+    "ordered_categories": [
+      "toilet",
+      "bed",
+      "tv"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "svBbv1Pavdk",
+    "runtime_episode_id": "3",
+    "source_episode_ids": [
+      "60",
+      "59",
+      "56"
+    ],
+    "ordered_categories": [
+      "plant",
+      "chair",
+      "tv"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "svBbv1Pavdk",
+    "runtime_episode_id": "4",
+    "source_episode_ids": [
+      "83",
+      "3",
+      "87"
+    ],
+    "ordered_categories": [
+      "couch",
+      "plant",
+      "toilet"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "svBbv1Pavdk",
+    "runtime_episode_id": "5",
+    "source_episode_ids": [
+      "69",
+      "91",
+      "18"
+    ],
+    "ordered_categories": [
+      "bed",
+      "plant",
+      "couch"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "svBbv1Pavdk",
+    "runtime_episode_id": "6",
+    "source_episode_ids": [
+      "54",
+      "79",
+      "0"
+    ],
+    "ordered_categories": [
+      "tv",
+      "toilet",
+      "tv"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "svBbv1Pavdk",
+    "runtime_episode_id": "7",
+    "source_episode_ids": [
+      "82",
+      "81",
+      "90"
+    ],
+    "ordered_categories": [
+      "toilet",
+      "chair",
+      "bed"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "svBbv1Pavdk",
+    "runtime_episode_id": "8",
+    "source_episode_ids": [
+      "65",
+      "77",
+      "41"
+    ],
+    "ordered_categories": [
+      "plant",
+      "toilet",
+      "plant"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "svBbv1Pavdk",
+    "runtime_episode_id": "9",
+    "source_episode_ids": [
+      "78",
+      "61",
+      "29"
+    ],
+    "ordered_categories": [
+      "tv",
+      "chair",
+      "tv"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "svBbv1Pavdk",
+    "runtime_episode_id": "10",
+    "source_episode_ids": [
+      "94",
+      "19",
+      "31"
+    ],
+    "ordered_categories": [
+      "toilet",
+      "couch",
+      "plant"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "svBbv1Pavdk",
+    "runtime_episode_id": "11",
+    "source_episode_ids": [
+      "73",
+      "35",
+      "70"
+    ],
+    "ordered_categories": [
+      "bed",
+      "plant",
+      "chair"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "svBbv1Pavdk",
+    "runtime_episode_id": "12",
+    "source_episode_ids": [
+      "63",
+      "89",
+      "72"
+    ],
+    "ordered_categories": [
+      "tv",
+      "bed",
+      "tv"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "svBbv1Pavdk",
+    "runtime_episode_id": "13",
+    "source_episode_ids": [
+      "71",
+      "92",
+      "12"
+    ],
+    "ordered_categories": [
+      "chair",
+      "plant",
+      "couch"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "svBbv1Pavdk",
+    "runtime_episode_id": "14",
+    "source_episode_ids": [
+      "58",
+      "80",
+      "64"
+    ],
+    "ordered_categories": [
+      "chair",
+      "tv",
+      "chair"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "svBbv1Pavdk",
+    "runtime_episode_id": "15",
+    "source_episode_ids": [
+      "75",
+      "98",
+      "66"
+    ],
+    "ordered_categories": [
+      "toilet",
+      "chair",
+      "plant"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "svBbv1Pavdk",
+    "runtime_episode_id": "16",
+    "source_episode_ids": [
+      "46",
+      "4",
+      "55"
+    ],
+    "ordered_categories": [
+      "chair",
+      "couch",
+      "toilet"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "svBbv1Pavdk",
+    "runtime_episode_id": "17",
+    "source_episode_ids": [
+      "20",
+      "62",
+      "85"
+    ],
+    "ordered_categories": [
+      "couch",
+      "tv",
+      "bed"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "svBbv1Pavdk",
+    "runtime_episode_id": "18",
+    "source_episode_ids": [
+      "49",
+      "88",
+      "32"
+    ],
+    "ordered_categories": [
+      "bed",
+      "tv",
+      "bed"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "svBbv1Pavdk",
+    "runtime_episode_id": "19",
+    "source_episode_ids": [
+      "84",
+      "76",
+      "93"
+    ],
+    "ordered_categories": [
+      "couch",
+      "toilet",
+      "bed"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "wcojb4TFT35",
+    "runtime_episode_id": "0",
+    "source_episode_ids": [
+      "93",
+      "42",
+      "65"
+    ],
+    "ordered_categories": [
+      "toilet",
+      "couch",
+      "tv"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "wcojb4TFT35",
+    "runtime_episode_id": "1",
+    "source_episode_ids": [
+      "52",
+      "66",
+      "67"
+    ],
+    "ordered_categories": [
+      "chair",
+      "bed",
+      "chair"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "wcojb4TFT35",
+    "runtime_episode_id": "2",
+    "source_episode_ids": [
+      "35",
+      "11",
+      "63"
+    ],
+    "ordered_categories": [
+      "tv",
+      "couch",
+      "bed"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "wcojb4TFT35",
+    "runtime_episode_id": "3",
+    "source_episode_ids": [
+      "41",
+      "94",
+      "75"
+    ],
+    "ordered_categories": [
+      "couch",
+      "tv",
+      "chair"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "wcojb4TFT35",
+    "runtime_episode_id": "4",
+    "source_episode_ids": [
+      "80",
+      "79",
+      "69"
+    ],
+    "ordered_categories": [
+      "chair",
+      "tv",
+      "toilet"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "wcojb4TFT35",
+    "runtime_episode_id": "5",
+    "source_episode_ids": [
+      "73",
+      "47",
+      "74"
+    ],
+    "ordered_categories": [
+      "toilet",
+      "chair",
+      "bed"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "wcojb4TFT35",
+    "runtime_episode_id": "6",
+    "source_episode_ids": [
+      "62",
+      "70",
+      "78"
+    ],
+    "ordered_categories": [
+      "couch",
+      "chair",
+      "bed"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "wcojb4TFT35",
+    "runtime_episode_id": "7",
+    "source_episode_ids": [
+      "82",
+      "37",
+      "46"
+    ],
+    "ordered_categories": [
+      "tv",
+      "couch",
+      "bed"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "wcojb4TFT35",
+    "runtime_episode_id": "8",
+    "source_episode_ids": [
+      "89",
+      "72",
+      "68"
+    ],
+    "ordered_categories": [
+      "bed",
+      "tv",
+      "chair"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "wcojb4TFT35",
+    "runtime_episode_id": "9",
+    "source_episode_ids": [
+      "84",
+      "40",
+      "44"
+    ],
+    "ordered_categories": [
+      "toilet",
+      "tv",
+      "couch"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "wcojb4TFT35",
+    "runtime_episode_id": "10",
+    "source_episode_ids": [
+      "43",
+      "58",
+      "85"
+    ],
+    "ordered_categories": [
+      "bed",
+      "couch",
+      "toilet"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "wcojb4TFT35",
+    "runtime_episode_id": "11",
+    "source_episode_ids": [
+      "87",
+      "98",
+      "10"
+    ],
+    "ordered_categories": [
+      "couch",
+      "chair",
+      "tv"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "wcojb4TFT35",
+    "runtime_episode_id": "12",
+    "source_episode_ids": [
+      "95",
+      "76",
+      "24"
+    ],
+    "ordered_categories": [
+      "bed",
+      "toilet",
+      "tv"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "wcojb4TFT35",
+    "runtime_episode_id": "13",
+    "source_episode_ids": [
+      "56",
+      "31",
+      "54"
+    ],
+    "ordered_categories": [
+      "bed",
+      "couch",
+      "chair"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "wcojb4TFT35",
+    "runtime_episode_id": "14",
+    "source_episode_ids": [
+      "97",
+      "36",
+      "77"
+    ],
+    "ordered_categories": [
+      "tv",
+      "bed",
+      "toilet"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "wcojb4TFT35",
+    "runtime_episode_id": "15",
+    "source_episode_ids": [
+      "57",
+      "53",
+      "49"
+    ],
+    "ordered_categories": [
+      "chair",
+      "tv",
+      "chair"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "wcojb4TFT35",
+    "runtime_episode_id": "16",
+    "source_episode_ids": [
+      "83",
+      "92",
+      "90"
+    ],
+    "ordered_categories": [
+      "toilet",
+      "chair",
+      "toilet"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "wcojb4TFT35",
+    "runtime_episode_id": "17",
+    "source_episode_ids": [
+      "86",
+      "81",
+      "88"
+    ],
+    "ordered_categories": [
+      "tv",
+      "toilet",
+      "chair"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "wcojb4TFT35",
+    "runtime_episode_id": "18",
+    "source_episode_ids": [
+      "48",
+      "96",
+      "50"
+    ],
+    "ordered_categories": [
+      "chair",
+      "couch",
+      "bed"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "wcojb4TFT35",
+    "runtime_episode_id": "19",
+    "source_episode_ids": [
+      "39",
+      "71",
+      "32"
+    ],
+    "ordered_categories": [
+      "couch",
+      "toilet",
+      "couch"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "ziup5kvtCCR",
+    "runtime_episode_id": "0",
+    "source_episode_ids": [
+      "37",
+      "90",
+      "61"
+    ],
+    "ordered_categories": [
+      "chair",
+      "plant",
+      "bed"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "ziup5kvtCCR",
+    "runtime_episode_id": "1",
+    "source_episode_ids": [
+      "82",
+      "93",
+      "27"
+    ],
+    "ordered_categories": [
+      "chair",
+      "plant",
+      "toilet"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "ziup5kvtCCR",
+    "runtime_episode_id": "2",
+    "source_episode_ids": [
+      "91",
+      "28",
+      "95"
+    ],
+    "ordered_categories": [
+      "toilet",
+      "chair",
+      "tv"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "ziup5kvtCCR",
+    "runtime_episode_id": "3",
+    "source_episode_ids": [
+      "70",
+      "94",
+      "86"
+    ],
+    "ordered_categories": [
+      "couch",
+      "plant",
+      "tv"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "ziup5kvtCCR",
+    "runtime_episode_id": "4",
+    "source_episode_ids": [
+      "92",
+      "64",
+      "62"
+    ],
+    "ordered_categories": [
+      "toilet",
+      "chair",
+      "plant"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "ziup5kvtCCR",
+    "runtime_episode_id": "5",
+    "source_episode_ids": [
+      "98",
+      "67",
+      "59"
+    ],
+    "ordered_categories": [
+      "plant",
+      "chair",
+      "bed"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "ziup5kvtCCR",
+    "runtime_episode_id": "6",
+    "source_episode_ids": [
+      "25",
+      "44",
+      "81"
+    ],
+    "ordered_categories": [
+      "tv",
+      "couch",
+      "bed"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "ziup5kvtCCR",
+    "runtime_episode_id": "7",
+    "source_episode_ids": [
+      "73",
+      "89",
+      "45"
+    ],
+    "ordered_categories": [
+      "bed",
+      "couch",
+      "toilet"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "ziup5kvtCCR",
+    "runtime_episode_id": "8",
+    "source_episode_ids": [
+      "75",
+      "85",
+      "66"
+    ],
+    "ordered_categories": [
+      "chair",
+      "tv",
+      "bed"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "ziup5kvtCCR",
+    "runtime_episode_id": "9",
+    "source_episode_ids": [
+      "63",
+      "78",
+      "33"
+    ],
+    "ordered_categories": [
+      "couch",
+      "bed",
+      "chair"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "ziup5kvtCCR",
+    "runtime_episode_id": "10",
+    "source_episode_ids": [
+      "72",
+      "18",
+      "69"
+    ],
+    "ordered_categories": [
+      "toilet",
+      "tv",
+      "toilet"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "ziup5kvtCCR",
+    "runtime_episode_id": "11",
+    "source_episode_ids": [
+      "58",
+      "53",
+      "83"
+    ],
+    "ordered_categories": [
+      "bed",
+      "tv",
+      "couch"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "ziup5kvtCCR",
+    "runtime_episode_id": "12",
+    "source_episode_ids": [
+      "65",
+      "50",
+      "76"
+    ],
+    "ordered_categories": [
+      "chair",
+      "toilet",
+      "chair"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "ziup5kvtCCR",
+    "runtime_episode_id": "13",
+    "source_episode_ids": [
+      "80",
+      "34",
+      "8"
+    ],
+    "ordered_categories": [
+      "plant",
+      "chair",
+      "couch"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "ziup5kvtCCR",
+    "runtime_episode_id": "14",
+    "source_episode_ids": [
+      "77",
+      "56",
+      "47"
+    ],
+    "ordered_categories": [
+      "tv",
+      "couch",
+      "toilet"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "ziup5kvtCCR",
+    "runtime_episode_id": "15",
+    "source_episode_ids": [
+      "74",
+      "57",
+      "2"
+    ],
+    "ordered_categories": [
+      "bed",
+      "tv",
+      "toilet"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "ziup5kvtCCR",
+    "runtime_episode_id": "16",
+    "source_episode_ids": [
+      "79",
+      "48",
+      "60"
+    ],
+    "ordered_categories": [
+      "tv",
+      "couch",
+      "bed"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "ziup5kvtCCR",
+    "runtime_episode_id": "17",
+    "source_episode_ids": [
+      "84",
+      "96",
+      "68"
+    ],
+    "ordered_categories": [
+      "plant",
+      "couch",
+      "plant"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "ziup5kvtCCR",
+    "runtime_episode_id": "18",
+    "source_episode_ids": [
+      "41",
+      "87",
+      "88"
+    ],
+    "ordered_categories": [
+      "couch",
+      "tv",
+      "bed"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "ziup5kvtCCR",
+    "runtime_episode_id": "19",
+    "source_episode_ids": [
+      "46",
+      "35",
+      "97"
+    ],
+    "ordered_categories": [
+      "plant",
+      "toilet",
+      "plant"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "zt1RVoi7PcG",
+    "runtime_episode_id": "0",
+    "source_episode_ids": [
+      "107",
+      "58",
+      "84"
+    ],
+    "ordered_categories": [
+      "bed",
+      "couch",
+      "toilet"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "zt1RVoi7PcG",
+    "runtime_episode_id": "1",
+    "source_episode_ids": [
+      "114",
+      "36",
+      "86"
+    ],
+    "ordered_categories": [
+      "chair",
+      "bed",
+      "couch"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "zt1RVoi7PcG",
+    "runtime_episode_id": "2",
+    "source_episode_ids": [
+      "56",
+      "113",
+      "70"
+    ],
+    "ordered_categories": [
+      "chair",
+      "tv",
+      "couch"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "zt1RVoi7PcG",
+    "runtime_episode_id": "3",
+    "source_episode_ids": [
+      "91",
+      "105",
+      "92"
+    ],
+    "ordered_categories": [
+      "toilet",
+      "couch",
+      "tv"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "zt1RVoi7PcG",
+    "runtime_episode_id": "4",
+    "source_episode_ids": [
+      "93",
+      "16",
+      "83"
+    ],
+    "ordered_categories": [
+      "tv",
+      "chair",
+      "couch"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "zt1RVoi7PcG",
+    "runtime_episode_id": "5",
+    "source_episode_ids": [
+      "67",
+      "73",
+      "89"
+    ],
+    "ordered_categories": [
+      "bed",
+      "tv",
+      "bed"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "zt1RVoi7PcG",
+    "runtime_episode_id": "6",
+    "source_episode_ids": [
+      "6",
+      "85",
+      "100"
+    ],
+    "ordered_categories": [
+      "chair",
+      "tv",
+      "chair"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "zt1RVoi7PcG",
+    "runtime_episode_id": "7",
+    "source_episode_ids": [
+      "48",
+      "95",
+      "117"
+    ],
+    "ordered_categories": [
+      "toilet",
+      "couch",
+      "bed"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "zt1RVoi7PcG",
+    "runtime_episode_id": "8",
+    "source_episode_ids": [
+      "63",
+      "76",
+      "98"
+    ],
+    "ordered_categories": [
+      "bed",
+      "tv",
+      "bed"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "zt1RVoi7PcG",
+    "runtime_episode_id": "9",
+    "source_episode_ids": [
+      "110",
+      "109",
+      "102"
+    ],
+    "ordered_categories": [
+      "couch",
+      "bed",
+      "toilet"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "zt1RVoi7PcG",
+    "runtime_episode_id": "10",
+    "source_episode_ids": [
+      "21",
+      "66",
+      "45"
+    ],
+    "ordered_categories": [
+      "toilet",
+      "bed",
+      "toilet"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "zt1RVoi7PcG",
+    "runtime_episode_id": "11",
+    "source_episode_ids": [
+      "116",
+      "99",
+      "80"
+    ],
+    "ordered_categories": [
+      "couch",
+      "chair",
+      "toilet"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "zt1RVoi7PcG",
+    "runtime_episode_id": "12",
+    "source_episode_ids": [
+      "111",
+      "108",
+      "118"
+    ],
+    "ordered_categories": [
+      "tv",
+      "toilet",
+      "chair"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "zt1RVoi7PcG",
+    "runtime_episode_id": "13",
+    "source_episode_ids": [
+      "54",
+      "88",
+      "104"
+    ],
+    "ordered_categories": [
+      "chair",
+      "bed",
+      "chair"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "zt1RVoi7PcG",
+    "runtime_episode_id": "14",
+    "source_episode_ids": [
+      "82",
+      "1",
+      "69"
+    ],
+    "ordered_categories": [
+      "couch",
+      "toilet",
+      "tv"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "zt1RVoi7PcG",
+    "runtime_episode_id": "15",
+    "source_episode_ids": [
+      "103",
+      "60",
+      "79"
+    ],
+    "ordered_categories": [
+      "tv",
+      "toilet",
+      "chair"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "zt1RVoi7PcG",
+    "runtime_episode_id": "16",
+    "source_episode_ids": [
+      "25",
+      "115",
+      "62"
+    ],
+    "ordered_categories": [
+      "bed",
+      "chair",
+      "couch"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "zt1RVoi7PcG",
+    "runtime_episode_id": "17",
+    "source_episode_ids": [
+      "94",
+      "101",
+      "112"
+    ],
+    "ordered_categories": [
+      "couch",
+      "tv",
+      "chair"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "zt1RVoi7PcG",
+    "runtime_episode_id": "18",
+    "source_episode_ids": [
+      "81",
+      "61",
+      "106"
+    ],
+    "ordered_categories": [
+      "tv",
+      "couch",
+      "bed"
+    ]
+  },
+  {
+    "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "scene_id": "zt1RVoi7PcG",
+    "runtime_episode_id": "19",
+    "source_episode_ids": [
+      "68",
+      "53",
+      "87"
+    ],
+    "ordered_categories": [
+      "toilet",
+      "tv",
+      "toilet"
+    ]
+  }
+]

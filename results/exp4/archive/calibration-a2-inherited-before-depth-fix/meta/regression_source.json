@@ -1,0 +1,8 @@
+{
+  "run_directory": "/nvme/khy/PBSP-open-source/experiments/runs/20261107_233046_569437_hm3d_3mon_full_pbsp_exp4-regression-before",
+  "baseline_worktree": "/nvme/khy/ForesightNav_exp4_baseline",
+  "baseline_commit": "7c7e9f4",
+  "capture_type": "passive inputs plus geodesic returns and pre-call reranker state",
+  "fixed_scene": "4ok3usBNeis",
+  "fixed_episode_ids": ["0", "1", "2"]
+}
