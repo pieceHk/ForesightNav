@@ -759,7 +759,7 @@
       "gpu": 3,
       "pid": 253583,
       "log": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/logs/calibration-a3-fold2-svBbv1Pavdk.controller.log",
-      "status": "running",
+      "status": "completed",
       "command": [
         "/nvme/khy/ForesightNav_exp4_depthfix/run.py",
         "--config",
@@ -773,7 +773,83 @@
         "--tag",
         "calibration-a3-fold2-svBbv1Pavdk"
       ],
-      "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_030707_404622_exp4_calibration_calibration-a3-fold2-svBbv1Pavdk"
+      "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_030707_404622_exp4_calibration_calibration-a3-fold2-svBbv1Pavdk",
+      "audit": {
+        "events": 1960,
+        "snapshots": 1375,
+        "verification_events": 202,
+        "native_metrics": {
+          "pespl": 0.2598687612223523,
+          "pespl_denominator": 60,
+          "pespl_numerator": 15.592125673341137,
+          "psr": 0.7333333333333333,
+          "psr_by_category": {
+            "bed": {
+              "psr_contribution": 0.1,
+              "success_rate": 0.6,
+              "successes": 6,
+              "targets": 10
+            },
+            "chair": {
+              "psr_contribution": 0.15,
+              "success_rate": 1.0,
+              "successes": 9,
+              "targets": 9
+            },
+            "couch": {
+              "psr_contribution": 0.1,
+              "success_rate": 0.6666666666666666,
+              "successes": 6,
+              "targets": 9
+            },
+            "plant": {
+              "psr_contribution": 0.11666666666666667,
+              "success_rate": 0.7,
+              "successes": 7,
+              "targets": 10
+            },
+            "toilet": {
+              "psr_contribution": 0.08333333333333333,
+              "success_rate": 0.5,
+              "successes": 5,
+              "targets": 10
+            },
+            "tv": {
+              "psr_contribution": 0.18333333333333332,
+              "success_rate": 0.9166666666666666,
+              "successes": 11,
+              "targets": 12
+            }
+          },
+          "psr_denominator": 60,
+          "psr_numerator": 44,
+          "spl": 0.21617584565190223,
+          "sr": 0.6333333333333333
+        }
+      },
+      "returncode": 0
+    },
+    {
+      "fold": 2,
+      "scene": "wcojb4TFT35",
+      "gpu": 3,
+      "pid": 267723,
+      "log": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/logs/calibration-a3-fold2-wcojb4TFT35.controller.log",
+      "status": "running",
+      "command": [
+        "/nvme/khy/ForesightNav_exp4_depthfix/run.py",
+        "--config",
+        "configs/experiments/exp4_calibration.yaml",
+        "--runtime",
+        "runtime.exp4.local.yaml",
+        "--gpus",
+        "3,3",
+        "--scene",
+        "wcojb4TFT35",
+        "--tag",
+        "calibration-a3-fold2-wcojb4TFT35"
+      ],
+      "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_052133_559552_exp4_calibration_calibration-a3-fold2-wcojb4TFT35"
     }
   ]
 }

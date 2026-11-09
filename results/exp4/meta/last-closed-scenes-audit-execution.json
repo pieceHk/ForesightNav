@@ -1,17 +1,17 @@
 {
-  "record": "diagnostics/closed-scenes-audit-20261109T190815Z.json",
+  "record": "diagnostics/closed-scenes-audit-20261109T212228Z.json",
   "steps": [
     {
       "script": "audit_completed_calibration.py",
       "returncode": 0,
-      "log": "logs/closed-scenes-20261109T190815Z-audit_completed_calibration.py.log",
-      "log_sha256": "ac1b0ec900b90810340e75928135aa05e0dd7bbb13e33b9a74e7feb0f6647488"
+      "log": "logs/closed-scenes-20261109T212228Z-audit_completed_calibration.py.log",
+      "log_sha256": "dbdc11e0e718804be2e83b8b6f87964a4d74e2712e754c18ca4acb204d391e2a"
     },
     {
       "script": "verify_action_path_pipeline.py",
       "returncode": 0,
-      "log": "logs/closed-scenes-20261109T190815Z-verify_action_path_pipeline.py.log",
-      "log_sha256": "df4cadf27be5c0536afb3d23f3699fa696fdf55f056959626995fdff60125f93"
+      "log": "logs/closed-scenes-20261109T212228Z-verify_action_path_pipeline.py.log",
+      "log_sha256": "739ff5d94e52112c16cd49eaf42873df0c1ef27a24217993f825b8695d5d672c"
     }
   ]
 }
