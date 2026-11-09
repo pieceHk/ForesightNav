@@ -1,0 +1,122 @@
+[
+  {
+    "method": "ForesightNav",
+    "variant": "full",
+    "task": "3-MON",
+    "scene_id": "QaLdnwvtxbs",
+    "episode_id": "0",
+    "goals": [
+      "bed",
+      "tv",
+      "bed"
+    ],
+    "source_episode_ids": [
+      "96",
+      "82",
+      "75"
+    ],
+    "episode_success": false,
+    "total_steps": 498,
+    "code_commit": "2c0037a985c65d25698728a31b8339682fb4bdd6",
+    "code_commits": [
+      "2c0037a985c65d25698728a31b8339682fb4bdd6"
+    ],
+    "stages": [
+      {
+        "k": 1,
+        "goal": "bed",
+        "reached": true,
+        "success": false,
+        "steps": 156,
+        "path_length_m": 10.500001102685928,
+        "shortest_path_m": 6.58986759185791,
+        "start_pos": [
+          0.3718400001525879,
+          0.1357399970293045,
+          2.9847500324249268
+        ],
+        "end_pos": [
+          -1.7021417617797852,
+          0.1357390433549881,
+          1.1690752506256104
+        ],
+        "end_position_observation": "pre_STOP_pose",
+        "stop_reason": "verified_target"
+      },
+      {
+        "k": 2,
+        "goal": "tv",
+        "reached": true,
+        "success": true,
+        "steps": 50,
+        "path_length_m": 6.250000789761543,
+        "shortest_path_m": 4.329326629638672,
+        "start_pos": [
+          -1.7021417617797852,
+          0.1357390433549881,
+          1.1690752506256104
+        ],
+        "end_pos": [
+          -5.527256011962891,
+          0.1357390433549881,
+          0.4636138081550598
+        ],
+        "end_position_observation": "pre_STOP_pose",
+        "stop_reason": "verified_target"
+      },
+      {
+        "k": 3,
+        "goal": "bed",
+        "reached": true,
+        "success": false,
+        "steps": 292,
+        "path_length_m": 26.750001534819603,
+        "shortest_path_m": 9.38252067565918,
+        "start_pos": [
+          -5.527256011962891,
+          0.1357390433549881,
+          0.4636138081550598
+        ],
+        "end_pos": [
+          0.568333089351654,
+          0.1357390433549881,
+          0.5001222491264343
+        ],
+        "end_position_observation": "pre_STOP_pose",
+        "stop_reason": "verified_target"
+      }
+    ],
+    "wallclock_s": 295.63893404100224,
+    "wallclock_definition": "sum of measured native step wall times, excluding episode reset/setup",
+    "native_mon_metrics": {
+      "pespl": 0.23089739107077503,
+      "pespl_denominator": 3,
+      "pespl_numerator": 0.6926921732123251,
+      "psr": 0.3333333333333333,
+      "psr_by_category": {
+        "bed": {
+          "psr_contribution": 0.0,
+          "success_rate": 0.0,
+          "successes": 0,
+          "targets": 2
+        },
+        "tv": {
+          "psr_contribution": 0.3333333333333333,
+          "success_rate": 1.0,
+          "successes": 1,
+          "targets": 1
+        }
+      },
+      "psr_denominator": 3,
+      "psr_numerator": 1,
+      "spl": 0.0,
+      "sr": 0,
+      "subtask_count": 3,
+      "successful_subtask_count": 1
+    },
+    "PR": 0.3333333333333333,
+    "PPL": 0.0,
+    "PR_prefix": 0.0,
+    "PPL_prefix": 0.0
+  }
+]

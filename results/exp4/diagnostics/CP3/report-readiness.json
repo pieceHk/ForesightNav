@@ -1,0 +1,7 @@
+{
+  "ready": false,
+  "reason": "Fixed smoke is incomplete: 9/20; status=running",
+  "launches_workers": false,
+  "report_generator_sha256": "18618166162e09cda90a7155a91a1938c8a167138d9624cca5a145cce66ecc16",
+  "checked_at_utc": "2026-11-09T04:12:00.179922+00:00"
+}

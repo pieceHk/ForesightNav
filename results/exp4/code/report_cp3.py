@@ -66,6 +66,12 @@ def verify():
     assert math.isclose(precise['Joint'], precise['SR'], abs_tol=1e-10)
     start = load(ROOT / 'meta/smoke_start.json')
     assert summary['source_commits'] == [start['head']]
+    environment = load(ROOT / 'meta/environment-smoke.json')
+    assert environment['completed_cases_checked'] == 20, 'Refresh the complete twenty-case environment inventory'
+    assert environment['runtime_commit'] == start['head'] and environment['boot_id'] == ledger['boot_id']
+    assert all(environment['uniform_python_lock_and_package_inventory_by_role'].values())
+    coverage = load(DESTINATION / 'evidence-coverage-audit.json')
+    assert coverage['completed_scenes'] == 20 and coverage['snapshots'] == len(decisions), 'Refresh complete observation-coverage diagnostics'
     figures = load(DESTINATION / 'figure-review.json')
     assert figures['visual_qa_passed'] and len(figures['figures']) == 2
     assert [r['scene_id'] for r in figures['figures']] == [j['scene'] for j in ledger['jobs'][:2]]
@@ -109,6 +115,7 @@ def render(ledger, summary, episodes, decisions, figures):
     lines = ['# Exp4 CP3：固定20条Full冒烟', '', '## 完成了什么', '',
         '固定20个场景各1条3-MON全部完成。场景、source episode和目标顺序与冻结清单一致，三组交叉拟合参数按场景加载；未使用GT调参。四变体全量评估尚未启动。', '',
         f'运行提交：`{summary["source_commits"][0]}`。源码指纹、参数SHA、原生完成状态、60阶段路径及全部规范化日志已核对。', '',
+        '[本阶段环境与GPU配置](../meta/environment-smoke.json)覆盖全部20条，角色Python、锁文件及包清单一致；每条原生run还保留独立环境文件。[观测覆盖检查](../diagnostics/CP3/evidence-coverage-audit.json)分别统计当前与未来目标的有效视角，不使用GT。', '',
         '## 关键数字', '', '| 指标 | 结果 |', '| --- | --- |']
     for name in ('SR', 'SPL', 'PR', 'PPL', 'P_C1', 'P_C2_given_C1', 'P_C3_given_C1C2', 'Joint'):
         lines.append(f'| {name} (%) | {number(summary[name])} |')

@@ -1,5 +1,5 @@
 {
-  "checked_at_utc": "2026-11-09T03:52:36.309796+00:00",
+  "checked_at_utc": "2026-11-09T04:08:27.094289+00:00",
   "diagnostic_only": true,
   "definition": "counterfactual unconstrained proposals on completed Full smoke inputs; not other variants online trajectories or scores",
   "parameters_by_scene": {
@@ -38,6 +38,18 @@
       "b0": -12.012253606335642,
       "pi": 0.14794921875,
       "c_exp": 0.9337494521752285
+    },
+    "QaLdnwvtxbs": {
+      "a": 48.11459908252667,
+      "b0": -12.856439210146924,
+      "pi": 0.16010230179028134,
+      "c_exp": 1.2759422599453465
+    },
+    "TEEsavR23oF": {
+      "a": 48.11459908252667,
+      "b0": -12.856439210146924,
+      "pi": 0.16010230179028134,
+      "c_exp": 1.2759422599453465
     }
   },
   "snapshots_by_scene": {
@@ -46,23 +58,25 @@
     "6s7QHgap2fW": 109,
     "DYehNKdT76V": 108,
     "Dd4bFSTQ8gi": 70,
-    "Nfvxx8J5NCo": 68
+    "Nfvxx8J5NCo": 68,
+    "QaLdnwvtxbs": 52,
+    "TEEsavR23oF": 114
   },
   "counts": {
-    "snapshots": 463,
-    "empty_roots": 89,
-    "nonempty_roots": 374,
-    "multiple_current_candidates": 328,
-    "pre_final_roots": 273,
-    "pre_final_with_any_future_candidates": 273,
-    "final_task_nonempty_roots": 101
+    "snapshots": 629,
+    "empty_roots": 117,
+    "nonempty_roots": 512,
+    "multiple_current_candidates": 446,
+    "pre_final_roots": 363,
+    "pre_final_with_any_future_candidates": 363,
+    "final_task_nonempty_roots": 149
   },
   "different_proposals_on_nonempty_roots": {
-    "suffix_only_vs_nearest": 55,
-    "myopic_vs_nearest": 70,
-    "full_vs_nearest": 66,
-    "full_vs_myopic": 12,
-    "full_vs_suffix_only": 73
+    "suffix_only_vs_nearest": 75,
+    "myopic_vs_nearest": 79,
+    "full_vs_nearest": 80,
+    "full_vs_myopic": 19,
+    "full_vs_suffix_only": 100
   },
   "violations": []
 }

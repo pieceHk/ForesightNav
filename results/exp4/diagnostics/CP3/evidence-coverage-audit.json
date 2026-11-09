@@ -1,0 +1,34 @@
+{
+  "checked_at_utc": "2026-11-09T04:10:06.301531+00:00",
+  "completed_scenes": 8,
+  "scene_ids": [
+    "4ok3usBNeis",
+    "5cdEh9F2hJL",
+    "6s7QHgap2fW",
+    "DYehNKdT76V",
+    "Dd4bFSTQ8gi",
+    "Nfvxx8J5NCo",
+    "QaLdnwvtxbs",
+    "TEEsavR23oF"
+  ],
+  "snapshots": 629,
+  "N_views_histogram": {
+    "current": {
+      "0": 888,
+      "1": 594,
+      "2": 244,
+      "3": 98,
+      "4": 19,
+      "5": 5
+    },
+    "future": {
+      "0": 1006,
+      "1": 931,
+      "2": 684,
+      "3": 278,
+      "4": 163,
+      "5": 50
+    }
+  },
+  "definition": "candidate observations in completed Full snapshots, current and future layers; non-GT diagnostic; no parameter changes"
+}
