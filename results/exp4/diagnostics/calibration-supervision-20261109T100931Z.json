@@ -1,0 +1,66 @@
+{
+  "recorded_at_utc": "2026-11-09T10:24:45.544520+00:00",
+  "scope": "bounded read-only calibration supervision, no native execution changes",
+  "observer_metadata": {
+    "observer_pid": 123386,
+    "started_at_utc": "2026-11-09T10:09:31.213126+00:00",
+    "max_polls": 20,
+    "interval_seconds": 45,
+    "log": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/logs/calibration-observer-a3-20261109T100931Z.jsonl",
+    "scope": "bounded read-only supervision of controller31036 and CPU122348; stop on new closed scene"
+  },
+  "successful_polls": 20,
+  "first": {
+    "poll": 1,
+    "checked_at_utc": "2026-11-09T10:09:31.298569+00:00",
+    "completed": 108,
+    "controller_live_matching": true,
+    "boot_matches": true,
+    "source_unchanged": true,
+    "active_jobs": [
+      {
+        "scene": "cvZr5TUy5C5",
+        "gpu": 2,
+        "pid": 110996,
+        "completed": 18,
+        "live_matching": true,
+        "shadow_error_bytes": 0
+      }
+    ],
+    "CPU_pid": 122348,
+    "CPU_live_matching": true,
+    "CPU_status": "waiting_for_complete_collection"
+  },
+  "last": {
+    "poll": 20,
+    "checked_at_utc": "2026-11-09T10:24:02.553892+00:00",
+    "completed": 110,
+    "controller_live_matching": true,
+    "boot_matches": true,
+    "source_unchanged": true,
+    "active_jobs": [
+      {
+        "scene": "cvZr5TUy5C5",
+        "gpu": 2,
+        "pid": 110996,
+        "completed": 20,
+        "live_matching": true,
+        "shadow_error_bytes": 0
+      }
+    ],
+    "CPU_pid": 122348,
+    "CPU_live_matching": true,
+    "CPU_status": "waiting_for_complete_collection"
+  },
+  "observer_tool_session": 64492,
+  "observer_tool_exit_code": 0,
+  "log_sha256": "dc173b5811992b8013607b6eba94cae63f7e306e9bfcd1b5a444aa2db6e6399c",
+  "CPU_pid": 122348,
+  "CPU_start_ticks": "2658437",
+  "CPU_heartbeat": "2026-11-09T10:24:19.370307+00:00",
+  "all11_bound_scripts_unchanged": true,
+  "original_native_controller_unchanged": true,
+  "native_signal_sent": false,
+  "actual_parameter_fitting_started": false,
+  "current_observer_script_has_action_counts_and_normal_terminal_handling": true
+}
