@@ -1,0 +1,10 @@
+test_a_flip_rate_above_ten_percent_requires_crossfit (test_cp2_report_rule.SelectionRuleTests) ... ok
+test_a_stale_selection_flag_cannot_override_the_actual_flips (test_cp2_report_rule.SelectionRuleTests) ... ok
+test_a_stale_summary_flag_cannot_override_the_intervals (test_cp2_report_rule.SelectionRuleTests) ... ok
+test_disjoint_cost_intervals_require_crossfit_even_with_zero_flips (test_cp2_report_rule.SelectionRuleTests) ... ok
+test_ten_percent_and_touching_intervals_are_admissible (test_cp2_report_rule.SelectionRuleTests) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.000s
+
+OK

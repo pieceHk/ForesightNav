@@ -5,6 +5,9 @@ retried with SLSQP on mean negative log likelihood (identical minimizer). True
 one-class, separation or missing-data failures retain the original error.
 """
 from collections import Counter
+import argparse
+from datetime import datetime, timezone
+import hashlib
 import json
 from pathlib import Path
 
@@ -15,6 +18,7 @@ from scipy.special import expit
 import experiments.blp_calibration as calibration
 import experiments.exp4_fit as driver
 from pbsp.navigation.blp import BeliefParameters
+from experiments.exp4_collect import source_fingerprint
 
 RAW_FIT = calibration.fit
 RETRIES = Counter()
@@ -88,7 +92,60 @@ def install_analysis_retry():
     driver.decision_flip_rate = reviewed_decision_flip_rate
 
 
+def digest(path):
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def input_binding():
+    root = driver.ROOT
+    ledger = json.loads((root / 'meta/calibration_runs.json').read_text())
+    start = json.loads((root / 'meta/calibration-start-a3.json').read_text())
+    audit = json.loads((root / 'meta/completed-calibration-scene-audits.json').read_text())
+    if ledger['status'] != 'completed_three_folds_pending_CP2a':
+        raise ValueError('The corrected three-fold collection is incomplete')
+    if start['attempt'] != 'a3' or start['source_fingerprint'] != ledger['source_fingerprint']:
+        raise ValueError('The calibration ledger is not bound to the corrected collection')
+    if source_fingerprint() != ledger['source_fingerprint']:
+        raise ValueError('Runtime inputs changed after collection')
+    if audit['complete_episodes'] != 360 or not audit['frozen_runtime_unchanged']:
+        raise ValueError('The current 360-episode native audit is required')
+    jobs = ledger['jobs']
+    runs = {str(Path(j['run_directory']).resolve()) for j in jobs}
+    audited = {str(Path(j['run_directory']).resolve()) for j in audit['completed_scenes']}
+    if len(jobs) != 12 or runs != audited or len(audited) != 12:
+        raise ValueError('Calibration audit and collection run sets differ')
+    for j in jobs:
+        Path(j['run_directory']).resolve().relative_to((root / 'runs').resolve())
+        if j['status'] != 'completed' or j['returncode'] != 0:
+            raise ValueError('Every native calibration job must complete')
+    if (root / 'meta/calibration.json').exists():
+        raise ValueError('Do not fit after parameters have been frozen')
+    paths = ['meta/calibration_runs.json', 'meta/calibration-start-a3.json',
+             'meta/completed-calibration-scene-audits.json', 'meta/folds.json',
+             'meta/CP1_acceptance.json', 'code/fit_calibration_reviewed.py']
+    paths += [f'logs/calibration_fold{f}_{kind}.jsonl'
+              for f in range(3) for kind in ('events', 'snapshots')]
+    return {'collection_attempt': 'a3', 'collection_source_commit': start['source_commit'],
+            'run_directories': sorted(runs),
+            'input_sha256': {p: digest(root / p) for p in paths}}
+
+
 def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--check', action='store_true')
+    args = parser.parse_args()
+    try:
+        before = input_binding()
+    except (ValueError, FileNotFoundError, KeyError) as error:
+        if args.check:
+            print(json.dumps({'ready': False, 'reason': str(error), 'fits_parameters': False}))
+            return
+        raise
+    if args.check:
+        print(json.dumps({'ready': True, 'collection_attempt': 'a3', 'fits_parameters': False}))
+        return
+    if (driver.ROOT / 'meta/calibration-fit-binding.json').exists():
+        raise ValueError('Inspect the existing fitted output before fitting again')
     install_analysis_retry()
     driver.main()
     output = driver.ROOT / 'meta/calibration_per_fold.json'
@@ -100,6 +157,15 @@ def main():
         'retry_counts_by_label': dict(RETRIES),
         'runtime_source_modified': False}
     output.write_text(json.dumps(value, indent=2, allow_nan=False) + '\n')
+    if input_binding() != before:
+        raise ValueError('Calibration evidence changed during fitting')
+    outputs = ('meta/calibration_per_fold.json', 'meta/calibration.proposed.json',
+               'figures/calibration_evidence.png', 'figures/calibration_reliability.png')
+    binding = dict(before, fitted_at_utc=datetime.now(timezone.utc).isoformat(),
+                   output_sha256={p: digest(driver.ROOT / p) for p in outputs},
+                   optimizer_objective_unchanged=True, runtime_source_modified=False)
+    (driver.ROOT / 'meta/calibration-fit-binding.json').write_text(
+        json.dumps(binding, indent=2, allow_nan=False) + '\n')
 
 
 if __name__ == '__main__':

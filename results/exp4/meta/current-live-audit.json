@@ -1,11 +1,11 @@
 {
-  "checked_at_utc": "2026-11-09T04:58:22.356322+00:00",
+  "checked_at_utc": "2026-11-09T05:19:35.408021+00:00",
   "controller_status": "running",
   "controller_pid": 31036,
   "controller_live_and_matching": true,
   "boot_id_matches": true,
   "frozen_files_unchanged": true,
-  "completed_episodes": 0,
+  "completed_episodes": 7,
   "assigned_episodes": 360,
   "jobs": [
     {
@@ -15,13 +15,23 @@
       "pid": 31038,
       "status": "running",
       "launcher_live_and_matching": true,
-      "completed_episodes": 0,
-      "accepted_actions": 0,
-      "snapshots": 0,
-      "latest_replays_checked": 0,
-      "event_counts": {},
-      "labels_v": {},
-      "completed_episode_verification_events": 0,
+      "completed_episodes": 4,
+      "accepted_actions": 1823,
+      "snapshots": 188,
+      "latest_replays_checked": 10,
+      "event_counts": {
+        "empty_activation_started": 4,
+        "empty_activation": 4,
+        "candidate_first_appearance": 114,
+        "candidate_checked": 51,
+        "verification_final": 51,
+        "noncandidate_verification": 73
+      },
+      "labels_v": {
+        "1": 5,
+        "0": 46
+      },
+      "completed_episode_verification_events": 51,
       "shadow_error_bytes": 0
     },
     {
@@ -31,13 +41,23 @@
       "pid": 31039,
       "status": "running",
       "launcher_live_and_matching": true,
-      "completed_episodes": 0,
-      "accepted_actions": 0,
-      "snapshots": 0,
-      "latest_replays_checked": 0,
-      "event_counts": {},
-      "labels_v": {},
-      "completed_episode_verification_events": 0,
+      "completed_episodes": 3,
+      "accepted_actions": 2277,
+      "snapshots": 234,
+      "latest_replays_checked": 10,
+      "event_counts": {
+        "empty_activation_started": 4,
+        "empty_activation": 4,
+        "candidate_first_appearance": 162,
+        "candidate_checked": 39,
+        "verification_final": 39,
+        "noncandidate_verification": 52
+      },
+      "labels_v": {
+        "0": 35,
+        "1": 4
+      },
+      "completed_episode_verification_events": 39,
       "shadow_error_bytes": 0
     }
   ]

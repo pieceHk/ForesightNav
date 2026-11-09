@@ -1,0 +1,18 @@
+{
+  "prepared_at_utc": "2026-11-09T05:11:58.239184+00:00",
+  "source_branch": "exp4/smoke-progress",
+  "source_commit": "92feadac8fa364873646fad24c08736ec9e2ec02",
+  "runtime_workspace": "/nvme/khy/ForesightNav_exp4_depthfix",
+  "runtime_head_unchanged": "eaa29e5f8f46782554d31226a8d619ec2534c34a",
+  "destination_uses_script_relative_root": true,
+  "copied_only_analysis_sources": true,
+  "old_smoke_outputs_copied": false,
+  "workers_launched": false,
+  "sha256": {
+    "watch_evaluation.py": "86a5f5606d9b23f4d58071fe3cb02db8d39f23c7869f8768cf2854577e93c0eb",
+    "audit_completed_smoke.py": "53a73e301a462ac680148810ce3d6a23708f0a48e50bab5810463f2d2f39bc3c",
+    "audit_smoke_mechanisms.py": "0ebe2c2fa8ea333b1b6b209e895727c8a10a7979b316e7f298ce2028105c9238",
+    "report_cp3.py": "18618166162e09cda90a7155a91a1938c8a167138d9624cca5a145cce66ecc16",
+    "plot_blp_episode.py": "e7d6d9e2602a41f965cc380ba0eaf009db375db7ebd04a118223992ae8d3531b"
+  }
+}

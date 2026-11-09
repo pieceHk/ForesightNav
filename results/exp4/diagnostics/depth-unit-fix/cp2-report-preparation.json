@@ -1,0 +1,19 @@
+{
+  "checked_at_utc": "2026-11-09T05:16:51.461208+00:00",
+  "protocol_boundary_tests_passed": 5,
+  "isolated_historical_fixture_rendering": {
+    "cross_fit": true,
+    "pooled": true
+  },
+  "fixture_contains_no_current_a3_measurements": true,
+  "temporary_rendered_reports_removed": true,
+  "runtime_source_modified": false,
+  "current_parameters_fitted_or_frozen": false,
+  "workers_launched": false,
+  "script_sha256": {
+    "fit_calibration_reviewed.py": "805ef79477539fdf21046cbed7c0a0d1080c96019a5acfee63fdca4cb5822a22",
+    "report_calibration.py": "d3cf0dbaa15cf138823d9ecb1651d107acefb01a4246a5d20af00b15a379f543",
+    "test_cp2_report_rule.py": "dae69ac8279152b6432a80d0a8866283cf9a20418bc89c367a1cce772b67efec"
+  },
+  "current_fit_binding_exists": false
+}

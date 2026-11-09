@@ -1,11 +1,17 @@
 # 修正深度单位后的三组标定重收
 
-2026-11-09已启动calibration a3，固定Fold0/1/2共12场景、360条2-MON，仅使用GPU2、3。代码提交为eaa29e5f8f46782554d31226a8d619ec2534c34a，控制器PID31036；本报告对应的只读核查时间为2026-11-09T04:58:22.356322+00:00，已完成0/360，控制器、boot及160项固定输入均匹配。
+固定Fold0/1/2共12场景、360条2-MON正在GPU2、3运行。只读核查时间为2026-11-09T05:19:35.408021+00:00，已完成7/360。控制器PID31036、boot及160项固定输入均匹配；两个原生launcher存活，影子错误均为0。运行提交保持eaa29e5f8f46782554d31226a8d619ec2534c34a。
 
-新增S观察器现按传感器配置把归一化深度转换为米。51项测试和219次旧模式匹配输入回放通过，原生小试48动作及两个阶段已完成且排除拟合，路径核对通过。原导航收到的深度输入保持原样。
+新增S观察器按传感器配置把归一化深度转换为米。51项运行实现检查和219次旧模式匹配输入回放通过；排除拟合的原生小试完成48动作及两个阶段，路径核对通过。原导航收到的深度输入保持原样。
 
-旧calibration a2的S/敏感性诊断与smoke a1均已标为被替代版本，原始数据留在旧工作区，继承元数据和压缩日志另归档于本分支archive目录。新标定在/nvme/khy/ForesightNav_exp4_depthfix/results/exp4单独收集，不与旧轮次混合，也不按成绩挑样本。
+2026-11-09T05:18:56.886857+00:00的记录核查覆盖407个影子快照、1074条当前候选q/S/B记录，公式及范围核对无违例。当前与未来目标均出现非零N_views。直方图按快照中的候选出现次数计数，不能解释成不同候选数或有效率。这些是输入链路证据，不是Full的成绩或机制增益。
 
-当前由原ordered_suffix_mvp驱动并影子计算Full BLP。完成360条后再拟合与审查参数，重跑固定20条Full冒烟；1600条四变体全量尚未启动。已有E定义及共享滞回/冷却选择继续沿用。
+已更新CP2拟合与报告脚本：拟合绑定本次完整标定ledger、原生run集合、六份原始日志及结果SHA；报告按实际置信区间和翻转率独立核对选择规则，拒绝上一轮GT审计和压缩日志。报告辅助脚本的5项阈值、区间及过期结论检查通过，另用隔离的历史样本检查了pooled和cross-fit两条报告分支；临时报告已删除。未拟合或冻结当前参数。
 
-[单位修正与验证](depth_unit_fix.md)、[启动记录](../meta/calibration-start-a3.json)、[本次只读核查](../meta/current-live-audit.json)、[归档与新目录绑定](../meta/depth-unit-restart.json)。
+CP2b绑定工具已改为要求本次a3接受记录、51项实现检查及219次回放；已验证旧a2接受记录不能直接充当a3接受记录。若新四套数值与用户此前批准的方案逐字段一致且规则不变，可以沿用已有数值选择，再绑定新证据。若实际数值或规则变化，先提交具体新报告。
+
+旧calibration a2的S/敏感性诊断与smoke a1已标为被替代版本；原始数据保留在旧工作区，继承元数据和压缩日志另归档。新标定位于/nvme/khy/ForesightNav_exp4_depthfix/results/exp4，不与旧轮次混合。
+
+运行仍由原ordered_suffix_mvp驱动并影子计算Full。收完360条后拟合与审查参数，再运行新的固定20条Full冒烟；1600条四变体全量尚未启动。已有E定义及共享滞回/冷却选择继续沿用。运行目录HEAD保持不变，报告和辅助工具在本分支同步。
+
+[单位修正与验证](depth_unit_fix.md)、[启动记录](../meta/calibration-start-a3.json)、[实时核查快照](../meta/current-live-audit.json)、[覆盖记录审计](../diagnostics/depth-unit-fix/live-coverage-record-audit.json)、[CP2报告检查](../diagnostics/depth-unit-fix/cp2-report-preparation.json)、[检查点工具准备](../diagnostics/depth-unit-fix/corrected-checkpoint-preparation.json)。

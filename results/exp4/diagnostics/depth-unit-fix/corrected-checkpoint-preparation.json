@@ -1,0 +1,19 @@
+{
+  "checked_at_utc": "2026-11-09T05:19:23.649948+00:00",
+  "old_a2_accepted_review_rejected_as_current_a3": true,
+  "new_numeric_approval_not_fabricated": true,
+  "current_parameters_fitted_or_frozen": false,
+  "cp2b_runtime_tests_required": 51,
+  "disabled_regression_calls_required": 219,
+  "supports_actual_protocol_selection": [
+    "cross_fit",
+    "pooled"
+  ],
+  "cp3_report_rejects_missing_new_smoke": true,
+  "workers_launched": false,
+  "source_sha256": {
+    "code/finalize_cp2b.py": "f34b558bfff67d9041a0d66f96bcab2f4823b4acf4e4bfcc46603df4fba7c1df",
+    "code/fit_calibration_reviewed.py": "805ef79477539fdf21046cbed7c0a0d1080c96019a5acfee63fdca4cb5822a22",
+    "code/report_calibration.py": "d3cf0dbaa15cf138823d9ecb1651d107acefb01a4246a5d20af00b15a379f543"
+  }
+}
