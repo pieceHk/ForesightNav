@@ -1,0 +1,451 @@
+{
+  "checked_at_utc": "2026-11-09T12:14:54.155131+00:00",
+  "scope": "fixed synthetic CPU library calls only; not native navigation throughput or score",
+  "opencv_version": "4.11.0",
+  "original_default_threads": 384,
+  "all_outputs_bitwise_identical": true,
+  "results": [
+    {
+      "mode": "default",
+      "threads": 384,
+      "operation": "rgb_to_bgr_240x240",
+      "median_ms": 0.007100999937392771,
+      "samples_ms": [
+        0.014491997717414051,
+        0.007100999937392771,
+        0.0069309971877373755
+      ],
+      "output_digest": [
+        [
+          [
+            240,
+            240,
+            3
+          ],
+          "uint8",
+          "6b253a63ca14a29ac4b45ed757cfc8aa480cfa7bc04e9d056957c2959acc27ed"
+        ]
+      ],
+      "bitwise_identical_to_default": true
+    },
+    {
+      "mode": "default",
+      "threads": 384,
+      "operation": "dilate_240x240",
+      "median_ms": 0.3329190003569238,
+      "samples_ms": [
+        0.3338609967613593,
+        0.3329190003569238,
+        0.33214900031453
+      ],
+      "output_digest": [
+        [
+          [
+            240,
+            240
+          ],
+          "uint8",
+          "b03c161546b8ac65df8c904de01a8e4a85ce5fa4f8b1738a5e49fc99e8788794"
+        ]
+      ],
+      "bitwise_identical_to_default": true
+    },
+    {
+      "mode": "default",
+      "threads": 384,
+      "operation": "connected4_240x240",
+      "median_ms": 0.15940899902489036,
+      "samples_ms": [
+        0.19348999921930954,
+        0.15940899902489036,
+        0.1348529985989444
+      ],
+      "output_digest": [
+        [
+          [],
+          "int64",
+          "1ca1eae2dc043365e264255e91d0ca8a1a1f0a3ec050b40a27279ce07e3c18fd"
+        ],
+        [
+          [
+            240,
+            240
+          ],
+          "int32",
+          "54733269d5bf7972518a8fbc600848fb072447201ab13bbc6b0270ab0d04b89d"
+        ]
+      ],
+      "bitwise_identical_to_default": true
+    },
+    {
+      "mode": "default",
+      "threads": 384,
+      "operation": "rgb_to_bgr_480x640",
+      "median_ms": 0.1188080059364438,
+      "samples_ms": [
+        0.2928890025941655,
+        0.023585002054460347,
+        0.1188080059364438
+      ],
+      "output_digest": [
+        [
+          [
+            480,
+            640,
+            3
+          ],
+          "uint8",
+          "a2d0f4598c0312a41ed81514f1414be8e1d0d71e01b1244f892aa235c562a404"
+        ]
+      ],
+      "bitwise_identical_to_default": true
+    },
+    {
+      "mode": "default",
+      "threads": 384,
+      "operation": "dilate_480x640",
+      "median_ms": 1.3096839975332841,
+      "samples_ms": [
+        1.4280219984357245,
+        1.3096839975332841,
+        1.2985580033273436
+      ],
+      "output_digest": [
+        [
+          [
+            480,
+            640
+          ],
+          "uint8",
+          "32dea1b8e211c0d9f8416aaf15e5e8d357e2c17afb18532eea2dd0ab38339914"
+        ]
+      ],
+      "bitwise_identical_to_default": true
+    },
+    {
+      "mode": "default",
+      "threads": 384,
+      "operation": "connected4_480x640",
+      "median_ms": 1.6338400018867105,
+      "samples_ms": [
+        1.6338400018867105,
+        1.0610810059006326,
+        13.511340999684762
+      ],
+      "output_digest": [
+        [
+          [],
+          "int64",
+          "ebfb8d4485b43d39f07d6b896da2c6e5611c5661c429eee263936eca592cc143"
+        ],
+        [
+          [
+            480,
+            640
+          ],
+          "int32",
+          "c6fc3487837611907df0e8ac9630a50462b781490163d7bcaebd63adcd047792"
+        ]
+      ],
+      "bitwise_identical_to_default": true
+    },
+    {
+      "mode": "default",
+      "threads": 384,
+      "operation": "rgb_to_bgr_1024x1024",
+      "median_ms": 1.1454880004748702,
+      "samples_ms": [
+        1.6658479944453575,
+        1.1454880004748702,
+        0.9918880023178644
+      ],
+      "output_digest": [
+        [
+          [
+            1024,
+            1024,
+            3
+          ],
+          "uint8",
+          "b6f1ca8ebf45525c6d3b5ee84221454c634e1126de43bf38f8414fbd1b4d2444"
+        ]
+      ],
+      "bitwise_identical_to_default": true
+    },
+    {
+      "mode": "default",
+      "threads": 384,
+      "operation": "dilate_1024x1024",
+      "median_ms": 16.79634699394228,
+      "samples_ms": [
+        21.50709099805681,
+        10.000185000535566,
+        16.79634699394228
+      ],
+      "output_digest": [
+        [
+          [
+            1024,
+            1024
+          ],
+          "uint8",
+          "ee78cd29d3a534713b36e6ff6fa3668c8a8f851a542d5eb2401c25ca4e057d02"
+        ]
+      ],
+      "bitwise_identical_to_default": true
+    },
+    {
+      "mode": "default",
+      "threads": 384,
+      "operation": "connected4_1024x1024",
+      "median_ms": 11.72272899566451,
+      "samples_ms": [
+        11.72272899566451,
+        12.153864998253994,
+        8.593175996793434
+      ],
+      "output_digest": [
+        [
+          [],
+          "int64",
+          "7bd1bd13a88875f22e5a7f7f1d6982d70a391be1484ce0c42560f96574947e43"
+        ],
+        [
+          [
+            1024,
+            1024
+          ],
+          "int32",
+          "c6d31a72afe5b9aa999922c42f2e6c00867318dbe0f67619d287c4668dcf7867"
+        ]
+      ],
+      "bitwise_identical_to_default": true
+    },
+    {
+      "mode": "single",
+      "threads": 1,
+      "operation": "rgb_to_bgr_240x240",
+      "median_ms": 0.0073310002335347235,
+      "samples_ms": [
+        0.01646499731577933,
+        0.0073310002335347235,
+        0.006930000381544232
+      ],
+      "output_digest": [
+        [
+          [
+            240,
+            240,
+            3
+          ],
+          "uint8",
+          "6b253a63ca14a29ac4b45ed757cfc8aa480cfa7bc04e9d056957c2959acc27ed"
+        ]
+      ],
+      "bitwise_identical_to_default": true
+    },
+    {
+      "mode": "single",
+      "threads": 1,
+      "operation": "dilate_240x240",
+      "median_ms": 0.33600399910937995,
+      "samples_ms": [
+        0.33701500069582835,
+        0.33585399796720594,
+        0.33600399910937995
+      ],
+      "output_digest": [
+        [
+          [
+            240,
+            240
+          ],
+          "uint8",
+          "b03c161546b8ac65df8c904de01a8e4a85ce5fa4f8b1738a5e49fc99e8788794"
+        ]
+      ],
+      "bitwise_identical_to_default": true
+    },
+    {
+      "mode": "single",
+      "threads": 1,
+      "operation": "connected4_240x240",
+      "median_ms": 0.15985999925760552,
+      "samples_ms": [
+        0.1892040017992258,
+        0.15985999925760552,
+        0.13499199849320576
+      ],
+      "output_digest": [
+        [
+          [],
+          "int64",
+          "1ca1eae2dc043365e264255e91d0ca8a1a1f0a3ec050b40a27279ce07e3c18fd"
+        ],
+        [
+          [
+            240,
+            240
+          ],
+          "int32",
+          "54733269d5bf7972518a8fbc600848fb072447201ab13bbc6b0270ab0d04b89d"
+        ]
+      ],
+      "bitwise_identical_to_default": true
+    },
+    {
+      "mode": "single",
+      "threads": 1,
+      "operation": "rgb_to_bgr_480x640",
+      "median_ms": 0.031106996175367385,
+      "samples_ms": [
+        0.03636399924289435,
+        0.031106996175367385,
+        0.03067600482609123
+      ],
+      "output_digest": [
+        [
+          [
+            480,
+            640,
+            3
+          ],
+          "uint8",
+          "a2d0f4598c0312a41ed81514f1414be8e1d0d71e01b1244f892aa235c562a404"
+        ]
+      ],
+      "bitwise_identical_to_default": true
+    },
+    {
+      "mode": "single",
+      "threads": 1,
+      "operation": "dilate_480x640",
+      "median_ms": 1.2800700060324743,
+      "samples_ms": [
+        1.2797290037269704,
+        1.2800700060324743,
+        11.074035995989107
+      ],
+      "output_digest": [
+        [
+          [
+            480,
+            640
+          ],
+          "uint8",
+          "32dea1b8e211c0d9f8416aaf15e5e8d357e2c17afb18532eea2dd0ab38339914"
+        ]
+      ],
+      "bitwise_identical_to_default": true
+    },
+    {
+      "mode": "single",
+      "threads": 1,
+      "operation": "connected4_480x640",
+      "median_ms": 1.0418020028737374,
+      "samples_ms": [
+        1.069473997631576,
+        1.0417329976917244,
+        1.0418020028737374
+      ],
+      "output_digest": [
+        [
+          [],
+          "int64",
+          "ebfb8d4485b43d39f07d6b896da2c6e5611c5661c429eee263936eca592cc143"
+        ],
+        [
+          [
+            480,
+            640
+          ],
+          "int32",
+          "c6fc3487837611907df0e8ac9630a50462b781490163d7bcaebd63adcd047792"
+        ]
+      ],
+      "bitwise_identical_to_default": true
+    },
+    {
+      "mode": "single",
+      "threads": 1,
+      "operation": "rgb_to_bgr_1024x1024",
+      "median_ms": 0.10025999654317275,
+      "samples_ms": [
+        1.0877509994315915,
+        0.10025999654317275,
+        0.09843799489317462
+      ],
+      "output_digest": [
+        [
+          [
+            1024,
+            1024,
+            3
+          ],
+          "uint8",
+          "b6f1ca8ebf45525c6d3b5ee84221454c634e1126de43bf38f8414fbd1b4d2444"
+        ]
+      ],
+      "bitwise_identical_to_default": true
+    },
+    {
+      "mode": "single",
+      "threads": 1,
+      "operation": "dilate_1024x1024",
+      "median_ms": 9.854858006292488,
+      "samples_ms": [
+        4.2470690023037605,
+        19.894552999176085,
+        9.854858006292488
+      ],
+      "output_digest": [
+        [
+          [
+            1024,
+            1024
+          ],
+          "uint8",
+          "ee78cd29d3a534713b36e6ff6fa3668c8a8f851a542d5eb2401c25ca4e057d02"
+        ]
+      ],
+      "bitwise_identical_to_default": true
+    },
+    {
+      "mode": "single",
+      "threads": 1,
+      "operation": "connected4_1024x1024",
+      "median_ms": 6.585003997315653,
+      "samples_ms": [
+        10.858412999368738,
+        3.5646550022647716,
+        6.585003997315653
+      ],
+      "output_digest": [
+        [
+          [],
+          "int64",
+          "7bd1bd13a88875f22e5a7f7f1d6982d70a391be1484ce0c42560f96574947e43"
+        ],
+        [
+          [
+            1024,
+            1024
+          ],
+          "int32",
+          "c6d31a72afe5b9aa999922c42f2e6c00867318dbe0f67619d287c4668dcf7867"
+        ]
+      ],
+      "bitwise_identical_to_default": true
+    }
+  ],
+  "repeats": 3,
+  "random_seed": 20261109,
+  "running_worker_environment_changed": false,
+  "runtime_source_changed": false,
+  "parameters_fitted": false,
+  "native_workers_started": false,
+  "interpretation": "Exploratory timing under changing shared host load; not a formal speedup estimate. Do not apply during frozen calibration.",
+  "probe_source_sha256": "1497046fe35d4606e822e438b14cef078bab8d99fab0cd8320d7617b15b365e3",
+  "current_decision": "Do not change native thread settings on this evidence. Library calls were milliseconds; no native end-to-end benefit was measured.",
+  "checkpoint_source_policy_changed": false
+}
