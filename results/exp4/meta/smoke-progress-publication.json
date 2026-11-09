@@ -9,7 +9,7 @@
     "code/audit_smoke_mechanisms.py": "0ebe2c2fa8ea333b1b6b209e895727c8a10a7979b316e7f298ce2028105c9238",
     "code/plot_blp_episode.py": "e7d6d9e2602a41f965cc380ba0eaf009db375db7ebd04a118223992ae8d3531b",
     "meta/smoke_start.json": "7dcaf5fd3cd5daa1a755f4255d1894dfaddb43d4fe126454174cd860dfc3c7e0",
-    "reports/CP3_progress.md": "6b6d8b1cf5962eed4cf988ac55e78633f178ebb0a4c09094787f0db01410fbfa",
+    "reports/CP3_progress.md": "0f060a1870359c6acd542537b0cb6e264b60e6a8924283c70fafdb1e017e2b24",
     "diagnostics/CP3/mechanism-audit.json": "0a366a73f36e4d053fdbd24aae03f90690ac85df9aa6396d8caf436552f36153",
     "diagnostics/CP3/figure-review.json": "8b67ed76b6d0c02430e6145fab72c20e2d31dc65086296ca838a91756ec35525",
     "diagnostics/CP3/early-behavior-review.json": "2959a56dd63a215c095cb2b235056d17d1899c7a28c35e24b364cdef3a1421b8",
@@ -39,9 +39,17 @@
     "diagnostics/CP3/early/QaLdnwvtxbs/summary.json": "ecf676a9a5fb8576d2a2ff07addfcd19634a6f8c5e1aee880a728a9b1218dd91",
     "diagnostics/CP3/early/QaLdnwvtxbs/episodes.json": "453fb630476ddb496319e9d1a06ee2998dbc292f6fe5ff9117d82545daddc815",
     "diagnostics/CP3/early/TEEsavR23oF/summary.json": "30036b66b382a0af6bcb8a44a66ab18f129016da9ad1cf6089bae7fcbf68d4ed",
-    "diagnostics/CP3/early/TEEsavR23oF/episodes.json": "73a85b476ddace9a62c27292bc3f0b2cdd7a5f4ca84c59d7e7805c3c88a2a942"
+    "diagnostics/CP3/early/TEEsavR23oF/episodes.json": "73a85b476ddace9a62c27292bc3f0b2cdd7a5f4ca84c59d7e7805c3c88a2a942",
+    "reports/archive/CP3_progress.smoke-a1-depth-unit-invalid.md": "6b6d8b1cf5962eed4cf988ac55e78633f178ebb0a4c09094787f0db01410fbfa",
+    "diagnostics/depth-unit-fix/smoke-depth-unit-stop.json": "97dde48decccbd79e8f9a6f7c400ed335ef1df61cefd77a7743848d7406cede0",
+    "diagnostics/depth-unit-fix/coverage-sensor-config-probe.json": "410915dfb9eeabd15d70343e44ce188fe9ab181e904720324bde2d94164610ce"
   },
   "updated_at_utc": "2026-11-09T04:12:00.189314+00:00",
   "completed_scenes_at_publication": 9,
-  "audited_scenes": 8
+  "audited_scenes": 8,
+  "superseded": true,
+  "invalid_for_formal_CP3": true,
+  "reason": "normalized sensor depth used as metres in BLP coverage",
+  "superseded_at_utc": "2026-11-09T04:41:17.482826+00:00",
+  "replacement_code_commit": "6b681ebf3877d386380b755bd221e81008e33542"
 }
