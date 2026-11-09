@@ -1,12 +1,17 @@
 from datetime import datetime,timezone
 from pathlib import Path
-import json,os,subprocess,sys,time
+import argparse,hashlib,json,os,subprocess,sys,time
 root=Path('/nvme/khy/ForesightNav_exp4_depthfix/results/exp4')
+parser=argparse.ArgumentParser(description='Read-only calibration and host CPU supervision')
+parser.add_argument('--max-polls',type=int,default=20)
+args=parser.parse_args()
+if not 1<=args.max_polls<=160:parser.error('--max-polls must be between 1 and 160')
 repo=root.parents[1]
 stamp=datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ')
 log=root/('logs/calibration-observer-a3-'+stamp+'.jsonl')
 meta={'observer_pid':os.getpid(),'started_at_utc':datetime.now(timezone.utc).isoformat(),
- 'max_polls':20,'interval_seconds':45,'log':str(log),
+ 'max_polls':args.max_polls,'interval_seconds':45,'log':str(log),
+ 'observer_script_sha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
  'scope':'bounded read-only supervision of controller31036 and CPU122348; stop on new closed scene'}
 (root/'meta/last-calibration-observer.json').write_text(json.dumps(meta,indent=2)+'\n')
 initial=None
@@ -34,7 +39,9 @@ with log.open('x') as stream:
        'accepted_actions':j['accepted_actions'],'snapshots':j['snapshots'],
        'live_matching':j['launcher_live_and_matching'],'shadow_error_bytes':j['shadow_error_bytes']}
        for j in audit['jobs'] if j['status']=='running'],
-   'CPU_pid':state['pid'],'CPU_live_matching':live,'CPU_status':state['status']}
+   'CPU_pid':state['pid'],'CPU_live_matching':live,'CPU_status':state['status'],
+   'host_cpu':{'logical_cpus':os.cpu_count(),'load_average':list(os.getloadavg()),
+       'pressure':Path('/proc/pressure/cpu').read_text().strip()}}
   reason=None
   if not valid:reason='controller_or_source_requires_review'
   elif state['status']=='stopped_for_review':reason='CPU_postprocess_requires_review'

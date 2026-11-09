@@ -1,0 +1,64 @@
+{
+  "applied": true,
+  "manifest": {
+    "supervise_calibration.py": {
+      "before": "184d451291db7bc952db11f48bf17c24862669ab69b6df6c22ab8988df9825f2",
+      "proposed": "1967fe8f7d81c943f3a8d6784bd21e5fc3c1012911c1eada24f7d045f282fbe8"
+    },
+    "watch_evaluation.py": {
+      "before": "86a5f5606d9b23f4d58071fe3cb02db8d39f23c7869f8768cf2854577e93c0eb",
+      "proposed": "b0d1839082efc39cab8be8bbf2985fb9938d589d6abf33969606e9cd4651a8db"
+    }
+  },
+  "applied_at_utc": "2026-11-09T11:34:22.198245+00:00",
+  "previous_observer_window_proof": "diagnostics/calibration-supervision-20261109T111746Z.json",
+  "syntax_checked_files": 2,
+  "native_source_fingerprint_unchanged": true,
+  "CPU_bound11_scripts_unchanged": true,
+  "live_probe_pending": false,
+  "live_probe_tool_session": 66785,
+  "live_probe_tool_exit_code": 0,
+  "live_probe": {
+    "poll": 1,
+    "checked_at_utc": "2026-11-09T11:34:22.725456+00:00",
+    "completed": 116,
+    "controller_live_matching": true,
+    "boot_matches": true,
+    "source_unchanged": true,
+    "active_jobs": [
+      {
+        "scene": "cvZr5TUy5C5",
+        "gpu": 2,
+        "pid": 110996,
+        "completed": 26,
+        "accepted_actions": 15208,
+        "snapshots": 1566,
+        "live_matching": true,
+        "shadow_error_bytes": 0
+      }
+    ],
+    "CPU_pid": 122348,
+    "CPU_live_matching": true,
+    "CPU_status": "waiting_for_complete_collection",
+    "host_cpu": {
+      "logical_cpus": 384,
+      "load_average": [
+        2099.2,
+        2103.97,
+        1907.76
+      ],
+      "pressure": "some avg10=75.74 avg60=80.58 avg300=80.46 total=1882912125\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=0"
+    }
+  },
+  "live_probe_metadata": {
+    "observer_pid": 145086,
+    "started_at_utc": "2026-11-09T11:34:22.377847+00:00",
+    "max_polls": 1,
+    "interval_seconds": 45,
+    "log": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/logs/calibration-observer-a3-20261109T113422Z.jsonl",
+    "observer_script_sha256": "1967fe8f7d81c943f3a8d6784bd21e5fc3c1012911c1eada24f7d045f282fbe8",
+    "scope": "bounded read-only supervision of controller31036 and CPU122348; stop on new closed scene"
+  },
+  "validated_at_utc": "2026-11-09T11:35:57.581743+00:00",
+  "validation_scope": "AST syntax checks for both read-only scripts and one actual calibration observation; no formal evaluation run"
+}

@@ -4,6 +4,7 @@ from dataclasses import asdict
 from datetime import datetime, timezone
 import hashlib
 import json
+import os
 from pathlib import Path
 import time
 
@@ -54,7 +55,9 @@ def audit(stage):
               'stage': stage, 'status': ledger['status'], 'error': ledger.get('error'),
               'controller_pid': ledger['controller_pid'], 'controller': control,
               'source_unchanged': source_fingerprint() == cp2b['source_fingerprint'],
-              'parameter_unchanged': parameter_sha == cp2b['parameter_sha256'], 'jobs': []}
+              'parameter_unchanged': parameter_sha == cp2b['parameter_sha256'], 'jobs': [],
+              'host_cpu': {'logical_cpus': os.cpu_count(), 'load_average': list(os.getloadavg()),
+                           'pressure': Path('/proc/pressure/cpu').read_text().strip()}}
     for job in ledger['jobs']:
         item = {k: job.get(k) for k in ('scene', 'gpu', 'pid', 'status', 'run_directory')}
         item['launcher'] = process(job['pid'])
@@ -99,7 +102,7 @@ def audit(stage):
 def compact(value):
     return {k: value[k] for k in ('checked_at_utc', 'stage', 'status', 'error',
             'controller_pid', 'controller', 'source_unchanged', 'parameter_unchanged',
-            'completed_scenes')} | {'totals': {k: sum(j.get(k, 0) for j in value['jobs'])
+            'completed_scenes', 'host_cpu')} | {'totals': {k: sum(j.get(k, 0) for j in value['jobs'])
                 for k in ('snapshot_count', 'action_count', 'blp_error_bytes',
                           'binding_error_count', 'missing_action_targets',
                           'unresolved_query_targets', 'structural_dispatch_errors')},

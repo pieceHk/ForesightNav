@@ -1,0 +1,67 @@
+{
+  "recorded_at_utc": "2026-11-09T11:34:22.172361+00:00",
+  "scope": "twenty live read-only polls before host telemetry update",
+  "observer_metadata": {
+    "observer_pid": 142747,
+    "started_at_utc": "2026-11-09T11:17:46.625596+00:00",
+    "max_polls": 20,
+    "interval_seconds": 45,
+    "log": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/logs/calibration-observer-a3-20261109T111746Z.jsonl",
+    "scope": "bounded read-only supervision of controller31036 and CPU122348; stop on new closed scene"
+  },
+  "successful_polls": 20,
+  "first": {
+    "poll": 1,
+    "checked_at_utc": "2026-11-09T11:17:46.860954+00:00",
+    "completed": 115,
+    "controller_live_matching": true,
+    "boot_matches": true,
+    "source_unchanged": true,
+    "active_jobs": [
+      {
+        "scene": "cvZr5TUy5C5",
+        "gpu": 2,
+        "pid": 110996,
+        "completed": 25,
+        "accepted_actions": 14521,
+        "snapshots": 1495,
+        "live_matching": true,
+        "shadow_error_bytes": 0
+      }
+    ],
+    "CPU_pid": 122348,
+    "CPU_live_matching": true,
+    "CPU_status": "waiting_for_complete_collection"
+  },
+  "last": {
+    "poll": 20,
+    "checked_at_utc": "2026-11-09T11:33:02.606607+00:00",
+    "completed": 116,
+    "controller_live_matching": true,
+    "boot_matches": true,
+    "source_unchanged": true,
+    "active_jobs": [
+      {
+        "scene": "cvZr5TUy5C5",
+        "gpu": 2,
+        "pid": 110996,
+        "completed": 26,
+        "accepted_actions": 15170,
+        "snapshots": 1563,
+        "live_matching": true,
+        "shadow_error_bytes": 0
+      }
+    ],
+    "CPU_pid": 122348,
+    "CPU_live_matching": true,
+    "CPU_status": "waiting_for_complete_collection"
+  },
+  "tool_session": 94342,
+  "observer_tool_exit_code": 0,
+  "log_sha256": "0bdad973ae146fa37c7e730f5f645c7605fe2d58d28242fd1a6d0073d68889a4",
+  "observer_script_sha256": "184d451291db7bc952db11f48bf17c24862669ab69b6df6c22ab8988df9825f2",
+  "all160_runtime_inputs_unchanged": true,
+  "all11_CPU_bound_scripts_unchanged": true,
+  "native_workers_restarted": false,
+  "parameters_fitted": false
+}
