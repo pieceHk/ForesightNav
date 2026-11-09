@@ -22,3 +22,12 @@ S观察器已按实际传感器配置把归一化深度转换为米，原导航�
 CP2、CP3及CP4/CP5报告工具已准备。7项CP2辅助检查和4项完整报告辅助检查与51项运行检查单独记录；合成测试临时输出已删除，不代表真实成绩。当前保持算法代码冻结，继续收集和审计。
 
 [实时核查](../meta/current-live-audit.json)、[本次完成场景审计](../meta/completed-calibration-scene-audits.json)、[本次原生GT复核](../diagnostics/native-offline-gt-check.json)、[覆盖记录审查](../diagnostics/depth-unit-fix/live-coverage-record-audit.json)、[连接恢复记录](../meta/transport-recovery-20261109T0820Z.json)、[单位修正](depth_unit_fix.md)。
+
+
+## 收集完成后的CPU后处理
+
+服务器已独立启动固定a3的后处理等待进程，PID115226、start_ticks2236257。它每30秒核对原控制器、boot、160项固定输入及10份后处理脚本；当前状态waiting_for_complete_collection，没有拟合或冻结参数。只有ledger达到三组全部完成且原生覆盖检查通过后，才依次执行完整场景审计、原生GT复核、六份日志压缩、固定拟合及CP2a报告。
+
+该进程停在completed_pending_CP2a_review，不产生接受记录、不冻结参数或启动3-MON。异常会保存stopped_for_review及日志，结束本进程的CPU子任务，保留原生实验。它在独立session中运行，SSH观察连接退出不会带走此进程。已有守卫预检通过，并在启动命令结束后再次核对PID/start_ticks和等待心跳，证明当前仍在等待。
+
+[后处理代码](../code/finish_calibration.py)、[后处理状态快照](../meta/calibration-postprocess.json)、[启动与预检](../diagnostics/depth-unit-fix/postprocess-scheduling.json)。

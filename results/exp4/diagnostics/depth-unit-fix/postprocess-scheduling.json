@@ -1,0 +1,34 @@
+{
+  "preflight": {
+    "ready_to_schedule": true,
+    "collection_status": "running",
+    "ready_to_process": false,
+    "fixed_input_count": 160,
+    "cpu_steps": [
+      "audit_completed_calibration.py",
+      "verify_action_path_pipeline.py",
+      "archive_calibration_logs.py",
+      "fit_calibration_reviewed.py",
+      "report_calibration.py"
+    ],
+    "freezes_parameters": false,
+    "launches_native_workers": false
+  },
+  "postprocess_pid": 115226,
+  "start_ticks": "2236257",
+  "boot_id": "23443655-6f2f-4063-a412-e255f3a91e62",
+  "status": "waiting_for_complete_collection",
+  "independent_process_session": true,
+  "log": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/logs/calibration-postprocess-a3.log",
+  "runtime_algorithm_unchanged": true,
+  "steps": [
+    "audit_completed_calibration.py",
+    "verify_action_path_pipeline.py",
+    "archive_calibration_logs.py",
+    "fit_calibration_reviewed.py",
+    "report_calibration.py"
+  ],
+  "stage_after_success": "completed_pending_CP2a_review",
+  "parameter_acceptance_or_freeze_performed": false,
+  "native_worker_launches_performed": false
+}
