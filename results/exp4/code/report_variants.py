@@ -22,6 +22,8 @@ from action_path_metrics import action_paths, SOURCE_SHA256 as ACTION_SOURCE_SHA
 from native_candidate_gt import NativeCandidateGT, SOURCE_SHA256 as GT_SOURCE_SHA256
 from pbsp.navigation.blp_parameters import CalibrationDocument, SOURCE_SHA256 as PARAMETER_SOURCE_SHA256
 
+from candidate_identities import canonicalize, SOURCE_SHA256 as IDENTITY_SOURCE_SHA256
+
 SOURCE_SHA256 = hashlib.sha256(Path(__file__).read_bytes()).hexdigest()
 
 
@@ -343,8 +345,10 @@ def normalize(variant, runs, expected=None, allow_diagnostic=False, calibration=
                     for r in normalized for k, s in enumerate(r['stages'])}
     gt_label = (lambda scene, episode, k, position:
                 gt_by_episode[str(scene), str(episode)](scene, episode, k, position)) if gt_by_episode else None
+    events, traces, identity_audit = canonicalize(events, traces)
     process = process_metrics(events, decisions, dispatches, traces, set(identities),
                               gt_label=gt_label, native_stage_paths=native_paths)
+    process['checked_candidate_identity'] = identity_audit
     if native_gt_runs:
         process['native_target_gt_provenance'] = [
             {'run_directory': str(run), 'recorded_label_verification': verified,
@@ -356,7 +360,7 @@ def normalize(variant, runs, expected=None, allow_diagnostic=False, calibration=
                'process': process,
                'analysis_sources_sha256': {'report_variants.py': SOURCE_SHA256,
                    'action_path_metrics.py': ACTION_SOURCE_SHA256, 'native_candidate_gt.py': GT_SOURCE_SHA256,
-                   'blp_parameters.py': PARAMETER_SOURCE_SHA256},
+                   'blp_parameters.py': PARAMETER_SOURCE_SHA256, 'candidate_identities.py': IDENTITY_SOURCE_SHA256},
                'source_commits': sorted(commits), 'diagnostic_only': bool(allow_diagnostic)}
     if document is not None:
         summary['calibration_binding'] = {'selection': document.selection,

@@ -1,8 +1,8 @@
 {
-  "pid": 115226,
-  "start_ticks": "2236257",
+  "pid": 122348,
+  "start_ticks": "2658437",
   "boot_id": "23443655-6f2f-4063-a412-e255f3a91e62",
-  "started_at_utc": "2026-11-09T08:47:25.435515+00:00",
+  "started_at_utc": "2026-11-09T09:57:47.239196+00:00",
   "collection_attempt": "a3",
   "collection_controller_pid": 31036,
   "source_fingerprint": {
@@ -171,18 +171,19 @@
     "audit_completed_calibration.py": "5febafd64dbbcad4eb708ec604ffbe444517a3487cf7019c328c32058051989e",
     "verify_action_path_pipeline.py": "f7038ddc731cd5ff26b1e722e01e076f8b6f46f18d59a591d0e2ef0aef07a76f",
     "archive_calibration_logs.py": "f3e67a984650e44214d6b5ae1c4e9b077a37fd7019f4b0583c00f7ceadcfb37d",
-    "fit_calibration_reviewed.py": "805ef79477539fdf21046cbed7c0a0d1080c96019a5acfee63fdca4cb5822a22",
-    "report_calibration.py": "54136e9ebcb97bc0d6a78a598228b7e25fe182698b85d02f2d0196919dcc9292",
-    "report_variants.py": "0fd565b0649a928c9108db5a706d6d67ee7e7bbbfb6d9bc2da152fa32897a259",
+    "fit_calibration_reviewed.py": "c6511269a6de44ec2177ce633615a8845598575e00e94394a2bc84063c86033a",
+    "report_calibration.py": "54b7b60b5c933ff5a29175ac02f2d4e85256e85b8b0277de10c75b1a0e13b792",
+    "report_variants.py": "d3d8617a83ccbd1ccebf18cf2b4149fd745be23c962e3dabeb42b057ad7626c3",
     "native_candidate_gt.py": "e2620454fe45d54933294286a518440ef16ec961c0eb0ca5aafe5ec2587a21a3",
     "action_path_metrics.py": "a89afc6504fcb5520bb8c227928961b3d7814bcfcc98c23c6311e35254089f1e",
     "evaluate_sequence.py": "d238350a2733b56d258e774e5ca4f1537f09818cd34a313a638b9ec483c0b82f",
-    "finish_calibration.py": "d58462a30cff518215e3bdd552e0b7aef71d62e9b26aca9006bb40f980701993"
+    "finish_calibration.py": "f6313dfb2210c4333b6c3b2749d0ef33d13903b635396d663c371c40b6d47862",
+    "candidate_identities.py": "a209d9e9f1ffab098198c8466c5b64b81dfd9577e105a89df448c91ba9d7a24d"
   },
   "status": "waiting_for_complete_collection",
   "completed_steps": [],
   "freezes_parameters": false,
   "launches_native_workers": false,
-  "last_checked_at_utc": "2026-11-09T09:38:59.476956+00:00",
+  "last_checked_at_utc": "2026-11-09T09:58:47.322441+00:00",
   "collection_status": "running"
 }

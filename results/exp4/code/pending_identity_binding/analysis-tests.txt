@@ -1,0 +1,45 @@
+test_action_targets_follow_same_mapping_but_unresolved_stays_missing (test_candidate_identities.CanonicalIdentityTests) ... ok
+test_bad_coordinate_and_missing_identity_rejected (test_candidate_identities.CanonicalIdentityTests) ... ok
+test_bootstrap_copies_keep_their_own_labels (test_candidate_identities.CanonicalIdentityTests) ... ok
+test_exact_duplicate_merges_without_dropping_checks (test_candidate_identities.CanonicalIdentityTests) ... ok
+test_labels_do_not_choose_grouping (test_candidate_identities.CanonicalIdentityTests) ... ok
+test_near_or_different_height_coordinates_do_not_merge (test_candidate_identities.CanonicalIdentityTests) ... ok
+test_prior_corrected_with_identical_logistic_and_exploration_inputs (test_candidate_identities.CanonicalIdentityTests) ... ok
+test_same_recorded_identity_connects_its_time_varying_points (test_candidate_identities.CanonicalIdentityTests) ... ok
+test_scene_episode_task_and_bootstrap_instance_are_separate (test_candidate_identities.CanonicalIdentityTests) ... ok
+test_comparison_rejects_different_scene_specific_parameter_assignments (test_report_variants.ReportingTests) ... ok
+test_comparison_requires_the_same_loaded_analysis_implementation (test_report_variants.ReportingTests) ... ok
+test_conditional_denominators_and_undefined_tail (test_report_variants.ReportingTests) ... ok
+test_crossfit_snapshot_binding_rejects_wrong_group_scene_hash_and_training_set (test_report_variants.ReportingTests) ... ok
+test_formal_rejects_legacy_trace_before_loading_ground_truth (test_report_variants.ReportingTests) ... ok
+test_formal_rejects_shadow_snapshots_before_loading_ground_truth (test_report_variants.ReportingTests) ... ok
+test_invalid_confirmed_approach_tail_is_counted_even_at_budget_stop (test_report_variants.ReportingTests) ... ok
+test_latency_quantile (test_report_variants.ReportingTests) ... ok
+test_overlapping_visits_do_not_double_count_the_physical_path (test_report_variants.ReportingTests) ... ok
+test_post_failure_success_is_not_a_successful_prefix (test_report_variants.ReportingTests) ... ok
+test_two_by_two_effects_and_paired_discordance (test_report_variants.ReportingTests) ... ok
+test_assignments_are_twenty_scenes_and_exact_fixed_coverage (test_evaluate_sequence.EvaluationSequenceTests) ... ok
+test_crossfit_file_cannot_silently_run_as_pooled_parameters (test_evaluate_sequence.EvaluationSequenceTests) ... ok
+test_crossfit_gate_accepts_only_exact_fixed_scene_and_collected_fold_binding (test_evaluate_sequence.EvaluationSequenceTests) ... ok
+test_five_fold_crossfit_gate_requires_all_twenty_completed_calibration_scenes (test_evaluate_sequence.EvaluationSequenceTests) ... ok
+test_full_accepts_only_current_native_and_normalized_smoke_evidence (test_evaluate_sequence.EvaluationSequenceTests) ... ok
+test_full_crossfit_rejects_a_pooled_assignment_even_with_consistent_artifact_hashes (test_evaluate_sequence.EvaluationSequenceTests) ... ok
+test_full_is_not_authorized_by_CP2b_alone (test_evaluate_sequence.EvaluationSequenceTests) ... ok
+test_missing_behavior_review_does_not_launch_full (test_evaluate_sequence.EvaluationSequenceTests) ... ok
+test_parameter_mutation_and_incomplete_calibration_are_rejected (test_evaluate_sequence.EvaluationSequenceTests) ... ok
+test_smoke_accepts_only_completed_source_bound_self_calibration (test_evaluate_sequence.EvaluationSequenceTests) ... ok
+test_unfinished_calibration_scene_is_not_inferred_complete_from_ledger (test_evaluate_sequence.EvaluationSequenceTests) ... ok
+test_chain_drift_retains_exact_registered_point (experiments.test_blp_identity.IdentityBindingTests) ... ok
+test_confirmed_visual_parent_keeps_priority (experiments.test_blp_identity.IdentityBindingTests) ... ok
+test_episode_reset_clears_remembered_identities (experiments.test_blp_identity.IdentityBindingTests) ... ok
+test_existing_geometry_binding_keeps_priority (experiments.test_blp_identity.IdentityBindingTests) ... ok
+test_nearby_or_different_height_unregistered_point_stays_unresolved (experiments.test_blp_identity.IdentityBindingTests) ... ok
+test_recovery_override_has_no_query_identity (experiments.test_blp_identity.IdentityBindingTests) ... ok
+test_repeated_exact_position_remembers_latest_registration (experiments.test_blp_identity.IdentityBindingTests) ... ok
+test_stale_alias_cannot_create_unknown_identity (experiments.test_blp_identity.IdentityBindingTests) ... ok
+test_task_identity_cannot_cross (experiments.test_blp_identity.IdentityBindingTests) ... ok
+
+----------------------------------------------------------------------
+Ran 40 tests in 0.248s
+
+OK

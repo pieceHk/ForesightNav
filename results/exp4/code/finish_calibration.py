@@ -24,7 +24,7 @@ STATE = ROOT / 'meta/calibration-postprocess.json'
 STEPS = ('audit_completed_calibration.py', 'verify_action_path_pipeline.py',
          'archive_calibration_logs.py', 'fit_calibration_reviewed.py', 'report_calibration.py')
 ANALYSIS = ('report_variants.py', 'native_candidate_gt.py', 'action_path_metrics.py',
-            'evaluate_sequence.py', 'finish_calibration.py')
+            'evaluate_sequence.py', 'finish_calibration.py', 'candidate_identities.py')
 CHILD = None
 
 

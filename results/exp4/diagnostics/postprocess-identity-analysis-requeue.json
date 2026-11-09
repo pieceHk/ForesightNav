@@ -1,0 +1,13 @@
+{
+  "started_at_utc": "2026-11-09T09:57:47.243857+00:00",
+  "pid": 122348,
+  "start_ticks": "2658437",
+  "boot_id": "23443655-6f2f-4063-a412-e255f3a91e62",
+  "status": "waiting_for_complete_collection",
+  "bound_script_count": 11,
+  "log": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/logs/calibration-postprocess-a3-r2.log",
+  "archived_old_pid": 115226,
+  "new_exact_coordinate_identity_analysis_bound": true,
+  "fitting_only_after360": true,
+  "freeze_or_evaluation_not_automatic": true
+}

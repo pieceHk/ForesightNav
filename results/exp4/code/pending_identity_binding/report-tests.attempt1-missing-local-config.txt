@@ -1,0 +1,96 @@
+test_complete_fixture_renders_but_never_authorizes_or_reports_in_chat (test_report_full_evaluation.FullPublicationTests) ... ERROR
+test_partial_coverage_is_rejected_even_if_hashes_are_updated (test_report_full_evaluation.FullPublicationTests) ... ERROR
+test_stale_csv_scores_are_rejected_with_correct_variant_names (test_report_full_evaluation.FullPublicationTests) ... ERROR
+test_stale_effects_are_rejected (test_report_full_evaluation.FullPublicationTests) ... ERROR
+test_crossfit_proposal_preserves_all_twenty_runtime_assignments (test_cp2_report_rule.ProposalLoadingTests) ... ok
+test_pooled_proposal_loads_without_crossfit_fields (test_cp2_report_rule.ProposalLoadingTests) ... ok
+test_a_flip_rate_above_ten_percent_requires_crossfit (test_cp2_report_rule.SelectionRuleTests) ... ok
+test_a_stale_selection_flag_cannot_override_the_actual_flips (test_cp2_report_rule.SelectionRuleTests) ... ok
+test_a_stale_summary_flag_cannot_override_the_intervals (test_cp2_report_rule.SelectionRuleTests) ... ok
+test_disjoint_cost_intervals_require_crossfit_even_with_zero_flips (test_cp2_report_rule.SelectionRuleTests) ... ok
+test_ten_percent_and_touching_intervals_are_admissible (test_cp2_report_rule.SelectionRuleTests) ... ok
+
+======================================================================
+ERROR: test_complete_fixture_renders_but_never_authorizes_or_reports_in_chat (test_report_full_evaluation.FullPublicationTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/nvme/khy/ForesightNav_exp4_identityfix/results/exp4/code/test_report_full_evaluation.py", line 97, in test_complete_fixture_renders_but_never_authorizes_or_reports_in_chat
+    fixture(root)
+  File "/nvme/khy/ForesightNav_exp4_identityfix/results/exp4/code/test_report_full_evaluation.py", line 25, in fixture
+    fingerprint = report.source_fingerprint()
+  File "/nvme/khy/ForesightNav_exp4_identityfix/experiments/exp4_collect.py", line 28, in source_fingerprint
+    return {str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest() for p in paths}
+  File "/nvme/khy/ForesightNav_exp4_identityfix/experiments/exp4_collect.py", line 28, in <dictcomp>
+    return {str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest() for p in paths}
+  File "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/pathlib.py", line 1187, in read_bytes
+    with self.open(mode='rb') as f:
+  File "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/pathlib.py", line 1180, in open
+    return io.open(self, mode, buffering, encoding, errors, newline,
+  File "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/pathlib.py", line 1038, in _opener
+    return self._accessor.open(self, flags, mode)
+FileNotFoundError: [Errno 2] No such file or directory: '/nvme/khy/ForesightNav_exp4_identityfix/runtime.exp4.local.yaml'
+
+======================================================================
+ERROR: test_partial_coverage_is_rejected_even_if_hashes_are_updated (test_report_full_evaluation.FullPublicationTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/nvme/khy/ForesightNav_exp4_identityfix/results/exp4/code/test_report_full_evaluation.py", line 112, in test_partial_coverage_is_rejected_even_if_hashes_are_updated
+    fixture(root)
+  File "/nvme/khy/ForesightNav_exp4_identityfix/results/exp4/code/test_report_full_evaluation.py", line 25, in fixture
+    fingerprint = report.source_fingerprint()
+  File "/nvme/khy/ForesightNav_exp4_identityfix/experiments/exp4_collect.py", line 28, in source_fingerprint
+    return {str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest() for p in paths}
+  File "/nvme/khy/ForesightNav_exp4_identityfix/experiments/exp4_collect.py", line 28, in <dictcomp>
+    return {str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest() for p in paths}
+  File "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/pathlib.py", line 1187, in read_bytes
+    with self.open(mode='rb') as f:
+  File "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/pathlib.py", line 1180, in open
+    return io.open(self, mode, buffering, encoding, errors, newline,
+  File "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/pathlib.py", line 1038, in _opener
+    return self._accessor.open(self, flags, mode)
+FileNotFoundError: [Errno 2] No such file or directory: '/nvme/khy/ForesightNav_exp4_identityfix/runtime.exp4.local.yaml'
+
+======================================================================
+ERROR: test_stale_csv_scores_are_rejected_with_correct_variant_names (test_report_full_evaluation.FullPublicationTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/nvme/khy/ForesightNav_exp4_identityfix/results/exp4/code/test_report_full_evaluation.py", line 135, in test_stale_csv_scores_are_rejected_with_correct_variant_names
+    fixture(root)
+  File "/nvme/khy/ForesightNav_exp4_identityfix/results/exp4/code/test_report_full_evaluation.py", line 25, in fixture
+    fingerprint = report.source_fingerprint()
+  File "/nvme/khy/ForesightNav_exp4_identityfix/experiments/exp4_collect.py", line 28, in source_fingerprint
+    return {str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest() for p in paths}
+  File "/nvme/khy/ForesightNav_exp4_identityfix/experiments/exp4_collect.py", line 28, in <dictcomp>
+    return {str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest() for p in paths}
+  File "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/pathlib.py", line 1187, in read_bytes
+    with self.open(mode='rb') as f:
+  File "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/pathlib.py", line 1180, in open
+    return io.open(self, mode, buffering, encoding, errors, newline,
+  File "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/pathlib.py", line 1038, in _opener
+    return self._accessor.open(self, flags, mode)
+FileNotFoundError: [Errno 2] No such file or directory: '/nvme/khy/ForesightNav_exp4_identityfix/runtime.exp4.local.yaml'
+
+======================================================================
+ERROR: test_stale_effects_are_rejected (test_report_full_evaluation.FullPublicationTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/nvme/khy/ForesightNav_exp4_identityfix/results/exp4/code/test_report_full_evaluation.py", line 125, in test_stale_effects_are_rejected
+    fixture(root)
+  File "/nvme/khy/ForesightNav_exp4_identityfix/results/exp4/code/test_report_full_evaluation.py", line 25, in fixture
+    fingerprint = report.source_fingerprint()
+  File "/nvme/khy/ForesightNav_exp4_identityfix/experiments/exp4_collect.py", line 28, in source_fingerprint
+    return {str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest() for p in paths}
+  File "/nvme/khy/ForesightNav_exp4_identityfix/experiments/exp4_collect.py", line 28, in <dictcomp>
+    return {str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest() for p in paths}
+  File "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/pathlib.py", line 1187, in read_bytes
+    with self.open(mode='rb') as f:
+  File "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/pathlib.py", line 1180, in open
+    return io.open(self, mode, buffering, encoding, errors, newline,
+  File "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/pathlib.py", line 1038, in _opener
+    return self._accessor.open(self, flags, mode)
+FileNotFoundError: [Errno 2] No such file or directory: '/nvme/khy/ForesightNav_exp4_identityfix/runtime.exp4.local.yaml'
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.023s
+
+FAILED (errors=4)

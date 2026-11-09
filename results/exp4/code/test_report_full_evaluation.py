@@ -37,7 +37,7 @@ def fixture(root):
     binding = {'selection': 'pooled', 'parameter_sha256': parameter_sha,
                'parameters_by_scene': {r['scene_id']: asdict(document.pooled) for r in identities}}
     versions = {'report_variants.py': analysis.SOURCE_SHA256, 'action_path_metrics.py': analysis.ACTION_SOURCE_SHA256,
-                'native_candidate_gt.py': analysis.GT_SOURCE_SHA256, 'blp_parameters.py': analysis.PARAMETER_SOURCE_SHA256}
+                'native_candidate_gt.py': analysis.GT_SOURCE_SHA256, 'blp_parameters.py': analysis.PARAMETER_SOURCE_SHA256, 'candidate_identities.py': analysis.IDENTITY_SOURCE_SHA256}
     variants = {}
     for name, successes_per_scene in zip(report.VARIANTS, (4, 6, 5, 7)):
         records = []

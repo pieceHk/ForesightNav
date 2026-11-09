@@ -1,0 +1,26 @@
+test_complete_fixture_renders_but_never_authorizes_or_reports_in_chat (test_report_full_evaluation.FullPublicationTests) ... /nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages/matplotlib/_fontconfig_pattern.py:64: DeprecationWarning: 'oneOf' deprecated - use 'one_of'
+  prop = Group((name + Suppress("=") + comma_separated(value)) | oneOf(_CONSTANTS))
+/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages/matplotlib/_fontconfig_pattern.py:85: DeprecationWarning: 'parseString' deprecated - use 'parse_string'
+  parse = parser.parseString(pattern)
+/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages/matplotlib/_fontconfig_pattern.py:89: DeprecationWarning: 'resetCache' deprecated - use 'reset_cache'
+  parser.resetCache()
+/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages/matplotlib/_mathtext.py:45: DeprecationWarning: 'enablePackrat' deprecated - use 'enable_packrat'
+  ParserElement.enablePackrat()
+In /nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages/matplotlib/mpl-data/stylelib/classic.mplstyle: 'parseString' deprecated - use 'parse_string'
+In /nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages/matplotlib/mpl-data/stylelib/classic.mplstyle: 'resetCache' deprecated - use 'reset_cache'
+ok
+test_partial_coverage_is_rejected_even_if_hashes_are_updated (test_report_full_evaluation.FullPublicationTests) ... ok
+test_stale_csv_scores_are_rejected_with_correct_variant_names (test_report_full_evaluation.FullPublicationTests) ... ok
+test_stale_effects_are_rejected (test_report_full_evaluation.FullPublicationTests) ... ok
+test_crossfit_proposal_preserves_all_twenty_runtime_assignments (test_cp2_report_rule.ProposalLoadingTests) ... ok
+test_pooled_proposal_loads_without_crossfit_fields (test_cp2_report_rule.ProposalLoadingTests) ... ok
+test_a_flip_rate_above_ten_percent_requires_crossfit (test_cp2_report_rule.SelectionRuleTests) ... ok
+test_a_stale_selection_flag_cannot_override_the_actual_flips (test_cp2_report_rule.SelectionRuleTests) ... ok
+test_a_stale_summary_flag_cannot_override_the_intervals (test_cp2_report_rule.SelectionRuleTests) ... ok
+test_disjoint_cost_intervals_require_crossfit_even_with_zero_flips (test_cp2_report_rule.SelectionRuleTests) ... ok
+test_ten_percent_and_touching_intervals_are_admissible (test_cp2_report_rule.SelectionRuleTests) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.900s
+
+OK

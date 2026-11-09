@@ -10,6 +10,7 @@ from pathlib import Path
 import numpy as np
 
 from experiments.exp4_collect import source_fingerprint
+from candidate_identities import canonicalize, SOURCE_SHA256 as IDENTITY_SHA256
 
 ROOT = Path(__file__).resolve().parents[1]
 KEYS = ('a', 'b0', 'pi', 'c_exp')
@@ -112,6 +113,10 @@ def verify():
     for f in range(3):
         relative = f'logs/calibration_fold{f}_events.jsonl'
         events = [json.loads(line) for line in (ROOT / relative).read_text().splitlines() if line]
+        events, _, identity_audit = canonicalize(events)
+        require(fit['checked_candidate_identity']['source_sha256'] == IDENTITY_SHA256 and
+                fit['checked_candidate_identity']['per_fold'][str(f)] == identity_audit,
+                'Fitted candidate identity rule or counts differ')
         require(all(r['scene_id'] in folds[f] for r in events), 'An event is assigned to the wrong fold')
         checks_f = [r for r in events if r['event'] == 'verification_final']
         all_checks.extend(checks_f)
@@ -134,6 +139,7 @@ def verify():
                         'event_counts': dict(Counter(r['event'] for r in events)),
                         'verification_events': len(checks_f), 'distinct_checked': len(unique_v),
                         'distinct_confirmed': sum(unique_v.values()), 'distinct_GT_valid': sum(unique_y.values()),
+                        'candidate_identity_audit': identity_audit,
                         'uncompleted_empty_activations': [starts[k] for k in sorted(set(starts) - set(ends))]})
         hashes[relative] = sha(relative)
         snapshots = f'logs/calibration_fold{f}_snapshots.jsonl'
@@ -148,7 +154,7 @@ def verify():
              'meta/completed-calibration-scene-audits.json', 'meta/calibration-overlap-audit.json',
              'meta/protocol_decisions.json', 'diagnostics/native-offline-gt-check.json',
              'meta/calibration-log-archive.json', 'meta/calibration-fit-binding.json',
-             'code/fit_calibration_reviewed.py', 'code/report_calibration.py')
+             'code/fit_calibration_reviewed.py', 'code/report_calibration.py', 'code/candidate_identities.py')
     hashes.update({p: sha(p) for p in paths})
     return {'fit': fit, 'folds': folds, 'start': start, 'cohorts': cohorts, 'checks': all_checks,
             'hashes': hashes, 'selection': selection, 'overlap': overlap, 'audit': audit,
@@ -215,7 +221,7 @@ def render(evidence):
            table(['Fold', '场景', 'Episode', '检查事件', '不同候选', '确认候选', '完成探索'],
                  [[c['fold'], ', '.join(c['scenes']), c['episodes'], c['verification_events'], c['distinct_checked'],
                    c['distinct_confirmed'], c['event_counts'].get('empty_activation', 0)] for c in cohorts]), '',
-           '逻辑回归按每次最终检查事件拟合v；π按持久候选身份去重，统计是否曾被系统确认。两者分母不同，且只观察被检查的候选，存在选择偏差。E为用户确认保留的单个候选高斯codebook加权文本分数。S采用候选级12档方位覆盖，归一化深度在覆盖观察器中转换为米。B表示检查时被系统确认的概率。', '',
+           '逻辑回归保留每次最终检查事件拟合v；π按持久登记身份去重，同一scene/episode/task内最终检查坐标完全相同的不同ID再作合并，统计是否曾被系统确认。坐标合并不用距离阈值、v或GT，原始日志保留。两者分母不同，且只观察被检查的候选，存在选择偏差。E为用户确认保留的单个候选高斯codebook加权文本分数。S采用候选级12档方位覆盖，归一化深度在覆盖观察器中转换为米。B表示检查时被系统确认的概率。', '',
            table(['自标签参数集', *KEYS], [[f'Fold {f}', *units(fit['per_fold'][str(f)]['theta'])] for f in range(3)] +
                  [['Pooled', *units(fit['theta_pool'])]]), '',
            'C_exp单位为米。每组按完整episode重采样200次，种子为20261107+fold；95%区间如下。', '',

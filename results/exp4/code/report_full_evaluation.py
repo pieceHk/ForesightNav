@@ -54,7 +54,7 @@ def verify(stage):
     versions = {'report_variants.py': analysis.SOURCE_SHA256,
                 'action_path_metrics.py': analysis.ACTION_SOURCE_SHA256,
                 'native_candidate_gt.py': analysis.GT_SOURCE_SHA256,
-                'blp_parameters.py': analysis.PARAMETER_SOURCE_SHA256}
+                'blp_parameters.py': analysis.PARAMETER_SOURCE_SHA256, 'candidate_identities.py': analysis.IDENTITY_SOURCE_SHA256}
     variants, evidence = {}, {}
     for name in names:
         # An unreviewed anomalous score blocks normal publication. The raw

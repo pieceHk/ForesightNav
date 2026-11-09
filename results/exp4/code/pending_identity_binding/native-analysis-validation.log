@@ -1,0 +1,123 @@
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+Users of this version of Gym should be able to simply replace 'import gym' with 'import gymnasium as gym' in the vast majority of cases.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+pybullet build time: Jan 29 2025 23:20:52
+/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages/wandb/sdk/launch/builder/build.py:11: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+{
+  "checked_at_utc": "2026-11-09T09:56:41.389100+00:00",
+  "scope": "closed a3 90-episode native artifact accounting; no parameter fitting or native rerun",
+  "episodes": 90,
+  "scenes": [
+    "6s7QHgap2fW",
+    "TEEsavR23oF",
+    "QaLdnwvtxbs"
+  ],
+  "normalized_native_episode_rows_identical": true,
+  "all_decision_rows_identical": true,
+  "native_SR_SPL_PR_PPL_and_conditionals_identical": true,
+  "accepted_physical_path_identical": true,
+  "invalid_GT_point_path_identical": true,
+  "raw_gaps_retained": [
+    {
+      "scene_id": "QaLdnwvtxbs",
+      "episode_id": "18",
+      "k": 0,
+      "frame": 10,
+      "reason": "unresolved_or_unknown_query_identity"
+    },
+    {
+      "scene_id": "QaLdnwvtxbs",
+      "episode_id": "18",
+      "k": 0,
+      "frame": 11,
+      "reason": "unresolved_or_unknown_query_identity"
+    },
+    {
+      "scene_id": "QaLdnwvtxbs",
+      "episode_id": "18",
+      "k": 0,
+      "frame": 12,
+      "reason": "unresolved_or_unknown_query_identity"
+    },
+    {
+      "scene_id": "QaLdnwvtxbs",
+      "episode_id": "18",
+      "k": 0,
+      "frame": 13,
+      "reason": "unresolved_or_unknown_query_identity"
+    },
+    {
+      "scene_id": "QaLdnwvtxbs",
+      "episode_id": "18",
+      "k": 0,
+      "frame": 14,
+      "reason": "unresolved_or_unknown_query_identity"
+    },
+    {
+      "scene_id": "QaLdnwvtxbs",
+      "episode_id": "18",
+      "k": 0,
+      "frame": 15,
+      "reason": "unresolved_or_unknown_query_identity"
+    },
+    {
+      "scene_id": "QaLdnwvtxbs",
+      "episode_id": "18",
+      "k": 0,
+      "frame": 16,
+      "reason": "unresolved_or_unknown_query_identity"
+    },
+    {
+      "scene_id": "QaLdnwvtxbs",
+      "episode_id": "18",
+      "k": 0,
+      "frame": 17,
+      "reason": "unresolved_or_unknown_query_identity"
+    },
+    {
+      "scene_id": "QaLdnwvtxbs",
+      "episode_id": "18",
+      "k": 0,
+      "frame": 18,
+      "reason": "unresolved_or_unknown_query_identity"
+    },
+    {
+      "scene_id": "QaLdnwvtxbs",
+      "episode_id": "18",
+      "k": 0,
+      "frame": 19,
+      "reason": "unresolved_or_unknown_query_identity"
+    }
+  ],
+  "path_complete": false,
+  "native_stage_path_checks": 180,
+  "native_stage_path_max_abs_error_m": 2.5318750687119973e-06,
+  "raw_checked_registry_identities": 864,
+  "canonical_checked_identities": 863,
+  "identity_rule": {
+    "definition": "recorded registry identity, merging checked IDs sharing an exact full-XYZ final-check coordinate within one scene/episode/task/resample",
+    "source_sha256": "a209d9e9f1ffab098198c8466c5b64b81dfd9577e105a89df448c91ba9d7a24d",
+    "raw_checked_registry_identities": 864,
+    "canonical_checked_identities": 863,
+    "identities_merged": 1,
+    "verification_rows_retained": 1033,
+    "GT_or_labels_used_to_group": false,
+    "raw_events_modified": false
+  },
+  "candidate_GT_checks": 1033,
+  "recovery_GT_checks": 1378,
+  "max_GT_distance_error_m": 0.0,
+  "source_sha256": {
+    "old_report": "0fd565b0649a928c9108db5a706d6d67ee7e7bbbfb6d9bc2da152fa32897a259",
+    "report_variants.py": "d3d8617a83ccbd1ccebf18cf2b4149fd745be23c962e3dabeb42b057ad7626c3",
+    "action_path_metrics.py": "a89afc6504fcb5520bb8c227928961b3d7814bcfcc98c23c6311e35254089f1e",
+    "native_candidate_gt.py": "e2620454fe45d54933294286a518440ef16ec961c0eb0ca5aafe5ec2587a21a3",
+    "blp_parameters.py": "039c6a660ab2a7cf2b6e9e78e810bfb44f32731e6c52a9194dc20f82daa63bad",
+    "candidate_identities.py": "a209d9e9f1ffab098198c8466c5b64b81dfd9577e105a89df448c91ba9d7a24d",
+    "validation": "e98787eedaf4a23999dfcdff4e8a3224d3e71a14b9f80f355cda735632c0d85d"
+  },
+  "raw_data_changed": false,
+  "actual_fitting_started": false
+}

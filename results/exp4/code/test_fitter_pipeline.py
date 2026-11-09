@@ -43,7 +43,7 @@ def exercise(c_exp_by_fold):
                 y = 1 if index in (1, 4, 5) else 0
                 identity = {'scene_id': f'synthetic_{fold}_{episode // 30}', 'episode_id': str(episode % 30)}
                 events.extend([dict(identity, event='verification_final', E=e, v=v, y=y,
-                                    k=0, candidate_id='0:0', N_views=index),
+                                    k=0, candidate_id='0:0', N_views=index, position=[float(index), 0., 0.]),
                                dict(identity, event='empty_activation', path_to_first_candidate_m=c_exp)])
             write_jsonl(root/f'logs/calibration_fold{fold}_events.jsonl', events)
             write_jsonl(root/f'logs/calibration_fold{fold}_snapshots.jsonl',

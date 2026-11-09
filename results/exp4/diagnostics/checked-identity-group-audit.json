@@ -1,0 +1,432 @@
+{
+  "checked_at_utc": "2026-11-09T09:47:59.194508+00:00",
+  "scope": "completed a3 raw registry identity audit; no fitting, no GT-based identity selection, no relabelling",
+  "episodes": 90,
+  "scenes": [
+    {
+      "scene": "6s7QHgap2fW",
+      "episodes": 30,
+      "verification_events": 425,
+      "checked_registry_identities": 351,
+      "system_confirmed_registry_identities": 34,
+      "pi_by_recorded_registry_identity": 0.09686609686609686,
+      "all_checked_ids_registered": true,
+      "check_final_counts_match_by_identity": true,
+      "same_exact_final_check_coordinate_under_multiple_checked_ids": [],
+      "checked_ids_over_radius_from_initial_anchor": [
+        {
+          "episode_id": "26",
+          "k": 1,
+          "candidate_id": "1:20",
+          "first_appearance_position": [
+            20.7971248626709,
+            0.09943601489067078,
+            -1.5907647609710693
+          ],
+          "max_check_distance_from_initial_position_m": 1.108117031982591,
+          "checked_final_events": 1
+        },
+        {
+          "episode_id": "27",
+          "k": 0,
+          "candidate_id": "0:4",
+          "first_appearance_position": [
+            11.118523597717285,
+            0.09943601489067078,
+            0.5592350959777832
+          ],
+          "max_check_distance_from_initial_position_m": 1.0380345975152063,
+          "checked_final_events": 2
+        },
+        {
+          "episode_id": "25",
+          "k": 1,
+          "candidate_id": "1:8",
+          "first_appearance_position": [
+            4.963883399963379,
+            2.8994359970092773,
+            -0.27887338399887085
+          ],
+          "max_check_distance_from_initial_position_m": 1.0295348291765676,
+          "checked_final_events": 1
+        },
+        {
+          "episode_id": "2",
+          "k": 1,
+          "candidate_id": "1:15",
+          "first_appearance_position": [
+            6.673912048339844,
+            0.09943601489067078,
+            -3.4103245735168457
+          ],
+          "max_check_distance_from_initial_position_m": 0.9091798726447333,
+          "checked_final_events": 1
+        },
+        {
+          "episode_id": "14",
+          "k": 0,
+          "candidate_id": "0:5",
+          "first_appearance_position": [
+            3.800391674041748,
+            2.8994359970092773,
+            0.0592350959777832
+          ],
+          "max_check_distance_from_initial_position_m": 0.8967318534851074,
+          "checked_final_events": 3
+        },
+        {
+          "episode_id": "3",
+          "k": 1,
+          "candidate_id": "1:17",
+          "first_appearance_position": [
+            12.461517333984375,
+            0.09943601489067078,
+            0.03293820098042488
+          ],
+          "max_check_distance_from_initial_position_m": 0.8814047368352375,
+          "checked_final_events": 2
+        },
+        {
+          "episode_id": "12",
+          "k": 0,
+          "candidate_id": "0:12",
+          "first_appearance_position": [
+            11.599119186401367,
+            0.09943601489067078,
+            -1.3399665355682373
+          ],
+          "max_check_distance_from_initial_position_m": 0.8486101615608874,
+          "checked_final_events": 1
+        },
+        {
+          "episode_id": "27",
+          "k": 1,
+          "candidate_id": "1:12",
+          "first_appearance_position": [
+            20.738868713378906,
+            0.09943601489067078,
+            -1.5891902446746826
+          ],
+          "max_check_distance_from_initial_position_m": 0.8036977652484901,
+          "checked_final_events": 2
+        },
+        {
+          "episode_id": "28",
+          "k": 0,
+          "candidate_id": "0:15",
+          "first_appearance_position": [
+            11.248363494873047,
+            0.09943601489067078,
+            0.5592350959777832
+          ],
+          "max_check_distance_from_initial_position_m": 0.7713055895695718,
+          "checked_final_events": 2
+        }
+      ],
+      "raw_event_sha256": {
+        "results_6s7QHgap2fW/openvocab_v0.1.1_gt_semantics_600_2/blp_events.jsonl": "39bc154f6b70e6414fc80603feb656f6e91c64775173ffc35d3fb81b9a09ce8f"
+      }
+    },
+    {
+      "scene": "TEEsavR23oF",
+      "episodes": 30,
+      "verification_events": 377,
+      "checked_registry_identities": 316,
+      "system_confirmed_registry_identities": 39,
+      "pi_by_recorded_registry_identity": 0.12341772151898735,
+      "all_checked_ids_registered": true,
+      "check_final_counts_match_by_identity": true,
+      "same_exact_final_check_coordinate_under_multiple_checked_ids": [
+        {
+          "episode_id": "25",
+          "k": 1,
+          "position": [
+            -4.797001361846924,
+            0.16337910294532776,
+            -4.322878360748291
+          ],
+          "checked_ids": [
+            "1:0",
+            "1:1"
+          ]
+        }
+      ],
+      "checked_ids_over_radius_from_initial_anchor": [
+        {
+          "episode_id": "8",
+          "k": 0,
+          "candidate_id": "0:6",
+          "first_appearance_position": [
+            -3.9048030376434326,
+            0.16337910294532776,
+            -7.429510593414307
+          ],
+          "max_check_distance_from_initial_position_m": 1.4975844672891712,
+          "checked_final_events": 1
+        },
+        {
+          "episode_id": "11",
+          "k": 0,
+          "candidate_id": "0:6",
+          "first_appearance_position": [
+            -6.738225936889648,
+            0.16337910294532776,
+            -3.308126449584961
+          ],
+          "max_check_distance_from_initial_position_m": 1.152543265038093,
+          "checked_final_events": 2
+        },
+        {
+          "episode_id": "6",
+          "k": 1,
+          "candidate_id": "1:7",
+          "first_appearance_position": [
+            -1.0504671335220337,
+            0.16337910294532776,
+            -7.132908821105957
+          ],
+          "max_check_distance_from_initial_position_m": 1.0701196114666383,
+          "checked_final_events": 2
+        },
+        {
+          "episode_id": "24",
+          "k": 0,
+          "candidate_id": "0:10",
+          "first_appearance_position": [
+            -6.255955696105957,
+            0.16337910294532776,
+            -3.6281046867370605
+          ],
+          "max_check_distance_from_initial_position_m": 0.9282784284226135,
+          "checked_final_events": 1
+        },
+        {
+          "episode_id": "25",
+          "k": 1,
+          "candidate_id": "1:1",
+          "first_appearance_position": [
+            -5.56518030166626,
+            0.16337910294532776,
+            -4.7438063621521
+          ],
+          "max_check_distance_from_initial_position_m": 0.8759447847597266,
+          "checked_final_events": 1
+        },
+        {
+          "episode_id": "9",
+          "k": 1,
+          "candidate_id": "1:4",
+          "first_appearance_position": [
+            -2.0470008850097656,
+            0.16337910294532776,
+            -7.522878646850586
+          ],
+          "max_check_distance_from_initial_position_m": 0.8616620728703638,
+          "checked_final_events": 1
+        },
+        {
+          "episode_id": "11",
+          "k": 1,
+          "candidate_id": "1:27",
+          "first_appearance_position": [
+            -3.775881052017212,
+            0.16337910294532776,
+            -3.5503182411193848
+          ],
+          "max_check_distance_from_initial_position_m": 0.8492451629341483,
+          "checked_final_events": 1
+        },
+        {
+          "episode_id": "28",
+          "k": 0,
+          "candidate_id": "0:0",
+          "first_appearance_position": [
+            -3.6297836303710938,
+            0.16337910294532776,
+            -2.373704671859741
+          ],
+          "max_check_distance_from_initial_position_m": 0.8386671213629412,
+          "checked_final_events": 2
+        },
+        {
+          "episode_id": "8",
+          "k": 0,
+          "candidate_id": "0:8",
+          "first_appearance_position": [
+            -3.9095325469970703,
+            0.16337910294532776,
+            -7.3575286865234375
+          ],
+          "max_check_distance_from_initial_position_m": 0.7932886223279395,
+          "checked_final_events": 1
+        },
+        {
+          "episode_id": "25",
+          "k": 0,
+          "candidate_id": "0:22",
+          "first_appearance_position": [
+            0.5529985427856445,
+            0.16337910294532776,
+            -7.924152851104736
+          ],
+          "max_check_distance_from_initial_position_m": 0.7891836166381836,
+          "checked_final_events": 1
+        },
+        {
+          "episode_id": "11",
+          "k": 1,
+          "candidate_id": "1:16",
+          "first_appearance_position": [
+            -1.7252120971679688,
+            0.26379337906837463,
+            -6.6366472244262695
+          ],
+          "max_check_distance_from_initial_position_m": 0.7741858456440648,
+          "checked_final_events": 1
+        },
+        {
+          "episode_id": "27",
+          "k": 0,
+          "candidate_id": "0:7",
+          "first_appearance_position": [
+            -11.147001266479492,
+            0.16337910294532776,
+            -3.322878360748291
+          ],
+          "max_check_distance_from_initial_position_m": 0.7699532016150137,
+          "checked_final_events": 1
+        }
+      ],
+      "raw_event_sha256": {
+        "results_TEEsavR23oF/openvocab_v0.1.1_gt_semantics_600_7/blp_events.jsonl": "3eec962f818feb45c66863ccdd1b38be317ad45bde994d770045a0dc9f3ee72b"
+      }
+    },
+    {
+      "scene": "QaLdnwvtxbs",
+      "episodes": 30,
+      "verification_events": 231,
+      "checked_registry_identities": 197,
+      "system_confirmed_registry_identities": 58,
+      "pi_by_recorded_registry_identity": 0.29441624365482233,
+      "all_checked_ids_registered": true,
+      "check_final_counts_match_by_identity": true,
+      "same_exact_final_check_coordinate_under_multiple_checked_ids": [],
+      "checked_ids_over_radius_from_initial_anchor": [
+        {
+          "episode_id": "8",
+          "k": 0,
+          "candidate_id": "0:6",
+          "first_appearance_position": [
+            0.13446664810180664,
+            0.1357390433549881,
+            -0.0938103199005127
+          ],
+          "max_check_distance_from_initial_position_m": 0.9723963858736472,
+          "checked_final_events": 2
+        },
+        {
+          "episode_id": "29",
+          "k": 1,
+          "candidate_id": "1:3",
+          "first_appearance_position": [
+            -5.757035732269287,
+            0.1357390433549881,
+            0.9067325592041016
+          ],
+          "max_check_distance_from_initial_position_m": 0.9320642325660231,
+          "checked_final_events": 1
+        },
+        {
+          "episode_id": "28",
+          "k": 0,
+          "candidate_id": "0:11",
+          "first_appearance_position": [
+            -2.488442897796631,
+            0.1357390433549881,
+            0.3303537368774414
+          ],
+          "max_check_distance_from_initial_position_m": 0.8530950826671424,
+          "checked_final_events": 1
+        },
+        {
+          "episode_id": "2",
+          "k": 0,
+          "candidate_id": "0:12",
+          "first_appearance_position": [
+            1.9917527437210083,
+            0.1357390433549881,
+            2.6787517070770264
+          ],
+          "max_check_distance_from_initial_position_m": 0.8348208609000248,
+          "checked_final_events": 1
+        },
+        {
+          "episode_id": "2",
+          "k": 1,
+          "candidate_id": "1:16",
+          "first_appearance_position": [
+            1.4200785160064697,
+            0.1357390433549881,
+            2.7128124237060547
+          ],
+          "max_check_distance_from_initial_position_m": 0.8347013615346849,
+          "checked_final_events": 1
+        },
+        {
+          "episode_id": "28",
+          "k": 0,
+          "candidate_id": "0:5",
+          "first_appearance_position": [
+            -5.088442802429199,
+            0.1357390433549881,
+            1.229794979095459
+          ],
+          "max_check_distance_from_initial_position_m": 0.8060718132029133,
+          "checked_final_events": 1
+        },
+        {
+          "episode_id": "25",
+          "k": 0,
+          "candidate_id": "0:1",
+          "first_appearance_position": [
+            1.9729853868484497,
+            0.1357390433549881,
+            1.8717539310455322
+          ],
+          "max_check_distance_from_initial_position_m": 0.7869880238502887,
+          "checked_final_events": 1
+        },
+        {
+          "episode_id": "22",
+          "k": 1,
+          "candidate_id": "1:6",
+          "first_appearance_position": [
+            -0.8884425163269043,
+            0.1357390433549881,
+            1.980353832244873
+          ],
+          "max_check_distance_from_initial_position_m": 0.7855604710653077,
+          "checked_final_events": 1
+        },
+        {
+          "episode_id": "21",
+          "k": 0,
+          "candidate_id": "0:0",
+          "first_appearance_position": [
+            4.211557388305664,
+            0.1357390433549881,
+            -0.519646167755127
+          ],
+          "max_check_distance_from_initial_position_m": 0.7610261068920813,
+          "checked_final_events": 1
+        }
+      ],
+      "raw_event_sha256": {
+        "results_QaLdnwvtxbs/openvocab_v0.1.1_gt_semantics_600_6/blp_events.jsonl": "38cf3e5d588f60c97795eb45f2cc23c893a3f9c77c67293e952094f784eebfdc"
+      }
+    }
+  ],
+  "interpretation": "The moving 0.75m registry is the recorded candidate identity rule. Distance from the immutable initial position is diagnostic, not a replacement matching rule. Exact-coordinate repeats are reported, not silently merged. The proposed action binding fallback does not change registration or final verification events, so all existing calibration sample grouping is retained.",
+  "changes_parameters": false,
+  "changes_raw_events": false
+}

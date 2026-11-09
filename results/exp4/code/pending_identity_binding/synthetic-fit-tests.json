@@ -1,0 +1,24 @@
+{
+  "synthetic_only": true,
+  "pooled_case": {
+    "stable": true,
+    "bootstrap_successes": [
+      200,
+      200,
+      200
+    ]
+  },
+  "crossfit_case": {
+    "stable": false,
+    "bootstrap_successes": [
+      200,
+      200,
+      200
+    ]
+  },
+  "GT_never_used_for_proposed_parameters": true,
+  "no_frozen_calibration_written": true,
+  "optimizer_status_retries": {
+    "v": 10
+  }
+}

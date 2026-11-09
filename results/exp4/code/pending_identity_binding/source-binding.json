@@ -1,0 +1,28 @@
+{
+  "base_commit": "eaa29e5f8f46782554d31226a8d619ec2534c34a",
+  "base_sha256": "f3587f64f88b5470f6917258c35c0924eb77dd4f8de22ba57de962b4467dddf1",
+  "proposed_sha256": "12dd680b3f4d102fd70277a193d1c85ad5deb219dfb04846e3060df9304af9fb",
+  "runtime_applied": false,
+  "runtime_root": "/nvme/khy/ForesightNav_exp4_depthfix",
+  "isolated_root": "/nvme/khy/ForesightNav_exp4_identityfix",
+  "changes_candidate_grouping": false,
+  "changes_verification_events": false,
+  "changes_rank_or_parameters": false,
+  "runtime_input_count": 160,
+  "isolated_input_count": 161,
+  "changed_runtime_inputs": {
+    "experiments/blp_observer.py": {
+      "before": "f3587f64f88b5470f6917258c35c0924eb77dd4f8de22ba57de962b4467dddf1",
+      "proposed": "12dd680b3f4d102fd70277a193d1c85ad5deb219dfb04846e3060df9304af9fb"
+    },
+    "experiments/test_blp_identity.py": {
+      "before": null,
+      "proposed": "e7b6de94d6ed893ef53a4930f2f7ddd8a88c788abd7735ecfc2e88d1b9237d7b"
+    }
+  },
+  "runtime_validation_tests": 60,
+  "runtime_tests_original": 51,
+  "new_identity_binding_tests": 9,
+  "disabled_regression_calls": 219,
+  "isolated_fix_commit": "03242fda76fd6a631596a7269c8e7990c657ea30"
+}

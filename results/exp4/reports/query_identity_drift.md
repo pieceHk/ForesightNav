@@ -11,3 +11,5 @@
 当前保留invalid_path_complete=false。运行源码与已排队CPU后处理脚本不变；不会通过清空缺口放行正式过程指标。完整标定收集继续，拟合仅生成待审提案。全量前须补齐有来源证据的身份绑定、验证候选去重口径，并通过新的20条冒烟检查。
 
 [实际重放证据](../diagnostics/query-identity-drift-Qa18.json)、[90条原生审计](../meta/completed-calibration-scene-audits.json)、[原生GT复核](../diagnostics/native-offline-gt-check.json)。
+
+后续90条审查发现一例同坐标双ID检查，已采用统一精确坐标去重分析；被动身份绑定补丁已在隔离分支验证，运行中的标定尚未采纳。[后续修复准备](identity_logging_preparation.md)。

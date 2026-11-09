@@ -18,6 +18,7 @@ from scipy.special import expit
 import experiments.blp_calibration as calibration
 import experiments.exp4_fit as driver
 from pbsp.navigation.blp import BeliefParameters
+from candidate_identities import canonicalize, DEFINITION as IDENTITY_DEFINITION, SOURCE_SHA256 as IDENTITY_SHA256
 from experiments.exp4_collect import source_fingerprint
 
 RAW_FIT = calibration.fit
@@ -44,6 +45,7 @@ def reviewed_decision_flip_rate(snapshots, theta, reference):
 
 
 def robust_fit(events, label='v'):
+    events, _, _ = canonicalize(events)
     try:
         return RAW_FIT(events, label=label)
     except calibration.CalibrationDataError as error:
@@ -122,7 +124,7 @@ def input_binding():
         raise ValueError('Do not fit after parameters have been frozen')
     paths = ['meta/calibration_runs.json', 'meta/calibration-start-a3.json',
              'meta/completed-calibration-scene-audits.json', 'meta/folds.json',
-             'meta/CP1_acceptance.json', 'code/fit_calibration_reviewed.py']
+             'meta/CP1_acceptance.json', 'code/fit_calibration_reviewed.py', 'code/candidate_identities.py']
     paths += [f'logs/calibration_fold{f}_{kind}.jsonl'
               for f in range(3) for kind in ('events', 'snapshots')]
     return {'collection_attempt': 'a3', 'collection_source_commit': start['source_commit'],
@@ -150,6 +152,9 @@ def main():
     driver.main()
     output = driver.ROOT / 'meta/calibration_per_fold.json'
     value = json.loads(output.read_text())
+    value['checked_candidate_identity'] = {'definition': IDENTITY_DEFINITION, 'source_sha256': IDENTITY_SHA256,
+        'per_fold': {str(f): canonicalize(driver.read(driver.ROOT / f'logs/calibration_fold{f}_events.jsonl'))[2]
+                     for f in range(3)}}
     value['numerical_optimizer_retry'] = {
         'trigger': 'original optimizer returned a failure status',
         'objective': 'same constrained positive-slope logistic maximum likelihood',
