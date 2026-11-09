@@ -1,0 +1,26 @@
+{
+  "created_at_utc": "2026-11-09T03:39:16.581021+00:00",
+  "scope": "initial two fixed smoke examples only; Full20 and CP3 not complete",
+  "runtime_commit": "2c0037a985c65d25698728a31b8339682fb4bdd6",
+  "runtime_source_unchanged": true,
+  "parameter_sha256": "422a5660e9ff0b70fc70ed3b9f2a0a87aba5613a336180ad90e1eef7912c4ef7",
+  "files_sha256": {
+    "code/watch_evaluation.py": "86a5f5606d9b23f4d58071fe3cb02db8d39f23c7869f8768cf2854577e93c0eb",
+    "code/audit_smoke_mechanisms.py": "0ebe2c2fa8ea333b1b6b209e895727c8a10a7979b316e7f298ce2028105c9238",
+    "code/plot_blp_episode.py": "e7d6d9e2602a41f965cc380ba0eaf009db375db7ebd04a118223992ae8d3531b",
+    "meta/smoke_start.json": "7dcaf5fd3cd5daa1a755f4255d1894dfaddb43d4fe126454174cd860dfc3c7e0",
+    "reports/CP3_progress.md": "34932461289df19b3050a2a64bd51029bf31686df3724873002d6baf26038e5a",
+    "diagnostics/CP3/mechanism-audit.json": "6d12ce4900433249c7e884c1b242a5929f216fc3ea63f544062fd2a05555ad3c",
+    "diagnostics/CP3/figure-review.json": "8b67ed76b6d0c02430e6145fab72c20e2d31dc65086296ca838a91756ec35525",
+    "diagnostics/CP3/early-behavior-review.json": "2959a56dd63a215c095cb2b235056d17d1899c7a28c35e24b364cdef3a1421b8",
+    "figures/CP3/4ok3usBNeis_0.png": "d587267eb2a4ff18ff223233510ca39ff855d9936a8abdb6a4fb728d2b85cc2d",
+    "figures/CP3/4ok3usBNeis_0.json": "95d7f881d0ad3a4e54902b7edcf5010ae32ea20a2cf4c7dd5d07655c21acf1f7",
+    "diagnostics/CP3/early/4ok3usBNeis/summary.json": "836531afe04c933db508f92e3715cf18f1fd2759a685ba4bd2d30f42fe56b2f5",
+    "diagnostics/CP3/early/4ok3usBNeis/episodes.json": "61d4856f95b5bba3caa9b1f047299654e2c7cec0b410f319728a5defa07ab5a0",
+    "figures/CP3/5cdEh9F2hJL_0.png": "7aa2a4d3e1edb2284aaa0df24fe47859883cc5747cc8e243e8e64a914fef712b",
+    "figures/CP3/5cdEh9F2hJL_0.json": "160d77974b0d142e7deee937b8c5c6cb8a9c1cfaf080a1de5ebfd1f00678f0ee",
+    "diagnostics/CP3/early/5cdEh9F2hJL/summary.json": "0a66e58c8765814de6028ab1a7e5a9d733a0b042a825c98f6392c695c64494b3",
+    "diagnostics/CP3/early/5cdEh9F2hJL/episodes.json": "eccbc2a5a48e73b23f930b671dc731445785f935d5712844dba22fd1ebef547a",
+    "deviations.md": "d4abb83cf3fcd73eb16d5ae4937bccef64af900083450a06ce2e481f04b0c644"
+  }
+}

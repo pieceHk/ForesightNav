@@ -1,0 +1,30 @@
+{
+  "reviewed_at_utc": "2026-11-09T03:36:59.334370+00:00",
+  "reviewed_by": "assistant visual inspection of rendered PNGs",
+  "scope": "first two fixed smoke examples and figure readability; does not accept CP3 or authorize Full400",
+  "selection": "first two fixed scene assignments, independent of outcome",
+  "visual_qa_passed": true,
+  "data_selection_unchanged_by_layout_revision": true,
+  "renderer_sha256": "e7d6d9e2602a41f965cc380ba0eaf009db375db7ebd04a118223992ae8d3531b",
+  "figures": [
+    {
+      "scene_id": "4ok3usBNeis",
+      "episode_id": "0",
+      "png_sha256": "d587267eb2a4ff18ff223233510ca39ff855d9936a8abdb6a4fb728d2b85cc2d",
+      "numeric_metadata_sha256": "95d7f881d0ad3a4e54902b7edcf5010ae32ea20a2cf4c7dd5d07655c21acf1f7",
+      "readability": "candidate callout numbers, belief table, full-stage trajectory, shared legend and actual dispatch are readable"
+    },
+    {
+      "scene_id": "5cdEh9F2hJL",
+      "episode_id": "0",
+      "png_sha256": "7aa2a4d3e1edb2284aaa0df24fe47859883cc5747cc8e243e8e64a914fef712b",
+      "numeric_metadata_sha256": "160d77974b0d142e7deee937b8c5c6cb8a9c1cfaf080a1de5ebfd1f00678f0ee",
+      "readability": "candidate callout numbers, belief table, full-stage trajectory, shared legend and actual dispatch are readable"
+    }
+  ],
+  "observations": [
+    "4ok succeeds on all three stages; first couch stage takes 38.750m versus 8.008m shortest path.",
+    "5cd couch stage ends verified_target but native success is false; last candidate confirmation has v=1,y=0.",
+    "Candidate-coordinate GT and final agent success are distinct: 5cd TV final checked candidate has y=0 while final agent success is true."
+  ]
+}

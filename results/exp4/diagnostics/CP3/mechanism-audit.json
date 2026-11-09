@@ -1,0 +1,40 @@
+{
+  "checked_at_utc": "2026-11-09T03:35:03.032770+00:00",
+  "diagnostic_only": true,
+  "definition": "counterfactual unconstrained proposals on completed Full smoke inputs; not other variants online trajectories or scores",
+  "parameters_by_scene": {
+    "4ok3usBNeis": {
+      "a": 44.269786779387815,
+      "b0": -12.012253606335642,
+      "pi": 0.14794921875,
+      "c_exp": 0.9337494521752285
+    },
+    "5cdEh9F2hJL": {
+      "a": 45.247046846062844,
+      "b0": -12.236784283062185,
+      "pi": 0.15282181357006974,
+      "c_exp": 1.1948893036836603
+    }
+  },
+  "snapshots_by_scene": {
+    "4ok3usBNeis": 49,
+    "5cdEh9F2hJL": 59
+  },
+  "counts": {
+    "snapshots": 108,
+    "empty_roots": 15,
+    "nonempty_roots": 93,
+    "multiple_current_candidates": 84,
+    "pre_final_roots": 59,
+    "pre_final_with_any_future_candidates": 59,
+    "final_task_nonempty_roots": 34
+  },
+  "different_proposals_on_nonempty_roots": {
+    "suffix_only_vs_nearest": 7,
+    "myopic_vs_nearest": 12,
+    "full_vs_nearest": 14,
+    "full_vs_myopic": 2,
+    "full_vs_suffix_only": 19
+  },
+  "violations": []
+}

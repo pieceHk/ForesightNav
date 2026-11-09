@@ -1,0 +1,22 @@
+{
+  "started_at_utc": "2026-11-09T03:21:30.033294+00:00",
+  "pid": 9884,
+  "boot_id": "23443655-6f2f-4063-a412-e255f3a91e62",
+  "command": [
+    "/nvme/khy/conda_envs/pbsp/navigation/bin/python",
+    "results/exp4/code/evaluate_sequence.py",
+    "--stage",
+    "smoke",
+    "--attempt",
+    "a1"
+  ],
+  "log": "/nvme/khy/ForesightNav_exp4/results/exp4/logs/evaluation-smoke-a1.controller.log",
+  "head": "2c0037a985c65d25698728a31b8339682fb4bdd6",
+  "parameter_sha256": "422a5660e9ff0b70fc70ed3b9f2a0a87aba5613a336180ad90e1eef7912c4ef7",
+  "cp2b_acceptance_sha256": "ea938c9d337de62f022af6787a5618b97d0a51888597f6d41bab076279315d19",
+  "gpu_free_mib_before_launch": {
+    "2": 45389,
+    "3": 45263
+  },
+  "start_ticks": "280726"
+}

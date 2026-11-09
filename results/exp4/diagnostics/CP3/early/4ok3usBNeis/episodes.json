@@ -1,0 +1,128 @@
+[
+  {
+    "method": "ForesightNav",
+    "variant": "full",
+    "task": "3-MON",
+    "scene_id": "4ok3usBNeis",
+    "episode_id": "0",
+    "goals": [
+      "couch",
+      "bed",
+      "chair"
+    ],
+    "source_episode_ids": [
+      "71",
+      "53",
+      "20"
+    ],
+    "episode_success": true,
+    "total_steps": 467,
+    "code_commit": "2c0037a985c65d25698728a31b8339682fb4bdd6",
+    "code_commits": [
+      "2c0037a985c65d25698728a31b8339682fb4bdd6"
+    ],
+    "stages": [
+      {
+        "k": 1,
+        "goal": "couch",
+        "reached": true,
+        "success": true,
+        "steps": 357,
+        "path_length_m": 38.75000385940075,
+        "shortest_path_m": 8.008455276489258,
+        "start_pos": [
+          2.0370500087738037,
+          -0.5355299711227417,
+          0.6547300219535828
+        ],
+        "end_pos": [
+          8.323690414428711,
+          -0.5355249643325806,
+          3.3296380043029785
+        ],
+        "end_position_observation": "pre_STOP_pose",
+        "stop_reason": "verified_target"
+      },
+      {
+        "k": 2,
+        "goal": "bed",
+        "reached": true,
+        "success": true,
+        "steps": 43,
+        "path_length_m": 3.2499988228082657,
+        "shortest_path_m": 2.0618245601654053,
+        "start_pos": [
+          8.323690414428711,
+          -0.5355249643325806,
+          3.3296380043029785
+        ],
+        "end_pos": [
+          7.586191654205322,
+          -0.5355249643325806,
+          1.6785389184951782
+        ],
+        "end_position_observation": "pre_STOP_pose",
+        "stop_reason": "verified_target"
+      },
+      {
+        "k": 3,
+        "goal": "chair",
+        "reached": true,
+        "success": true,
+        "steps": 67,
+        "path_length_m": 8.500000730156898,
+        "shortest_path_m": 7.464493274688721,
+        "start_pos": [
+          7.586191654205322,
+          -0.5355249643325806,
+          1.6785389184951782
+        ],
+        "end_pos": [
+          2.5864369869232178,
+          -0.5355249643325806,
+          0.49084118008613586
+        ],
+        "end_position_observation": "pre_STOP_pose",
+        "stop_reason": "verified_target"
+      }
+    ],
+    "wallclock_s": 298.9283202490031,
+    "wallclock_definition": "sum of measured native step wall times, excluding episode reset/setup",
+    "native_mon_metrics": {
+      "pespl": 0.573084394568934,
+      "pespl_denominator": 3,
+      "pespl_numerator": 1.719253183706802,
+      "psr": 1.0,
+      "psr_by_category": {
+        "bed": {
+          "psr_contribution": 0.3333333333333333,
+          "success_rate": 1.0,
+          "successes": 1,
+          "targets": 1
+        },
+        "chair": {
+          "psr_contribution": 0.3333333333333333,
+          "success_rate": 1.0,
+          "successes": 1,
+          "targets": 1
+        },
+        "couch": {
+          "psr_contribution": 0.3333333333333333,
+          "success_rate": 1.0,
+          "successes": 1,
+          "targets": 1
+        }
+      },
+      "psr_denominator": 3,
+      "psr_numerator": 3,
+      "spl": 0.34722320646516336,
+      "sr": 1,
+      "subtask_count": 3,
+      "successful_subtask_count": 3
+    },
+    "PR": 1.0,
+    "PPL": 0.34722320646516336,
+    "PR_prefix": 1.0,
+    "PPL_prefix": 0.34722320646516336
+  }
+]

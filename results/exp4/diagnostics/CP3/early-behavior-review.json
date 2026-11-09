@@ -1,0 +1,395 @@
+{
+  "checked_at_utc": "2026-11-09T03:33:46.609593+00:00",
+  "diagnostic_only": true,
+  "selection": "first two fixed smoke scene assignments, independent of outcomes",
+  "episodes": [
+    {
+      "scene": "4ok3usBNeis",
+      "stages": [
+        {
+          "k": 1,
+          "goal": "couch",
+          "reached": true,
+          "success": true,
+          "steps": 357,
+          "path_length_m": 38.75000385940075,
+          "shortest_path_m": 8.008455276489258,
+          "start_pos": [
+            2.0370500087738037,
+            -0.5355299711227417,
+            0.6547300219535828
+          ],
+          "end_pos": [
+            8.323690414428711,
+            -0.5355249643325806,
+            3.3296380043029785
+          ],
+          "end_position_observation": "pre_STOP_pose",
+          "stop_reason": "verified_target",
+          "verification_labels": [
+            {
+              "t": 273,
+              "candidate_id": "0:14",
+              "E": 0.2355780005455017,
+              "S": 0.28346868942621073,
+              "v": 0,
+              "y": 0,
+              "source": null,
+              "position": [
+                2.2059919834136963,
+                -0.5355249643325806,
+                4.474515438079834
+              ],
+              "candidate_source": null,
+              "gt_distance_m": null
+            },
+            {
+              "t": 295,
+              "candidate_id": "0:15",
+              "E": 0.20549586415290833,
+              "S": 0.486582880967408,
+              "v": 0,
+              "y": 0,
+              "source": null,
+              "position": [
+                0.19222098588943481,
+                -0.5355249643325806,
+                5.3801445960998535
+              ],
+              "candidate_source": null,
+              "gt_distance_m": null
+            },
+            {
+              "t": 345,
+              "candidate_id": "0:9",
+              "E": 0.2201787233352661,
+              "S": 0.28346868942621073,
+              "v": 1,
+              "y": 1,
+              "source": null,
+              "position": [
+                7.898530006408691,
+                -0.5355249643325806,
+                3.757265090942383
+              ],
+              "candidate_source": null,
+              "gt_distance_m": null
+            }
+          ]
+        },
+        {
+          "k": 2,
+          "goal": "bed",
+          "reached": true,
+          "success": true,
+          "steps": 43,
+          "path_length_m": 3.2499988228082657,
+          "shortest_path_m": 2.0618245601654053,
+          "start_pos": [
+            8.323690414428711,
+            -0.5355249643325806,
+            3.3296380043029785
+          ],
+          "end_pos": [
+            7.586191654205322,
+            -0.5355249643325806,
+            1.6785389184951782
+          ],
+          "end_position_observation": "pre_STOP_pose",
+          "stop_reason": "verified_target",
+          "verification_labels": [
+            {
+              "t": 365,
+              "candidate_id": "1:18",
+              "E": 0.24587306380271912,
+              "S": -0.0,
+              "v": 0,
+              "y": 1,
+              "source": null,
+              "position": [
+                7.419671058654785,
+                -0.5355249643325806,
+                2.495177984237671
+              ],
+              "candidate_source": null,
+              "gt_distance_m": null
+            },
+            {
+              "t": 395,
+              "candidate_id": "1:17",
+              "E": 0.24587306380271912,
+              "S": 0.28346868942621073,
+              "v": 1,
+              "y": 1,
+              "source": null,
+              "position": [
+                7.939855575561523,
+                -0.5355249643325806,
+                1.2375333309173584
+              ],
+              "candidate_source": null,
+              "gt_distance_m": null
+            }
+          ]
+        },
+        {
+          "k": 3,
+          "goal": "chair",
+          "reached": true,
+          "success": true,
+          "steps": 67,
+          "path_length_m": 8.500000730156898,
+          "shortest_path_m": 7.464493274688721,
+          "start_pos": [
+            7.586191654205322,
+            -0.5355249643325806,
+            1.6785389184951782
+          ],
+          "end_pos": [
+            2.5864369869232178,
+            -0.5355249643325806,
+            0.49084118008613586
+          ],
+          "end_position_observation": "pre_STOP_pose",
+          "stop_reason": "verified_target",
+          "verification_labels": [
+            {
+              "t": 454,
+              "candidate_id": "2:5",
+              "E": 0.28976115584373474,
+              "S": 0.486582880967408,
+              "v": 1,
+              "y": 1,
+              "source": null,
+              "position": [
+                2.976029872894287,
+                -0.5355249643325806,
+                -0.2698556184768677
+              ],
+              "candidate_source": null,
+              "gt_distance_m": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "scene": "5cdEh9F2hJL",
+      "stages": [
+        {
+          "k": 1,
+          "goal": "chair",
+          "reached": true,
+          "success": true,
+          "steps": 118,
+          "path_length_m": 6.500004706904292,
+          "shortest_path_m": 3.8696675300598145,
+          "start_pos": [
+            4.971260070800781,
+            0.018400000408291817,
+            -5.289289951324463
+          ],
+          "end_pos": [
+            2.506065607070923,
+            0.018402770161628723,
+            -4.252747058868408
+          ],
+          "end_position_observation": "pre_STOP_pose",
+          "stop_reason": "verified_target",
+          "verification_labels": [
+            {
+              "t": 63,
+              "candidate_id": "0:4",
+              "E": 0.1917034238576889,
+              "S": -0.0,
+              "v": 0,
+              "y": 0,
+              "source": null,
+              "position": [
+                3.4249751567840576,
+                0.018402770161628723,
+                -2.770200729370117
+              ],
+              "candidate_source": null,
+              "gt_distance_m": null
+            },
+            {
+              "t": 84,
+              "candidate_id": "0:5",
+              "E": 0.21028374135494232,
+              "S": 0.28346868942621073,
+              "v": 0,
+              "y": 0,
+              "source": null,
+              "position": [
+                2.4947054386138916,
+                0.018402770161628723,
+                -1.6385889053344727
+              ],
+              "candidate_source": null,
+              "gt_distance_m": null
+            },
+            {
+              "t": 101,
+              "candidate_id": "0:9",
+              "E": 0.24106962978839874,
+              "S": 0.28346868942621073,
+              "v": 1,
+              "y": 1,
+              "source": null,
+              "position": [
+                2.333611011505127,
+                0.018402770161628723,
+                -4.203758716583252
+              ],
+              "candidate_source": null,
+              "gt_distance_m": null
+            }
+          ]
+        },
+        {
+          "k": 2,
+          "goal": "couch",
+          "reached": true,
+          "success": false,
+          "steps": 92,
+          "path_length_m": 9.000001206994057,
+          "shortest_path_m": 6.244411945343018,
+          "start_pos": [
+            2.506065607070923,
+            0.018402770161628723,
+            -4.252747058868408
+          ],
+          "end_pos": [
+            4.583404064178467,
+            0.018402770161628723,
+            2.2850353717803955
+          ],
+          "end_position_observation": "pre_STOP_pose",
+          "stop_reason": "verified_target",
+          "verification_labels": [
+            {
+              "t": 182,
+              "candidate_id": "1:17",
+              "E": 0.2527301013469696,
+              "S": 0.28346868942621073,
+              "v": 0,
+              "y": 0,
+              "source": null,
+              "position": [
+                4.71773099899292,
+                0.018402770161628723,
+                1.4437062740325928
+              ],
+              "candidate_source": null,
+              "gt_distance_m": null
+            },
+            {
+              "t": 198,
+              "candidate_id": "1:14",
+              "E": 0.23207619786262512,
+              "S": 0.486582880967408,
+              "v": 0,
+              "y": 0,
+              "source": null,
+              "position": [
+                4.497862339019775,
+                0.018402770161628723,
+                2.2686429023742676
+              ],
+              "candidate_source": null,
+              "gt_distance_m": null
+            },
+            {
+              "t": 207,
+              "candidate_id": "1:23",
+              "E": 0.24400660395622253,
+              "S": 0.486582880967408,
+              "v": 1,
+              "y": 0,
+              "source": null,
+              "position": [
+                4.955345630645752,
+                0.018402770161628723,
+                3.057255268096924
+              ],
+              "candidate_source": null,
+              "gt_distance_m": null
+            }
+          ]
+        },
+        {
+          "k": 3,
+          "goal": "tv",
+          "reached": true,
+          "success": true,
+          "steps": 358,
+          "path_length_m": 36.73402762785554,
+          "shortest_path_m": 10.978311538696289,
+          "start_pos": [
+            4.583404064178467,
+            0.018402770161628723,
+            2.2850353717803955
+          ],
+          "end_pos": [
+            10.25928020477295,
+            0.18652568757534027,
+            -5.882036209106445
+          ],
+          "end_position_observation": "pre_STOP_pose",
+          "stop_reason": "verified_target",
+          "verification_labels": [
+            {
+              "t": 331,
+              "candidate_id": "2:4",
+              "E": 0.22770360112190247,
+              "S": 0.486582880967408,
+              "v": 0,
+              "y": 0,
+              "source": null,
+              "position": [
+                2.456176519393921,
+                0.018402770161628723,
+                -1.6385889053344727
+              ],
+              "candidate_source": null,
+              "gt_distance_m": null
+            },
+            {
+              "t": 430,
+              "candidate_id": "2:16",
+              "E": 0.20392726361751556,
+              "S": 0.28346868942621073,
+              "v": 0,
+              "y": 0,
+              "source": null,
+              "position": [
+                1.3099339008331299,
+                0.018402770161628723,
+                -4.409374713897705
+              ],
+              "candidate_source": null,
+              "gt_distance_m": null
+            },
+            {
+              "t": 534,
+              "candidate_id": "2:19",
+              "E": 0.21319584548473358,
+              "S": 0.28346868942621073,
+              "v": 1,
+              "y": 0,
+              "source": null,
+              "position": [
+                8.959183692932129,
+                0.21840277314186096,
+                -4.454215049743652
+              ],
+              "candidate_source": null,
+              "gt_distance_m": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
