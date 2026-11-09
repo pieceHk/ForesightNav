@@ -1,6 +1,6 @@
 {
-  "status": "awaiting_user_choice",
-  "accepted": false,
+  "status": "accepted_three_fold_crossfit",
+  "accepted": true,
   "checked_at_utc": "2026-11-08T10:06:09.190124+00:00",
   "required_by": "exp4_blp_2x2.md section 2.5: 此时停下汇报，等待确认",
   "recommended_choice": "three_fold_cross_fit",
@@ -16,15 +16,25 @@
   "collection_status": "completed_three_folds_pending_CP2a",
   "completed_episodes": 360,
   "active_matching_calibration_processes": 0,
-  "frozen_calibration_file_exists": false,
-  "runtime_crossfit_support_implemented": false,
+  "frozen_calibration_file_exists": true,
+  "runtime_crossfit_support_implemented": true,
   "gpu_2_3_other_compute_process_count": 2,
   "isolated_preparation": {
     "branch": "exp4/crossfit-prep",
     "commit": "72be3e62a99d208da1ee362e15013ae24da139f7",
     "unit_tests": 49,
     "identical_disabled_planner_calls": 219,
-    "applied_to_main": false,
-    "starts_evaluation": false
+    "applied_to_main": true,
+    "starts_evaluation": false,
+    "adopted_commit": "87688972ea938fb0dd8db8cbbb4c691c6900794e"
+  },
+  "chosen_choice": "three_fold_cross_fit",
+  "confirmed_at_utc": "2026-11-08T11:00:06.178810+00:00",
+  "confirmation": {
+    "source": "user reply to CP2a checkpoint question",
+    "question_call": "call_ce0230ff272f4d1b8cf7065610949750",
+    "answer": "采用三组交叉拟合继续（推荐）",
+    "confirmed_at_utc": "2026-11-08T11:00:06.178810+00:00",
+    "report_commit": "4994fcc344ad5f7c8dcc4e1716b4a85885702994"
   }
 }
