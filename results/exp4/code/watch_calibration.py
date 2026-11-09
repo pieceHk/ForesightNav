@@ -39,6 +39,7 @@ def main():
         row = {k: job[k] for k in ('fold', 'scene', 'gpu', 'pid', 'status')}
         row['launcher_live_and_matching'] = process_matches(job['pid'], [str(ROOT.parents[1]/'run.py'), job['scene']])
         if not run_name:
+            row['telemetry_status'] = 'awaiting_run_directory'
             result['jobs'].append(row)
             continue
         run = Path(run_name)
@@ -62,7 +63,7 @@ def main():
             if replay['chosen_raw_rank'] != decision['chosen_raw_rank']:
                 raise ValueError('Recorded online and offline choices disagree')
             checked += 1
-        row.update(completed_episodes=len(complete),
+        row.update(telemetry_status='available', completed_episodes=len(complete),
                    accepted_actions=sum(p.read_bytes().count(b'\n') for p in run.rglob('trajectory.jsonl')),
                    snapshots=len(snapshots), latest_replays_checked=checked,
                    event_counts=dict(Counter(r['event'] for r in events)),

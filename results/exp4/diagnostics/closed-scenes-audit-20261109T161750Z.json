@@ -1,0 +1,65 @@
+{
+  "recorded_at_utc": "2026-11-09T16:19:08.546239+00:00",
+  "scope": "closed native calibration scenes only; separately excluded old diagnostics do not enter counts",
+  "steps": [
+    {
+      "script": "audit_completed_calibration.py",
+      "returncode": 0,
+      "log": "logs/closed-scenes-20261109T161750Z-audit_completed_calibration.py.log",
+      "log_sha256": "c5e857ba04e5d059c008b544ca5dfd26f34249ec25f29eebb8def8ca6e311040"
+    },
+    {
+      "script": "verify_action_path_pipeline.py",
+      "returncode": 0,
+      "log": "logs/closed-scenes-20261109T161750Z-verify_action_path_pipeline.py.log",
+      "log_sha256": "d75f9b7332310576a7404c68a33e5a42c2f8f162ce599bc2fbd4bcb53e53923e"
+    }
+  ],
+  "complete_episodes": 150,
+  "native_calibration_candidate_checks": 1775,
+  "native_calibration_recovery_checks": 2595,
+  "max_GT_distance_error_m": 0.0,
+  "new_closed_scenes_after_identity_audit": [],
+  "scenes": [
+    {
+      "scene": "6s7QHgap2fW",
+      "episodes": 30,
+      "checks": 425,
+      "finals": 425,
+      "snapshots": 1687,
+      "gaps": 0
+    },
+    {
+      "scene": "TEEsavR23oF",
+      "episodes": 30,
+      "checks": 377,
+      "finals": 377,
+      "snapshots": 1860,
+      "gaps": 0
+    },
+    {
+      "scene": "QaLdnwvtxbs",
+      "episodes": 30,
+      "checks": 231,
+      "finals": 231,
+      "snapshots": 711,
+      "gaps": 10
+    },
+    {
+      "scene": "cvZr5TUy5C5",
+      "episodes": 30,
+      "checks": 413,
+      "finals": 413,
+      "snapshots": 1847,
+      "gaps": 0
+    },
+    {
+      "scene": "Nfvxx8J5NCo",
+      "episodes": 30,
+      "checks": 329,
+      "finals": 329,
+      "snapshots": 1680,
+      "gaps": 0
+    }
+  ]
+}

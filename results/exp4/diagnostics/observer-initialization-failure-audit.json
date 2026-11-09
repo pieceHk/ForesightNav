@@ -1,0 +1,202 @@
+{
+  "checked_at_utc": "2026-11-09T16:24:33.900183+00:00",
+  "controller_status": "running",
+  "controller_pid": 31036,
+  "controller_live_and_matching": true,
+  "boot_id_matches": true,
+  "frozen_files_unchanged": true,
+  "completed_episodes": 180,
+  "assigned_episodes": 360,
+  "jobs": [
+    {
+      "fold": 0,
+      "scene": "6s7QHgap2fW",
+      "gpu": 2,
+      "pid": 31038,
+      "status": "completed",
+      "launcher_live_and_matching": false,
+      "completed_episodes": 30,
+      "accepted_actions": 16433,
+      "snapshots": 1687,
+      "latest_replays_checked": 10,
+      "event_counts": {
+        "empty_activation_started": 30,
+        "empty_activation": 30,
+        "candidate_first_appearance": 1083,
+        "candidate_checked": 425,
+        "verification_final": 425,
+        "noncandidate_verification": 596
+      },
+      "labels_v": {
+        "1": 34,
+        "0": 391
+      },
+      "completed_episode_verification_events": 425,
+      "shadow_error_bytes": 0
+    },
+    {
+      "fold": 0,
+      "scene": "TEEsavR23oF",
+      "gpu": 3,
+      "pid": 31039,
+      "status": "completed",
+      "launcher_live_and_matching": false,
+      "completed_episodes": 30,
+      "accepted_actions": 18170,
+      "snapshots": 1860,
+      "latest_replays_checked": 10,
+      "event_counts": {
+        "empty_activation_started": 30,
+        "empty_activation": 30,
+        "candidate_first_appearance": 1323,
+        "candidate_checked": 377,
+        "verification_final": 377,
+        "noncandidate_verification": 473
+      },
+      "labels_v": {
+        "0": 338,
+        "1": 39
+      },
+      "completed_episode_verification_events": 377,
+      "shadow_error_bytes": 0
+    },
+    {
+      "fold": 0,
+      "scene": "QaLdnwvtxbs",
+      "gpu": 3,
+      "pid": 110045,
+      "status": "completed",
+      "launcher_live_and_matching": false,
+      "completed_episodes": 30,
+      "accepted_actions": 6672,
+      "snapshots": 711,
+      "latest_replays_checked": 10,
+      "event_counts": {
+        "empty_activation_started": 30,
+        "empty_activation": 30,
+        "candidate_first_appearance": 974,
+        "candidate_checked": 231,
+        "verification_final": 231,
+        "noncandidate_verification": 309
+      },
+      "labels_v": {
+        "0": 173,
+        "1": 58
+      },
+      "completed_episode_verification_events": 231,
+      "shadow_error_bytes": 0
+    },
+    {
+      "fold": 0,
+      "scene": "cvZr5TUy5C5",
+      "gpu": 2,
+      "pid": 110996,
+      "status": "completed",
+      "launcher_live_and_matching": false,
+      "completed_episodes": 30,
+      "accepted_actions": 17957,
+      "snapshots": 1847,
+      "latest_replays_checked": 10,
+      "event_counts": {
+        "empty_activation_started": 30,
+        "empty_activation": 30,
+        "candidate_first_appearance": 1270,
+        "candidate_checked": 413,
+        "verification_final": 413,
+        "noncandidate_verification": 701
+      },
+      "labels_v": {
+        "0": 375,
+        "1": 38
+      },
+      "completed_episode_verification_events": 413,
+      "shadow_error_bytes": 0
+    },
+    {
+      "fold": 1,
+      "scene": "Nfvxx8J5NCo",
+      "gpu": 2,
+      "pid": 168618,
+      "status": "completed",
+      "launcher_live_and_matching": false,
+      "completed_episodes": 30,
+      "accepted_actions": 16335,
+      "snapshots": 1680,
+      "latest_replays_checked": 10,
+      "event_counts": {
+        "empty_activation_started": 30,
+        "empty_activation": 30,
+        "candidate_first_appearance": 1061,
+        "candidate_checked": 329,
+        "verification_final": 329,
+        "noncandidate_verification": 516
+      },
+      "labels_v": {
+        "0": 286,
+        "1": 43
+      },
+      "completed_episode_verification_events": 329,
+      "shadow_error_bytes": 0
+    },
+    {
+      "fold": 1,
+      "scene": "p53SfW6mjZe",
+      "gpu": 3,
+      "pid": 168619,
+      "status": "completed",
+      "launcher_live_and_matching": false,
+      "completed_episodes": 30,
+      "accepted_actions": 17375,
+      "snapshots": 1786,
+      "latest_replays_checked": 10,
+      "event_counts": {
+        "empty_activation_started": 30,
+        "empty_activation": 30,
+        "candidate_first_appearance": 1304,
+        "candidate_checked": 349,
+        "verification_final": 349,
+        "noncandidate_verification": 532
+      },
+      "labels_v": {
+        "1": 40,
+        "0": 309
+      },
+      "completed_episode_verification_events": 349,
+      "shadow_error_bytes": 0
+    },
+    {
+      "fold": 1,
+      "scene": "4ok3usBNeis",
+      "gpu": 2,
+      "pid": 205002,
+      "status": "running",
+      "launcher_live_and_matching": true,
+      "completed_episodes": 0,
+      "accepted_actions": 649,
+      "snapshots": 66,
+      "latest_replays_checked": 10,
+      "event_counts": {
+        "empty_activation_started": 1,
+        "empty_activation": 1,
+        "candidate_first_appearance": 45,
+        "candidate_checked": 13,
+        "verification_final": 13,
+        "noncandidate_verification": 26
+      },
+      "labels_v": {
+        "0": 12,
+        "1": 1
+      },
+      "completed_episode_verification_events": 0,
+      "shadow_error_bytes": 0
+    },
+    {
+      "fold": 1,
+      "scene": "zt1RVoi7PcG",
+      "gpu": 3,
+      "pid": 207102,
+      "status": "running",
+      "launcher_live_and_matching": true
+    }
+  ]
+}

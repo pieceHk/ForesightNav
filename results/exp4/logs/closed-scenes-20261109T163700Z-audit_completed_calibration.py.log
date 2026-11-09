@@ -1,0 +1,218 @@
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+Users of this version of Gym should be able to simply replace 'import gym' with 'import gymnasium as gym' in the vast majority of cases.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+pybullet build time: Jan 29 2025 23:20:52
+/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages/wandb/sdk/launch/builder/build.py:11: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+{
+  "checked_at_utc": "2026-11-09T16:37:55.332719+00:00",
+  "scope": "completed 2-MON calibration integrity only; no fitting, no 3-MON table",
+  "frozen_runtime_unchanged": true,
+  "complete_episodes": 180,
+  "completed_scenes": [
+    {
+      "scene": "6s7QHgap2fW",
+      "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261109_125701_865475_exp4_calibration_calibration-a3-fold0-6s7QHgap2fW",
+      "native_exit_code": 0,
+      "complete_episodes": 30,
+      "targets_per_episode": 2,
+      "actual_identity_files_checked": 30,
+      "frozen_manifest_source_ids_ordered_categories_match": true,
+      "complete_trajectory_and_terminal_STOP_checks_passed": true,
+      "candidate_checks": 425,
+      "final_labels": 425,
+      "check_to_final_event_keys_match": true,
+      "shadow_snapshots": 1687,
+      "shadow_errors": 0,
+      "process_path_complete_under_legacy_logs": true,
+      "path_association_gaps": [],
+      "artifact_sha256": {
+        "status.json": "47dc4b91b4856438840eba40d27a5c4eb29a7f2e68f0bfc87cbe288ff5d15d1a",
+        "launch.json": "f3c9f55a0113bc4f0831441b75c990c0978596767170d47c98d37221e7642fa8",
+        "mon_metrics.json": "1eb031ec1a24d5bd19ec8974ea6ace81ede4c8f5c3e1b75868c5727d337f718d"
+      }
+    },
+    {
+      "scene": "TEEsavR23oF",
+      "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261109_125701_924956_exp4_calibration_calibration-a3-fold0-TEEsavR23oF",
+      "native_exit_code": 0,
+      "complete_episodes": 30,
+      "targets_per_episode": 2,
+      "actual_identity_files_checked": 30,
+      "frozen_manifest_source_ids_ordered_categories_match": true,
+      "complete_trajectory_and_terminal_STOP_checks_passed": true,
+      "candidate_checks": 377,
+      "final_labels": 377,
+      "check_to_final_event_keys_match": true,
+      "shadow_snapshots": 1860,
+      "shadow_errors": 0,
+      "process_path_complete_under_legacy_logs": true,
+      "path_association_gaps": [],
+      "artifact_sha256": {
+        "status.json": "7face87fe01957ba00f5b9ef28556df25a6d049a8410438375e3ce8496d80ee0",
+        "launch.json": "5435d53314ce2aaaa16abc3ad4c18030676984b5716074c2e14e9d7ac7597a79",
+        "mon_metrics.json": "d2126cdcb2440f7f3bee2b487a58aacfb79a439893d9c72aaf30fde952811bcd"
+      }
+    },
+    {
+      "scene": "QaLdnwvtxbs",
+      "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261109_160731_469662_exp4_calibration_calibration-a3-fold0-QaLdnwvtxbs",
+      "native_exit_code": 0,
+      "complete_episodes": 30,
+      "targets_per_episode": 2,
+      "actual_identity_files_checked": 30,
+      "frozen_manifest_source_ids_ordered_categories_match": true,
+      "complete_trajectory_and_terminal_STOP_checks_passed": true,
+      "candidate_checks": 231,
+      "final_labels": 231,
+      "check_to_final_event_keys_match": true,
+      "shadow_snapshots": 711,
+      "shadow_errors": 0,
+      "process_path_complete_under_legacy_logs": false,
+      "path_association_gaps": [
+        {
+          "scene_id": "QaLdnwvtxbs",
+          "episode_id": "18",
+          "k": 0,
+          "frame": 10,
+          "reason": "unresolved_or_unknown_query_identity"
+        },
+        {
+          "scene_id": "QaLdnwvtxbs",
+          "episode_id": "18",
+          "k": 0,
+          "frame": 11,
+          "reason": "unresolved_or_unknown_query_identity"
+        },
+        {
+          "scene_id": "QaLdnwvtxbs",
+          "episode_id": "18",
+          "k": 0,
+          "frame": 12,
+          "reason": "unresolved_or_unknown_query_identity"
+        },
+        {
+          "scene_id": "QaLdnwvtxbs",
+          "episode_id": "18",
+          "k": 0,
+          "frame": 13,
+          "reason": "unresolved_or_unknown_query_identity"
+        },
+        {
+          "scene_id": "QaLdnwvtxbs",
+          "episode_id": "18",
+          "k": 0,
+          "frame": 14,
+          "reason": "unresolved_or_unknown_query_identity"
+        },
+        {
+          "scene_id": "QaLdnwvtxbs",
+          "episode_id": "18",
+          "k": 0,
+          "frame": 15,
+          "reason": "unresolved_or_unknown_query_identity"
+        },
+        {
+          "scene_id": "QaLdnwvtxbs",
+          "episode_id": "18",
+          "k": 0,
+          "frame": 16,
+          "reason": "unresolved_or_unknown_query_identity"
+        },
+        {
+          "scene_id": "QaLdnwvtxbs",
+          "episode_id": "18",
+          "k": 0,
+          "frame": 17,
+          "reason": "unresolved_or_unknown_query_identity"
+        },
+        {
+          "scene_id": "QaLdnwvtxbs",
+          "episode_id": "18",
+          "k": 0,
+          "frame": 18,
+          "reason": "unresolved_or_unknown_query_identity"
+        },
+        {
+          "scene_id": "QaLdnwvtxbs",
+          "episode_id": "18",
+          "k": 0,
+          "frame": 19,
+          "reason": "unresolved_or_unknown_query_identity"
+        }
+      ],
+      "artifact_sha256": {
+        "status.json": "c63353c8ddbf24ac0c0c6bcebcdc2d12a18d9d3bfa804d59203ee69954afed46",
+        "launch.json": "b267e7dfc6fe84114a004af1ba272a0d8236c0f76552792ea1e782fe9208aaeb",
+        "mon_metrics.json": "8d4cff21a8b878fbd8225ae40b3306db357dadea35f0ccffe34e1849442325eb"
+      }
+    },
+    {
+      "scene": "cvZr5TUy5C5",
+      "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261109_161312_340221_exp4_calibration_calibration-a3-fold0-cvZr5TUy5C5",
+      "native_exit_code": 0,
+      "complete_episodes": 30,
+      "targets_per_episode": 2,
+      "actual_identity_files_checked": 30,
+      "frozen_manifest_source_ids_ordered_categories_match": true,
+      "complete_trajectory_and_terminal_STOP_checks_passed": true,
+      "candidate_checks": 413,
+      "final_labels": 413,
+      "check_to_final_event_keys_match": true,
+      "shadow_snapshots": 1847,
+      "shadow_errors": 0,
+      "process_path_complete_under_legacy_logs": true,
+      "path_association_gaps": [],
+      "artifact_sha256": {
+        "status.json": "17b0dc21b97d0ba49299937010770323fb1d84d546d83e6c834e5a50421ddc7d",
+        "launch.json": "c00a7296de0d9cd0a3251f40c468f44dcd41c83f75bad70cf81de0cfc8713f7a",
+        "mon_metrics.json": "1abca72b6209c3b9fc0a45553bdb43f3345b47d67d6024d9c8ac1ed40fad7b1d"
+      }
+    },
+    {
+      "scene": "Nfvxx8J5NCo",
+      "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261109_212445_531074_exp4_calibration_calibration-a3-fold1-Nfvxx8J5NCo",
+      "native_exit_code": 0,
+      "complete_episodes": 30,
+      "targets_per_episode": 2,
+      "actual_identity_files_checked": 30,
+      "frozen_manifest_source_ids_ordered_categories_match": true,
+      "complete_trajectory_and_terminal_STOP_checks_passed": true,
+      "candidate_checks": 329,
+      "final_labels": 329,
+      "check_to_final_event_keys_match": true,
+      "shadow_snapshots": 1680,
+      "shadow_errors": 0,
+      "process_path_complete_under_legacy_logs": true,
+      "path_association_gaps": [],
+      "artifact_sha256": {
+        "status.json": "213aeb7e088f8fd1c3b257272a1edff9014567cbf2db48436206a07594f23bd7",
+        "launch.json": "ed04a9b2b488ed12a065af2b41a0a7ef09b5d638727c30341b5e9435f3ddf895",
+        "mon_metrics.json": "819fef401acddc4de493469b8fa82540d969e6844acba2a79c27551563386ec1"
+      }
+    },
+    {
+      "scene": "p53SfW6mjZe",
+      "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261109_212445_531110_exp4_calibration_calibration-a3-fold1-p53SfW6mjZe",
+      "native_exit_code": 0,
+      "complete_episodes": 30,
+      "targets_per_episode": 2,
+      "actual_identity_files_checked": 30,
+      "frozen_manifest_source_ids_ordered_categories_match": true,
+      "complete_trajectory_and_terminal_STOP_checks_passed": true,
+      "candidate_checks": 349,
+      "final_labels": 349,
+      "check_to_final_event_keys_match": true,
+      "shadow_snapshots": 1786,
+      "shadow_errors": 0,
+      "process_path_complete_under_legacy_logs": true,
+      "path_association_gaps": [],
+      "artifact_sha256": {
+        "status.json": "b66b62e1ab1bac429663e69b12b2a15853509765916da01aed355deef8a5b8e1",
+        "launch.json": "c1be97e37010911f16bd05d474d0d897e6c6ca4b00a17a5a343f350303861f20",
+        "mon_metrics.json": "7ed71eb3427c5fa2f9d8a7dcda5dea099a72040a1cfce60188664cebb8612f50"
+      }
+    }
+  ]
+}

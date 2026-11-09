@@ -1,0 +1,15 @@
+{
+  "recorded_at_utc": "2026-11-09T16:27:41.595612+00:00",
+  "observer_session": 7060,
+  "observer_exit_code": 1,
+  "reported_error": "KeyError: 'completed_episodes'",
+  "failing_audit": "diagnostics/observer-initialization-failure-audit.json",
+  "before_script_sha256": {
+    "supervise_calibration.py": "1967fe8f7d81c943f3a8d6784bd21e5fc3c1012911c1eada24f7d045f282fbe8",
+    "watch_calibration.py": "d4a65b6de0c2cfe665bfa4be36dc0e021aa51b3f4b13fc5fbcd4d76683c79a14"
+  },
+  "native_controller_live": true,
+  "runtime_inputs_unchanged": true,
+  "CPU_11_scripts_unchanged": true,
+  "fresh_completed_episodes": 181
+}

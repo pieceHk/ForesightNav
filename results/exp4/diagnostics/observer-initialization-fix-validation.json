@@ -1,0 +1,128 @@
+{
+  "recorded_at_utc": "2026-11-09T16:34:32.276698+00:00",
+  "scope": "read-only observation contract fix only; no native algorithm or configuration change",
+  "before_script_sha256": {
+    "supervise_calibration.py": "1967fe8f7d81c943f3a8d6784bd21e5fc3c1012911c1eada24f7d045f282fbe8",
+    "watch_calibration.py": "d4a65b6de0c2cfe665bfa4be36dc0e021aa51b3f4b13fc5fbcd4d76683c79a14"
+  },
+  "after_script_sha256": {
+    "supervise_calibration.py": "e42a85b26b39f5616f9fd5587bf470e3ac01a31dd4d7814b336cf99e2b093947",
+    "test_supervision_telemetry.py": "72235094ba1da942ad9c8e9e0b56278884c8cf7f2bdb9b79e73cc975c163b27d",
+    "watch_calibration.py": "e7cef234fddb8ba98d0fd030a9d356935d0cacb5aa0d0871db4973011e96c58a"
+  },
+  "observer_tests_run": 6,
+  "observer_tests_successful": true,
+  "tests_log": "code/observer-telemetry-tests.txt",
+  "tests_log_sha256": "004c921c8ea8a81a423308c09f37ea623a3857ee7a2ed8b07e8389d75af7675d",
+  "runtime_input_count": 160,
+  "runtime_inputs_unchanged": true,
+  "CPU_bound_script_count": 11,
+  "CPU_scripts_unchanged": true,
+  "native_worker_signals_sent": false,
+  "actual_live_validation": {
+    "observer_metadata": {
+      "observer_pid": 210011,
+      "started_at_utc": "2026-11-09T16:35:52.269405+00:00",
+      "max_polls": 160,
+      "interval_seconds": 45,
+      "log": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/logs/calibration-observer-a3-20261109T163552Z.jsonl",
+      "observer_script_sha256": "e42a85b26b39f5616f9fd5587bf470e3ac01a31dd4d7814b336cf99e2b093947",
+      "scope": "bounded read-only supervision of controller31036 and CPU122348; stop on new closed scene"
+    },
+    "complete_live_polls": 12,
+    "first": {
+      "poll": 1,
+      "checked_at_utc": "2026-11-09T16:35:52.355380+00:00",
+      "completed": 183,
+      "controller_live_matching": true,
+      "boot_matches": true,
+      "source_unchanged": true,
+      "active_jobs": [
+        {
+          "scene": "4ok3usBNeis",
+          "gpu": 2,
+          "pid": 205002,
+          "telemetry_status": "available",
+          "completed": 2,
+          "accepted_actions": 1544,
+          "snapshots": 160,
+          "live_matching": true,
+          "shadow_error_bytes": 0
+        },
+        {
+          "scene": "zt1RVoi7PcG",
+          "gpu": 3,
+          "pid": 207102,
+          "telemetry_status": "available",
+          "completed": 1,
+          "accepted_actions": 836,
+          "snapshots": 87,
+          "live_matching": true,
+          "shadow_error_bytes": 0
+        }
+      ],
+      "CPU_pid": 122348,
+      "CPU_live_matching": true,
+      "CPU_status": "waiting_for_complete_collection",
+      "host_cpu": {
+        "logical_cpus": 384,
+        "load_average": [
+          51.58,
+          50.84,
+          49.2
+        ],
+        "pressure": "some avg10=0.00 avg60=0.14 avg300=0.21 total=6544531465\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=0"
+      }
+    },
+    "last": {
+      "poll": 12,
+      "checked_at_utc": "2026-11-09T16:44:23.925230+00:00",
+      "completed": 187,
+      "controller_live_matching": true,
+      "boot_matches": true,
+      "source_unchanged": true,
+      "active_jobs": [
+        {
+          "scene": "4ok3usBNeis",
+          "gpu": 2,
+          "pid": 205002,
+          "telemetry_status": "available",
+          "completed": 3,
+          "accepted_actions": 2296,
+          "snapshots": 236,
+          "live_matching": true,
+          "shadow_error_bytes": 0
+        },
+        {
+          "scene": "zt1RVoi7PcG",
+          "gpu": 3,
+          "pid": 207102,
+          "telemetry_status": "available",
+          "completed": 4,
+          "accepted_actions": 1680,
+          "snapshots": 173,
+          "live_matching": true,
+          "shadow_error_bytes": 0
+        }
+      ],
+      "CPU_pid": 122348,
+      "CPU_live_matching": true,
+      "CPU_status": "waiting_for_complete_collection",
+      "host_cpu": {
+        "logical_cpus": 384,
+        "load_average": [
+          49.01,
+          48.78,
+          48.83
+        ],
+        "pressure": "some avg10=0.00 avg60=0.00 avg300=0.16 total=6545878537\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=0"
+      }
+    },
+    "prefix_log": "logs/calibration-observer-a3-20261109T163552Z.prefix12.jsonl",
+    "prefix_log_sha256": "43b882853ce3b0c1e237a725ab1228a6a7a8183b24fd3896268cb9fe37ccd4ba",
+    "runtime_inputs_unchanged": true,
+    "CPU_11_scripts_unchanged": true
+  },
+  "before_source_git_commit": "6e671a136f315e8268b0eab59676cb3b5e98d53f",
+  "byte_exact_backups_preserved_on_server": true
+}
