@@ -1,39 +1,39 @@
 {
-  "checked_at_utc": "2026-11-09T05:18:56.886857+00:00",
+  "checked_at_utc": "2026-11-09T05:32:46.797113+00:00",
   "scope": "live a3 shadow inputs; no GT, fitted parameters, or evaluation performance",
   "histogram_unit": "candidate occurrence in a planning snapshot, not distinct candidates",
   "scene_snapshots": {
-    "6s7QHgap2fW": 185,
-    "TEEsavR23oF": 222
+    "6s7QHgap2fW": 308,
+    "TEEsavR23oF": 385
   },
   "counts": {
-    "snapshots": 407,
-    "nonempty_current_roots": 315,
-    "multiple_current_candidates": 252,
-    "pre_final_roots": 255,
-    "pre_final_with_any_future_candidates": 244,
-    "current_q_S_B_records_checked": 1074
+    "snapshots": 693,
+    "nonempty_current_roots": 561,
+    "multiple_current_candidates": 475,
+    "pre_final_roots": 389,
+    "pre_final_with_any_future_candidates": 367,
+    "current_q_S_B_records_checked": 2059
   },
   "N_views_histograms": {
     "current_candidate_occurrences": {
-      "0": 544,
-      "1": 258,
-      "2": 119,
-      "3": 61,
-      "4": 50,
-      "5": 22,
-      "6": 16,
-      "7": 4
+      "0": 867,
+      "1": 632,
+      "2": 300,
+      "3": 128,
+      "4": 71,
+      "5": 34,
+      "6": 19,
+      "7": 8
     },
     "future_candidate_occurrences": {
-      "0": 469,
-      "1": 201,
-      "2": 166,
-      "3": 209,
-      "4": 74,
+      "0": 648,
+      "1": 392,
+      "2": 302,
+      "3": 260,
+      "4": 93,
       "5": 53,
       "6": 6,
-      "7": 1
+      "7": 3
     }
   },
   "violations": [],

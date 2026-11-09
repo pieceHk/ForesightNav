@@ -1,0 +1,19 @@
+{
+  "recorded_at_utc": "2026-11-09T05:28:20.998655+00:00",
+  "reason": "Inherited audit files name old a2 run directories and must not appear as current a3 evidence",
+  "files": [
+    {
+      "old_current_path": "meta/completed-calibration-scene-audits.json",
+      "preserved_at": "archive/calibration-a2-inherited-before-depth-fix/meta/completed-calibration-scene-audits.json",
+      "sha256": "ce7f12e60d8020e513c80c32b720f77f097f2b4e6e335d99f2d9ad567906a7af"
+    },
+    {
+      "old_current_path": "diagnostics/native-offline-gt-check.json",
+      "preserved_at": "archive/calibration-a2-inherited-before-depth-fix/diagnostics/native-offline-gt-check.json",
+      "sha256": "b1e9cd1a0fd6219a18e962e482232abf95070e5d78075c51a7d43c53d46ab0e1"
+    }
+  ],
+  "raw_runs_deleted": false,
+  "current_a3_runtime_inputs_modified": false,
+  "next_step": "After current scene jobs complete, produce new a3 native audit and GT replay in the current paths."
+}

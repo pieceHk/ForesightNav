@@ -1,8 +1,10 @@
 """Protocol edge cases for the report's independent parameter-selection check."""
 from copy import deepcopy
+from dataclasses import asdict
 import unittest
 
-from report_calibration import selection_rule
+from report_calibration import parameter_proposal, selection_rule
+from pbsp.navigation.blp_parameters import CalibrationDocument
 
 
 def fit_record():
@@ -45,6 +47,35 @@ class SelectionRuleTests(unittest.TestCase):
         value['per_fold']['0']['flip_vs_pool']['rate'] = .11
         with self.assertRaisesRegex(ValueError, 'Selection differs'):
             selection_rule(value)
+
+
+class ProposalLoadingTests(unittest.TestCase):
+    def setUp(self):
+        self.theta = {'a': 10., 'b0': -2.5, 'pi': .3, 'c_exp': 10.}
+        self.folds = [[f'scene-{f}-{i}' for i in range(4)] for f in range(5)]
+        self.fit = {'theta_pool': self.theta,
+                    'cross_fit_proposals': {str(f): dict(self.theta, a=11. + f) for f in range(3)}}
+
+    def test_pooled_proposal_loads_without_crossfit_fields(self):
+        proposal = parameter_proposal(self.fit, self.folds, {}, 'pooled')
+        self.assertIs(proposal['frozen'], False)
+        frozen = dict(proposal, frozen=True, schema_version='exp4_calibration_v1')
+        document = CalibrationDocument.from_mapping(frozen)
+        for scenes in self.folds:
+            for scene in scenes:
+                self.assertEqual(asdict(document.resolve(scene)[0]), self.theta)
+
+    def test_crossfit_proposal_preserves_all_twenty_runtime_assignments(self):
+        proposal = parameter_proposal(self.fit, self.folds, {}, 'cross_fit')
+        self.assertIs(proposal['frozen'], False)
+        frozen = dict(proposal, frozen=True, schema_version='exp4_calibration_v1')
+        document = CalibrationDocument.from_mapping(frozen)
+        for f, scenes in enumerate(self.folds):
+            for scene in scenes:
+                theta, origin = document.resolve(scene)
+                expected = self.fit['cross_fit_proposals'][str(f)] if f < 3 else self.theta
+                self.assertEqual(asdict(theta), expected)
+                self.assertEqual(origin['training_folds'], [x for x in range(3) if x != f])
 
 
 if __name__ == '__main__':

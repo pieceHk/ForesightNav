@@ -68,6 +68,20 @@ def existing_approval_comparison(fit, selection):
             'accepted_by_this_script': False}
 
 
+def parameter_proposal(fit, folds, hashes, selection):
+    proposal = {'frozen': False, 'label_source': 'system_verification', 'selection': selection,
+                'collected_folds': [0, 1, 2], 'evidence_sha256': hashes,
+                'runtime_support': 'implemented and tested; parameter file not yet frozen'}
+    if selection == 'cross_fit':
+        proposal.update(schema_version='exp4_crossfit_proposal_v1',
+                        scene_to_fold={scene: f for f, scenes in enumerate(folds) for scene in scenes},
+                        parameters_excluding_fold=fit['cross_fit_proposals'],
+                        parameters_for_uncollected_folds=fit['theta_pool'])
+    else:
+        proposal.update(parameters=fit['theta_pool'])
+    return proposal
+
+
 def verify():
     ledger = read('meta/calibration_runs.json')
     require(ledger['status'] == 'completed_three_folds_pending_CP2a', 'The corrected 360-episode collection is incomplete')
@@ -158,17 +172,10 @@ def render(evidence):
                'collection_attempt': 'a3', 'cohorts': cohorts, 'evidence_sha256': evidence['hashes'],
                'recommended_selection': selection, 'approval_comparison': comparison}
     write('meta/CP2a_data_summary.json', summary)
-    proposal = {'frozen': False, 'label_source': 'system_verification', 'selection': selection,
-                'collected_folds': [0, 1, 2], 'evidence_sha256': evidence['hashes'],
-                'scene_to_fold': {scene: f for f, scenes in enumerate(folds) for scene in scenes},
-                'runtime_support': 'implemented and tested; parameter file not yet frozen'}
+    proposal = parameter_proposal(fit, folds, evidence['hashes'], selection)
     if selection == 'cross_fit':
-        proposal.update(schema_version='exp4_crossfit_proposal_v1',
-                        parameters_excluding_fold=fit['cross_fit_proposals'],
-                        parameters_for_uncollected_folds=fit['theta_pool'])
         write('meta/calibration.crossfit.proposed.json', proposal)
     else:
-        proposal.update(parameters=fit['theta_pool'])
         write('meta/calibration.pooled.review-proposed.json', proposal)
     fig, axes = plt.subplots(1, 4, figsize=(11, 3.3), constrained_layout=True)
     for ax, parameter in zip(axes, KEYS):

@@ -14,6 +14,8 @@
   "source_sha256": {
     "code/finalize_cp2b.py": "f34b558bfff67d9041a0d66f96bcab2f4823b4acf4e4bfcc46603df4fba7c1df",
     "code/fit_calibration_reviewed.py": "805ef79477539fdf21046cbed7c0a0d1080c96019a5acfee63fdca4cb5822a22",
-    "code/report_calibration.py": "d3cf0dbaa15cf138823d9ecb1651d107acefb01a4246a5d20af00b15a379f543"
-  }
+    "code/report_calibration.py": "54136e9ebcb97bc0d6a78a598228b7e25fe182698b85d02f2d0196919dcc9292"
+  },
+  "updated_at_utc": "2026-11-09T05:27:10.227214+00:00",
+  "report_auxiliary_tests_passed": 7
 }
