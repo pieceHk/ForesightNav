@@ -1,0 +1,5 @@
+{
+  "archived_at_utc": "2026-11-09T05:23:48.874494+00:00",
+  "original_sha256": "717e11c64065edfb0c622e5be3a9612cd7d685093845d4bbf07a71d5f15a500f",
+  "reason": "preserve the original CP1 while adding the corrected runtime validation"
+}
