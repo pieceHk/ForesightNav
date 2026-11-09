@@ -1,0 +1,125 @@
+{
+  "checked_at_utc": "2026-11-09T22:52:24.155973+00:00",
+  "scope": "bounded supervision ending on XB completion and automatic final DY launch",
+  "observer": {
+    "observer_pid": 267872,
+    "started_at_utc": "2026-11-09T21:22:03.645671+00:00",
+    "max_polls": 160,
+    "interval_seconds": 45,
+    "log": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/logs/calibration-observer-a3-20261109T212203Z.jsonl",
+    "observer_script_sha256": "e42a85b26b39f5616f9fd5587bf470e3ac01a31dd4d7814b336cf99e2b093947",
+    "scope": "bounded read-only supervision of controller31036 and CPU122348; stop on new closed scene"
+  },
+  "tool_session": 1881,
+  "observer_window_complete": true,
+  "observer_tool_exit_code": 0,
+  "finished_reason": "new_complete_scene",
+  "polls": 115,
+  "first": {
+    "poll": 1,
+    "checked_at_utc": "2026-11-09T21:22:03.732969+00:00",
+    "completed": 289,
+    "controller_live_matching": true,
+    "boot_matches": true,
+    "source_unchanged": true,
+    "active_jobs": [
+      {
+        "scene": "XB4GS9ShBRE",
+        "gpu": 2,
+        "pid": 253582,
+        "telemetry_status": "available",
+        "completed": 19,
+        "accepted_actions": 12905,
+        "snapshots": 1324,
+        "live_matching": true,
+        "shadow_error_bytes": 0
+      },
+      {
+        "scene": "wcojb4TFT35",
+        "gpu": 3,
+        "pid": 267723,
+        "telemetry_status": "available",
+        "completed": 0,
+        "accepted_actions": 0,
+        "snapshots": 0,
+        "live_matching": true,
+        "shadow_error_bytes": 0
+      }
+    ],
+    "CPU_pid": 122348,
+    "CPU_live_matching": true,
+    "CPU_status": "waiting_for_complete_collection",
+    "host_cpu": {
+      "logical_cpus": 384,
+      "load_average": [
+        41.12,
+        44.06,
+        46.69
+      ],
+      "pressure": "some avg10=0.00 avg60=0.23 avg300=0.24 total=6589926558\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=0"
+    }
+  },
+  "last": {
+    "poll": 115,
+    "checked_at_utc": "2026-11-09T22:51:56.521463+00:00",
+    "completed": 310,
+    "controller_live_matching": true,
+    "boot_matches": true,
+    "source_unchanged": true,
+    "active_jobs": [
+      {
+        "scene": "wcojb4TFT35",
+        "gpu": 3,
+        "pid": 267723,
+        "telemetry_status": "available",
+        "completed": 10,
+        "accepted_actions": 8146,
+        "snapshots": 833,
+        "live_matching": true,
+        "shadow_error_bytes": 0
+      },
+      {
+        "scene": "DYehNKdT76V",
+        "gpu": 2,
+        "pid": 278975,
+        "telemetry_status": "awaiting_run_directory",
+        "completed": null,
+        "accepted_actions": null,
+        "snapshots": null,
+        "live_matching": true,
+        "shadow_error_bytes": null
+      }
+    ],
+    "CPU_pid": 122348,
+    "CPU_live_matching": true,
+    "CPU_status": "waiting_for_complete_collection",
+    "host_cpu": {
+      "logical_cpus": 384,
+      "load_average": [
+        56.39,
+        51.29,
+        49.04
+      ],
+      "pressure": "some avg10=0.00 avg60=0.22 avg300=0.27 total=6603860869\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=0"
+    },
+    "observation_finished_reason": "new_complete_scene"
+  },
+  "log": "logs/calibration-observer-a3-20261109T212203Z.jsonl",
+  "log_sha256": "4a1ef75d0fd2d75b4d9ad7437c1dae76b8e26ab4e56d6cdc601154dcb2c742a2",
+  "runtime_inputs_unchanged": true,
+  "runtime_input_count": 160,
+  "CPU_scripts_unchanged": true,
+  "CPU_bound_script_count": 11,
+  "CPU_pressure_avg10_min": 0.0,
+  "CPU_pressure_avg10_max": 9.64,
+  "initializing_jobs_with_unknown_counters": [
+    {
+      "poll": 115,
+      "scene": "DYehNKdT76V",
+      "pid": 278975
+    }
+  ],
+  "parameters_fitted": false,
+  "native_processes_restarted": false,
+  "external_process_signals_sent": false
+}

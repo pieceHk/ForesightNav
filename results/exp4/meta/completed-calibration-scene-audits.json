@@ -1,8 +1,8 @@
 {
-  "checked_at_utc": "2026-11-09T21:23:37.649330+00:00",
+  "checked_at_utc": "2026-11-09T22:54:02.493785+00:00",
   "scope": "completed 2-MON calibration integrity only; no fitting, no 3-MON table",
   "frozen_runtime_unchanged": true,
-  "complete_episodes": 270,
+  "complete_episodes": 300,
   "completed_scenes": [
     {
       "scene": "6s7QHgap2fW",
@@ -249,6 +249,155 @@
         "status.json": "18511c1bc8560532071fa39dbf64a2284bcca348f591376b9d8bcb2b5bfc90e6",
         "launch.json": "169574bb4243b2d09335e648db30bd0620a7d850376f32cb93f876d459b8afb9",
         "mon_metrics.json": "175b4d78cad7619f8e402acc983f024a49b138588832b4c9f86cab54beb3537b"
+      }
+    },
+    {
+      "scene": "XB4GS9ShBRE",
+      "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_030707_420805_exp4_calibration_calibration-a3-fold2-XB4GS9ShBRE",
+      "native_exit_code": 0,
+      "complete_episodes": 30,
+      "targets_per_episode": 2,
+      "actual_identity_files_checked": 30,
+      "frozen_manifest_source_ids_ordered_categories_match": true,
+      "complete_trajectory_and_terminal_STOP_checks_passed": true,
+      "candidate_checks": 282,
+      "final_labels": 282,
+      "check_to_final_event_keys_match": true,
+      "shadow_snapshots": 2146,
+      "shadow_errors": 0,
+      "process_path_complete_under_legacy_logs": false,
+      "path_association_gaps": [
+        {
+          "scene_id": "XB4GS9ShBRE",
+          "episode_id": "2",
+          "k": 0,
+          "frame": 20,
+          "reason": "unresolved_or_unknown_query_identity"
+        },
+        {
+          "scene_id": "XB4GS9ShBRE",
+          "episode_id": "2",
+          "k": 0,
+          "frame": 21,
+          "reason": "unresolved_or_unknown_query_identity"
+        },
+        {
+          "scene_id": "XB4GS9ShBRE",
+          "episode_id": "2",
+          "k": 0,
+          "frame": 22,
+          "reason": "unresolved_or_unknown_query_identity"
+        },
+        {
+          "scene_id": "XB4GS9ShBRE",
+          "episode_id": "2",
+          "k": 0,
+          "frame": 23,
+          "reason": "unresolved_or_unknown_query_identity"
+        },
+        {
+          "scene_id": "XB4GS9ShBRE",
+          "episode_id": "2",
+          "k": 0,
+          "frame": 24,
+          "reason": "unresolved_or_unknown_query_identity"
+        },
+        {
+          "scene_id": "XB4GS9ShBRE",
+          "episode_id": "2",
+          "k": 0,
+          "frame": 25,
+          "reason": "unresolved_or_unknown_query_identity"
+        },
+        {
+          "scene_id": "XB4GS9ShBRE",
+          "episode_id": "2",
+          "k": 0,
+          "frame": 26,
+          "reason": "unresolved_or_unknown_query_identity"
+        },
+        {
+          "scene_id": "XB4GS9ShBRE",
+          "episode_id": "2",
+          "k": 0,
+          "frame": 27,
+          "reason": "unresolved_or_unknown_query_identity"
+        },
+        {
+          "scene_id": "XB4GS9ShBRE",
+          "episode_id": "2",
+          "k": 0,
+          "frame": 28,
+          "reason": "unresolved_or_unknown_query_identity"
+        },
+        {
+          "scene_id": "XB4GS9ShBRE",
+          "episode_id": "2",
+          "k": 0,
+          "frame": 29,
+          "reason": "unresolved_or_unknown_query_identity"
+        },
+        {
+          "scene_id": "XB4GS9ShBRE",
+          "episode_id": "11",
+          "k": 0,
+          "frame": 20,
+          "reason": "unresolved_or_unknown_query_identity"
+        },
+        {
+          "scene_id": "XB4GS9ShBRE",
+          "episode_id": "11",
+          "k": 0,
+          "frame": 21,
+          "reason": "unresolved_or_unknown_query_identity"
+        },
+        {
+          "scene_id": "XB4GS9ShBRE",
+          "episode_id": "11",
+          "k": 0,
+          "frame": 22,
+          "reason": "unresolved_or_unknown_query_identity"
+        },
+        {
+          "scene_id": "XB4GS9ShBRE",
+          "episode_id": "11",
+          "k": 0,
+          "frame": 23,
+          "reason": "unresolved_or_unknown_query_identity"
+        },
+        {
+          "scene_id": "XB4GS9ShBRE",
+          "episode_id": "11",
+          "k": 0,
+          "frame": 24,
+          "reason": "unresolved_or_unknown_query_identity"
+        },
+        {
+          "scene_id": "XB4GS9ShBRE",
+          "episode_id": "11",
+          "k": 0,
+          "frame": 25,
+          "reason": "unresolved_or_unknown_query_identity"
+        },
+        {
+          "scene_id": "XB4GS9ShBRE",
+          "episode_id": "11",
+          "k": 0,
+          "frame": 26,
+          "reason": "unresolved_or_unknown_query_identity"
+        },
+        {
+          "scene_id": "XB4GS9ShBRE",
+          "episode_id": "11",
+          "k": 0,
+          "frame": 27,
+          "reason": "unresolved_or_unknown_query_identity"
+        }
+      ],
+      "artifact_sha256": {
+        "status.json": "c3e67f4b9981069839cf36e1daefec3363ea7a8b3951d7a2ea578861c55522ff",
+        "launch.json": "a4c9a8d52cd86314f081e100604387f8508043f21a1137c932b56c81eff29daa",
+        "mon_metrics.json": "c3cbe0e8f3ce2d5e90406406e76c6f775f42eea17aca9c846dcb9909d3fa4ee6"
       }
     },
     {

@@ -1,0 +1,293 @@
+{
+  "checked_at_utc": "2026-11-09T23:11:56.592175+00:00",
+  "scope": "300 closed native 2-MON artifacts; analysis-only comparison, no new navigation or fitting",
+  "episodes": 300,
+  "scenes": [
+    "6s7QHgap2fW",
+    "TEEsavR23oF",
+    "QaLdnwvtxbs",
+    "cvZr5TUy5C5",
+    "Nfvxx8J5NCo",
+    "p53SfW6mjZe",
+    "4ok3usBNeis",
+    "zt1RVoi7PcG",
+    "XB4GS9ShBRE",
+    "svBbv1Pavdk"
+  ],
+  "native_episode_rows_identical": true,
+  "decision_rows_identical": true,
+  "navigation_and_conditional_metrics_identical": [
+    "SR",
+    "SPL",
+    "PR",
+    "PPL",
+    "PSR",
+    "PeSPL",
+    "P_C1",
+    "P_C2_given_C1",
+    "Joint"
+  ],
+  "other_unchanged_process_fields": [
+    "Invalid_visits_per_ep",
+    "invalid_visit_events_per_ep",
+    "checked_distinct_candidates",
+    "invalid_confirmed_approach_tail_m",
+    "invalid_visit_definition",
+    "nonquery_recovery_verification_frames",
+    "deviation_from_nearest_proposal_pct",
+    "deviation_from_nearest_after_hysteresis_pct",
+    "deviation_from_nearest_realized_pct",
+    "eligible_proposals",
+    "eligible_realized_dispatches",
+    "planning_ms",
+    "fallback_root_decisions",
+    "fallback_decision_incidence",
+    "fallback_memo_state_counts",
+    "fallback_count_definition",
+    "n_computed_snapshots",
+    "n_recorded_dispatch_events",
+    "legacy_interval_diagnostics",
+    "mixed_GT_checked_identities",
+    "invalid_identity_pursuit_definition",
+    "accepted_action_rows_by_source",
+    "last_STOP_without_after_pose_assumed_stationary",
+    "verification_then_effective_recovery_actions"
+  ],
+  "checked_distinct_candidates_before": 2705,
+  "checked_distinct_candidates_after": 2705,
+  "accepted_physical_path_unchanged": true,
+  "raw_association_gaps_retained": [
+    {
+      "scene_id": "QaLdnwvtxbs",
+      "episode_id": "18",
+      "k": 0,
+      "frame": 10,
+      "reason": "unresolved_or_unknown_query_identity"
+    },
+    {
+      "scene_id": "QaLdnwvtxbs",
+      "episode_id": "18",
+      "k": 0,
+      "frame": 11,
+      "reason": "unresolved_or_unknown_query_identity"
+    },
+    {
+      "scene_id": "QaLdnwvtxbs",
+      "episode_id": "18",
+      "k": 0,
+      "frame": 12,
+      "reason": "unresolved_or_unknown_query_identity"
+    },
+    {
+      "scene_id": "QaLdnwvtxbs",
+      "episode_id": "18",
+      "k": 0,
+      "frame": 13,
+      "reason": "unresolved_or_unknown_query_identity"
+    },
+    {
+      "scene_id": "QaLdnwvtxbs",
+      "episode_id": "18",
+      "k": 0,
+      "frame": 14,
+      "reason": "unresolved_or_unknown_query_identity"
+    },
+    {
+      "scene_id": "QaLdnwvtxbs",
+      "episode_id": "18",
+      "k": 0,
+      "frame": 15,
+      "reason": "unresolved_or_unknown_query_identity"
+    },
+    {
+      "scene_id": "QaLdnwvtxbs",
+      "episode_id": "18",
+      "k": 0,
+      "frame": 16,
+      "reason": "unresolved_or_unknown_query_identity"
+    },
+    {
+      "scene_id": "QaLdnwvtxbs",
+      "episode_id": "18",
+      "k": 0,
+      "frame": 17,
+      "reason": "unresolved_or_unknown_query_identity"
+    },
+    {
+      "scene_id": "QaLdnwvtxbs",
+      "episode_id": "18",
+      "k": 0,
+      "frame": 18,
+      "reason": "unresolved_or_unknown_query_identity"
+    },
+    {
+      "scene_id": "QaLdnwvtxbs",
+      "episode_id": "18",
+      "k": 0,
+      "frame": 19,
+      "reason": "unresolved_or_unknown_query_identity"
+    },
+    {
+      "scene_id": "XB4GS9ShBRE",
+      "episode_id": "2",
+      "k": 0,
+      "frame": 20,
+      "reason": "unresolved_or_unknown_query_identity"
+    },
+    {
+      "scene_id": "XB4GS9ShBRE",
+      "episode_id": "2",
+      "k": 0,
+      "frame": 21,
+      "reason": "unresolved_or_unknown_query_identity"
+    },
+    {
+      "scene_id": "XB4GS9ShBRE",
+      "episode_id": "2",
+      "k": 0,
+      "frame": 22,
+      "reason": "unresolved_or_unknown_query_identity"
+    },
+    {
+      "scene_id": "XB4GS9ShBRE",
+      "episode_id": "2",
+      "k": 0,
+      "frame": 23,
+      "reason": "unresolved_or_unknown_query_identity"
+    },
+    {
+      "scene_id": "XB4GS9ShBRE",
+      "episode_id": "2",
+      "k": 0,
+      "frame": 24,
+      "reason": "unresolved_or_unknown_query_identity"
+    },
+    {
+      "scene_id": "XB4GS9ShBRE",
+      "episode_id": "2",
+      "k": 0,
+      "frame": 25,
+      "reason": "unresolved_or_unknown_query_identity"
+    },
+    {
+      "scene_id": "XB4GS9ShBRE",
+      "episode_id": "2",
+      "k": 0,
+      "frame": 26,
+      "reason": "unresolved_or_unknown_query_identity"
+    },
+    {
+      "scene_id": "XB4GS9ShBRE",
+      "episode_id": "2",
+      "k": 0,
+      "frame": 27,
+      "reason": "unresolved_or_unknown_query_identity"
+    },
+    {
+      "scene_id": "XB4GS9ShBRE",
+      "episode_id": "2",
+      "k": 0,
+      "frame": 28,
+      "reason": "unresolved_or_unknown_query_identity"
+    },
+    {
+      "scene_id": "XB4GS9ShBRE",
+      "episode_id": "2",
+      "k": 0,
+      "frame": 29,
+      "reason": "unresolved_or_unknown_query_identity"
+    },
+    {
+      "scene_id": "XB4GS9ShBRE",
+      "episode_id": "11",
+      "k": 0,
+      "frame": 20,
+      "reason": "unresolved_or_unknown_query_identity"
+    },
+    {
+      "scene_id": "XB4GS9ShBRE",
+      "episode_id": "11",
+      "k": 0,
+      "frame": 21,
+      "reason": "unresolved_or_unknown_query_identity"
+    },
+    {
+      "scene_id": "XB4GS9ShBRE",
+      "episode_id": "11",
+      "k": 0,
+      "frame": 22,
+      "reason": "unresolved_or_unknown_query_identity"
+    },
+    {
+      "scene_id": "XB4GS9ShBRE",
+      "episode_id": "11",
+      "k": 0,
+      "frame": 23,
+      "reason": "unresolved_or_unknown_query_identity"
+    },
+    {
+      "scene_id": "XB4GS9ShBRE",
+      "episode_id": "11",
+      "k": 0,
+      "frame": 24,
+      "reason": "unresolved_or_unknown_query_identity"
+    },
+    {
+      "scene_id": "XB4GS9ShBRE",
+      "episode_id": "11",
+      "k": 0,
+      "frame": 25,
+      "reason": "unresolved_or_unknown_query_identity"
+    },
+    {
+      "scene_id": "XB4GS9ShBRE",
+      "episode_id": "11",
+      "k": 0,
+      "frame": 26,
+      "reason": "unresolved_or_unknown_query_identity"
+    },
+    {
+      "scene_id": "XB4GS9ShBRE",
+      "episode_id": "11",
+      "k": 0,
+      "frame": 27,
+      "reason": "unresolved_or_unknown_query_identity"
+    }
+  ],
+  "invalid_path_complete": false,
+  "invalid_visit_path_before_m": 4544.871639889277,
+  "invalid_visit_path_after_m": 4549.121639577261,
+  "GT_labelled_action_rows_before": 61497,
+  "GT_labelled_action_rows_after": 61520,
+  "native_stage_checks": 600,
+  "native_stage_path_max_abs_error_m": 2.5318750687119973e-06,
+  "alias_statistics": {
+    "definition": "recorded registry identity, merging checked IDs sharing an exact full-XYZ final-check coordinate within one scene/episode/task/resample; unchecked first-appearance IDs alias a checked group only at that exact XYZ",
+    "source_sha256": "a311b37d45d59f379ce00b58d1350b5eb308da0b9a24d34ad2facdb495d9991d",
+    "raw_checked_registry_identities": 2706,
+    "canonical_checked_identities": 2705,
+    "identities_merged": 1,
+    "verification_rows_retained": 3287,
+    "unchecked_first_appearance_aliases": 11,
+    "GT_or_labels_used_to_group": false,
+    "raw_events_modified": false
+  },
+  "source_before": {
+    "report_variants.py": "d3d8617a83ccbd1ccebf18cf2b4149fd745be23c962e3dabeb42b057ad7626c3",
+    "action_path_metrics.py": "a89afc6504fcb5520bb8c227928961b3d7814bcfcc98c23c6311e35254089f1e",
+    "native_candidate_gt.py": "e2620454fe45d54933294286a518440ef16ec961c0eb0ca5aafe5ec2587a21a3",
+    "blp_parameters.py": "039c6a660ab2a7cf2b6e9e78e810bfb44f32731e6c52a9194dc20f82daa63bad",
+    "candidate_identities.py": "a209d9e9f1ffab098198c8466c5b64b81dfd9577e105a89df448c91ba9d7a24d"
+  },
+  "source_after": {
+    "report_variants.py": "d3d8617a83ccbd1ccebf18cf2b4149fd745be23c962e3dabeb42b057ad7626c3",
+    "action_path_metrics.py": "a89afc6504fcb5520bb8c227928961b3d7814bcfcc98c23c6311e35254089f1e",
+    "native_candidate_gt.py": "e2620454fe45d54933294286a518440ef16ec961c0eb0ca5aafe5ec2587a21a3",
+    "blp_parameters.py": "039c6a660ab2a7cf2b6e9e78e810bfb44f32731e6c52a9194dc20f82daa63bad",
+    "candidate_identities.py": "a311b37d45d59f379ce00b58d1350b5eb308da0b9a24d34ad2facdb495d9991d"
+  },
+  "validation_sha256": "47730d28a4e02444a55324e993f1726b6b5ed2483d6eb9335a2c765ee26b730d",
+  "runtime_source_changed": false,
+  "raw_data_changed": false,
+  "pending_analysis_applied_to_CPU_waiter": false
+}

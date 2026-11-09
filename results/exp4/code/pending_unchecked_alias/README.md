@@ -1,0 +1,24 @@
+# 未检查登记身份的精确坐标别名
+
+此目录验证分析端修正，不启动导航、不拟合参数，也不改原始轨迹或事件。主文件 `../candidate_identities.py` 是已通过检查的实现。
+
+仅当某个从未被检查的登记ID，其首次出现的完整XYZ与已检查候选的final坐标完全相同，才将其关联到已有已检查分组。scene、episode、task及bootstrap抽样实例必须一致。已检查ID仍按原final坐标规则分组；v/y不参与分组，陌生坐标和原始null身份不填补。
+
+6项新边界检查和原51项分析/报告检查通过。XB/2、XB/11的18帧在原函数与待采纳logger032之间精确回放；登记与首次出现事件不变。日志补齐后，XB/11尚需本分析修正才能补计1.753523747米无效接近路径。派生轨迹通过4阶段原生路径核对，不用于正式成绩。
+
+300条原生数据的episode/决策/导航指标/物理路径相同，3587条拟合关键记录及2705个已检查身份不变；11个未检查别名补计约4.25米已记录且原生GT无效的路径。原始28帧缺口保留，invalid_path_complete仍false。GT查询增加23条是新增路径归属的结果；首次比较错误地将此计数也设为不变，失败与修正记录见validation-attempts.json。
+
+## 精确源码重建
+
+三份精确源码副本保留在服务器和本机，未为格式检查修改原始空白EOF。Git中的父提交已核对等于旧文件，可在仓库根目录重建测试所需两份副本：
+
+```sh
+git show 54020abc5934ba11a752aa3a27d06aec2aba8cd8:results/exp4/code/candidate_identities.py > results/exp4/code/pending_unchecked_alias/base_candidate_identities.py
+cp results/exp4/code/candidate_identities.py results/exp4/code/pending_unchecked_alias/proposed_candidate_identities.py
+```
+
+旧SHA为a209d9e9f1ffab098198c8466c5b64b81dfd9577e105a89df448c91ba9d7a24d；新SHA为a311b37d45d59f379ce00b58d1350b5eb308da0b9a24d34ad2facdb495d9991d。回放脚本使用记录中的服务器路径、原始run及隔离logger032源。正常拟合只依赖主candidate_identities.py，不依赖这些重复副本。
+
+## CPU绑定交接
+
+在验证完成后，只对身份匹配且尚无已执行步骤的空闲CPU等待器122348发送SIGTERM；旧只读观察按守卫正常结束。旧state归档后才安装新分析，重新启动等待器281840/start_ticks7443824。11份CPU脚本仅candidate_identities.py改变，160项原生输入及GPU工作进程不变。新进程继续等待360，不自动接受参数、冻结或启动Full。supervisor仅将scope描述改为不含旧CPU PID的文字，6项观察检查通过。详见meta/unchecked-alias-handoff.json及diagnostics/unchecked-alias-adoption.json。

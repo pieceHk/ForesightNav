@@ -1,8 +1,8 @@
 {
-  "pid": 122348,
-  "start_ticks": "2658437",
+  "pid": 281840,
+  "start_ticks": "7443824",
   "boot_id": "23443655-6f2f-4063-a412-e255f3a91e62",
-  "started_at_utc": "2026-11-09T09:57:47.239196+00:00",
+  "started_at_utc": "2026-11-09T23:15:21.103260+00:00",
   "collection_attempt": "a3",
   "collection_controller_pid": 31036,
   "source_fingerprint": {
@@ -178,12 +178,12 @@
     "action_path_metrics.py": "a89afc6504fcb5520bb8c227928961b3d7814bcfcc98c23c6311e35254089f1e",
     "evaluate_sequence.py": "d238350a2733b56d258e774e5ca4f1537f09818cd34a313a638b9ec483c0b82f",
     "finish_calibration.py": "f6313dfb2210c4333b6c3b2749d0ef33d13903b635396d663c371c40b6d47862",
-    "candidate_identities.py": "a209d9e9f1ffab098198c8466c5b64b81dfd9577e105a89df448c91ba9d7a24d"
+    "candidate_identities.py": "a311b37d45d59f379ce00b58d1350b5eb308da0b9a24d34ad2facdb495d9991d"
   },
   "status": "waiting_for_complete_collection",
   "completed_steps": [],
   "freezes_parameters": false,
   "launches_native_workers": false,
-  "last_checked_at_utc": "2026-11-09T21:25:10.743989+00:00",
+  "last_checked_at_utc": "2026-11-09T23:20:21.502405+00:00",
   "collection_status": "running"
 }

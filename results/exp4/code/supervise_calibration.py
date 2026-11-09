@@ -42,7 +42,7 @@ def main():
     meta = {'observer_pid': os.getpid(), 'started_at_utc': datetime.now(timezone.utc).isoformat(),
             'max_polls': args.max_polls, 'interval_seconds': 45, 'log': str(log),
             'observer_script_sha256': hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
-            'scope': 'bounded read-only supervision of controller31036 and CPU122348; stop on new closed scene'}
+            'scope': 'bounded read-only supervision of the frozen calibration controller and bound CPU postprocessor; stop on new closed scene'}
     (root / 'meta/last-calibration-observer.json').write_text(json.dumps(meta, indent=2) + '\n')
     initial = None
     with log.open('x') as stream:

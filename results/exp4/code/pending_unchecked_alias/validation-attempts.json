@@ -1,0 +1,20 @@
+{
+  "first_normalization_attempt": {
+    "tool_session": 65079,
+    "exit_code": 1,
+    "error": "AssertionError: native_target_GT_labelled_action_rows",
+    "cause": "Comparison incorrectly required native GT query count to remain equal when alias eligibility adds labelled actions"
+  },
+  "corrected_normalization_attempt": {
+    "tool_session": 2384,
+    "exit_code": 0,
+    "GT_labelled_rows_before": 61497,
+    "GT_labelled_rows_after": 61520,
+    "record": "diagnostics/unchecked-alias-native300-validation.json"
+  },
+  "production_candidate_source_unchanged_between_attempts": true,
+  "six_alias_tests_exit_code": 0,
+  "existing_51_analysis_report_tests_exit_code": 0,
+  "XB_replay_tool_session": 25591,
+  "XB_replay_exit_code": 0
+}

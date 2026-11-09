@@ -3,6 +3,8 @@
 No distance threshold, label, or GT participates. Raw files remain untouched.
 An identity keeps its recorded time-varying points; two checked identities are
 unified only if a final check records exactly the same full XYZ point.
+An unchecked registration can alias a checked group only when its recorded
+first-appearance point exactly matches that group's final-check XYZ point.
 """
 import hashlib
 import math
@@ -10,7 +12,8 @@ from pathlib import Path
 
 SOURCE_SHA256 = hashlib.sha256(Path(__file__).read_bytes()).hexdigest()
 DEFINITION = ('recorded registry identity, merging checked IDs sharing an exact full-XYZ '
-              'final-check coordinate within one scene/episode/task/resample')
+              'final-check coordinate within one scene/episode/task/resample; unchecked '
+              'first-appearance IDs alias a checked group only at that exact XYZ')
 
 
 def key(row):
@@ -46,6 +49,25 @@ def canonicalize(events, traces=None):
                 parent[second] = first
         by_position[coordinate] = node
     mapping = {node: find(node)[-1] for node in parent}
+    unchecked_aliases = {}
+    for row in events:
+        if row['event'] != 'candidate_first_appearance' or row.get('candidate_id') is None:
+            continue
+        node = key(row)
+        # A checked ID keeps the original final-check grouping. This extension
+        # cannot change the identities or rows used by q, pi or C_exp fitting.
+        if node in parent:
+            continue
+        point = row.get('position')
+        if point is None or len(point) != 3 or not all(math.isfinite(float(x)) for x in point):
+            raise ValueError('A first appearance requires finite full XYZ coordinates')
+        coordinate = node[:4] + (tuple(map(float, point)),)
+        if coordinate in by_position:
+            canonical = find(by_position[coordinate])[-1]
+            if node in unchecked_aliases and unchecked_aliases[node] != canonical:
+                raise ValueError('An unchecked first-appearance identity has conflicting exact aliases')
+            unchecked_aliases[node] = canonical
+    mapping.update(unchecked_aliases)
     output = []
     for row in events:
         out = dict(row)
@@ -78,6 +100,7 @@ def canonicalize(events, traces=None):
              'canonical_checked_identities': len(set((node[:4], cid) for node, cid in mapping.items())),
              'identities_merged': len(parent) - len(set((node[:4], cid) for node, cid in mapping.items())),
              'verification_rows_retained': len(checked),
+             'unchecked_first_appearance_aliases': len(unchecked_aliases),
              'GT_or_labels_used_to_group': False,
              'raw_events_modified': False}
     return output, rewritten, stats

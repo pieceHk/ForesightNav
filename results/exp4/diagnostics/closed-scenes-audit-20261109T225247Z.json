@@ -1,0 +1,105 @@
+{
+  "recorded_at_utc": "2026-11-09T22:54:48.493585+00:00",
+  "scope": "closed native calibration scenes only; historical diagnostics separately excluded",
+  "steps": [
+    {
+      "script": "audit_completed_calibration.py",
+      "returncode": 0,
+      "log": "logs/closed-scenes-20261109T225247Z-audit_completed_calibration.py.log",
+      "log_sha256": "5293f63af3738ee45dba7a7fc38b9096af57b16f5440c4450565448cd149b696"
+    },
+    {
+      "script": "verify_action_path_pipeline.py",
+      "returncode": 0,
+      "log": "logs/closed-scenes-20261109T225247Z-verify_action_path_pipeline.py.log",
+      "log_sha256": "8224b2659202d7309470272894f85485ab3a5ec25a0c59efaa3a8d321374323b"
+    }
+  ],
+  "complete_episodes": 300,
+  "native_calibration_candidate_checks": 3287,
+  "native_calibration_recovery_checks": 5798,
+  "max_GT_distance_error_m": 0.0,
+  "new_closed_scenes_after_identity_audit": [],
+  "scenes": [
+    {
+      "scene": "6s7QHgap2fW",
+      "episodes": 30,
+      "checks": 425,
+      "finals": 425,
+      "snapshots": 1687,
+      "gaps": 0
+    },
+    {
+      "scene": "TEEsavR23oF",
+      "episodes": 30,
+      "checks": 377,
+      "finals": 377,
+      "snapshots": 1860,
+      "gaps": 0
+    },
+    {
+      "scene": "QaLdnwvtxbs",
+      "episodes": 30,
+      "checks": 231,
+      "finals": 231,
+      "snapshots": 711,
+      "gaps": 10
+    },
+    {
+      "scene": "cvZr5TUy5C5",
+      "episodes": 30,
+      "checks": 413,
+      "finals": 413,
+      "snapshots": 1847,
+      "gaps": 0
+    },
+    {
+      "scene": "Nfvxx8J5NCo",
+      "episodes": 30,
+      "checks": 329,
+      "finals": 329,
+      "snapshots": 1680,
+      "gaps": 0
+    },
+    {
+      "scene": "p53SfW6mjZe",
+      "episodes": 30,
+      "checks": 349,
+      "finals": 349,
+      "snapshots": 1786,
+      "gaps": 0
+    },
+    {
+      "scene": "4ok3usBNeis",
+      "episodes": 30,
+      "checks": 363,
+      "finals": 363,
+      "snapshots": 1407,
+      "gaps": 0
+    },
+    {
+      "scene": "zt1RVoi7PcG",
+      "episodes": 30,
+      "checks": 316,
+      "finals": 316,
+      "snapshots": 1221,
+      "gaps": 0
+    },
+    {
+      "scene": "XB4GS9ShBRE",
+      "episodes": 30,
+      "checks": 282,
+      "finals": 282,
+      "snapshots": 2146,
+      "gaps": 18
+    },
+    {
+      "scene": "svBbv1Pavdk",
+      "episodes": 30,
+      "checks": 202,
+      "finals": 202,
+      "snapshots": 1375,
+      "gaps": 0
+    }
+  ]
+}

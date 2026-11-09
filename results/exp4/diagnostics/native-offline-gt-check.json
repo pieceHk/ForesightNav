@@ -1,8 +1,8 @@
 {
   "scope": "native offline GT reproducibility, no fitting or policy execution",
   "analysis_source_sha256": "e2620454fe45d54933294286a518440ef16ec961c0eb0ca5aafe5ec2587a21a3",
-  "candidate_verifications": 3036,
-  "recovery_verifications": 4774,
+  "candidate_verifications": 3318,
+  "recovery_verifications": 5824,
   "max_distance_error_m": 0.0,
   "checks": [
     {
@@ -305,6 +305,44 @@
             "content_sha256": "91a15c6c19d2567e1fbcbdc800581cdcbfc4ff9ca519cfb5f94c0a85e52431c3",
             "navmesh": "/nvme/khy/PBSP-open-source/data/scenes/hm3dv1/hm3d/val/00839-zt1RVoi7PcG/zt1RVoi7PcG.basis.navmesh",
             "navmesh_sha256": "39d413cd6513830a0ae002e3fe5371e7861f532e7e65778fc30a739783d89d5c"
+          }
+        }
+      }
+    },
+    {
+      "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_030707_420805_exp4_calibration_calibration-a3-fold2-XB4GS9ShBRE",
+      "candidate_verifications": 282,
+      "recovery_verifications": 1050,
+      "max_distance_error_m": 0.0,
+      "native_gt_provenance": {
+        "method": "native GOAT measures and geodesic wrapper on CPU PathFinder",
+        "habitat_source": {
+          "revision": "8df2661e5b2203c0ddc47798d5da0132d5686bbe",
+          "kind": "archive",
+          "files": 550,
+          "content_sha256": "31226fdca10c6ea69c23b6c3dbf707745210f7df5785c1c7116eda98c6dfc77c"
+        },
+        "measurements": {
+          "distance": {
+            "type": "GOATDistanceToSubGoal",
+            "distance_to": "VIEW_POINTS",
+            "goals_attr": "goals",
+            "distance_from": "BASE"
+          },
+          "success": {
+            "type": "GOATSubTaskSuccess",
+            "success_distance": 1.0
+          }
+        },
+        "dataset_manifest_sha256": "dfcf14d1fe7edef9c9d7bd8286dfe8067c91f56ef46ca2be4524d7e01461ac62",
+        "queries": 1332,
+        "cache_hits": 984,
+        "distinct_positions": 348,
+        "scenes": {
+          "XB4GS9ShBRE": {
+            "content_sha256": "b1bea368520a1e6c35f548f3feb1e9307eea434bbe569e7ceca5fcc878fb4e37",
+            "navmesh": "/nvme/khy/PBSP-open-source/data/scenes/hm3dv1/hm3d/val/00878-XB4GS9ShBRE/XB4GS9ShBRE.basis.navmesh",
+            "navmesh_sha256": "44c6f2f74ea09dd033c248474128513d6446c5bfb289e44a0af14518d9aa6f6f"
           }
         }
       }

@@ -1,9 +1,9 @@
 {
-  "observer_pid": 267872,
-  "started_at_utc": "2026-11-09T21:22:03.645671+00:00",
+  "observer_pid": 281949,
+  "started_at_utc": "2026-11-09T23:16:15.913013+00:00",
   "max_polls": 160,
   "interval_seconds": 45,
-  "log": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/logs/calibration-observer-a3-20261109T212203Z.jsonl",
-  "observer_script_sha256": "e42a85b26b39f5616f9fd5587bf470e3ac01a31dd4d7814b336cf99e2b093947",
-  "scope": "bounded read-only supervision of controller31036 and CPU122348; stop on new closed scene"
+  "log": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/logs/calibration-observer-a3-20261109T231615Z.jsonl",
+  "observer_script_sha256": "64970e0bce349f253ce074424a13599fd0b4eb614269e8018caad8e859fe9530",
+  "scope": "bounded read-only supervision of the frozen calibration controller and bound CPU postprocessor; stop on new closed scene"
 }

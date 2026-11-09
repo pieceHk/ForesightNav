@@ -1,0 +1,11 @@
+test_bootstrap_instances_stay_separate (test_unchecked_aliases.UncheckedAliasTests) ... ok
+test_checked_identity_is_not_merged_by_its_first_appearance (test_unchecked_aliases.UncheckedAliasTests) ... ok
+test_exact_unchecked_alias_rewrites_trace_without_changing_fit_rows (test_unchecked_aliases.UncheckedAliasTests) ... ok
+test_labels_do_not_choose_aliases_and_checked_dedup_still_applies (test_unchecked_aliases.UncheckedAliasTests) ... ok
+test_scope_height_and_exact_coordinates_are_not_relaxed (test_unchecked_aliases.UncheckedAliasTests) ... ok
+test_unresolved_null_is_not_filled (test_unchecked_aliases.UncheckedAliasTests) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.001s
+
+OK
