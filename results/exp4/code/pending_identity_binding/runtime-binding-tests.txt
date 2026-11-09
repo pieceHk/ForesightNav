@@ -1,0 +1,17 @@
+test_altered_calibration_source_is_rejected (test_evaluation_runtime_binding.RuntimeBindingTests) ... ok
+test_complete_exact_change_is_validated (test_evaluation_runtime_binding.RuntimeBindingTests) ... ok
+test_different_observer_bytes_are_rejected (test_evaluation_runtime_binding.RuntimeBindingTests) ... ok
+test_evidence_cannot_leave_experiment_directory (test_evaluation_runtime_binding.RuntimeBindingTests) ... ok
+test_fewer_checks_rejected_even_with_updated_digest (test_evaluation_runtime_binding.RuntimeBindingTests) ... ok
+test_missing_evidence_binding_is_rejected (test_evaluation_runtime_binding.RuntimeBindingTests) ... ok
+test_missing_validation_does_not_grant_binding (test_evaluation_runtime_binding.RuntimeBindingTests) ... ok
+test_other_runtime_change_is_rejected (test_evaluation_runtime_binding.RuntimeBindingTests) ... ok
+test_same_total_wrong_baseline_coverage_rejected (test_evaluation_runtime_binding.RuntimeBindingTests) ... ok
+test_source_fingerprint_proof_cannot_be_reused (test_evaluation_runtime_binding.RuntimeBindingTests) ... ok
+test_stale_parameter_hash_is_rejected (test_evaluation_runtime_binding.RuntimeBindingTests) ... ok
+test_unchanged_observer_cannot_skip_logging_fix (test_evaluation_runtime_binding.RuntimeBindingTests) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.156s
+
+OK

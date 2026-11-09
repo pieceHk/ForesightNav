@@ -15,3 +15,5 @@ a3标定运行代码保持eaa29e5，160项固定输入未变。隔离分支exp4/
 评估前还须采纳并绑定已测的被动日志补丁，完成新的固定20条Full冒烟及CP3审查。当前证据不能替代真实冒烟，也不代表3-MON效果提升。
 
 [源码差异与检查](../code/pending_identity_binding/README.md)、[被动日志重放](../diagnostics/identity-binding-validation.json)、[90条原生统计对比](../diagnostics/identity-canonicalization-native-validation.json)、[分析采纳记录](../diagnostics/identity-analysis-adoption.json)、[CPU重新排队](../diagnostics/postprocess-identity-analysis-requeue.json)。
+
+评估源码迁移的严格校验与12项检查已准备，当前预检因标定未完成而拒绝执行。[分别绑定标定与评估源码](evaluation_runtime_binding.md)。

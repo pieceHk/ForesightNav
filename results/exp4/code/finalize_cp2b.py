@@ -8,10 +8,11 @@ from pathlib import Path
 import re
 import subprocess
 
-from evaluate_sequence import validate_calibration_coverage
+from evaluate_sequence import validate_calibration_coverage, GateError
 from experiments.exp4_collect import source_fingerprint, write
 from pbsp.navigation.blp_parameters import CalibrationDocument
 from report_calibration import selection_rule
+from evaluation_runtime_binding import validate_runtime_binding
 
 REPO = Path(__file__).resolve().parents[3]
 ROOT = REPO / 'results/exp4'
@@ -57,8 +58,8 @@ def verify():
     fingerprint = source_fingerprint()
     cp1 = read('meta/CP1_acceptance.json')
     require(cp1.get('accepted') is True and cp1.get('collection_attempt') == 'a3' and
-            cp1['source_fingerprint'] == ledger['source_fingerprint'] == fingerprint,
-            'Corrected CP1, collection, and runtime inputs differ')
+            cp1['source_fingerprint'] == ledger['source_fingerprint'],
+            'Corrected CP1 and collection inputs differ')
     require(cp1['unit_tests'] == 51 and cp1['disabled_regression_calls'] == 219,
             'The corrected runtime validation is incomplete')
     for relative, expected in cp1['evidence_sha256'].items():
@@ -69,6 +70,7 @@ def verify():
     regression = read('diagnostics/depth-normalization-regression.json')
     require(regression['all_decisions_identical'] and regression['coverage_complete'] and
             sum(regression['calls_per_episode'].values()) == 219, 'Disabled-mode replay is incomplete')
+    runtime_validation = validate_runtime_binding(ROOT, cp1, ledger, fingerprint)
     folds = read('meta/folds.json')['folds']
     resolved = {}
     if selection == 'cross_fit':
@@ -84,7 +86,7 @@ def verify():
                 require(origin['training_folds'] == [x for x in range(3) if x != f],
                         f'Cross-fit training groups differ for {scene}')
             resolved[scene] = dict(origin, parameters=asdict(value))
-    return review, document, fingerprint, resolved
+    return review, document, fingerprint, resolved, runtime_validation
 
 
 def main():
@@ -92,8 +94,8 @@ def main():
     parser.add_argument('--check', action='store_true')
     args = parser.parse_args()
     try:
-        review, document, fingerprint, resolved = verify()
-    except (ValueError, FileNotFoundError, KeyError) as error:
+        review, document, fingerprint, resolved, runtime_validation = verify()
+    except (ValueError, FileNotFoundError, KeyError, GateError) as error:
         if args.check:
             print(json.dumps({'ready': False, 'reason': str(error), 'launches_workers': False}))
             return
@@ -103,7 +105,8 @@ def main():
         return
     evidence = ('meta/CP1_acceptance.json', 'meta/calibration-fit-binding.json',
                 'code/depth-normalization-tests.txt', 'diagnostics/depth-normalization-regression.json',
-                'code/finalize_cp2b.py')
+                'code/finalize_cp2b.py', 'meta/evaluation-runtime-validation.json',
+                'code/evaluation_runtime_binding.py', 'code/validate_evaluation_runtime.py')
     value = {'accepted': True, 'collection_attempt': 'a3', 'selection': document.selection,
              'label_source': 'system_verification', 'accepted_at_utc': datetime.now(timezone.utc).isoformat(),
              'approval': review['confirmation'], 'source_fingerprint': fingerprint,
@@ -111,7 +114,10 @@ def main():
              'parameter_sha256': sha('meta/calibration.json'),
              'calibration_ledger_sha256': sha('meta/calibration_runs.json'),
              'cp2a_review_sha256': sha('meta/CP2a_review.json'),
-             'unit_tests': 51, 'disabled_regression_calls': 219,
+             'unit_tests': runtime_validation['unit_tests'], 'calibration_unit_tests': 51,
+             'disabled_regression_calls': 219,
+             'calibration_source_fingerprint': read('meta/calibration_runs.json')['source_fingerprint'],
+             'evaluation_runtime_validation_sha256': sha('meta/evaluation-runtime-validation.json'),
              'evidence_sha256': {p: sha(p) for p in evidence}, 'resolved_parameters_by_scene': resolved}
     write(ROOT / 'meta/CP2b_acceptance.json', value)
     lines = ['# CP2b：修正版本参数冻结与源码绑定', '',
@@ -123,11 +129,12 @@ def main():
         training = record['training_folds'] if document.selection == 'cross_fit' else [0, 1, 2]
         lines.append('| ' + ' | '.join([str(f), ', '.join(map(str, training)),
             *[f'{record["parameters"][k]:.9f}' for k in ('a', 'b0', 'pi', 'c_exp')]]) + ' |')
-    lines += ['', '当前源码通过51项运行实现检查和219次关闭模式匹配输入回放；原生深度覆盖管线的小试证明与CP1记录绑定。报告辅助脚本的检查单独保留，不计入这51项。', '',
+    lines += ['', '标定源码原有51项检查及深度覆盖小试保持原CP1绑定；评估源码仅新增精确坐标身份回查及9项测试，已通过60项检查和219次关闭模式匹配输入回放。标定160项指纹与评估161项指纹分别保留，参数数值及原始标定日志不改。', '',
               f'参数文件SHA256：`{value["parameter_sha256"]}`。', '',
               f'运行提交：`{value["source_commit"]}`。', '',
               '[冻结参数](../meta/calibration.json)、[本次接受记录](../meta/CP2a_review.json)、'
-              '[源码与参数绑定](../meta/CP2b_acceptance.json)、[拟合证据](../meta/calibration-fit-binding.json)。', '',
+              '[源码与参数绑定](../meta/CP2b_acceptance.json)、[拟合证据](../meta/calibration-fit-binding.json)、'
+              '[被动日志源码验证](../meta/evaluation-runtime-validation.json)。', '',
               '下一步运行新的固定20条Full冒烟，核查完整轨迹、逐场景参数、过程指标和两张俯视图。此报告不包含Full成绩。', '']
     (ROOT / 'reports/CP2b.md').write_text('\n'.join(lines))
     print(json.dumps({'accepted': True, 'collection_attempt': 'a3', 'selection': document.selection,

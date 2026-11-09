@@ -1,0 +1,38 @@
+{
+  "prepared_at_utc": "2026-11-09T10:07:41.679423+00:00",
+  "scope": "strict post-calibration passive logger validation and CP2b binding; does not adopt runtime sources now",
+  "auxiliary_source_binding_tests_passed": 12,
+  "frozen_calibration_inputs": 160,
+  "expected_evaluation_inputs": 161,
+  "only_allowed_changes": [
+    "experiments/blp_observer.py",
+    "experiments/test_blp_identity.py"
+  ],
+  "logger_commit": "03242fda76fd6a631596a7269c8e7990c657ea30",
+  "original_CP1_and_calibration_source_bindings_preserved": true,
+  "real_evaluation_runtime_validation_not_yet_run": true,
+  "required_real_checks_after_source_adoption": 60,
+  "required_matched_input_regression_calls": 219,
+  "CPU_bound11_scripts_unchanged": true,
+  "prepared_files_sha256": {
+    "finalize_cp2b.py": {
+      "before": "f34b558bfff67d9041a0d66f96bcab2f4823b4acf4e4bfcc46603df4fba7c1df",
+      "after": "06e41c0964cac9aea9b2999db796c849162ec7ad10567278ae72b0acad39ef16"
+    },
+    "validate_evaluation_runtime.py": {
+      "before": null,
+      "after": "36d16163d150f5990a81231784f92422dfcbe832b28639bd023ff444ea8b9386"
+    },
+    "evaluation_runtime_binding.py": {
+      "before": null,
+      "after": "07674a1d93e27aeaf1c8ab3d467ba817b1f6d037a5baf940284cb6f392af4573"
+    },
+    "test_evaluation_runtime_binding.py": {
+      "before": null,
+      "after": "01f083ed29e1fa5331a10d361477f5c4cc6eb71619d2cf41aa524af0bdccc1dd"
+    }
+  },
+  "runtime_source_patch_applied": false,
+  "new_review_or_parameters_created": false,
+  "native_workers_launched": false
+}
