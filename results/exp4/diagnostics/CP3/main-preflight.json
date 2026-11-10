@@ -1,0 +1,126 @@
+{
+  "checked_at_utc": "2026-11-10T06:45:44.069795+00:00",
+  "plan_prepared": true,
+  "launches_workers": false,
+  "creates_acceptance": false,
+  "source_sha256": "f07eb9ff2b25e819737fe07979626ee432b95c5458b66fcad9194d5ff18eaf0e",
+  "parameter_sha256": "e1d75f3c9503c7439467748fc97be6ae2ad450c429f40dc7235b1564ff7852ae",
+  "native_source_files": 161,
+  "native_source_unchanged": true,
+  "identity_sha256": "98baa13355e8dd223eaefdeec7f48964bb23f44d2b02cdba4261add62b594ac1",
+  "stages": {
+    "full": {
+      "episodes": 400,
+      "scenes": 20,
+      "episodes_per_scene": [
+        20
+      ],
+      "experiment_sha256": "7697ad382193f4a929858a72b8f451371a3682f5ccb8c2a090a85df2dfa56e37",
+      "method_sha256": "c7629726203cfa58ecadf15019e0101595bbf0dada9912e9205551e808575d2c",
+      "first_scene_argv_example": [
+        "/nvme/khy/conda_envs/pbsp/navigation/bin/python",
+        "/nvme/khy/ForesightNav_exp4_depthfix/run.py",
+        "--config",
+        "configs/experiments/exp4_full.yaml",
+        "--runtime",
+        "runtime.exp4.local.yaml",
+        "--gpus",
+        "2,2",
+        "--scene",
+        "4ok3usBNeis",
+        "--tag",
+        "exp4-full-a3-4ok3usBNeis"
+      ],
+      "ledger_exists": false
+    },
+    "nearest": {
+      "episodes": 400,
+      "scenes": 20,
+      "episodes_per_scene": [
+        20
+      ],
+      "experiment_sha256": "70c0c83cd7c00b1eb4655bcea7aa0fc370045bb4e29dd477f43bcc38cdc3589d",
+      "method_sha256": "e6a371707d1744455a8c253ca3cec7549f75d983c5f2af643f88e58a21f3dfa6",
+      "first_scene_argv_example": [
+        "/nvme/khy/conda_envs/pbsp/navigation/bin/python",
+        "/nvme/khy/ForesightNav_exp4_depthfix/run.py",
+        "--config",
+        "configs/experiments/exp4_nearest.yaml",
+        "--runtime",
+        "runtime.exp4.local.yaml",
+        "--gpus",
+        "2,2",
+        "--scene",
+        "4ok3usBNeis",
+        "--tag",
+        "exp4-nearest-a3-4ok3usBNeis"
+      ],
+      "ledger_exists": false
+    },
+    "myopic": {
+      "episodes": 400,
+      "scenes": 20,
+      "episodes_per_scene": [
+        20
+      ],
+      "experiment_sha256": "2ffe78de63e194b98858ff9da17b828ac38e5051f88ff9cce06ae63ec33c090d",
+      "method_sha256": "593f9203db9932f179bc546454a52c513dea90d5e59c26aeb9fd9baf53b978d2",
+      "first_scene_argv_example": [
+        "/nvme/khy/conda_envs/pbsp/navigation/bin/python",
+        "/nvme/khy/ForesightNav_exp4_depthfix/run.py",
+        "--config",
+        "configs/experiments/exp4_myopic.yaml",
+        "--runtime",
+        "runtime.exp4.local.yaml",
+        "--gpus",
+        "2,2",
+        "--scene",
+        "4ok3usBNeis",
+        "--tag",
+        "exp4-myopic-a3-4ok3usBNeis"
+      ],
+      "ledger_exists": false
+    },
+    "suffix_only": {
+      "episodes": 400,
+      "scenes": 20,
+      "episodes_per_scene": [
+        20
+      ],
+      "experiment_sha256": "1fd713eb5bd335d93f68a014b12d9fd28e81a2e07e35f10bd025df9931a70ced",
+      "method_sha256": "55efe0475021171cac1796ee2333be2fb38c73a7e680230e75db22c5b1a08f33",
+      "first_scene_argv_example": [
+        "/nvme/khy/conda_envs/pbsp/navigation/bin/python",
+        "/nvme/khy/ForesightNav_exp4_depthfix/run.py",
+        "--config",
+        "configs/experiments/exp4_suffix_only.yaml",
+        "--runtime",
+        "runtime.exp4.local.yaml",
+        "--gpus",
+        "2,2",
+        "--scene",
+        "4ok3usBNeis",
+        "--tag",
+        "exp4-suffix_only-a3-4ok3usBNeis"
+      ],
+      "ledger_exists": false
+    }
+  },
+  "same_data_evaluation_and_seed": true,
+  "only_method_variant_and_name_differ": true,
+  "gpu2_3_observation": [
+    "2, NVIDIA A40, 46068, 45368",
+    "3, NVIDIA A40, 46068, 45245"
+  ],
+  "gpu_units": "index, name, total_MiB, free_MiB",
+  "filesystem_available_bytes": 1064697249792,
+  "smoke_owned_file_logical_bytes": 113918432,
+  "smoke_owned_file_allocated_bytes": 116187136,
+  "linear_four_stage_owned_storage_estimate_bytes": 9294970880,
+  "estimate_limitation": "Linear planning estimate from twenty smoke runs; not a bound on later episodes or external outputs. Recheck GPU and disk at actual launch.",
+  "full_gate_ready": false,
+  "full_gate_reason": "Missing checkpoint artifact: /nvme/khy/ForesightNav_exp4_depthfix/results/exp4/meta/CP3_acceptance.json",
+  "long_observer_seconds": 604800,
+  "native_launch_environment": "Remove inherited CUDA_VISIBLE_DEVICES= from CPU transport before spawning native controller; controller assigns physical GPU2/3.",
+  "recovery_rule": "Existing ledger or matching live PID/start/boot must be inspected; observation timeout never authorizes a duplicate native launch."
+}
