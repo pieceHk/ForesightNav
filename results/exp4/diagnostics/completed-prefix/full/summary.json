@@ -1,57 +1,47 @@
 {
-  "started_at_utc": "2026-11-10T22:28:47.716056+00:00",
-  "completed_at_utc": "2026-11-10T22:28:59.870557+00:00",
+  "started_at_utc": "2026-11-10T22:37:34.466821+00:00",
+  "completed_at_utc": "2026-11-10T22:37:46.889925+00:00",
   "stage": "full",
   "diagnostic_only": true,
   "formal400_complete": false,
-  "completed_native_metric_records_checked": 110,
+  "completed_native_metric_records_checked": 114,
   "newly_audited": [
     {
       "scene": "Dd4bFSTQ8gi",
-      "episode": "15",
-      "steps": 485,
+      "episode": "18",
+      "steps": 462,
       "success_vector": [
         1,
-        1,
-        0
-      ]
-    },
-    {
-      "scene": "Dd4bFSTQ8gi",
-      "episode": "16",
-      "steps": 363,
-      "success_vector": [
-        1,
-        1,
-        1
-      ]
-    },
-    {
-      "scene": "Dd4bFSTQ8gi",
-      "episode": "17",
-      "steps": 565,
-      "success_vector": [
-        1,
-        1,
-        1
-      ]
-    },
-    {
-      "scene": "Nfvxx8J5NCo",
-      "episode": "10",
-      "steps": 1089,
-      "success_vector": [
-        1,
-        1,
-        0
-      ]
-    },
-    {
-      "scene": "Nfvxx8J5NCo",
-      "episode": "11",
-      "steps": 455,
-      "success_vector": [
         0,
+        1
+      ]
+    },
+    {
+      "scene": "Dd4bFSTQ8gi",
+      "episode": "19",
+      "steps": 594,
+      "success_vector": [
+        1,
+        0,
+        1
+      ]
+    },
+    {
+      "scene": "Nfvxx8J5NCo",
+      "episode": "12",
+      "steps": 369,
+      "success_vector": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "scene": "Nfvxx8J5NCo",
+      "episode": "13",
+      "steps": 550,
+      "success_vector": [
+        1,
         1,
         1
       ]
@@ -62,10 +52,10 @@
     "5cdEh9F2hJL": 20,
     "6s7QHgap2fW": 20,
     "DYehNKdT76V": 20,
-    "Dd4bFSTQ8gi": 18,
-    "Nfvxx8J5NCo": 12
+    "Dd4bFSTQ8gi": 20,
+    "Nfvxx8J5NCo": 14
   },
-  "native_stage_path_checks": 330,
+  "native_stage_path_checks": 342,
   "all_paths_complete": true,
   "max_path_error_m": 2.414226045743817e-06,
   "source_and_parameters_unchanged": true,
