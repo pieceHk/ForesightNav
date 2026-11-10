@@ -1,0 +1,110 @@
+{
+  "started_at_utc": "2026-11-10T18:56:46.413293+00:00",
+  "completed_at_utc": "2026-11-10T18:56:47.221195+00:00",
+  "scope": "Actual remaining-stage preflights while the original Full400 is running; does not launch or authorize variants",
+  "launcher_sha256": "75d9e0d9f4d4c04467fd7a35fab3f1228103ebf9238365bedf7ad6ceefce9cac",
+  "controller_sha256": "d238350a2733b56d258e774e5ca4f1537f09818cd34a313a638b9ec483c0b82f",
+  "parameter_sha256": "e1d75f3c9503c7439467748fc97be6ae2ad450c429f40dc7235b1564ff7852ae",
+  "native_source_unchanged": true,
+  "parameters_unchanged": true,
+  "controller_unchanged": true,
+  "native_workers_launched": false,
+  "later_stage_artifacts_before": {
+    "nearest": [],
+    "myopic": [],
+    "suffix_only": []
+  },
+  "later_stage_artifacts_after": {
+    "nearest": [],
+    "myopic": [],
+    "suffix_only": []
+  },
+  "full_controller_at_end": {
+    "live": true,
+    "state": "S",
+    "start_ticks": "11385483",
+    "command": "/nvme/khy/conda_envs/pbsp/navigation/bin/python -u /nvme/khy/ForesightNav_exp4_depthfix/results/exp4/code/evaluate_sequence.py --stage full --attempt a3 "
+  },
+  "checks": [
+    {
+      "stage": "nearest",
+      "exit_code": 0,
+      "actual_readiness": {
+        "stage": "nearest",
+        "attempt": "a3",
+        "ready": false,
+        "reasons": [
+          "The preceding evaluation stage is not complete",
+          "GPU2/3 have not each reached the existing 38GiB-free launch threshold"
+        ],
+        "scenes": 20,
+        "episodes": 400,
+        "existing_target_artifacts": [],
+        "gpu_observation": [
+          "2, NVIDIA A40, 46068, 21488",
+          "3, NVIDIA A40, 46068, 20331"
+        ],
+        "output_free_bytes": 1062801686528,
+        "parameter_sha256": "e1d75f3c9503c7439467748fc97be6ae2ad450c429f40dc7235b1564ff7852ae",
+        "launcher_sha256": "75d9e0d9f4d4c04467fd7a35fab3f1228103ebf9238365bedf7ad6ceefce9cac",
+        "controller_sha256": "d238350a2733b56d258e774e5ca4f1537f09818cd34a313a638b9ec483c0b82f",
+        "launches_workers": false
+      },
+      "stderr": ""
+    },
+    {
+      "stage": "myopic",
+      "exit_code": 0,
+      "actual_readiness": {
+        "stage": "myopic",
+        "attempt": "a3",
+        "ready": false,
+        "reasons": [
+          "Missing checkpoint artifact: /nvme/khy/ForesightNav_exp4_depthfix/results/exp4/meta/evaluation-nearest-runs.json",
+          "Observer predecessor metadata does not match the prescribed order",
+          "GPU2/3 have not each reached the existing 38GiB-free launch threshold"
+        ],
+        "scenes": 20,
+        "episodes": 400,
+        "existing_target_artifacts": [],
+        "gpu_observation": [
+          "2, NVIDIA A40, 46068, 21486",
+          "3, NVIDIA A40, 46068, 20333"
+        ],
+        "output_free_bytes": 1062801653760,
+        "parameter_sha256": "e1d75f3c9503c7439467748fc97be6ae2ad450c429f40dc7235b1564ff7852ae",
+        "launcher_sha256": "75d9e0d9f4d4c04467fd7a35fab3f1228103ebf9238365bedf7ad6ceefce9cac",
+        "controller_sha256": "d238350a2733b56d258e774e5ca4f1537f09818cd34a313a638b9ec483c0b82f",
+        "launches_workers": false
+      },
+      "stderr": ""
+    },
+    {
+      "stage": "suffix_only",
+      "exit_code": 0,
+      "actual_readiness": {
+        "stage": "suffix_only",
+        "attempt": "a3",
+        "ready": false,
+        "reasons": [
+          "Missing checkpoint artifact: /nvme/khy/ForesightNav_exp4_depthfix/results/exp4/meta/evaluation-myopic-runs.json",
+          "Observer predecessor metadata does not match the prescribed order",
+          "GPU2/3 have not each reached the existing 38GiB-free launch threshold"
+        ],
+        "scenes": 20,
+        "episodes": 400,
+        "existing_target_artifacts": [],
+        "gpu_observation": [
+          "2, NVIDIA A40, 46068, 21488",
+          "3, NVIDIA A40, 46068, 20333"
+        ],
+        "output_free_bytes": 1062801649664,
+        "parameter_sha256": "e1d75f3c9503c7439467748fc97be6ae2ad450c429f40dc7235b1564ff7852ae",
+        "launcher_sha256": "75d9e0d9f4d4c04467fd7a35fab3f1228103ebf9238365bedf7ad6ceefce9cac",
+        "controller_sha256": "d238350a2733b56d258e774e5ca4f1537f09818cd34a313a638b9ec483c0b82f",
+        "launches_workers": false
+      },
+      "stderr": ""
+    }
+  ]
+}

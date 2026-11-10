@@ -1,0 +1,289 @@
+{
+  "checked_at_utc": "2026-11-10T19:03:35.339333+00:00",
+  "stage": "full",
+  "scope": "Actual read-only comparison against the existing Full identity-bound inspector; no stage started or native state changed",
+  "generic_inspector_sha256": "7f85c48230144bd52beef90bce4c8ea7e62f3cd46d6c37c7af6f302351806845",
+  "reference_inspector_sha256": "626e14e7c285172ec7c5c7eeac627110cca1b35eae626a82e1a1e0b0fe556726",
+  "native_source_unchanged": true,
+  "parameters_unchanged": true,
+  "reference_inspector_unchanged": true,
+  "actual_completed_records": [
+    49,
+    49
+  ],
+  "parameter_sha256": "e1d75f3c9503c7439467748fc97be6ae2ad450c429f40dc7235b1564ff7852ae",
+  "reference_sample": {
+    "checked_at_utc": "2026-11-10T19:03:35.066240+00:00",
+    "ledger_status": "running",
+    "controller_live_matching": true,
+    "observer_live_matching": true,
+    "snapshot_age_seconds": 12.606142,
+    "progress_semantics": "Current episode/stage comes from nonexported identity-bound trajectories; legacy observer current_stage may refer to an older completed episode",
+    "latest_observation": {
+      "checked_at_utc": "2026-11-10T19:03:22.460098+00:00",
+      "stage": "full",
+      "status": "running",
+      "error": null,
+      "controller_pid": 468645,
+      "controller": {
+        "live": true,
+        "state": "S",
+        "start_ticks": "11385483",
+        "command": "/nvme/khy/conda_envs/pbsp/navigation/bin/python -u /nvme/khy/ForesightNav_exp4_depthfix/results/exp4/code/evaluate_sequence.py --stage full --attempt a3 ",
+        "boot_matches": true,
+        "command_matches": true
+      },
+      "source_unchanged": true,
+      "parameter_unchanged": true,
+      "completed_scenes": 2,
+      "host_cpu": {
+        "logical_cpus": 384,
+        "load_average": [
+          61.48,
+          58.79,
+          71.04
+        ],
+        "pressure": "some avg10=0.00 avg60=0.00 avg300=0.10 total=25085404528\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=0"
+      },
+      "totals": {
+        "snapshot_count": 3878,
+        "action_count": 37596,
+        "blp_error_bytes": 0,
+        "binding_error_count": 0,
+        "missing_action_targets": 0,
+        "unresolved_query_targets": 0,
+        "structural_dispatch_errors": 0
+      },
+      "active_jobs": [
+        {
+          "scene": "6s7QHgap2fW",
+          "gpu": 3,
+          "status": "running",
+          "snapshot_count": 805,
+          "action_count": 7854,
+          "current_stage": 2,
+          "blp_error_bytes": 0,
+          "binding_error_count": 0,
+          "missing_action_targets": 0,
+          "unresolved_query_targets": 0,
+          "applied_nonempty_dispatches": 606,
+          "dispatch_deviations_from_nearest": 105,
+          "structural_dispatch_errors": 0
+        },
+        {
+          "scene": "DYehNKdT76V",
+          "gpu": 2,
+          "status": "running",
+          "snapshot_count": 246,
+          "action_count": 2416,
+          "current_stage": 2,
+          "blp_error_bytes": 0,
+          "binding_error_count": 0,
+          "missing_action_targets": 0,
+          "unresolved_query_targets": 0,
+          "applied_nonempty_dispatches": 205,
+          "dispatch_deviations_from_nearest": 35,
+          "structural_dispatch_errors": 0
+        }
+      ]
+    },
+    "episode_progress": [
+      {
+        "scene": "4ok3usBNeis",
+        "gpu": 2,
+        "status": "completed",
+        "completed_native_metric_records": 20,
+        "active_native_episodes": []
+      },
+      {
+        "scene": "5cdEh9F2hJL",
+        "gpu": 3,
+        "status": "completed",
+        "completed_native_metric_records": 20,
+        "active_native_episodes": []
+      },
+      {
+        "scene": "6s7QHgap2fW",
+        "gpu": 3,
+        "status": "running",
+        "completed_native_metric_records": 7,
+        "active_native_episodes": [
+          {
+            "episode_id": "7",
+            "action_count": 960,
+            "current_stage": 1,
+            "last_frame_index": 960,
+            "observed_stop_stages": [
+              0
+            ],
+            "state": "active_trajectory",
+            "trajectory_modified_at_utc": "2026-11-10T19:03:34.833891+00:00"
+          }
+        ]
+      },
+      {
+        "scene": "DYehNKdT76V",
+        "gpu": 2,
+        "status": "running",
+        "completed_native_metric_records": 2,
+        "active_native_episodes": [
+          {
+            "episode_id": "2",
+            "action_count": 146,
+            "current_stage": 2,
+            "last_frame_index": 146,
+            "observed_stop_stages": [
+              0,
+              1
+            ],
+            "state": "active_trajectory",
+            "trajectory_modified_at_utc": "2026-11-10T19:03:34.949892+00:00"
+          }
+        ]
+      }
+    ],
+    "source_commit": "03242fda76fd6a631596a7269c8e7990c657ea30",
+    "parameter_sha256": "e1d75f3c9503c7439467748fc97be6ae2ad450c429f40dc7235b1564ff7852ae",
+    "CP3_acceptance_sha256": "e526f41c23116c43331e76338c63e325f721a5f6262a28ece7012c81690dbc6c",
+    "publication_head": "c6b3a1cda91e26eb862184f89974bdc9bb576135"
+  },
+  "generic_sample": {
+    "checked_at_utc": "2026-11-10T19:03:35.254813+00:00",
+    "stage": "full",
+    "ledger_status": "running",
+    "controller_live_matching": true,
+    "observer_live_matching": true,
+    "snapshot_age_seconds": 12.794715,
+    "progress_semantics": "Current episode/stage comes from nonexported identity-bound trajectories; legacy observer current_stage may refer to an older completed episode",
+    "latest_observation": {
+      "checked_at_utc": "2026-11-10T19:03:22.460098+00:00",
+      "stage": "full",
+      "status": "running",
+      "error": null,
+      "controller_pid": 468645,
+      "controller": {
+        "live": true,
+        "state": "S",
+        "start_ticks": "11385483",
+        "command": "/nvme/khy/conda_envs/pbsp/navigation/bin/python -u /nvme/khy/ForesightNav_exp4_depthfix/results/exp4/code/evaluate_sequence.py --stage full --attempt a3 ",
+        "boot_matches": true,
+        "command_matches": true
+      },
+      "source_unchanged": true,
+      "parameter_unchanged": true,
+      "completed_scenes": 2,
+      "host_cpu": {
+        "logical_cpus": 384,
+        "load_average": [
+          61.48,
+          58.79,
+          71.04
+        ],
+        "pressure": "some avg10=0.00 avg60=0.00 avg300=0.10 total=25085404528\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=0"
+      },
+      "totals": {
+        "snapshot_count": 3878,
+        "action_count": 37596,
+        "blp_error_bytes": 0,
+        "binding_error_count": 0,
+        "missing_action_targets": 0,
+        "unresolved_query_targets": 0,
+        "structural_dispatch_errors": 0
+      },
+      "active_jobs": [
+        {
+          "scene": "6s7QHgap2fW",
+          "gpu": 3,
+          "status": "running",
+          "snapshot_count": 805,
+          "action_count": 7854,
+          "current_stage": 2,
+          "blp_error_bytes": 0,
+          "binding_error_count": 0,
+          "missing_action_targets": 0,
+          "unresolved_query_targets": 0,
+          "applied_nonempty_dispatches": 606,
+          "dispatch_deviations_from_nearest": 105,
+          "structural_dispatch_errors": 0
+        },
+        {
+          "scene": "DYehNKdT76V",
+          "gpu": 2,
+          "status": "running",
+          "snapshot_count": 246,
+          "action_count": 2416,
+          "current_stage": 2,
+          "blp_error_bytes": 0,
+          "binding_error_count": 0,
+          "missing_action_targets": 0,
+          "unresolved_query_targets": 0,
+          "applied_nonempty_dispatches": 205,
+          "dispatch_deviations_from_nearest": 35,
+          "structural_dispatch_errors": 0
+        }
+      ]
+    },
+    "episode_progress": [
+      {
+        "scene": "4ok3usBNeis",
+        "gpu": 2,
+        "status": "completed",
+        "completed_native_metric_records": 20,
+        "active_native_episodes": []
+      },
+      {
+        "scene": "5cdEh9F2hJL",
+        "gpu": 3,
+        "status": "completed",
+        "completed_native_metric_records": 20,
+        "active_native_episodes": []
+      },
+      {
+        "scene": "6s7QHgap2fW",
+        "gpu": 3,
+        "status": "running",
+        "completed_native_metric_records": 7,
+        "active_native_episodes": [
+          {
+            "episode_id": "7",
+            "action_count": 960,
+            "current_stage": 1,
+            "last_frame_index": 960,
+            "observed_stop_stages": [
+              0
+            ],
+            "state": "active_trajectory",
+            "trajectory_modified_at_utc": "2026-11-10T19:03:34.833891+00:00"
+          }
+        ]
+      },
+      {
+        "scene": "DYehNKdT76V",
+        "gpu": 2,
+        "status": "running",
+        "completed_native_metric_records": 2,
+        "active_native_episodes": [
+          {
+            "episode_id": "2",
+            "action_count": 146,
+            "current_stage": 2,
+            "last_frame_index": 146,
+            "observed_stop_stages": [
+              0,
+              1
+            ],
+            "state": "active_trajectory",
+            "trajectory_modified_at_utc": "2026-11-10T19:03:34.949892+00:00"
+          }
+        ]
+      }
+    ],
+    "source_commit": "03242fda76fd6a631596a7269c8e7990c657ea30",
+    "source_commit_matches_start": true,
+    "parameter_sha256": "e1d75f3c9503c7439467748fc97be6ae2ad450c429f40dc7235b1564ff7852ae",
+    "parameters_match_start": true,
+    "CP3_acceptance_sha256": "e526f41c23116c43331e76338c63e325f721a5f6262a28ece7012c81690dbc6c",
+    "acceptance_matches_start": true,
+    "publication_head": "c6b3a1cda91e26eb862184f89974bdc9bb576135"
+  }
+}

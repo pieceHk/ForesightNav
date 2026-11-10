@@ -1,15 +1,15 @@
 {
-  "started_at_utc": "2026-11-10T18:35:51.839429+00:00",
-  "completed_at_utc": "2026-11-10T18:36:05.569438+00:00",
+  "started_at_utc": "2026-11-10T19:06:34.529118+00:00",
+  "completed_at_utc": "2026-11-10T19:06:47.522005+00:00",
   "stage": "full",
   "diagnostic_only": true,
   "formal400_complete": false,
-  "completed_native_metric_records_checked": 45,
+  "completed_native_metric_records_checked": 50,
   "newly_audited": [
     {
-      "scene": "4ok3usBNeis",
-      "episode": "17",
-      "steps": 1055,
+      "scene": "6s7QHgap2fW",
+      "episode": "5",
+      "steps": 663,
       "success_vector": [
         0,
         1,
@@ -17,52 +17,53 @@
       ]
     },
     {
-      "scene": "4ok3usBNeis",
-      "episode": "18",
-      "steps": 882,
+      "scene": "6s7QHgap2fW",
+      "episode": "6",
+      "steps": 1066,
       "success_vector": [
         1,
-        1,
+        0,
         0
       ]
     },
     {
-      "scene": "4ok3usBNeis",
-      "episode": "19",
-      "steps": 331,
-      "success_vector": [
-        1,
-        1,
-        1
-      ]
-    },
-    {
       "scene": "6s7QHgap2fW",
-      "episode": "3",
-      "steps": 1094,
+      "episode": "7",
+      "steps": 1050,
       "success_vector": [
         0,
+        0,
+        1
+      ]
+    },
+    {
+      "scene": "DYehNKdT76V",
+      "episode": "0",
+      "steps": 1052,
+      "success_vector": [
         1,
+        0,
         0
       ]
     },
     {
-      "scene": "6s7QHgap2fW",
-      "episode": "4",
-      "steps": 805,
+      "scene": "DYehNKdT76V",
+      "episode": "1",
+      "steps": 1229,
       "success_vector": [
-        1,
-        1,
-        1
+        0,
+        0,
+        0
       ]
     }
   ],
   "scene_exported_records": {
     "4ok3usBNeis": 20,
     "5cdEh9F2hJL": 20,
-    "6s7QHgap2fW": 5
+    "6s7QHgap2fW": 8,
+    "DYehNKdT76V": 2
   },
-  "native_stage_path_checks": 135,
+  "native_stage_path_checks": 150,
   "all_paths_complete": true,
   "max_path_error_m": 1.9952819201307648e-06,
   "source_and_parameters_unchanged": true,
