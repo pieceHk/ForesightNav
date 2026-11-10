@@ -1,0 +1,101 @@
+{
+  "checked_at_utc": "2026-11-10T20:53:20.710369+00:00",
+  "stage": "full",
+  "diagnostic_only": true,
+  "scope": "Actual launched scene plans, live launchers and completed native scenes; does not certify aggregate stage metrics",
+  "ledger_sha256_at_read": "7dd08144d58ab782c99403f9283d950773e60e28b9fee7bac88d424e3fad8f99",
+  "auditor_sha256": "dd927eb5f36c69281eeb0a83e76284ae25348f8ebcdfa5bad659d1b587103189",
+  "parameter_sha256": "e1d75f3c9503c7439467748fc97be6ae2ad450c429f40dc7235b1564ff7852ae",
+  "source_and_parameters_unchanged": true,
+  "controller_identity_at_read": {
+    "live": true,
+    "state": "S",
+    "start_ticks": "11385483",
+    "command": "/nvme/khy/conda_envs/pbsp/navigation/bin/python -u /nvme/khy/ForesightNav_exp4_depthfix/results/exp4/code/evaluate_sequence.py --stage full --attempt a3 "
+  },
+  "expected_stage_scenes": 20,
+  "expected_stage_episodes": 400,
+  "checked_native_identities": 100,
+  "scene_launches": [
+    {
+      "scene": "4ok3usBNeis",
+      "gpu": 2,
+      "ledger_status": "completed",
+      "native_completion_audit": {
+        "completed_episodes": 20,
+        "identity_count": 20
+      },
+      "state": "completed",
+      "native_identities": 20,
+      "categories_and_source_ids_match": true,
+      "seed": 1,
+      "source_commit": "03242fda76fd6a631596a7269c8e7990c657ea30",
+      "launcher_pid": 468646,
+      "launcher_live_at_read": false,
+      "launch_sha256": "9838df074aed20ebad0dc8c350315e0d20e34a64d08c8469974ba6193cfc83d8"
+    },
+    {
+      "scene": "5cdEh9F2hJL",
+      "gpu": 3,
+      "ledger_status": "completed",
+      "native_completion_audit": {
+        "completed_episodes": 20,
+        "identity_count": 20
+      },
+      "state": "completed",
+      "native_identities": 20,
+      "categories_and_source_ids_match": true,
+      "seed": 1,
+      "source_commit": "03242fda76fd6a631596a7269c8e7990c657ea30",
+      "launcher_pid": 468647,
+      "launcher_live_at_read": false,
+      "launch_sha256": "b73c530355a6685e5af32dec32d52b7519d9e4b459505429917d4b079cda7d16"
+    },
+    {
+      "scene": "6s7QHgap2fW",
+      "gpu": 3,
+      "ledger_status": "completed",
+      "native_completion_audit": {
+        "completed_episodes": 20,
+        "identity_count": 20
+      },
+      "state": "completed",
+      "native_identities": 20,
+      "categories_and_source_ids_match": true,
+      "seed": 1,
+      "source_commit": "03242fda76fd6a631596a7269c8e7990c657ea30",
+      "launcher_pid": 571686,
+      "launcher_live_at_read": false,
+      "launch_sha256": "51f21073e7d53a2f503674374b3826595ed3d7a0b5bca87292b92eb5b271ad31"
+    },
+    {
+      "scene": "DYehNKdT76V",
+      "gpu": 2,
+      "ledger_status": "running",
+      "state": "running",
+      "launcher_start_ticks": "14403334",
+      "native_identities": 20,
+      "categories_and_source_ids_match": true,
+      "seed": 1,
+      "source_commit": "03242fda76fd6a631596a7269c8e7990c657ea30",
+      "launcher_pid": 597363,
+      "launcher_live_at_read": true,
+      "launch_sha256": "c4a14ee717697e6c32f6b21cb3d75d28549c301e1c91005e4cad0394d96e9135"
+    },
+    {
+      "scene": "Dd4bFSTQ8gi",
+      "gpu": 3,
+      "ledger_status": "running",
+      "state": "running",
+      "launcher_start_ticks": "15223684",
+      "native_identities": 20,
+      "categories_and_source_ids_match": true,
+      "seed": 1,
+      "source_commit": "03242fda76fd6a631596a7269c8e7990c657ea30",
+      "launcher_pid": 624889,
+      "launcher_live_at_read": true,
+      "launch_sha256": "d47eb090867da51c35a45880727444a2b6909110c6673535d4ae9f9abcf05994"
+    }
+  ],
+  "native_states_modified": false
+}
