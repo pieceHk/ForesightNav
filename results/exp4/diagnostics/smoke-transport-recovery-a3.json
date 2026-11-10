@@ -1,0 +1,39 @@
+{
+  "recovered_at_utc": "2026-11-10T04:18:44.188833+00:00",
+  "old_observer": {
+    "observer_pid": 318343,
+    "start_ticks": "9195473",
+    "watcher_pid": 318344,
+    "stage": "smoke",
+    "attempt": "a3",
+    "started_at_utc": "2026-11-10T04:07:17.599659+00:00",
+    "watch_seconds": 7200,
+    "log": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/logs/evaluation-observer-smoke-a3-20261110T040717Z.jsonl",
+    "watcher_sha256": "b0d1839082efc39cab8be8bbf2985fb9938d589d6abf33969606e9cd4651a8db",
+    "scope": "read-only supervision of existing native smoke controller317773; no worker launch or parameter changes"
+  },
+  "old_tool_session": 86892,
+  "old_tool_exit_code": 255,
+  "old_observer_and_watcher_both_absent": true,
+  "original_native_controller_live_and_matching": true,
+  "controller_pid": 317773,
+  "controller_start_ticks": "9189891",
+  "native_restarted": false,
+  "new_observer": {
+    "observer_pid": 323670,
+    "watcher_pid": 323670,
+    "start_ticks": "9264142",
+    "stage": "smoke",
+    "attempt": "a3",
+    "started_at_utc": "2026-11-10T04:18:44.187746+00:00",
+    "watch_seconds": 14400,
+    "log": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/logs/evaluation-observer-smoke-a3-20261110T041844Z.jsonl",
+    "stderr_log": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/logs/evaluation-observer-smoke-a3-20261110T041844Z.stderr.log",
+    "watcher_sha256": "b0d1839082efc39cab8be8bbf2985fb9938d589d6abf33969606e9cd4651a8db",
+    "detached_session": true,
+    "scope": "read-only supervision of existing smoke317773; independent of SSH; no native launch or parameter changes"
+  },
+  "new_master_without_reverse_forwarding": true,
+  "cause_of_transport_loss_not_proven": true,
+  "CUA_readonly_check_finished": true
+}

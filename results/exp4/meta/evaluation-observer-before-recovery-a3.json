@@ -1,0 +1,12 @@
+{
+  "observer_pid": 318343,
+  "start_ticks": "9195473",
+  "watcher_pid": 318344,
+  "stage": "smoke",
+  "attempt": "a3",
+  "started_at_utc": "2026-11-10T04:07:17.599659+00:00",
+  "watch_seconds": 7200,
+  "log": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/logs/evaluation-observer-smoke-a3-20261110T040717Z.jsonl",
+  "watcher_sha256": "b0d1839082efc39cab8be8bbf2985fb9938d589d6abf33969606e9cd4651a8db",
+  "scope": "read-only supervision of existing native smoke controller317773; no worker launch or parameter changes"
+}

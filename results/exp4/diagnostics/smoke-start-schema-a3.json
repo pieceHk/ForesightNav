@@ -1,0 +1,15 @@
+{
+  "scope": "add explicit actual execution head alias required by existing CP3 report; no source, parameters, PID or start identity changed",
+  "changes": {
+    "smoke_start.json": {
+      "before_sha256": "a4ce6ad23c13bddded5da3c129a2c7b987c39dddfd1de78cea633cfc1c372960",
+      "after_sha256": "9442e697cbd93b65b020333693356dad36e22d6196868f63dc699dd3e4555e7a",
+      "added_head": "03242fda76fd6a631596a7269c8e7990c657ea30"
+    },
+    "smoke-start-a3.json": {
+      "before_sha256": "a4ce6ad23c13bddded5da3c129a2c7b987c39dddfd1de78cea633cfc1c372960",
+      "after_sha256": "9442e697cbd93b65b020333693356dad36e22d6196868f63dc699dd3e4555e7a",
+      "added_head": "03242fda76fd6a631596a7269c8e7990c657ea30"
+    }
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "checked_at_utc": "2026-11-10T04:25:39.984034+00:00",
+  "stage": "smoke",
+  "status": "running",
+  "error": null,
+  "controller_pid": 317773,
+  "controller": {
+    "live": true,
+    "state": "S",
+    "start_ticks": "9189891",
+    "command": "/nvme/khy/conda_envs/pbsp/navigation/bin/python -u /nvme/khy/ForesightNav_exp4_depthfix/results/exp4/code/evaluate_sequence.py --stage smoke --attempt a3 ",
+    "boot_matches": true,
+    "command_matches": true,
+    "start_matches": true
+  },
+  "source_unchanged": true,
+  "parameter_unchanged": true,
+  "jobs": [
+    {
+      "scene": "4ok3usBNeis",
+      "gpu": 2,
+      "pid": 317775,
+      "status": "completed",
+      "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_120628_209258_exp4_full_exp4-smoke-a3-4ok3usBNeis",
+      "launcher": {
+        "live": false
+      },
+      "native_status": {
+        "completed_episodes": 1,
+        "status": "completed",
+        "timestamp": "2026-11-10T04:20:46.463728+00:00"
+      },
+      "blp_error_bytes": 0,
+      "snapshot_count": 40,
+      "binding_error_count": 0,
+      "action_count": 387,
+      "missing_action_targets": 0,
+      "unresolved_query_targets": 0,
+      "current_stage": 2,
+      "applied_nonempty_dispatches": 35,
+      "dispatch_deviations_from_nearest": 15,
+      "structural_dispatch_errors": 0
+    },
+    {
+      "scene": "5cdEh9F2hJL",
+      "gpu": 3,
+      "pid": 317776,
+      "status": "running",
+      "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_120628_206944_exp4_full_exp4-smoke-a3-5cdEh9F2hJL",
+      "launcher": {
+        "live": true,
+        "state": "S",
+        "start_ticks": "9189903",
+        "command": "/nvme/khy/conda_envs/pbsp/navigation/bin/python /nvme/khy/ForesightNav_exp4_depthfix/run.py --config configs/experiments/exp4_full.yaml --runtime runtime.exp4.local.yaml --gpus 3,3 --scene 5cdEh9F2hJL --tag exp4-smoke-a3-5cdEh9F2hJL --episode 0 "
+      },
+      "native_status": {
+        "episode_ids": [
+          "0"
+        ],
+        "scene": "5cdEh9F2hJL",
+        "status": "running",
+        "timestamp": "2026-11-10T04:06:51.819935+00:00"
+      },
+      "blp_error_bytes": 0,
+      "snapshot_count": 57,
+      "binding_error_count": 0,
+      "action_count": 549,
+      "missing_action_targets": 0,
+      "unresolved_query_targets": 0,
+      "current_stage": 2,
+      "applied_nonempty_dispatches": 47,
+      "dispatch_deviations_from_nearest": 9,
+      "structural_dispatch_errors": 0
+    },
+    {
+      "scene": "6s7QHgap2fW",
+      "gpu": 2,
+      "pid": 324392,
+      "status": "running",
+      "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_122105_671138_exp4_full_exp4-smoke-a3-6s7QHgap2fW",
+      "launcher": {
+        "live": true,
+        "state": "S",
+        "start_ticks": "9277483",
+        "command": "/nvme/khy/conda_envs/pbsp/navigation/bin/python /nvme/khy/ForesightNav_exp4_depthfix/run.py --config configs/experiments/exp4_full.yaml --runtime runtime.exp4.local.yaml --gpus 2,2 --scene 6s7QHgap2fW --tag exp4-smoke-a3-6s7QHgap2fW --episode 0 "
+      },
+      "native_status": {
+        "episode_ids": [
+          "0"
+        ],
+        "scene": "6s7QHgap2fW",
+        "status": "running",
+        "timestamp": "2026-11-10T04:21:29.877148+00:00"
+      },
+      "blp_error_bytes": 0,
+      "snapshot_count": 8,
+      "binding_error_count": 0,
+      "action_count": 76,
+      "missing_action_targets": 0,
+      "unresolved_query_targets": 0,
+      "current_stage": 0,
+      "applied_nonempty_dispatches": 6,
+      "dispatch_deviations_from_nearest": 4,
+      "structural_dispatch_errors": 0
+    }
+  ],
+  "host_cpu": {
+    "logical_cpus": 384,
+    "load_average": [
+      242.35,
+      215.83,
+      166.68
+    ],
+    "pressure": "some avg10=0.00 avg60=0.00 avg300=0.06 total=6658588253\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=0"
+  },
+  "completed_scenes": 1
+}
