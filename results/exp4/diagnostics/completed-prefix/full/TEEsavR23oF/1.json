@@ -1,0 +1,125 @@
+{
+  "checked_at_utc": "2026-11-10T23:47:25.246211+00:00",
+  "diagnostic_only": true,
+  "scope": "One authoritatively exported complete native episode inside a possibly running scene; not a main-stage summary",
+  "scene_id": "TEEsavR23oF",
+  "episode_id": "1",
+  "steps": 281,
+  "success_vector": [
+    1,
+    1,
+    0
+  ],
+  "goals": [
+    "couch",
+    "chair",
+    "toilet"
+  ],
+  "source_episode_ids": [
+    "71",
+    "76",
+    "55"
+  ],
+  "raw_native_record_sha256": "6bec4b9cf8cdac1961f1d8f0a805de0afc9fe67ce9f5e6d3a0efbbe4644285be",
+  "bindings": {
+    "parameter_sha256": "e1d75f3c9503c7439467748fc97be6ae2ad450c429f40dc7235b1564ff7852ae",
+    "analysis_sources_sha256": {
+      "report_variants.py": "d3d8617a83ccbd1ccebf18cf2b4149fd745be23c962e3dabeb42b057ad7626c3",
+      "action_path_metrics.py": "a89afc6504fcb5520bb8c227928961b3d7814bcfcc98c23c6311e35254089f1e",
+      "native_candidate_gt.py": "e2620454fe45d54933294286a518440ef16ec961c0eb0ca5aafe5ec2587a21a3",
+      "candidate_identities.py": "a311b37d45d59f379ce00b58d1350b5eb308da0b9a24d34ad2facdb495d9991d",
+      "blp_parameters.py": "039c6a660ab2a7cf2b6e9e78e810bfb44f32731e6c52a9194dc20f82daa63bad"
+    },
+    "prefix_auditor_sha256": "8f8d39c16db9f724494867133e549c1c2eb07e67170d1f175011e35f5382a839",
+    "reader_source_sha256": "8b3ceb80cb3abbbe8e216a48c5e23596de436cafbed89f040f8583a8cee849d8"
+  },
+  "process": {
+    "Invalid_visits_per_ep": 6.0,
+    "invalid_visit_events_per_ep": 7.0,
+    "checked_distinct_candidates": 9,
+    "invalid_approach_and_verification_path_m": 9.999993308081171,
+    "invalid_confirmed_approach_tail_m": 0.25000003617333016,
+    "invalid_visit_path_m": 10.249993344254502,
+    "invalid_visit_path_m_per_ep": 10.249993344254502,
+    "invalid_path_association_gaps": [],
+    "invalid_path_complete": true,
+    "invalid_path_definition": "accepted displacement pursuing a checked-invalid query identity while its recorded target coordinate is native-GT-invalid; confirmed visual continuation retains the parent; recovery/frontier excluded",
+    "invalid_visit_definition": "distinct checked (episode, task, persistent spatial identity) with GT-invalid verification; event count also retained",
+    "nonquery_recovery_verification_frames": 0,
+    "deviation_from_nearest_proposal_pct": 23.076923076923077,
+    "deviation_from_nearest_after_hysteresis_pct": 26.923076923076923,
+    "deviation_from_nearest_realized_pct": 30.76923076923077,
+    "eligible_proposals": 26,
+    "eligible_realized_dispatches": 26,
+    "planning_ms": {
+      "n": 31,
+      "median": 10.635157988872379,
+      "p95": 21.014466998167336
+    },
+    "fallback_root_decisions": {
+      "empty_candidates": 5
+    },
+    "fallback_decision_incidence": {
+      "empty_candidates": 26
+    },
+    "fallback_memo_state_counts": {
+      "empty_candidates": 233,
+      "frontier_coordinates_unavailable": 0,
+      "no_reachable_frontier": 0
+    },
+    "fallback_count_definition": "root decisions and per-decision incidence are separate from recursion-state counts",
+    "n_computed_snapshots": 31,
+    "n_recorded_dispatch_events": 31,
+    "legacy_interval_diagnostics": {
+      "invalid_visit_path_m": 10.249993344254499,
+      "invalid_path_complete": true,
+      "invalid_path_association_gaps": [],
+      "invalid_path_definition": "union of recorded active-candidate approach/check path intervals plus an unambiguous final confirmation-to-STOP tail"
+    },
+    "invalid_path_source": "blp_action_target_v1_native_gt",
+    "invalid_identity_pursuit_path_m": 10.249993344254502,
+    "invalid_identity_pursuit_path_m_per_ep": 10.249993344254502,
+    "checked_invalid_identity_but_current_target_GT_valid_path_m": 0.0,
+    "checked_invalid_identities_with_current_valid_targets": 0,
+    "mixed_GT_checked_identities": [],
+    "invalid_identity_pursuit_definition": "all accepted displacement pursuing identities that had at least one GT-invalid check; explicit upper bound, including any later GT-valid coordinates",
+    "accepted_action_path_m": 24.74999373741119,
+    "accepted_action_path_partition_m": {
+      "invalid_identity_upper": 10.249993344254502,
+      "checked_valid": 10.749999128764967,
+      "unchecked_query": 0.0,
+      "unresolved_query": 0.0,
+      "recovery": 0.0,
+      "frontier": 3.7500012643917158
+    },
+    "accepted_action_rows_by_source": {
+      "frontier": 59,
+      "query_candidate": 222
+    },
+    "native_target_GT_labelled_action_rows": 131,
+    "native_stage_path_max_abs_error_m": 4.7156811788795494e-07,
+    "native_stage_path_check_count": 3,
+    "native_stage_path_check_tolerance": {
+      "abs_m": 0.001,
+      "relative": 1e-06
+    },
+    "last_STOP_without_after_pose_assumed_stationary": 1,
+    "verification_then_effective_recovery_actions": 0
+  },
+  "candidate_event_GT_verification": {
+    "candidate_verifications": 11,
+    "recovery_verifications": 0,
+    "max_distance_error_m": 0.0
+  },
+  "candidate_identity_audit": {
+    "definition": "recorded registry identity, merging checked IDs sharing an exact full-XYZ final-check coordinate within one scene/episode/task/resample; unchecked first-appearance IDs alias a checked group only at that exact XYZ",
+    "source_sha256": "a311b37d45d59f379ce00b58d1350b5eb308da0b9a24d34ad2facdb495d9991d",
+    "raw_checked_registry_identities": 9,
+    "canonical_checked_identities": 9,
+    "identities_merged": 0,
+    "verification_rows_retained": 11,
+    "unchecked_first_appearance_aliases": 0,
+    "GT_or_labels_used_to_group": false,
+    "raw_events_modified": false
+  }
+}
