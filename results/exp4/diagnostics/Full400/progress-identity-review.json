@@ -1,0 +1,50 @@
+{
+  "checked_at_utc": "2026-11-10T16:23:41.695333+00:00",
+  "scope": "Read-only progress display corrected for multi-episode scene logs; native data and metrics unchanged",
+  "previous_inspector_sha256": "a6c1f69b434afc8dcfc0786d6da72e6a6b47857f4fcddcab7e73b75454c9f0c6",
+  "inspector_sha256": "626e14e7c285172ec7c5c7eeac627110cca1b35eae626a82e1a1e0b0fe556726",
+  "legacy_observer_source_sha256": "b0d1839082efc39cab8be8bbf2985fb9938d589d6abf33969606e9cd4651a8db",
+  "legacy_observer_unchanged": true,
+  "sampled_progress": [
+    {
+      "scene": "4ok3usBNeis",
+      "legacy_glob_stage": 2,
+      "completed_native_metric_records": 9,
+      "identity_bound_unexported_episodes": [
+        {
+          "episode_id": "9",
+          "action_count": 136,
+          "current_stage": 0,
+          "last_frame_index": 136,
+          "observed_stop_stages": [],
+          "state": "active_trajectory",
+          "trajectory_modified_at_utc": "2026-11-10T16:23:41.258244+00:00"
+        }
+      ]
+    },
+    {
+      "scene": "5cdEh9F2hJL",
+      "legacy_glob_stage": 2,
+      "completed_native_metric_records": 14,
+      "identity_bound_unexported_episodes": [
+        {
+          "episode_id": "14",
+          "action_count": 610,
+          "current_stage": 2,
+          "last_frame_index": 610,
+          "observed_stop_stages": [
+            0,
+            1
+          ],
+          "state": "active_trajectory",
+          "trajectory_modified_at_utc": "2026-11-10T16:23:41.546244+00:00"
+        }
+      ]
+    }
+  ],
+  "controller_live_matching": true,
+  "observer_live_matching": true,
+  "native_source_unchanged": true,
+  "parameters_unchanged": true,
+  "launches_workers": false
+}

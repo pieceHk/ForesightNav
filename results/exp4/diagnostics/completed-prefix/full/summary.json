@@ -1,74 +1,14 @@
 {
-  "started_at_utc": "2026-11-10T15:55:06.135342+00:00",
-  "completed_at_utc": "2026-11-10T15:56:14.654881+00:00",
+  "started_at_utc": "2026-11-10T16:26:28.387699+00:00",
+  "completed_at_utc": "2026-11-10T16:26:45.360891+00:00",
   "stage": "full",
   "diagnostic_only": true,
   "formal400_complete": false,
-  "completed_native_metric_records_checked": 21,
+  "completed_native_metric_records_checked": 25,
   "newly_audited": [
     {
       "scene": "4ok3usBNeis",
-      "episode": "0",
-      "steps": 387,
-      "success_vector": [
-        1,
-        1,
-        1
-      ]
-    },
-    {
-      "scene": "4ok3usBNeis",
-      "episode": "1",
-      "steps": 333,
-      "success_vector": [
-        0,
-        1,
-        1
-      ]
-    },
-    {
-      "scene": "4ok3usBNeis",
-      "episode": "2",
-      "steps": 1020,
-      "success_vector": [
-        0,
-        0,
-        1
-      ]
-    },
-    {
-      "scene": "4ok3usBNeis",
-      "episode": "3",
-      "steps": 1208,
-      "success_vector": [
-        1,
-        0,
-        0
-      ]
-    },
-    {
-      "scene": "4ok3usBNeis",
-      "episode": "4",
-      "steps": 553,
-      "success_vector": [
-        0,
-        1,
-        1
-      ]
-    },
-    {
-      "scene": "4ok3usBNeis",
-      "episode": "5",
-      "steps": 755,
-      "success_vector": [
-        1,
-        1,
-        0
-      ]
-    },
-    {
-      "scene": "4ok3usBNeis",
-      "episode": "6",
+      "episode": "8",
       "steps": 1500,
       "success_vector": [
         0,
@@ -78,128 +18,8 @@
     },
     {
       "scene": "4ok3usBNeis",
-      "episode": "7",
-      "steps": 776,
-      "success_vector": [
-        1,
-        1,
-        1
-      ]
-    },
-    {
-      "scene": "5cdEh9F2hJL",
-      "episode": "0",
-      "steps": 568,
-      "success_vector": [
-        1,
-        0,
-        1
-      ]
-    },
-    {
-      "scene": "5cdEh9F2hJL",
-      "episode": "1",
-      "steps": 418,
-      "success_vector": [
-        0,
-        1,
-        1
-      ]
-    },
-    {
-      "scene": "5cdEh9F2hJL",
-      "episode": "2",
-      "steps": 331,
-      "success_vector": [
-        1,
-        1,
-        1
-      ]
-    },
-    {
-      "scene": "5cdEh9F2hJL",
-      "episode": "3",
-      "steps": 406,
-      "success_vector": [
-        1,
-        0,
-        1
-      ]
-    },
-    {
-      "scene": "5cdEh9F2hJL",
-      "episode": "4",
-      "steps": 656,
-      "success_vector": [
-        1,
-        0,
-        1
-      ]
-    },
-    {
-      "scene": "5cdEh9F2hJL",
-      "episode": "5",
-      "steps": 43,
-      "success_vector": [
-        0,
-        1,
-        0
-      ]
-    },
-    {
-      "scene": "5cdEh9F2hJL",
-      "episode": "6",
-      "steps": 631,
-      "success_vector": [
-        1,
-        0,
-        1
-      ]
-    },
-    {
-      "scene": "5cdEh9F2hJL",
-      "episode": "7",
-      "steps": 411,
-      "success_vector": [
-        0,
-        0,
-        1
-      ]
-    },
-    {
-      "scene": "5cdEh9F2hJL",
-      "episode": "8",
-      "steps": 734,
-      "success_vector": [
-        1,
-        1,
-        1
-      ]
-    },
-    {
-      "scene": "5cdEh9F2hJL",
       "episode": "9",
-      "steps": 586,
-      "success_vector": [
-        0,
-        1,
-        1
-      ]
-    },
-    {
-      "scene": "5cdEh9F2hJL",
-      "episode": "10",
-      "steps": 1026,
-      "success_vector": [
-        0,
-        0,
-        0
-      ]
-    },
-    {
-      "scene": "5cdEh9F2hJL",
-      "episode": "11",
-      "steps": 559,
+      "steps": 227,
       "success_vector": [
         1,
         1,
@@ -208,20 +28,20 @@
     },
     {
       "scene": "5cdEh9F2hJL",
-      "episode": "12",
-      "steps": 730,
+      "episode": "14",
+      "steps": 679,
       "success_vector": [
-        1,
+        0,
         1,
         0
       ]
     }
   ],
   "scene_exported_records": {
-    "4ok3usBNeis": 8,
-    "5cdEh9F2hJL": 13
+    "4ok3usBNeis": 10,
+    "5cdEh9F2hJL": 15
   },
-  "native_stage_path_checks": 63,
+  "native_stage_path_checks": 75,
   "all_paths_complete": true,
   "max_path_error_m": 1.1880849939416294e-06,
   "source_and_parameters_unchanged": true,
