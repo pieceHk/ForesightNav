@@ -1,0 +1,76 @@
+{
+  "recorded_at_utc": "2026-11-10T04:38:17.305401+00:00",
+  "boot_id": "23443655-6f2f-4063-a412-e255f3a91e62",
+  "runtime_commit": "03242fda76fd6a631596a7269c8e7990c657ea30",
+  "role_signatures": {
+    "mapping": "46a12326325ca1ffa65c3505996df2a255792ca8ad1677f93bdc895b6ebbde85",
+    "navigation": "f0395592ae72a2717d707ad46ed89a10adb87fa1e4040c21824150ed633c5a36"
+  },
+  "frameworks": {
+    "mapping": {
+      "python_executable": "/nvme/khy/conda_envs/pbsp/mapping/bin/python3.10",
+      "python_version": "3.10.20",
+      "torch_version": "2.7.1+cu118",
+      "torch_cuda_version": "11.8",
+      "cuda_available": false,
+      "user_site_enabled": false
+    },
+    "navigation": {
+      "python_executable": "/nvme/khy/conda_envs/pbsp/navigation/bin/python3.9",
+      "python_version": "3.9.25",
+      "torch_version": "2.1.2+cu118",
+      "torch_cuda_version": "11.8",
+      "cuda_available": false,
+      "user_site_enabled": false
+    }
+  },
+  "gpu_hardware_and_driver": [
+    "2, GPU-e578717e-9e11-1464-269b-d5a17e564c8a, NVIDIA A40, 550.54.15, 46068",
+    "3, GPU-e345e195-e565-805c-b913-dc9a023ef37d, NVIDIA A40, 550.54.15, 46068"
+  ],
+  "framework_import_probe_has_no_visible_GPU": true,
+  "stage": "smoke",
+  "seed": 1,
+  "worker_placement": "mapping/navigation colocated on physical GPU2 or GPU3",
+  "completed_cases_checked": 2,
+  "uniform_python_lock_and_package_inventory_by_role": {
+    "mapping": true,
+    "navigation": true
+  },
+  "cases": [
+    {
+      "scene_id": "4ok3usBNeis",
+      "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_120628_209258_exp4_full_exp4-smoke-a3-4ok3usBNeis",
+      "gpu": 2,
+      "seed": 1,
+      "configuration_sha256": "a004cfd493150451bc30ee41e5206c19e93d66076fbc73578d95dc7d9933a2b5",
+      "identity_sha256": "a414a4c77e1239a5e9aad4b4589013059ea88d9631f3fd1c07ecc491570877b6",
+      "role_signatures": {
+        "mapping": "46a12326325ca1ffa65c3505996df2a255792ca8ad1677f93bdc895b6ebbde85",
+        "navigation": "f0395592ae72a2717d707ad46ed89a10adb87fa1e4040c21824150ed633c5a36"
+      },
+      "environment_artifact_sha256": {
+        "mapping_environment.json": "11292ef8d8af8280ec8e0fc7257b3771da7a6233929b5198e5e4ea801e6f02f7",
+        "navigation_environment_0.json": "cad206e37413d52772054324ad78a201610062566283c85d0546580d3093575a"
+      }
+    },
+    {
+      "scene_id": "5cdEh9F2hJL",
+      "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_120628_206944_exp4_full_exp4-smoke-a3-5cdEh9F2hJL",
+      "gpu": 3,
+      "seed": 1,
+      "configuration_sha256": "0541ce325fca8e03943e12879f7aac4e58be5e46ecd3a82687002572c490b89c",
+      "identity_sha256": "22c8e7af5512b0170b3ef8a683c37d1ba7933f4b3ac24af7cb44177e47f930be",
+      "role_signatures": {
+        "mapping": "46a12326325ca1ffa65c3505996df2a255792ca8ad1677f93bdc895b6ebbde85",
+        "navigation": "f0395592ae72a2717d707ad46ed89a10adb87fa1e4040c21824150ed633c5a36"
+      },
+      "environment_artifact_sha256": {
+        "mapping_environment.json": "61949e0886be2ca699f97ff2b0cb28ecc0fb492ff0c9c838157e57d2d0a5675d",
+        "navigation_environment_1.json": "e7c9b6a492c874fcc273a240f980097c45c8d51783acadf2b174cabcfe128588"
+      }
+    }
+  ],
+  "scope": "actual completed cases only; refresh after all20",
+  "source_sha256": "b84a4dbfe2953f33d5bbfd9aca4ff2ff5a5a9a853a8602f8616b10e2f9d2f656"
+}

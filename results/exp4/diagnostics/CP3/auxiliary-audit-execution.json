@@ -1,0 +1,21 @@
+{
+  "checked_at_utc": "2026-11-10T04:38:17.524716+00:00",
+  "executions": [
+    {
+      "script": "audit_smoke_coverage.py",
+      "exit_code": 0,
+      "sha256": "a670de31958d6340e1341588dee418de18dfecb68cb0c036ec15ec9e3a2df5d6"
+    },
+    {
+      "script": "audit_smoke_environment.py",
+      "exit_code": 0,
+      "sha256": "b84a4dbfe2953f33d5bbfd9aca4ff2ff5a5a9a853a8602f8616b10e2f9d2f656"
+    },
+    {
+      "script": "audit_smoke_mechanisms.py",
+      "exit_code": 0,
+      "sha256": "0ebe2c2fa8ea333b1b6b209e895727c8a10a7979b316e7f298ce2028105c9238"
+    }
+  ],
+  "native_source_or_parameters_changed": false
+}

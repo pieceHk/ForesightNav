@@ -1,0 +1,39 @@
+{
+  "checked_at_utc": "2026-11-10T04:38:13.248971+00:00",
+  "scope": "completed native Full smoke cases only; no GT, fit, or evaluation tuning",
+  "completed_scenes": 2,
+  "snapshots": 99,
+  "counts": {
+    "snapshots": 99,
+    "nonempty_current_roots": 84,
+    "multiple_current_candidates": 75,
+    "pre_final_roots": 53,
+    "pre_final_with_any_future_candidates": 51,
+    "current_q_S_B_records_checked": 320
+  },
+  "scene_snapshots": {
+    "4ok3usBNeis": 40,
+    "5cdEh9F2hJL": 59
+  },
+  "histogram_unit": "candidate occurrence in planning snapshot, not distinct candidate",
+  "N_views_histograms": {
+    "current": {
+      "0": 115,
+      "1": 83,
+      "2": 90,
+      "3": 18,
+      "4": 5,
+      "5": 9
+    },
+    "future": {
+      "0": 101,
+      "1": 111,
+      "2": 142,
+      "3": 19,
+      "4": 5
+    }
+  },
+  "violations": [],
+  "parameter_sha256": "e1d75f3c9503c7439467748fc97be6ae2ad450c429f40dc7235b1564ff7852ae",
+  "source_sha256": "a670de31958d6340e1341588dee418de18dfecb68cb0c036ec15ec9e3a2df5d6"
+}

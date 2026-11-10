@@ -1,0 +1,32 @@
+{
+  "reviewed_at_utc": "2026-11-10T04:34:14.132151+00:00",
+  "visual_qa_passed": true,
+  "method": "SHA-verified local copies viewed individually with view_image",
+  "renderer_sha256": "e7d6d9e2602a41f965cc380ba0eaf009db375db7ebd04a118223992ae8d3531b",
+  "figures": [
+    {
+      "scene_id": "4ok3usBNeis",
+      "episode_id": "0",
+      "png": "figures/CP3/4ok3usBNeis_0.png",
+      "numeric_metadata": "figures/CP3/4ok3usBNeis_0.json",
+      "png_sha256": "112562d3294e9661594dfb59ea868464dc0feebc96c4487034aad59dcf918817",
+      "numeric_metadata_sha256": "65fa8f767f201efb24e3ea3094b8083afdb0c6fb417dc2a23a5ee66370529ddf"
+    },
+    {
+      "scene_id": "5cdEh9F2hJL",
+      "episode_id": "0",
+      "png": "figures/CP3/5cdEh9F2hJL_0.png",
+      "numeric_metadata": "figures/CP3/5cdEh9F2hJL_0.json",
+      "png_sha256": "bb28f41c96dbeb66249c3eac81ed9603f559e1c39919f8146902d6d2347328a5",
+      "numeric_metadata_sha256": "a911407c244cba3ec39ba76f0b72144576fc74d2729c00eb3515604800308236"
+    }
+  ],
+  "observations": [
+    "Both fixed cases contain all three stages, readable axes, candidate labels, B tables, start/STOP markers and complete trajectories.",
+    "Success/failure titles agree with native stage vectors [1,1,1] and [1,0,1].",
+    "Candidate5 in the second case stage2 is close to the upper map edge but remains visible; no observed cropped data or conflicting labels."
+  ],
+  "caption_note": "候选与B值取自表格标出的实际派发快照；黑线覆盖该阶段完整轨迹，含后续重规划。",
+  "scope": "the deterministic first two fixed smoke cases, not selected by success",
+  "counts_as_new_native_tests": false
+}
