@@ -1,45 +1,35 @@
 {
-  "started_at_utc": "2026-11-10T22:52:33.027843+00:00",
-  "completed_at_utc": "2026-11-10T22:52:45.035955+00:00",
+  "started_at_utc": "2026-11-10T23:03:23.503573+00:00",
+  "completed_at_utc": "2026-11-10T23:03:35.218332+00:00",
   "stage": "full",
   "diagnostic_only": true,
   "formal400_complete": false,
-  "completed_native_metric_records_checked": 120,
+  "completed_native_metric_records_checked": 125,
   "newly_audited": [
     {
       "scene": "Nfvxx8J5NCo",
-      "episode": "14",
-      "steps": 596,
+      "episode": "16",
+      "steps": 337,
       "success_vector": [
+        0,
         1,
+        1
+      ]
+    },
+    {
+      "scene": "Nfvxx8J5NCo",
+      "episode": "17",
+      "steps": 168,
+      "success_vector": [
+        0,
         0,
         1
       ]
     },
     {
       "scene": "Nfvxx8J5NCo",
-      "episode": "15",
-      "steps": 710,
-      "success_vector": [
-        1,
-        0,
-        0
-      ]
-    },
-    {
-      "scene": "QaLdnwvtxbs",
-      "episode": "1",
-      "steps": 352,
-      "success_vector": [
-        1,
-        1,
-        1
-      ]
-    },
-    {
-      "scene": "QaLdnwvtxbs",
-      "episode": "2",
-      "steps": 150,
+      "episode": "18",
+      "steps": 633,
       "success_vector": [
         0,
         1,
@@ -48,8 +38,18 @@
     },
     {
       "scene": "QaLdnwvtxbs",
-      "episode": "3",
-      "steps": 424,
+      "episode": "4",
+      "steps": 126,
+      "success_vector": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "scene": "QaLdnwvtxbs",
+      "episode": "5",
+      "steps": 609,
       "success_vector": [
         1,
         1,
@@ -63,10 +63,10 @@
     "6s7QHgap2fW": 20,
     "DYehNKdT76V": 20,
     "Dd4bFSTQ8gi": 20,
-    "Nfvxx8J5NCo": 16,
-    "QaLdnwvtxbs": 4
+    "Nfvxx8J5NCo": 19,
+    "QaLdnwvtxbs": 6
   },
-  "native_stage_path_checks": 360,
+  "native_stage_path_checks": 375,
   "all_paths_complete": true,
   "max_path_error_m": 2.414226045743817e-06,
   "source_and_parameters_unchanged": true,
