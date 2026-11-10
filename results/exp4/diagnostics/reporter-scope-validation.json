@@ -1,0 +1,13 @@
+{
+  "checked_at_utc": "2026-11-10T15:56:51.474909+00:00",
+  "scope": "Results-only CP4/CP5 provenance wording; not native policy or analysis metrics",
+  "previous_reporter_sha256": "e7d1edc797795a4809fbedaffc1dcaf60d3e9acc31afddb9e92823f4f413d9d4",
+  "reporter_sha256": "e1f469f39722d45dc00523cfa7c25e1e98ca6bcf0a7f44f47449a4131df23306",
+  "test_source_sha256": "e7442405a170be2bd16c8e7aee3c3c14a0776ddf909636acb659ed14e7a1909e",
+  "test_exit_code": 0,
+  "test_log": "logs/full-report-scope-tests-20261110T155649350919Z.log",
+  "test_log_sha256": "318d686d1c00794b98636406837a043987acd79c856c2c0b40cc8ba6c850ec2a",
+  "native_source_unchanged": true,
+  "parameters_unchanged": true,
+  "launches_workers": false
+}

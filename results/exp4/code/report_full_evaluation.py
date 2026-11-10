@@ -166,6 +166,7 @@ def render(stage, variants, comparison, evidence):
     names = [name for name in VARIANTS if name in variants]
     lines = [f'# Exp4 {stage}：' + ('Full完整评估' if stage == 'CP4' else '四变体机制消融'), '',
              '以下数字来自固定20场景、每场景20条3-MON的完整在线评估。原生完成状态、400条有序身份、冻结参数与实际动作路径均已核对。', '',
+             '固定任务池经过历史1-MON配对结果筛选，属于该筛选池内的受控消融，不能据此声称独立盲测、未见场景或未见底层任务泛化。本次3-MON在线成绩未用于拟合、选参数或删选回合。原始manifest/source trace、标定重用和高度/navmesh静态检查见[数据来源与适用范围](dataset_scope.md)。高度相近及navmesh连通性不证明当前策略可达，也不能直接解释某一回合成败。', '',
              'SR、SPL、PR调用原PBSP评估结果；PPL为新增补充实现，等于全部阶段PR乘以成功前缀的路径效率。原生失败后继续执行后续阶段，条件成功率仅在前序全成功子集计算，分母为0时留为未定义。', '']
     lines += table(['变体', 'Future', 'Belief', *[key + ' (%)' for key in RATES]], [
         [LABELS[name], name in ('suffix_only', 'full'), name in ('myopic', 'full'),
@@ -193,7 +194,7 @@ def render(stage, variants, comparison, evidence):
         figures = comparison_figure(variants, comparison)
         for relative in figures:
             lines += ['', f'![{Path(relative).stem}](../{relative})']
-        lines += ['', '这组比较评估冻结协议下的两个机制及其交互，主效应和配对计数本身不提供显著性检验结论。标定与评估共享场景及部分source目标，泛化边界见CP2和差异记录。', '',
+        lines += ['', '这组比较评估固定筛选池、冻结协议下的两个机制及其交互。主效应和配对计数本身不提供显著性检验结论；历史任务池筛选以及标定/评估共享来源仍限制泛化解释，详见[数据审计](dataset_scope.md)、CP2和差异记录。', '',
                   '[全部变体CSV](../summary/all.csv)、[未舍入效应与六组配对计数](../summary/effects.json)。', '']
     else:
         lines += ['Full的400条完整评估已汇总，其他三个变体的在线对比尚待完成。按设计，汇报CP4后依次运行Nearest、Belief-myopic、Suffix-only各400条。此工具没有将CP4标为已汇报，也没有启动下一阶段。', '']

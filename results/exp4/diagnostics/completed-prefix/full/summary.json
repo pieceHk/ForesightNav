@@ -1,0 +1,241 @@
+{
+  "started_at_utc": "2026-11-10T15:55:06.135342+00:00",
+  "completed_at_utc": "2026-11-10T15:56:14.654881+00:00",
+  "stage": "full",
+  "diagnostic_only": true,
+  "formal400_complete": false,
+  "completed_native_metric_records_checked": 21,
+  "newly_audited": [
+    {
+      "scene": "4ok3usBNeis",
+      "episode": "0",
+      "steps": 387,
+      "success_vector": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "scene": "4ok3usBNeis",
+      "episode": "1",
+      "steps": 333,
+      "success_vector": [
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "scene": "4ok3usBNeis",
+      "episode": "2",
+      "steps": 1020,
+      "success_vector": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "scene": "4ok3usBNeis",
+      "episode": "3",
+      "steps": 1208,
+      "success_vector": [
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "scene": "4ok3usBNeis",
+      "episode": "4",
+      "steps": 553,
+      "success_vector": [
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "scene": "4ok3usBNeis",
+      "episode": "5",
+      "steps": 755,
+      "success_vector": [
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "scene": "4ok3usBNeis",
+      "episode": "6",
+      "steps": 1500,
+      "success_vector": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "scene": "4ok3usBNeis",
+      "episode": "7",
+      "steps": 776,
+      "success_vector": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "scene": "5cdEh9F2hJL",
+      "episode": "0",
+      "steps": 568,
+      "success_vector": [
+        1,
+        0,
+        1
+      ]
+    },
+    {
+      "scene": "5cdEh9F2hJL",
+      "episode": "1",
+      "steps": 418,
+      "success_vector": [
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "scene": "5cdEh9F2hJL",
+      "episode": "2",
+      "steps": 331,
+      "success_vector": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "scene": "5cdEh9F2hJL",
+      "episode": "3",
+      "steps": 406,
+      "success_vector": [
+        1,
+        0,
+        1
+      ]
+    },
+    {
+      "scene": "5cdEh9F2hJL",
+      "episode": "4",
+      "steps": 656,
+      "success_vector": [
+        1,
+        0,
+        1
+      ]
+    },
+    {
+      "scene": "5cdEh9F2hJL",
+      "episode": "5",
+      "steps": 43,
+      "success_vector": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "scene": "5cdEh9F2hJL",
+      "episode": "6",
+      "steps": 631,
+      "success_vector": [
+        1,
+        0,
+        1
+      ]
+    },
+    {
+      "scene": "5cdEh9F2hJL",
+      "episode": "7",
+      "steps": 411,
+      "success_vector": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "scene": "5cdEh9F2hJL",
+      "episode": "8",
+      "steps": 734,
+      "success_vector": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "scene": "5cdEh9F2hJL",
+      "episode": "9",
+      "steps": 586,
+      "success_vector": [
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "scene": "5cdEh9F2hJL",
+      "episode": "10",
+      "steps": 1026,
+      "success_vector": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "scene": "5cdEh9F2hJL",
+      "episode": "11",
+      "steps": 559,
+      "success_vector": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "scene": "5cdEh9F2hJL",
+      "episode": "12",
+      "steps": 730,
+      "success_vector": [
+        1,
+        1,
+        0
+      ]
+    }
+  ],
+  "scene_exported_records": {
+    "4ok3usBNeis": 8,
+    "5cdEh9F2hJL": 13
+  },
+  "native_stage_path_checks": 63,
+  "all_paths_complete": true,
+  "max_path_error_m": 1.1880849939416294e-06,
+  "source_and_parameters_unchanged": true,
+  "native_run_statuses_modified": false,
+  "bindings": {
+    "parameter_sha256": "e1d75f3c9503c7439467748fc97be6ae2ad450c429f40dc7235b1564ff7852ae",
+    "analysis_sources_sha256": {
+      "report_variants.py": "d3d8617a83ccbd1ccebf18cf2b4149fd745be23c962e3dabeb42b057ad7626c3",
+      "action_path_metrics.py": "a89afc6504fcb5520bb8c227928961b3d7814bcfcc98c23c6311e35254089f1e",
+      "native_candidate_gt.py": "e2620454fe45d54933294286a518440ef16ec961c0eb0ca5aafe5ec2587a21a3",
+      "candidate_identities.py": "a311b37d45d59f379ce00b58d1350b5eb308da0b9a24d34ad2facdb495d9991d",
+      "blp_parameters.py": "039c6a660ab2a7cf2b6e9e78e810bfb44f32731e6c52a9194dc20f82daa63bad"
+    },
+    "prefix_auditor_sha256": "8f8d39c16db9f724494867133e549c1c2eb07e67170d1f175011e35f5382a839",
+    "reader_source_sha256": "8b3ceb80cb3abbbe8e216a48c5e23596de436cafbed89f040f8583a8cee849d8"
+  }
+}
