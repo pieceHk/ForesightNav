@@ -1,8 +1,8 @@
 # Full400已完成回合的过程复核
 
-此快照核查已导出完整原生指标的105/400条回合，覆盖4ok3usBNeis：20条、5cdEh9F2hJL：20条、6s7QHgap2fW：20条、DYehNKdT76V：20条、Dd4bFSTQ8gi：15条、Nfvxx8J5NCo：10条。Full400尚未完成，以下仅是已导出回合的过程诊断。
+此快照核查已导出完整原生指标的110/400条回合，覆盖4ok3usBNeis：20条、5cdEh9F2hJL：20条、6s7QHgap2fW：20条、DYehNKdT76V：20条、Dd4bFSTQ8gi：18条、Nfvxx8J5NCo：12条。Full400尚未完成，以下仅是已导出回合的过程诊断。
 
-已核对315个阶段的原生步数、终止STOP、实际轨迹及候选路径归属，全部完整，路径长度最大绝对差2.41422605e-06米。所有已完成回合均按记录顺序纳入，包括失败回合。
+已核对330个阶段的原生步数、终止STOP、实际轨迹及候选路径归属，全部完整，路径长度最大绝对差2.41422605e-06米。所有已完成回合均按记录顺序纳入，包括失败回合。
 
 候选事件GT检查、逐动作路径及候选身份合并复用原有固定分析组件；逐快照核对场景参数、交叉拟合分组及文件SHA。没有修改正在运行场景的完成状态，也没有生成正式400条结果。
 
@@ -95,6 +95,9 @@
 | Dd4bFSTQ8gi/12 | 0/0/1 | 867 | true |
 | Dd4bFSTQ8gi/13 | 0/1/1 | 145 | true |
 | Dd4bFSTQ8gi/14 | 1/1/1 | 311 | true |
+| Dd4bFSTQ8gi/15 | 1/1/0 | 485 | true |
+| Dd4bFSTQ8gi/16 | 1/1/1 | 363 | true |
+| Dd4bFSTQ8gi/17 | 1/1/1 | 565 | true |
 | Dd4bFSTQ8gi/2 | 0/1/0 | 671 | true |
 | Dd4bFSTQ8gi/3 | 0/1/1 | 488 | true |
 | Dd4bFSTQ8gi/4 | 0/0/1 | 551 | true |
@@ -105,6 +108,8 @@
 | Dd4bFSTQ8gi/9 | 1/0/1 | 584 | true |
 | Nfvxx8J5NCo/0 | 0/1/1 | 659 | true |
 | Nfvxx8J5NCo/1 | 0/1/0 | 322 | true |
+| Nfvxx8J5NCo/10 | 1/1/0 | 1089 | true |
+| Nfvxx8J5NCo/11 | 0/1/1 | 455 | true |
 | Nfvxx8J5NCo/2 | 1/1/1 | 868 | true |
 | Nfvxx8J5NCo/3 | 1/0/1 | 1110 | true |
 | Nfvxx8J5NCo/4 | 1/1/1 | 481 | true |
