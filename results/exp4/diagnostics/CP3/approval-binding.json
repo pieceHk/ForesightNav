@@ -1,0 +1,14 @@
+{
+  "checked_at_utc": "2026-11-10T10:11:31.326408+00:00",
+  "acceptance_sha256": "e526f41c23116c43331e76338c63e325f721a5f6262a28ece7012c81690dbc6c",
+  "source_and_parameters_unchanged": true,
+  "full_gate_check": {
+    "stage": "full",
+    "ready": true,
+    "reason": null,
+    "scenes": 20,
+    "episodes": 400,
+    "launches_workers": false
+  },
+  "launches_workers": false
+}

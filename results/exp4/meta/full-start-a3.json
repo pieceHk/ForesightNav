@@ -1,0 +1,32 @@
+{
+  "stage": "full",
+  "attempt": "a3",
+  "status": "running",
+  "started_at_utc": "2026-11-10T10:12:17.559451+00:00",
+  "boot_id": "23443655-6f2f-4063-a412-e255f3a91e62",
+  "source_commit": "03242fda76fd6a631596a7269c8e7990c657ea30",
+  "parameter_sha256": "e1d75f3c9503c7439467748fc97be6ae2ad450c429f40dc7235b1564ff7852ae",
+  "CP3_acceptance_sha256": "e526f41c23116c43331e76338c63e325f721a5f6262a28ece7012c81690dbc6c",
+  "gpu_observation": [
+    "2, NVIDIA A40, 46068, 41180",
+    "3, NVIDIA A40, 46068, 41092"
+  ],
+  "n_scenes": 20,
+  "n_episodes": 400,
+  "pid": 468645,
+  "start_ticks": "11385483",
+  "command": [
+    "/nvme/khy/conda_envs/pbsp/navigation/bin/python",
+    "-u",
+    "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/code/evaluate_sequence.py",
+    "--stage",
+    "full",
+    "--attempt",
+    "a3"
+  ],
+  "log": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/logs/evaluation-full-controller-a3.log",
+  "CUDA_VISIBLE_DEVICES_in_native_parent": null,
+  "detached_session": true,
+  "observer_pid": 468659,
+  "observer_start_ticks": "11385509"
+}

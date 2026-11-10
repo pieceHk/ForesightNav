@@ -1,0 +1,68 @@
+{
+  "checked_at_utc": "2026-11-10T10:17:27.215896+00:00",
+  "stage": "full",
+  "status": "running",
+  "error": null,
+  "controller_pid": 468645,
+  "controller": {
+    "live": true,
+    "state": "S",
+    "start_ticks": "11385483",
+    "command": "/nvme/khy/conda_envs/pbsp/navigation/bin/python -u /nvme/khy/ForesightNav_exp4_depthfix/results/exp4/code/evaluate_sequence.py --stage full --attempt a3 ",
+    "boot_matches": true,
+    "command_matches": true
+  },
+  "source_unchanged": true,
+  "parameter_unchanged": true,
+  "completed_scenes": 0,
+  "host_cpu": {
+    "logical_cpus": 384,
+    "load_average": [
+      2171.8,
+      2163.4,
+      1966.45
+    ],
+    "pressure": "some avg10=76.81 avg60=80.21 avg300=79.90 total=8457331932\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=0"
+  },
+  "totals": {
+    "snapshot_count": 6,
+    "action_count": 50,
+    "blp_error_bytes": 0,
+    "binding_error_count": 0,
+    "missing_action_targets": 0,
+    "unresolved_query_targets": 0,
+    "structural_dispatch_errors": 0
+  },
+  "active_jobs": [
+    {
+      "scene": "4ok3usBNeis",
+      "gpu": 2,
+      "status": "running",
+      "snapshot_count": 3,
+      "action_count": 21,
+      "current_stage": 0,
+      "blp_error_bytes": 0,
+      "binding_error_count": 0,
+      "missing_action_targets": 0,
+      "unresolved_query_targets": 0,
+      "applied_nonempty_dispatches": 2,
+      "dispatch_deviations_from_nearest": 0,
+      "structural_dispatch_errors": 0
+    },
+    {
+      "scene": "5cdEh9F2hJL",
+      "gpu": 3,
+      "status": "running",
+      "snapshot_count": 3,
+      "action_count": 29,
+      "current_stage": 0,
+      "blp_error_bytes": 0,
+      "binding_error_count": 0,
+      "missing_action_targets": 0,
+      "unresolved_query_targets": 0,
+      "applied_nonempty_dispatches": 2,
+      "dispatch_deviations_from_nearest": 0,
+      "structural_dispatch_errors": 0
+    }
+  ]
+}

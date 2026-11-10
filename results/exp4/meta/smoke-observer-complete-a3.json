@@ -1,0 +1,14 @@
+{
+  "observer_pid": 323670,
+  "watcher_pid": 323670,
+  "start_ticks": "9264142",
+  "stage": "smoke",
+  "attempt": "a3",
+  "started_at_utc": "2026-11-10T04:18:44.187746+00:00",
+  "watch_seconds": 14400,
+  "log": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/logs/evaluation-observer-smoke-a3-20261110T041844Z.jsonl",
+  "stderr_log": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/logs/evaluation-observer-smoke-a3-20261110T041844Z.stderr.log",
+  "watcher_sha256": "b0d1839082efc39cab8be8bbf2985fb9938d589d6abf33969606e9cd4651a8db",
+  "detached_session": true,
+  "scope": "read-only supervision of existing smoke317773; independent of SSH; no native launch or parameter changes"
+}
