@@ -1,38 +1,48 @@
 {
-  "started_at_utc": "2026-11-10T17:19:54.437601+00:00",
-  "completed_at_utc": "2026-11-10T17:20:10.422784+00:00",
+  "started_at_utc": "2026-11-10T17:51:24.036259+00:00",
+  "completed_at_utc": "2026-11-10T17:51:37.914613+00:00",
   "stage": "full",
   "diagnostic_only": true,
   "formal400_complete": false,
-  "completed_native_metric_records_checked": 35,
+  "completed_native_metric_records_checked": 38,
   "newly_audited": [
     {
       "scene": "4ok3usBNeis",
-      "episode": "13",
-      "steps": 1324,
+      "episode": "14",
+      "steps": 886,
       "success_vector": [
         1,
-        0,
+        1,
+        0
+      ]
+    },
+    {
+      "scene": "4ok3usBNeis",
+      "episode": "15",
+      "steps": 696,
+      "success_vector": [
+        1,
+        1,
         0
       ]
     },
     {
       "scene": "6s7QHgap2fW",
-      "episode": "0",
-      "steps": 1152,
+      "episode": "1",
+      "steps": 1064,
       "success_vector": [
         0,
-        0,
-        1
+        1,
+        0
       ]
     }
   ],
   "scene_exported_records": {
-    "4ok3usBNeis": 14,
+    "4ok3usBNeis": 16,
     "5cdEh9F2hJL": 20,
-    "6s7QHgap2fW": 1
+    "6s7QHgap2fW": 2
   },
-  "native_stage_path_checks": 105,
+  "native_stage_path_checks": 114,
   "all_paths_complete": true,
   "max_path_error_m": 1.9952819201307648e-06,
   "source_and_parameters_unchanged": true,
