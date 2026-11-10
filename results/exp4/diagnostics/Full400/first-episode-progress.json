@@ -1,0 +1,77 @@
+{
+  "checked_at_utc": "2026-11-10T10:35:43.561258+00:00",
+  "full400_complete": false,
+  "completed_native_metric_records": {
+    "4ok3usBNeis": 1,
+    "5cdEh9F2hJL": 0
+  },
+  "total_completed_native_metric_records": 1,
+  "observation": {
+    "checked_at_utc": "2026-11-10T10:35:43.124849+00:00",
+    "stage": "full",
+    "status": "running",
+    "error": null,
+    "controller_pid": 468645,
+    "controller": {
+      "live": true,
+      "state": "S",
+      "start_ticks": "11385483",
+      "command": "/nvme/khy/conda_envs/pbsp/navigation/bin/python -u /nvme/khy/ForesightNav_exp4_depthfix/results/exp4/code/evaluate_sequence.py --stage full --attempt a3 ",
+      "boot_matches": true,
+      "command_matches": true
+    },
+    "source_unchanged": true,
+    "parameter_unchanged": true,
+    "completed_scenes": 0,
+    "host_cpu": {
+      "logical_cpus": 384,
+      "load_average": [
+        2133.0,
+        2105.75,
+        2073.48
+      ],
+      "pressure": "some avg10=80.93 avg60=78.12 avg300=78.34 total=9327660595\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=0"
+    },
+    "totals": {
+      "snapshot_count": 120,
+      "action_count": 1147,
+      "blp_error_bytes": 0,
+      "binding_error_count": 0,
+      "missing_action_targets": 0,
+      "unresolved_query_targets": 0,
+      "structural_dispatch_errors": 0
+    },
+    "active_jobs": [
+      {
+        "scene": "4ok3usBNeis",
+        "gpu": 2,
+        "status": "running",
+        "snapshot_count": 61,
+        "action_count": 579,
+        "current_stage": 1,
+        "blp_error_bytes": 0,
+        "binding_error_count": 0,
+        "missing_action_targets": 0,
+        "unresolved_query_targets": 0,
+        "applied_nonempty_dispatches": 50,
+        "dispatch_deviations_from_nearest": 17,
+        "structural_dispatch_errors": 0
+      },
+      {
+        "scene": "5cdEh9F2hJL",
+        "gpu": 3,
+        "status": "running",
+        "snapshot_count": 59,
+        "action_count": 568,
+        "current_stage": 2,
+        "blp_error_bytes": 0,
+        "binding_error_count": 0,
+        "missing_action_targets": 0,
+        "unresolved_query_targets": 0,
+        "applied_nonempty_dispatches": 49,
+        "dispatch_deviations_from_nearest": 9,
+        "structural_dispatch_errors": 0
+      }
+    ]
+  }
+}

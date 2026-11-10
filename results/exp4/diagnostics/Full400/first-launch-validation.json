@@ -1,0 +1,32 @@
+{
+  "checked_at_utc": "2026-11-10T10:19:51.827125+00:00",
+  "stage": "full",
+  "parameter_sha256": "e1d75f3c9503c7439467748fc97be6ae2ad450c429f40dc7235b1564ff7852ae",
+  "scope": "Actual launched scene plans and current launchers only; main400 not complete, no score claims",
+  "current_scene_launches": [
+    {
+      "scene": "4ok3usBNeis",
+      "gpu": 2,
+      "native_identities": 20,
+      "all_categories_and_source_ids_match": true,
+      "seed": 1,
+      "source_commit": "03242fda76fd6a631596a7269c8e7990c657ea30",
+      "launcher_pid": 468646,
+      "launcher_start_ticks": "11385498",
+      "launch_sha256": "9838df074aed20ebad0dc8c350315e0d20e34a64d08c8469974ba6193cfc83d8"
+    },
+    {
+      "scene": "5cdEh9F2hJL",
+      "gpu": 3,
+      "native_identities": 20,
+      "all_categories_and_source_ids_match": true,
+      "seed": 1,
+      "source_commit": "03242fda76fd6a631596a7269c8e7990c657ea30",
+      "launcher_pid": 468647,
+      "launcher_start_ticks": "11385498",
+      "launch_sha256": "b73c530355a6685e5af32dec32d52b7519d9e4b459505429917d4b079cda7d16"
+    }
+  ],
+  "expected_stage_episodes": 400,
+  "source_and_parameters_unchanged": true
+}
