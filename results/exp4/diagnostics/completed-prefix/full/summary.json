@@ -1,25 +1,35 @@
 {
-  "started_at_utc": "2026-11-10T22:06:12.759062+00:00",
-  "completed_at_utc": "2026-11-10T22:06:24.843092+00:00",
+  "started_at_utc": "2026-11-10T22:14:15.792339+00:00",
+  "completed_at_utc": "2026-11-10T22:14:27.860467+00:00",
   "stage": "full",
   "diagnostic_only": true,
   "formal400_complete": false,
-  "completed_native_metric_records_checked": 101,
+  "completed_native_metric_records_checked": 105,
   "newly_audited": [
     {
       "scene": "Dd4bFSTQ8gi",
-      "episode": "10",
-      "steps": 694,
+      "episode": "13",
+      "steps": 145,
       "success_vector": [
-        1,
         0,
+        1,
         1
       ]
     },
     {
       "scene": "Dd4bFSTQ8gi",
-      "episode": "11",
-      "steps": 432,
+      "episode": "14",
+      "steps": 311,
+      "success_vector": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "scene": "Nfvxx8J5NCo",
+      "episode": "8",
+      "steps": 716,
       "success_vector": [
         1,
         1,
@@ -27,41 +37,11 @@
       ]
     },
     {
-      "scene": "Dd4bFSTQ8gi",
-      "episode": "12",
-      "steps": 867,
+      "scene": "Nfvxx8J5NCo",
+      "episode": "9",
+      "steps": 405,
       "success_vector": [
         0,
-        0,
-        1
-      ]
-    },
-    {
-      "scene": "Nfvxx8J5NCo",
-      "episode": "5",
-      "steps": 196,
-      "success_vector": [
-        1,
-        1,
-        1
-      ]
-    },
-    {
-      "scene": "Nfvxx8J5NCo",
-      "episode": "6",
-      "steps": 560,
-      "success_vector": [
-        0,
-        1,
-        1
-      ]
-    },
-    {
-      "scene": "Nfvxx8J5NCo",
-      "episode": "7",
-      "steps": 341,
-      "success_vector": [
-        1,
         1,
         1
       ]
@@ -72,10 +52,10 @@
     "5cdEh9F2hJL": 20,
     "6s7QHgap2fW": 20,
     "DYehNKdT76V": 20,
-    "Dd4bFSTQ8gi": 13,
-    "Nfvxx8J5NCo": 8
+    "Dd4bFSTQ8gi": 15,
+    "Nfvxx8J5NCo": 10
   },
-  "native_stage_path_checks": 303,
+  "native_stage_path_checks": 315,
   "all_paths_complete": true,
   "max_path_error_m": 2.414226045743817e-06,
   "source_and_parameters_unchanged": true,
