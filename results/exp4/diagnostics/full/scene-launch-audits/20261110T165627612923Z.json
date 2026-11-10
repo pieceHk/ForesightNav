@@ -1,0 +1,50 @@
+{
+  "checked_at_utc": "2026-11-10T16:56:27.612923+00:00",
+  "stage": "full",
+  "diagnostic_only": true,
+  "scope": "Actual launched scene plans, live launchers and completed native scenes; does not certify aggregate stage metrics",
+  "ledger_sha256_at_read": "bdabdcc7d667feb08507cc7f5fde87e03cfb72cb9eddba073944369f67cf6a1b",
+  "auditor_sha256": "dd927eb5f36c69281eeb0a83e76284ae25348f8ebcdfa5bad659d1b587103189",
+  "parameter_sha256": "e1d75f3c9503c7439467748fc97be6ae2ad450c429f40dc7235b1564ff7852ae",
+  "source_and_parameters_unchanged": true,
+  "controller_identity_at_read": {
+    "live": true,
+    "state": "S",
+    "start_ticks": "11385483",
+    "command": "/nvme/khy/conda_envs/pbsp/navigation/bin/python -u /nvme/khy/ForesightNav_exp4_depthfix/results/exp4/code/evaluate_sequence.py --stage full --attempt a3 "
+  },
+  "expected_stage_scenes": 20,
+  "expected_stage_episodes": 400,
+  "checked_native_identities": 40,
+  "scene_launches": [
+    {
+      "scene": "4ok3usBNeis",
+      "gpu": 2,
+      "ledger_status": "running",
+      "state": "running",
+      "launcher_start_ticks": "11385498",
+      "native_identities": 20,
+      "categories_and_source_ids_match": true,
+      "seed": 1,
+      "source_commit": "03242fda76fd6a631596a7269c8e7990c657ea30",
+      "launcher_pid": 468646,
+      "launcher_live_at_read": true,
+      "launch_sha256": "9838df074aed20ebad0dc8c350315e0d20e34a64d08c8469974ba6193cfc83d8"
+    },
+    {
+      "scene": "5cdEh9F2hJL",
+      "gpu": 3,
+      "ledger_status": "running",
+      "state": "running",
+      "launcher_start_ticks": "11385498",
+      "native_identities": 20,
+      "categories_and_source_ids_match": true,
+      "seed": 1,
+      "source_commit": "03242fda76fd6a631596a7269c8e7990c657ea30",
+      "launcher_pid": 468647,
+      "launcher_live_at_read": true,
+      "launch_sha256": "b73c530355a6685e5af32dec32d52b7519d9e4b459505429917d4b079cda7d16"
+    }
+  ],
+  "native_states_modified": false
+}
