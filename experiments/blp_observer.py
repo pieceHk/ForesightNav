@@ -144,11 +144,14 @@ def compute_blp_event(planning, *, phase, arm, candidate_batch, projected_goals,
 def register_candidate(planning, task, record):
     registry = planning.blp_context.setdefault('candidate_registry', {})
     group = registry.setdefault(task, [])
+    aliases = planning.blp_context.setdefault('candidate_position_identities', {}).setdefault(task, {})
+    position_key = tuple(map(float, record.position))
     point = np.asarray(record.position)
     near = [r for r in group if np.linalg.norm(np.asarray(r['position'])[[0, 2]] - point[[0, 2]]) <= .75]
     if near:
         item = min(near, key=lambda r: np.linalg.norm(np.asarray(r['position'])[[0, 2]] - point[[0, 2]]))
         item.update(position=list(record.position), E=record.semantic_score)
+        aliases[position_key] = item['candidate_id']
         return item
     item = dict(candidate_id=f'{task}:{len(group)}', position=list(record.position),
                 E=record.semantic_score, first_t=planning.blp_context['t'], checked=False)
@@ -156,6 +159,7 @@ def register_candidate(planning, task, record):
     append(planning, 'blp_events.jsonl', dict(event='candidate_first_appearance', k=task,
            scene_id=planning.blp_context['batch'].scene_id,
            episode_id=planning.blp_context['batch'].episode_id, **item))
+    aliases[position_key] = item['candidate_id']
     return item
 
 
@@ -296,5 +300,13 @@ def bind_action_target(planning, metadata, task_idx, frame_index):
             _, match = min(matches, key=lambda item: (item[0], item[1]['candidate_id']))
             target.update(candidate_id=match['candidate_id'], query_identity_status='resolved')
         else:
-            target['query_identity_status'] = 'unresolved'
+            # A later record can move the registry centre outside the match
+            # radius. Retain the identity assigned to this exact query point.
+            aliases = planning.blp_context.get('candidate_position_identities', {}).get(int(task_idx), {})
+            remembered = aliases.get(tuple(map(float, point)))
+            if remembered is not None and any(r['candidate_id'] == remembered for r in registry):
+                target.update(candidate_id=remembered, query_identity_status='resolved',
+                              query_identity_resolution='exact_registered_position')
+            else:
+                target['query_identity_status'] = 'unresolved'
     return target
