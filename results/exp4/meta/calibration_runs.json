@@ -877,7 +877,7 @@
       "gpu": 3,
       "pid": 267723,
       "log": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/logs/calibration-a3-fold2-wcojb4TFT35.controller.log",
-      "status": "running",
+      "status": "completed",
       "command": [
         "/nvme/khy/ForesightNav_exp4_depthfix/run.py",
         "--config",
@@ -891,7 +891,55 @@
         "--tag",
         "calibration-a3-fold2-wcojb4TFT35"
       ],
-      "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_052133_559552_exp4_calibration_calibration-a3-fold2-wcojb4TFT35"
+      "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_052133_559552_exp4_calibration_calibration-a3-fold2-wcojb4TFT35",
+      "audit": {
+        "events": 2398,
+        "snapshots": 2157,
+        "verification_events": 270,
+        "native_metrics": {
+          "pespl": 0.13124282707065274,
+          "pespl_denominator": 60,
+          "pespl_numerator": 7.874569624239164,
+          "psr": 0.3333333333333333,
+          "psr_by_category": {
+            "bed": {
+              "psr_contribution": 0.016666666666666666,
+              "success_rate": 0.09090909090909091,
+              "successes": 1,
+              "targets": 11
+            },
+            "chair": {
+              "psr_contribution": 0.06666666666666667,
+              "success_rate": 0.2857142857142857,
+              "successes": 4,
+              "targets": 14
+            },
+            "couch": {
+              "psr_contribution": 0.03333333333333333,
+              "success_rate": 0.16666666666666666,
+              "successes": 2,
+              "targets": 12
+            },
+            "toilet": {
+              "psr_contribution": 0.06666666666666667,
+              "success_rate": 0.36363636363636365,
+              "successes": 4,
+              "targets": 11
+            },
+            "tv": {
+              "psr_contribution": 0.15,
+              "success_rate": 0.75,
+              "successes": 9,
+              "targets": 12
+            }
+          },
+          "psr_denominator": 60,
+          "psr_numerator": 20,
+          "spl": 0.07724884711933609,
+          "sr": 0.2
+        }
+      },
+      "returncode": 0
     },
     {
       "fold": 2,
