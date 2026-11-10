@@ -11,7 +11,7 @@
         "action_path_metrics.py": "a89afc6504fcb5520bb8c227928961b3d7814bcfcc98c23c6311e35254089f1e",
         "native_candidate_gt.py": "e2620454fe45d54933294286a518440ef16ec961c0eb0ca5aafe5ec2587a21a3",
         "blp_parameters.py": "039c6a660ab2a7cf2b6e9e78e810bfb44f32731e6c52a9194dc20f82daa63bad",
-        "candidate_identities.py": "a209d9e9f1ffab098198c8466c5b64b81dfd9577e105a89df448c91ba9d7a24d"
+        "candidate_identities.py": "a311b37d45d59f379ce00b58d1350b5eb308da0b9a24d34ad2facdb495d9991d"
       },
       "process": {
         "Invalid_visits_per_ep": 1.0,
@@ -86,12 +86,13 @@
         "last_STOP_without_after_pose_assumed_stationary": 1,
         "verification_then_effective_recovery_actions": 0,
         "checked_candidate_identity": {
-          "definition": "recorded registry identity, merging checked IDs sharing an exact full-XYZ final-check coordinate within one scene/episode/task/resample",
-          "source_sha256": "a209d9e9f1ffab098198c8466c5b64b81dfd9577e105a89df448c91ba9d7a24d",
+          "definition": "recorded registry identity, merging checked IDs sharing an exact full-XYZ final-check coordinate within one scene/episode/task/resample; unchecked first-appearance IDs alias a checked group only at that exact XYZ",
+          "source_sha256": "a311b37d45d59f379ce00b58d1350b5eb308da0b9a24d34ad2facdb495d9991d",
           "raw_checked_registry_identities": 2,
           "canonical_checked_identities": 2,
           "identities_merged": 0,
           "verification_rows_retained": 2,
+          "unchecked_first_appearance_aliases": 0,
           "GT_or_labels_used_to_group": false,
           "raw_events_modified": false
         },
@@ -148,7 +149,7 @@
         "action_path_metrics.py": "a89afc6504fcb5520bb8c227928961b3d7814bcfcc98c23c6311e35254089f1e",
         "native_candidate_gt.py": "e2620454fe45d54933294286a518440ef16ec961c0eb0ca5aafe5ec2587a21a3",
         "blp_parameters.py": "039c6a660ab2a7cf2b6e9e78e810bfb44f32731e6c52a9194dc20f82daa63bad",
-        "candidate_identities.py": "a209d9e9f1ffab098198c8466c5b64b81dfd9577e105a89df448c91ba9d7a24d"
+        "candidate_identities.py": "a311b37d45d59f379ce00b58d1350b5eb308da0b9a24d34ad2facdb495d9991d"
       },
       "process": {
         "Invalid_visits_per_ep": 22.0,
@@ -232,12 +233,13 @@
         "last_STOP_without_after_pose_assumed_stationary": 1,
         "verification_then_effective_recovery_actions": 1,
         "checked_candidate_identity": {
-          "definition": "recorded registry identity, merging checked IDs sharing an exact full-XYZ final-check coordinate within one scene/episode/task/resample",
-          "source_sha256": "a209d9e9f1ffab098198c8466c5b64b81dfd9577e105a89df448c91ba9d7a24d",
+          "definition": "recorded registry identity, merging checked IDs sharing an exact full-XYZ final-check coordinate within one scene/episode/task/resample; unchecked first-appearance IDs alias a checked group only at that exact XYZ",
+          "source_sha256": "a311b37d45d59f379ce00b58d1350b5eb308da0b9a24d34ad2facdb495d9991d",
           "raw_checked_registry_identities": 22,
           "canonical_checked_identities": 22,
           "identities_merged": 0,
           "verification_rows_retained": 29,
+          "unchecked_first_appearance_aliases": 0,
           "GT_or_labels_used_to_group": false,
           "raw_events_modified": false
         },

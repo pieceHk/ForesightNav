@@ -1,0 +1,9 @@
+{
+  "observer_pid": 302476,
+  "start_ticks": "8388155",
+  "started_at_utc": "2026-11-10T01:52:44.351628+00:00",
+  "log": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/logs/calibration-CPU-observer-a3-20261110T015244Z.jsonl",
+  "max_polls": 80,
+  "interval_seconds": 45,
+  "scope": "read-only bound CPU281840 phase observation after completed native360; never rerun analysis or launch workers"
+}

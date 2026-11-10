@@ -1,0 +1,102 @@
+{
+  "observer": {
+    "observer_pid": 298883,
+    "started_at_utc": "2026-11-10T01:14:01.540784+00:00",
+    "max_polls": 160,
+    "interval_seconds": 45,
+    "log": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/logs/calibration-observer-a3-20261110T011401Z.jsonl",
+    "observer_script_sha256": "64970e0bce349f253ce074424a13599fd0b4eb614269e8018caad8e859fe9530",
+    "scope": "bounded read-only supervision of the frozen calibration controller and bound CPU postprocessor; stop on new closed scene"
+  },
+  "tool_session": 14229,
+  "tool_exit_code": 0,
+  "polls": 48,
+  "first": {
+    "poll": 1,
+    "checked_at_utc": "2026-11-10T01:14:01.622628+00:00",
+    "completed": 352,
+    "controller_live_matching": true,
+    "boot_matches": true,
+    "source_unchanged": true,
+    "active_jobs": [
+      {
+        "scene": "DYehNKdT76V",
+        "gpu": 2,
+        "pid": 278975,
+        "telemetry_status": "available",
+        "completed": 22,
+        "accepted_actions": 11747,
+        "snapshots": 1208,
+        "live_matching": true,
+        "shadow_error_bytes": 0
+      }
+    ],
+    "CPU_pid": 281840,
+    "CPU_live_matching": true,
+    "CPU_status": "waiting_for_complete_collection",
+    "host_cpu": {
+      "logical_cpus": 384,
+      "load_average": [
+        49.43,
+        51.95,
+        52.18
+      ],
+      "pressure": "some avg10=0.00 avg60=0.02 avg300=0.17 total=6625674953\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=0"
+    }
+  },
+  "last": {
+    "poll": 48,
+    "checked_at_utc": "2026-11-10T01:51:28.070445+00:00",
+    "completed": 360,
+    "controller_live_matching": false,
+    "boot_matches": true,
+    "source_unchanged": true,
+    "active_jobs": [],
+    "CPU_pid": 281840,
+    "CPU_live_matching": true,
+    "CPU_status": "processing",
+    "host_cpu": {
+      "logical_cpus": 384,
+      "load_average": [
+        40.13,
+        41.66,
+        43.97
+      ],
+      "pressure": "some avg10=0.00 avg60=0.21 avg300=0.25 total=6631442662\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=0"
+    },
+    "observation_finished_reason": "new_complete_scene"
+  },
+  "all_boot_match": true,
+  "all_source_unchanged": true,
+  "native_collection_finished_normally": true,
+  "native_job_returncodes": {
+    "6s7QHgap2fW": 0,
+    "TEEsavR23oF": 0,
+    "QaLdnwvtxbs": 0,
+    "cvZr5TUy5C5": 0,
+    "Nfvxx8J5NCo": 0,
+    "p53SfW6mjZe": 0,
+    "4ok3usBNeis": 0,
+    "zt1RVoi7PcG": 0,
+    "XB4GS9ShBRE": 0,
+    "svBbv1Pavdk": 0,
+    "wcojb4TFT35": 0,
+    "DYehNKdT76V": 0
+  },
+  "log_sha256": "e522004b12b5b3b97e30d1ccb0ca6f6fbe9f4dc018daa33d41dce68a46eb1fc1",
+  "CPU_status_after_collection": "processing",
+  "CPU_current_step": "audit_completed_calibration.py",
+  "native_160_unchanged": true,
+  "CPU_11_unchanged": true,
+  "scope": "read-only native collection supervision; CPU output still pending actual completion",
+  "proof_generation_attempts": [
+    {
+      "exit_code": 1,
+      "reason": "inspection incorrectly requested ledger exit_code; actual schema key is returncode; failed before proof write; native and CPU unaffected"
+    },
+    {
+      "exit_code": 0,
+      "schema_key": "returncode"
+    }
+  ]
+}

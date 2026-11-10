@@ -1,8 +1,8 @@
 {
-  "checked_at_utc": "2026-11-09T22:54:02.493785+00:00",
+  "checked_at_utc": "2026-11-10T01:52:29.463100+00:00",
   "scope": "completed 2-MON calibration integrity only; no fitting, no 3-MON table",
   "frozen_runtime_unchanged": true,
-  "complete_episodes": 300,
+  "complete_episodes": 360,
   "completed_scenes": [
     {
       "scene": "6s7QHgap2fW",
@@ -420,6 +420,50 @@
         "status.json": "62111d1dbd44e3838c65e4fed632676878fdfdbaf5295c067c28b0ba18668f1c",
         "launch.json": "7875fd9e63c5a9852e464a0e1b530da4d87b97decf6b3c97032c85673245a5e4",
         "mon_metrics.json": "e6b1f2017910297d321d0f12b38575b91dbaeb3861be350514930a5f9dbcf805"
+      }
+    },
+    {
+      "scene": "wcojb4TFT35",
+      "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_052133_559552_exp4_calibration_calibration-a3-fold2-wcojb4TFT35",
+      "native_exit_code": 0,
+      "complete_episodes": 30,
+      "targets_per_episode": 2,
+      "actual_identity_files_checked": 30,
+      "frozen_manifest_source_ids_ordered_categories_match": true,
+      "complete_trajectory_and_terminal_STOP_checks_passed": true,
+      "candidate_checks": 270,
+      "final_labels": 270,
+      "check_to_final_event_keys_match": true,
+      "shadow_snapshots": 2157,
+      "shadow_errors": 0,
+      "process_path_complete_under_legacy_logs": true,
+      "path_association_gaps": [],
+      "artifact_sha256": {
+        "status.json": "9c629794b9c672d8ef393e3178e57d7b6a907a421bbb4202c91da8d31a13a42a",
+        "launch.json": "3ca13dc3ce0b93b97457229949920c6b6364591753403c97df761322f8ff335c",
+        "mon_metrics.json": "e178e8d2b2dfd6cfe70c6c2beeec7ed64606cb4b6a4571b8ba2a63876538a065"
+      }
+    },
+    {
+      "scene": "DYehNKdT76V",
+      "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_065156_646270_exp4_calibration_calibration-a3-fold2-DYehNKdT76V",
+      "native_exit_code": 0,
+      "complete_episodes": 30,
+      "targets_per_episode": 2,
+      "actual_identity_files_checked": 30,
+      "frozen_manifest_source_ids_ordered_categories_match": true,
+      "complete_trajectory_and_terminal_STOP_checks_passed": true,
+      "candidate_checks": 292,
+      "final_labels": 292,
+      "check_to_final_event_keys_match": true,
+      "shadow_snapshots": 1576,
+      "shadow_errors": 0,
+      "process_path_complete_under_legacy_logs": true,
+      "path_association_gaps": [],
+      "artifact_sha256": {
+        "status.json": "297cde63c6989ddd36d9a308dcecdda605e854c713fbb5d267af8458e0237461",
+        "launch.json": "fcb62bddb6d1bbbb17235d0de02d8f2ff09ed9538d2ac4c366662c4c6f03a821",
+        "mon_metrics.json": "341d4fcea6790b0fe390e5f6f4fa1e0762ad258e5e67438566f1b4dd28d29b18"
       }
     }
   ]

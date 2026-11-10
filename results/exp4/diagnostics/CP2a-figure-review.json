@@ -1,0 +1,29 @@
+{
+  "reviewed_at_utc": "2026-11-10T01:59:06.244126+00:00",
+  "method": "visual inspection of SHA-verified local PNG copies with view_image; four files viewed individually",
+  "figures": {
+    "calibration_bootstrap_intervals.png": {
+      "sha256": "ac3e6195733cba9e0f44919e0ac13d63b170699d1fc3b323c243975f2018b979",
+      "observed": "readable axes and labels; no observed cropping; report-linked three figures match current a3 tables"
+    },
+    "calibration_evidence_common_bins.png": {
+      "sha256": "a58aa5a21371264678f35d4fa2144fb7682146dc8caf21938b7393a01dc0ca58",
+      "observed": "readable axes and labels; no observed cropping; report-linked three figures match current a3 tables"
+    },
+    "calibration_reliability.png": {
+      "sha256": "6deac3fdb7a9d9cb48c2993bcbe15989df0fd202ec8c499a498ba69e152d953e",
+      "observed": "readable axes and labels; no observed cropping; report-linked three figures match current a3 tables"
+    },
+    "calibration_evidence.png": {
+      "sha256": "613939533299e64d2ef7f3f615311d07300004a2f91e4e42b82fac881f465354",
+      "observed": "readable auxiliary fitter figure; report uses common-bin histogram instead"
+    }
+  },
+  "observations": {
+    "intervals": "only C_exp lacks common group interval; Fold1 lower bound exceeds Fold2 upper bound",
+    "evidence": "common E bins; v=0 count3367 and v=1 count482; N_views displayed over 0..12",
+    "reliability": "displayed ECE rounds actual0.035600466 to0.036; candidate validity against native GT explicitly labelled"
+  },
+  "counts_as_new_native_tests": false,
+  "native_evaluation_started": false
+}

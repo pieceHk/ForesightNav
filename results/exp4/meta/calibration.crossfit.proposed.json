@@ -1,0 +1,80 @@
+{
+  "frozen": false,
+  "label_source": "system_verification",
+  "selection": "cross_fit",
+  "collected_folds": [
+    0,
+    1,
+    2
+  ],
+  "evidence_sha256": {
+    "logs/calibration_fold0_events.jsonl": "ab16c924ed646d5481f67a8154b74e37dfc207378335461fe08d256cc38170ec",
+    "logs/calibration_fold0_snapshots.jsonl": "7610d9d560bfe7936dad77e70dda71d10fb69d858ebac57494e83cfc08bc00fc",
+    "logs/calibration_fold1_events.jsonl": "e82c7d8deda6bc2cf3bb20f5df46c7b12916556ec51c0814ae5ff53e6d43cb06",
+    "logs/calibration_fold1_snapshots.jsonl": "b936ffe9e4e1ca320480d7ff7a0e80d0bf4f2432259760bb2c8a1130d911b08a",
+    "logs/calibration_fold2_events.jsonl": "13afb1cc8bfba3f5896f939b69cfdfae1b230d89a769dab51e7e1a34ea6ea65e",
+    "logs/calibration_fold2_snapshots.jsonl": "b79cf3045a452c02119e59284007621866f4984f16a4e2b4b5269242eb831e6c",
+    "meta/calibration_per_fold.json": "88bd43083c73f4af1482abd4aa74fdc95fddf183817ede7475b5a5356735ab5f",
+    "meta/calibration_runs.json": "f9e128a9fb4afe3a22e9371e09fe3c91b3945345c07789cb3903132016042939",
+    "meta/folds.json": "e5984774614e3eef936728637c494a88f11269bf1508d719e87cf17879f2590b",
+    "meta/completed-calibration-scene-audits.json": "99e9483c508e9f140390bf958a01e5ad0505b61f1b883e4c13ed72f8faf12b4f",
+    "meta/calibration-overlap-audit.json": "00c9cd15e4e93d5dc4d2400bbe791b12ef700272afa231ce2c8c63f7a67a8405",
+    "meta/protocol_decisions.json": "c4596befc6337dab5a9963c69f4416992f7b0108f8d0c69c9e77cfa8f39c69ed",
+    "diagnostics/native-offline-gt-check.json": "fb726fda23b90bfaf64a4c4fd155e67cdd60e0f270c3d546611a55d138b5209f",
+    "meta/calibration-log-archive.json": "218da7093b2cc7b9d377553fcaf2f1dc2bf36123165181ae486e0b6ef4509166",
+    "meta/calibration-fit-binding.json": "3f4d8236622d579b79410eb2d97fab84ccb1e9a9e14341aa822c034aa849d680",
+    "code/fit_calibration_reviewed.py": "c6511269a6de44ec2177ce633615a8845598575e00e94394a2bc84063c86033a",
+    "code/report_calibration.py": "54b7b60b5c933ff5a29175ac02f2d4e85256e85b8b0277de10c75b1a0e13b792",
+    "code/candidate_identities.py": "a311b37d45d59f379ce00b58d1350b5eb308da0b9a24d34ad2facdb495d9991d"
+  },
+  "runtime_support": "implemented and tested; parameter file not yet frozen",
+  "schema_version": "exp4_crossfit_proposal_v1",
+  "scene_to_fold": {
+    "6s7QHgap2fW": 0,
+    "TEEsavR23oF": 0,
+    "QaLdnwvtxbs": 0,
+    "cvZr5TUy5C5": 0,
+    "Nfvxx8J5NCo": 1,
+    "p53SfW6mjZe": 1,
+    "4ok3usBNeis": 1,
+    "zt1RVoi7PcG": 1,
+    "XB4GS9ShBRE": 2,
+    "svBbv1Pavdk": 2,
+    "wcojb4TFT35": 2,
+    "DYehNKdT76V": 2,
+    "qyAac8rV8Zk": 3,
+    "bxsVRursffK": 3,
+    "mL8ThkuaVTM": 3,
+    "Dd4bFSTQ8gi": 3,
+    "5cdEh9F2hJL": 4,
+    "q3zU7Yy5E5s": 4,
+    "mv2HUxq3B53": 4,
+    "ziup5kvtCCR": 4
+  },
+  "parameters_excluding_fold": {
+    "0": {
+      "a": 48.11459908252667,
+      "b0": -12.856439210146924,
+      "pi": 0.16010230179028134,
+      "c_exp": 1.2759422599453465
+    },
+    "1": {
+      "a": 44.269786779387815,
+      "b0": -12.012253606335642,
+      "pi": 0.14802149487054225,
+      "c_exp": 0.9337494521752285
+    },
+    "2": {
+      "a": 43.68026071330188,
+      "b0": -11.910765740252264,
+      "pi": 0.15104166666666666,
+      "c_exp": 1.3757265609939344
+    }
+  },
+  "parameters_for_uncollected_folds": {
+    "a": 45.247046846062844,
+    "b0": -12.236784283062185,
+    "pi": 0.15287028227085317,
+    "c_exp": 1.1948893036836603
+  }
+}

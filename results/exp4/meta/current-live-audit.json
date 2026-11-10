@@ -1,11 +1,11 @@
 {
-  "checked_at_utc": "2026-11-10T01:19:36.052660+00:00",
-  "controller_status": "running",
+  "checked_at_utc": "2026-11-10T01:51:28.070445+00:00",
+  "controller_status": "completed_three_folds_pending_CP2a",
   "controller_pid": 31036,
-  "controller_live_and_matching": true,
+  "controller_live_and_matching": false,
   "boot_id_matches": true,
   "frozen_files_unchanged": true,
-  "completed_episodes": 353,
+  "completed_episodes": 360,
   "assigned_episodes": 360,
   "jobs": [
     {
@@ -310,26 +310,26 @@
       "scene": "DYehNKdT76V",
       "gpu": 2,
       "pid": 278975,
-      "status": "running",
-      "launcher_live_and_matching": true,
+      "status": "completed",
+      "launcher_live_and_matching": false,
       "telemetry_status": "available",
-      "completed_episodes": 23,
-      "accepted_actions": 12322,
-      "snapshots": 1267,
+      "completed_episodes": 30,
+      "accepted_actions": 15307,
+      "snapshots": 1576,
       "latest_replays_checked": 10,
       "event_counts": {
-        "empty_activation_started": 25,
-        "candidate_first_appearance": 919,
-        "empty_activation": 24,
-        "candidate_checked": 239,
-        "verification_final": 239,
-        "noncandidate_verification": 445
+        "empty_activation_started": 31,
+        "candidate_first_appearance": 1122,
+        "empty_activation": 30,
+        "candidate_checked": 292,
+        "verification_final": 292,
+        "noncandidate_verification": 568
       },
       "labels_v": {
-        "0": 208,
-        "1": 31
+        "0": 253,
+        "1": 39
       },
-      "completed_episode_verification_events": 234,
+      "completed_episode_verification_events": 292,
       "shadow_error_bytes": 0
     }
   ]

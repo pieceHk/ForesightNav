@@ -180,10 +180,20 @@
     "finish_calibration.py": "f6313dfb2210c4333b6c3b2749d0ef33d13903b635396d663c371c40b6d47862",
     "candidate_identities.py": "a311b37d45d59f379ce00b58d1350b5eb308da0b9a24d34ad2facdb495d9991d"
   },
-  "status": "waiting_for_complete_collection",
-  "completed_steps": [],
+  "status": "completed_pending_CP2a_review",
+  "completed_steps": [
+    "audit_completed_calibration.py",
+    "verify_action_path_pipeline.py",
+    "archive_calibration_logs.py",
+    "fit_calibration_reviewed.py",
+    "report_calibration.py"
+  ],
   "freezes_parameters": false,
   "launches_native_workers": false,
-  "last_checked_at_utc": "2026-11-10T01:20:00.973242+00:00",
-  "collection_status": "running"
+  "last_checked_at_utc": "2026-11-10T01:51:03.404149+00:00",
+  "collection_status": "completed_three_folds_pending_CP2a",
+  "current_step": "report_calibration.py",
+  "finished_at_utc": "2026-11-10T01:54:43.949082+00:00",
+  "fit_sha256": "88bd43083c73f4af1482abd4aa74fdc95fddf183817ede7475b5a5356735ab5f",
+  "report_sha256": "2932216c4f942f57a7d91516f13bd892451c06f299b626c62d034648ca2cba33"
 }

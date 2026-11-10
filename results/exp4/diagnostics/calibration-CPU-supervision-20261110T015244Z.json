@@ -1,0 +1,67 @@
+{
+  "observer": {
+    "observer_pid": 302476,
+    "start_ticks": "8388155",
+    "started_at_utc": "2026-11-10T01:52:44.351628+00:00",
+    "log": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/logs/calibration-CPU-observer-a3-20261110T015244Z.jsonl",
+    "max_polls": 80,
+    "interval_seconds": 45,
+    "scope": "read-only bound CPU281840 phase observation after completed native360; never rerun analysis or launch workers"
+  },
+  "tool_session": 60860,
+  "tool_exit_code": 0,
+  "polls": 4,
+  "first": {
+    "poll": 1,
+    "checked_at_utc": "2026-11-10T01:52:44.356320+00:00",
+    "CPU_pid": 281840,
+    "CPU_live_matching": true,
+    "CPU_status": "processing",
+    "current_step": "verify_action_path_pipeline.py",
+    "completed_steps": [
+      "audit_completed_calibration.py"
+    ],
+    "native160_unchanged": true,
+    "CPU11_unchanged": true,
+    "boot_matches": true,
+    "collection_completed_normally": true,
+    "children": "PID    PPID STAT     ELAPSED     TIME %CPU COMMAND\n 302460  281840 R          00:11 00:00:10 97.0 /nvme/khy/conda_envs/pbsp/navigation/bin/python /nvme/khy/ForesightNav_exp4_depthfix/results/exp4/code/verify_action_path_pipeline.py",
+    "error": null
+  },
+  "last": {
+    "poll": 4,
+    "checked_at_utc": "2026-11-10T01:54:59.879605+00:00",
+    "CPU_pid": 281840,
+    "CPU_live_matching": false,
+    "CPU_status": "completed_pending_CP2a_review",
+    "current_step": "report_calibration.py",
+    "completed_steps": [
+      "audit_completed_calibration.py",
+      "verify_action_path_pipeline.py",
+      "archive_calibration_logs.py",
+      "fit_calibration_reviewed.py",
+      "report_calibration.py"
+    ],
+    "native160_unchanged": true,
+    "CPU11_unchanged": true,
+    "boot_matches": true,
+    "collection_completed_normally": true,
+    "children": "PID    PPID STAT     ELAPSED     TIME %CPU COMMAND",
+    "error": null,
+    "observation_finished_reason": "completed_pending_CP2a_review"
+  },
+  "all_native160_unchanged": true,
+  "all_CPU11_unchanged": true,
+  "all_boot_matches": true,
+  "log_sha256": "3e5dcf4a2dcbcf010f2961d26fb8eb99235151b8fc9c5407834adcc0d4234516",
+  "postprocess_status": "completed_pending_CP2a_review",
+  "actual_report_check": {
+    "exit_code": 0,
+    "output": {
+      "ready": true,
+      "freezes_parameters": false
+    }
+  },
+  "final_parameter_frozen": false,
+  "user_numeric_confirmation_pending": true
+}
