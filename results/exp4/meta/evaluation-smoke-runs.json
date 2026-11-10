@@ -167,7 +167,7 @@
   "calibration_selection": "cross_fit",
   "stage": "smoke",
   "attempt": "a3",
-  "status": "running",
+  "status": "completed",
   "controller_pid": 317773,
   "boot_id": "23443655-6f2f-4063-a412-e255f3a91e62",
   "jobs": [
@@ -255,8 +255,13 @@
         "--episode",
         "0"
       ],
-      "status": "running",
-      "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_120628_206944_exp4_full_exp4-smoke-a3-5cdEh9F2hJL"
+      "status": "completed",
+      "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_120628_206944_exp4_full_exp4-smoke-a3-5cdEh9F2hJL",
+      "returncode": 0,
+      "audit": {
+        "completed_episodes": 1,
+        "identity_count": 1
+      }
     },
     {
       "scene": "6s7QHgap2fW",
@@ -296,8 +301,803 @@
         "--episode",
         "0"
       ],
-      "status": "running",
-      "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_122105_671138_exp4_full_exp4-smoke-a3-6s7QHgap2fW"
+      "status": "completed",
+      "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_122105_671138_exp4_full_exp4-smoke-a3-6s7QHgap2fW",
+      "returncode": 0,
+      "audit": {
+        "completed_episodes": 1,
+        "identity_count": 1
+      }
+    },
+    {
+      "scene": "DYehNKdT76V",
+      "identities": [
+        {
+          "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+          "scene_id": "DYehNKdT76V",
+          "runtime_episode_id": "0",
+          "source_episode_ids": [
+            "80",
+            "93",
+            "49"
+          ],
+          "ordered_categories": [
+            "couch",
+            "toilet",
+            "chair"
+          ]
+        }
+      ],
+      "gpu": 3,
+      "pid": 326831,
+      "log": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/logs/evaluation-smoke-a3-DYehNKdT76V.controller.log",
+      "command": [
+        "/nvme/khy/conda_envs/pbsp/navigation/bin/python",
+        "/nvme/khy/ForesightNav_exp4_depthfix/run.py",
+        "--config",
+        "configs/experiments/exp4_full.yaml",
+        "--runtime",
+        "runtime.exp4.local.yaml",
+        "--gpus",
+        "3,3",
+        "--scene",
+        "DYehNKdT76V",
+        "--tag",
+        "exp4-smoke-a3-DYehNKdT76V",
+        "--episode",
+        "0"
+      ],
+      "status": "completed",
+      "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_122646_978272_exp4_full_exp4-smoke-a3-DYehNKdT76V",
+      "returncode": 0,
+      "audit": {
+        "completed_episodes": 1,
+        "identity_count": 1
+      }
+    },
+    {
+      "scene": "Dd4bFSTQ8gi",
+      "identities": [
+        {
+          "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+          "scene_id": "Dd4bFSTQ8gi",
+          "runtime_episode_id": "0",
+          "source_episode_ids": [
+            "24",
+            "79",
+            "78"
+          ],
+          "ordered_categories": [
+            "bed",
+            "toilet",
+            "chair"
+          ]
+        }
+      ],
+      "gpu": 3,
+      "pid": 332126,
+      "log": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/logs/evaluation-smoke-a3-Dd4bFSTQ8gi.controller.log",
+      "command": [
+        "/nvme/khy/conda_envs/pbsp/navigation/bin/python",
+        "/nvme/khy/ForesightNav_exp4_depthfix/run.py",
+        "--config",
+        "configs/experiments/exp4_full.yaml",
+        "--runtime",
+        "runtime.exp4.local.yaml",
+        "--gpus",
+        "3,3",
+        "--scene",
+        "Dd4bFSTQ8gi",
+        "--tag",
+        "exp4-smoke-a3-Dd4bFSTQ8gi",
+        "--episode",
+        "0"
+      ],
+      "status": "completed",
+      "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_124138_969462_exp4_full_exp4-smoke-a3-Dd4bFSTQ8gi",
+      "returncode": 0,
+      "audit": {
+        "completed_episodes": 1,
+        "identity_count": 1
+      }
+    },
+    {
+      "scene": "Nfvxx8J5NCo",
+      "identities": [
+        {
+          "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+          "scene_id": "Nfvxx8J5NCo",
+          "runtime_episode_id": "0",
+          "source_episode_ids": [
+            "83",
+            "41",
+            "11"
+          ],
+          "ordered_categories": [
+            "tv",
+            "bed",
+            "couch"
+          ]
+        }
+      ],
+      "gpu": 2,
+      "pid": 332560,
+      "log": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/logs/evaluation-smoke-a3-Nfvxx8J5NCo.controller.log",
+      "command": [
+        "/nvme/khy/conda_envs/pbsp/navigation/bin/python",
+        "/nvme/khy/ForesightNav_exp4_depthfix/run.py",
+        "--config",
+        "configs/experiments/exp4_full.yaml",
+        "--runtime",
+        "runtime.exp4.local.yaml",
+        "--gpus",
+        "2,2",
+        "--scene",
+        "Nfvxx8J5NCo",
+        "--tag",
+        "exp4-smoke-a3-Nfvxx8J5NCo",
+        "--episode",
+        "0"
+      ],
+      "status": "completed",
+      "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_124216_420027_exp4_full_exp4-smoke-a3-Nfvxx8J5NCo",
+      "returncode": 0,
+      "audit": {
+        "completed_episodes": 1,
+        "identity_count": 1
+      }
+    },
+    {
+      "scene": "QaLdnwvtxbs",
+      "identities": [
+        {
+          "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+          "scene_id": "QaLdnwvtxbs",
+          "runtime_episode_id": "0",
+          "source_episode_ids": [
+            "96",
+            "82",
+            "75"
+          ],
+          "ordered_categories": [
+            "bed",
+            "tv",
+            "bed"
+          ]
+        }
+      ],
+      "gpu": 2,
+      "pid": 335592,
+      "log": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/logs/evaluation-smoke-a3-QaLdnwvtxbs.controller.log",
+      "command": [
+        "/nvme/khy/conda_envs/pbsp/navigation/bin/python",
+        "/nvme/khy/ForesightNav_exp4_depthfix/run.py",
+        "--config",
+        "configs/experiments/exp4_full.yaml",
+        "--runtime",
+        "runtime.exp4.local.yaml",
+        "--gpus",
+        "2,2",
+        "--scene",
+        "QaLdnwvtxbs",
+        "--tag",
+        "exp4-smoke-a3-QaLdnwvtxbs",
+        "--episode",
+        "0"
+      ],
+      "status": "completed",
+      "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_125039_066607_exp4_full_exp4-smoke-a3-QaLdnwvtxbs",
+      "returncode": 0,
+      "audit": {
+        "completed_episodes": 1,
+        "identity_count": 1
+      }
+    },
+    {
+      "scene": "TEEsavR23oF",
+      "identities": [
+        {
+          "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+          "scene_id": "TEEsavR23oF",
+          "runtime_episode_id": "0",
+          "source_episode_ids": [
+            "90",
+            "43",
+            "97"
+          ],
+          "ordered_categories": [
+            "chair",
+            "toilet",
+            "plant"
+          ]
+        }
+      ],
+      "gpu": 3,
+      "pid": 336150,
+      "log": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/logs/evaluation-smoke-a3-TEEsavR23oF.controller.log",
+      "command": [
+        "/nvme/khy/conda_envs/pbsp/navigation/bin/python",
+        "/nvme/khy/ForesightNav_exp4_depthfix/run.py",
+        "--config",
+        "configs/experiments/exp4_full.yaml",
+        "--runtime",
+        "runtime.exp4.local.yaml",
+        "--gpus",
+        "3,3",
+        "--scene",
+        "TEEsavR23oF",
+        "--tag",
+        "exp4-smoke-a3-TEEsavR23oF",
+        "--episode",
+        "0"
+      ],
+      "status": "completed",
+      "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_125217_654105_exp4_full_exp4-smoke-a3-TEEsavR23oF",
+      "returncode": 0,
+      "audit": {
+        "completed_episodes": 1,
+        "identity_count": 1
+      }
+    },
+    {
+      "scene": "XB4GS9ShBRE",
+      "identities": [
+        {
+          "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+          "scene_id": "XB4GS9ShBRE",
+          "runtime_episode_id": "0",
+          "source_episode_ids": [
+            "23",
+            "35",
+            "47"
+          ],
+          "ordered_categories": [
+            "chair",
+            "toilet",
+            "couch"
+          ]
+        }
+      ],
+      "gpu": 2,
+      "pid": 340767,
+      "log": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/logs/evaluation-smoke-a3-XB4GS9ShBRE.controller.log",
+      "command": [
+        "/nvme/khy/conda_envs/pbsp/navigation/bin/python",
+        "/nvme/khy/ForesightNav_exp4_depthfix/run.py",
+        "--config",
+        "configs/experiments/exp4_full.yaml",
+        "--runtime",
+        "runtime.exp4.local.yaml",
+        "--gpus",
+        "2,2",
+        "--scene",
+        "XB4GS9ShBRE",
+        "--tag",
+        "exp4-smoke-a3-XB4GS9ShBRE",
+        "--episode",
+        "0"
+      ],
+      "status": "completed",
+      "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_125749_112622_exp4_full_exp4-smoke-a3-XB4GS9ShBRE",
+      "returncode": 0,
+      "audit": {
+        "completed_episodes": 1,
+        "identity_count": 1
+      }
+    },
+    {
+      "scene": "bxsVRursffK",
+      "identities": [
+        {
+          "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+          "scene_id": "bxsVRursffK",
+          "runtime_episode_id": "0",
+          "source_episode_ids": [
+            "69",
+            "58",
+            "51"
+          ],
+          "ordered_categories": [
+            "chair",
+            "bed",
+            "chair"
+          ]
+        }
+      ],
+      "gpu": 2,
+      "pid": 349664,
+      "log": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/logs/evaluation-smoke-a3-bxsVRursffK.controller.log",
+      "command": [
+        "/nvme/khy/conda_envs/pbsp/navigation/bin/python",
+        "/nvme/khy/ForesightNav_exp4_depthfix/run.py",
+        "--config",
+        "configs/experiments/exp4_full.yaml",
+        "--runtime",
+        "runtime.exp4.local.yaml",
+        "--gpus",
+        "2,2",
+        "--scene",
+        "bxsVRursffK",
+        "--tag",
+        "exp4-smoke-a3-bxsVRursffK",
+        "--episode",
+        "0"
+      ],
+      "status": "completed",
+      "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_131947_400419_exp4_full_exp4-smoke-a3-bxsVRursffK",
+      "returncode": 0,
+      "audit": {
+        "completed_episodes": 1,
+        "identity_count": 1
+      }
+    },
+    {
+      "scene": "cvZr5TUy5C5",
+      "identities": [
+        {
+          "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+          "scene_id": "cvZr5TUy5C5",
+          "runtime_episode_id": "0",
+          "source_episode_ids": [
+            "89",
+            "85",
+            "56"
+          ],
+          "ordered_categories": [
+            "toilet",
+            "bed",
+            "chair"
+          ]
+        }
+      ],
+      "gpu": 3,
+      "pid": 352788,
+      "log": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/logs/evaluation-smoke-a3-cvZr5TUy5C5.controller.log",
+      "command": [
+        "/nvme/khy/conda_envs/pbsp/navigation/bin/python",
+        "/nvme/khy/ForesightNav_exp4_depthfix/run.py",
+        "--config",
+        "configs/experiments/exp4_full.yaml",
+        "--runtime",
+        "runtime.exp4.local.yaml",
+        "--gpus",
+        "3,3",
+        "--scene",
+        "cvZr5TUy5C5",
+        "--tag",
+        "exp4-smoke-a3-cvZr5TUy5C5",
+        "--episode",
+        "0"
+      ],
+      "status": "completed",
+      "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_132534_914613_exp4_full_exp4-smoke-a3-cvZr5TUy5C5",
+      "returncode": 0,
+      "audit": {
+        "completed_episodes": 1,
+        "identity_count": 1
+      }
+    },
+    {
+      "scene": "mL8ThkuaVTM",
+      "identities": [
+        {
+          "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+          "scene_id": "mL8ThkuaVTM",
+          "runtime_episode_id": "0",
+          "source_episode_ids": [
+            "32",
+            "53",
+            "84"
+          ],
+          "ordered_categories": [
+            "toilet",
+            "chair",
+            "toilet"
+          ]
+        }
+      ],
+      "gpu": 2,
+      "pid": 353691,
+      "log": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/logs/evaluation-smoke-a3-mL8ThkuaVTM.controller.log",
+      "command": [
+        "/nvme/khy/conda_envs/pbsp/navigation/bin/python",
+        "/nvme/khy/ForesightNav_exp4_depthfix/run.py",
+        "--config",
+        "configs/experiments/exp4_full.yaml",
+        "--runtime",
+        "runtime.exp4.local.yaml",
+        "--gpus",
+        "2,2",
+        "--scene",
+        "mL8ThkuaVTM",
+        "--tag",
+        "exp4-smoke-a3-mL8ThkuaVTM",
+        "--episode",
+        "0"
+      ],
+      "status": "completed",
+      "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_132745_084300_exp4_full_exp4-smoke-a3-mL8ThkuaVTM",
+      "returncode": 0,
+      "audit": {
+        "completed_episodes": 1,
+        "identity_count": 1
+      }
+    },
+    {
+      "scene": "mv2HUxq3B53",
+      "identities": [
+        {
+          "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+          "scene_id": "mv2HUxq3B53",
+          "runtime_episode_id": "0",
+          "source_episode_ids": [
+            "74",
+            "44",
+            "77"
+          ],
+          "ordered_categories": [
+            "toilet",
+            "bed",
+            "couch"
+          ]
+        }
+      ],
+      "gpu": 3,
+      "pid": 357201,
+      "log": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/logs/evaluation-smoke-a3-mv2HUxq3B53.controller.log",
+      "command": [
+        "/nvme/khy/conda_envs/pbsp/navigation/bin/python",
+        "/nvme/khy/ForesightNav_exp4_depthfix/run.py",
+        "--config",
+        "configs/experiments/exp4_full.yaml",
+        "--runtime",
+        "runtime.exp4.local.yaml",
+        "--gpus",
+        "3,3",
+        "--scene",
+        "mv2HUxq3B53",
+        "--tag",
+        "exp4-smoke-a3-mv2HUxq3B53",
+        "--episode",
+        "0"
+      ],
+      "status": "completed",
+      "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_133926_546690_exp4_full_exp4-smoke-a3-mv2HUxq3B53",
+      "returncode": 0,
+      "audit": {
+        "completed_episodes": 1,
+        "identity_count": 1
+      }
+    },
+    {
+      "scene": "p53SfW6mjZe",
+      "identities": [
+        {
+          "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+          "scene_id": "p53SfW6mjZe",
+          "runtime_episode_id": "0",
+          "source_episode_ids": [
+            "68",
+            "50",
+            "63"
+          ],
+          "ordered_categories": [
+            "couch",
+            "toilet",
+            "chair"
+          ]
+        }
+      ],
+      "gpu": 2,
+      "pid": 358419,
+      "log": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/logs/evaluation-smoke-a3-p53SfW6mjZe.controller.log",
+      "command": [
+        "/nvme/khy/conda_envs/pbsp/navigation/bin/python",
+        "/nvme/khy/ForesightNav_exp4_depthfix/run.py",
+        "--config",
+        "configs/experiments/exp4_full.yaml",
+        "--runtime",
+        "runtime.exp4.local.yaml",
+        "--gpus",
+        "2,2",
+        "--scene",
+        "p53SfW6mjZe",
+        "--tag",
+        "exp4-smoke-a3-p53SfW6mjZe",
+        "--episode",
+        "0"
+      ],
+      "status": "completed",
+      "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_134247_034312_exp4_full_exp4-smoke-a3-p53SfW6mjZe",
+      "returncode": 0,
+      "audit": {
+        "completed_episodes": 1,
+        "identity_count": 1
+      }
+    },
+    {
+      "scene": "q3zU7Yy5E5s",
+      "identities": [
+        {
+          "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+          "scene_id": "q3zU7Yy5E5s",
+          "runtime_episode_id": "0",
+          "source_episode_ids": [
+            "88",
+            "54",
+            "64"
+          ],
+          "ordered_categories": [
+            "toilet",
+            "couch",
+            "chair"
+          ]
+        }
+      ],
+      "gpu": 3,
+      "pid": 359691,
+      "log": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/logs/evaluation-smoke-a3-q3zU7Yy5E5s.controller.log",
+      "command": [
+        "/nvme/khy/conda_envs/pbsp/navigation/bin/python",
+        "/nvme/khy/ForesightNav_exp4_depthfix/run.py",
+        "--config",
+        "configs/experiments/exp4_full.yaml",
+        "--runtime",
+        "runtime.exp4.local.yaml",
+        "--gpus",
+        "3,3",
+        "--scene",
+        "q3zU7Yy5E5s",
+        "--tag",
+        "exp4-smoke-a3-q3zU7Yy5E5s",
+        "--episode",
+        "0"
+      ],
+      "status": "completed",
+      "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_134627_704560_exp4_full_exp4-smoke-a3-q3zU7Yy5E5s",
+      "returncode": 0,
+      "audit": {
+        "completed_episodes": 1,
+        "identity_count": 1
+      }
+    },
+    {
+      "scene": "qyAac8rV8Zk",
+      "identities": [
+        {
+          "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+          "scene_id": "qyAac8rV8Zk",
+          "runtime_episode_id": "0",
+          "source_episode_ids": [
+            "44",
+            "97",
+            "45"
+          ],
+          "ordered_categories": [
+            "bed",
+            "tv",
+            "toilet"
+          ]
+        }
+      ],
+      "gpu": 2,
+      "pid": 361851,
+      "log": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/logs/evaluation-smoke-a3-qyAac8rV8Zk.controller.log",
+      "command": [
+        "/nvme/khy/conda_envs/pbsp/navigation/bin/python",
+        "/nvme/khy/ForesightNav_exp4_depthfix/run.py",
+        "--config",
+        "configs/experiments/exp4_full.yaml",
+        "--runtime",
+        "runtime.exp4.local.yaml",
+        "--gpus",
+        "2,2",
+        "--scene",
+        "qyAac8rV8Zk",
+        "--tag",
+        "exp4-smoke-a3-qyAac8rV8Zk",
+        "--episode",
+        "0"
+      ],
+      "status": "completed",
+      "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_135408_722543_exp4_full_exp4-smoke-a3-qyAac8rV8Zk",
+      "returncode": 0,
+      "audit": {
+        "completed_episodes": 1,
+        "identity_count": 1
+      }
+    },
+    {
+      "scene": "svBbv1Pavdk",
+      "identities": [
+        {
+          "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+          "scene_id": "svBbv1Pavdk",
+          "runtime_episode_id": "0",
+          "source_episode_ids": [
+            "28",
+            "86",
+            "42"
+          ],
+          "ordered_categories": [
+            "plant",
+            "couch",
+            "bed"
+          ]
+        }
+      ],
+      "gpu": 3,
+      "pid": 364465,
+      "log": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/logs/evaluation-smoke-a3-svBbv1Pavdk.controller.log",
+      "command": [
+        "/nvme/khy/conda_envs/pbsp/navigation/bin/python",
+        "/nvme/khy/ForesightNav_exp4_depthfix/run.py",
+        "--config",
+        "configs/experiments/exp4_full.yaml",
+        "--runtime",
+        "runtime.exp4.local.yaml",
+        "--gpus",
+        "3,3",
+        "--scene",
+        "svBbv1Pavdk",
+        "--tag",
+        "exp4-smoke-a3-svBbv1Pavdk",
+        "--episode",
+        "0"
+      ],
+      "status": "completed",
+      "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_140319_830579_exp4_full_exp4-smoke-a3-svBbv1Pavdk",
+      "returncode": 0,
+      "audit": {
+        "completed_episodes": 1,
+        "identity_count": 1
+      }
+    },
+    {
+      "scene": "wcojb4TFT35",
+      "identities": [
+        {
+          "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+          "scene_id": "wcojb4TFT35",
+          "runtime_episode_id": "0",
+          "source_episode_ids": [
+            "93",
+            "42",
+            "65"
+          ],
+          "ordered_categories": [
+            "toilet",
+            "couch",
+            "tv"
+          ]
+        }
+      ],
+      "gpu": 2,
+      "pid": 368726,
+      "log": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/logs/evaluation-smoke-a3-wcojb4TFT35.controller.log",
+      "command": [
+        "/nvme/khy/conda_envs/pbsp/navigation/bin/python",
+        "/nvme/khy/ForesightNav_exp4_depthfix/run.py",
+        "--config",
+        "configs/experiments/exp4_full.yaml",
+        "--runtime",
+        "runtime.exp4.local.yaml",
+        "--gpus",
+        "2,2",
+        "--scene",
+        "wcojb4TFT35",
+        "--tag",
+        "exp4-smoke-a3-wcojb4TFT35",
+        "--episode",
+        "0"
+      ],
+      "status": "completed",
+      "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_141110_886498_exp4_full_exp4-smoke-a3-wcojb4TFT35",
+      "returncode": 0,
+      "audit": {
+        "completed_episodes": 1,
+        "identity_count": 1
+      }
+    },
+    {
+      "scene": "ziup5kvtCCR",
+      "identities": [
+        {
+          "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+          "scene_id": "ziup5kvtCCR",
+          "runtime_episode_id": "0",
+          "source_episode_ids": [
+            "37",
+            "90",
+            "61"
+          ],
+          "ordered_categories": [
+            "chair",
+            "plant",
+            "bed"
+          ]
+        }
+      ],
+      "gpu": 3,
+      "pid": 370869,
+      "log": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/logs/evaluation-smoke-a3-ziup5kvtCCR.controller.log",
+      "command": [
+        "/nvme/khy/conda_envs/pbsp/navigation/bin/python",
+        "/nvme/khy/ForesightNav_exp4_depthfix/run.py",
+        "--config",
+        "configs/experiments/exp4_full.yaml",
+        "--runtime",
+        "runtime.exp4.local.yaml",
+        "--gpus",
+        "3,3",
+        "--scene",
+        "ziup5kvtCCR",
+        "--tag",
+        "exp4-smoke-a3-ziup5kvtCCR",
+        "--episode",
+        "0"
+      ],
+      "status": "completed",
+      "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_141852_029193_exp4_full_exp4-smoke-a3-ziup5kvtCCR",
+      "returncode": 0,
+      "audit": {
+        "completed_episodes": 1,
+        "identity_count": 1
+      }
+    },
+    {
+      "scene": "zt1RVoi7PcG",
+      "identities": [
+        {
+          "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+          "scene_id": "zt1RVoi7PcG",
+          "runtime_episode_id": "0",
+          "source_episode_ids": [
+            "107",
+            "58",
+            "84"
+          ],
+          "ordered_categories": [
+            "bed",
+            "couch",
+            "toilet"
+          ]
+        }
+      ],
+      "gpu": 2,
+      "pid": 373427,
+      "log": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/logs/evaluation-smoke-a3-zt1RVoi7PcG.controller.log",
+      "command": [
+        "/nvme/khy/conda_envs/pbsp/navigation/bin/python",
+        "/nvme/khy/ForesightNav_exp4_depthfix/run.py",
+        "--config",
+        "configs/experiments/exp4_full.yaml",
+        "--runtime",
+        "runtime.exp4.local.yaml",
+        "--gpus",
+        "2,2",
+        "--scene",
+        "zt1RVoi7PcG",
+        "--tag",
+        "exp4-smoke-a3-zt1RVoi7PcG",
+        "--episode",
+        "0"
+      ],
+      "status": "completed",
+      "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_142703_176144_exp4_full_exp4-smoke-a3-zt1RVoi7PcG",
+      "returncode": 0,
+      "audit": {
+        "completed_episodes": 1,
+        "identity_count": 1
+      }
     }
-  ]
+  ],
+  "artifact_sha256": {
+    "summary/full.json": "d797a28697f8bbe39d71ef869171d7acea15641b05130a3ea23048d85038f748",
+    "logs/full_episodes.jsonl": "fc0d9d5531a7a5f2cd8c398f2d8a1e7349505ddc5492781ded1665efbcc532a0",
+    "logs/full_decisions.jsonl": "2b577d580943824b9d716458d8e5f8c943e9ab76f77767dc5560840ee84e9d0f"
+  },
+  "n_episodes": 20,
+  "summary_path": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/diagnostics/CP3/summary/full.json",
+  "n_error": 0
 }

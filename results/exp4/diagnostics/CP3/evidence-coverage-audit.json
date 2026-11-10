@@ -1,36 +1,61 @@
 {
-  "checked_at_utc": "2026-11-10T04:38:13.248971+00:00",
+  "checked_at_utc": "2026-11-10T06:32:56.136828+00:00",
   "scope": "completed native Full smoke cases only; no GT, fit, or evaluation tuning",
-  "completed_scenes": 2,
-  "snapshots": 99,
+  "completed_scenes": 20,
+  "snapshots": 1999,
   "counts": {
-    "snapshots": 99,
-    "nonempty_current_roots": 84,
-    "multiple_current_candidates": 75,
-    "pre_final_roots": 53,
-    "pre_final_with_any_future_candidates": 51,
-    "current_q_S_B_records_checked": 320
+    "snapshots": 1999,
+    "nonempty_current_roots": 1589,
+    "multiple_current_candidates": 1278,
+    "pre_final_roots": 1394,
+    "pre_final_with_any_future_candidates": 1363,
+    "current_q_S_B_records_checked": 5840
   },
   "scene_snapshots": {
     "4ok3usBNeis": 40,
-    "5cdEh9F2hJL": 59
+    "5cdEh9F2hJL": 59,
+    "6s7QHgap2fW": 118,
+    "DYehNKdT76V": 108,
+    "Dd4bFSTQ8gi": 70,
+    "Nfvxx8J5NCo": 68,
+    "QaLdnwvtxbs": 45,
+    "TEEsavR23oF": 146,
+    "XB4GS9ShBRE": 153,
+    "bxsVRursffK": 26,
+    "cvZr5TUy5C5": 153,
+    "mL8ThkuaVTM": 153,
+    "mv2HUxq3B53": 49,
+    "p53SfW6mjZe": 81,
+    "q3zU7Yy5E5s": 153,
+    "qyAac8rV8Zk": 153,
+    "svBbv1Pavdk": 153,
+    "wcojb4TFT35": 153,
+    "ziup5kvtCCR": 86,
+    "zt1RVoi7PcG": 32
   },
   "histogram_unit": "candidate occurrence in planning snapshot, not distinct candidate",
   "N_views_histograms": {
     "current": {
-      "0": 115,
-      "1": 83,
-      "2": 90,
-      "3": 18,
-      "4": 5,
-      "5": 9
+      "0": 1760,
+      "1": 1757,
+      "2": 1288,
+      "3": 347,
+      "4": 419,
+      "5": 52,
+      "6": 140,
+      "7": 23,
+      "8": 54
     },
     "future": {
-      "0": 101,
-      "1": 111,
-      "2": 142,
-      "3": 19,
-      "4": 5
+      "0": 2470,
+      "1": 2653,
+      "2": 1542,
+      "3": 719,
+      "4": 493,
+      "5": 229,
+      "6": 208,
+      "7": 80,
+      "8": 38
     }
   },
   "violations": [],

@@ -1,0 +1,1609 @@
+{
+  "generated_at_utc": "2026-11-10T06:32:59.010934+00:00",
+  "stage": "smoke",
+  "scope": "Exact native launch/status/source metadata, episode identities, metrics, trajectories, BLP and SCSP records, and role environments; original files retained",
+  "excluded": "Images, model/map assets, private runtime YAML and unrelated host diagnostics",
+  "gzip": {
+    "level": 6,
+    "mtime": 0,
+    "filename": ""
+  },
+  "tar_headers": {
+    "mtime": 0,
+    "uid": 0,
+    "gid": 0,
+    "mode": "0644"
+  },
+  "ledger_sha256": "f8a981f67e6f83edd65435402c5e156493a98f37b92e178a0dd7cd731ee71839",
+  "parameter_sha256": "e1d75f3c9503c7439467748fc97be6ae2ad450c429f40dc7235b1564ff7852ae",
+  "source_fingerprint": {
+    "pbsp/__init__.py": "204a77e8c809c9b8f38114173d35f5bcf7585e9893383c3eef5b2dca30aeb619",
+    "pbsp/adapters/__init__.py": "9da64df015e12dd3130227acc397bd90bf58d5cd5f4c52108dfb9fc48830e12d",
+    "pbsp/adapters/detic.py": "46eb4c882bf3c28a72c15b2daa5b3657e9231674098bb5f57a68b1c0970f5f81",
+    "pbsp/adapters/detic_perception.py": "9e4bba49cf509fc1475ad3c853a857a76557412b2d8ca6aa34d80fb3542297e3",
+    "pbsp/adapters/embodied_splat.py": "e7c8d3d17e002cd4138b84dda63dce1d93f082d08692f45f7df2acbf420cd42c",
+    "pbsp/adapters/embodied_splat_config.py": "de4b1ff0bba5038edd83dfb3abf12ea51d9b432d32593aea49b967eb18682bda",
+    "pbsp/adapters/embodied_splat_model.py": "4e1523322682695d0044ae1330a11563645a8c1612cb2a6c6e83ace2fced9f96",
+    "pbsp/adapters/embodied_splat_query.py": "633d74c8faff8780c01a0d8bee183cb3ada55ae2907a235e8f302ec07813b034",
+    "pbsp/adapters/embodied_splat_semantics.py": "60ba26ecfe9a50acab3fc5c6161a734efcad6e335a39564d970604de490e8c4a",
+    "pbsp/adapters/frontier_runtime.py": "167752c785efd34811ad6de36d8d75869b5550b0293a54ffb8e024ef3e1bec15",
+    "pbsp/adapters/geometry.py": "ca53f5c893e79069329ffd1a46e9f892834390aae284fe7c8a9854df571a8be6",
+    "pbsp/adapters/goat.py": "5263ebab4c71a4f219eb0748025985b08a86f21bc5cafe490dcfccd808f44fd8",
+    "pbsp/adapters/habitat.py": "337e53043f93e041f980e63f0472ba5d448dc3cd8d04c15a223975e16fde740c",
+    "pbsp/adapters/habitat_config.py": "c406a6644561e06e9ee36132d90a5463851ef2fdacbfc978538b47f5d409116d",
+    "pbsp/adapters/lagmemo_agent.py": "0748f8f8df5b464d051502476e6f98f1fc5c4801199fa201c388527b10853992",
+    "pbsp/adapters/model_resources.py": "560697e24cef3a764fb27ae76b42ba2942ef8ddc2b23025fd9a092f4fc3c9cf1",
+    "pbsp/adapters/objectnav.py": "41a3266bec982b2401708602b379f1c4cf0a8cf2a0c44b875cdd84afc9b7a911",
+    "pbsp/adapters/openseg.py": "0d437cd2546c92cea07382acfd68f6790bf06dac21cf630e27513f69db2fc136",
+    "pbsp/adapters/perception.py": "dffaa6ab8a8052e5184bb8a25da74279ff8c81b747a9faa98325a8bd7f6b5fd5",
+    "pbsp/agent.py": "3341421bae243179f14ba34d337c7ffb1c4d5b0e7d97b3a462de44e3a5ceff2f",
+    "pbsp/mapping/__init__.py": "7daf7c588784be377fec79a1afc7136a18a02f2b4a7891801e601368edfc99c2",
+    "pbsp/mapping/encoder.py": "ce6cadcb4f0eee4045bbd40e090123319a54915ba9eb1772323155988470eddf",
+    "pbsp/mapping/fusion.py": "85428de5b8a67a1359222be4696daf28b6824454b27e39842786663c304aee94",
+    "pbsp/mapping/gaussians.py": "273f2b4d2f59bce4b54b73caa3697e76c12e23001a9ac0d67a0b3a90b34a0a8a",
+    "pbsp/mapping/geometry.py": "20c327cde4e2c6b066e79bc352770cf4fd2e27a50411ddf021878c32c9d58386",
+    "pbsp/mapping/keyframes.py": "91c4ad0c8a42ea2d57ba44589d5788bf0bf62c2f31d2bb344f96934e45da4fe3",
+    "pbsp/mapping/mapper.py": "fe7f8f804d74c92b43ace226a7ad846886891bb60f9e0b5327e95acf47d4e088",
+    "pbsp/mapping/memory.py": "9451198207e688be233ec4a28424eea55201d73e9403b558df01e4573b82d5d2",
+    "pbsp/mapping/model.py": "d6fe0fdd4ce3cbe6421d508eba97d2b45af314cfd0f490d8300c30c91421bfa6",
+    "pbsp/mapping/resources.py": "0bf26a582b0cd96cf6b7965f33abba2dcea6c38d06f136a2997178441c8543d8",
+    "pbsp/mapping/spec.py": "3c2d7f684bfa53508e64c9de3ae601c30169da55e27b6e898c67b98737bca894",
+    "pbsp/mapping/types.py": "967b1e81b5859265d0c677c619f94b6f13c59f1043bd50adaba57790850b9bf3",
+    "pbsp/navigation/__init__.py": "5daf8f4b4d7e1691e4ac582bf69e14ab0281c58a07859944f70cf8fcca2ed1c8",
+    "pbsp/navigation/backends.py": "5822dc3df44896050b66dc11b546ed9715f1563313076339434402cbc582360a",
+    "pbsp/navigation/blp.py": "fedf1b03677d45e4ce0860af85b86f6a05faf024489250d2c437b59f25a2cd50",
+    "pbsp/navigation/blp_parameters.py": "039c6a660ab2a7cf2b6e9e78e810bfb44f32731e6c52a9194dc20f82daa63bad",
+    "pbsp/navigation/candidates.py": "7dab0a30a1933c6b1d1e3b033dc38704aa05ee6fc6adf0858b76d91bc686dfef",
+    "pbsp/navigation/cooldown.py": "aca6aed0fe4b14fe1d38486a4e29d905adf84dfc3edecd636d36bbaff48f0d55",
+    "pbsp/navigation/distance_cache.py": "4dda0827c060c63ffc6f0519a16c4a089d5333f3bf3ed6ade0dee2abf2ff821a",
+    "pbsp/navigation/evidence.py": "18346a1a823adb1f01263b846b301a4a58ff2c2c1fccf2c6fce101799336c8d0",
+    "pbsp/navigation/geometry.py": "993e4e1f6447c565fdc6a421f60e7c17b87421fd3f641962131e80a626e47b46",
+    "pbsp/navigation/local_map.py": "574442e85e4a526ae942e7e1749cd44edba62b51d6b47521ee5730285b575e39",
+    "pbsp/navigation/navigator.py": "c3e7794ae1c6e9017cf412c69dc73e8804cbea9fc35b4a32bc9a131265913125",
+    "pbsp/navigation/planning.py": "4fcaa2712dd19d61942a1a165ca9a462f37e0fcc4b678613de32f33346ad7268",
+    "pbsp/navigation/policy.py": "ec6b491a21950eb240c31acbc8fa145c1201cd3de2ac47db8ebf2ff070ed1250",
+    "pbsp/navigation/ranking.py": "35cf5a77645167e50278b432d4bd4763e898c2c41b1150e42b0d8f7f9d11e956",
+    "pbsp/navigation/recovery.py": "90c9e6905c1d80fc59d9811a345b871d5a02de82f44a5708b493af30749420d7",
+    "pbsp/navigation/suffix.py": "75b39c40026035e4b84172313d4cce4dddbbda89fb94fe7216c4d34ea7e01366",
+    "pbsp/navigation/types.py": "132954dac1c4a0c9051fd7beda6be56b77b95767152ca0252f57c5c494468cad",
+    "pbsp/navigation/verification.py": "a2592b9d4540445aa1a19b04f68305645a2290145a93b7b3ef38079f9bee2dd6",
+    "pbsp/query/__init__.py": "d4f3edd763859261248576b36d9fa0a739e734781444d117898cdac3c8442cff",
+    "pbsp/query/engine.py": "2a7bf07ac1ffea1797c33b45a708c3ce9d8bef94d5581642370e64acd85c7f57",
+    "pbsp/query/service.py": "dd113a97f1c948960612aa8f678e73bdf9f59ec2fdf7d6b5da41b3e88c77dbf9",
+    "pbsp/query/types.py": "e02fd98fb98b0f56b36df8d42b48ca7305dcd832af62526bf8586565472f60df",
+    "pbsp/runtime/__init__.py": "692e3c967f13c099aad4c47b0e118d3a9cba418b412ea2507f3e95f2230947d9",
+    "pbsp/runtime/bootstrap.py": "9cf48e1ff6742f138e4732e21bc0fbce334a838cfb6fa8061b6afbdd7f3b1028",
+    "pbsp/runtime/config.py": "e97c62f8d3d55bed716dc80f226ca6ceae10773a6d11059d14f5c2f6e6e4dbec",
+    "pbsp/runtime/detic_bootstrap.py": "ab5f73a7381a1116a47cf23da04d21eb1dff301fad2afa0d82d626e70b0d6a66",
+    "pbsp/runtime/environment.py": "770a7db9c1f66db2a3527c300f575d6b9dba902244359299a50d8e3ee1f9fb1e",
+    "pbsp/runtime/external_sources.py": "a86d8c91086a0c5c859c10902ecd97b517768ec8230366fbef38880f776c7b29",
+    "pbsp/runtime/factories.py": "c019f84f887539948e69f386902fd2bb03240fab21a97042eaadcf2226696f3f",
+    "pbsp/runtime/launch.py": "987c42b2021439b22d7b23209eaa22c068efe9ed71f98108cd1246c9cda4c444",
+    "pbsp/runtime/mapping_client.py": "aabad2585d94350d27a93db2325ee4a5f390dd85c3624720972b24912fcc6651",
+    "pbsp/runtime/mapping_worker.py": "769d3c0504f27f82f5c97bedeea1de2eea61daf7a5d4ec107eb9b4412ecf597f",
+    "pbsp/runtime/model_assets.py": "b2b224827550ec24359cae84b4e4474c754125e025104dfe5a6189bf7035d1a2",
+    "pbsp/runtime/monitor.py": "68624b329253dcebb6fb698811666fce6550df3c9ad684d8e60c1f515a7ede47",
+    "pbsp/runtime/navigation_worker.py": "4db3707c83de4b9a643a863d020f25fc8551e158ce68a0482b4d079223ee092b",
+    "pbsp/runtime/plan.py": "026654a099c329cbc578ef560e0b0db5f0413ede5dd657a8f2d3c40122eb3be0",
+    "pbsp/runtime/protocol.py": "a0651334ff8ced502f28282e44edf0117b7eaca82b086dc6f423b55349a221a5",
+    "pbsp/runtime/resources.py": "cd593452dfbb7d3e2984b6490a5ef8d50c32e51c4375a138f70b3399f5a0b13a",
+    "pbsp/runtime/source_provenance.py": "4b3ec3f14f1784756b74e8002a09ab4674a55c4d56048d0f24b3e7dac80e14a1",
+    "pbsp/runtime/source_snapshot.py": "682e2725d0039d1f837e3cebee38676963f5bdc08e75b7879d13443b0d0675a4",
+    "pbsp/semantics/__init__.py": "c4149e1cb17463ba4e13907373aaebb70690a8f3a8c9c305d402c3f8689cf234",
+    "pbsp/semantics/features.py": "74ea56f1b06a0cd7f60b979ddff702617c788ba29bef3254df9bffd6dd7ab4ae",
+    "pbsp/semantics/types.py": "51194de8c13c46e807727c0e7d982b4da535234b21590200dbddd395f6811088",
+    "pbsp/settings.py": "90d613c453f547e209478b9d62892ba09052a92c8e4e1c1c151faba543867535",
+    "pbsp/types.py": "6d10753a90d4f69ff01aa9f0d98b15e90abeffe5ed47f724b74019b8d2f58520",
+    "experiments/__init__.py": "816019945af208d4e795df1adc9776580427112752b2e9665c3e5e37f18ec628",
+    "experiments/_environment.py": "9a46732dc33c800f1d577b257b9915094f187228b2e34fe920bfc418b27c9a82",
+    "experiments/_episode_sources.py": "beaf2b1cb2ff975fdd462383785cbb28490e90357b510c8ec5abb7ee69a4a9ba",
+    "experiments/_sources.py": "c1c3d216fa0c3d6ef672fd6838dec22586c155ccf57187773032afc80f517732",
+    "experiments/blp_calibration.py": "3b45c5c5376501712e5d4394eabbeeb400b8690177512be43357d3644ebfe141",
+    "experiments/blp_observer.py": "12dd680b3f4d102fd70277a193d1c85ad5deb219dfb04846e3060df9304af9fb",
+    "experiments/check_install.py": "6cfc0243e1ce4ff3a97eb8b4473d1ac4bdeadab75a0b43dbaf3778cc94462d01",
+    "experiments/dataset.py": "57e1300a6aa788f9ab42469ba6ee274c2fe73b704a39a2af5c6f16dabeba6f2a",
+    "experiments/evaluator.py": "314f72098aeac31b49c2ba8798464bf00a9113204af096aa174da5d0b0e5c6f8",
+    "experiments/exp4_collect.py": "7d5a35c03a4c962f1d47881db306af3c8c6a515491ae26c71de057f43a6ac6a5",
+    "experiments/exp4_fit.py": "8c0300b362394b0042373b4ae2450e20cfd6a0172584d6d9805c41607117ad12",
+    "experiments/exp4_prepare.py": "91ebd3c5d571fbffe16af73d629861999f757247f891fe9798923a40e1565693",
+    "experiments/exp4_regression.py": "e95a3f9e9f8d6bcbc63478ce0bab5f5b791555f569de0c3bf7ec2d8dde52450c",
+    "experiments/export_offline.py": "e09eb4001a7540f65729c54042cd1bd909bda6135e5549ed84cab0edc3cd8989",
+    "experiments/identities.py": "863283a9f7b8f881ac1b676888638160974da62258f6ea9bfc005647e437d2fc",
+    "experiments/manage.py": "8741e76407e456f19dcba0b9c8ee48f7bdaef850d13b2c581780164b20092a64",
+    "experiments/metric_protocol.py": "c27d45e28b67b108d3bb899bf2d9ac9a2fe4979cfe911ed515d71bec69eca7c6",
+    "experiments/metrics.py": "e34ddd5a34f6405833cf2bc84de3db5b51cb3fac02bcbfdbf356d7c1604fafd3",
+    "experiments/mfmon.py": "612a9f7564a020852749e3f1cf6c84a280274fab6f3e406c14497b8844a94cc8",
+    "experiments/mfmon_audit.py": "3e6e20da7046976139b3163717f61349b3b6188571e9c46f4fd6e8d1c852c10d",
+    "experiments/mfmon_categories.py": "a29254c69e49212c616ab27c140ae06e67673883b7da9d0ee11756767d904b74",
+    "experiments/mfmon_protocol.py": "79149deeec09b3324919efb9642ee0778ede2b30796ce3a78d82d373aeadb6e8",
+    "experiments/objectnav.py": "6d5466f809dce5cb96144d808b9ffbea8a7c476911f504b45573a0928b95134c",
+    "experiments/objectnav_data.py": "7a4aa6815ec9610003d16fbe3dfb062aa3605155c4fc11e73935c54f5c7fed7f",
+    "experiments/objectnav_results.py": "550f98ae0319b9e5c8f603cfc1a43e9a210c5b0f0276af370477687d51c85de4",
+    "experiments/planning.py": "daf6c078d59ac88110e827778eefea6a863b2e1be76ddc6d09f6238f3031f528",
+    "experiments/prepare_data.py": "305f739e1584b67029d5c290693fb8fbb263d67dba6fdcd8ab82b6738ca6caa4",
+    "experiments/prepare_dependencies.py": "9d98391ed62a5cc51234bf6542b96883c1e936fa79df988dfe9c150b9a2e491b",
+    "experiments/prepare_models.py": "19b794270e3d1c11643a33193d3a29dac6cda76f60b90e369d07a021b9a0be44",
+    "experiments/prepare_objectnav.py": "f7c880464a58a6f77f7cd1e8db2bb0165a2f49ebbae576fcd0d95b9d2e9b2941",
+    "experiments/prepare_runtime.py": "8eeba33f227cd5052f8774db3c4fbc97b464fe006fa668e39673c78685ca4642",
+    "experiments/recorder.py": "734c34f6b84701b4cee07492e8efdb92978d75fb1e6271f779fa22302ed9b432",
+    "experiments/run_records.py": "d8e32a9c4ae3e1db09061216ccbbcf978223d457f3d5341e2f82266030b7ed9a",
+    "experiments/runner.py": "13fb31e3ad79e20671dc80ae0521130a510410abce92496690a381df3788bca3",
+    "experiments/setup_envs.py": "8118feac7ae184ae3f4604f45c208dde005aa5c1ed488661e2194c29f2dbdd22",
+    "experiments/setup_mapping.py": "6980de18ac0bbc870cb39c9c9a76747e321d4b5a716de61b2c38897a30403f8c",
+    "experiments/setup_navigation.py": "0019a8575433cbec906a2ee5bb9e8957f63557e8d0e6334e9523e05d2a365525",
+    "experiments/summarize.py": "9ed185509a91ba51b5fc3536e7b8b9cb50b27e43ca9121dd1275793809ca14c0",
+    "experiments/telemetry.py": "17d197446a87b2dd12b6a5f55e0ff9a2d2053dd60567b176eab5306d41f13235",
+    "experiments/test_blp.py": "04f4013de3e42c4b1dfdef8c2eea5716d1de1b78bbdfa0db8299bd32e5e8e5ee",
+    "experiments/test_blp_depth.py": "d736a49110c73a04d347980f58200a75c46e26bc6e0561f15a13a7f6360562aa",
+    "experiments/test_blp_identity.py": "e7b6de94d6ed893ef53a4930f2f7ddd8a88c788abd7735ecfc2e88d1b9237d7b",
+    "experiments/test_blp_parameters.py": "c8579f7bc4fe31d7d4720e836219b4009150f90facce0b0430e8d9a47c3a6544",
+    "experiments/trajectory.py": "9f3e93c9a93466a290384b943d92f606d52cef6d2334aa74f8c8fac3c0106efe",
+    "experiments/visualization.py": "81da6adc588613130aa8cf65ec3439a33696c07c43bdbb719f0141ff579f947f",
+    "configs/categories.json": "30a17d48fa4926fa2cfbf91cf509f95f0c39544b2df20b068b8393732398935b",
+    "configs/datasets/hm3d_2mon.yaml": "0d39eb01e38a0c523f12191c69d4b11297befb1c4e7750e325a38523e00b2c32",
+    "configs/datasets/hm3d_3mon.yaml": "03b0fd29f72f19e3f97606b5866993511ae7564a2261fabef8f7e1d25c3b24d0",
+    "configs/datasets/hm3d_4mon.yaml": "b9ca9c30a86fd4f21a2c96f0d0d32c358e447db17f3b6c39d2e2ae617d05bea9",
+    "configs/datasets/hm3d_mfmon.yaml": "1e0b6b9bb61b375c4a79082fdf86251d70113b001e865bd7d78b65fba9a15e7c",
+    "configs/environments/mapping/linux-64.lock.json": "eff5e7d28ad212aa6f2a7784ff4f972af3d160bc6caf288af74ea87ad1414eb8",
+    "configs/environments/navigation/linux-64.lock.json": "9a5835cfdb3aee1f148d1aedbc228a7d861936725cf171bbde2b28e01ab8f180",
+    "configs/evaluation/mfmon.yaml": "ab30b6c6b6c252802b42e8223b7bd6f3a0e2094f15adf96ab75ce4347b87a318",
+    "configs/evaluation/standard.yaml": "209b714fd79dc9429fc5587452c26fdcfc9377a56ecf09647ba48089eb6d1019",
+    "configs/experiments/exp4_calibration.yaml": "f17d97779b23e60716518ca7b43c3b72e921bbeda9ac5639cb8693f256b57387",
+    "configs/experiments/exp4_full.yaml": "7697ad382193f4a929858a72b8f451371a3682f5ccb8c2a090a85df2dfa56e37",
+    "configs/experiments/exp4_myopic.yaml": "2ffe78de63e194b98858ff9da17b828ac38e5051f88ff9cce06ae63ec33c090d",
+    "configs/experiments/exp4_nearest.yaml": "70c0c83cd7c00b1eb4655bcea7aa0fc370045bb4e29dd477f43bcc38cdc3589d",
+    "configs/experiments/exp4_suffix_only.yaml": "1fd713eb5bd335d93f68a014b12d9fd28e81a2e07e35f10bd025df9931a70ced",
+    "configs/experiments/hm3d_2mon.yaml": "b49212f7b8a6139bf9e6c51ac3f035eeec454f021a7d32cff454177de36985ef",
+    "configs/experiments/hm3d_3mon.yaml": "28cc32f1691c1d805f6f416b6bdc86a1b387766fbe95616f574916351d773309",
+    "configs/experiments/hm3d_4mon.yaml": "ebfaf6e2a963700e5d7013211b2bd777ffe4a59e4feb2c1ae55ce5dbdd85fbd5",
+    "configs/experiments/hm3d_mfmon.yaml": "9791ebcfb17d4681927a37e6ec7103dbeb398e848eeed00c06c38254d11b4c4c",
+    "configs/habitat.yaml": "968d892eda8b5379209c546fd5cab816c1f9f3e61442992170c4bece3250a2e8",
+    "configs/habitat_objectnav.yaml": "3eb0871ba35b481a3280984d478a8b2265716235d6ff6d4d3d3f009d5adf4e1b",
+    "configs/methods/exp4_calibration.yaml": "3f544437bc4b67dcedf103709bce4baac4c3483429aeeacdcadd537630d842b2",
+    "configs/methods/exp4_full.yaml": "c7629726203cfa58ecadf15019e0101595bbf0dada9912e9205551e808575d2c",
+    "configs/methods/exp4_myopic.yaml": "593f9203db9932f179bc546454a52c513dea90d5e59c26aeb9fd9baf53b978d2",
+    "configs/methods/exp4_nearest.yaml": "e6a371707d1744455a8c253ca3cec7549f75d983c5f2af643f88e58a21f3dfa6",
+    "configs/methods/exp4_suffix_only.yaml": "55efe0475021171cac1796ee2333be2fb38c73a7e680230e75db22c5b1a08f33",
+    "configs/methods/full_pbsp.yaml": "9f051bc88d6f8dc0f99549a80ca4eb2ab364aad0fc912ac6d827926cdcffd20a",
+    "configs/models/embodied_splat.yaml": "cf4f716471801d9605b64bf8edb99a6bd91ef74c65876f9e68b25ae488d801d7",
+    "configs/models/network.yaml": "de452ad0cc80764dd0f828dae09f263ea4ca16d5a5c6565af7b350cd5d17f272",
+    "configs/navigation.yaml": "f373b8d1dd2c37c8ba89330c2b91ddfe422d63ee01fb6e021f41e587d8905110",
+    "configs/resources/datasets.json": "cf30b942450d05e4425c0854a969a13c739a771be074c4b58e1d61941914b6a9",
+    "configs/resources/models.json": "f21ffdc59735aaf84fe5a0a4ebe99f35261f6dd45a643387900d003b6b7ac4a6",
+    "configs/resources/superglue.json": "d98535e089344b72408937ef2bb133eaead425f261e7db2ee75d5e72c9f4ce3c",
+    "configs/runtime.example.yaml": "0757cbb0615ef6cbb51791215db1b8b6cc88284ec28f9a6a51deb956f37875bd",
+    "runtime.exp4.local.yaml": "ed47810f08afd80d5059cfff4c437b91ffa92d653abaa1949e920e8e7041854b",
+    "results/exp4/meta/folds.json": "e5984774614e3eef936728637c494a88f11269bf1508d719e87cf17879f2590b",
+    "results/exp4/meta/2mon-identities.json": "0f1bdd3404e6fb59d7723d703aa2a478e3bca115a58566972835315c0f0a1ead",
+    "results/exp4/meta/3mon-identities.json": "98baa13355e8dd223eaefdeec7f48964bb23f44d2b02cdba4261add62b594ac1",
+    "results/exp4/meta/smoke-20-identities.json": "30bf91b382a918be8359d66b63fcdece026462c703fd04b868fd355b56aeb921",
+    "results/exp4/meta/protocol_decisions.json": "c4596befc6337dab5a9963c69f4416992f7b0108f8d0c69c9e77cfa8f39c69ed"
+  },
+  "source_sha256": "8e7ca89e1260feede3dfe676303a28a20fa954bcd1f7bed8077b8cad69387f80",
+  "native_runs": 20,
+  "n_episodes": 20,
+  "raw_bytes_total": 68751823,
+  "archive_bytes_total": 4604391,
+  "runs": [
+    {
+      "native_run": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_120628_209258_exp4_full_exp4-smoke-a3-4ok3usBNeis",
+      "archive": "logs/CP3/raw/4ok3usBNeis.tar.gz",
+      "archive_sha256": "126a0981d0a08ed7826da64b4e89548f3ca69809973f705c6ac75da7ff39a9fe",
+      "archive_bytes": 147939,
+      "raw_bytes": 1411100,
+      "files": [
+        {
+          "path": "launch.json",
+          "bytes": 6459,
+          "sha256": "96ce138aecf54c209332559ea223632808f333db372e2a29cfabff0d1d4dc621"
+        },
+        {
+          "path": "mapping_environment.json",
+          "bytes": 20719,
+          "sha256": "11292ef8d8af8280ec8e0fc7257b3771da7a6233929b5198e5e4ea801e6f02f7"
+        },
+        {
+          "path": "navigation_environment_0.json",
+          "bytes": 30668,
+          "sha256": "cad206e37413d52772054324ad78a201610062566283c85d0546580d3093575a"
+        },
+        {
+          "path": "results_4ok3usBNeis/openvocab_v0.1.1_gt_semantics_600_0/blp_decisions.jsonl",
+          "bytes": 66099,
+          "sha256": "2073f506348e72540105a981015ef1c3821be909f853eda04b31dd930a5685be"
+        },
+        {
+          "path": "results_4ok3usBNeis/openvocab_v0.1.1_gt_semantics_600_0/blp_events.jsonl",
+          "bytes": 29677,
+          "sha256": "fc5557bb949f75e59d2dd8b0df432b6b7d34d55ec4fc4893de32439eb6bbd859"
+        },
+        {
+          "path": "results_4ok3usBNeis/openvocab_v0.1.1_gt_semantics_600_0/blp_snapshots.jsonl",
+          "bytes": 301274,
+          "sha256": "12653474e0ab9c95dc961a258d81a1d18c0de322f08568ae0500f369a0cab3fc"
+        },
+        {
+          "path": "results_4ok3usBNeis/openvocab_v0.1.1_gt_semantics_600_0/episodes/4ok3usBNeis/0/identity.json",
+          "bytes": 863,
+          "sha256": "bdb14e546b4c7a775825aa46b73564d9e8168ceba50515a153cbfb45877fb23e"
+        },
+        {
+          "path": "results_4ok3usBNeis/openvocab_v0.1.1_gt_semantics_600_0/episodes/4ok3usBNeis/0/trajectory.jsonl",
+          "bytes": 220405,
+          "sha256": "be189d6e9b230c8c92ad353b50db68d2098110b3795060cd3515ddb91672e6c3"
+        },
+        {
+          "path": "results_4ok3usBNeis/openvocab_v0.1.1_gt_semantics_600_0/per_episode_metrics.json",
+          "bytes": 31549,
+          "sha256": "7e1728321c52ec8892ae3384c489d610614815e99f16f035790925623e028cf0"
+        },
+        {
+          "path": "results_4ok3usBNeis/openvocab_v0.1.1_gt_semantics_600_0/scsp_decisions.jsonl",
+          "bytes": 701478,
+          "sha256": "f1d3bf0f3201058b3d461e16654d985aff0d5b5502ff8110c6f5e9d52989114a"
+        },
+        {
+          "path": "source_snapshot.json",
+          "bytes": 1803,
+          "sha256": "6806969e8b822b626e6af8220eae573ae47cf402fdac34cbc4fc4c572a23cc78"
+        },
+        {
+          "path": "status.json",
+          "bytes": 106,
+          "sha256": "497c9149c30347579c8623dd7d398c6157796cf5553a30bc02e29dba06444b46"
+        }
+      ],
+      "all_round_trip_sha256_match": true,
+      "scene_id": "4ok3usBNeis"
+    },
+    {
+      "native_run": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_120628_206944_exp4_full_exp4-smoke-a3-5cdEh9F2hJL",
+      "archive": "logs/CP3/raw/5cdEh9F2hJL.tar.gz",
+      "archive_sha256": "5ac4e68ac8420446d0960cf0d9482eb0739eb968652af764a315677190e0f070",
+      "archive_bytes": 184659,
+      "raw_bytes": 1961267,
+      "files": [
+        {
+          "path": "launch.json",
+          "bytes": 6458,
+          "sha256": "997f2550c1bb225538cbd8738deee6c5ce1569b19636d79757eb591fdd5e33d6"
+        },
+        {
+          "path": "mapping_environment.json",
+          "bytes": 20719,
+          "sha256": "61949e0886be2ca699f97ff2b0cb28ecc0fb492ff0c9c838157e57d2d0a5675d"
+        },
+        {
+          "path": "navigation_environment_1.json",
+          "bytes": 30668,
+          "sha256": "e7c9b6a492c874fcc273a240f980097c45c8d51783acadf2b174cabcfe128588"
+        },
+        {
+          "path": "results_5cdEh9F2hJL/openvocab_v0.1.1_gt_semantics_600_1/blp_decisions.jsonl",
+          "bytes": 85959,
+          "sha256": "4b37d4a2a697c43eb51b30a1530c13de9153901101f359f82093694c30d8febd"
+        },
+        {
+          "path": "results_5cdEh9F2hJL/openvocab_v0.1.1_gt_semantics_600_1/blp_events.jsonl",
+          "bytes": 43472,
+          "sha256": "39a2dab013ef4dcda76cdf9914d79feeb83f6531bace525ff914b06829b6eeea"
+        },
+        {
+          "path": "results_5cdEh9F2hJL/openvocab_v0.1.1_gt_semantics_600_1/blp_snapshots.jsonl",
+          "bytes": 319211,
+          "sha256": "0d52cd5fca0004b72a879c335940484f6f721df7718631616a236f462d4d60bc"
+        },
+        {
+          "path": "results_5cdEh9F2hJL/openvocab_v0.1.1_gt_semantics_600_1/episodes/5cdEh9F2hJL/0/identity.json",
+          "bytes": 862,
+          "sha256": "e3fca83de728fb3e8d16a659b1e65cdb9e434c83d5c0fdc344ace0a177ca526b"
+        },
+        {
+          "path": "results_5cdEh9F2hJL/openvocab_v0.1.1_gt_semantics_600_1/episodes/5cdEh9F2hJL/0/trajectory.jsonl",
+          "bytes": 323375,
+          "sha256": "398cf5c43dccf3601315bca2a337583c40dc2e23e6dd9817e9ba770630eff7f5"
+        },
+        {
+          "path": "results_5cdEh9F2hJL/openvocab_v0.1.1_gt_semantics_600_1/per_episode_metrics.json",
+          "bytes": 43645,
+          "sha256": "62cce4cb40b728ad7d97be43c90985d9ea15934b0ce2e367e12d20f82c0d09e3"
+        },
+        {
+          "path": "results_5cdEh9F2hJL/openvocab_v0.1.1_gt_semantics_600_1/scsp_decisions.jsonl",
+          "bytes": 1084989,
+          "sha256": "07ff4edf0f4406cd7048ac56b2870d3aa41d8c937e04b0ec3f55a216fb124f92"
+        },
+        {
+          "path": "source_snapshot.json",
+          "bytes": 1803,
+          "sha256": "6806969e8b822b626e6af8220eae573ae47cf402fdac34cbc4fc4c572a23cc78"
+        },
+        {
+          "path": "status.json",
+          "bytes": 106,
+          "sha256": "e0a364d6d31f04d6d34b93fe369d89d91de46f316bea326b52a677c0ab2c3f09"
+        }
+      ],
+      "all_round_trip_sha256_match": true,
+      "scene_id": "5cdEh9F2hJL"
+    },
+    {
+      "native_run": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_122105_671138_exp4_full_exp4-smoke-a3-6s7QHgap2fW",
+      "archive": "logs/CP3/raw/6s7QHgap2fW.tar.gz",
+      "archive_sha256": "089d2324e18d8933f601329a8a50ff695ac9cbfa027d00bca67f36246f15ee9c",
+      "archive_bytes": 352663,
+      "raw_bytes": 4501599,
+      "files": [
+        {
+          "path": "launch.json",
+          "bytes": 6462,
+          "sha256": "11e27d94ca1dd1f04640fe8d4ac599a96224db967c9fb4cb14e19b2fada3a674"
+        },
+        {
+          "path": "mapping_environment.json",
+          "bytes": 20719,
+          "sha256": "2eeea552a9c6fba4821fb498df53afce6ba5cbb3e1f03934ece5d1192abf44ef"
+        },
+        {
+          "path": "navigation_environment_2.json",
+          "bytes": 30668,
+          "sha256": "faae09b707536e0841628629abcb64964fd43f225ce87ff52edee22586e60f67"
+        },
+        {
+          "path": "results_6s7QHgap2fW/openvocab_v0.1.1_gt_semantics_600_2/blp_decisions.jsonl",
+          "bytes": 181328,
+          "sha256": "1b78a4d7ec73380e3dfce4e7d27e05032af0fe081ca5be725f9e2e4c01af0e2b"
+        },
+        {
+          "path": "results_6s7QHgap2fW/openvocab_v0.1.1_gt_semantics_600_2/blp_events.jsonl",
+          "bytes": 75317,
+          "sha256": "390cf643e0f3d929ec12460fc15a710d960dde4f4450e97cba2f15cf8f94617d"
+        },
+        {
+          "path": "results_6s7QHgap2fW/openvocab_v0.1.1_gt_semantics_600_2/blp_snapshots.jsonl",
+          "bytes": 745067,
+          "sha256": "dd844a5d8a4fd068396ae97dd5be2669dfc83d12969f9a0f02d2d0f4accb322a"
+        },
+        {
+          "path": "results_6s7QHgap2fW/openvocab_v0.1.1_gt_semantics_600_2/episodes/6s7QHgap2fW/0/identity.json",
+          "bytes": 866,
+          "sha256": "ad1698480a28d88929dd4aaa9760e5f072f146f93e4ba3e8dc2576a3f0600c82"
+        },
+        {
+          "path": "results_6s7QHgap2fW/openvocab_v0.1.1_gt_semantics_600_2/episodes/6s7QHgap2fW/0/trajectory.jsonl",
+          "bytes": 655645,
+          "sha256": "e11682e466774b3d25ec5c55bf4fcdda056d99d7ae9f078efcb5b37131a67d26"
+        },
+        {
+          "path": "results_6s7QHgap2fW/openvocab_v0.1.1_gt_semantics_600_2/per_episode_metrics.json",
+          "bytes": 81781,
+          "sha256": "307471e165eb49f78e0ae38a7e982e418c3fd0bc23eea36f94bc888f80dac8e7"
+        },
+        {
+          "path": "results_6s7QHgap2fW/openvocab_v0.1.1_gt_semantics_600_2/scsp_decisions.jsonl",
+          "bytes": 2701837,
+          "sha256": "1fe950db54229a7c5e1cd1c2fdeb2572d7474266d89e810517d823cc053db28d"
+        },
+        {
+          "path": "source_snapshot.json",
+          "bytes": 1803,
+          "sha256": "6806969e8b822b626e6af8220eae573ae47cf402fdac34cbc4fc4c572a23cc78"
+        },
+        {
+          "path": "status.json",
+          "bytes": 106,
+          "sha256": "262f7d18a07fc2b8010dd0a9073fc33dddd292630c41dfd72cb0383868f888a8"
+        }
+      ],
+      "all_round_trip_sha256_match": true,
+      "scene_id": "6s7QHgap2fW"
+    },
+    {
+      "native_run": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_122646_978272_exp4_full_exp4-smoke-a3-DYehNKdT76V",
+      "archive": "logs/CP3/raw/DYehNKdT76V.tar.gz",
+      "archive_sha256": "23f1c88ea1841ca17ad236180b18d945910518447a68627f02a6410ca466f44a",
+      "archive_bytes": 223303,
+      "raw_bytes": 3584964,
+      "files": [
+        {
+          "path": "launch.json",
+          "bytes": 6462,
+          "sha256": "45fee104506f10651c3eade6f60d84777ffc5837276ee233ea4d77beb6dbb4d2"
+        },
+        {
+          "path": "mapping_environment.json",
+          "bytes": 20719,
+          "sha256": "66308152d528cf8dc90e35fe8a9a0dea6639523dfe33d9ac3cf502bececabbda"
+        },
+        {
+          "path": "navigation_environment_3.json",
+          "bytes": 30668,
+          "sha256": "a14e3853607a509625698a52a7a29d9418908e1487e0bbdbde4deebc6395c391"
+        },
+        {
+          "path": "results_DYehNKdT76V/openvocab_v0.1.1_gt_semantics_600_3/blp_decisions.jsonl",
+          "bytes": 161513,
+          "sha256": "9de9dee4ef46856f7df5eb80c1b3440fb8e3cee6a2859c5fe08c36a7496147dd"
+        },
+        {
+          "path": "results_DYehNKdT76V/openvocab_v0.1.1_gt_semantics_600_3/blp_events.jsonl",
+          "bytes": 63614,
+          "sha256": "635e2b1d948c83c8730799175d6982a6c89f99cb664322f735a3aec0ea1db860"
+        },
+        {
+          "path": "results_DYehNKdT76V/openvocab_v0.1.1_gt_semantics_600_3/blp_snapshots.jsonl",
+          "bytes": 428701,
+          "sha256": "c105c6e9b004885d2bdb4fa5140aae24c7cb82e033e5d6dcefde7b274075be47"
+        },
+        {
+          "path": "results_DYehNKdT76V/openvocab_v0.1.1_gt_semantics_600_3/episodes/DYehNKdT76V/0/identity.json",
+          "bytes": 866,
+          "sha256": "e545d267370cfc9a1539b98902a7d157e76d00e8d208b0d0653e64163d8f4a45"
+        },
+        {
+          "path": "results_DYehNKdT76V/openvocab_v0.1.1_gt_semantics_600_3/episodes/DYehNKdT76V/0/trajectory.jsonl",
+          "bytes": 607090,
+          "sha256": "c0acb498211546cf4806def33d1098fffa22d02764dc045daeec1b6caf2656e9"
+        },
+        {
+          "path": "results_DYehNKdT76V/openvocab_v0.1.1_gt_semantics_600_3/per_episode_metrics.json",
+          "bytes": 84005,
+          "sha256": "28f8bc63d238cdc738c59c6f038c07807f02fabbe86402cfd58d21e04e316dea"
+        },
+        {
+          "path": "results_DYehNKdT76V/openvocab_v0.1.1_gt_semantics_600_3/scsp_decisions.jsonl",
+          "bytes": 2179417,
+          "sha256": "041ae5a6b00e02d110a8e7f0e7d4296165cf86e2ef37a04783783ee86cbb9019"
+        },
+        {
+          "path": "source_snapshot.json",
+          "bytes": 1803,
+          "sha256": "3754e80effbcdb62900922c0c8e04879837d0c17aa7a5cdc3add8d01fc179119"
+        },
+        {
+          "path": "status.json",
+          "bytes": 106,
+          "sha256": "32c8a180da0418082ef4a9e3c2936e135eb75aed28db072a96fb85d2a657812c"
+        }
+      ],
+      "all_round_trip_sha256_match": true,
+      "scene_id": "DYehNKdT76V"
+    },
+    {
+      "native_run": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_124138_969462_exp4_full_exp4-smoke-a3-Dd4bFSTQ8gi",
+      "archive": "logs/CP3/raw/Dd4bFSTQ8gi.tar.gz",
+      "archive_sha256": "84e6cc433f638a2c8b49905104fdcf12545f3aba8f0998b1c7043dac189436f1",
+      "archive_bytes": 251305,
+      "raw_bytes": 2657882,
+      "files": [
+        {
+          "path": "launch.json",
+          "bytes": 6460,
+          "sha256": "7f0936b9f55e57e93b33dee4f2891a01beb4f8194583bc1a6cd22180fc7a8858"
+        },
+        {
+          "path": "mapping_environment.json",
+          "bytes": 20719,
+          "sha256": "53d8081c0d9bc548c2ebbdcf54903d699d52daebee1b4caa2185e59f4f267844"
+        },
+        {
+          "path": "navigation_environment_4.json",
+          "bytes": 30668,
+          "sha256": "2567c539387e84266d93a60661eaaefb3029ed73927a63f58b0c6a90e76ef9dd"
+        },
+        {
+          "path": "results_Dd4bFSTQ8gi/openvocab_v0.1.1_gt_semantics_600_4/blp_decisions.jsonl",
+          "bytes": 102912,
+          "sha256": "2d6aca0c23551a07956d52ea339ea62c5903de3f6a0a949beec762f29e906437"
+        },
+        {
+          "path": "results_Dd4bFSTQ8gi/openvocab_v0.1.1_gt_semantics_600_4/blp_events.jsonl",
+          "bytes": 70647,
+          "sha256": "80354c404f1f6b462c2d83811bafdabb689be2ca104eb77623df677e35e38c75"
+        },
+        {
+          "path": "results_Dd4bFSTQ8gi/openvocab_v0.1.1_gt_semantics_600_4/blp_snapshots.jsonl",
+          "bytes": 467842,
+          "sha256": "dbe574e2f9b82cce988967655640902db7b32ad3c1833ac326c39a700bf3a0d0"
+        },
+        {
+          "path": "results_Dd4bFSTQ8gi/openvocab_v0.1.1_gt_semantics_600_4/episodes/Dd4bFSTQ8gi/0/identity.json",
+          "bytes": 864,
+          "sha256": "86068c625b1f9203dae22d890e009db09316b7bf665acf9d1ea14f366d325e3c"
+        },
+        {
+          "path": "results_Dd4bFSTQ8gi/openvocab_v0.1.1_gt_semantics_600_4/episodes/Dd4bFSTQ8gi/0/trajectory.jsonl",
+          "bytes": 384500,
+          "sha256": "79566ac8deb52217b9ed9431af3158e060c0ed8818cbed7565017ba02701d1ad"
+        },
+        {
+          "path": "results_Dd4bFSTQ8gi/openvocab_v0.1.1_gt_semantics_600_4/per_episode_metrics.json",
+          "bytes": 52687,
+          "sha256": "1453ca95de47d608f7d1354d47042994c1d70b5f47205a3e0f889b1fc34603b8"
+        },
+        {
+          "path": "results_Dd4bFSTQ8gi/openvocab_v0.1.1_gt_semantics_600_4/scsp_decisions.jsonl",
+          "bytes": 1518674,
+          "sha256": "a7a9eb70a4adaec345bd2c1c46e2dd60e967a5f0eae6a408178c022d6620b329"
+        },
+        {
+          "path": "source_snapshot.json",
+          "bytes": 1803,
+          "sha256": "3754e80effbcdb62900922c0c8e04879837d0c17aa7a5cdc3add8d01fc179119"
+        },
+        {
+          "path": "status.json",
+          "bytes": 106,
+          "sha256": "146b71f6d544e7421dae27350def7306611eddbe03ecc7bd7392946b3e806795"
+        }
+      ],
+      "all_round_trip_sha256_match": true,
+      "scene_id": "Dd4bFSTQ8gi"
+    },
+    {
+      "native_run": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_124216_420027_exp4_full_exp4-smoke-a3-Nfvxx8J5NCo",
+      "archive": "logs/CP3/raw/Nfvxx8J5NCo.tar.gz",
+      "archive_sha256": "6a3a65e8c85dc848237baa3429bdb869808f88e25bfef4da5748f08a97da4678",
+      "archive_bytes": 174206,
+      "raw_bytes": 2393240,
+      "files": [
+        {
+          "path": "launch.json",
+          "bytes": 6456,
+          "sha256": "f0ab5ca4bf24418d0f545ca5ce81e8385c80b9dfdab7d5a6ca63b7b841ce6aea"
+        },
+        {
+          "path": "mapping_environment.json",
+          "bytes": 20719,
+          "sha256": "fce2c81d63ce37c486284381a534b9be619f54dc42d95d7c0a66fa56c8a9c3e8"
+        },
+        {
+          "path": "navigation_environment_5.json",
+          "bytes": 30668,
+          "sha256": "e1796d53ee4cf5795267f854879eb79362f290a77853557621dee3d9a8394934"
+        },
+        {
+          "path": "results_Nfvxx8J5NCo/openvocab_v0.1.1_gt_semantics_600_5/blp_decisions.jsonl",
+          "bytes": 111863,
+          "sha256": "af9fd9b527adee7b6ec8945d020a7351c1dd73c533d69a38b223e4e8e21d0abf"
+        },
+        {
+          "path": "results_Nfvxx8J5NCo/openvocab_v0.1.1_gt_semantics_600_5/blp_events.jsonl",
+          "bytes": 21073,
+          "sha256": "dddb192b505a08093e94b8902b401d1f4cdb35762e8c4b8eb6154e6a1eb7da73"
+        },
+        {
+          "path": "results_Nfvxx8J5NCo/openvocab_v0.1.1_gt_semantics_600_5/blp_snapshots.jsonl",
+          "bytes": 490216,
+          "sha256": "c68e9e3b1f6742f50601cd621164340c840c3bb478ab668d42a51972830804b7"
+        },
+        {
+          "path": "results_Nfvxx8J5NCo/openvocab_v0.1.1_gt_semantics_600_5/episodes/Nfvxx8J5NCo/0/identity.json",
+          "bytes": 860,
+          "sha256": "07abd49b2b5308e200f12e473a73e022723e5c3b1b8ca52ccbd172cd53ae20b8"
+        },
+        {
+          "path": "results_Nfvxx8J5NCo/openvocab_v0.1.1_gt_semantics_600_5/episodes/Nfvxx8J5NCo/0/trajectory.jsonl",
+          "bytes": 399786,
+          "sha256": "48adca31193fc6ba4aa4e63fd32291046c375288d5a25e2352ee0e2fd3a61ba7"
+        },
+        {
+          "path": "results_Nfvxx8J5NCo/openvocab_v0.1.1_gt_semantics_600_5/per_episode_metrics.json",
+          "bytes": 48771,
+          "sha256": "a3f74b209aa99397cdc7c19778bad12fba5102cc13f107b1fd1f3a70ce12447c"
+        },
+        {
+          "path": "results_Nfvxx8J5NCo/openvocab_v0.1.1_gt_semantics_600_5/scsp_decisions.jsonl",
+          "bytes": 1260919,
+          "sha256": "5db98ff2582218bf52762b5c467d30c69b9916f2966dcdec1e1142d443c9ac10"
+        },
+        {
+          "path": "source_snapshot.json",
+          "bytes": 1803,
+          "sha256": "3754e80effbcdb62900922c0c8e04879837d0c17aa7a5cdc3add8d01fc179119"
+        },
+        {
+          "path": "status.json",
+          "bytes": 106,
+          "sha256": "2191db4f15ffbaf3ca0561f97d97bd3e73a1005919b62008db7fb4347a4b1ebf"
+        }
+      ],
+      "all_round_trip_sha256_match": true,
+      "scene_id": "Nfvxx8J5NCo"
+    },
+    {
+      "native_run": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_125039_066607_exp4_full_exp4-smoke-a3-QaLdnwvtxbs",
+      "archive": "logs/CP3/raw/QaLdnwvtxbs.tar.gz",
+      "archive_sha256": "5669e3f4f205c1dad29495bc79da97117cb8b2168091f4908940e1f133687f0f",
+      "archive_bytes": 155988,
+      "raw_bytes": 1747379,
+      "files": [
+        {
+          "path": "launch.json",
+          "bytes": 6454,
+          "sha256": "966bb15815d24977d280395db0b79fb677c33d420d9e1f7f67c64a083a26533e"
+        },
+        {
+          "path": "mapping_environment.json",
+          "bytes": 20719,
+          "sha256": "2de94a26b421a5409049e7675084320e2f1243dcb30441d5098d32da9c60bc68"
+        },
+        {
+          "path": "navigation_environment_6.json",
+          "bytes": 30668,
+          "sha256": "739961332368f27643c2345b98e0c6f9f0846a50f36e372c54c169e9e39c7305"
+        },
+        {
+          "path": "results_QaLdnwvtxbs/openvocab_v0.1.1_gt_semantics_600_6/blp_decisions.jsonl",
+          "bytes": 81264,
+          "sha256": "3058f4d9f68a35749665ecaab65eaed04cba8d814f2e1c3b7a25f6c59bc43a1c"
+        },
+        {
+          "path": "results_QaLdnwvtxbs/openvocab_v0.1.1_gt_semantics_600_6/blp_events.jsonl",
+          "bytes": 39210,
+          "sha256": "764ae4d32cb43e20e265efd00ffac7a6ba79d2b126f2dc4b362781b6b3e360ea"
+        },
+        {
+          "path": "results_QaLdnwvtxbs/openvocab_v0.1.1_gt_semantics_600_6/blp_snapshots.jsonl",
+          "bytes": 277914,
+          "sha256": "5b2c644bfd201ce041453d2e76dceee1eda8c684d81855ece8c76bebc64c9360"
+        },
+        {
+          "path": "results_QaLdnwvtxbs/openvocab_v0.1.1_gt_semantics_600_6/episodes/QaLdnwvtxbs/0/identity.json",
+          "bytes": 858,
+          "sha256": "d0a23ac71f7348c451454cd28270f44495ef7b261e20dd09f22a19f4a2049904"
+        },
+        {
+          "path": "results_QaLdnwvtxbs/openvocab_v0.1.1_gt_semantics_600_6/episodes/QaLdnwvtxbs/0/trajectory.jsonl",
+          "bytes": 243722,
+          "sha256": "c4da537057614a8f2d3dd036cda05822cd95cfe28dd82ea7b10101d710a94247"
+        },
+        {
+          "path": "results_QaLdnwvtxbs/openvocab_v0.1.1_gt_semantics_600_6/per_episode_metrics.json",
+          "bytes": 35386,
+          "sha256": "31f935d62445c141cac83c128113b9b07f1b41851a5dc1254f06a6085436b1c7"
+        },
+        {
+          "path": "results_QaLdnwvtxbs/openvocab_v0.1.1_gt_semantics_600_6/scsp_decisions.jsonl",
+          "bytes": 1009275,
+          "sha256": "a978b687dc86fdb64a0bf94b5b0105945c2335c7ae91e4e5380d2884fce366d8"
+        },
+        {
+          "path": "source_snapshot.json",
+          "bytes": 1803,
+          "sha256": "3754e80effbcdb62900922c0c8e04879837d0c17aa7a5cdc3add8d01fc179119"
+        },
+        {
+          "path": "status.json",
+          "bytes": 106,
+          "sha256": "efcb5753feae5cc857148c3678be2a0db7aab9da317bc1dca494b0eb1a4622fb"
+        }
+      ],
+      "all_round_trip_sha256_match": true,
+      "scene_id": "QaLdnwvtxbs"
+    },
+    {
+      "native_run": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_125217_654105_exp4_full_exp4-smoke-a3-TEEsavR23oF",
+      "archive": "logs/CP3/raw/TEEsavR23oF.tar.gz",
+      "archive_sha256": "57964b8cd7f917dbf31a3ac0f5ce09700565218a408f7fe050007765206c6ea5",
+      "archive_bytes": 372752,
+      "raw_bytes": 4792416,
+      "files": [
+        {
+          "path": "launch.json",
+          "bytes": 6462,
+          "sha256": "f883cb9615cdcd9759f5a551bbc907df6c0625d7912ce492655633732fbcab03"
+        },
+        {
+          "path": "mapping_environment.json",
+          "bytes": 20719,
+          "sha256": "b091f2e167574b1748a2a62fcf7c9fd2312dd2a8f82a7163874342dbf7417c40"
+        },
+        {
+          "path": "navigation_environment_7.json",
+          "bytes": 30668,
+          "sha256": "35e5be8e421a5204f6ff0567878ef1b4037d32fa8ed5eecf9963c9f0169b64aa"
+        },
+        {
+          "path": "results_TEEsavR23oF/openvocab_v0.1.1_gt_semantics_600_7/blp_decisions.jsonl",
+          "bytes": 153895,
+          "sha256": "3a6d3a6d9c9a91709b5625d3bffcf041a205502fbc7247da7c70bc8371ccf6e1"
+        },
+        {
+          "path": "results_TEEsavR23oF/openvocab_v0.1.1_gt_semantics_600_7/blp_events.jsonl",
+          "bytes": 79394,
+          "sha256": "db1ce0054d4fc090564938af321f1f3a70e3950da7cc82fe961f5096b4196ec0"
+        },
+        {
+          "path": "results_TEEsavR23oF/openvocab_v0.1.1_gt_semantics_600_7/blp_snapshots.jsonl",
+          "bytes": 620014,
+          "sha256": "d2c462499e4dd486e4f933a892170b45a5514ff49a65e691741dbecfb3953b7f"
+        },
+        {
+          "path": "results_TEEsavR23oF/openvocab_v0.1.1_gt_semantics_600_7/episodes/TEEsavR23oF/0/identity.json",
+          "bytes": 866,
+          "sha256": "4a805fbab514310f2bf01a8b021db8eb1d554d2d02e5f0cafcbe6111591706be"
+        },
+        {
+          "path": "results_TEEsavR23oF/openvocab_v0.1.1_gt_semantics_600_7/episodes/TEEsavR23oF/0/trajectory.jsonl",
+          "bytes": 815374,
+          "sha256": "caf384cc0a473e89053ab7c841aff11c350adb8b8e01b3e04714108bc03f0ed2"
+        },
+        {
+          "path": "results_TEEsavR23oF/openvocab_v0.1.1_gt_semantics_600_7/per_episode_metrics.json",
+          "bytes": 91602,
+          "sha256": "b0eb2103d0e550c6fa621f3ec7f891d502e206767135bf9132f9e4a7d856ff22"
+        },
+        {
+          "path": "results_TEEsavR23oF/openvocab_v0.1.1_gt_semantics_600_7/scsp_decisions.jsonl",
+          "bytes": 2971513,
+          "sha256": "aa303005e19538d84c7c0183ed009cb0c4db0bc61bcb758bbae7221defbf965c"
+        },
+        {
+          "path": "source_snapshot.json",
+          "bytes": 1803,
+          "sha256": "3754e80effbcdb62900922c0c8e04879837d0c17aa7a5cdc3add8d01fc179119"
+        },
+        {
+          "path": "status.json",
+          "bytes": 106,
+          "sha256": "002e44c0c38b9b765b2118630246a1d1d867584b3a869dac6c385ac425516790"
+        }
+      ],
+      "all_round_trip_sha256_match": true,
+      "scene_id": "TEEsavR23oF"
+    },
+    {
+      "native_run": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_125749_112622_exp4_full_exp4-smoke-a3-XB4GS9ShBRE",
+      "archive": "logs/CP3/raw/XB4GS9ShBRE.tar.gz",
+      "archive_sha256": "49409b7bc11ca21f8edb3bc7b674e1363fbfbf6ea4e171e9b30d37c1ece2bf83",
+      "archive_bytes": 244010,
+      "raw_bytes": 5877493,
+      "files": [
+        {
+          "path": "launch.json",
+          "bytes": 6462,
+          "sha256": "4d116068b230e1700446a731ee60beca5ce0cb4b3ad2a9bbdb200be7388e16f7"
+        },
+        {
+          "path": "mapping_environment.json",
+          "bytes": 20719,
+          "sha256": "9ce49676e78d3da883c2b183e16edaf186c77f542d5f22af286d8319136828ed"
+        },
+        {
+          "path": "navigation_environment_8.json",
+          "bytes": 30668,
+          "sha256": "b8a2cc18c1f165a76881e12d295a41124434cda873a336ea291504ccb51bf235"
+        },
+        {
+          "path": "results_XB4GS9ShBRE/openvocab_v0.1.1_gt_semantics_600_8/blp_decisions.jsonl",
+          "bytes": 305933,
+          "sha256": "793b7e5c1136ae5c5876bc4807a21ff00b8ccf83b114af62516cd95b2202e5d4"
+        },
+        {
+          "path": "results_XB4GS9ShBRE/openvocab_v0.1.1_gt_semantics_600_8/blp_events.jsonl",
+          "bytes": 42748,
+          "sha256": "7a50e1a608fe3b4a321f5c2a5c45eb8ffcff2709bd802d4cbe850c616be2216c"
+        },
+        {
+          "path": "results_XB4GS9ShBRE/openvocab_v0.1.1_gt_semantics_600_8/blp_snapshots.jsonl",
+          "bytes": 838731,
+          "sha256": "ba01a963682a57972eedf7c9635b5f18b65a79a401d5092606f806caaab74a02"
+        },
+        {
+          "path": "results_XB4GS9ShBRE/openvocab_v0.1.1_gt_semantics_600_8/episodes/XB4GS9ShBRE/0/identity.json",
+          "bytes": 866,
+          "sha256": "34d8ed19562dd58b2eabb82115b42c5ee1b23263f93b2732afb81e8a09336158"
+        },
+        {
+          "path": "results_XB4GS9ShBRE/openvocab_v0.1.1_gt_semantics_600_8/episodes/XB4GS9ShBRE/0/trajectory.jsonl",
+          "bytes": 885320,
+          "sha256": "9901e0bc72298b1e98d82c6a3043b2bbe8c58cf75ec9d32bcc1dd70ffb27df84"
+        },
+        {
+          "path": "results_XB4GS9ShBRE/openvocab_v0.1.1_gt_semantics_600_8/per_episode_metrics.json",
+          "bytes": 131328,
+          "sha256": "c3b351dbb79090e14bb9e22e6840b1b16c318dad9a6bf3d2801426743fc30282"
+        },
+        {
+          "path": "results_XB4GS9ShBRE/openvocab_v0.1.1_gt_semantics_600_8/scsp_decisions.jsonl",
+          "bytes": 3612809,
+          "sha256": "f843ce70ee1f46a48420fc98c99bf6c1fabdca73f77e5be31481844ae9327036"
+        },
+        {
+          "path": "source_snapshot.json",
+          "bytes": 1803,
+          "sha256": "3754e80effbcdb62900922c0c8e04879837d0c17aa7a5cdc3add8d01fc179119"
+        },
+        {
+          "path": "status.json",
+          "bytes": 106,
+          "sha256": "11ca193399a2c3a6a71e0af0a11a4c88584b7ce20c1a85ad761c3c29c65b7151"
+        }
+      ],
+      "all_round_trip_sha256_match": true,
+      "scene_id": "XB4GS9ShBRE"
+    },
+    {
+      "native_run": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_131947_400419_exp4_full_exp4-smoke-a3-bxsVRursffK",
+      "archive": "logs/CP3/raw/bxsVRursffK.tar.gz",
+      "archive_sha256": "e2d4f5652a993bcdcb7c275c05dd10184827d3f6561341c7b019a61ee5a621c1",
+      "archive_bytes": 98650,
+      "raw_bytes": 1000386,
+      "files": [
+        {
+          "path": "launch.json",
+          "bytes": 6459,
+          "sha256": "cbbe3a0a87c2f1d32a71828b5371bb017a5f5ac3ad001908f3efd31bc463e230"
+        },
+        {
+          "path": "mapping_environment.json",
+          "bytes": 20719,
+          "sha256": "c99481c326fb11ffe4b4f974b57fa08f5b9a1d807ec44c97b5ea3ae32cada0f7"
+        },
+        {
+          "path": "navigation_environment_9.json",
+          "bytes": 30668,
+          "sha256": "d190139418ff0a2deb802fe86924da299546ec0a7eddd318d25920d0d927b3bc"
+        },
+        {
+          "path": "results_bxsVRursffK/openvocab_v0.1.1_gt_semantics_600_9/blp_decisions.jsonl",
+          "bytes": 47069,
+          "sha256": "46da511e5dded24bc684e50d07e2280ed75be63161adf95f0e7b997fec768024"
+        },
+        {
+          "path": "results_bxsVRursffK/openvocab_v0.1.1_gt_semantics_600_9/blp_events.jsonl",
+          "bytes": 24920,
+          "sha256": "b2b5a1f56fee349a63fa5ced98e07bd04f87c31cddf23daa97fda26f44bb193b"
+        },
+        {
+          "path": "results_bxsVRursffK/openvocab_v0.1.1_gt_semantics_600_9/blp_snapshots.jsonl",
+          "bytes": 157303,
+          "sha256": "7f6e02f9c27e5632c2d6e8d690a88c7ed59345a3adeb08679760cbcbae6b9af5"
+        },
+        {
+          "path": "results_bxsVRursffK/openvocab_v0.1.1_gt_semantics_600_9/episodes/bxsVRursffK/0/identity.json",
+          "bytes": 863,
+          "sha256": "00af07d9c8d32d6cdbda13e7842ad0c3325789063e55a25178ba0309c1b7811d"
+        },
+        {
+          "path": "results_bxsVRursffK/openvocab_v0.1.1_gt_semantics_600_9/episodes/bxsVRursffK/0/trajectory.jsonl",
+          "bytes": 131486,
+          "sha256": "1b5dcde715b73a6e290e1b0be759c36af848c16c213220fd7d9adec0c3cee0e8"
+        },
+        {
+          "path": "results_bxsVRursffK/openvocab_v0.1.1_gt_semantics_600_9/per_episode_metrics.json",
+          "bytes": 23011,
+          "sha256": "fedabdc428369ad763da3548faac6766459fc57b56ab25ab4c75217587a751d6"
+        },
+        {
+          "path": "results_bxsVRursffK/openvocab_v0.1.1_gt_semantics_600_9/scsp_decisions.jsonl",
+          "bytes": 555979,
+          "sha256": "5827b01e9d5b955f12b55de1ce40bac4070788e6c336152d172f94188240f3cd"
+        },
+        {
+          "path": "source_snapshot.json",
+          "bytes": 1803,
+          "sha256": "3754e80effbcdb62900922c0c8e04879837d0c17aa7a5cdc3add8d01fc179119"
+        },
+        {
+          "path": "status.json",
+          "bytes": 106,
+          "sha256": "ab55c90ae8d80813178bc7e757b20bd83a6e84cfa332913ff580fbf458102b0c"
+        }
+      ],
+      "all_round_trip_sha256_match": true,
+      "scene_id": "bxsVRursffK"
+    },
+    {
+      "native_run": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_132534_914613_exp4_full_exp4-smoke-a3-cvZr5TUy5C5",
+      "archive": "logs/CP3/raw/cvZr5TUy5C5.tar.gz",
+      "archive_sha256": "6488decdc9095fd8378631df4259cbe4ca6ba3588ebc0360d093b819248aec58",
+      "archive_bytes": 270255,
+      "raw_bytes": 5771319,
+      "files": [
+        {
+          "path": "launch.json",
+          "bytes": 6461,
+          "sha256": "3b5a4738f5bc847a0c90c374eded94303e7023c0b817752b077777c565ddf6ab"
+        },
+        {
+          "path": "mapping_environment.json",
+          "bytes": 20719,
+          "sha256": "1c2bcb767d2e2225e338141742cea57a68c68d50ce18b703e2549d7c11ca7de7"
+        },
+        {
+          "path": "navigation_environment_10.json",
+          "bytes": 30668,
+          "sha256": "1bc77e255a32bffef6f0ed5bce02921ddce443850732ac7aa0d1860749779cb1"
+        },
+        {
+          "path": "results_cvZr5TUy5C5/openvocab_v0.1.1_gt_semantics_600_10/blp_decisions.jsonl",
+          "bytes": 278041,
+          "sha256": "5d67ee77351053b1783f195329b170b2dc81c6f5491e5ed236dcab0963366718"
+        },
+        {
+          "path": "results_cvZr5TUy5C5/openvocab_v0.1.1_gt_semantics_600_10/blp_events.jsonl",
+          "bytes": 55353,
+          "sha256": "c1fcabbc3786a35fe244b4f13825a662681127ee77eb4441c70efc8556a458e5"
+        },
+        {
+          "path": "results_cvZr5TUy5C5/openvocab_v0.1.1_gt_semantics_600_10/blp_snapshots.jsonl",
+          "bytes": 927340,
+          "sha256": "1553ef9f8c0398d6c8184774c803035dfc170900e37c7317036deb8ea09e4592"
+        },
+        {
+          "path": "results_cvZr5TUy5C5/openvocab_v0.1.1_gt_semantics_600_10/episodes/cvZr5TUy5C5/0/identity.json",
+          "bytes": 864,
+          "sha256": "e77707b84d202030ec53b9e216f778fe9bc3e6398ee27f8a1fae37c686f8eee3"
+        },
+        {
+          "path": "results_cvZr5TUy5C5/openvocab_v0.1.1_gt_semantics_600_10/episodes/cvZr5TUy5C5/0/trajectory.jsonl",
+          "bytes": 866054,
+          "sha256": "350cb141616bcf3dd14f5c3a6cd553f0384dfd11e1c8ef362554f5d992d5f211"
+        },
+        {
+          "path": "results_cvZr5TUy5C5/openvocab_v0.1.1_gt_semantics_600_10/per_episode_metrics.json",
+          "bytes": 129303,
+          "sha256": "d240358197b1e7dc717f187d6d89e59cd19cd9c7a89892c69dda7ea625af96f9"
+        },
+        {
+          "path": "results_cvZr5TUy5C5/openvocab_v0.1.1_gt_semantics_600_10/scsp_decisions.jsonl",
+          "bytes": 3454607,
+          "sha256": "9590db775098ed4b746d39235488050f99e47995220d570b489977e5316661ee"
+        },
+        {
+          "path": "source_snapshot.json",
+          "bytes": 1803,
+          "sha256": "3754e80effbcdb62900922c0c8e04879837d0c17aa7a5cdc3add8d01fc179119"
+        },
+        {
+          "path": "status.json",
+          "bytes": 106,
+          "sha256": "2d08fe0dea07ced2643c4fa05d585ecdac5ed2239a0b0bb055d25f65e0c1d9d5"
+        }
+      ],
+      "all_round_trip_sha256_match": true,
+      "scene_id": "cvZr5TUy5C5"
+    },
+    {
+      "native_run": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_132745_084300_exp4_full_exp4-smoke-a3-mL8ThkuaVTM",
+      "archive": "logs/CP3/raw/mL8ThkuaVTM.tar.gz",
+      "archive_sha256": "903990535a5b9c0e1d66be1da16999f0ca264fd97eab103654bf05cd345f5748",
+      "archive_bytes": 153116,
+      "raw_bytes": 3785878,
+      "files": [
+        {
+          "path": "launch.json",
+          "bytes": 6464,
+          "sha256": "7a9646a31e2643e6285e2d66b75d4513d5d65091a2899656648150bd16dc4bf0"
+        },
+        {
+          "path": "mapping_environment.json",
+          "bytes": 20719,
+          "sha256": "35676bf77ea6b998a923307beb30d8e1e99334f6f1336c1986fd8ef3a694d6a5"
+        },
+        {
+          "path": "navigation_environment_11.json",
+          "bytes": 30668,
+          "sha256": "d617974134bfeb5ad6abb9527c9532ee5cde8d504183b147790af1972219e9d1"
+        },
+        {
+          "path": "results_mL8ThkuaVTM/openvocab_v0.1.1_gt_semantics_600_11/blp_decisions.jsonl",
+          "bytes": 132867,
+          "sha256": "2abdc7343ca05338218399e5a2caca06b62235072e508bc0a1fb69b9c79cd742"
+        },
+        {
+          "path": "results_mL8ThkuaVTM/openvocab_v0.1.1_gt_semantics_600_11/blp_events.jsonl",
+          "bytes": 18129,
+          "sha256": "32fb5290d34784bc2e07b92adbc55fbc4da9fbba59a2a472ca79e1f8fb1e5328"
+        },
+        {
+          "path": "results_mL8ThkuaVTM/openvocab_v0.1.1_gt_semantics_600_11/blp_snapshots.jsonl",
+          "bytes": 527973,
+          "sha256": "7102f57daa59b2ed049484187d5a3d0d006217c9160d1234e598c332bf5f5abf"
+        },
+        {
+          "path": "results_mL8ThkuaVTM/openvocab_v0.1.1_gt_semantics_600_11/episodes/mL8ThkuaVTM/0/identity.json",
+          "bytes": 867,
+          "sha256": "1941623bb2caf74cd1f5c998392e9f025b6403d13cd526386ae853d8dd79fa55"
+        },
+        {
+          "path": "results_mL8ThkuaVTM/openvocab_v0.1.1_gt_semantics_600_11/episodes/mL8ThkuaVTM/0/trajectory.jsonl",
+          "bytes": 811806,
+          "sha256": "edf73d842812575b3e0ad376b1f8c59196d2baf90c5897db0e4241ca527b8fc2"
+        },
+        {
+          "path": "results_mL8ThkuaVTM/openvocab_v0.1.1_gt_semantics_600_11/per_episode_metrics.json",
+          "bytes": 110195,
+          "sha256": "28426116feb844bad95ad4f0de3c11fa91dbaa2bea1373a09d3cefd20acb5eb6"
+        },
+        {
+          "path": "results_mL8ThkuaVTM/openvocab_v0.1.1_gt_semantics_600_11/scsp_decisions.jsonl",
+          "bytes": 2124281,
+          "sha256": "005aca106b112c61f106733b194784526084c0340f3d068194c1cefb3cb4c751"
+        },
+        {
+          "path": "source_snapshot.json",
+          "bytes": 1803,
+          "sha256": "3754e80effbcdb62900922c0c8e04879837d0c17aa7a5cdc3add8d01fc179119"
+        },
+        {
+          "path": "status.json",
+          "bytes": 106,
+          "sha256": "ad1f6b68e20826a08e966dd5570db149a3a8e4a2dbb3becfa1b798b8ae67c3a0"
+        }
+      ],
+      "all_round_trip_sha256_match": true,
+      "scene_id": "mL8ThkuaVTM"
+    },
+    {
+      "native_run": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_133926_546690_exp4_full_exp4-smoke-a3-mv2HUxq3B53",
+      "archive": "logs/CP3/raw/mv2HUxq3B53.tar.gz",
+      "archive_sha256": "3d7dc1cd41fc21209b95458e39dc1e115c3b03839b81596efb8f6e6de9bf035f",
+      "archive_bytes": 203430,
+      "raw_bytes": 1924161,
+      "files": [
+        {
+          "path": "launch.json",
+          "bytes": 6461,
+          "sha256": "f9a8bddb8ffd9aa2feb2cb309a0660264c361e32198360f01107fb8181db8f1f"
+        },
+        {
+          "path": "mapping_environment.json",
+          "bytes": 20719,
+          "sha256": "4866d35cec513f6ef5b0993937a15332840fe2ca48fbf8551ae8d7008f109ab9"
+        },
+        {
+          "path": "navigation_environment_12.json",
+          "bytes": 30668,
+          "sha256": "ecae2060537bfa62b05483449462adb6c7df77df9d6bfb051cf16ea769016338"
+        },
+        {
+          "path": "results_mv2HUxq3B53/openvocab_v0.1.1_gt_semantics_600_12/blp_decisions.jsonl",
+          "bytes": 99295,
+          "sha256": "abea2981ff73024a9a88c645b05bb3840988cc78d6f444b8a63d6716db964040"
+        },
+        {
+          "path": "results_mv2HUxq3B53/openvocab_v0.1.1_gt_semantics_600_12/blp_events.jsonl",
+          "bytes": 40203,
+          "sha256": "19f29c2ca903f37715ea64586bb89a883b30db562e853fe38b960229364fb6cf"
+        },
+        {
+          "path": "results_mv2HUxq3B53/openvocab_v0.1.1_gt_semantics_600_12/blp_snapshots.jsonl",
+          "bytes": 375256,
+          "sha256": "0f9f83aa89f61a13d066a9b9071842edfbb497cdd63c436823b5a8551080bab9"
+        },
+        {
+          "path": "results_mv2HUxq3B53/openvocab_v0.1.1_gt_semantics_600_12/episodes/mv2HUxq3B53/0/identity.json",
+          "bytes": 864,
+          "sha256": "4a59082b9ca73213aef4a61c8c63eceba83fffb5c61ce64ee281337c6912f59e"
+        },
+        {
+          "path": "results_mv2HUxq3B53/openvocab_v0.1.1_gt_semantics_600_12/episodes/mv2HUxq3B53/0/trajectory.jsonl",
+          "bytes": 266843,
+          "sha256": "cc987f3344b6737a22298614b42ef7b8326a45c9aef574e7abdb6510d7778099"
+        },
+        {
+          "path": "results_mv2HUxq3B53/openvocab_v0.1.1_gt_semantics_600_12/per_episode_metrics.json",
+          "bytes": 38373,
+          "sha256": "bd14dea09f7cd09f03a24b1070180fa2a35741486a452e5c35cce393a0bb8378"
+        },
+        {
+          "path": "results_mv2HUxq3B53/openvocab_v0.1.1_gt_semantics_600_12/scsp_decisions.jsonl",
+          "bytes": 1043570,
+          "sha256": "ca1efec06306cda1aee9da3fe49d1bdd0e42c5438dd649dd5009602618c3a088"
+        },
+        {
+          "path": "source_snapshot.json",
+          "bytes": 1803,
+          "sha256": "1a1130dfce609af5bee87f0a9fda34bd1daf33cc1beea1411753993a6af6a3cf"
+        },
+        {
+          "path": "status.json",
+          "bytes": 106,
+          "sha256": "d0c7c19d4d84b48d29db20fe89a4917b0e14f50a2612f227ae63174d7dc2073f"
+        }
+      ],
+      "all_round_trip_sha256_match": true,
+      "scene_id": "mv2HUxq3B53"
+    },
+    {
+      "native_run": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_134247_034312_exp4_full_exp4-smoke-a3-p53SfW6mjZe",
+      "archive": "logs/CP3/raw/p53SfW6mjZe.tar.gz",
+      "archive_sha256": "fe9533b602f9bffbf3267a28d0eea58d25506add830b85f5fdb62159cffd3331",
+      "archive_bytes": 334478,
+      "raw_bytes": 3235611,
+      "files": [
+        {
+          "path": "launch.json",
+          "bytes": 6463,
+          "sha256": "fba5d3867d4a9c8c7eff95941ba6e9307af50b459dd0d0576b6e33556852d8a5"
+        },
+        {
+          "path": "mapping_environment.json",
+          "bytes": 20719,
+          "sha256": "7766009a0b342d6865490f8f38265843b8f32cd7279f96f61294cdfa9fbe6e2b"
+        },
+        {
+          "path": "navigation_environment_13.json",
+          "bytes": 30668,
+          "sha256": "0211bb7a5a1600e2f514fd1e374aea6933488782edfcd84dce9726f5840b73cb"
+        },
+        {
+          "path": "results_p53SfW6mjZe/openvocab_v0.1.1_gt_semantics_600_13/blp_decisions.jsonl",
+          "bytes": 135319,
+          "sha256": "5e0e3e3767a4c0bf387f18c328c586c62b95aa9645f9215432831c6b97df3ac2"
+        },
+        {
+          "path": "results_p53SfW6mjZe/openvocab_v0.1.1_gt_semantics_600_13/blp_events.jsonl",
+          "bytes": 81136,
+          "sha256": "bb9ab46db53d2947b3c8506ed7f6f0bae4848e8d09c99e47d85c8ce0a3364853"
+        },
+        {
+          "path": "results_p53SfW6mjZe/openvocab_v0.1.1_gt_semantics_600_13/blp_snapshots.jsonl",
+          "bytes": 651057,
+          "sha256": "6e60a199996b51f351780c49aa200c237a2e270afba208c234fa75282fec0f1b"
+        },
+        {
+          "path": "results_p53SfW6mjZe/openvocab_v0.1.1_gt_semantics_600_13/episodes/p53SfW6mjZe/0/identity.json",
+          "bytes": 866,
+          "sha256": "a28ad1b81aa1bd6aa3f4cf5cdfea2863aa6764f85a34316dd2611b1c8c320b8b"
+        },
+        {
+          "path": "results_p53SfW6mjZe/openvocab_v0.1.1_gt_semantics_600_13/episodes/p53SfW6mjZe/0/trajectory.jsonl",
+          "bytes": 449559,
+          "sha256": "605df215d37737e1854b5f7895333a8d30a9da8902fd66089da4b3ba51f768ca"
+        },
+        {
+          "path": "results_p53SfW6mjZe/openvocab_v0.1.1_gt_semantics_600_13/per_episode_metrics.json",
+          "bytes": 60337,
+          "sha256": "1d1b1d27fc1050c23c8e8aaa79ea07875038780c76c82c8d5e4590a7a7b9661f"
+        },
+        {
+          "path": "results_p53SfW6mjZe/openvocab_v0.1.1_gt_semantics_600_13/scsp_decisions.jsonl",
+          "bytes": 1797578,
+          "sha256": "7cbd00dae62d2be424a25a8a179325251a544253d8adc830b289958d27175ca6"
+        },
+        {
+          "path": "source_snapshot.json",
+          "bytes": 1803,
+          "sha256": "1a1130dfce609af5bee87f0a9fda34bd1daf33cc1beea1411753993a6af6a3cf"
+        },
+        {
+          "path": "status.json",
+          "bytes": 106,
+          "sha256": "65aef19979b5a143c79ae30a4efe52bd593e9cbd778355eb63d6be57561283fe"
+        }
+      ],
+      "all_round_trip_sha256_match": true,
+      "scene_id": "p53SfW6mjZe"
+    },
+    {
+      "native_run": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_134627_704560_exp4_full_exp4-smoke-a3-q3zU7Yy5E5s",
+      "archive": "logs/CP3/raw/q3zU7Yy5E5s.tar.gz",
+      "archive_sha256": "6be1f9a8a9e2010015baa8c9456433e0de45685c91773c685c6d479ddd2acbe2",
+      "archive_bytes": 228102,
+      "raw_bytes": 4794511,
+      "files": [
+        {
+          "path": "launch.json",
+          "bytes": 6463,
+          "sha256": "229ebde1e3ecb697fdbc91d1850d439910617b1a6baa1c1260c97fe829b49244"
+        },
+        {
+          "path": "mapping_environment.json",
+          "bytes": 20719,
+          "sha256": "e5ff6d3243126c7ce620833b4ea397b50abf34054167fc30e53caa92fb53c6fd"
+        },
+        {
+          "path": "navigation_environment_14.json",
+          "bytes": 30668,
+          "sha256": "5761a2d99654a222a6c4d7d519bd72034cbcae10593730c6743513cf2b55f1b1"
+        },
+        {
+          "path": "results_q3zU7Yy5E5s/openvocab_v0.1.1_gt_semantics_600_14/blp_decisions.jsonl",
+          "bytes": 123200,
+          "sha256": "b9d8dabc0a8598615bc457940e10ece373addbffbd6a271d25ea094bb66a1e4a"
+        },
+        {
+          "path": "results_q3zU7Yy5E5s/openvocab_v0.1.1_gt_semantics_600_14/blp_events.jsonl",
+          "bytes": 14420,
+          "sha256": "8c3f6bdea7d2fd34c11ae818d82d6c3e6658e18eb2511c8e729332ab3477ea00"
+        },
+        {
+          "path": "results_q3zU7Yy5E5s/openvocab_v0.1.1_gt_semantics_600_14/blp_snapshots.jsonl",
+          "bytes": 229624,
+          "sha256": "851f36f46dc5c33b5b3c63153cacae9368f96aaf6d676167d1b9eccb229cb246"
+        },
+        {
+          "path": "results_q3zU7Yy5E5s/openvocab_v0.1.1_gt_semantics_600_14/episodes/q3zU7Yy5E5s/0/identity.json",
+          "bytes": 866,
+          "sha256": "52d58988ea59b2aba5320cb9b3358caae97d848ddb86d176b39a67b735cd5dc3"
+        },
+        {
+          "path": "results_q3zU7Yy5E5s/openvocab_v0.1.1_gt_semantics_600_14/episodes/q3zU7Yy5E5s/0/trajectory.jsonl",
+          "bytes": 904189,
+          "sha256": "4f98148f6cd9790fd9efed6748180479633cf17675fe13c430664fe7a38410fc"
+        },
+        {
+          "path": "results_q3zU7Yy5E5s/openvocab_v0.1.1_gt_semantics_600_14/per_episode_metrics.json",
+          "bytes": 132177,
+          "sha256": "cf8f55779c2d2c16a37878b41489b8d319e9ae7d62e5fc771dece4befd33cf41"
+        },
+        {
+          "path": "results_q3zU7Yy5E5s/openvocab_v0.1.1_gt_semantics_600_14/scsp_decisions.jsonl",
+          "bytes": 3330276,
+          "sha256": "068299abe08e5b645d524abb023c1e1ec4b95d5f2a2d57002196e1e03e33b267"
+        },
+        {
+          "path": "source_snapshot.json",
+          "bytes": 1803,
+          "sha256": "1a1130dfce609af5bee87f0a9fda34bd1daf33cc1beea1411753993a6af6a3cf"
+        },
+        {
+          "path": "status.json",
+          "bytes": 106,
+          "sha256": "c5aec1c5fb1e2e51aeb80a5e10102b3236b7e739c0893a6214fb026dd3fdd199"
+        }
+      ],
+      "all_round_trip_sha256_match": true,
+      "scene_id": "q3zU7Yy5E5s"
+    },
+    {
+      "native_run": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_135408_722543_exp4_full_exp4-smoke-a3-qyAac8rV8Zk",
+      "archive": "logs/CP3/raw/qyAac8rV8Zk.tar.gz",
+      "archive_sha256": "d1294d665912301f9248e50650f244e7ac9195e30cd751776fadf99e98987442",
+      "archive_bytes": 267522,
+      "raw_bytes": 4958442,
+      "files": [
+        {
+          "path": "launch.json",
+          "bytes": 6458,
+          "sha256": "6d35157b273f40ac93b6b787413b3c7af514bb0d499709b8fbf310f1d4954de2"
+        },
+        {
+          "path": "mapping_environment.json",
+          "bytes": 20719,
+          "sha256": "9ddbb49c5e861c7652ed559ce45f836df7a07e5175c6916acb2335ed70e9760d"
+        },
+        {
+          "path": "navigation_environment_15.json",
+          "bytes": 30668,
+          "sha256": "ef1b3cec9f078eb335aba4516456195f87bed675c8488eb46e23cccbbb35bba5"
+        },
+        {
+          "path": "results_qyAac8rV8Zk/openvocab_v0.1.1_gt_semantics_600_15/blp_decisions.jsonl",
+          "bytes": 242270,
+          "sha256": "a996ba0e3b88cde83d4c4992d47347395e8abe14167ab18d4474de03334acbb7"
+        },
+        {
+          "path": "results_qyAac8rV8Zk/openvocab_v0.1.1_gt_semantics_600_15/blp_events.jsonl",
+          "bytes": 24537,
+          "sha256": "864b859bbcd3af5cdd6dbb99a734a2596f87fa50ecdbbd7722647763d7c8cf91"
+        },
+        {
+          "path": "results_qyAac8rV8Zk/openvocab_v0.1.1_gt_semantics_600_15/blp_snapshots.jsonl",
+          "bytes": 761028,
+          "sha256": "66df88a5d5ae6dc71e5b62c8a55d043c96d812dde156805b77dd43f7e2f42dde"
+        },
+        {
+          "path": "results_qyAac8rV8Zk/openvocab_v0.1.1_gt_semantics_600_15/episodes/qyAac8rV8Zk/0/identity.json",
+          "bytes": 861,
+          "sha256": "ca560541c78e7d997c08beac6d85a45e739447982881d12afe8dcd6d9fa9790d"
+        },
+        {
+          "path": "results_qyAac8rV8Zk/openvocab_v0.1.1_gt_semantics_600_15/episodes/qyAac8rV8Zk/0/trajectory.jsonl",
+          "bytes": 847063,
+          "sha256": "0add15f394f03121ba42c74b40cc39b65bd8f398605cb99130a39071448ab688"
+        },
+        {
+          "path": "results_qyAac8rV8Zk/openvocab_v0.1.1_gt_semantics_600_15/per_episode_metrics.json",
+          "bytes": 126339,
+          "sha256": "2f9cb26b01d1d12d47f4bbdb67c6212893fe55035933a97b5a9b8f263c20b09d"
+        },
+        {
+          "path": "results_qyAac8rV8Zk/openvocab_v0.1.1_gt_semantics_600_15/scsp_decisions.jsonl",
+          "bytes": 2896590,
+          "sha256": "a3d5e5e936b99dc130c0231d6b48d81a8f7eac5e5bd4002298607fe3580833d3"
+        },
+        {
+          "path": "source_snapshot.json",
+          "bytes": 1803,
+          "sha256": "1a1130dfce609af5bee87f0a9fda34bd1daf33cc1beea1411753993a6af6a3cf"
+        },
+        {
+          "path": "status.json",
+          "bytes": 106,
+          "sha256": "9c07cf22f52d4279a9c676a7c8a3b113dd9b249c565412f11ccba02e39f3fb3e"
+        }
+      ],
+      "all_round_trip_sha256_match": true,
+      "scene_id": "qyAac8rV8Zk"
+    },
+    {
+      "native_run": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_140319_830579_exp4_full_exp4-smoke-a3-svBbv1Pavdk",
+      "archive": "logs/CP3/raw/svBbv1Pavdk.tar.gz",
+      "archive_sha256": "3318680f40b930678e63d1103b02a65a06a7b44194a01ff45539c649a44fd3cd",
+      "archive_bytes": 370356,
+      "raw_bytes": 5860196,
+      "files": [
+        {
+          "path": "launch.json",
+          "bytes": 6460,
+          "sha256": "35e653f4a6a0795f70b34c8068639f5957c3285921f27c4edc75fd14690d7e9a"
+        },
+        {
+          "path": "mapping_environment.json",
+          "bytes": 20719,
+          "sha256": "c294d9506dec495b705322f6848263a2166e7f21488b848f594fe091c50712e5"
+        },
+        {
+          "path": "navigation_environment_16.json",
+          "bytes": 30668,
+          "sha256": "9cc8aa02170cb0b10edd4f1b090f5b4824ee1c6a7e6bf8042f7943c8cfaefade"
+        },
+        {
+          "path": "results_svBbv1Pavdk/openvocab_v0.1.1_gt_semantics_600_16/blp_decisions.jsonl",
+          "bytes": 320760,
+          "sha256": "e58897268ffef107a7141e410158d78946a9bd32068fa9ab601e4d877af22e63"
+        },
+        {
+          "path": "results_svBbv1Pavdk/openvocab_v0.1.1_gt_semantics_600_16/blp_events.jsonl",
+          "bytes": 35470,
+          "sha256": "930eca104a83340d6d5d9a6bbe100a21d456a321216897aa631219e555cf9185"
+        },
+        {
+          "path": "results_svBbv1Pavdk/openvocab_v0.1.1_gt_semantics_600_16/blp_snapshots.jsonl",
+          "bytes": 849196,
+          "sha256": "c070c6ccdffc71713b8767450513d420e4a95008d7708e7545819472221a0453"
+        },
+        {
+          "path": "results_svBbv1Pavdk/openvocab_v0.1.1_gt_semantics_600_16/episodes/svBbv1Pavdk/0/identity.json",
+          "bytes": 863,
+          "sha256": "6619241e93eb84f86ba735a625b19652feab270f7c35d5fded7898b5c76f39d0"
+        },
+        {
+          "path": "results_svBbv1Pavdk/openvocab_v0.1.1_gt_semantics_600_16/episodes/svBbv1Pavdk/0/trajectory.jsonl",
+          "bytes": 889016,
+          "sha256": "89d83b75aa4507938dffd252a486309f931f9b52c9547767893575ab5f31d5bc"
+        },
+        {
+          "path": "results_svBbv1Pavdk/openvocab_v0.1.1_gt_semantics_600_16/per_episode_metrics.json",
+          "bytes": 133333,
+          "sha256": "ef1b7e1127e228bae0610b5d4590eb14630a51440c99b567eec7ececce4999cc"
+        },
+        {
+          "path": "results_svBbv1Pavdk/openvocab_v0.1.1_gt_semantics_600_16/scsp_decisions.jsonl",
+          "bytes": 3571802,
+          "sha256": "1623aa16dbdfb9d18e1e64285fbfa9ef19b6c4c1640a00bddf255910a09f2d76"
+        },
+        {
+          "path": "source_snapshot.json",
+          "bytes": 1803,
+          "sha256": "1a1130dfce609af5bee87f0a9fda34bd1daf33cc1beea1411753993a6af6a3cf"
+        },
+        {
+          "path": "status.json",
+          "bytes": 106,
+          "sha256": "cd135aee62642c83fd6b08f298d826a0356911566934598583cefef6f32d5d09"
+        }
+      ],
+      "all_round_trip_sha256_match": true,
+      "scene_id": "svBbv1Pavdk"
+    },
+    {
+      "native_run": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_141110_886498_exp4_full_exp4-smoke-a3-wcojb4TFT35",
+      "archive": "logs/CP3/raw/wcojb4TFT35.tar.gz",
+      "archive_sha256": "107eff25f9c19b41986bb521333b9ce0c657649d1bd100ebfc4ae59049d08597",
+      "archive_bytes": 184026,
+      "raw_bytes": 4385863,
+      "files": [
+        {
+          "path": "launch.json",
+          "bytes": 6460,
+          "sha256": "8ea6eb1bbfb17ac920e5bc3735ca174a82c1f967763e928547a152bbbcccde72"
+        },
+        {
+          "path": "mapping_environment.json",
+          "bytes": 20719,
+          "sha256": "86481f52775c887cbbc221b4bbad81ca544c442f7119bc41ec7f9ba382a41c3e"
+        },
+        {
+          "path": "navigation_environment_17.json",
+          "bytes": 30668,
+          "sha256": "35cceeefe09fdefbfc318a211aa1f837f04d1b6f0fcffa5ea263dcbf0185f56f"
+        },
+        {
+          "path": "results_wcojb4TFT35/openvocab_v0.1.1_gt_semantics_600_17/blp_decisions.jsonl",
+          "bytes": 110356,
+          "sha256": "72b423d6278331380f275b0e849d993121f35786fc3ae5ad89d4a1fa34ec587f"
+        },
+        {
+          "path": "results_wcojb4TFT35/openvocab_v0.1.1_gt_semantics_600_17/blp_events.jsonl",
+          "bytes": 11443,
+          "sha256": "812cc8000c6fa8d50012938fd2153cef39768c97b14c86868c46206eb4b04751"
+        },
+        {
+          "path": "results_wcojb4TFT35/openvocab_v0.1.1_gt_semantics_600_17/blp_snapshots.jsonl",
+          "bytes": 239036,
+          "sha256": "abe6ca1be50e0ef71f2a7f9fbbb544bff0aa43feb76fbbf1d0d47c8531a9214d"
+        },
+        {
+          "path": "results_wcojb4TFT35/openvocab_v0.1.1_gt_semantics_600_17/episodes/wcojb4TFT35/0/identity.json",
+          "bytes": 863,
+          "sha256": "19b591019cb8e33cbae66130858e8f74c3cd0459931c96cd29151063f886d9f7"
+        },
+        {
+          "path": "results_wcojb4TFT35/openvocab_v0.1.1_gt_semantics_600_17/episodes/wcojb4TFT35/0/trajectory.jsonl",
+          "bytes": 870496,
+          "sha256": "6167fc2ed6b7a94596c51ae87e118c692ca0c9722b3d817067b373f7706fdbac"
+        },
+        {
+          "path": "results_wcojb4TFT35/openvocab_v0.1.1_gt_semantics_600_17/per_episode_metrics.json",
+          "bytes": 135292,
+          "sha256": "57b5205ed868969e238e74c1516f1037bcc7fc7fba10a925705c16fd788f44a2"
+        },
+        {
+          "path": "results_wcojb4TFT35/openvocab_v0.1.1_gt_semantics_600_17/scsp_decisions.jsonl",
+          "bytes": 2958621,
+          "sha256": "ba02aa8e6526e8f4bfe261b87cfe2b6664c114e8b66b5490fbb17332347de05a"
+        },
+        {
+          "path": "source_snapshot.json",
+          "bytes": 1803,
+          "sha256": "1a1130dfce609af5bee87f0a9fda34bd1daf33cc1beea1411753993a6af6a3cf"
+        },
+        {
+          "path": "status.json",
+          "bytes": 106,
+          "sha256": "84b0bd1d629910a526af439a111671b654b95179a533f9bf9493dbb4f48ff433"
+        }
+      ],
+      "all_round_trip_sha256_match": true,
+      "scene_id": "wcojb4TFT35"
+    },
+    {
+      "native_run": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_141852_029193_exp4_full_exp4-smoke-a3-ziup5kvtCCR",
+      "archive": "logs/CP3/raw/ziup5kvtCCR.tar.gz",
+      "archive_sha256": "8366859701a385f4de2cb383618b8b36097d36444c3c8146f0f4454a03c6e753",
+      "archive_bytes": 263981,
+      "raw_bytes": 2886188,
+      "files": [
+        {
+          "path": "launch.json",
+          "bytes": 6460,
+          "sha256": "15df4dc6d73a42a64e0104918478ec93eb7d89b83ea85e61e160197c711d366c"
+        },
+        {
+          "path": "mapping_environment.json",
+          "bytes": 20719,
+          "sha256": "66ef6f9435c5a7543fd6c9fbcb459448cbc5f6ecc1ed634983bc7654121d256c"
+        },
+        {
+          "path": "navigation_environment_18.json",
+          "bytes": 30668,
+          "sha256": "98ade5cf688a46d9b33b32d144b4226dd2501ac8c2a1a45b7a29c2b651bdbd81"
+        },
+        {
+          "path": "results_ziup5kvtCCR/openvocab_v0.1.1_gt_semantics_600_18/blp_decisions.jsonl",
+          "bytes": 105304,
+          "sha256": "4fef0f50f9811cc32ff5a066cff03e87f9c3e9d00be12b3b35980a96ad13ac23"
+        },
+        {
+          "path": "results_ziup5kvtCCR/openvocab_v0.1.1_gt_semantics_600_18/blp_events.jsonl",
+          "bytes": 55525,
+          "sha256": "73629fbb0f910442f0bad08fe9f7fc4df9a2134e42a660f57229a73d2b49eeb2"
+        },
+        {
+          "path": "results_ziup5kvtCCR/openvocab_v0.1.1_gt_semantics_600_18/blp_snapshots.jsonl",
+          "bytes": 546010,
+          "sha256": "9a31273e04094bde408c39cf1825c0511694a64b0faa6889e08b001b785e3b29"
+        },
+        {
+          "path": "results_ziup5kvtCCR/openvocab_v0.1.1_gt_semantics_600_18/episodes/ziup5kvtCCR/0/identity.json",
+          "bytes": 863,
+          "sha256": "bb76f2a42f9d0840d95bd2c261e1cf122ae3c131c58bef961f9368ecd804d46f"
+        },
+        {
+          "path": "results_ziup5kvtCCR/openvocab_v0.1.1_gt_semantics_600_18/episodes/ziup5kvtCCR/0/trajectory.jsonl",
+          "bytes": 495459,
+          "sha256": "ee32c82c456f458d45ec795e91be3a07d47aad1658587a3208f99ee56e62f8eb"
+        },
+        {
+          "path": "results_ziup5kvtCCR/openvocab_v0.1.1_gt_semantics_600_18/per_episode_metrics.json",
+          "bytes": 60897,
+          "sha256": "3e9b0507a02aadd2cc8c4958b2132acd1e6eb17d8ab5944da6949deaafec95dc"
+        },
+        {
+          "path": "results_ziup5kvtCCR/openvocab_v0.1.1_gt_semantics_600_18/scsp_decisions.jsonl",
+          "bytes": 1562374,
+          "sha256": "d2ae151e1e1697ddc8d1204a173aaacca0ef13e9085e57b4412fe1895ed9917f"
+        },
+        {
+          "path": "source_snapshot.json",
+          "bytes": 1803,
+          "sha256": "1a1130dfce609af5bee87f0a9fda34bd1daf33cc1beea1411753993a6af6a3cf"
+        },
+        {
+          "path": "status.json",
+          "bytes": 106,
+          "sha256": "9469d86f690dc2e95cc5040b7d30a4d1aeebe877f64c59aec756e37fa55bbb22"
+        }
+      ],
+      "all_round_trip_sha256_match": true,
+      "scene_id": "ziup5kvtCCR"
+    },
+    {
+      "native_run": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_142703_176144_exp4_full_exp4-smoke-a3-zt1RVoi7PcG",
+      "archive": "logs/CP3/raw/zt1RVoi7PcG.tar.gz",
+      "archive_sha256": "20c929ef4fdde0fd81a221be2d6c4a84e0b43cb87626d02e531f777866562e99",
+      "archive_bytes": 123650,
+      "raw_bytes": 1221928,
+      "files": [
+        {
+          "path": "launch.json",
+          "bytes": 6462,
+          "sha256": "9e25733e42f6c04ed1a20dcb3ea228740fae3ac5e516e59aaf4fe15d8182ce66"
+        },
+        {
+          "path": "mapping_environment.json",
+          "bytes": 20719,
+          "sha256": "831b0d3d2a349da05418ed2f2406f4f5a51c0bbb42f629487c989e98bd54d109"
+        },
+        {
+          "path": "navigation_environment_19.json",
+          "bytes": 30668,
+          "sha256": "a28403c853114047d4e7cf72333096afab398c73d959dd3f7bee59925525f613"
+        },
+        {
+          "path": "results_zt1RVoi7PcG/openvocab_v0.1.1_gt_semantics_600_19/blp_decisions.jsonl",
+          "bytes": 51185,
+          "sha256": "49d210c0c5146bf622dad515cc5e5ea7e3f8f7958e0d3cb51e4f3d5d5ddd02ef"
+        },
+        {
+          "path": "results_zt1RVoi7PcG/openvocab_v0.1.1_gt_semantics_600_19/blp_events.jsonl",
+          "bytes": 25300,
+          "sha256": "424572cb473b07e2d0a5d86dc6dd7ceb53128153d598d67c8742cb597532d09a"
+        },
+        {
+          "path": "results_zt1RVoi7PcG/openvocab_v0.1.1_gt_semantics_600_19/blp_snapshots.jsonl",
+          "bytes": 176069,
+          "sha256": "895232021747460d71005c7a81a1c0646daf3b6af59e04c6f9b8b177c87d4395"
+        },
+        {
+          "path": "results_zt1RVoi7PcG/openvocab_v0.1.1_gt_semantics_600_19/episodes/zt1RVoi7PcG/0/identity.json",
+          "bytes": 865,
+          "sha256": "b325dfe6f6117ecdd8d952cf3dbe553275b541e8b17908628fffe2a924cc4439"
+        },
+        {
+          "path": "results_zt1RVoi7PcG/openvocab_v0.1.1_gt_semantics_600_19/episodes/zt1RVoi7PcG/0/trajectory.jsonl",
+          "bytes": 173806,
+          "sha256": "644d0af274d182bad744eb5eec5a5e2d680eab6bdf6551aecf522c61a5f8ad28"
+        },
+        {
+          "path": "results_zt1RVoi7PcG/openvocab_v0.1.1_gt_semantics_600_19/per_episode_metrics.json",
+          "bytes": 27722,
+          "sha256": "d2741d95d19afcc8134e6c739d7c3543490023716b45cba9c7a25a8c9fb60900"
+        },
+        {
+          "path": "results_zt1RVoi7PcG/openvocab_v0.1.1_gt_semantics_600_19/scsp_decisions.jsonl",
+          "bytes": 707223,
+          "sha256": "6960dafbd460e1beb693bf82471d167bdb8e0302a9da0a885b79fcbee62e12ba"
+        },
+        {
+          "path": "source_snapshot.json",
+          "bytes": 1803,
+          "sha256": "1a1130dfce609af5bee87f0a9fda34bd1daf33cc1beea1411753993a6af6a3cf"
+        },
+        {
+          "path": "status.json",
+          "bytes": 106,
+          "sha256": "d2199e3fa6bf080bfa9b847917738a4a4fadef83ed9bad895d38d6f4967f1369"
+        }
+      ],
+      "all_round_trip_sha256_match": true,
+      "scene_id": "zt1RVoi7PcG"
+    }
+  ]
+}

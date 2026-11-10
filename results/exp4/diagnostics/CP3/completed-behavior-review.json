@@ -1,5 +1,5 @@
 {
-  "checked_at_utc": "2026-11-10T05:31:07.009679+00:00",
+  "checked_at_utc": "2026-11-10T06:32:59.702791+00:00",
   "diagnostic_only": true,
   "definition": "observed stop/outcome categories, not causal attribution or evaluation tuning",
   "candidate_y_definition": "GT at checked candidate coordinate; distinct from final agent success",
@@ -1712,6 +1712,1484 @@
                 -4.890110492706299,
                 -2.9753239154815674,
                 0.5411858558654785
+              ]
+            }
+          ],
+          "outcome_description": "native_success"
+        }
+      ]
+    },
+    {
+      "scene_id": "cvZr5TUy5C5",
+      "episode_id": "0",
+      "stages": [
+        {
+          "k": 1,
+          "goal": "toilet",
+          "reached": true,
+          "success": false,
+          "steps": 500,
+          "path_length_m": 21.984317682683468,
+          "shortest_path_m": 4.560212135314941,
+          "start_pos": [
+            -4.220240116119385,
+            0.07215999811887741,
+            8.216070175170898
+          ],
+          "end_pos": [
+            0.363201379776001,
+            -0.9162987470626831,
+            3.742907762527466
+          ],
+          "end_position_observation": "pre_STOP_pose",
+          "stop_reason": "max_steps",
+          "last_candidate_checks": [
+            {
+              "t": 302,
+              "candidate_id": "0:16",
+              "E": 0.1921357959508896,
+              "S": 0.8111243971624382,
+              "v": 0,
+              "y": 0,
+              "position": [
+                -1.1254873275756836,
+                -0.0335315465927124,
+                3.1547579765319824
+              ]
+            },
+            {
+              "t": 328,
+              "candidate_id": "0:25",
+              "E": 0.2160588502883911,
+              "S": -0.0,
+              "v": 0,
+              "y": 0,
+              "position": [
+                0.18739324808120728,
+                -0.9540390372276306,
+                3.1684682369232178
+              ]
+            },
+            {
+              "t": 350,
+              "candidate_id": "0:25",
+              "E": 0.2160588502883911,
+              "S": -0.0,
+              "v": 0,
+              "y": 0,
+              "position": [
+                0.2770390510559082,
+                -1.0138028860092163,
+                3.1647331714630127
+              ]
+            }
+          ],
+          "outcome_description": "budget_stop_native_failed"
+        },
+        {
+          "k": 2,
+          "goal": "bed",
+          "reached": true,
+          "success": false,
+          "steps": 500,
+          "path_length_m": 0.0,
+          "shortest_path_m": 12.09414005279541,
+          "start_pos": [
+            0.363201379776001,
+            -0.9162987470626831,
+            3.742907762527466
+          ],
+          "end_pos": [
+            0.363201379776001,
+            -0.9162987470626831,
+            3.742907762527466
+          ],
+          "end_position_observation": "pre_STOP_pose",
+          "stop_reason": "max_steps",
+          "last_candidate_checks": [],
+          "outcome_description": "budget_stop_native_failed"
+        },
+        {
+          "k": 3,
+          "goal": "chair",
+          "reached": true,
+          "success": false,
+          "steps": 500,
+          "path_length_m": 0.0,
+          "shortest_path_m": 5.342827320098877,
+          "start_pos": [
+            0.363201379776001,
+            -0.9162987470626831,
+            3.742907762527466
+          ],
+          "end_pos": [
+            0.363201379776001,
+            -0.9162987470626831,
+            3.742907762527466
+          ],
+          "end_position_observation": "pre_STOP_pose",
+          "stop_reason": "max_steps",
+          "last_candidate_checks": [],
+          "outcome_description": "budget_stop_native_failed"
+        }
+      ]
+    },
+    {
+      "scene_id": "mL8ThkuaVTM",
+      "episode_id": "0",
+      "stages": [
+        {
+          "k": 1,
+          "goal": "toilet",
+          "reached": true,
+          "success": false,
+          "steps": 500,
+          "path_length_m": 16.904133141040802,
+          "shortest_path_m": 4.8344316482543945,
+          "start_pos": [
+            0.22032000124454498,
+            -1.1062400341033936,
+            -2.071700096130371
+          ],
+          "end_pos": [
+            0.31571871042251587,
+            -1.176007866859436,
+            -1.6493229866027832
+          ],
+          "end_position_observation": "pre_STOP_pose",
+          "stop_reason": "max_steps",
+          "last_candidate_checks": [
+            {
+              "t": 20,
+              "candidate_id": "0:1",
+              "E": 0.19669249653816223,
+              "S": -0.0,
+              "v": 0,
+              "y": 0,
+              "position": [
+                -0.006708979606628418,
+                -1.1305735111236572,
+                -2.24226975440979
+              ]
+            },
+            {
+              "t": 34,
+              "candidate_id": "0:0",
+              "E": 0.19883672893047333,
+              "S": -0.0,
+              "v": 0,
+              "y": 0,
+              "position": [
+                -0.18986594676971436,
+                -1.176007866859436,
+                -0.7282403707504272
+              ]
+            },
+            {
+              "t": 54,
+              "candidate_id": "0:3",
+              "E": 0.20428991317749023,
+              "S": -0.0,
+              "v": 0,
+              "y": 0,
+              "position": [
+                1.7485281229019165,
+                -2.237488269805908,
+                -1.598041296005249
+              ]
+            }
+          ],
+          "outcome_description": "budget_stop_native_failed"
+        },
+        {
+          "k": 2,
+          "goal": "chair",
+          "reached": true,
+          "success": false,
+          "steps": 500,
+          "path_length_m": 0.8824863135814667,
+          "shortest_path_m": 7.664252281188965,
+          "start_pos": [
+            0.31571871042251587,
+            -1.176007866859436,
+            -1.6493229866027832
+          ],
+          "end_pos": [
+            0.41013407707214355,
+            -1.176007866859436,
+            -1.5319757461547852
+          ],
+          "end_position_observation": "pre_STOP_pose",
+          "stop_reason": "max_steps",
+          "last_candidate_checks": [
+            {
+              "t": 501,
+              "candidate_id": "1:0",
+              "E": 0.18055617809295654,
+              "S": -0.0,
+              "v": 0,
+              "y": 0,
+              "position": [
+                -0.18986594676971436,
+                -1.176007866859436,
+                -1.954848051071167
+              ]
+            },
+            {
+              "t": 514,
+              "candidate_id": "1:2",
+              "E": 0.2004452645778656,
+              "S": -0.0,
+              "v": 0,
+              "y": 0,
+              "position": [
+                0.8135462999343872,
+                -0.786375105381012,
+                -1.2422696352005005
+              ]
+            },
+            {
+              "t": 515,
+              "candidate_id": "1:2",
+              "E": 0.2004452645778656,
+              "S": -0.0,
+              "v": 0,
+              "y": 0,
+              "position": [
+                0.8135462999343872,
+                -0.786375105381012,
+                -1.2422696352005005
+              ]
+            }
+          ],
+          "outcome_description": "budget_stop_native_failed"
+        },
+        {
+          "k": 3,
+          "goal": "toilet",
+          "reached": true,
+          "success": false,
+          "steps": 500,
+          "path_length_m": 1.1515739858150482,
+          "shortest_path_m": 4.662842750549316,
+          "start_pos": [
+            0.41013407707214355,
+            -1.176007866859436,
+            -1.5319757461547852
+          ],
+          "end_pos": [
+            1.0814958810806274,
+            -1.5742028951644897,
+            -1.811760663986206
+          ],
+          "end_position_observation": "pre_STOP_pose",
+          "stop_reason": "max_steps",
+          "last_candidate_checks": [
+            {
+              "t": 1014,
+              "candidate_id": "2:2",
+              "E": 0.21391421556472778,
+              "S": -0.0,
+              "v": 0,
+              "y": 0,
+              "position": [
+                0.6112353801727295,
+                -1.2626662254333496,
+                -1.638658881187439
+              ]
+            },
+            {
+              "t": 1015,
+              "candidate_id": "2:2",
+              "E": 0.21391421556472778,
+              "S": -0.0,
+              "v": 0,
+              "y": 0,
+              "position": [
+                0.6112353801727295,
+                -1.2626662254333496,
+                -1.638658881187439
+              ]
+            },
+            {
+              "t": 1034,
+              "candidate_id": "2:3",
+              "E": 0.20428991317749023,
+              "S": 0.486582880967408,
+              "v": 0,
+              "y": 0,
+              "position": [
+                1.872190237045288,
+                -0.12472283840179443,
+                -1.2422696352005005
+              ]
+            }
+          ],
+          "outcome_description": "budget_stop_native_failed"
+        }
+      ]
+    },
+    {
+      "scene_id": "mv2HUxq3B53",
+      "episode_id": "0",
+      "stages": [
+        {
+          "k": 1,
+          "goal": "toilet",
+          "reached": true,
+          "success": false,
+          "steps": 217,
+          "path_length_m": 16.072004478424788,
+          "shortest_path_m": 4.715521812438965,
+          "start_pos": [
+            -0.518750011920929,
+            0.05034999921917915,
+            14.280489921569824
+          ],
+          "end_pos": [
+            -1.6574087142944336,
+            0.05035419762134552,
+            14.502734184265137
+          ],
+          "end_position_observation": "pre_STOP_pose",
+          "stop_reason": "verified_target",
+          "last_candidate_checks": [
+            {
+              "t": 190,
+              "candidate_id": "0:17",
+              "E": 0.2707919478416443,
+              "S": 0.486582880967408,
+              "v": 0,
+              "y": 0,
+              "position": [
+                -1.399010419845581,
+                0.05035419762134552,
+                15.209075927734375
+              ]
+            },
+            {
+              "t": 209,
+              "candidate_id": "0:13",
+              "E": 0.28064098954200745,
+              "S": 0.6321205588285577,
+              "v": 0,
+              "y": 0,
+              "position": [
+                -2.1656529903411865,
+                0.05035419762134552,
+                14.550680160522461
+              ]
+            },
+            {
+              "t": 210,
+              "candidate_id": "0:13",
+              "E": 0.2804535925388336,
+              "S": 0.6321205588285577,
+              "v": 1,
+              "y": 0,
+              "position": [
+                -2.124096632003784,
+                0.05035419762134552,
+                14.430238723754883
+              ]
+            }
+          ],
+          "outcome_description": "system_confirmed_but_native_failed"
+        },
+        {
+          "k": 2,
+          "goal": "bed",
+          "reached": true,
+          "success": true,
+          "steps": 46,
+          "path_length_m": 6.500002011656761,
+          "shortest_path_m": 4.622852325439453,
+          "start_pos": [
+            -1.6574087142944336,
+            0.05035419762134552,
+            14.502734184265137
+          ],
+          "end_pos": [
+            2.34578537940979,
+            0.05035419762134552,
+            13.214160919189453
+          ],
+          "end_position_observation": "pre_STOP_pose",
+          "stop_reason": "verified_target",
+          "last_candidate_checks": [
+            {
+              "t": 255,
+              "candidate_id": "1:0",
+              "E": 0.23260296881198883,
+              "S": 0.6321205588285577,
+              "v": 1,
+              "y": 1,
+              "position": [
+                1.8767509460449219,
+                0.05035419762134552,
+                13.704602241516113
+              ]
+            }
+          ],
+          "outcome_description": "native_success"
+        },
+        {
+          "k": 3,
+          "goal": "couch",
+          "reached": true,
+          "success": false,
+          "steps": 200,
+          "path_length_m": 21.000000670552254,
+          "shortest_path_m": 3.0751967430114746,
+          "start_pos": [
+            2.34578537940979,
+            0.05035419762134552,
+            13.214160919189453
+          ],
+          "end_pos": [
+            -9.222138404846191,
+            0.05035419762134552,
+            12.412944793701172
+          ],
+          "end_position_observation": "pre_STOP_pose",
+          "stop_reason": "verified_target",
+          "last_candidate_checks": [
+            {
+              "t": 428,
+              "candidate_id": "2:17",
+              "E": 0.20561236143112183,
+              "S": 0.28346868942621073,
+              "v": 0,
+              "y": 0,
+              "position": [
+                -8.545906066894531,
+                0.05035419762134552,
+                12.067193031311035
+              ]
+            },
+            {
+              "t": 437,
+              "candidate_id": "2:19",
+              "E": 0.19715267419815063,
+              "S": 0.28346868942621073,
+              "v": 1,
+              "y": 0,
+              "position": [
+                -9.838723182678223,
+                0.05035419762134552,
+                11.43000602722168
+              ]
+            },
+            {
+              "t": 459,
+              "candidate_id": "2:18",
+              "E": 0.23672501742839813,
+              "S": 0.486582880967408,
+              "v": 1,
+              "y": 0,
+              "position": [
+                -10.088460922241211,
+                0.05035419762134552,
+                12.754603385925293
+              ]
+            }
+          ],
+          "outcome_description": "system_confirmed_but_native_failed"
+        }
+      ]
+    },
+    {
+      "scene_id": "p53SfW6mjZe",
+      "episode_id": "0",
+      "stages": [
+        {
+          "k": 1,
+          "goal": "couch",
+          "reached": true,
+          "success": true,
+          "steps": 263,
+          "path_length_m": 23.51373607479036,
+          "shortest_path_m": 4.868951797485352,
+          "start_pos": [
+            -4.67126989364624,
+            0.004809999838471413,
+            6.515789985656738
+          ],
+          "end_pos": [
+            0.5438545942306519,
+            0.004812479019165039,
+            6.430479526519775
+          ],
+          "end_position_observation": "pre_STOP_pose",
+          "stop_reason": "verified_target",
+          "last_candidate_checks": [
+            {
+              "t": 218,
+              "candidate_id": "0:18",
+              "E": 0.21462953090667725,
+              "S": 0.8111243971624382,
+              "v": 0,
+              "y": 0,
+              "position": [
+                -2.6112499237060547,
+                0.004812479019165039,
+                4.862215995788574
+              ]
+            },
+            {
+              "t": 249,
+              "candidate_id": "0:23",
+              "E": 0.20334504544734955,
+              "S": 0.486582880967408,
+              "v": 0,
+              "y": 1,
+              "position": [
+                1.272586703300476,
+                0.004812479019165039,
+                6.121891975402832
+              ]
+            },
+            {
+              "t": 250,
+              "candidate_id": "0:3",
+              "E": 0.2515409290790558,
+              "S": 0.486582880967408,
+              "v": 1,
+              "y": 1,
+              "position": [
+                0.9887504577636719,
+                0.004812479019165039,
+                5.734860420227051
+              ]
+            }
+          ],
+          "outcome_description": "native_success"
+        },
+        {
+          "k": 2,
+          "goal": "toilet",
+          "reached": true,
+          "success": true,
+          "steps": 491,
+          "path_length_m": 38.3662503361702,
+          "shortest_path_m": 12.721735954284668,
+          "start_pos": [
+            0.5438545942306519,
+            0.004812479019165039,
+            6.430479526519775
+          ],
+          "end_pos": [
+            -15.843374252319336,
+            0.0681203156709671,
+            2.55173921585083
+          ],
+          "end_position_observation": "pre_STOP_pose",
+          "stop_reason": "verified_target",
+          "last_candidate_checks": [
+            {
+              "t": 616,
+              "candidate_id": "1:29",
+              "E": 0.22329457104206085,
+              "S": -0.0,
+              "v": 0,
+              "y": 1,
+              "position": [
+                -9.293160438537598,
+                0.13245567679405212,
+                1.645146369934082
+              ]
+            },
+            {
+              "t": 660,
+              "candidate_id": "1:31",
+              "E": 0.19979441165924072,
+              "S": -0.0,
+              "v": 0,
+              "y": 0,
+              "position": [
+                -10.577423095703125,
+                0.07940013706684113,
+                2.880863666534424
+              ]
+            },
+            {
+              "t": 746,
+              "candidate_id": "1:33",
+              "E": 0.23382747173309326,
+              "S": 0.486582880967408,
+              "v": 1,
+              "y": 1,
+              "position": [
+                -16.342132568359375,
+                0.08128494769334793,
+                2.306342601776123
+              ]
+            }
+          ],
+          "outcome_description": "native_success"
+        },
+        {
+          "k": 3,
+          "goal": "chair",
+          "reached": true,
+          "success": true,
+          "steps": 33,
+          "path_length_m": 4.8344466388225555,
+          "shortest_path_m": 4.354535102844238,
+          "start_pos": [
+            -15.843374252319336,
+            0.0681203156709671,
+            2.55173921585083
+          ],
+          "end_pos": [
+            -13.655193328857422,
+            0.21831835806369781,
+            5.875001907348633
+          ],
+          "end_position_observation": "pre_STOP_pose",
+          "stop_reason": "verified_target",
+          "last_candidate_checks": [
+            {
+              "t": 784,
+              "candidate_id": "2:35",
+              "E": 0.2705475091934204,
+              "S": 0.486582880967408,
+              "v": 1,
+              "y": 1,
+              "position": [
+                -12.788743019104004,
+                0.004812479019165039,
+                5.680545806884766
+              ]
+            }
+          ],
+          "outcome_description": "native_success"
+        }
+      ]
+    },
+    {
+      "scene_id": "q3zU7Yy5E5s",
+      "episode_id": "0",
+      "stages": [
+        {
+          "k": 1,
+          "goal": "toilet",
+          "reached": true,
+          "success": false,
+          "steps": 500,
+          "path_length_m": 2.280031034506237,
+          "shortest_path_m": 4.204191207885742,
+          "start_pos": [
+            -3.6917800903320312,
+            0.7517899870872498,
+            -1.4385199546813965
+          ],
+          "end_pos": [
+            -3.932729482650757,
+            0.3938216269016266,
+            -0.8610126376152039
+          ],
+          "end_position_observation": "pre_STOP_pose",
+          "stop_reason": "max_steps",
+          "last_candidate_checks": [
+            {
+              "t": 30,
+              "candidate_id": "0:1",
+              "E": 0.2161397486925125,
+              "S": -0.0,
+              "v": 0,
+              "y": 0,
+              "position": [
+                -3.5702500343322754,
+                0.32524025440216064,
+                -0.9338876605033875
+              ]
+            }
+          ],
+          "outcome_description": "budget_stop_native_failed"
+        },
+        {
+          "k": 2,
+          "goal": "couch",
+          "reached": true,
+          "success": false,
+          "steps": 500,
+          "path_length_m": 0.0,
+          "shortest_path_m": null,
+          "start_pos": [
+            -3.932729482650757,
+            0.3938216269016266,
+            -0.8610126376152039
+          ],
+          "end_pos": [
+            -3.932729482650757,
+            0.3938216269016266,
+            -0.8610126376152039
+          ],
+          "end_position_observation": "pre_STOP_pose",
+          "stop_reason": "max_steps",
+          "last_candidate_checks": [
+            {
+              "t": 501,
+              "candidate_id": "1:0",
+              "E": 0.22836744785308838,
+              "S": -0.0,
+              "v": 1,
+              "y": 0,
+              "position": [
+                -3.567476987838745,
+                0.3696068525314331,
+                -0.989345908164978
+              ]
+            }
+          ],
+          "outcome_description": "budget_stop_native_failed"
+        },
+        {
+          "k": 3,
+          "goal": "chair",
+          "reached": true,
+          "success": false,
+          "steps": 500,
+          "path_length_m": 0.0,
+          "shortest_path_m": 6.9749579429626465,
+          "start_pos": [
+            -3.932729482650757,
+            0.3938216269016266,
+            -0.8610126376152039
+          ],
+          "end_pos": [
+            -3.932729482650757,
+            0.3938216269016266,
+            -0.8610126376152039
+          ],
+          "end_position_observation": "pre_STOP_pose",
+          "stop_reason": "max_steps",
+          "last_candidate_checks": [
+            {
+              "t": 1001,
+              "candidate_id": "2:0",
+              "E": 0.2264934927225113,
+              "S": -0.0,
+              "v": 1,
+              "y": 0,
+              "position": [
+                -3.5677783489227295,
+                0.36478549242019653,
+                -0.9833191633224487
+              ]
+            }
+          ],
+          "outcome_description": "budget_stop_native_failed"
+        }
+      ]
+    },
+    {
+      "scene_id": "qyAac8rV8Zk",
+      "episode_id": "0",
+      "stages": [
+        {
+          "k": 1,
+          "goal": "bed",
+          "reached": true,
+          "success": false,
+          "steps": 500,
+          "path_length_m": 11.893176805227995,
+          "shortest_path_m": 14.173577308654785,
+          "start_pos": [
+            -8.18887996673584,
+            0.019200000911951065,
+            1.306570053100586
+          ],
+          "end_pos": [
+            -3.7140512466430664,
+            -0.3807971775531769,
+            3.1441712379455566
+          ],
+          "end_position_observation": "pre_STOP_pose",
+          "stop_reason": "max_steps",
+          "last_candidate_checks": [
+            {
+              "t": 50,
+              "candidate_id": "0:9",
+              "E": 0.20227546989917755,
+              "S": -0.0,
+              "v": 0,
+              "y": 0,
+              "position": [
+                -7.299781799316406,
+                0.019202709197998047,
+                -0.9129747152328491
+              ]
+            },
+            {
+              "t": 84,
+              "candidate_id": "0:8",
+              "E": 0.1839495152235031,
+              "S": 0.486582880967408,
+              "v": 0,
+              "y": 0,
+              "position": [
+                -9.799781799316406,
+                0.019202709197998047,
+                1.9370253086090088
+              ]
+            },
+            {
+              "t": 113,
+              "candidate_id": "0:9",
+              "E": 0.20227546989917755,
+              "S": 0.28346868942621073,
+              "v": 0,
+              "y": 0,
+              "position": [
+                -7.299781799316406,
+                0.019202709197998047,
+                -0.9129747152328491
+              ]
+            }
+          ],
+          "outcome_description": "budget_stop_native_failed"
+        },
+        {
+          "k": 2,
+          "goal": "tv",
+          "reached": true,
+          "success": false,
+          "steps": 500,
+          "path_length_m": 0.0,
+          "shortest_path_m": 2.380488157272339,
+          "start_pos": [
+            -3.7140512466430664,
+            -0.3807971775531769,
+            3.1441712379455566
+          ],
+          "end_pos": [
+            -3.7140512466430664,
+            -0.3807971775531769,
+            3.1441712379455566
+          ],
+          "end_position_observation": "pre_STOP_pose",
+          "stop_reason": "max_steps",
+          "last_candidate_checks": [],
+          "outcome_description": "budget_stop_native_failed"
+        },
+        {
+          "k": 3,
+          "goal": "toilet",
+          "reached": true,
+          "success": false,
+          "steps": 500,
+          "path_length_m": 0.0,
+          "shortest_path_m": 13.701299667358398,
+          "start_pos": [
+            -3.7140512466430664,
+            -0.3807971775531769,
+            3.1441712379455566
+          ],
+          "end_pos": [
+            -3.7140512466430664,
+            -0.3807971775531769,
+            3.1441712379455566
+          ],
+          "end_position_observation": "pre_STOP_pose",
+          "stop_reason": "max_steps",
+          "last_candidate_checks": [
+            {
+              "t": 1001,
+              "candidate_id": "2:0",
+              "E": 0.20308148860931396,
+              "S": -0.0,
+              "v": 0,
+              "y": 0,
+              "position": [
+                -3.499781608581543,
+                -0.1478729546070099,
+                2.8667542934417725
+              ]
+            }
+          ],
+          "outcome_description": "budget_stop_native_failed"
+        }
+      ]
+    },
+    {
+      "scene_id": "svBbv1Pavdk",
+      "episode_id": "0",
+      "stages": [
+        {
+          "k": 1,
+          "goal": "plant",
+          "reached": true,
+          "success": false,
+          "steps": 500,
+          "path_length_m": 4.460068993270397,
+          "shortest_path_m": 3.3656156063079834,
+          "start_pos": [
+            11.580220222473145,
+            0.0775500014424324,
+            -0.6349899768829346
+          ],
+          "end_pos": [
+            11.43475341796875,
+            0.07754674553871155,
+            2.9676737785339355
+          ],
+          "end_position_observation": "pre_STOP_pose",
+          "stop_reason": "max_steps",
+          "last_candidate_checks": [
+            {
+              "t": 38,
+              "candidate_id": "0:3",
+              "E": 0.20811253786087036,
+              "S": 0.28346868942621073,
+              "v": 0,
+              "y": 1,
+              "position": [
+                9.905471801757812,
+                0.2342206835746765,
+                0.9634860754013062
+              ]
+            },
+            {
+              "t": 40,
+              "candidate_id": "0:9",
+              "E": 0.2353418469429016,
+              "S": -0.0,
+              "v": 0,
+              "y": 0,
+              "position": [
+                11.117402076721191,
+                0.07754674553871155,
+                -0.7404270172119141
+              ]
+            },
+            {
+              "t": 56,
+              "candidate_id": "0:3",
+              "E": 0.22745713591575623,
+              "S": 0.28346868942621073,
+              "v": 1,
+              "y": 0,
+              "position": [
+                10.524068832397461,
+                0.07754674553871155,
+                1.9640225172042847
+              ]
+            }
+          ],
+          "outcome_description": "budget_stop_native_failed"
+        },
+        {
+          "k": 2,
+          "goal": "couch",
+          "reached": true,
+          "success": false,
+          "steps": 500,
+          "path_length_m": 4.779481790959835,
+          "shortest_path_m": 2.2365736961364746,
+          "start_pos": [
+            11.43475341796875,
+            0.07754674553871155,
+            2.9676737785339355
+          ],
+          "end_pos": [
+            10.786505699157715,
+            0.07754674553871155,
+            3.0072872638702393
+          ],
+          "end_position_observation": "pre_STOP_pose",
+          "stop_reason": "max_steps",
+          "last_candidate_checks": [],
+          "outcome_description": "budget_stop_native_failed"
+        },
+        {
+          "k": 3,
+          "goal": "bed",
+          "reached": true,
+          "success": false,
+          "steps": 500,
+          "path_length_m": 6.203316576778889,
+          "shortest_path_m": 8.730382919311523,
+          "start_pos": [
+            10.786505699157715,
+            0.07754674553871155,
+            3.0072872638702393
+          ],
+          "end_pos": [
+            10.50579833984375,
+            0.15968498587608337,
+            1.2711769342422485
+          ],
+          "end_position_observation": "pre_STOP_pose",
+          "stop_reason": "max_steps",
+          "last_candidate_checks": [
+            {
+              "t": 1017,
+              "candidate_id": "2:5",
+              "E": 0.24599000811576843,
+              "S": 0.28346868942621073,
+              "v": 0,
+              "y": 0,
+              "position": [
+                11.117402076721191,
+                0.07754674553871155,
+                -0.7404270172119141
+              ]
+            },
+            {
+              "t": 1040,
+              "candidate_id": "2:11",
+              "E": 0.2276061475276947,
+              "S": 0.486582880967408,
+              "v": 0,
+              "y": 0,
+              "position": [
+                9.967402458190918,
+                0.07754674553871155,
+                0.2585758864879608
+              ]
+            }
+          ],
+          "outcome_description": "budget_stop_native_failed"
+        }
+      ]
+    },
+    {
+      "scene_id": "wcojb4TFT35",
+      "episode_id": "0",
+      "stages": [
+        {
+          "k": 1,
+          "goal": "toilet",
+          "reached": true,
+          "success": false,
+          "steps": 500,
+          "path_length_m": 0.36853400617837906,
+          "shortest_path_m": 4.956643581390381,
+          "start_pos": [
+            -1.9985500574111938,
+            0.47328999638557434,
+            -11.878170013427734
+          ],
+          "end_pos": [
+            -1.786611557006836,
+            0.39492011070251465,
+            -11.592323303222656
+          ],
+          "end_position_observation": "pre_STOP_pose",
+          "stop_reason": "max_steps",
+          "last_candidate_checks": [
+            {
+              "t": 20,
+              "candidate_id": "0:1",
+              "E": 0.1906011700630188,
+              "S": 0.28346868942621073,
+              "v": 0,
+              "y": 0,
+              "position": [
+                -0.7880614995956421,
+                1.3740246295928955,
+                -11.960732460021973
+              ]
+            }
+          ],
+          "outcome_description": "budget_stop_native_failed"
+        },
+        {
+          "k": 2,
+          "goal": "couch",
+          "reached": true,
+          "success": false,
+          "steps": 500,
+          "path_length_m": 0.0,
+          "shortest_path_m": null,
+          "start_pos": [
+            -1.786611557006836,
+            0.39492011070251465,
+            -11.592323303222656
+          ],
+          "end_pos": [
+            -1.786611557006836,
+            0.39492011070251465,
+            -11.592323303222656
+          ],
+          "end_position_observation": "pre_STOP_pose",
+          "stop_reason": "max_steps",
+          "last_candidate_checks": [
+            {
+              "t": 501,
+              "candidate_id": "1:2",
+              "E": 0.21109750866889954,
+              "S": -0.0,
+              "v": 0,
+              "y": 0,
+              "position": [
+                -2.241572380065918,
+                0.4763981103897095,
+                -12.090453147888184
+              ]
+            }
+          ],
+          "outcome_description": "budget_stop_native_failed"
+        },
+        {
+          "k": 3,
+          "goal": "tv",
+          "reached": true,
+          "success": false,
+          "steps": 500,
+          "path_length_m": 0.0,
+          "shortest_path_m": null,
+          "start_pos": [
+            -1.786611557006836,
+            0.39492011070251465,
+            -11.592323303222656
+          ],
+          "end_pos": [
+            -1.786611557006836,
+            0.39492011070251465,
+            -11.592323303222656
+          ],
+          "end_position_observation": "pre_STOP_pose",
+          "stop_reason": "max_steps",
+          "last_candidate_checks": [
+            {
+              "t": 1001,
+              "candidate_id": "2:3",
+              "E": 0.24283641576766968,
+              "S": -0.0,
+              "v": 0,
+              "y": 0,
+              "position": [
+                -1.6119420528411865,
+                0.4007304310798645,
+                -11.612659454345703
+              ]
+            }
+          ],
+          "outcome_description": "budget_stop_native_failed"
+        }
+      ]
+    },
+    {
+      "scene_id": "ziup5kvtCCR",
+      "episode_id": "0",
+      "stages": [
+        {
+          "k": 1,
+          "goal": "chair",
+          "reached": true,
+          "success": true,
+          "steps": 313,
+          "path_length_m": 19.003776936559007,
+          "shortest_path_m": 5.466647624969482,
+          "start_pos": [
+            -7.248089790344238,
+            0.021220000460743904,
+            1.9802700281143188
+          ],
+          "end_pos": [
+            -4.6434197425842285,
+            0.021222904324531555,
+            6.805148601531982
+          ],
+          "end_position_observation": "pre_STOP_pose",
+          "stop_reason": "verified_target",
+          "last_candidate_checks": [
+            {
+              "t": 253,
+              "candidate_id": "0:15",
+              "E": 0.22405436635017395,
+              "S": -0.0,
+              "v": 0,
+              "y": 0,
+              "position": [
+                -6.421901226043701,
+                0.021222904324531555,
+                5.30974006652832
+              ]
+            },
+            {
+              "t": 254,
+              "candidate_id": "0:15",
+              "E": 0.22392584383487701,
+              "S": -0.0,
+              "v": 0,
+              "y": 0,
+              "position": [
+                -6.423642158508301,
+                0.021222904324531555,
+                5.368926048278809
+              ]
+            },
+            {
+              "t": 301,
+              "candidate_id": "0:6",
+              "E": 0.2459709644317627,
+              "S": 0.28346868942621073,
+              "v": 1,
+              "y": 1,
+              "position": [
+                -4.883080959320068,
+                0.021222904324531555,
+                7.589853763580322
+              ]
+            }
+          ],
+          "outcome_description": "native_success"
+        },
+        {
+          "k": 2,
+          "goal": "plant",
+          "reached": true,
+          "success": true,
+          "steps": 500,
+          "path_length_m": 47.850627686828375,
+          "shortest_path_m": 5.1640520095825195,
+          "start_pos": [
+            -4.6434197425842285,
+            0.021222904324531555,
+            6.805148601531982
+          ],
+          "end_pos": [
+            4.817411422729492,
+            0.021222904324531555,
+            6.038341999053955
+          ],
+          "end_position_observation": "pre_STOP_pose",
+          "stop_reason": "max_steps",
+          "last_candidate_checks": [
+            {
+              "t": 314,
+              "candidate_id": "1:5",
+              "E": 0.21095062792301178,
+              "S": 0.28346868942621073,
+              "v": 0,
+              "y": 0,
+              "position": [
+                -4.833081245422363,
+                0.021222904324531555,
+                5.789853572845459
+              ]
+            },
+            {
+              "t": 341,
+              "candidate_id": "1:6",
+              "E": 0.30031365156173706,
+              "S": 0.486582880967408,
+              "v": 0,
+              "y": 0,
+              "position": [
+                -6.433081150054932,
+                0.021222904324531555,
+                5.689853191375732
+              ]
+            },
+            {
+              "t": 372,
+              "candidate_id": "1:9",
+              "E": 0.22663620114326477,
+              "S": 0.486582880967408,
+              "v": 1,
+              "y": 0,
+              "position": [
+                -6.392529010772705,
+                0.021222904324531555,
+                4.311078071594238
+              ]
+            }
+          ],
+          "outcome_description": "native_success"
+        },
+        {
+          "k": 3,
+          "goal": "bed",
+          "reached": true,
+          "success": false,
+          "steps": 17,
+          "path_length_m": 1.5,
+          "shortest_path_m": 11.000213623046875,
+          "start_pos": [
+            4.817411422729492,
+            0.021222904324531555,
+            6.038341999053955
+          ],
+          "end_pos": [
+            3.5925960540771484,
+            0.021222904324531555,
+            6.90426778793335
+          ],
+          "end_position_observation": "pre_STOP_pose",
+          "stop_reason": "verified_target",
+          "last_candidate_checks": [
+            {
+              "t": 824,
+              "candidate_id": "2:35",
+              "E": 0.26048436760902405,
+              "S": 0.486582880967408,
+              "v": 1,
+              "y": 0,
+              "position": [
+                2.7669191360473633,
+                0.021222904324531555,
+                6.88006067276001
+              ]
+            }
+          ],
+          "outcome_description": "system_confirmed_but_native_failed"
+        }
+      ]
+    },
+    {
+      "scene_id": "zt1RVoi7PcG",
+      "episode_id": "0",
+      "stages": [
+        {
+          "k": 1,
+          "goal": "bed",
+          "reached": true,
+          "success": true,
+          "steps": 66,
+          "path_length_m": 6.750006541609764,
+          "shortest_path_m": 6.213930130004883,
+          "start_pos": [
+            -4.033180236816406,
+            0.1129399985074997,
+            10.164299964904785
+          ],
+          "end_pos": [
+            2.4894275665283203,
+            0.11293554306030273,
+            10.224799156188965
+          ],
+          "end_position_observation": "pre_STOP_pose",
+          "stop_reason": "verified_target",
+          "last_candidate_checks": [
+            {
+              "t": 10,
+              "candidate_id": "0:0",
+              "E": 0.24026420712471008,
+              "S": -0.0,
+              "v": 0,
+              "y": 0,
+              "position": [
+                -4.308761119842529,
+                0.11293554306030273,
+                10.0208101272583
+              ]
+            },
+            {
+              "t": 60,
+              "candidate_id": "0:8",
+              "E": 0.24875083565711975,
+              "S": 0.28346868942621073,
+              "v": 1,
+              "y": 1,
+              "position": [
+                3.126741409301758,
+                0.11293554306030273,
+                9.848567008972168
+              ]
+            }
+          ],
+          "outcome_description": "native_success"
+        },
+        {
+          "k": 2,
+          "goal": "couch",
+          "reached": true,
+          "success": true,
+          "steps": 43,
+          "path_length_m": 5.25000274181366,
+          "shortest_path_m": 4.190225601196289,
+          "start_pos": [
+            2.4894275665283203,
+            0.11293554306030273,
+            10.224799156188965
+          ],
+          "end_pos": [
+            6.145382404327393,
+            0.11293554306030273,
+            7.7740254402160645
+          ],
+          "end_position_observation": "pre_STOP_pose",
+          "stop_reason": "verified_target",
+          "last_candidate_checks": [
+            {
+              "t": 99,
+              "candidate_id": "1:11",
+              "E": 0.2296600639820099,
+              "S": 0.486582880967408,
+              "v": 1,
+              "y": 1,
+              "position": [
+                6.536704063415527,
+                0.11293554306030273,
+                7.198380947113037
+              ]
+            }
+          ],
+          "outcome_description": "native_success"
+        },
+        {
+          "k": 3,
+          "goal": "toilet",
+          "reached": true,
+          "success": true,
+          "steps": 193,
+          "path_length_m": 21.044617764651775,
+          "shortest_path_m": 7.650826454162598,
+          "start_pos": [
+            6.145382404327393,
+            0.11293554306030273,
+            7.7740254402160645
+          ],
+          "end_pos": [
+            -1.6473451852798462,
+            0.11293554306030273,
+            7.747170925140381
+          ],
+          "end_position_observation": "pre_STOP_pose",
+          "stop_reason": "verified_target",
+          "last_candidate_checks": [
+            {
+              "t": 173,
+              "candidate_id": "2:2",
+              "E": 0.1949886679649353,
+              "S": 0.6321205588285577,
+              "v": 0,
+              "y": 0,
+              "position": [
+                -0.19252891838550568,
+                0.11293554306030273,
+                9.653013229370117
+              ]
+            },
+            {
+              "t": 192,
+              "candidate_id": "2:7",
+              "E": 0.20751455426216125,
+              "S": 0.6321205588285577,
+              "v": 0,
+              "y": 0,
+              "position": [
+                0.23670387268066406,
+                0.11293554306030273,
+                11.35148811340332
+              ]
+            },
+            {
+              "t": 290,
+              "candidate_id": "2:25",
+              "E": 0.21915096044540405,
+              "S": -0.0,
+              "v": 1,
+              "y": 1,
+              "position": [
+                -2.263296127319336,
+                0.11293554306030273,
+                7.709557056427002
               ]
             }
           ],

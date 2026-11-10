@@ -1,0 +1,8 @@
+{
+  "generated_at_utc": "2026-11-10T06:33:01.584394+00:00",
+  "n_episodes": 20,
+  "report_sha256": "88534e6f6e61c6b18cf8d0259b654ed84306faf88a879c43bc21d7a616c8ce2d",
+  "latency_figure_sha256": "87c806ef5492954bbcd982e91980ba985f978f2f4d1cdf66e4366bae6f179355",
+  "stage_accepted": false,
+  "launches_workers": false
+}

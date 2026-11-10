@@ -1,5 +1,5 @@
 {
-  "checked_at_utc": "2026-11-10T04:38:17.524716+00:00",
+  "checked_at_utc": "2026-11-10T06:32:57.752367+00:00",
   "executions": [
     {
       "script": "audit_smoke_coverage.py",
