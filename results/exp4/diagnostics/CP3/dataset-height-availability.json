@@ -1,0 +1,6426 @@
+{
+  "checked_at_utc": "2026-11-10T05:30:42.703023+00:00",
+  "definition": "minimum vertical separation from initial agent height to any recorded category viewpoint",
+  "limitation": "height-only proxy; does not prove same-floor assignment, navigability, or cause of an outcome",
+  "data_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+  "source_sha256": "8785df35edb22af26b096f6c2b4ddf0275fc279ab43f68ffda75869ea95dcea6",
+  "full400": {
+    "episodes": 400,
+    "targets": 1200,
+    "targets_without_recorded_viewpoints": 0,
+    "all_targets_have_height_compatible_viewpoint_0.5m": 239,
+    "all_targets_have_height_compatible_viewpoint_1.0m": 247,
+    "all_targets_have_height_compatible_viewpoint_1.5m": 258
+  },
+  "smoke20": {
+    "episodes": 20,
+    "targets": 60,
+    "targets_without_recorded_viewpoints": 0,
+    "all_targets_have_height_compatible_viewpoint_0.5m": 13,
+    "all_targets_have_height_compatible_viewpoint_1.0m": 14,
+    "all_targets_have_height_compatible_viewpoint_1.5m": 15
+  },
+  "records": [
+    {
+      "scene_id": "4ok3usBNeis",
+      "episode_id": "0",
+      "in_fixed_smoke": true,
+      "start_height_m": -0.53553,
+      "categories": [
+        "couch",
+        "bed",
+        "chair"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "4ok3usBNeis",
+      "episode_id": "1",
+      "in_fixed_smoke": false,
+      "start_height_m": -0.53553,
+      "categories": [
+        "chair",
+        "toilet",
+        "bed"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "4ok3usBNeis",
+      "episode_id": "2",
+      "in_fixed_smoke": false,
+      "start_height_m": -0.53553,
+      "categories": [
+        "chair",
+        "tv",
+        "chair"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        2.6,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "4ok3usBNeis",
+      "episode_id": "3",
+      "in_fixed_smoke": false,
+      "start_height_m": 2.06447,
+      "categories": [
+        "couch",
+        "toilet",
+        "couch"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "4ok3usBNeis",
+      "episode_id": "4",
+      "in_fixed_smoke": false,
+      "start_height_m": -0.53553,
+      "categories": [
+        "tv",
+        "bed",
+        "couch"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        2.6,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "4ok3usBNeis",
+      "episode_id": "5",
+      "in_fixed_smoke": false,
+      "start_height_m": -0.53553,
+      "categories": [
+        "toilet",
+        "bed",
+        "tv"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        2.6
+      ]
+    },
+    {
+      "scene_id": "4ok3usBNeis",
+      "episode_id": "6",
+      "in_fixed_smoke": false,
+      "start_height_m": 2.06447,
+      "categories": [
+        "couch",
+        "chair",
+        "bed"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "4ok3usBNeis",
+      "episode_id": "7",
+      "in_fixed_smoke": false,
+      "start_height_m": -0.53553,
+      "categories": [
+        "toilet",
+        "couch",
+        "chair"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "4ok3usBNeis",
+      "episode_id": "8",
+      "in_fixed_smoke": false,
+      "start_height_m": 2.06447,
+      "categories": [
+        "toilet",
+        "tv",
+        "bed"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "4ok3usBNeis",
+      "episode_id": "9",
+      "in_fixed_smoke": false,
+      "start_height_m": 2.06447,
+      "categories": [
+        "chair",
+        "bed",
+        "chair"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "4ok3usBNeis",
+      "episode_id": "10",
+      "in_fixed_smoke": false,
+      "start_height_m": 2.06447,
+      "categories": [
+        "bed",
+        "toilet",
+        "tv"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "4ok3usBNeis",
+      "episode_id": "11",
+      "in_fixed_smoke": false,
+      "start_height_m": -0.53553,
+      "categories": [
+        "bed",
+        "toilet",
+        "tv"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        2.6
+      ]
+    },
+    {
+      "scene_id": "4ok3usBNeis",
+      "episode_id": "12",
+      "in_fixed_smoke": false,
+      "start_height_m": 1.01529,
+      "categories": [
+        "bed",
+        "chair",
+        "couch"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        1.04918,
+        1.04918,
+        1.04918
+      ]
+    },
+    {
+      "scene_id": "4ok3usBNeis",
+      "episode_id": "13",
+      "in_fixed_smoke": false,
+      "start_height_m": 2.06447,
+      "categories": [
+        "tv",
+        "toilet",
+        "couch"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "4ok3usBNeis",
+      "episode_id": "14",
+      "in_fixed_smoke": false,
+      "start_height_m": -0.53553,
+      "categories": [
+        "bed",
+        "chair",
+        "toilet"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "4ok3usBNeis",
+      "episode_id": "15",
+      "in_fixed_smoke": false,
+      "start_height_m": -0.53553,
+      "categories": [
+        "toilet",
+        "couch",
+        "tv"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        2.6
+      ]
+    },
+    {
+      "scene_id": "4ok3usBNeis",
+      "episode_id": "16",
+      "in_fixed_smoke": false,
+      "start_height_m": -0.53553,
+      "categories": [
+        "couch",
+        "toilet",
+        "couch"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "4ok3usBNeis",
+      "episode_id": "17",
+      "in_fixed_smoke": false,
+      "start_height_m": -0.53553,
+      "categories": [
+        "tv",
+        "bed",
+        "toilet"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        2.6,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "4ok3usBNeis",
+      "episode_id": "18",
+      "in_fixed_smoke": false,
+      "start_height_m": -0.46601,
+      "categories": [
+        "bed",
+        "couch",
+        "tv"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.06951999999999997,
+        0.06951999999999997,
+        2.53048
+      ]
+    },
+    {
+      "scene_id": "4ok3usBNeis",
+      "episode_id": "19",
+      "in_fixed_smoke": false,
+      "start_height_m": -0.53553,
+      "categories": [
+        "chair",
+        "toilet",
+        "bed"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "5cdEh9F2hJL",
+      "episode_id": "0",
+      "in_fixed_smoke": true,
+      "start_height_m": 0.0184,
+      "categories": [
+        "chair",
+        "couch",
+        "tv"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "5cdEh9F2hJL",
+      "episode_id": "1",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.2184,
+      "categories": [
+        "tv",
+        "chair",
+        "bed"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.009970000000000007,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "5cdEh9F2hJL",
+      "episode_id": "2",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.2184,
+      "categories": [
+        "chair",
+        "bed",
+        "chair"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "5cdEh9F2hJL",
+      "episode_id": "3",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.0184,
+      "categories": [
+        "toilet",
+        "couch",
+        "bed"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "5cdEh9F2hJL",
+      "episode_id": "4",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.2184,
+      "categories": [
+        "chair",
+        "tv",
+        "bed"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.009970000000000007,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "5cdEh9F2hJL",
+      "episode_id": "5",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.0184,
+      "categories": [
+        "couch",
+        "chair",
+        "couch"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "5cdEh9F2hJL",
+      "episode_id": "6",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.0184,
+      "categories": [
+        "bed",
+        "tv",
+        "chair"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "5cdEh9F2hJL",
+      "episode_id": "7",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.0184,
+      "categories": [
+        "tv",
+        "couch",
+        "bed"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "5cdEh9F2hJL",
+      "episode_id": "8",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.2184,
+      "categories": [
+        "chair",
+        "tv",
+        "chair"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.009970000000000007,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "5cdEh9F2hJL",
+      "episode_id": "9",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.0184,
+      "categories": [
+        "couch",
+        "chair",
+        "toilet"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "5cdEh9F2hJL",
+      "episode_id": "10",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.0184,
+      "categories": [
+        "tv",
+        "couch",
+        "toilet"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "5cdEh9F2hJL",
+      "episode_id": "11",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.0184,
+      "categories": [
+        "toilet",
+        "bed",
+        "chair"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "5cdEh9F2hJL",
+      "episode_id": "12",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.0184,
+      "categories": [
+        "bed",
+        "toilet",
+        "couch"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "5cdEh9F2hJL",
+      "episode_id": "13",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.2184,
+      "categories": [
+        "tv",
+        "chair",
+        "couch"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.009970000000000007,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "5cdEh9F2hJL",
+      "episode_id": "14",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.0184,
+      "categories": [
+        "bed",
+        "chair",
+        "toilet"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "5cdEh9F2hJL",
+      "episode_id": "15",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.0184,
+      "categories": [
+        "couch",
+        "toilet",
+        "couch"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "5cdEh9F2hJL",
+      "episode_id": "16",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.0184,
+      "categories": [
+        "bed",
+        "couch",
+        "tv"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "5cdEh9F2hJL",
+      "episode_id": "17",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.0184,
+      "categories": [
+        "toilet",
+        "tv",
+        "toilet"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "5cdEh9F2hJL",
+      "episode_id": "18",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.0184,
+      "categories": [
+        "couch",
+        "bed",
+        "tv"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "5cdEh9F2hJL",
+      "episode_id": "19",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.0184,
+      "categories": [
+        "couch",
+        "toilet",
+        "tv"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "6s7QHgap2fW",
+      "episode_id": "0",
+      "in_fixed_smoke": true,
+      "start_height_m": 0.09944,
+      "categories": [
+        "toilet",
+        "plant",
+        "chair"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "6s7QHgap2fW",
+      "episode_id": "1",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.09944,
+      "categories": [
+        "toilet",
+        "chair",
+        "tv"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "6s7QHgap2fW",
+      "episode_id": "2",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.09944,
+      "categories": [
+        "toilet",
+        "tv",
+        "couch"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "6s7QHgap2fW",
+      "episode_id": "3",
+      "in_fixed_smoke": false,
+      "start_height_m": 2.89944,
+      "categories": [
+        "tv",
+        "bed",
+        "tv"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        2.8,
+        0.0,
+        2.8
+      ]
+    },
+    {
+      "scene_id": "6s7QHgap2fW",
+      "episode_id": "4",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.09944,
+      "categories": [
+        "chair",
+        "couch",
+        "chair"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "6s7QHgap2fW",
+      "episode_id": "5",
+      "in_fixed_smoke": false,
+      "start_height_m": 2.89944,
+      "categories": [
+        "plant",
+        "bed",
+        "chair"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "6s7QHgap2fW",
+      "episode_id": "6",
+      "in_fixed_smoke": false,
+      "start_height_m": 2.89944,
+      "categories": [
+        "chair",
+        "tv",
+        "toilet"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        2.8,
+        2.8
+      ]
+    },
+    {
+      "scene_id": "6s7QHgap2fW",
+      "episode_id": "7",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.09944,
+      "categories": [
+        "couch",
+        "toilet",
+        "chair"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "6s7QHgap2fW",
+      "episode_id": "8",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.09944,
+      "categories": [
+        "bed",
+        "plant",
+        "toilet"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        2.8,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "6s7QHgap2fW",
+      "episode_id": "9",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.09944,
+      "categories": [
+        "tv",
+        "toilet",
+        "plant"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "6s7QHgap2fW",
+      "episode_id": "10",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.09944,
+      "categories": [
+        "bed",
+        "chair",
+        "plant"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        2.8,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "6s7QHgap2fW",
+      "episode_id": "11",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.09944,
+      "categories": [
+        "couch",
+        "bed",
+        "couch"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        2.8,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "6s7QHgap2fW",
+      "episode_id": "12",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.09944,
+      "categories": [
+        "plant",
+        "bed",
+        "couch"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        2.8,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "6s7QHgap2fW",
+      "episode_id": "13",
+      "in_fixed_smoke": false,
+      "start_height_m": 2.89944,
+      "categories": [
+        "chair",
+        "toilet",
+        "plant"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        2.8,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "6s7QHgap2fW",
+      "episode_id": "14",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.09944,
+      "categories": [
+        "plant",
+        "bed",
+        "couch"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        2.8,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "6s7QHgap2fW",
+      "episode_id": "15",
+      "in_fixed_smoke": false,
+      "start_height_m": 2.89944,
+      "categories": [
+        "tv",
+        "couch",
+        "tv"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        2.8,
+        2.8,
+        2.8
+      ]
+    },
+    {
+      "scene_id": "6s7QHgap2fW",
+      "episode_id": "16",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.09944,
+      "categories": [
+        "tv",
+        "toilet",
+        "tv"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "6s7QHgap2fW",
+      "episode_id": "17",
+      "in_fixed_smoke": false,
+      "start_height_m": 2.89944,
+      "categories": [
+        "bed",
+        "toilet",
+        "bed"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        2.8,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "6s7QHgap2fW",
+      "episode_id": "18",
+      "in_fixed_smoke": false,
+      "start_height_m": 2.89944,
+      "categories": [
+        "couch",
+        "tv",
+        "chair"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        2.8,
+        2.8,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "6s7QHgap2fW",
+      "episode_id": "19",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.09944,
+      "categories": [
+        "chair",
+        "bed",
+        "plant"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        2.8,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "DYehNKdT76V",
+      "episode_id": "0",
+      "in_fixed_smoke": true,
+      "start_height_m": 0.13651,
+      "categories": [
+        "couch",
+        "toilet",
+        "chair"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "DYehNKdT76V",
+      "episode_id": "1",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.13651,
+      "categories": [
+        "bed",
+        "toilet",
+        "chair"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "DYehNKdT76V",
+      "episode_id": "2",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.13651,
+      "categories": [
+        "bed",
+        "couch",
+        "toilet"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "DYehNKdT76V",
+      "episode_id": "3",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.13651,
+      "categories": [
+        "chair",
+        "toilet",
+        "bed"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "DYehNKdT76V",
+      "episode_id": "4",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.13651,
+      "categories": [
+        "toilet",
+        "chair",
+        "bed"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "DYehNKdT76V",
+      "episode_id": "5",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.13651,
+      "categories": [
+        "couch",
+        "chair",
+        "toilet"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "DYehNKdT76V",
+      "episode_id": "6",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.13651,
+      "categories": [
+        "couch",
+        "toilet",
+        "couch"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "DYehNKdT76V",
+      "episode_id": "7",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.13651,
+      "categories": [
+        "bed",
+        "couch",
+        "chair"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "DYehNKdT76V",
+      "episode_id": "8",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.13651,
+      "categories": [
+        "couch",
+        "chair",
+        "toilet"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "DYehNKdT76V",
+      "episode_id": "9",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.13651,
+      "categories": [
+        "toilet",
+        "couch",
+        "bed"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "DYehNKdT76V",
+      "episode_id": "10",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.13651,
+      "categories": [
+        "couch",
+        "chair",
+        "bed"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "DYehNKdT76V",
+      "episode_id": "11",
+      "in_fixed_smoke": false,
+      "start_height_m": 3.33651,
+      "categories": [
+        "chair",
+        "toilet",
+        "couch"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        3.2
+      ]
+    },
+    {
+      "scene_id": "DYehNKdT76V",
+      "episode_id": "12",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.13651,
+      "categories": [
+        "bed",
+        "couch",
+        "chair"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "DYehNKdT76V",
+      "episode_id": "13",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.13651,
+      "categories": [
+        "bed",
+        "toilet",
+        "bed"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "DYehNKdT76V",
+      "episode_id": "14",
+      "in_fixed_smoke": false,
+      "start_height_m": 2.20171,
+      "categories": [
+        "chair",
+        "bed",
+        "toilet"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        1.1348000000000003,
+        1.1348000000000003,
+        1.1348000000000003
+      ]
+    },
+    {
+      "scene_id": "DYehNKdT76V",
+      "episode_id": "15",
+      "in_fixed_smoke": false,
+      "start_height_m": 1.46799,
+      "categories": [
+        "toilet",
+        "chair",
+        "bed"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        1.33148,
+        1.33148,
+        1.33148
+      ]
+    },
+    {
+      "scene_id": "DYehNKdT76V",
+      "episode_id": "16",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.13651,
+      "categories": [
+        "chair",
+        "bed",
+        "couch"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "DYehNKdT76V",
+      "episode_id": "17",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.13651,
+      "categories": [
+        "toilet",
+        "chair",
+        "toilet"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "DYehNKdT76V",
+      "episode_id": "18",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.13651,
+      "categories": [
+        "chair",
+        "bed",
+        "couch"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "DYehNKdT76V",
+      "episode_id": "19",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.13651,
+      "categories": [
+        "toilet",
+        "couch",
+        "chair"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "Dd4bFSTQ8gi",
+      "episode_id": "0",
+      "in_fixed_smoke": true,
+      "start_height_m": 0.06882,
+      "categories": [
+        "bed",
+        "toilet",
+        "chair"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "Dd4bFSTQ8gi",
+      "episode_id": "1",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.06882,
+      "categories": [
+        "couch",
+        "toilet",
+        "bed"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "Dd4bFSTQ8gi",
+      "episode_id": "2",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.06882,
+      "categories": [
+        "chair",
+        "bed",
+        "toilet"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "Dd4bFSTQ8gi",
+      "episode_id": "3",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.06882,
+      "categories": [
+        "chair",
+        "toilet",
+        "bed"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "Dd4bFSTQ8gi",
+      "episode_id": "4",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.06882,
+      "categories": [
+        "bed",
+        "toilet",
+        "chair"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "Dd4bFSTQ8gi",
+      "episode_id": "5",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.06882,
+      "categories": [
+        "couch",
+        "chair",
+        "couch"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "Dd4bFSTQ8gi",
+      "episode_id": "6",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.06882,
+      "categories": [
+        "bed",
+        "chair",
+        "toilet"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "Dd4bFSTQ8gi",
+      "episode_id": "7",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.06882,
+      "categories": [
+        "couch",
+        "chair",
+        "couch"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "Dd4bFSTQ8gi",
+      "episode_id": "8",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.06882,
+      "categories": [
+        "chair",
+        "bed",
+        "chair"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "Dd4bFSTQ8gi",
+      "episode_id": "9",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.06882,
+      "categories": [
+        "bed",
+        "toilet",
+        "couch"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "Dd4bFSTQ8gi",
+      "episode_id": "10",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.06882,
+      "categories": [
+        "bed",
+        "toilet",
+        "couch"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "Dd4bFSTQ8gi",
+      "episode_id": "11",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.06882,
+      "categories": [
+        "toilet",
+        "couch",
+        "chair"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "Dd4bFSTQ8gi",
+      "episode_id": "12",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.06882,
+      "categories": [
+        "chair",
+        "toilet",
+        "chair"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "Dd4bFSTQ8gi",
+      "episode_id": "13",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.06882,
+      "categories": [
+        "chair",
+        "bed",
+        "couch"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "Dd4bFSTQ8gi",
+      "episode_id": "14",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.06882,
+      "categories": [
+        "toilet",
+        "bed",
+        "couch"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "Dd4bFSTQ8gi",
+      "episode_id": "15",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.06882,
+      "categories": [
+        "toilet",
+        "chair",
+        "bed"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "Dd4bFSTQ8gi",
+      "episode_id": "16",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.06882,
+      "categories": [
+        "bed",
+        "couch",
+        "bed"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "Dd4bFSTQ8gi",
+      "episode_id": "17",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.06882,
+      "categories": [
+        "toilet",
+        "chair",
+        "bed"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "Dd4bFSTQ8gi",
+      "episode_id": "18",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.06882,
+      "categories": [
+        "toilet",
+        "chair",
+        "bed"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "Dd4bFSTQ8gi",
+      "episode_id": "19",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.06882,
+      "categories": [
+        "couch",
+        "bed",
+        "toilet"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "Nfvxx8J5NCo",
+      "episode_id": "0",
+      "in_fixed_smoke": true,
+      "start_height_m": 0.18086,
+      "categories": [
+        "tv",
+        "bed",
+        "couch"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "Nfvxx8J5NCo",
+      "episode_id": "1",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.18086,
+      "categories": [
+        "tv",
+        "bed",
+        "tv"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "Nfvxx8J5NCo",
+      "episode_id": "2",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.18086,
+      "categories": [
+        "chair",
+        "toilet",
+        "couch"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "Nfvxx8J5NCo",
+      "episode_id": "3",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.18086,
+      "categories": [
+        "couch",
+        "tv",
+        "toilet"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "Nfvxx8J5NCo",
+      "episode_id": "4",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.18086,
+      "categories": [
+        "bed",
+        "toilet",
+        "bed"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "Nfvxx8J5NCo",
+      "episode_id": "5",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.18086,
+      "categories": [
+        "chair",
+        "bed",
+        "tv"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "Nfvxx8J5NCo",
+      "episode_id": "6",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.18086,
+      "categories": [
+        "toilet",
+        "bed",
+        "couch"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "Nfvxx8J5NCo",
+      "episode_id": "7",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.18086,
+      "categories": [
+        "couch",
+        "tv",
+        "chair"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "Nfvxx8J5NCo",
+      "episode_id": "8",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.18086,
+      "categories": [
+        "chair",
+        "toilet",
+        "tv"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "Nfvxx8J5NCo",
+      "episode_id": "9",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.18086,
+      "categories": [
+        "toilet",
+        "chair",
+        "tv"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "Nfvxx8J5NCo",
+      "episode_id": "10",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.18086,
+      "categories": [
+        "toilet",
+        "couch",
+        "tv"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "Nfvxx8J5NCo",
+      "episode_id": "11",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.18086,
+      "categories": [
+        "toilet",
+        "couch",
+        "chair"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "Nfvxx8J5NCo",
+      "episode_id": "12",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.18086,
+      "categories": [
+        "couch",
+        "chair",
+        "bed"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "Nfvxx8J5NCo",
+      "episode_id": "13",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.18086,
+      "categories": [
+        "bed",
+        "chair",
+        "bed"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "Nfvxx8J5NCo",
+      "episode_id": "14",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.18086,
+      "categories": [
+        "couch",
+        "toilet",
+        "bed"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "Nfvxx8J5NCo",
+      "episode_id": "15",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.18086,
+      "categories": [
+        "chair",
+        "tv",
+        "toilet"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "Nfvxx8J5NCo",
+      "episode_id": "16",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.18086,
+      "categories": [
+        "tv",
+        "bed",
+        "couch"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "Nfvxx8J5NCo",
+      "episode_id": "17",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.18086,
+      "categories": [
+        "bed",
+        "tv",
+        "chair"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "Nfvxx8J5NCo",
+      "episode_id": "18",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.18086,
+      "categories": [
+        "tv",
+        "chair",
+        "toilet"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "Nfvxx8J5NCo",
+      "episode_id": "19",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.18086,
+      "categories": [
+        "bed",
+        "toilet",
+        "chair"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "QaLdnwvtxbs",
+      "episode_id": "0",
+      "in_fixed_smoke": true,
+      "start_height_m": 0.13574,
+      "categories": [
+        "bed",
+        "tv",
+        "bed"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "QaLdnwvtxbs",
+      "episode_id": "1",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.13574,
+      "categories": [
+        "couch",
+        "tv",
+        "bed"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "QaLdnwvtxbs",
+      "episode_id": "2",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.13574,
+      "categories": [
+        "bed",
+        "chair",
+        "couch"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "QaLdnwvtxbs",
+      "episode_id": "3",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.13574,
+      "categories": [
+        "chair",
+        "tv",
+        "couch"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "QaLdnwvtxbs",
+      "episode_id": "4",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.13574,
+      "categories": [
+        "tv",
+        "bed",
+        "chair"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "QaLdnwvtxbs",
+      "episode_id": "5",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.13574,
+      "categories": [
+        "tv",
+        "couch",
+        "bed"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "QaLdnwvtxbs",
+      "episode_id": "6",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.13574,
+      "categories": [
+        "bed",
+        "couch",
+        "bed"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "QaLdnwvtxbs",
+      "episode_id": "7",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.13574,
+      "categories": [
+        "couch",
+        "bed",
+        "tv"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "QaLdnwvtxbs",
+      "episode_id": "8",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.13574,
+      "categories": [
+        "chair",
+        "bed",
+        "couch"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "QaLdnwvtxbs",
+      "episode_id": "9",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.13574,
+      "categories": [
+        "chair",
+        "tv",
+        "couch"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "QaLdnwvtxbs",
+      "episode_id": "10",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.13574,
+      "categories": [
+        "tv",
+        "bed",
+        "chair"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "QaLdnwvtxbs",
+      "episode_id": "11",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.13574,
+      "categories": [
+        "chair",
+        "bed",
+        "tv"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "QaLdnwvtxbs",
+      "episode_id": "12",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.13574,
+      "categories": [
+        "tv",
+        "chair",
+        "couch"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "QaLdnwvtxbs",
+      "episode_id": "13",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.13574,
+      "categories": [
+        "chair",
+        "bed",
+        "chair"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "QaLdnwvtxbs",
+      "episode_id": "14",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.13574,
+      "categories": [
+        "couch",
+        "chair",
+        "tv"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "QaLdnwvtxbs",
+      "episode_id": "15",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.13574,
+      "categories": [
+        "bed",
+        "tv",
+        "couch"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "QaLdnwvtxbs",
+      "episode_id": "16",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.13574,
+      "categories": [
+        "tv",
+        "chair",
+        "couch"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "QaLdnwvtxbs",
+      "episode_id": "17",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.13574,
+      "categories": [
+        "couch",
+        "chair",
+        "bed"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "QaLdnwvtxbs",
+      "episode_id": "18",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.13574,
+      "categories": [
+        "couch",
+        "tv",
+        "chair"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "QaLdnwvtxbs",
+      "episode_id": "19",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.13574,
+      "categories": [
+        "bed",
+        "chair",
+        "couch"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "TEEsavR23oF",
+      "episode_id": "0",
+      "in_fixed_smoke": true,
+      "start_height_m": 0.16338,
+      "categories": [
+        "chair",
+        "toilet",
+        "plant"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        3.0,
+        3.0
+      ]
+    },
+    {
+      "scene_id": "TEEsavR23oF",
+      "episode_id": "1",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.16338,
+      "categories": [
+        "couch",
+        "chair",
+        "toilet"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        3.0
+      ]
+    },
+    {
+      "scene_id": "TEEsavR23oF",
+      "episode_id": "2",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.16338,
+      "categories": [
+        "couch",
+        "bed",
+        "toilet"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        3.0
+      ]
+    },
+    {
+      "scene_id": "TEEsavR23oF",
+      "episode_id": "3",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.16338,
+      "categories": [
+        "couch",
+        "bed",
+        "plant"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        3.0
+      ]
+    },
+    {
+      "scene_id": "TEEsavR23oF",
+      "episode_id": "4",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.16338,
+      "categories": [
+        "plant",
+        "bed",
+        "chair"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        3.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "TEEsavR23oF",
+      "episode_id": "5",
+      "in_fixed_smoke": false,
+      "start_height_m": 1.63864,
+      "categories": [
+        "plant",
+        "bed",
+        "couch"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        1.52474,
+        1.47526,
+        0.58911
+      ]
+    },
+    {
+      "scene_id": "TEEsavR23oF",
+      "episode_id": "6",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.16338,
+      "categories": [
+        "bed",
+        "chair",
+        "couch"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "TEEsavR23oF",
+      "episode_id": "7",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.16338,
+      "categories": [
+        "toilet",
+        "couch",
+        "bed"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        3.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "TEEsavR23oF",
+      "episode_id": "8",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.16338,
+      "categories": [
+        "plant",
+        "couch",
+        "bed"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        3.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "TEEsavR23oF",
+      "episode_id": "9",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.16338,
+      "categories": [
+        "bed",
+        "chair",
+        "toilet"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        3.0
+      ]
+    },
+    {
+      "scene_id": "TEEsavR23oF",
+      "episode_id": "10",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.16338,
+      "categories": [
+        "plant",
+        "chair",
+        "couch"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        3.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "TEEsavR23oF",
+      "episode_id": "11",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.16338,
+      "categories": [
+        "bed",
+        "toilet",
+        "plant"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        3.0,
+        3.0
+      ]
+    },
+    {
+      "scene_id": "TEEsavR23oF",
+      "episode_id": "12",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.16338,
+      "categories": [
+        "chair",
+        "couch",
+        "toilet"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        3.0
+      ]
+    },
+    {
+      "scene_id": "TEEsavR23oF",
+      "episode_id": "13",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.16338,
+      "categories": [
+        "toilet",
+        "plant",
+        "toilet"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        3.0,
+        3.0,
+        3.0
+      ]
+    },
+    {
+      "scene_id": "TEEsavR23oF",
+      "episode_id": "14",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.16338,
+      "categories": [
+        "bed",
+        "plant",
+        "bed"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        3.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "TEEsavR23oF",
+      "episode_id": "15",
+      "in_fixed_smoke": false,
+      "start_height_m": 2.24085,
+      "categories": [
+        "chair",
+        "plant",
+        "chair"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.9225300000000001,
+        0.9225300000000001,
+        0.9225300000000001
+      ]
+    },
+    {
+      "scene_id": "TEEsavR23oF",
+      "episode_id": "16",
+      "in_fixed_smoke": false,
+      "start_height_m": 3.16338,
+      "categories": [
+        "toilet",
+        "bed",
+        "plant"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "TEEsavR23oF",
+      "episode_id": "17",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.16338,
+      "categories": [
+        "chair",
+        "couch",
+        "chair"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "TEEsavR23oF",
+      "episode_id": "18",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.16338,
+      "categories": [
+        "toilet",
+        "chair",
+        "plant"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        3.0,
+        0.0,
+        3.0
+      ]
+    },
+    {
+      "scene_id": "TEEsavR23oF",
+      "episode_id": "19",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.16338,
+      "categories": [
+        "couch",
+        "plant",
+        "couch"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        3.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "XB4GS9ShBRE",
+      "episode_id": "0",
+      "in_fixed_smoke": true,
+      "start_height_m": 2.79613,
+      "categories": [
+        "chair",
+        "toilet",
+        "couch"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        2.61306
+      ]
+    },
+    {
+      "scene_id": "XB4GS9ShBRE",
+      "episode_id": "1",
+      "in_fixed_smoke": false,
+      "start_height_m": -0.00387,
+      "categories": [
+        "toilet",
+        "bed",
+        "toilet"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.19999999999999998,
+        2.8,
+        0.19999999999999998
+      ]
+    },
+    {
+      "scene_id": "XB4GS9ShBRE",
+      "episode_id": "2",
+      "in_fixed_smoke": false,
+      "start_height_m": 2.06997,
+      "categories": [
+        "chair",
+        "bed",
+        "toilet"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.7261599999999997,
+        0.7261599999999997,
+        0.7261599999999997
+      ]
+    },
+    {
+      "scene_id": "XB4GS9ShBRE",
+      "episode_id": "3",
+      "in_fixed_smoke": false,
+      "start_height_m": -0.00387,
+      "categories": [
+        "bed",
+        "couch",
+        "toilet"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        2.8,
+        0.0,
+        0.19999999999999998
+      ]
+    },
+    {
+      "scene_id": "XB4GS9ShBRE",
+      "episode_id": "4",
+      "in_fixed_smoke": false,
+      "start_height_m": 2.01205,
+      "categories": [
+        "chair",
+        "couch",
+        "chair"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.7840799999999999,
+        1.8289799999999998,
+        0.7840799999999999
+      ]
+    },
+    {
+      "scene_id": "XB4GS9ShBRE",
+      "episode_id": "5",
+      "in_fixed_smoke": false,
+      "start_height_m": 2.79613,
+      "categories": [
+        "couch",
+        "chair",
+        "bed"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        2.61306,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "XB4GS9ShBRE",
+      "episode_id": "6",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.42129,
+      "categories": [
+        "couch",
+        "chair",
+        "toilet"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.23822,
+        0.039090000000000014,
+        0.6251599999999999
+      ]
+    },
+    {
+      "scene_id": "XB4GS9ShBRE",
+      "episode_id": "7",
+      "in_fixed_smoke": false,
+      "start_height_m": -0.00387,
+      "categories": [
+        "toilet",
+        "chair",
+        "bed"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.19999999999999998,
+        0.0,
+        2.8
+      ]
+    },
+    {
+      "scene_id": "XB4GS9ShBRE",
+      "episode_id": "8",
+      "in_fixed_smoke": false,
+      "start_height_m": 2.79613,
+      "categories": [
+        "couch",
+        "chair",
+        "toilet"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        2.61306,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "XB4GS9ShBRE",
+      "episode_id": "9",
+      "in_fixed_smoke": false,
+      "start_height_m": 2.27808,
+      "categories": [
+        "toilet",
+        "chair",
+        "toilet"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.5180499999999997,
+        0.5180499999999997,
+        0.5180499999999997
+      ]
+    },
+    {
+      "scene_id": "XB4GS9ShBRE",
+      "episode_id": "10",
+      "in_fixed_smoke": false,
+      "start_height_m": 2.79613,
+      "categories": [
+        "couch",
+        "bed",
+        "chair"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        2.61306,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "XB4GS9ShBRE",
+      "episode_id": "11",
+      "in_fixed_smoke": false,
+      "start_height_m": -0.00387,
+      "categories": [
+        "bed",
+        "toilet",
+        "bed"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        2.8,
+        0.19999999999999998,
+        2.8
+      ]
+    },
+    {
+      "scene_id": "XB4GS9ShBRE",
+      "episode_id": "12",
+      "in_fixed_smoke": false,
+      "start_height_m": 2.79613,
+      "categories": [
+        "chair",
+        "couch",
+        "bed"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        2.61306,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "XB4GS9ShBRE",
+      "episode_id": "13",
+      "in_fixed_smoke": false,
+      "start_height_m": -0.00387,
+      "categories": [
+        "bed",
+        "chair",
+        "couch"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        2.8,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "XB4GS9ShBRE",
+      "episode_id": "14",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.14624,
+      "categories": [
+        "bed",
+        "couch",
+        "bed"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        2.6498899999999996,
+        0.013530000000000014,
+        2.6498899999999996
+      ]
+    },
+    {
+      "scene_id": "XB4GS9ShBRE",
+      "episode_id": "15",
+      "in_fixed_smoke": false,
+      "start_height_m": -0.00387,
+      "categories": [
+        "toilet",
+        "couch",
+        "bed"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.19999999999999998,
+        0.0,
+        2.8
+      ]
+    },
+    {
+      "scene_id": "XB4GS9ShBRE",
+      "episode_id": "16",
+      "in_fixed_smoke": false,
+      "start_height_m": -0.00387,
+      "categories": [
+        "bed",
+        "toilet",
+        "bed"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        2.8,
+        0.19999999999999998,
+        2.8
+      ]
+    },
+    {
+      "scene_id": "XB4GS9ShBRE",
+      "episode_id": "17",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.96769,
+      "categories": [
+        "couch",
+        "bed",
+        "couch"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.7846200000000001,
+        1.8284399999999996,
+        0.7846200000000001
+      ]
+    },
+    {
+      "scene_id": "XB4GS9ShBRE",
+      "episode_id": "18",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.1043,
+      "categories": [
+        "toilet",
+        "couch",
+        "chair"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.30817,
+        0.02840999999999999,
+        0.00014999999999999736
+      ]
+    },
+    {
+      "scene_id": "XB4GS9ShBRE",
+      "episode_id": "19",
+      "in_fixed_smoke": false,
+      "start_height_m": 2.79613,
+      "categories": [
+        "chair",
+        "couch",
+        "toilet"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        2.61306,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "bxsVRursffK",
+      "episode_id": "0",
+      "in_fixed_smoke": true,
+      "start_height_m": -2.97532,
+      "categories": [
+        "chair",
+        "bed",
+        "chair"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        3.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "bxsVRursffK",
+      "episode_id": "1",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.02468,
+      "categories": [
+        "toilet",
+        "bed",
+        "toilet"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "bxsVRursffK",
+      "episode_id": "2",
+      "in_fixed_smoke": false,
+      "start_height_m": -2.97532,
+      "categories": [
+        "bed",
+        "toilet",
+        "chair"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        3.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "bxsVRursffK",
+      "episode_id": "3",
+      "in_fixed_smoke": false,
+      "start_height_m": -2.97532,
+      "categories": [
+        "chair",
+        "bed",
+        "toilet"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        3.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "bxsVRursffK",
+      "episode_id": "4",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.22468,
+      "categories": [
+        "chair",
+        "bed",
+        "chair"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.009589999999999987,
+        0.0,
+        0.009589999999999987
+      ]
+    },
+    {
+      "scene_id": "bxsVRursffK",
+      "episode_id": "5",
+      "in_fixed_smoke": false,
+      "start_height_m": -2.97532,
+      "categories": [
+        "bed",
+        "chair",
+        "toilet"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        3.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "bxsVRursffK",
+      "episode_id": "6",
+      "in_fixed_smoke": false,
+      "start_height_m": -2.97532,
+      "categories": [
+        "bed",
+        "chair",
+        "toilet"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        3.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "bxsVRursffK",
+      "episode_id": "7",
+      "in_fixed_smoke": false,
+      "start_height_m": -2.97532,
+      "categories": [
+        "bed",
+        "chair",
+        "toilet"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        3.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "bxsVRursffK",
+      "episode_id": "8",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.1053,
+      "categories": [
+        "toilet",
+        "bed",
+        "toilet"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        8.999999999999286e-05,
+        0.0010600000000000054,
+        8.999999999999286e-05
+      ]
+    },
+    {
+      "scene_id": "bxsVRursffK",
+      "episode_id": "9",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.02468,
+      "categories": [
+        "chair",
+        "toilet",
+        "chair"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "bxsVRursffK",
+      "episode_id": "10",
+      "in_fixed_smoke": false,
+      "start_height_m": -1.34144,
+      "categories": [
+        "toilet",
+        "chair",
+        "bed"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        1.36612,
+        1.36612,
+        1.36612
+      ]
+    },
+    {
+      "scene_id": "bxsVRursffK",
+      "episode_id": "11",
+      "in_fixed_smoke": false,
+      "start_height_m": -2.97532,
+      "categories": [
+        "bed",
+        "toilet",
+        "bed"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        3.0,
+        0.0,
+        3.0
+      ]
+    },
+    {
+      "scene_id": "bxsVRursffK",
+      "episode_id": "12",
+      "in_fixed_smoke": false,
+      "start_height_m": -2.97532,
+      "categories": [
+        "toilet",
+        "chair",
+        "bed"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        3.0
+      ]
+    },
+    {
+      "scene_id": "bxsVRursffK",
+      "episode_id": "13",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.12445,
+      "categories": [
+        "chair",
+        "bed",
+        "chair"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0007199999999999984,
+        7.999999999999674e-05,
+        0.0007199999999999984
+      ]
+    },
+    {
+      "scene_id": "bxsVRursffK",
+      "episode_id": "14",
+      "in_fixed_smoke": false,
+      "start_height_m": -2.97532,
+      "categories": [
+        "bed",
+        "toilet",
+        "chair"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        3.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "bxsVRursffK",
+      "episode_id": "15",
+      "in_fixed_smoke": false,
+      "start_height_m": -1.37532,
+      "categories": [
+        "toilet",
+        "chair",
+        "toilet"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        1.4000000000000001,
+        1.4000000000000001,
+        1.4000000000000001
+      ]
+    },
+    {
+      "scene_id": "bxsVRursffK",
+      "episode_id": "16",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.17251,
+      "categories": [
+        "chair",
+        "bed",
+        "chair"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.00020000000000000573,
+        0.0007800000000000029,
+        0.00020000000000000573
+      ]
+    },
+    {
+      "scene_id": "bxsVRursffK",
+      "episode_id": "17",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.02468,
+      "categories": [
+        "chair",
+        "bed",
+        "chair"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "bxsVRursffK",
+      "episode_id": "18",
+      "in_fixed_smoke": false,
+      "start_height_m": -2.97532,
+      "categories": [
+        "toilet",
+        "bed",
+        "toilet"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        3.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "bxsVRursffK",
+      "episode_id": "19",
+      "in_fixed_smoke": false,
+      "start_height_m": -2.97532,
+      "categories": [
+        "bed",
+        "toilet",
+        "bed"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        3.0,
+        0.0,
+        3.0
+      ]
+    },
+    {
+      "scene_id": "cvZr5TUy5C5",
+      "episode_id": "0",
+      "in_fixed_smoke": true,
+      "start_height_m": 0.07216,
+      "categories": [
+        "toilet",
+        "bed",
+        "chair"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        3.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "cvZr5TUy5C5",
+      "episode_id": "1",
+      "in_fixed_smoke": false,
+      "start_height_m": 3.07216,
+      "categories": [
+        "chair",
+        "bed",
+        "tv"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        6.0
+      ]
+    },
+    {
+      "scene_id": "cvZr5TUy5C5",
+      "episode_id": "2",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.07216,
+      "categories": [
+        "bed",
+        "plant",
+        "bed"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        3.0,
+        0.0,
+        3.0
+      ]
+    },
+    {
+      "scene_id": "cvZr5TUy5C5",
+      "episode_id": "3",
+      "in_fixed_smoke": false,
+      "start_height_m": 3.07216,
+      "categories": [
+        "tv",
+        "plant",
+        "chair"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        6.0,
+        2.97918,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "cvZr5TUy5C5",
+      "episode_id": "4",
+      "in_fixed_smoke": false,
+      "start_height_m": 3.07216,
+      "categories": [
+        "chair",
+        "tv",
+        "bed"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        6.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "cvZr5TUy5C5",
+      "episode_id": "5",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.07216,
+      "categories": [
+        "plant",
+        "couch",
+        "toilet"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "cvZr5TUy5C5",
+      "episode_id": "6",
+      "in_fixed_smoke": false,
+      "start_height_m": -2.92784,
+      "categories": [
+        "couch",
+        "tv",
+        "toilet"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "cvZr5TUy5C5",
+      "episode_id": "7",
+      "in_fixed_smoke": false,
+      "start_height_m": -2.46986,
+      "categories": [
+        "couch",
+        "plant",
+        "bed"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.45798000000000005,
+        2.54202,
+        5.54202
+      ]
+    },
+    {
+      "scene_id": "cvZr5TUy5C5",
+      "episode_id": "8",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.07216,
+      "categories": [
+        "plant",
+        "toilet",
+        "bed"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        3.0
+      ]
+    },
+    {
+      "scene_id": "cvZr5TUy5C5",
+      "episode_id": "9",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.07216,
+      "categories": [
+        "chair",
+        "couch",
+        "plant"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "cvZr5TUy5C5",
+      "episode_id": "10",
+      "in_fixed_smoke": false,
+      "start_height_m": -2.92784,
+      "categories": [
+        "bed",
+        "plant",
+        "toilet"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        6.0,
+        3.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "cvZr5TUy5C5",
+      "episode_id": "11",
+      "in_fixed_smoke": false,
+      "start_height_m": -2.7323,
+      "categories": [
+        "bed",
+        "tv",
+        "couch"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        5.80446,
+        0.19554000000000027,
+        0.19554000000000027
+      ]
+    },
+    {
+      "scene_id": "cvZr5TUy5C5",
+      "episode_id": "12",
+      "in_fixed_smoke": false,
+      "start_height_m": 3.07216,
+      "categories": [
+        "tv",
+        "chair",
+        "couch"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        6.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "cvZr5TUy5C5",
+      "episode_id": "13",
+      "in_fixed_smoke": false,
+      "start_height_m": 3.07216,
+      "categories": [
+        "chair",
+        "toilet",
+        "tv"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        6.0
+      ]
+    },
+    {
+      "scene_id": "cvZr5TUy5C5",
+      "episode_id": "14",
+      "in_fixed_smoke": false,
+      "start_height_m": -2.92784,
+      "categories": [
+        "toilet",
+        "tv",
+        "toilet"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "cvZr5TUy5C5",
+      "episode_id": "15",
+      "in_fixed_smoke": false,
+      "start_height_m": -2.92784,
+      "categories": [
+        "toilet",
+        "couch",
+        "chair"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "cvZr5TUy5C5",
+      "episode_id": "16",
+      "in_fixed_smoke": false,
+      "start_height_m": -2.91749,
+      "categories": [
+        "couch",
+        "toilet",
+        "chair"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.010350000000000303,
+        0.010350000000000303,
+        0.010350000000000303
+      ]
+    },
+    {
+      "scene_id": "cvZr5TUy5C5",
+      "episode_id": "17",
+      "in_fixed_smoke": false,
+      "start_height_m": 3.07216,
+      "categories": [
+        "toilet",
+        "tv",
+        "chair"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        6.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "cvZr5TUy5C5",
+      "episode_id": "18",
+      "in_fixed_smoke": false,
+      "start_height_m": -2.92784,
+      "categories": [
+        "plant",
+        "chair",
+        "couch"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        3.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "cvZr5TUy5C5",
+      "episode_id": "19",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.07216,
+      "categories": [
+        "tv",
+        "toilet",
+        "couch"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        3.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "mL8ThkuaVTM",
+      "episode_id": "0",
+      "in_fixed_smoke": true,
+      "start_height_m": -1.10624,
+      "categories": [
+        "toilet",
+        "chair",
+        "toilet"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        1.4697700000000002,
+        1.1302299999999998,
+        1.4697700000000002
+      ]
+    },
+    {
+      "scene_id": "mL8ThkuaVTM",
+      "episode_id": "1",
+      "in_fixed_smoke": false,
+      "start_height_m": 2.04582,
+      "categories": [
+        "toilet",
+        "bed",
+        "couch"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.7781699999999998,
+        0.7781699999999998,
+        1.82183
+      ]
+    },
+    {
+      "scene_id": "mL8ThkuaVTM",
+      "episode_id": "2",
+      "in_fixed_smoke": false,
+      "start_height_m": -2.57601,
+      "categories": [
+        "bed",
+        "toilet",
+        "bed"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "mL8ThkuaVTM",
+      "episode_id": "3",
+      "in_fixed_smoke": false,
+      "start_height_m": 2.82399,
+      "categories": [
+        "toilet",
+        "bed",
+        "chair"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        2.8
+      ]
+    },
+    {
+      "scene_id": "mL8ThkuaVTM",
+      "episode_id": "4",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.02399,
+      "categories": [
+        "bed",
+        "couch",
+        "toilet"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        2.6,
+        0.0,
+        2.6
+      ]
+    },
+    {
+      "scene_id": "mL8ThkuaVTM",
+      "episode_id": "5",
+      "in_fixed_smoke": false,
+      "start_height_m": -2.57601,
+      "categories": [
+        "chair",
+        "couch",
+        "toilet"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        2.6,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "mL8ThkuaVTM",
+      "episode_id": "6",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.02399,
+      "categories": [
+        "toilet",
+        "chair",
+        "couch"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        2.6,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "mL8ThkuaVTM",
+      "episode_id": "7",
+      "in_fixed_smoke": false,
+      "start_height_m": 2.82399,
+      "categories": [
+        "couch",
+        "bed",
+        "couch"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        2.5999999999999996,
+        0.0,
+        2.5999999999999996
+      ]
+    },
+    {
+      "scene_id": "mL8ThkuaVTM",
+      "episode_id": "8",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.02399,
+      "categories": [
+        "couch",
+        "bed",
+        "toilet"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        2.6,
+        2.6
+      ]
+    },
+    {
+      "scene_id": "mL8ThkuaVTM",
+      "episode_id": "9",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.02399,
+      "categories": [
+        "chair",
+        "bed",
+        "couch"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        2.6,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "mL8ThkuaVTM",
+      "episode_id": "10",
+      "in_fixed_smoke": false,
+      "start_height_m": -2.57601,
+      "categories": [
+        "couch",
+        "bed",
+        "chair"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        2.6
+      ]
+    },
+    {
+      "scene_id": "mL8ThkuaVTM",
+      "episode_id": "11",
+      "in_fixed_smoke": false,
+      "start_height_m": 2.82399,
+      "categories": [
+        "couch",
+        "chair",
+        "couch"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        2.5999999999999996,
+        2.8,
+        2.5999999999999996
+      ]
+    },
+    {
+      "scene_id": "mL8ThkuaVTM",
+      "episode_id": "12",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.02399,
+      "categories": [
+        "toilet",
+        "bed",
+        "toilet"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        2.6,
+        2.6,
+        2.6
+      ]
+    },
+    {
+      "scene_id": "mL8ThkuaVTM",
+      "episode_id": "13",
+      "in_fixed_smoke": false,
+      "start_height_m": -2.57601,
+      "categories": [
+        "couch",
+        "toilet",
+        "chair"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        2.6
+      ]
+    },
+    {
+      "scene_id": "mL8ThkuaVTM",
+      "episode_id": "14",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.48788,
+      "categories": [
+        "bed",
+        "couch",
+        "chair"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        2.3361099999999997,
+        0.26388999999999996,
+        0.46388999999999997
+      ]
+    },
+    {
+      "scene_id": "mL8ThkuaVTM",
+      "episode_id": "15",
+      "in_fixed_smoke": false,
+      "start_height_m": 2.82399,
+      "categories": [
+        "chair",
+        "toilet",
+        "bed"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        2.8,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "mL8ThkuaVTM",
+      "episode_id": "16",
+      "in_fixed_smoke": false,
+      "start_height_m": -2.57601,
+      "categories": [
+        "bed",
+        "couch",
+        "toilet"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "mL8ThkuaVTM",
+      "episode_id": "17",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.08114,
+      "categories": [
+        "toilet",
+        "chair",
+        "couch"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        2.65715,
+        0.057150000000000006,
+        0.0020000000000000018
+      ]
+    },
+    {
+      "scene_id": "mL8ThkuaVTM",
+      "episode_id": "18",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.02399,
+      "categories": [
+        "bed",
+        "chair",
+        "bed"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        2.6,
+        0.0,
+        2.6
+      ]
+    },
+    {
+      "scene_id": "mL8ThkuaVTM",
+      "episode_id": "19",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.02399,
+      "categories": [
+        "chair",
+        "toilet",
+        "bed"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        2.6,
+        2.6
+      ]
+    },
+    {
+      "scene_id": "mv2HUxq3B53",
+      "episode_id": "0",
+      "in_fixed_smoke": true,
+      "start_height_m": 0.05035,
+      "categories": [
+        "toilet",
+        "bed",
+        "couch"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "mv2HUxq3B53",
+      "episode_id": "1",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.05035,
+      "categories": [
+        "couch",
+        "chair",
+        "couch"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "mv2HUxq3B53",
+      "episode_id": "2",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.05035,
+      "categories": [
+        "couch",
+        "chair",
+        "toilet"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "mv2HUxq3B53",
+      "episode_id": "3",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.05035,
+      "categories": [
+        "bed",
+        "tv",
+        "chair"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "mv2HUxq3B53",
+      "episode_id": "4",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.05035,
+      "categories": [
+        "toilet",
+        "tv",
+        "toilet"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "mv2HUxq3B53",
+      "episode_id": "5",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.05035,
+      "categories": [
+        "tv",
+        "toilet",
+        "couch"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "mv2HUxq3B53",
+      "episode_id": "6",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.05035,
+      "categories": [
+        "couch",
+        "tv",
+        "chair"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "mv2HUxq3B53",
+      "episode_id": "7",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.05035,
+      "categories": [
+        "chair",
+        "toilet",
+        "bed"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "mv2HUxq3B53",
+      "episode_id": "8",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.05035,
+      "categories": [
+        "couch",
+        "toilet",
+        "bed"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "mv2HUxq3B53",
+      "episode_id": "9",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.05035,
+      "categories": [
+        "toilet",
+        "bed",
+        "chair"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "mv2HUxq3B53",
+      "episode_id": "10",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.05035,
+      "categories": [
+        "bed",
+        "couch",
+        "toilet"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "mv2HUxq3B53",
+      "episode_id": "11",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.05035,
+      "categories": [
+        "chair",
+        "bed",
+        "couch"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "mv2HUxq3B53",
+      "episode_id": "12",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.05035,
+      "categories": [
+        "toilet",
+        "chair",
+        "couch"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "mv2HUxq3B53",
+      "episode_id": "13",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.09191,
+      "categories": [
+        "bed",
+        "chair",
+        "tv"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.04156000000000001,
+        0.0013199999999999878,
+        0.04156000000000001
+      ]
+    },
+    {
+      "scene_id": "mv2HUxq3B53",
+      "episode_id": "14",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.05035,
+      "categories": [
+        "tv",
+        "chair",
+        "tv"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "mv2HUxq3B53",
+      "episode_id": "15",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.05035,
+      "categories": [
+        "chair",
+        "couch",
+        "tv"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "mv2HUxq3B53",
+      "episode_id": "16",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.05035,
+      "categories": [
+        "tv",
+        "bed",
+        "toilet"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "mv2HUxq3B53",
+      "episode_id": "17",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.05035,
+      "categories": [
+        "chair",
+        "toilet",
+        "tv"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "mv2HUxq3B53",
+      "episode_id": "18",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.05035,
+      "categories": [
+        "tv",
+        "chair",
+        "tv"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "mv2HUxq3B53",
+      "episode_id": "19",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.05035,
+      "categories": [
+        "bed",
+        "couch",
+        "bed"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "p53SfW6mjZe",
+      "episode_id": "0",
+      "in_fixed_smoke": true,
+      "start_height_m": 0.00481,
+      "categories": [
+        "couch",
+        "toilet",
+        "chair"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "p53SfW6mjZe",
+      "episode_id": "1",
+      "in_fixed_smoke": false,
+      "start_height_m": 2.80481,
+      "categories": [
+        "toilet",
+        "bed",
+        "toilet"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        2.49207,
+        0.6000000000000001,
+        2.49207
+      ]
+    },
+    {
+      "scene_id": "p53SfW6mjZe",
+      "episode_id": "2",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.00481,
+      "categories": [
+        "chair",
+        "couch",
+        "chair"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "p53SfW6mjZe",
+      "episode_id": "3",
+      "in_fixed_smoke": false,
+      "start_height_m": 2.80481,
+      "categories": [
+        "tv",
+        "toilet",
+        "couch"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        2.49207,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "p53SfW6mjZe",
+      "episode_id": "4",
+      "in_fixed_smoke": false,
+      "start_height_m": 2.01861,
+      "categories": [
+        "bed",
+        "tv",
+        "chair"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        1.3862,
+        0.7862,
+        0.7862
+      ]
+    },
+    {
+      "scene_id": "p53SfW6mjZe",
+      "episode_id": "5",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.00481,
+      "categories": [
+        "toilet",
+        "tv",
+        "couch"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "p53SfW6mjZe",
+      "episode_id": "6",
+      "in_fixed_smoke": false,
+      "start_height_m": -2.99519,
+      "categories": [
+        "toilet",
+        "bed",
+        "tv"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        3.0
+      ]
+    },
+    {
+      "scene_id": "p53SfW6mjZe",
+      "episode_id": "7",
+      "in_fixed_smoke": false,
+      "start_height_m": 3.40481,
+      "categories": [
+        "couch",
+        "chair",
+        "bed"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "p53SfW6mjZe",
+      "episode_id": "8",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.00481,
+      "categories": [
+        "bed",
+        "chair",
+        "tv"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "p53SfW6mjZe",
+      "episode_id": "9",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.00481,
+      "categories": [
+        "tv",
+        "couch",
+        "toilet"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "p53SfW6mjZe",
+      "episode_id": "10",
+      "in_fixed_smoke": false,
+      "start_height_m": -2.86646,
+      "categories": [
+        "tv",
+        "couch",
+        "tv"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        2.87127,
+        0.0024399999999999977,
+        2.87127
+      ]
+    },
+    {
+      "scene_id": "p53SfW6mjZe",
+      "episode_id": "11",
+      "in_fixed_smoke": false,
+      "start_height_m": -2.87752,
+      "categories": [
+        "tv",
+        "bed",
+        "couch"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        2.88233,
+        0.012560000000000127,
+        0.0003100000000002545
+      ]
+    },
+    {
+      "scene_id": "p53SfW6mjZe",
+      "episode_id": "12",
+      "in_fixed_smoke": false,
+      "start_height_m": 3.40481,
+      "categories": [
+        "chair",
+        "bed",
+        "toilet"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        3.0920699999999997
+      ]
+    },
+    {
+      "scene_id": "p53SfW6mjZe",
+      "episode_id": "13",
+      "in_fixed_smoke": false,
+      "start_height_m": 2.80481,
+      "categories": [
+        "bed",
+        "couch",
+        "bed"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.6000000000000001,
+        0.0,
+        0.6000000000000001
+      ]
+    },
+    {
+      "scene_id": "p53SfW6mjZe",
+      "episode_id": "14",
+      "in_fixed_smoke": false,
+      "start_height_m": -2.99519,
+      "categories": [
+        "chair",
+        "tv",
+        "toilet"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        3.0,
+        3.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "p53SfW6mjZe",
+      "episode_id": "15",
+      "in_fixed_smoke": false,
+      "start_height_m": 2.80481,
+      "categories": [
+        "couch",
+        "toilet",
+        "tv"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        2.49207,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "p53SfW6mjZe",
+      "episode_id": "16",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.00481,
+      "categories": [
+        "toilet",
+        "tv",
+        "chair"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "p53SfW6mjZe",
+      "episode_id": "17",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.00481,
+      "categories": [
+        "tv",
+        "toilet",
+        "bed"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "p53SfW6mjZe",
+      "episode_id": "18",
+      "in_fixed_smoke": false,
+      "start_height_m": 3.40481,
+      "categories": [
+        "bed",
+        "chair",
+        "bed"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "p53SfW6mjZe",
+      "episode_id": "19",
+      "in_fixed_smoke": false,
+      "start_height_m": 2.80481,
+      "categories": [
+        "chair",
+        "tv",
+        "bed"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.6000000000000001
+      ]
+    },
+    {
+      "scene_id": "q3zU7Yy5E5s",
+      "episode_id": "0",
+      "in_fixed_smoke": true,
+      "start_height_m": 0.75179,
+      "categories": [
+        "toilet",
+        "couch",
+        "chair"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.7165699999999999,
+        0.64222,
+        0.5586899999999999
+      ]
+    },
+    {
+      "scene_id": "q3zU7Yy5E5s",
+      "episode_id": "1",
+      "in_fixed_smoke": false,
+      "start_height_m": 2.63522,
+      "categories": [
+        "tv",
+        "bed",
+        "tv"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.4097200000000001,
+        0.0,
+        0.4097200000000001
+      ]
+    },
+    {
+      "scene_id": "q3zU7Yy5E5s",
+      "episode_id": "2",
+      "in_fixed_smoke": false,
+      "start_height_m": 2.63522,
+      "categories": [
+        "tv",
+        "bed",
+        "chair"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.4097200000000001,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "q3zU7Yy5E5s",
+      "episode_id": "3",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.03522,
+      "categories": [
+        "chair",
+        "tv",
+        "chair"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        1.8091,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "q3zU7Yy5E5s",
+      "episode_id": "4",
+      "in_fixed_smoke": false,
+      "start_height_m": 2.48666,
+      "categories": [
+        "chair",
+        "couch",
+        "tv"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.1485599999999998,
+        2.37709,
+        0.2611600000000003
+      ]
+    },
+    {
+      "scene_id": "q3zU7Yy5E5s",
+      "episode_id": "5",
+      "in_fixed_smoke": false,
+      "start_height_m": 2.63522,
+      "categories": [
+        "chair",
+        "couch",
+        "tv"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        2.5256499999999997,
+        0.4097200000000001
+      ]
+    },
+    {
+      "scene_id": "q3zU7Yy5E5s",
+      "episode_id": "6",
+      "in_fixed_smoke": false,
+      "start_height_m": 2.63522,
+      "categories": [
+        "couch",
+        "toilet",
+        "couch"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        2.5256499999999997,
+        0.0,
+        2.5256499999999997
+      ]
+    },
+    {
+      "scene_id": "q3zU7Yy5E5s",
+      "episode_id": "7",
+      "in_fixed_smoke": false,
+      "start_height_m": 2.59727,
+      "categories": [
+        "couch",
+        "bed",
+        "chair"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        2.4877,
+        0.03794999999999993,
+        0.03794999999999993
+      ]
+    },
+    {
+      "scene_id": "q3zU7Yy5E5s",
+      "episode_id": "8",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.03522,
+      "categories": [
+        "couch",
+        "bed",
+        "tv"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        1.8091
+      ]
+    },
+    {
+      "scene_id": "q3zU7Yy5E5s",
+      "episode_id": "9",
+      "in_fixed_smoke": false,
+      "start_height_m": 2.63522,
+      "categories": [
+        "tv",
+        "couch",
+        "bed"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.4097200000000001,
+        2.5256499999999997,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "q3zU7Yy5E5s",
+      "episode_id": "10",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.03522,
+      "categories": [
+        "tv",
+        "toilet",
+        "tv"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        1.8091,
+        0.0,
+        1.8091
+      ]
+    },
+    {
+      "scene_id": "q3zU7Yy5E5s",
+      "episode_id": "11",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.03522,
+      "categories": [
+        "bed",
+        "toilet",
+        "couch"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "q3zU7Yy5E5s",
+      "episode_id": "12",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.03522,
+      "categories": [
+        "toilet",
+        "chair",
+        "couch"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "q3zU7Yy5E5s",
+      "episode_id": "13",
+      "in_fixed_smoke": false,
+      "start_height_m": 2.63522,
+      "categories": [
+        "toilet",
+        "tv",
+        "toilet"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.4097200000000001,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "q3zU7Yy5E5s",
+      "episode_id": "14",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.03522,
+      "categories": [
+        "couch",
+        "tv",
+        "bed"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        1.8091,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "q3zU7Yy5E5s",
+      "episode_id": "15",
+      "in_fixed_smoke": false,
+      "start_height_m": 2.53876,
+      "categories": [
+        "chair",
+        "couch",
+        "toilet"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.09645999999999999,
+        2.4291899999999997,
+        0.09645999999999999
+      ]
+    },
+    {
+      "scene_id": "q3zU7Yy5E5s",
+      "episode_id": "16",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.03522,
+      "categories": [
+        "bed",
+        "chair",
+        "bed"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "q3zU7Yy5E5s",
+      "episode_id": "17",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.03522,
+      "categories": [
+        "bed",
+        "toilet",
+        "tv"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        1.8091
+      ]
+    },
+    {
+      "scene_id": "q3zU7Yy5E5s",
+      "episode_id": "18",
+      "in_fixed_smoke": false,
+      "start_height_m": 2.63522,
+      "categories": [
+        "toilet",
+        "bed",
+        "toilet"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "q3zU7Yy5E5s",
+      "episode_id": "19",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.03522,
+      "categories": [
+        "bed",
+        "chair",
+        "couch"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "qyAac8rV8Zk",
+      "episode_id": "0",
+      "in_fixed_smoke": true,
+      "start_height_m": 0.0192,
+      "categories": [
+        "bed",
+        "tv",
+        "toilet"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        3.0,
+        0.0,
+        3.1999999999999997
+      ]
+    },
+    {
+      "scene_id": "qyAac8rV8Zk",
+      "episode_id": "1",
+      "in_fixed_smoke": false,
+      "start_height_m": 3.2192,
+      "categories": [
+        "couch",
+        "bed",
+        "tv"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        3.0104499999999996,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "qyAac8rV8Zk",
+      "episode_id": "2",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.0192,
+      "categories": [
+        "toilet",
+        "bed",
+        "tv"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        3.1999999999999997,
+        3.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "qyAac8rV8Zk",
+      "episode_id": "3",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.0192,
+      "categories": [
+        "tv",
+        "bed",
+        "chair"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        3.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "qyAac8rV8Zk",
+      "episode_id": "4",
+      "in_fixed_smoke": false,
+      "start_height_m": 3.17304,
+      "categories": [
+        "chair",
+        "toilet",
+        "tv"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.04615999999999998,
+        0.04615999999999998,
+        0.0005299999999999194
+      ]
+    },
+    {
+      "scene_id": "qyAac8rV8Zk",
+      "episode_id": "5",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.0192,
+      "categories": [
+        "tv",
+        "couch",
+        "bed"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        3.0
+      ]
+    },
+    {
+      "scene_id": "qyAac8rV8Zk",
+      "episode_id": "6",
+      "in_fixed_smoke": false,
+      "start_height_m": 3.2192,
+      "categories": [
+        "tv",
+        "couch",
+        "toilet"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        3.0104499999999996,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "qyAac8rV8Zk",
+      "episode_id": "7",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.0192,
+      "categories": [
+        "tv",
+        "couch",
+        "chair"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "qyAac8rV8Zk",
+      "episode_id": "8",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.0192,
+      "categories": [
+        "bed",
+        "toilet",
+        "tv"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        3.0,
+        3.1999999999999997,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "qyAac8rV8Zk",
+      "episode_id": "9",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.0192,
+      "categories": [
+        "chair",
+        "toilet",
+        "chair"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        3.1999999999999997,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "qyAac8rV8Zk",
+      "episode_id": "10",
+      "in_fixed_smoke": false,
+      "start_height_m": 3.2192,
+      "categories": [
+        "couch",
+        "chair",
+        "bed"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        3.0104499999999996,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "qyAac8rV8Zk",
+      "episode_id": "11",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.0192,
+      "categories": [
+        "bed",
+        "chair",
+        "tv"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        3.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "qyAac8rV8Zk",
+      "episode_id": "12",
+      "in_fixed_smoke": false,
+      "start_height_m": 2.60838,
+      "categories": [
+        "tv",
+        "couch",
+        "bed"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.4241299999999999,
+        2.39963,
+        0.4108200000000002
+      ]
+    },
+    {
+      "scene_id": "qyAac8rV8Zk",
+      "episode_id": "13",
+      "in_fixed_smoke": false,
+      "start_height_m": 1.90566,
+      "categories": [
+        "toilet",
+        "bed",
+        "chair"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        1.31354,
+        1.1135400000000002,
+        1.31354
+      ]
+    },
+    {
+      "scene_id": "qyAac8rV8Zk",
+      "episode_id": "14",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.0192,
+      "categories": [
+        "toilet",
+        "bed",
+        "tv"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        3.1999999999999997,
+        3.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "qyAac8rV8Zk",
+      "episode_id": "15",
+      "in_fixed_smoke": false,
+      "start_height_m": 3.2192,
+      "categories": [
+        "chair",
+        "toilet",
+        "chair"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "qyAac8rV8Zk",
+      "episode_id": "16",
+      "in_fixed_smoke": false,
+      "start_height_m": 3.2192,
+      "categories": [
+        "toilet",
+        "couch",
+        "toilet"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        3.0104499999999996,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "qyAac8rV8Zk",
+      "episode_id": "17",
+      "in_fixed_smoke": false,
+      "start_height_m": 3.2192,
+      "categories": [
+        "couch",
+        "tv",
+        "bed"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        3.0104499999999996,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "qyAac8rV8Zk",
+      "episode_id": "18",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.0192,
+      "categories": [
+        "bed",
+        "couch",
+        "chair"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        3.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "qyAac8rV8Zk",
+      "episode_id": "19",
+      "in_fixed_smoke": false,
+      "start_height_m": 1.6192,
+      "categories": [
+        "chair",
+        "toilet",
+        "couch"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        1.5999999999999999,
+        1.5999999999999999,
+        1.41045
+      ]
+    },
+    {
+      "scene_id": "svBbv1Pavdk",
+      "episode_id": "0",
+      "in_fixed_smoke": true,
+      "start_height_m": 0.07755,
+      "categories": [
+        "plant",
+        "couch",
+        "bed"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "svBbv1Pavdk",
+      "episode_id": "1",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.07755,
+      "categories": [
+        "tv",
+        "toilet",
+        "couch"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "svBbv1Pavdk",
+      "episode_id": "2",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.07755,
+      "categories": [
+        "toilet",
+        "bed",
+        "tv"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "svBbv1Pavdk",
+      "episode_id": "3",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.07755,
+      "categories": [
+        "plant",
+        "chair",
+        "tv"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "svBbv1Pavdk",
+      "episode_id": "4",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.07755,
+      "categories": [
+        "couch",
+        "plant",
+        "toilet"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "svBbv1Pavdk",
+      "episode_id": "5",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.07755,
+      "categories": [
+        "bed",
+        "plant",
+        "couch"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "svBbv1Pavdk",
+      "episode_id": "6",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.07755,
+      "categories": [
+        "tv",
+        "toilet",
+        "tv"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "svBbv1Pavdk",
+      "episode_id": "7",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.07755,
+      "categories": [
+        "toilet",
+        "chair",
+        "bed"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "svBbv1Pavdk",
+      "episode_id": "8",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.07755,
+      "categories": [
+        "plant",
+        "toilet",
+        "plant"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "svBbv1Pavdk",
+      "episode_id": "9",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.07755,
+      "categories": [
+        "tv",
+        "chair",
+        "tv"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "svBbv1Pavdk",
+      "episode_id": "10",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.07755,
+      "categories": [
+        "toilet",
+        "couch",
+        "plant"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "svBbv1Pavdk",
+      "episode_id": "11",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.07755,
+      "categories": [
+        "bed",
+        "plant",
+        "chair"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "svBbv1Pavdk",
+      "episode_id": "12",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.07755,
+      "categories": [
+        "tv",
+        "bed",
+        "tv"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "svBbv1Pavdk",
+      "episode_id": "13",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.07755,
+      "categories": [
+        "chair",
+        "plant",
+        "couch"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "svBbv1Pavdk",
+      "episode_id": "14",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.07755,
+      "categories": [
+        "chair",
+        "tv",
+        "chair"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "svBbv1Pavdk",
+      "episode_id": "15",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.07755,
+      "categories": [
+        "toilet",
+        "chair",
+        "plant"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "svBbv1Pavdk",
+      "episode_id": "16",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.07755,
+      "categories": [
+        "chair",
+        "couch",
+        "toilet"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "svBbv1Pavdk",
+      "episode_id": "17",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.07755,
+      "categories": [
+        "couch",
+        "tv",
+        "bed"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "svBbv1Pavdk",
+      "episode_id": "18",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.07755,
+      "categories": [
+        "bed",
+        "tv",
+        "bed"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "svBbv1Pavdk",
+      "episode_id": "19",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.07755,
+      "categories": [
+        "couch",
+        "toilet",
+        "bed"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "wcojb4TFT35",
+      "episode_id": "0",
+      "in_fixed_smoke": true,
+      "start_height_m": 0.47329,
+      "categories": [
+        "toilet",
+        "couch",
+        "tv"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.27837,
+        0.27837,
+        0.27837
+      ]
+    },
+    {
+      "scene_id": "wcojb4TFT35",
+      "episode_id": "1",
+      "in_fixed_smoke": false,
+      "start_height_m": 2.59492,
+      "categories": [
+        "chair",
+        "bed",
+        "chair"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.19999999999999973,
+        0.0,
+        0.19999999999999973
+      ]
+    },
+    {
+      "scene_id": "wcojb4TFT35",
+      "episode_id": "2",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.0132,
+      "categories": [
+        "tv",
+        "couch",
+        "bed"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.18172000000000002,
+        0.18172000000000002,
+        2.5817200000000002
+      ]
+    },
+    {
+      "scene_id": "wcojb4TFT35",
+      "episode_id": "3",
+      "in_fixed_smoke": false,
+      "start_height_m": -0.00508,
+      "categories": [
+        "couch",
+        "tv",
+        "chair"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.2,
+        0.2,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "wcojb4TFT35",
+      "episode_id": "4",
+      "in_fixed_smoke": false,
+      "start_height_m": -0.24188,
+      "categories": [
+        "chair",
+        "tv",
+        "toilet"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0368,
+        0.4368,
+        0.4368
+      ]
+    },
+    {
+      "scene_id": "wcojb4TFT35",
+      "episode_id": "5",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.51397,
+      "categories": [
+        "toilet",
+        "chair",
+        "bed"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.31905000000000006,
+        0.31905000000000006,
+        2.08095
+      ]
+    },
+    {
+      "scene_id": "wcojb4TFT35",
+      "episode_id": "6",
+      "in_fixed_smoke": false,
+      "start_height_m": -0.00508,
+      "categories": [
+        "couch",
+        "chair",
+        "bed"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.2,
+        0.0,
+        2.6
+      ]
+    },
+    {
+      "scene_id": "wcojb4TFT35",
+      "episode_id": "7",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.19492,
+      "categories": [
+        "tv",
+        "couch",
+        "bed"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        2.4
+      ]
+    },
+    {
+      "scene_id": "wcojb4TFT35",
+      "episode_id": "8",
+      "in_fixed_smoke": false,
+      "start_height_m": 1.34731,
+      "categories": [
+        "bed",
+        "tv",
+        "chair"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        1.24761,
+        1.15239,
+        1.15239
+      ]
+    },
+    {
+      "scene_id": "wcojb4TFT35",
+      "episode_id": "9",
+      "in_fixed_smoke": false,
+      "start_height_m": 2.79492,
+      "categories": [
+        "toilet",
+        "tv",
+        "couch"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        2.5999999999999996,
+        2.5999999999999996
+      ]
+    },
+    {
+      "scene_id": "wcojb4TFT35",
+      "episode_id": "10",
+      "in_fixed_smoke": false,
+      "start_height_m": 1.17702,
+      "categories": [
+        "bed",
+        "couch",
+        "toilet"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        1.4179000000000002,
+        0.9821,
+        0.9821
+      ]
+    },
+    {
+      "scene_id": "wcojb4TFT35",
+      "episode_id": "11",
+      "in_fixed_smoke": false,
+      "start_height_m": -0.00508,
+      "categories": [
+        "couch",
+        "chair",
+        "tv"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.2,
+        0.0,
+        0.2
+      ]
+    },
+    {
+      "scene_id": "wcojb4TFT35",
+      "episode_id": "12",
+      "in_fixed_smoke": false,
+      "start_height_m": 1.05006,
+      "categories": [
+        "bed",
+        "toilet",
+        "tv"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        1.5448600000000001,
+        0.85514,
+        0.85514
+      ]
+    },
+    {
+      "scene_id": "wcojb4TFT35",
+      "episode_id": "13",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.56008,
+      "categories": [
+        "bed",
+        "couch",
+        "chair"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        2.03484,
+        0.36516000000000004,
+        0.36516000000000004
+      ]
+    },
+    {
+      "scene_id": "wcojb4TFT35",
+      "episode_id": "14",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.04874,
+      "categories": [
+        "tv",
+        "bed",
+        "toilet"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.14618,
+        2.54618,
+        0.14618
+      ]
+    },
+    {
+      "scene_id": "wcojb4TFT35",
+      "episode_id": "15",
+      "in_fixed_smoke": false,
+      "start_height_m": -0.34347,
+      "categories": [
+        "chair",
+        "tv",
+        "chair"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.13838999999999999,
+        0.53839,
+        0.13838999999999999
+      ]
+    },
+    {
+      "scene_id": "wcojb4TFT35",
+      "episode_id": "16",
+      "in_fixed_smoke": false,
+      "start_height_m": 2.79492,
+      "categories": [
+        "toilet",
+        "chair",
+        "toilet"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "wcojb4TFT35",
+      "episode_id": "17",
+      "in_fixed_smoke": false,
+      "start_height_m": -0.00508,
+      "categories": [
+        "tv",
+        "toilet",
+        "chair"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.2,
+        0.2,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "wcojb4TFT35",
+      "episode_id": "18",
+      "in_fixed_smoke": false,
+      "start_height_m": 2.59492,
+      "categories": [
+        "chair",
+        "couch",
+        "bed"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.19999999999999973,
+        2.4,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "wcojb4TFT35",
+      "episode_id": "19",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.01859,
+      "categories": [
+        "couch",
+        "toilet",
+        "couch"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.17633000000000001,
+        0.17633000000000001,
+        0.17633000000000001
+      ]
+    },
+    {
+      "scene_id": "ziup5kvtCCR",
+      "episode_id": "0",
+      "in_fixed_smoke": true,
+      "start_height_m": 0.02122,
+      "categories": [
+        "chair",
+        "plant",
+        "bed"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "ziup5kvtCCR",
+      "episode_id": "1",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.02122,
+      "categories": [
+        "chair",
+        "plant",
+        "toilet"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "ziup5kvtCCR",
+      "episode_id": "2",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.02122,
+      "categories": [
+        "toilet",
+        "chair",
+        "tv"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "ziup5kvtCCR",
+      "episode_id": "3",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.02122,
+      "categories": [
+        "couch",
+        "plant",
+        "tv"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "ziup5kvtCCR",
+      "episode_id": "4",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.02122,
+      "categories": [
+        "toilet",
+        "chair",
+        "plant"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "ziup5kvtCCR",
+      "episode_id": "5",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.02122,
+      "categories": [
+        "plant",
+        "chair",
+        "bed"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "ziup5kvtCCR",
+      "episode_id": "6",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.02122,
+      "categories": [
+        "tv",
+        "couch",
+        "bed"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "ziup5kvtCCR",
+      "episode_id": "7",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.02122,
+      "categories": [
+        "bed",
+        "couch",
+        "toilet"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "ziup5kvtCCR",
+      "episode_id": "8",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.02122,
+      "categories": [
+        "chair",
+        "tv",
+        "bed"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "ziup5kvtCCR",
+      "episode_id": "9",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.02122,
+      "categories": [
+        "couch",
+        "bed",
+        "chair"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "ziup5kvtCCR",
+      "episode_id": "10",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.02122,
+      "categories": [
+        "toilet",
+        "tv",
+        "toilet"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "ziup5kvtCCR",
+      "episode_id": "11",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.02122,
+      "categories": [
+        "bed",
+        "tv",
+        "couch"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "ziup5kvtCCR",
+      "episode_id": "12",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.02122,
+      "categories": [
+        "chair",
+        "toilet",
+        "chair"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "ziup5kvtCCR",
+      "episode_id": "13",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.02122,
+      "categories": [
+        "plant",
+        "chair",
+        "couch"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "ziup5kvtCCR",
+      "episode_id": "14",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.02122,
+      "categories": [
+        "tv",
+        "couch",
+        "toilet"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "ziup5kvtCCR",
+      "episode_id": "15",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.02122,
+      "categories": [
+        "bed",
+        "tv",
+        "toilet"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "ziup5kvtCCR",
+      "episode_id": "16",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.02122,
+      "categories": [
+        "tv",
+        "couch",
+        "bed"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "ziup5kvtCCR",
+      "episode_id": "17",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.02122,
+      "categories": [
+        "plant",
+        "couch",
+        "plant"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "ziup5kvtCCR",
+      "episode_id": "18",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.02122,
+      "categories": [
+        "couch",
+        "tv",
+        "bed"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "ziup5kvtCCR",
+      "episode_id": "19",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.02122,
+      "categories": [
+        "plant",
+        "toilet",
+        "plant"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "zt1RVoi7PcG",
+      "episode_id": "0",
+      "in_fixed_smoke": true,
+      "start_height_m": 0.11294,
+      "categories": [
+        "bed",
+        "couch",
+        "toilet"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "zt1RVoi7PcG",
+      "episode_id": "1",
+      "in_fixed_smoke": false,
+      "start_height_m": -1.7515,
+      "categories": [
+        "chair",
+        "bed",
+        "couch"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.96496,
+        1.86444,
+        1.13556
+      ]
+    },
+    {
+      "scene_id": "zt1RVoi7PcG",
+      "episode_id": "2",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.11294,
+      "categories": [
+        "chair",
+        "tv",
+        "couch"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "zt1RVoi7PcG",
+      "episode_id": "3",
+      "in_fixed_smoke": false,
+      "start_height_m": -2.88706,
+      "categories": [
+        "toilet",
+        "couch",
+        "tv"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "zt1RVoi7PcG",
+      "episode_id": "4",
+      "in_fixed_smoke": false,
+      "start_height_m": -2.88706,
+      "categories": [
+        "tv",
+        "chair",
+        "couch"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "zt1RVoi7PcG",
+      "episode_id": "5",
+      "in_fixed_smoke": false,
+      "start_height_m": -2.88706,
+      "categories": [
+        "bed",
+        "tv",
+        "bed"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        3.0,
+        0.0,
+        3.0
+      ]
+    },
+    {
+      "scene_id": "zt1RVoi7PcG",
+      "episode_id": "6",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.11294,
+      "categories": [
+        "chair",
+        "tv",
+        "chair"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "zt1RVoi7PcG",
+      "episode_id": "7",
+      "in_fixed_smoke": false,
+      "start_height_m": -2.88706,
+      "categories": [
+        "toilet",
+        "couch",
+        "bed"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        3.0
+      ]
+    },
+    {
+      "scene_id": "zt1RVoi7PcG",
+      "episode_id": "8",
+      "in_fixed_smoke": false,
+      "start_height_m": -2.88706,
+      "categories": [
+        "bed",
+        "tv",
+        "bed"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        3.0,
+        0.0,
+        3.0
+      ]
+    },
+    {
+      "scene_id": "zt1RVoi7PcG",
+      "episode_id": "9",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.11294,
+      "categories": [
+        "couch",
+        "bed",
+        "toilet"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "zt1RVoi7PcG",
+      "episode_id": "10",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.11294,
+      "categories": [
+        "toilet",
+        "bed",
+        "toilet"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "zt1RVoi7PcG",
+      "episode_id": "11",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.11294,
+      "categories": [
+        "couch",
+        "chair",
+        "toilet"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "zt1RVoi7PcG",
+      "episode_id": "12",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.11294,
+      "categories": [
+        "tv",
+        "toilet",
+        "chair"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "zt1RVoi7PcG",
+      "episode_id": "13",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.11294,
+      "categories": [
+        "chair",
+        "bed",
+        "chair"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "zt1RVoi7PcG",
+      "episode_id": "14",
+      "in_fixed_smoke": false,
+      "start_height_m": -1.28706,
+      "categories": [
+        "couch",
+        "toilet",
+        "tv"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        1.4000000000000001,
+        1.4000000000000001,
+        1.4000000000000001
+      ]
+    },
+    {
+      "scene_id": "zt1RVoi7PcG",
+      "episode_id": "15",
+      "in_fixed_smoke": false,
+      "start_height_m": -2.88706,
+      "categories": [
+        "tv",
+        "toilet",
+        "chair"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "zt1RVoi7PcG",
+      "episode_id": "16",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.11294,
+      "categories": [
+        "bed",
+        "chair",
+        "couch"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "zt1RVoi7PcG",
+      "episode_id": "17",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.11294,
+      "categories": [
+        "couch",
+        "tv",
+        "chair"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "zt1RVoi7PcG",
+      "episode_id": "18",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.11294,
+      "categories": [
+        "tv",
+        "couch",
+        "bed"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_id": "zt1RVoi7PcG",
+      "episode_id": "19",
+      "in_fixed_smoke": false,
+      "start_height_m": 0.11294,
+      "categories": [
+        "toilet",
+        "tv",
+        "toilet"
+      ],
+      "min_abs_viewpoint_height_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    }
+  ],
+  "data_or_parameters_changed": false
+}

@@ -1,0 +1,36 @@
+{
+  "checked_at_utc": "2026-11-10T05:30:42.491040+00:00",
+  "dataset_name": "HM3Dv1 3-MON balanced common-1200 paired-calibrated v1",
+  "manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+  "source_trace_sha256": "34931f42e88feb55d87f2c9c3caf4063e984f32efc4972fd82a40d210d32f04a",
+  "scientific_scope": {
+    "intended_use": "controlled 2/3/4-MON sequence-length comparison with identical source pool",
+    "not_independent_held_out": true,
+    "not_outcome_blind": true,
+    "selection_type": "historical paired-outcome-calibrated"
+  },
+  "runtime_contract": {
+    "episode_start": "source start pose at MON position 0",
+    "later_source_start_poses": "provenance only; not executed",
+    "recommended_max_steps_per_subtask": 500,
+    "scene_reload_between_subtasks": false,
+    "spl_position_gt0": "must use geodesic distance from actual transition state, not frozen source start",
+    "subtask_order": [
+      0,
+      1,
+      2
+    ]
+  },
+  "source_count": 1200,
+  "historical_source_outcome_counts": {
+    "both_success": 327,
+    "both_failure": 663,
+    "gain": 116,
+    "regression": 94
+  },
+  "historical_labels_are_current_variant_scores": false,
+  "current_3MON_outcomes_used_for_fitting_or_selection": false,
+  "data_changed": false,
+  "parameters_changed": false,
+  "source_sha256": "8785df35edb22af26b096f6c2b4ddf0275fc279ab43f68ffda75869ea95dcea6"
+}

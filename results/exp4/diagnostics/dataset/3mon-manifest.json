@@ -1,0 +1,482 @@
+{
+  "dataset_name": "HM3Dv1 3-MON balanced common-1200 paired-calibrated v1",
+  "runtime_category_aliases": {
+    "sofa": "couch",
+    "tv_monitor": "tv"
+  },
+  "runtime_contract": {
+    "episode_start": "source start pose at MON position 0",
+    "later_source_start_poses": "provenance only; not executed",
+    "recommended_max_steps_per_subtask": 500,
+    "scene_reload_between_subtasks": false,
+    "spl_position_gt0": "must use geodesic distance from actual transition state, not frozen source start",
+    "subtask_order": [
+      0,
+      1,
+      2
+    ]
+  },
+  "scene_order": [
+    "4ok3usBNeis",
+    "5cdEh9F2hJL",
+    "6s7QHgap2fW",
+    "DYehNKdT76V",
+    "Dd4bFSTQ8gi",
+    "Nfvxx8J5NCo",
+    "QaLdnwvtxbs",
+    "TEEsavR23oF",
+    "XB4GS9ShBRE",
+    "bxsVRursffK",
+    "cvZr5TUy5C5",
+    "mL8ThkuaVTM",
+    "mv2HUxq3B53",
+    "p53SfW6mjZe",
+    "q3zU7Yy5E5s",
+    "qyAac8rV8Zk",
+    "svBbv1Pavdk",
+    "wcojb4TFT35",
+    "ziup5kvtCCR",
+    "zt1RVoi7PcG"
+  ],
+  "scene_summary": [
+    {
+      "category_counts": {
+        "bed": 14,
+        "chair": 11,
+        "sofa": 12,
+        "toilet": 13,
+        "tv_monitor": 10
+      },
+      "mon_episode_count": 20,
+      "mon_subtask_count": 60,
+      "output_sha256": "8a4c249756975de888f0c66771de5b77fbda8b267c8f152e8d7225bca2e546bb",
+      "scene_id": "4ok3usBNeis",
+      "scene_order": 0,
+      "source_content_file": "4ok3usBNeis.json.gz",
+      "source_sha256": "21ab186e2d7d103b92bbdeb333eac3c3af520a24b41baa2df45012f13d4c6b74"
+    },
+    {
+      "category_counts": {
+        "bed": 11,
+        "chair": 13,
+        "sofa": 14,
+        "toilet": 10,
+        "tv_monitor": 12
+      },
+      "mon_episode_count": 20,
+      "mon_subtask_count": 60,
+      "output_sha256": "f6ed2fa0071eda648acbcc7a65bc6d2bfe677c2b9cdc784e8d109a0a167ec681",
+      "scene_id": "5cdEh9F2hJL",
+      "scene_order": 1,
+      "source_content_file": "5cdEh9F2hJL.json.gz",
+      "source_sha256": "d0591c97aafd3d3c14f090625c3b75098757c345d3c97a70dbffac2842bdc157"
+    },
+    {
+      "category_counts": {
+        "bed": 10,
+        "chair": 11,
+        "plant": 9,
+        "sofa": 9,
+        "toilet": 10,
+        "tv_monitor": 11
+      },
+      "mon_episode_count": 20,
+      "mon_subtask_count": 60,
+      "output_sha256": "194d2833eff5688c8a62eed50cd4856d6eb9514fa1a5578daa31e961a0e91108",
+      "scene_id": "6s7QHgap2fW",
+      "scene_order": 2,
+      "source_content_file": "6s7QHgap2fW.json.gz",
+      "source_sha256": "90c85659b5e50b81777b6c7344b24084f9f94e16f1cf2d25aecc82effb7b110e"
+    },
+    {
+      "category_counts": {
+        "bed": 14,
+        "chair": 16,
+        "sofa": 14,
+        "toilet": 16
+      },
+      "mon_episode_count": 20,
+      "mon_subtask_count": 60,
+      "output_sha256": "ed4c940d5071839ffa32504f6aa338537a7bbf46dc9cd0db7ee53b4cffed0734",
+      "scene_id": "DYehNKdT76V",
+      "scene_order": 3,
+      "source_content_file": "DYehNKdT76V.json.gz",
+      "source_sha256": "5104f7651a5840a3cda1fad26c6902ec8cc69c6dc1f757de833edb5c8aa68a15"
+    },
+    {
+      "category_counts": {
+        "bed": 17,
+        "chair": 16,
+        "sofa": 12,
+        "toilet": 15
+      },
+      "mon_episode_count": 20,
+      "mon_subtask_count": 60,
+      "output_sha256": "662d8a2866cacce3b334344fa6ca2dc934bbe91ab9e66d71b302b2e036b772e8",
+      "scene_id": "Dd4bFSTQ8gi",
+      "scene_order": 4,
+      "source_content_file": "Dd4bFSTQ8gi.json.gz",
+      "source_sha256": "aa0755eada7551a555b96801600f6148c17f3584244d8abebbdc91c765b95659"
+    },
+    {
+      "category_counts": {
+        "bed": 13,
+        "chair": 12,
+        "sofa": 10,
+        "toilet": 12,
+        "tv_monitor": 13
+      },
+      "mon_episode_count": 20,
+      "mon_subtask_count": 60,
+      "output_sha256": "a96e9a2cb314a28f6f87f14ac873ab4c10b8026652c940e96a054f1f86e3f8f4",
+      "scene_id": "Nfvxx8J5NCo",
+      "scene_order": 5,
+      "source_content_file": "Nfvxx8J5NCo.json.gz",
+      "source_sha256": "51f55b8f505938f32126df46f29c6d7728daae79f5a2d3893089eb4c53b2b904"
+    },
+    {
+      "category_counts": {
+        "bed": 16,
+        "chair": 15,
+        "sofa": 15,
+        "tv_monitor": 14
+      },
+      "mon_episode_count": 20,
+      "mon_subtask_count": 60,
+      "output_sha256": "f4368e14805ae394cce82f0145a3c8bcf4b5427e7ebd2f194b7164b683a46f1a",
+      "scene_id": "QaLdnwvtxbs",
+      "scene_order": 6,
+      "source_content_file": "QaLdnwvtxbs.json.gz",
+      "source_sha256": "82ebe0cd0b243e600c0888b630bb5e9508dbde3935cc4b347f0b1db4b916633b"
+    },
+    {
+      "category_counts": {
+        "bed": 12,
+        "chair": 12,
+        "plant": 13,
+        "sofa": 12,
+        "toilet": 11
+      },
+      "mon_episode_count": 20,
+      "mon_subtask_count": 60,
+      "output_sha256": "99b5d7443f6ec8d0f8500f9465848e4fdf7839b13691109ad7e30fb8532b10ec",
+      "scene_id": "TEEsavR23oF",
+      "scene_order": 7,
+      "source_content_file": "TEEsavR23oF.json.gz",
+      "source_sha256": "73c74356c2133973adbc0eea10b7064ae70f2032015884f08f773c02582589a6"
+    },
+    {
+      "category_counts": {
+        "bed": 16,
+        "chair": 14,
+        "sofa": 15,
+        "toilet": 15
+      },
+      "mon_episode_count": 20,
+      "mon_subtask_count": 60,
+      "output_sha256": "ed299d8e5409f79583838f22eb634e0d255e3e72a2425d051d4d180d147dbb21",
+      "scene_id": "XB4GS9ShBRE",
+      "scene_order": 8,
+      "source_content_file": "XB4GS9ShBRE.json.gz",
+      "source_sha256": "28c87de95eccf588efb0495f00646b27f9a7c224237cfdd598e5622cd519d449"
+    },
+    {
+      "category_counts": {
+        "bed": 20,
+        "chair": 21,
+        "toilet": 19
+      },
+      "mon_episode_count": 20,
+      "mon_subtask_count": 60,
+      "output_sha256": "ce436bbd2bf1fe27c1ee567338e28bd64aab2b54b37b0eda0dde75592bd7b8c1",
+      "scene_id": "bxsVRursffK",
+      "scene_order": 9,
+      "source_content_file": "bxsVRursffK.json.gz",
+      "source_sha256": "074cbf3fdbcb84b9fddd17ef242b77e26616733f6b3e091210fc4d4d6f720dd5"
+    },
+    {
+      "category_counts": {
+        "bed": 9,
+        "chair": 11,
+        "plant": 8,
+        "sofa": 10,
+        "toilet": 12,
+        "tv_monitor": 10
+      },
+      "mon_episode_count": 20,
+      "mon_subtask_count": 60,
+      "output_sha256": "f6dfa078630573a4b00501f2ba017561c41f892661b41bc996ea2d14d840919e",
+      "scene_id": "cvZr5TUy5C5",
+      "scene_order": 10,
+      "source_content_file": "cvZr5TUy5C5.json.gz",
+      "source_sha256": "790068a596231b593d0b4376ccecb83ea1cd3ceedb392fb690605759b88ac408"
+    },
+    {
+      "category_counts": {
+        "bed": 16,
+        "chair": 13,
+        "sofa": 15,
+        "toilet": 16
+      },
+      "mon_episode_count": 20,
+      "mon_subtask_count": 60,
+      "output_sha256": "e2ea6c2099f2f223886eef92834925b3c34ccc81523154f266f01709bb24ec35",
+      "scene_id": "mL8ThkuaVTM",
+      "scene_order": 11,
+      "source_content_file": "mL8ThkuaVTM.json.gz",
+      "source_sha256": "8a1dc2ad7ebe17cb9b8986de84874a7a037c172af84ce7739e1827ddb3da01c5"
+    },
+    {
+      "category_counts": {
+        "bed": 11,
+        "chair": 13,
+        "sofa": 12,
+        "toilet": 12,
+        "tv_monitor": 12
+      },
+      "mon_episode_count": 20,
+      "mon_subtask_count": 60,
+      "output_sha256": "61a7e0470356509749cf9ed5075d6b64605bd74009090d2b45cc3fc09ead4020",
+      "scene_id": "mv2HUxq3B53",
+      "scene_order": 12,
+      "source_content_file": "mv2HUxq3B53.json.gz",
+      "source_sha256": "d0c060f9673c10df027e5bda1f26dfa4b8ee8df99e847187b26eec82a2dabeab"
+    },
+    {
+      "category_counts": {
+        "bed": 13,
+        "chair": 11,
+        "sofa": 10,
+        "toilet": 12,
+        "tv_monitor": 14
+      },
+      "mon_episode_count": 20,
+      "mon_subtask_count": 60,
+      "output_sha256": "0e2b156c374a21c21d783661414d183d487203dab4023bb9bfbe43855dc45423",
+      "scene_id": "p53SfW6mjZe",
+      "scene_order": 13,
+      "source_content_file": "p53SfW6mjZe.json.gz",
+      "source_sha256": "0ec2b96c1d1c048f1ffd1f24a10c97872ace7b6688cdc9f98c51e06527a87fc2"
+    },
+    {
+      "category_counts": {
+        "bed": 12,
+        "chair": 11,
+        "sofa": 13,
+        "toilet": 11,
+        "tv_monitor": 13
+      },
+      "mon_episode_count": 20,
+      "mon_subtask_count": 60,
+      "output_sha256": "2b324f9d6de0c72c4cf2ee0a90865f1994e9241ca7906459a9e8b59e039ee42d",
+      "scene_id": "q3zU7Yy5E5s",
+      "scene_order": 14,
+      "source_content_file": "q3zU7Yy5E5s.json.gz",
+      "source_sha256": "c923fc5acde640147df74a308d7342dd7d30ff9fa5296448ecad5965d7d37c1e"
+    },
+    {
+      "category_counts": {
+        "bed": 13,
+        "chair": 12,
+        "sofa": 10,
+        "toilet": 12,
+        "tv_monitor": 13
+      },
+      "mon_episode_count": 20,
+      "mon_subtask_count": 60,
+      "output_sha256": "172940cc936299af2119ae3f8dddf4866da7adfd7374206550698a8489234248",
+      "scene_id": "qyAac8rV8Zk",
+      "scene_order": 15,
+      "source_content_file": "qyAac8rV8Zk.json.gz",
+      "source_sha256": "0c495f41b97cf2e4628d8ff4db4bce90fc933f2a07eb4968ab432c2f4df9513c"
+    },
+    {
+      "category_counts": {
+        "bed": 10,
+        "chair": 9,
+        "plant": 10,
+        "sofa": 9,
+        "toilet": 10,
+        "tv_monitor": 12
+      },
+      "mon_episode_count": 20,
+      "mon_subtask_count": 60,
+      "output_sha256": "76d55de093d152d7eabb220769ad9d9a876f5ac723cbe1f0ce9c65ad791ea3f2",
+      "scene_id": "svBbv1Pavdk",
+      "scene_order": 16,
+      "source_content_file": "svBbv1Pavdk.json.gz",
+      "source_sha256": "6c7f1a78aae151cb78657c4ef34917271279215b0aedd3d006012ebfaca89b14"
+    },
+    {
+      "category_counts": {
+        "bed": 11,
+        "chair": 14,
+        "sofa": 12,
+        "toilet": 11,
+        "tv_monitor": 12
+      },
+      "mon_episode_count": 20,
+      "mon_subtask_count": 60,
+      "output_sha256": "a84ce1c64cb13512a176f66e6f5088ccddebba3bcecb72e3abd94a77a31d61be",
+      "scene_id": "wcojb4TFT35",
+      "scene_order": 17,
+      "source_content_file": "wcojb4TFT35.json.gz",
+      "source_sha256": "6d187a786eb1f3b74106c02990a46d06816d2c49155038ced6af192cd628d485"
+    },
+    {
+      "category_counts": {
+        "bed": 10,
+        "chair": 10,
+        "plant": 10,
+        "sofa": 10,
+        "toilet": 10,
+        "tv_monitor": 10
+      },
+      "mon_episode_count": 20,
+      "mon_subtask_count": 60,
+      "output_sha256": "b6c14ae61cf6be7a7f4de1fa5b645230b87946c5ca777bec6de5fa8a829892d7",
+      "scene_id": "ziup5kvtCCR",
+      "scene_order": 18,
+      "source_content_file": "ziup5kvtCCR.json.gz",
+      "source_sha256": "8216bf2a5f018f627f7ddb9820dd694d0582a9c35581b96c5d57d494f2350340"
+    },
+    {
+      "category_counts": {
+        "bed": 12,
+        "chair": 12,
+        "sofa": 12,
+        "toilet": 12,
+        "tv_monitor": 12
+      },
+      "mon_episode_count": 20,
+      "mon_subtask_count": 60,
+      "output_sha256": "2f30b796a68c037c04525b2acaca2e849cded809449afc40d10ee47719883200",
+      "scene_id": "zt1RVoi7PcG",
+      "scene_order": 19,
+      "source_content_file": "zt1RVoi7PcG.json.gz",
+      "source_sha256": "fd2ee5d99f226042700ede6d9497bf42dbf57edd1994538196dce9dfe5f3b0a1"
+    }
+  ],
+  "schema_version": 1,
+  "scientific_scope": {
+    "intended_use": "controlled 2/3/4-MON sequence-length comparison with identical source pool",
+    "not_independent_held_out": true,
+    "not_outcome_blind": true,
+    "selection_type": "historical paired-outcome-calibrated"
+  },
+  "sequence_plan": "../common/3mon_plan.json",
+  "source_identity": "content filename + file SHA256 + in-file sequence index",
+  "source_pool_manifest": "../common/source_pool_manifest.json",
+  "source_split": "HM3Dv1 ObjectNav val",
+  "validation": {
+    "adjacent_categories_different": true,
+    "category_counts": {
+      "bed": 260,
+      "chair": 257,
+      "plant": 50,
+      "sofa": 226,
+      "toilet": 239,
+      "tv_monitor": 168
+    },
+    "category_position_counts": {
+      "p0:bed": 86,
+      "p0:chair": 86,
+      "p0:plant": 17,
+      "p0:sofa": 75,
+      "p0:toilet": 80,
+      "p0:tv_monitor": 56,
+      "p1:bed": 87,
+      "p1:chair": 85,
+      "p1:plant": 17,
+      "p1:sofa": 75,
+      "p1:toilet": 80,
+      "p1:tv_monitor": 56,
+      "p2:bed": 87,
+      "p2:chair": 86,
+      "p2:plant": 16,
+      "p2:sofa": 76,
+      "p2:toilet": 79,
+      "p2:tv_monitor": 56
+    },
+    "common_pool_exact_match": true,
+    "directed_transition_counts": {
+      "bed->chair": 49,
+      "bed->plant": 9,
+      "bed->sofa": 41,
+      "bed->toilet": 44,
+      "bed->tv_monitor": 30,
+      "chair->bed": 51,
+      "chair->plant": 8,
+      "chair->sofa": 40,
+      "chair->toilet": 43,
+      "chair->tv_monitor": 29,
+      "plant->bed": 9,
+      "plant->chair": 9,
+      "plant->sofa": 7,
+      "plant->toilet": 8,
+      "plant->tv_monitor": 1,
+      "sofa->bed": 41,
+      "sofa->chair": 40,
+      "sofa->plant": 7,
+      "sofa->toilet": 37,
+      "sofa->tv_monitor": 25,
+      "toilet->bed": 44,
+      "toilet->chair": 44,
+      "toilet->plant": 8,
+      "toilet->sofa": 37,
+      "toilet->tv_monitor": 27,
+      "tv_monitor->bed": 29,
+      "tv_monitor->chair": 29,
+      "tv_monitor->plant": 1,
+      "tv_monitor->sofa": 26,
+      "tv_monitor->toilet": 27
+    },
+    "lag2_counts": {
+      "bed->bed": 23,
+      "bed->chair": 17,
+      "bed->plant": 2,
+      "bed->sofa": 15,
+      "bed->toilet": 19,
+      "bed->tv_monitor": 10,
+      "chair->bed": 14,
+      "chair->chair": 27,
+      "chair->plant": 4,
+      "chair->sofa": 15,
+      "chair->toilet": 15,
+      "chair->tv_monitor": 11,
+      "plant->bed": 4,
+      "plant->chair": 2,
+      "plant->plant": 3,
+      "plant->sofa": 6,
+      "plant->toilet": 1,
+      "plant->tv_monitor": 1,
+      "sofa->bed": 18,
+      "sofa->chair": 16,
+      "sofa->plant": 1,
+      "sofa->sofa": 15,
+      "sofa->toilet": 15,
+      "sofa->tv_monitor": 10,
+      "toilet->bed": 16,
+      "toilet->chair": 15,
+      "toilet->plant": 5,
+      "toilet->sofa": 11,
+      "toilet->toilet": 21,
+      "toilet->tv_monitor": 12,
+      "tv_monitor->bed": 12,
+      "tv_monitor->chair": 9,
+      "tv_monitor->plant": 1,
+      "tv_monitor->sofa": 14,
+      "tv_monitor->toilet": 8,
+      "tv_monitor->tv_monitor": 12
+    },
+    "later_source_start_poses_used": false,
+    "mon_episode_count": 400,
+    "mon_subtask_count": 1200,
+    "scene_count": 20,
+    "source_used_once_per_variant": true,
+    "unique_source_count": 1200,
+    "valid": true,
+    "variant": "3MON_400x3"
+  },
+  "variant": "3MON_400x3"
+}

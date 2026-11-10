@@ -1,0 +1,35 @@
+{
+  "checked_at_utc": "2026-11-10T04:59:00.059225+00:00",
+  "scope": "early completed-case verification/STOP semantics; observed classes, no causal attribution or evaluation tuning",
+  "completed_cases": 5,
+  "outcome_counts": {
+    "native_success": 9,
+    "system_confirmed_but_native_failed": 1,
+    "budget_stop_native_failed": 5
+  },
+  "source_path": "pbsp/navigation/navigator.py",
+  "source_sha256": "c3e7794ae1c6e9017cf412c69dc73e8804cbea9fc35b4a32bc9a131265913125",
+  "source_lines": {
+    "confirmed_switches_to_visual_goal": [
+      494,
+      508
+    ],
+    "separate_budget_and_planner_STOP_rules": [
+      605,
+      629
+    ]
+  },
+  "finding": "Final two-stage confirmation sets stop_by_seem and a visual goal. Actual task STOP still follows the navigation/budget conditions; v=1 is not identical to immediate native task success.",
+  "Nfv_episode0_task0": {
+    "confirmation_visit_start_t": 31,
+    "confirmation_last_t": 32,
+    "v": 1,
+    "y_at_checked_candidate": 0,
+    "native_final_stop_reason": "max_steps",
+    "native_stage_steps": 500
+  },
+  "calibration_label_definition_retained": "system final candidate confirmation, GT only diagnostic",
+  "parameters_changed": false,
+  "native_source_changed": false,
+  "cases_rerun": false
+}

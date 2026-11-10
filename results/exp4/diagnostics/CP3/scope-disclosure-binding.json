@@ -1,0 +1,26 @@
+{
+  "checked_at_utc": "2026-11-10T05:35:05.153430+00:00",
+  "scope": "results-only provenance disclosure and static data diagnostics; no execution, fit, or score changes",
+  "parameter_sha256": "e1d75f3c9503c7439467748fc97be6ae2ad450c429f40dc7235b1564ff7852ae",
+  "native_source_file_count": 161,
+  "source_fingerprint_unchanged": true,
+  "parameter_unchanged": true,
+  "cp3_check": {
+    "ready": false,
+    "reason": "Fixed smoke is incomplete: 10/20; status=running",
+    "launches_workers": false
+  },
+  "sha256": {
+    "code/audit_dataset_scope.py": "8785df35edb22af26b096f6c2b4ddf0275fc279ab43f68ffda75869ea95dcea6",
+    "code/audit_dataset_navmesh.py": "ed20a7cad87cdc6452e379111551df20c397a55a8eca4f5d97ee55881922289f",
+    "code/report_dataset_scope.py": "2d796d434dd9281241ede409fdd11737f4216bdd585caab9d17755fcb2f47f4a",
+    "code/report_cp3.py": "78d6b532e1030015a943fe9eed9aa5f8410da177a28ab5a5e6a7c854e8d3a87f",
+    "deviations.md": "ee3ac00351ab64eb4c81c68a496bf3798d84c1631430feeb5c267d4d5f3f7f3f",
+    "reports/dataset_scope.md": "5a24dd7421f2e8d6c8be41c7a28f455175ba43bc9d76b963c34c8a734538e3e2",
+    "meta/dataset-scientific-scope.json": "a1d92ad3ea7673daeeb547ec79b128e4de603a48994ef8d555b909c8c5dc468e",
+    "diagnostics/CP3/dataset-height-availability.json": "ec5e72458f2fdfde7e98f2ac7a15272d2379282c79be183b2b55df74f821291c",
+    "diagnostics/CP3/dataset-navmesh-availability.json": "87c649b88c1974ac49df687a077f21b1348e1a79b1551e401cedd7d37becbf44",
+    "diagnostics/dataset/3mon-manifest.json": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+    "diagnostics/dataset/3mon-source-trace.json": "34931f42e88feb55d87f2c9c3caf4063e984f32efc4972fd82a40d210d32f04a"
+  }
+}
