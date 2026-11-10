@@ -1,29 +1,39 @@
 {
-  "started_at_utc": "2026-11-10T21:08:24.833842+00:00",
-  "completed_at_utc": "2026-11-10T21:08:36.940370+00:00",
+  "started_at_utc": "2026-11-10T21:17:50.309540+00:00",
+  "completed_at_utc": "2026-11-10T21:18:02.433794+00:00",
   "stage": "full",
   "diagnostic_only": true,
   "formal400_complete": false,
-  "completed_native_metric_records_checked": 80,
+  "completed_native_metric_records_checked": 83,
   "newly_audited": [
     {
       "scene": "DYehNKdT76V",
-      "episode": "17",
-      "steps": 1041,
+      "episode": "18",
+      "steps": 220,
       "success_vector": [
-        0,
         1,
-        0
+        0,
+        1
       ]
     },
     {
-      "scene": "Dd4bFSTQ8gi",
-      "episode": "1",
-      "steps": 636,
+      "scene": "DYehNKdT76V",
+      "episode": "19",
+      "steps": 551,
       "success_vector": [
         0,
         0,
         1
+      ]
+    },
+    {
+      "scene": "Dd4bFSTQ8gi",
+      "episode": "2",
+      "steps": 671,
+      "success_vector": [
+        0,
+        1,
+        0
       ]
     }
   ],
@@ -31,10 +41,10 @@
     "4ok3usBNeis": 20,
     "5cdEh9F2hJL": 20,
     "6s7QHgap2fW": 20,
-    "DYehNKdT76V": 18,
-    "Dd4bFSTQ8gi": 2
+    "DYehNKdT76V": 20,
+    "Dd4bFSTQ8gi": 3
   },
-  "native_stage_path_checks": 240,
+  "native_stage_path_checks": 249,
   "all_paths_complete": true,
   "max_path_error_m": 2.414226045743817e-06,
   "source_and_parameters_unchanged": true,

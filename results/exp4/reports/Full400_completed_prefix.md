@@ -1,8 +1,8 @@
 # Full400已完成回合的过程复核
 
-此快照核查已导出完整原生指标的80/400条回合，覆盖4ok3usBNeis：20条、5cdEh9F2hJL：20条、6s7QHgap2fW：20条、DYehNKdT76V：18条、Dd4bFSTQ8gi：2条。Full400尚未完成，以下仅是已导出回合的过程诊断。
+此快照核查已导出完整原生指标的83/400条回合，覆盖4ok3usBNeis：20条、5cdEh9F2hJL：20条、6s7QHgap2fW：20条、DYehNKdT76V：20条、Dd4bFSTQ8gi：3条。Full400尚未完成，以下仅是已导出回合的过程诊断。
 
-已核对240个阶段的原生步数、终止STOP、实际轨迹及候选路径归属，全部完整，路径长度最大绝对差2.41422605e-06米。所有已完成回合均按记录顺序纳入，包括失败回合。
+已核对249个阶段的原生步数、终止STOP、实际轨迹及候选路径归属，全部完整，路径长度最大绝对差2.41422605e-06米。所有已完成回合均按记录顺序纳入，包括失败回合。
 
 候选事件GT检查、逐动作路径及候选身份合并复用原有固定分析组件；逐快照核对场景参数、交叉拟合分组及文件SHA。没有修改正在运行场景的完成状态，也没有生成正式400条结果。
 
@@ -78,6 +78,8 @@
 | DYehNKdT76V/15 | 0/1/0 | 575 | true |
 | DYehNKdT76V/16 | 1/0/1 | 180 | true |
 | DYehNKdT76V/17 | 0/1/0 | 1041 | true |
+| DYehNKdT76V/18 | 1/0/1 | 220 | true |
+| DYehNKdT76V/19 | 0/0/1 | 551 | true |
 | DYehNKdT76V/2 | 0/1/0 | 586 | true |
 | DYehNKdT76V/3 | 1/0/0 | 668 | true |
 | DYehNKdT76V/4 | 0/0/0 | 1500 | true |
@@ -88,6 +90,7 @@
 | DYehNKdT76V/9 | 0/0/0 | 702 | true |
 | Dd4bFSTQ8gi/0 | 0/0/0 | 673 | true |
 | Dd4bFSTQ8gi/1 | 0/0/1 | 636 | true |
+| Dd4bFSTQ8gi/2 | 0/1/0 | 671 | true |
 
 [逐回合诊断与绑定](../diagnostics/completed-prefix/full/summary.json)。后续新增完整回合可增量复核；完成400条后仍需由原控制器做完整归一化及1200阶段核查。
 
@@ -95,7 +98,7 @@
 
 CP4/CP5报告生成器已补充固定任务池的历史筛选和泛化范围说明；原有4项合成报告校验测试通过。这部分只修改报告措辞，未改变导航、固定参数或五个共用指标分析源码。[测试及源码绑定](../diagnostics/reporter-scope-validation.json)、[数据来源](dataset_scope.md)。
 
-逐场景启动核查现覆盖100条实际启动身份，核对目标顺序、source ID、seed、GPU分配与源码版本。已完成场景另查原生状态及20条三目标结果；该核查不代表400条汇总已完成。[最近核查](../diagnostics/full/scene-launch-audits/20261110T205320710369Z.json)。
+逐场景启动核查现覆盖120条实际启动身份，核对目标顺序、source ID、seed、GPU分配与源码版本。已完成场景另查原生状态及20条三目标结果；该核查不代表400条汇总已完成。[最近核查](../diagnostics/full/scene-launch-audits/20261110T211813047027Z.json)。
 
 后续三个变体的启动工具已封装，继续调用现有CP4与顺序门禁，并保留防重复启动及观察器恢复保护。Full未完成时的三次实际预检均返回不可启动，未创建后续阶段记录或worker，原生源码、参数和控制器未变。[预检记录](../diagnostics/remaining-stage-launch-preflight.json)。
 
