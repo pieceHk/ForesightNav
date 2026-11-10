@@ -1,0 +1,18 @@
+{
+  "reviewed_at_utc": "2026-11-10T23:22:09.357457+00:00",
+  "issue": "The live controller ledger contains only started scene assignments. The first environment preview called len(ledger.jobs) planned_scenes, which obscured the fixed twenty-scene pool.",
+  "correction": "The published index distinguishes expected_scenes, started_scene_assignments, unlaunched_scenes and pending role records. The first derived snapshot and its exact generator are retained.",
+  "old_snapshot": "diagnostics/environment-index/20261110T231728168982Z.json",
+  "old_snapshot_sha256": "6dfcca234dddbafcaadfa921c265eae8b670d714b54019d7f519717bd8994cb2",
+  "corrected_snapshot": "diagnostics/environment-index/20261110T232138769420Z.json",
+  "corrected_snapshot_sha256": "b024b5d9212f16fd39542fabd3f5e19470ccde3f6fc01f803ce47861c83db977",
+  "old_generator": "code/report_environment_index_v1.py",
+  "old_generator_sha256": "3ac0b2a9656f004e26c4d7da981ed7fa8af75c5daa98298779539076eab4bf1e",
+  "corrected_generator": "code/report_environment_index.py",
+  "corrected_generator_sha256": "7609050927202f76566897d98234f69eacee3f6408a8933e3d1fa7350183367e",
+  "env_sha256_at_review": "8eb22b7816f5a85ba6f545fedde4843f6c2049782d5331472cc7b45ecff41fe9",
+  "all_recorded_environment_file_hashes_unchanged": true,
+  "workers_or_native_states_modified": false,
+  "performance_measurements_modified": false,
+  "unit_tests_added_or_rerun": false
+}
