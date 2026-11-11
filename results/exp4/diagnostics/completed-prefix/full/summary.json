@@ -1,44 +1,24 @@
 {
-  "started_at_utc": "2026-11-11T14:36:42.432158+00:00",
-  "completed_at_utc": "2026-11-11T14:36:57.711218+00:00",
+  "started_at_utc": "2026-11-11T14:54:52.255068+00:00",
+  "completed_at_utc": "2026-11-11T14:55:06.490706+00:00",
   "stage": "full",
   "diagnostic_only": true,
   "formal400_complete": false,
-  "completed_native_metric_records_checked": 347,
+  "completed_native_metric_records_checked": 352,
   "newly_audited": [
     {
       "scene": "qyAac8rV8Zk",
-      "episode": "16",
-      "steps": 1074,
+      "episode": "17",
+      "steps": 1321,
       "success_vector": [
         0,
-        0,
-        0
-      ]
-    },
-    {
-      "scene": "svBbv1Pavdk",
-      "episode": "18",
-      "steps": 1210,
-      "success_vector": [
-        0,
-        1,
-        0
-      ]
-    },
-    {
-      "scene": "svBbv1Pavdk",
-      "episode": "19",
-      "steps": 843,
-      "success_vector": [
-        1,
         0,
         1
       ]
     },
     {
       "scene": "wcojb4TFT35",
-      "episode": "8",
+      "episode": "10",
       "steps": 1500,
       "success_vector": [
         0,
@@ -48,12 +28,32 @@
     },
     {
       "scene": "wcojb4TFT35",
-      "episode": "9",
-      "steps": 1229,
+      "episode": "11",
+      "steps": 212,
+      "success_vector": [
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "scene": "ziup5kvtCCR",
+      "episode": "0",
+      "steps": 830,
       "success_vector": [
         1,
-        0,
+        1,
         0
+      ]
+    },
+    {
+      "scene": "ziup5kvtCCR",
+      "episode": "1",
+      "steps": 662,
+      "success_vector": [
+        1,
+        1,
+        1
       ]
     }
   ],
@@ -73,11 +73,12 @@
     "mv2HUxq3B53": 20,
     "p53SfW6mjZe": 20,
     "q3zU7Yy5E5s": 20,
-    "qyAac8rV8Zk": 17,
+    "qyAac8rV8Zk": 18,
     "svBbv1Pavdk": 20,
-    "wcojb4TFT35": 10
+    "wcojb4TFT35": 12,
+    "ziup5kvtCCR": 2
   },
-  "native_stage_path_checks": 1041,
+  "native_stage_path_checks": 1056,
   "all_paths_complete": true,
   "max_path_error_m": 3.1427202529243914e-06,
   "source_and_parameters_unchanged": true,
