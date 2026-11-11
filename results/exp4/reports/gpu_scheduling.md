@@ -66,3 +66,5 @@ cvZr5TUy5C5和mL8ThkuaVTM均完成各自20条固定回合后正常退出，控�
 GPU3随后运行p53SfW6mjZe，GPU1运行q3zU7Yy5E5s。17:08的[启动审计](../diagnostics/full/parallel-scene-launch-audits/20261111T090843336198Z.json)核对15个已启动场景的300条身份、类别顺序、source ID、seed=1和运行源码；[环境索引](../diagnostics/environment-index/20261111T090843204115Z.json)核对20条冒烟和15个Full场景的双角色记录。同期直接查询已见两个新场景0号回合分别有507和314个实际导航动作。p53SfW6mjZe的[首条完整回合](../diagnostics/completed-prefix/full/p53SfW6mjZe/0.json)随后以787步结束，成功向量为1/1/1，三个阶段的路径、身份及冻结参数核查通过。其余5个场景仍按原顺序排队。
 
 17:15的[CPU采样](../diagnostics/resource-context/20261111T091548330767Z-cpu-pressure.json)中，load1降至341.5，最大外部用户采样占用约97.4个逻辑核，CPU some PSI avg10仍为83.68%。load和等待压力反映不同方面，不能仅据load下降判断拥堵解除。后续比较保留本段完整结果、规划时延及资源阶段记录，完成时间继续依据实际吞吐更新。
+
+18:34的[CPU采样](../diagnostics/resource-context/20261111T103446803764Z-cpu-pressure.json)记录到load1为542.95、CPU some PSI avg10为57.03%，最大外部用户在该次采样中占用约175.3个逻辑核。这些是主机及全用户层面的离散统计，不用于判断某一任务组的线程限制是否已生效；完整原生结果与规划时延继续保留。
