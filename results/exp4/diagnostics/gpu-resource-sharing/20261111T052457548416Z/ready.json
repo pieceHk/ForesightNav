@@ -1,0 +1,7 @@
+{
+  "pid": 777321,
+  "start_ticks": "18301502",
+  "plan_sha256": "67005d3f8d2ab89ed55f8596038f044d75d32a0e4a46d89267c7de22127d1cea",
+  "at_utc": "2026-11-11T05:24:57.941510+00:00",
+  "native_workers_started": false
+}

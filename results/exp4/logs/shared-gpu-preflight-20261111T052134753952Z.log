@@ -1,0 +1,28 @@
+test_all_predecessor_parent_generations_are_bound (test_shared_gpu_evaluation.SchedulingTests) ... ok
+test_changed_target_order_is_rejected (test_shared_gpu_evaluation.SchedulingTests) ... ok
+test_completed_results_cannot_be_removed_as_initialization_withdrawal (test_shared_gpu_evaluation.SchedulingTests) ... ok
+test_conflicting_ancestor_birth_is_rejected (test_shared_gpu_evaluation.SchedulingTests) ... ok
+test_current_two_external_workers_fit_original_headroom (test_shared_gpu_evaluation.SchedulingTests) ... ok
+test_duplicate_existing_scene_is_rejected (test_shared_gpu_evaluation.SchedulingTests) ... ok
+test_existing_scenes_are_never_reassigned (test_shared_gpu_evaluation.SchedulingTests) ... ok
+test_external_over_eight_GiB_is_not_admitted (test_shared_gpu_evaluation.SchedulingTests) ... ok
+test_failed_scene_cannot_be_silently_resumed (test_shared_gpu_evaluation.SchedulingTests) ... ok
+test_foreign_boot_plan_is_rejected (test_shared_gpu_evaluation.SchedulingTests) ... ok
+test_four_external_workers_still_need_original_headroom (test_shared_gpu_evaluation.SchedulingTests) ... ok
+test_gpu_selection_does_not_signal_any_process (test_shared_gpu_evaluation.SchedulingTests) ... ok
+test_idle_selection_respects_occupancy_capacity_and_authorization (test_shared_gpu_evaluation.SchedulingTests) ... ok
+test_latest_policy_excludes_gpu0_and_other_cards (test_shared_gpu_evaluation.SchedulingTests) ... ok
+test_nonzero_native_exit_is_preserved (test_shared_gpu_evaluation.SchedulingTests) ... ok
+test_pid_birth_mismatch_is_rejected (test_shared_gpu_evaluation.SchedulingTests) ... ok
+test_public_inventory_excludes_other_cards_and_process_ids (test_shared_gpu_evaluation.SchedulingTests) ... ok
+test_resource_withdrawal_removes_only_exact_interrupted_launcher (test_shared_gpu_evaluation.SchedulingTests) ... ok
+test_resumed_scene_keeps_all_twenty_frozen_identities (test_shared_gpu_evaluation.SchedulingTests) ... ok
+test_shared_boundary_keeps_original_thirty_eight_GiB_headroom (test_shared_gpu_evaluation.SchedulingTests) ... ok
+test_stopped_parent_does_not_stop_native_child_and_exit0_is_captured (test_shared_gpu_evaluation.SchedulingTests) ... ok
+test_stopped_parent_is_required (test_shared_gpu_evaluation.SchedulingTests) ... ok
+test_unknown_or_negative_memory_is_not_admitted (test_shared_gpu_evaluation.SchedulingTests) ... ok
+
+----------------------------------------------------------------------
+Ran 23 tests in 2.532s
+
+OK

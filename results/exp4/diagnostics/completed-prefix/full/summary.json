@@ -1,18 +1,18 @@
 {
-  "started_at_utc": "2026-11-11T05:09:18.943631+00:00",
-  "completed_at_utc": "2026-11-11T05:09:32.184440+00:00",
+  "started_at_utc": "2026-11-11T05:31:37.808004+00:00",
+  "completed_at_utc": "2026-11-11T05:32:30.522901+00:00",
   "stage": "full",
   "diagnostic_only": true,
   "formal400_complete": false,
-  "completed_native_metric_records_checked": 223,
+  "completed_native_metric_records_checked": 225,
   "newly_audited": [
     {
       "scene": "mL8ThkuaVTM",
-      "episode": "12",
-      "steps": 1500,
+      "episode": "13",
+      "steps": 699,
       "success_vector": [
-        0,
-        0,
+        1,
+        1,
         0
       ]
     }
@@ -28,10 +28,10 @@
     "TEEsavR23oF": 20,
     "XB4GS9ShBRE": 20,
     "bxsVRursffK": 20,
-    "mL8ThkuaVTM": 13,
-    "cvZr5TUy5C5": 10
+    "mL8ThkuaVTM": 14,
+    "cvZr5TUy5C5": 11
   },
-  "native_stage_path_checks": 669,
+  "native_stage_path_checks": 675,
   "all_paths_complete": true,
   "max_path_error_m": 3.1427202529243914e-06,
   "source_and_parameters_unchanged": true,

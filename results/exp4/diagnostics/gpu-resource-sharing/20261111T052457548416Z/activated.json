@@ -1,0 +1,33 @@
+{
+  "pid": 777321,
+  "at_utc": "2026-11-11T05:24:58.059096+00:00",
+  "adopted_native_launchers": [
+    {
+      "scene": "mL8ThkuaVTM",
+      "pid": 703343,
+      "gpu": 1,
+      "start_ticks": "17268313",
+      "parent_pid": 703335,
+      "parent_start_ticks": "17268263"
+    },
+    {
+      "scene": "cvZr5TUy5C5",
+      "pid": 724204,
+      "gpu": 3,
+      "start_ticks": "17598048",
+      "parent_pid": 704760,
+      "parent_start_ticks": "17289141"
+    }
+  ],
+  "pending_scenes": [
+    "mv2HUxq3B53",
+    "p53SfW6mjZe",
+    "q3zU7Yy5E5s",
+    "qyAac8rV8Zk",
+    "svBbv1Pavdk",
+    "wcojb4TFT35",
+    "ziup5kvtCCR",
+    "zt1RVoi7PcG"
+  ],
+  "ledger_controller_pid": 777321
+}

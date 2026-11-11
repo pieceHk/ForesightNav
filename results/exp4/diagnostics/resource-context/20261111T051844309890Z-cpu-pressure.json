@@ -1,0 +1,58 @@
+{
+  "observed_at_utc": "2026-11-11T05:18:42.303827+00:00",
+  "cpu_sample_at_utc": "2026-11-11T05:18:44.309890+00:00",
+  "stage": "full",
+  "diagnostic_only": true,
+  "formal400_complete": false,
+  "allowed_gpus": [
+    1,
+    2,
+    3
+  ],
+  "host_logical_cpus": 384,
+  "host_load_average": [
+    2215.6,
+    1530.02,
+    800.59
+  ],
+  "cpu_pressure": "some avg10=85.10 avg60=82.76 avg300=57.55 total=25412363890\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=0\n",
+  "cpu_sample_seconds": 2.2462560959975235,
+  "largest_external_user_sample_core_equivalents": 366.60557158523915,
+  "top_cpu_workers_sharing_one_parent": 15,
+  "top_cpu_worker_threads_range": [
+    192,
+    194
+  ],
+  "thread_count_scope": "Largest-user total includes multiple process families; only sampled top-CPU workers are grouped by their common parent.",
+  "gpu_context": [
+    {
+      "gpu": 1,
+      "free_mib": 11657,
+      "utilization_percent": 1,
+      "experiment_compute_processes": 2,
+      "external_compute_processes": 5,
+      "external_compute_memory_mib": 10040
+    },
+    {
+      "gpu": 2,
+      "free_mib": 41181,
+      "utilization_percent": 0,
+      "experiment_compute_processes": 0,
+      "external_compute_processes": 2,
+      "external_compute_memory_mib": 4016
+    },
+    {
+      "gpu": 3,
+      "free_mib": 18870,
+      "utilization_percent": 7,
+      "experiment_compute_processes": 2,
+      "external_compute_processes": 3,
+      "external_compute_memory_mib": 6024
+    }
+  ],
+  "signals_sent": false,
+  "native_states_modified": false,
+  "external_usernames_and_PIDs_omitted": true,
+  "scope": "Discrete CPU-overcommit observation before the shared-scheduler handoff; no causal success-rate claim",
+  "reporting_rule": "Retain every native episode and planning-time tail; disclose resource conditions alongside later mechanism comparisons."
+}

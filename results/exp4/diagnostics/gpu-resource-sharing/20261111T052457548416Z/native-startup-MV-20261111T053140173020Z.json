@@ -1,0 +1,37 @@
+{
+  "checked_at_utc": "2026-11-11T05:31:40.173020+00:00",
+  "scene": "mv2HUxq3B53",
+  "gpu": 2,
+  "launcher_pid": 777329,
+  "launcher_start_ticks": "18301576",
+  "launcher_live": true,
+  "roles": [
+    {
+      "role": "mapping",
+      "sha256": "3541a03bf23645326a7e75c003562f633dc8366f0571c5721c9ab81356bbba22",
+      "path": "mapping_environment.json"
+    },
+    {
+      "role": "navigation",
+      "sha256": "a322ea4a503599a0e0102497289d48856eceee5b89b074d1d73201ad0521a445",
+      "path": "navigation_environment_12.json"
+    }
+  ],
+  "both_role_records_present": true,
+  "trajectories": [
+    {
+      "episode": "0",
+      "actions": 19,
+      "stage": 0,
+      "modified_at_utc": "2026-11-11T05:31:35.468506+00:00"
+    }
+  ],
+  "actual_navigation_actions": 19,
+  "source_and_parameters_unchanged": true,
+  "native_states_modified": false,
+  "diagnostic_only": true,
+  "formal400_complete": false,
+  "parameter_sha256": "e1d75f3c9503c7439467748fc97be6ae2ad450c429f40dc7235b1564ff7852ae",
+  "controller_sha256": "e4f9b37823c4ccfc9a884ae496bf044133f6d12a4582f7bf30d20ff5ca779eb4",
+  "scope": "Actual read-only observation of the first MV navigation trajectory and both role records; not a completed episode result"
+}

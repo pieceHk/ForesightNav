@@ -13,21 +13,21 @@
   ],
   "n_scenes": 20,
   "n_episodes": 400,
-  "pid": 704760,
-  "start_ticks": "17289141",
+  "pid": 777321,
+  "start_ticks": "18301502",
   "command": [
     "/nvme/khy/conda_envs/pbsp/navigation/bin/python",
     "-u",
-    "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/code/three_gpu_evaluate_sequence.py",
+    "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/code/shared_gpu_evaluate_sequence.py",
     "--stage",
     "full",
     "--attempt",
     "a3",
     "--controller",
     "--plan",
-    "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/diagnostics/gpu-expansion/20261111T023614070319Z/plan.json"
+    "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/diagnostics/gpu-resource-sharing/20261111T052457548416Z/plan.json"
   ],
-  "log": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/diagnostics/gpu-expansion/20261111T023614070319Z/controller.log",
+  "log": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/diagnostics/gpu-resource-sharing/20261111T052457548416Z/controller.log",
   "CUDA_VISIBLE_DEVICES_in_native_parent": null,
   "detached_session": true,
   "observer_pid": 468659,
@@ -37,11 +37,11 @@
     2,
     3
   ],
-  "scheduling": "idle_gpu_scene_parallel",
-  "controller_sha256": "7ef409970ae9d2acce4acef94eb097ce8252ebe5aef8f377b3c59fbfab7b4b50",
+  "scheduling": "bounded_memory_scene_parallel",
+  "controller_sha256": "e4f9b37823c4ccfc9a884ae496bf044133f6d12a4582f7bf30d20ff5ca779eb4",
   "base_controller_sha256": "d238350a2733b56d258e774e5ca4f1537f09818cd34a313a638b9ec483c0b82f",
-  "scheduling_plan": "diagnostics/gpu-expansion/20261111T023614070319Z/plan.json",
-  "scheduling_started_at_utc": "2026-11-11T02:36:14.384485+00:00",
+  "scheduling_plan": "diagnostics/gpu-resource-sharing/20261111T052457548416Z/plan.json",
+  "scheduling_started_at_utc": "2026-11-11T05:24:57.988035+00:00",
   "source_fingerprint": {
     "pbsp/__init__.py": "204a77e8c809c9b8f38114173d35f5bcf7585e9893383c3eef5b2dca30aeb619",
     "pbsp/adapters/__init__.py": "9da64df015e12dd3130227acc397bd90bf58d5cd5f4c52108dfb9fc48830e12d",
@@ -206,9 +206,9 @@
     "results/exp4/meta/protocol_decisions.json": "c4596befc6337dab5a9963c69f4416992f7b0108f8d0c69c9e77cfa8f39c69ed"
   },
   "predecessor_controller": {
-    "pid": 703335,
-    "start_ticks": "17268263",
+    "pid": 704760,
+    "start_ticks": "17289141",
     "state": "stopped_only_cpu_controller; original native children continue",
-    "snapshot": "diagnostics/gpu-expansion/20261111T023614070319Z/full-start-a3.json"
+    "snapshot": "diagnostics/gpu-resource-sharing/20261111T052457548416Z/full-start-a3.json"
   }
 }
