@@ -1,0 +1,16 @@
+{
+  "recorded_at_utc": "2026-11-11T13:46:47.910924+00:00",
+  "draft": "reports/eq5_wording.md",
+  "draft_sha256": "fe988370c8345c549aec67500d5c77d5668c4fd89a84f63c2450fb4070869ed9",
+  "runtime_source_sha256": {
+    "pbsp/query/engine.py": "2a7bf07ac1ffea1797c33b45a708c3ce9d8bef94d5581642370e64acd85c7f57",
+    "pbsp/navigation/blp.py": "fedf1b03677d45e4ce0860af85b86f6a05faf024489250d2c437b59f25a2cd50"
+  },
+  "runtime_commit": "03242fda76fd6a631596a7269c8e7990c657ea30",
+  "accepted_native_source_entries": 161,
+  "parameter_sha256": "e1d75f3c9503c7439467748fc97be6ae2ad450c429f40dc7235b1564ff7852ae",
+  "manuscript_main_file_edited": false,
+  "source_and_parameters_unchanged": true,
+  "native_states_modified": false,
+  "scope": "English wording and LaTeX draft for the user-approved existing E definition; no manuscript main file or runtime change."
+}
