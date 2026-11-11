@@ -1,8 +1,10 @@
 # Full400已完成回合的过程复核
 
-此快照核查已导出完整原生指标的335/400条回合，覆盖4ok3usBNeis：20条、5cdEh9F2hJL：20条、6s7QHgap2fW：20条、DYehNKdT76V：20条、Dd4bFSTQ8gi：20条、Nfvxx8J5NCo：20条、QaLdnwvtxbs：20条、TEEsavR23oF：20条、XB4GS9ShBRE：20条、bxsVRursffK：20条、mL8ThkuaVTM：20条、cvZr5TUy5C5：20条、mv2HUxq3B53：20条、p53SfW6mjZe：20条、q3zU7Yy5E5s：20条、qyAac8rV8Zk：14条、svBbv1Pavdk：15条、wcojb4TFT35：6条。Full400尚未完成，以下仅是已导出回合的过程诊断。
+过程审计时点（UTC）：2026-11-11T14:22:11.982345+00:00。
 
-已核对1005个阶段的原生步数、终止STOP、实际轨迹及候选路径归属，全部完整，路径长度最大绝对差3.14272025e-06米。所有已完成回合均按记录顺序纳入，包括失败回合。
+此快照核查已导出完整原生指标的342/400条回合，覆盖4ok3usBNeis：20条、5cdEh9F2hJL：20条、6s7QHgap2fW：20条、DYehNKdT76V：20条、Dd4bFSTQ8gi：20条、Nfvxx8J5NCo：20条、QaLdnwvtxbs：20条、TEEsavR23oF：20条、XB4GS9ShBRE：20条、bxsVRursffK：20条、mL8ThkuaVTM：20条、cvZr5TUy5C5：20条、mv2HUxq3B53：20条、p53SfW6mjZe：20条、q3zU7Yy5E5s：20条、qyAac8rV8Zk：16条、svBbv1Pavdk：18条、wcojb4TFT35：8条。Full400尚未完成，以下仅是已导出回合的过程诊断。
+
+已核对1026个阶段的原生步数、终止STOP、实际轨迹及候选路径归属，全部完整，路径长度最大绝对差3.14272025e-06米。所有已完成回合均按记录顺序纳入，包括失败回合。
 
 候选事件GT检查、逐动作路径及候选身份合并复用原有固定分析组件；逐快照核对场景参数、交叉拟合分组及文件SHA。没有修改正在运行场景的完成状态，也没有生成正式400条结果。
 
@@ -314,6 +316,8 @@
 | qyAac8rV8Zk/11 | 0/1/0 | 588 | true |
 | qyAac8rV8Zk/12 | 0/1/0 | 1033 | true |
 | qyAac8rV8Zk/13 | 0/0/1 | 1012 | true |
+| qyAac8rV8Zk/14 | 0/0/0 | 1500 | true |
+| qyAac8rV8Zk/15 | 1/0/0 | 1302 | true |
 | qyAac8rV8Zk/2 | 0/0/0 | 1500 | true |
 | qyAac8rV8Zk/3 | 0/0/0 | 1500 | true |
 | qyAac8rV8Zk/4 | 1/0/0 | 821 | true |
@@ -329,6 +333,9 @@
 | svBbv1Pavdk/12 | 1/1/1 | 393 | true |
 | svBbv1Pavdk/13 | 1/1/1 | 402 | true |
 | svBbv1Pavdk/14 | 1/1/1 | 637 | true |
+| svBbv1Pavdk/15 | 0/1/1 | 564 | true |
+| svBbv1Pavdk/16 | 1/1/1 | 123 | true |
+| svBbv1Pavdk/17 | 1/1/1 | 180 | true |
 | svBbv1Pavdk/2 | 0/1/1 | 634 | true |
 | svBbv1Pavdk/3 | 1/1/1 | 431 | true |
 | svBbv1Pavdk/4 | 1/1/1 | 262 | true |
@@ -343,6 +350,8 @@
 | wcojb4TFT35/3 | 0/1/1 | 371 | true |
 | wcojb4TFT35/4 | 1/0/0 | 1446 | true |
 | wcojb4TFT35/5 | 0/0/0 | 1500 | true |
+| wcojb4TFT35/6 | 0/1/0 | 293 | true |
+| wcojb4TFT35/7 | 1/1/0 | 242 | true |
 
 [逐回合诊断与绑定](../diagnostics/completed-prefix/full/summary.json)。后续新增完整回合可增量复核；完成400条后仍需由当前绑定的控制器做完整归一化及1200阶段核查。
 
@@ -363,5 +372,9 @@ CP4/CP5报告生成器已补充固定任务池的历史筛选和泛化范围说�
 按用户已确认的E口径，另备[论文Eq.(5)英文与LaTeX替换稿](eq5_wording.md)，逐项绑定查询码本加权点积和BLP取值源码。它尚未应用到论文主文件；本次未改导航或冻结参数。[源码绑定](../diagnostics/manuscript/eq5_wording_binding.json)。
 
 应用户请求，另保留[305条中期指标快照](Full305_interim.md)。该页的样本与时点固定，列出305条成员、原生记录SHA及未舍入统计；它不随本页新增完成数改变，也不代替正式CP4或四变体对比。
+
+最近一次应用户请求的[335条中期指标快照](Full335_interim.md)保留固定335条成员、原生记录SHA与未舍入指标；其统计范围不会随本页完成数改变，正式400条成绩仍以CP4为准。
+
+完整CP4/CP5发布准备及本机原包核验工具已安装。两项实际CPU CLI预检拒绝当前不完整阶段，未生成正式报告、发布清单或后续worker；400条完整输入的正向发布和原包逐文件SHA核验仍待实际执行。[预检记录](../diagnostics/checkpoint-publication-preflight/20261111T142241608411Z.json)。
 
 CP4/CP5证据打包与六组逐回合配对CSV导出工具已安装。三项真实CPU CLI检查分别拒绝当前不完整的CP4、CP5和配对导出，未生成正式报告、配对文件或后续阶段worker；这三项是就绪检查，未计入原生或单元测试数。完整400条正向打包、六组各400条CSV往返核查及CP5图像审阅均待输入齐备后实际执行。[检查记录](../diagnostics/checkpoint-delivery-preflight/20261111T114845753416Z.json)。

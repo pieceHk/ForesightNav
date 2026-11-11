@@ -1,0 +1,74 @@
+{
+  "checked_at_utc": "2026-11-11T14:22:41.608411+00:00",
+  "stage": "full",
+  "diagnostic_only": true,
+  "formal400_complete": false,
+  "scope": "Two actual CPU CLI incomplete-stage checks; positive complete publication and local archive verification remain pending.",
+  "sources_sha256": {
+    "code/prepare_checkpoint_publication.py": "ce0df14bc776ed3118d16bc325bd6905fb04515111597057be0c7d35fb9480b3",
+    "code/verify_checkpoint_archive.py": "9c92fdccb7800e4a7c4117e7173ecd4eca15b8523ddbd089768f5b6b105abddb"
+  },
+  "checks": [
+    {
+      "arguments": [
+        "--checkpoint",
+        "CP4",
+        "--check"
+      ],
+      "exit_code": 0,
+      "actual_readiness": {
+        "checkpoint": "CP4",
+        "ready": false,
+        "reason": "The preceding evaluation stage is not complete",
+        "writes_outputs": false,
+        "launches_workers": false,
+        "native_states_modified": false
+      }
+    },
+    {
+      "arguments": [
+        "--checkpoint",
+        "CP5",
+        "--check"
+      ],
+      "exit_code": 0,
+      "actual_readiness": {
+        "checkpoint": "CP5",
+        "ready": false,
+        "reason": "Missing checkpoint artifact: /nvme/khy/ForesightNav_exp4_depthfix/results/exp4/meta/evaluation-nearest-runs.json",
+        "writes_outputs": false,
+        "launches_workers": false,
+        "native_states_modified": false
+      }
+    }
+  ],
+  "artifacts_before": {
+    "reports/CP4.md": false,
+    "reports/CP5.md": false,
+    "meta/CP4_report_prepared.json": false,
+    "meta/CP5_report_prepared.json": false,
+    "meta/CP4_reported.json": false,
+    "meta/CP4-publication-files.json": false,
+    "meta/CP5-publication-files.json": false,
+    "diagnostics/CP4/complete-evidence-execution.json": false,
+    "diagnostics/CP5/complete-evidence-execution.json": false
+  },
+  "artifacts_after": {
+    "reports/CP4.md": false,
+    "reports/CP5.md": false,
+    "meta/CP4_report_prepared.json": false,
+    "meta/CP5_report_prepared.json": false,
+    "meta/CP4_reported.json": false,
+    "meta/CP4-publication-files.json": false,
+    "meta/CP5-publication-files.json": false,
+    "diagnostics/CP4/complete-evidence-execution.json": false,
+    "diagnostics/CP5/complete-evidence-execution.json": false
+  },
+  "publication_head_before_and_after": "02f47f5f1d7cd4dcc249a2b849ce2ca0703f2a3f",
+  "native_source_entries": 161,
+  "parameter_sha256": "e1d75f3c9503c7439467748fc97be6ae2ad450c429f40dc7235b1564ff7852ae",
+  "source_and_parameters_unchanged": true,
+  "native_states_modified": false,
+  "launches_workers": false,
+  "positive_complete_stage_execution_pending": true
+}
