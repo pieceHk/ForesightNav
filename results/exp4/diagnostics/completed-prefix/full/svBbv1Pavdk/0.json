@@ -1,0 +1,134 @@
+{
+  "checked_at_utc": "2026-11-11T12:34:42.367508+00:00",
+  "diagnostic_only": true,
+  "scope": "One authoritatively exported complete native episode inside a possibly running scene; not a main-stage summary",
+  "scene_id": "svBbv1Pavdk",
+  "episode_id": "0",
+  "steps": 1500,
+  "success_vector": [
+    0,
+    0,
+    0
+  ],
+  "goals": [
+    "plant",
+    "couch",
+    "bed"
+  ],
+  "source_episode_ids": [
+    "28",
+    "86",
+    "42"
+  ],
+  "raw_native_record_sha256": "afe1efb82d8e8a9013152f25d0e67f516573666ef271d89fccb2444fec39bfc3",
+  "bindings": {
+    "parameter_sha256": "e1d75f3c9503c7439467748fc97be6ae2ad450c429f40dc7235b1564ff7852ae",
+    "analysis_sources_sha256": {
+      "report_variants.py": "d3d8617a83ccbd1ccebf18cf2b4149fd745be23c962e3dabeb42b057ad7626c3",
+      "action_path_metrics.py": "a89afc6504fcb5520bb8c227928961b3d7814bcfcc98c23c6311e35254089f1e",
+      "native_candidate_gt.py": "e2620454fe45d54933294286a518440ef16ec961c0eb0ca5aafe5ec2587a21a3",
+      "candidate_identities.py": "a311b37d45d59f379ce00b58d1350b5eb308da0b9a24d34ad2facdb495d9991d",
+      "blp_parameters.py": "039c6a660ab2a7cf2b6e9e78e810bfb44f32731e6c52a9194dc20f82daa63bad"
+    },
+    "prefix_auditor_sha256": "8f8d39c16db9f724494867133e549c1c2eb07e67170d1f175011e35f5382a839",
+    "reader_source_sha256": "8b3ceb80cb3abbbe8e216a48c5e23596de436cafbed89f040f8583a8cee849d8"
+  },
+  "process": {
+    "Invalid_visits_per_ep": 4.0,
+    "invalid_visit_events_per_ep": 4.0,
+    "checked_distinct_candidates": 4,
+    "invalid_approach_and_verification_path_m": 3.6082596542645566,
+    "invalid_confirmed_approach_tail_m": 2.2499997224003554,
+    "invalid_visit_path_m": 5.858259376664915,
+    "invalid_visit_path_m_per_ep": 5.858259376664915,
+    "invalid_path_association_gaps": [],
+    "invalid_path_complete": true,
+    "invalid_path_definition": "accepted displacement pursuing a checked-invalid query identity while its recorded target coordinate is native-GT-invalid; confirmed visual continuation retains the parent; recovery/frontier excluded",
+    "invalid_visit_definition": "distinct checked (episode, task, persistent spatial identity) with GT-invalid verification; event count also retained",
+    "nonquery_recovery_verification_frames": 19,
+    "deviation_from_nearest_proposal_pct": 5.960264900662252,
+    "deviation_from_nearest_after_hysteresis_pct": 9.271523178807946,
+    "deviation_from_nearest_realized_pct": 10.596026490066226,
+    "eligible_proposals": 151,
+    "eligible_realized_dispatches": 151,
+    "planning_ms": {
+      "n": 153,
+      "median": 5.938133981544524,
+      "p95": 9.853457601275297
+    },
+    "fallback_root_decisions": {
+      "empty_candidates": 2
+    },
+    "fallback_decision_incidence": {
+      "empty_candidates": 151,
+      "no_reachable_frontier": 145
+    },
+    "fallback_memo_state_counts": {
+      "empty_candidates": 1500,
+      "frontier_coordinates_unavailable": 0,
+      "no_reachable_frontier": 1410
+    },
+    "fallback_count_definition": "root decisions and per-decision incidence are separate from recursion-state counts",
+    "n_computed_snapshots": 153,
+    "n_recorded_dispatch_events": 153,
+    "legacy_interval_diagnostics": {
+      "invalid_visit_path_m": 5.858259376664915,
+      "invalid_path_complete": true,
+      "invalid_path_association_gaps": [],
+      "invalid_path_definition": "union of recorded active-candidate approach/check path intervals plus an unambiguous final confirmation-to-STOP tail"
+    },
+    "invalid_path_source": "blp_action_target_v1_native_gt",
+    "invalid_identity_pursuit_path_m": 7.068325611345679,
+    "invalid_identity_pursuit_path_m_per_ep": 7.068325611345679,
+    "checked_invalid_identity_but_current_target_GT_valid_path_m": 1.2100662346807627,
+    "checked_invalid_identities_with_current_valid_targets": 1,
+    "mixed_GT_checked_identities": [
+      [
+        "svBbv1Pavdk",
+        "0",
+        0,
+        "0:3"
+      ]
+    ],
+    "invalid_identity_pursuit_definition": "all accepted displacement pursuing identities that had at least one GT-invalid check; explicit upper bound, including any later GT-valid coordinates",
+    "accepted_action_path_m": 15.442867619245114,
+    "accepted_action_path_partition_m": {
+      "invalid_identity_upper": 7.068325611345679,
+      "checked_valid": 0.0,
+      "unchecked_query": 1.0592193124325864,
+      "unresolved_query": 0.0,
+      "recovery": 7.065319636650705,
+      "frontier": 0.2500030588161413
+    },
+    "accepted_action_rows_by_source": {
+      "frontier": 19,
+      "query_candidate": 580,
+      "navmesh_override": 901
+    },
+    "native_target_GT_labelled_action_rows": 523,
+    "native_stage_path_max_abs_error_m": 1.0907361058798415e-07,
+    "native_stage_path_check_count": 3,
+    "native_stage_path_check_tolerance": {
+      "abs_m": 0.001,
+      "relative": 1e-06
+    },
+    "last_STOP_without_after_pose_assumed_stationary": 1,
+    "verification_then_effective_recovery_actions": 0
+  },
+  "candidate_event_GT_verification": {
+    "candidate_verifications": 5,
+    "recovery_verifications": 19,
+    "max_distance_error_m": 0.0
+  },
+  "candidate_identity_audit": {
+    "definition": "recorded registry identity, merging checked IDs sharing an exact full-XYZ final-check coordinate within one scene/episode/task/resample; unchecked first-appearance IDs alias a checked group only at that exact XYZ",
+    "source_sha256": "a311b37d45d59f379ce00b58d1350b5eb308da0b9a24d34ad2facdb495d9991d",
+    "raw_checked_registry_identities": 4,
+    "canonical_checked_identities": 4,
+    "identities_merged": 0,
+    "verification_rows_retained": 5,
+    "unchecked_first_appearance_aliases": 0,
+    "GT_or_labels_used_to_group": false,
+    "raw_events_modified": false
+  }
+}

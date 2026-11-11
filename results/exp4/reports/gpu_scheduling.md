@@ -74,3 +74,9 @@ GPU3随后运行p53SfW6mjZe，GPU1运行q3zU7Yy5E5s。17:08的[启动审计](../
 19:11的[队列复查](../diagnostics/resource-context/20261111T111139683407Z-shared-queue.json)确认GPU2已领取qyAac8rV8Zk，三张授权卡均有两个本实验计算进程，没有外部compute进程或空闲槽位等待。启动门槛、原生源码、冻结参数和任务身份均未改变。[启动审计](../diagnostics/full/parallel-scene-launch-audits/20261111T111149097034Z.json)已覆盖16个场景的320条固定身份；[环境索引](../diagnostics/environment-index/20261111T111158217842Z.json)核对20条冒烟和16个Full场景的双角色记录，剩余4个场景仍待启动。
 
 19:12的[CPU采样](../diagnostics/resource-context/20261111T111208325531Z-cpu-pressure.json)中，load1为10.73，CPU some PSI avg10、avg60均为0，最大外部用户采样占用约0.027个逻辑核。此前协调的进程组在本次只读采样中已不存在，主机等待压力明显缓解；采样没有核实具体的线程限制操作或任务结束原因。本次资源恢复与用户协调回复分别记录，不据此作因果归因。所有原生回合和规划时延仍完整保留，本实验未向外部任务发送信号，GPU0继续保留给用户。
+
+20:18:58，p53SfW6mjZe完成固定20条回合，当前控制器持有的subprocess.Popen.poll记录退出码0；20:31的只读复查核对原生completed状态及20条身份。GPU3随后运行svBbv1Pavdk，20:32的[启动审计](../diagnostics/full/parallel-scene-launch-audits/20261111T123203482175Z.json)已覆盖17个场景、340条固定身份，目标顺序、source ID、seed=1与运行源码一致。[环境索引](../diagnostics/environment-index/20261111T123211438645Z.json)核对20条冒烟及17个Full场景的双角色记录，剩余3个场景尚未启动。
+
+20:32的[队列核查](../diagnostics/resource-context/20261111T123222827956Z-shared-queue.json)确认GPU1、2、3各有两个本实验计算进程，外部compute均为0，没有空闲槽位等待资源。三卡继续运行原生任务，原有启动显存门槛、冻结参数、源码和GPU授权范围保持不变。
+
+新场景svBbv1Pavdk的[首条完整回合](../diagnostics/completed-prefix/full/svBbv1Pavdk/0.json)以1500步结束，三阶段成功向量为0/0/0。身份、冻结参数、各阶段终止STOP和实际路径归属已核对，三个失败阶段均原样保留。
