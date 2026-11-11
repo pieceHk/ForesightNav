@@ -1,25 +1,35 @@
 {
-  "started_at_utc": "2026-11-11T09:53:22.349363+00:00",
-  "completed_at_utc": "2026-11-11T09:53:41.153833+00:00",
+  "started_at_utc": "2026-11-11T10:14:45.265329+00:00",
+  "completed_at_utc": "2026-11-11T10:15:04.256039+00:00",
   "stage": "full",
   "diagnostic_only": true,
   "formal400_complete": false,
-  "completed_native_metric_records_checked": 263,
+  "completed_native_metric_records_checked": 268,
   "newly_audited": [
     {
       "scene": "mv2HUxq3B53",
-      "episode": "14",
-      "steps": 757,
+      "episode": "15",
+      "steps": 213,
       "success_vector": [
         1,
         1,
-        1
+        0
+      ]
+    },
+    {
+      "scene": "mv2HUxq3B53",
+      "episode": "16",
+      "steps": 1055,
+      "success_vector": [
+        0,
+        1,
+        0
       ]
     },
     {
       "scene": "p53SfW6mjZe",
-      "episode": "4",
-      "steps": 686,
+      "episode": "5",
+      "steps": 760,
       "success_vector": [
         0,
         1,
@@ -28,12 +38,22 @@
     },
     {
       "scene": "q3zU7Yy5E5s",
-      "episode": "2",
-      "steps": 1029,
+      "episode": "3",
+      "steps": 604,
       "success_vector": [
-        0,
         1,
+        0,
         1
+      ]
+    },
+    {
+      "scene": "q3zU7Yy5E5s",
+      "episode": "4",
+      "steps": 1083,
+      "success_vector": [
+        1,
+        0,
+        0
       ]
     }
   ],
@@ -50,11 +70,11 @@
     "bxsVRursffK": 20,
     "mL8ThkuaVTM": 20,
     "cvZr5TUy5C5": 20,
-    "mv2HUxq3B53": 15,
-    "p53SfW6mjZe": 5,
-    "q3zU7Yy5E5s": 3
+    "mv2HUxq3B53": 17,
+    "p53SfW6mjZe": 6,
+    "q3zU7Yy5E5s": 5
   },
-  "native_stage_path_checks": 789,
+  "native_stage_path_checks": 804,
   "all_paths_complete": true,
   "max_path_error_m": 3.1427202529243914e-06,
   "source_and_parameters_unchanged": true,
