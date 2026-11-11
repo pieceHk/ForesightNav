@@ -1,15 +1,35 @@
 {
-  "started_at_utc": "2026-11-11T01:43:12.457680+00:00",
-  "completed_at_utc": "2026-11-11T01:43:25.365809+00:00",
+  "started_at_utc": "2026-11-11T02:10:31.410944+00:00",
+  "completed_at_utc": "2026-11-11T02:10:45.439238+00:00",
   "stage": "full",
   "diagnostic_only": true,
   "formal400_complete": false,
-  "completed_native_metric_records_checked": 168,
+  "completed_native_metric_records_checked": 173,
   "newly_audited": [
     {
       "scene": "TEEsavR23oF",
-      "episode": "14",
-      "steps": 530,
+      "episode": "17",
+      "steps": 651,
+      "success_vector": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "scene": "TEEsavR23oF",
+      "episode": "18",
+      "steps": 987,
+      "success_vector": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "scene": "TEEsavR23oF",
+      "episode": "19",
+      "steps": 746,
       "success_vector": [
         1,
         0,
@@ -17,18 +37,8 @@
       ]
     },
     {
-      "scene": "TEEsavR23oF",
-      "episode": "15",
-      "steps": 1500,
-      "success_vector": [
-        0,
-        0,
-        0
-      ]
-    },
-    {
-      "scene": "TEEsavR23oF",
-      "episode": "16",
+      "scene": "XB4GS9ShBRE",
+      "episode": "11",
       "steps": 1500,
       "success_vector": [
         0,
@@ -38,17 +48,7 @@
     },
     {
       "scene": "XB4GS9ShBRE",
-      "episode": "9",
-      "steps": 1500,
-      "success_vector": [
-        0,
-        0,
-        0
-      ]
-    },
-    {
-      "scene": "XB4GS9ShBRE",
-      "episode": "10",
+      "episode": "12",
       "steps": 1500,
       "success_vector": [
         0,
@@ -65,10 +65,10 @@
     "Dd4bFSTQ8gi": 20,
     "Nfvxx8J5NCo": 20,
     "QaLdnwvtxbs": 20,
-    "TEEsavR23oF": 17,
-    "XB4GS9ShBRE": 11
+    "TEEsavR23oF": 20,
+    "XB4GS9ShBRE": 13
   },
-  "native_stage_path_checks": 504,
+  "native_stage_path_checks": 519,
   "all_paths_complete": true,
   "max_path_error_m": 3.1427202529243914e-06,
   "source_and_parameters_unchanged": true,
