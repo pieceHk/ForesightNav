@@ -1,0 +1,19 @@
+test_changed_target_order_is_rejected (__main__.SchedulingTests) ... ok
+test_completed_results_cannot_be_removed_as_initialization_withdrawal (__main__.SchedulingTests) ... ok
+test_duplicate_existing_scene_is_rejected (__main__.SchedulingTests) ... ok
+test_existing_scenes_are_never_reassigned (__main__.SchedulingTests) ... ok
+test_failed_scene_cannot_be_silently_resumed (__main__.SchedulingTests) ... ok
+test_gpu_selection_does_not_signal_any_process (__main__.SchedulingTests) ... ok
+test_idle_selection_respects_occupancy_capacity_and_authorization (__main__.SchedulingTests) ... ok
+test_latest_policy_excludes_gpu0_and_other_cards (__main__.SchedulingTests) ... ok
+test_nonzero_native_exit_is_preserved (__main__.SchedulingTests) ... ok
+test_pid_birth_mismatch_is_rejected (__main__.SchedulingTests) ... ok
+test_resource_withdrawal_removes_only_exact_interrupted_launcher (__main__.SchedulingTests) ... ok
+test_resumed_scene_keeps_all_twenty_frozen_identities (__main__.SchedulingTests) ... ok
+test_stopped_parent_does_not_stop_native_child_and_exit0_is_captured (__main__.SchedulingTests) ... ok
+test_stopped_parent_is_required (__main__.SchedulingTests) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 2.134s
+
+OK

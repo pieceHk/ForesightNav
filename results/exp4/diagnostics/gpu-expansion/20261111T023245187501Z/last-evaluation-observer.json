@@ -1,0 +1,17 @@
+{
+  "stage": "full",
+  "attempt": "a3",
+  "observer_pid": 468659,
+  "watcher_pid": 468659,
+  "start_ticks": "11385509",
+  "boot_id": "23443655-6f2f-4063-a412-e255f3a91e62",
+  "started_at_utc": "2026-11-10T10:12:17.863202+00:00",
+  "watch_seconds": 604800,
+  "log": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/logs/evaluation-observer-full-a3-20261110T101217Z.jsonl",
+  "stderr_log": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/logs/evaluation-observer-full-a3-20261110T101217Z.stderr.log",
+  "watcher_sha256": "b0d1839082efc39cab8be8bbf2985fb9938d589d6abf33969606e9cd4651a8db",
+  "controller_pid": 468645,
+  "controller_start_ticks": "11385483",
+  "detached_session": true,
+  "scope": "Read-only observation of existing Full400; no native or parameter changes; independent of SSH"
+}

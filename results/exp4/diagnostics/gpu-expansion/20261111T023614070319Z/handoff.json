@@ -1,0 +1,197 @@
+{
+  "status": "running",
+  "stage": "full",
+  "at_utc": "2026-11-11T02:36:14.587616+00:00",
+  "controller_pid": 704760,
+  "controller_start_ticks": "17289141",
+  "plan": "diagnostics/gpu-expansion/20261111T023614070319Z/plan.json",
+  "observer_pid": 468659,
+  "adopted_launchers": [
+    {
+      "scene": "XB4GS9ShBRE",
+      "pid": 668266,
+      "gpu": 3,
+      "start_ticks": "16300551",
+      "parent_pid": 468645,
+      "parent_start_ticks": "11385483"
+    },
+    {
+      "scene": "bxsVRursffK",
+      "pid": 696782,
+      "gpu": 2,
+      "start_ticks": "17130846",
+      "parent_pid": 468645,
+      "parent_start_ticks": "11385483"
+    },
+    {
+      "scene": "mL8ThkuaVTM",
+      "pid": 703343,
+      "gpu": 1,
+      "start_ticks": "17268313",
+      "parent_pid": 703335,
+      "parent_start_ticks": "17268263"
+    }
+  ],
+  "native_workers_restarted": false,
+  "source_and_parameters_unchanged": true,
+  "activation": {
+    "pid": 704760,
+    "at_utc": "2026-11-11T02:36:14.408021+00:00",
+    "adopted_native_launchers": [
+      {
+        "scene": "XB4GS9ShBRE",
+        "pid": 668266,
+        "gpu": 3,
+        "start_ticks": "16300551",
+        "parent_pid": 468645,
+        "parent_start_ticks": "11385483"
+      },
+      {
+        "scene": "bxsVRursffK",
+        "pid": 696782,
+        "gpu": 2,
+        "start_ticks": "17130846",
+        "parent_pid": 468645,
+        "parent_start_ticks": "11385483"
+      },
+      {
+        "scene": "mL8ThkuaVTM",
+        "pid": 703343,
+        "gpu": 1,
+        "start_ticks": "17268313",
+        "parent_pid": 703335,
+        "parent_start_ticks": "17268263"
+      }
+    ],
+    "pending_scenes": [
+      "cvZr5TUy5C5",
+      "mv2HUxq3B53",
+      "p53SfW6mjZe",
+      "q3zU7Yy5E5s",
+      "qyAac8rV8Zk",
+      "svBbv1Pavdk",
+      "wcojb4TFT35",
+      "ziup5kvtCCR",
+      "zt1RVoi7PcG"
+    ],
+    "ledger_controller_pid": 704760
+  },
+  "gpu_inventory_at_handoff": {
+    "checked_at_utc": "2026-11-11T02:36:14.055496+00:00",
+    "gpus": [
+      {
+        "index": "0",
+        "uuid": "GPU-b1f2b8f6-fe40-f074-7206-f73cf6e08738",
+        "name": "NVIDIA A40",
+        "memory.total": "46068",
+        "memory.free": "45357"
+      },
+      {
+        "index": "1",
+        "uuid": "GPU-6f6d0a9f-b84c-a94d-37ee-1ce29f66ba1f",
+        "name": "NVIDIA A40",
+        "memory.total": "46068",
+        "memory.free": "26710"
+      },
+      {
+        "index": "2",
+        "uuid": "GPU-e578717e-9e11-1464-269b-d5a17e564c8a",
+        "name": "NVIDIA A40",
+        "memory.total": "46068",
+        "memory.free": "26580"
+      },
+      {
+        "index": "3",
+        "uuid": "GPU-e345e195-e565-805c-b913-dc9a023ef37d",
+        "name": "NVIDIA A40",
+        "memory.total": "46068",
+        "memory.free": "25676"
+      },
+      {
+        "index": "4",
+        "uuid": "GPU-7e03cc60-2c77-01c4-3bb8-d0bfe70657be",
+        "name": "NVIDIA A40",
+        "memory.total": "46068",
+        "memory.free": "30948"
+      },
+      {
+        "index": "5",
+        "uuid": "GPU-875134a3-1b53-1712-a56d-a4192edb9728",
+        "name": "NVIDIA A40",
+        "memory.total": "46068",
+        "memory.free": "38711"
+      },
+      {
+        "index": "6",
+        "uuid": "GPU-c4579e9e-eb6e-0eda-0430-9b78b62c51b4",
+        "name": "NVIDIA A40",
+        "memory.total": "46068",
+        "memory.free": "38365"
+      },
+      {
+        "index": "7",
+        "uuid": "GPU-7ba3fcb6-cd24-e4eb-9fef-e2f8c32afae3",
+        "name": "NVIDIA A40",
+        "memory.total": "46068",
+        "memory.free": "38329"
+      }
+    ],
+    "compute_apps": [
+      {
+        "gpu_uuid": "GPU-6f6d0a9f-b84c-a94d-37ee-1ce29f66ba1f",
+        "pid": "703398",
+        "used_gpu_memory": "2560"
+      },
+      {
+        "gpu_uuid": "GPU-6f6d0a9f-b84c-a94d-37ee-1ce29f66ba1f",
+        "pid": "703462",
+        "used_gpu_memory": "16071"
+      },
+      {
+        "gpu_uuid": "GPU-e578717e-9e11-1464-269b-d5a17e564c8a",
+        "pid": "696877",
+        "used_gpu_memory": "2564"
+      },
+      {
+        "gpu_uuid": "GPU-e578717e-9e11-1464-269b-d5a17e564c8a",
+        "pid": "696909",
+        "used_gpu_memory": "16185"
+      },
+      {
+        "gpu_uuid": "GPU-e345e195-e565-805c-b913-dc9a023ef37d",
+        "pid": "668294",
+        "used_gpu_memory": "2562"
+      },
+      {
+        "gpu_uuid": "GPU-e345e195-e565-805c-b913-dc9a023ef37d",
+        "pid": "668397",
+        "used_gpu_memory": "17011"
+      },
+      {
+        "gpu_uuid": "GPU-7e03cc60-2c77-01c4-3bb8-d0bfe70657be",
+        "pid": "690783",
+        "used_gpu_memory": "6938"
+      },
+      {
+        "gpu_uuid": "GPU-7e03cc60-2c77-01c4-3bb8-d0bfe70657be",
+        "pid": "690898",
+        "used_gpu_memory": "6924"
+      },
+      {
+        "gpu_uuid": "GPU-875134a3-1b53-1712-a56d-a4192edb9728",
+        "pid": "564416",
+        "used_gpu_memory": "6374"
+      },
+      {
+        "gpu_uuid": "GPU-c4579e9e-eb6e-0eda-0430-9b78b62c51b4",
+        "pid": "564417",
+        "used_gpu_memory": "6374"
+      },
+      {
+        "gpu_uuid": "GPU-7ba3fcb6-cd24-e4eb-9fef-e2f8c32afae3",
+        "pid": "564418",
+        "used_gpu_memory": "6410"
+      }
+    ]
+  }
+}

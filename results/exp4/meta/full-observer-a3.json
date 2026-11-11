@@ -10,8 +10,9 @@
   "log": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/logs/evaluation-observer-full-a3-20261110T101217Z.jsonl",
   "stderr_log": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/logs/evaluation-observer-full-a3-20261110T101217Z.stderr.log",
   "watcher_sha256": "b0d1839082efc39cab8be8bbf2985fb9938d589d6abf33969606e9cd4651a8db",
-  "controller_pid": 468645,
-  "controller_start_ticks": "11385483",
+  "controller_pid": 704760,
+  "controller_start_ticks": "17289141",
   "detached_session": true,
-  "scope": "Read-only observation of existing Full400; no native or parameter changes; independent of SSH"
+  "scope": "Read-only observation of existing Full400; no native or parameter changes; independent of SSH",
+  "scheduling_handoff_plan": "diagnostics/gpu-expansion/20261111T023614070319Z/plan.json"
 }

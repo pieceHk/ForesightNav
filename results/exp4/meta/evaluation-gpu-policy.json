@@ -1,0 +1,9 @@
+{
+  "allowed_gpus": [
+    1,
+    2,
+    3
+  ],
+  "at_utc": "2026-11-11T02:33:57.574097+00:00",
+  "user_instruction": "\u4f60\u73b0\u5728\u5148\u522b\u7528GPU0\u4e86\uff0c\u628aGPU0\u5300\u51fa\u6765\u7ed9\u6211\u8dd1\u522b\u7684\u5b9e\u9a8c\u3002\u4f60\u57281\u30012\u30013\u4e09\u5757GPU\u5168\u901f\u8dd1"
+}

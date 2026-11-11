@@ -1,0 +1,587 @@
+{
+  "checked_at_utc": "2026-11-11T02:35:57.669143+00:00",
+  "source_and_parameters_unchanged": true,
+  "native_source_entries": 161,
+  "previous_controller_stopped_for_requested_GPU0_release": true,
+  "original_controller_pid": 703335,
+  "original_controller_start_ticks": "17268263",
+  "test_exit_code": 0,
+  "test_count": 14,
+  "tests_are_additional_scheduling_checks_not_native60": true,
+  "test_log": "logs/three-gpu-scheduling-tests-20261111T023553854078Z.log",
+  "test_log_sha256": "57fff1a59570eb18f40a755c53997eb3966b8acb6c4e165a1f8389a82d6e63d8",
+  "parallel_controller_sha256": "7ef409970ae9d2acce4acef94eb097ce8252ebe5aef8f377b3c59fbfab7b4b50",
+  "test_source_sha256": "082a1f8390d2351c12b6255aa6fce9fe3c957eff5f278f68ec0bfcb419d55e44",
+  "checks": [
+    {
+      "checked_at_utc": "2026-11-11T02:35:56.505124+00:00",
+      "stage": "full",
+      "ready": true,
+      "reasons": [],
+      "allowed_gpus": [
+        1,
+        2,
+        3
+      ],
+      "idle_gpus_at_check": [],
+      "gpu_inventory": {
+        "checked_at_utc": "2026-11-11T02:35:56.502117+00:00",
+        "gpus": [
+          {
+            "index": "0",
+            "uuid": "GPU-b1f2b8f6-fe40-f074-7206-f73cf6e08738",
+            "name": "NVIDIA A40",
+            "memory.total": "46068",
+            "memory.free": "45357"
+          },
+          {
+            "index": "1",
+            "uuid": "GPU-6f6d0a9f-b84c-a94d-37ee-1ce29f66ba1f",
+            "name": "NVIDIA A40",
+            "memory.total": "46068",
+            "memory.free": "26708"
+          },
+          {
+            "index": "2",
+            "uuid": "GPU-e578717e-9e11-1464-269b-d5a17e564c8a",
+            "name": "NVIDIA A40",
+            "memory.total": "46068",
+            "memory.free": "20174"
+          },
+          {
+            "index": "3",
+            "uuid": "GPU-e345e195-e565-805c-b913-dc9a023ef37d",
+            "name": "NVIDIA A40",
+            "memory.total": "46068",
+            "memory.free": "25676"
+          },
+          {
+            "index": "4",
+            "uuid": "GPU-7e03cc60-2c77-01c4-3bb8-d0bfe70657be",
+            "name": "NVIDIA A40",
+            "memory.total": "46068",
+            "memory.free": "30948"
+          },
+          {
+            "index": "5",
+            "uuid": "GPU-875134a3-1b53-1712-a56d-a4192edb9728",
+            "name": "NVIDIA A40",
+            "memory.total": "46068",
+            "memory.free": "38711"
+          },
+          {
+            "index": "6",
+            "uuid": "GPU-c4579e9e-eb6e-0eda-0430-9b78b62c51b4",
+            "name": "NVIDIA A40",
+            "memory.total": "46068",
+            "memory.free": "38365"
+          },
+          {
+            "index": "7",
+            "uuid": "GPU-7ba3fcb6-cd24-e4eb-9fef-e2f8c32afae3",
+            "name": "NVIDIA A40",
+            "memory.total": "46068",
+            "memory.free": "38327"
+          }
+        ],
+        "compute_apps": [
+          {
+            "gpu_uuid": "GPU-6f6d0a9f-b84c-a94d-37ee-1ce29f66ba1f",
+            "pid": "703398",
+            "used_gpu_memory": "2560"
+          },
+          {
+            "gpu_uuid": "GPU-6f6d0a9f-b84c-a94d-37ee-1ce29f66ba1f",
+            "pid": "703462",
+            "used_gpu_memory": "16071"
+          },
+          {
+            "gpu_uuid": "GPU-e578717e-9e11-1464-269b-d5a17e564c8a",
+            "pid": "696877",
+            "used_gpu_memory": "8970"
+          },
+          {
+            "gpu_uuid": "GPU-e578717e-9e11-1464-269b-d5a17e564c8a",
+            "pid": "696909",
+            "used_gpu_memory": "16185"
+          },
+          {
+            "gpu_uuid": "GPU-e345e195-e565-805c-b913-dc9a023ef37d",
+            "pid": "668294",
+            "used_gpu_memory": "2562"
+          },
+          {
+            "gpu_uuid": "GPU-e345e195-e565-805c-b913-dc9a023ef37d",
+            "pid": "668397",
+            "used_gpu_memory": "17013"
+          },
+          {
+            "gpu_uuid": "GPU-7e03cc60-2c77-01c4-3bb8-d0bfe70657be",
+            "pid": "690783",
+            "used_gpu_memory": "6938"
+          },
+          {
+            "gpu_uuid": "GPU-7e03cc60-2c77-01c4-3bb8-d0bfe70657be",
+            "pid": "690898",
+            "used_gpu_memory": "6924"
+          },
+          {
+            "gpu_uuid": "GPU-875134a3-1b53-1712-a56d-a4192edb9728",
+            "pid": "564416",
+            "used_gpu_memory": "6374"
+          },
+          {
+            "gpu_uuid": "GPU-c4579e9e-eb6e-0eda-0430-9b78b62c51b4",
+            "pid": "564417",
+            "used_gpu_memory": "6374"
+          },
+          {
+            "gpu_uuid": "GPU-7ba3fcb6-cd24-e4eb-9fef-e2f8c32afae3",
+            "pid": "564418",
+            "used_gpu_memory": "6410"
+          }
+        ]
+      },
+      "scenes": 20,
+      "episodes": 400,
+      "adopt_existing_full": true,
+      "native_workers_started": false,
+      "native_source_entries": 161,
+      "source_sha256": "7ef409970ae9d2acce4acef94eb097ce8252ebe5aef8f377b3c59fbfab7b4b50",
+      "base_controller_sha256": "d238350a2733b56d258e774e5ca4f1537f09818cd34a313a638b9ec483c0b82f",
+      "parameter_sha256": "e1d75f3c9503c7439467748fc97be6ae2ad450c429f40dc7235b1564ff7852ae",
+      "output_free_bytes": 1058923560960
+    },
+    {
+      "checked_at_utc": "2026-11-11T02:35:56.869127+00:00",
+      "stage": "nearest",
+      "ready": false,
+      "reasons": [
+        "The preceding evaluation stage is not complete",
+        "No authorized idle GPU meets the 38GiB-free launch threshold"
+      ],
+      "allowed_gpus": [
+        1,
+        2,
+        3
+      ],
+      "idle_gpus_at_check": [],
+      "gpu_inventory": {
+        "checked_at_utc": "2026-11-11T02:35:56.868376+00:00",
+        "gpus": [
+          {
+            "index": "0",
+            "uuid": "GPU-b1f2b8f6-fe40-f074-7206-f73cf6e08738",
+            "name": "NVIDIA A40",
+            "memory.total": "46068",
+            "memory.free": "45357"
+          },
+          {
+            "index": "1",
+            "uuid": "GPU-6f6d0a9f-b84c-a94d-37ee-1ce29f66ba1f",
+            "name": "NVIDIA A40",
+            "memory.total": "46068",
+            "memory.free": "26710"
+          },
+          {
+            "index": "2",
+            "uuid": "GPU-e578717e-9e11-1464-269b-d5a17e564c8a",
+            "name": "NVIDIA A40",
+            "memory.total": "46068",
+            "memory.free": "20174"
+          },
+          {
+            "index": "3",
+            "uuid": "GPU-e345e195-e565-805c-b913-dc9a023ef37d",
+            "name": "NVIDIA A40",
+            "memory.total": "46068",
+            "memory.free": "25674"
+          },
+          {
+            "index": "4",
+            "uuid": "GPU-7e03cc60-2c77-01c4-3bb8-d0bfe70657be",
+            "name": "NVIDIA A40",
+            "memory.total": "46068",
+            "memory.free": "30946"
+          },
+          {
+            "index": "5",
+            "uuid": "GPU-875134a3-1b53-1712-a56d-a4192edb9728",
+            "name": "NVIDIA A40",
+            "memory.total": "46068",
+            "memory.free": "38713"
+          },
+          {
+            "index": "6",
+            "uuid": "GPU-c4579e9e-eb6e-0eda-0430-9b78b62c51b4",
+            "name": "NVIDIA A40",
+            "memory.total": "46068",
+            "memory.free": "38363"
+          },
+          {
+            "index": "7",
+            "uuid": "GPU-7ba3fcb6-cd24-e4eb-9fef-e2f8c32afae3",
+            "name": "NVIDIA A40",
+            "memory.total": "46068",
+            "memory.free": "38329"
+          }
+        ],
+        "compute_apps": [
+          {
+            "gpu_uuid": "GPU-6f6d0a9f-b84c-a94d-37ee-1ce29f66ba1f",
+            "pid": "703398",
+            "used_gpu_memory": "2560"
+          },
+          {
+            "gpu_uuid": "GPU-6f6d0a9f-b84c-a94d-37ee-1ce29f66ba1f",
+            "pid": "703462",
+            "used_gpu_memory": "16069"
+          },
+          {
+            "gpu_uuid": "GPU-e578717e-9e11-1464-269b-d5a17e564c8a",
+            "pid": "696877",
+            "used_gpu_memory": "8970"
+          },
+          {
+            "gpu_uuid": "GPU-e578717e-9e11-1464-269b-d5a17e564c8a",
+            "pid": "696909",
+            "used_gpu_memory": "16185"
+          },
+          {
+            "gpu_uuid": "GPU-e345e195-e565-805c-b913-dc9a023ef37d",
+            "pid": "668294",
+            "used_gpu_memory": "2562"
+          },
+          {
+            "gpu_uuid": "GPU-e345e195-e565-805c-b913-dc9a023ef37d",
+            "pid": "668397",
+            "used_gpu_memory": "17013"
+          },
+          {
+            "gpu_uuid": "GPU-7e03cc60-2c77-01c4-3bb8-d0bfe70657be",
+            "pid": "690783",
+            "used_gpu_memory": "6938"
+          },
+          {
+            "gpu_uuid": "GPU-7e03cc60-2c77-01c4-3bb8-d0bfe70657be",
+            "pid": "690898",
+            "used_gpu_memory": "6924"
+          },
+          {
+            "gpu_uuid": "GPU-875134a3-1b53-1712-a56d-a4192edb9728",
+            "pid": "564416",
+            "used_gpu_memory": "6374"
+          },
+          {
+            "gpu_uuid": "GPU-c4579e9e-eb6e-0eda-0430-9b78b62c51b4",
+            "pid": "564417",
+            "used_gpu_memory": "6374"
+          },
+          {
+            "gpu_uuid": "GPU-7ba3fcb6-cd24-e4eb-9fef-e2f8c32afae3",
+            "pid": "564418",
+            "used_gpu_memory": "6410"
+          }
+        ]
+      },
+      "scenes": 20,
+      "episodes": 400,
+      "adopt_existing_full": false,
+      "native_workers_started": false,
+      "native_source_entries": 161,
+      "source_sha256": "7ef409970ae9d2acce4acef94eb097ce8252ebe5aef8f377b3c59fbfab7b4b50",
+      "base_controller_sha256": "d238350a2733b56d258e774e5ca4f1537f09818cd34a313a638b9ec483c0b82f",
+      "parameter_sha256": "e1d75f3c9503c7439467748fc97be6ae2ad450c429f40dc7235b1564ff7852ae",
+      "output_free_bytes": 1058923544576
+    },
+    {
+      "checked_at_utc": "2026-11-11T02:35:57.224248+00:00",
+      "stage": "myopic",
+      "ready": false,
+      "reasons": [
+        "Missing checkpoint artifact: /nvme/khy/ForesightNav_exp4_depthfix/results/exp4/meta/evaluation-nearest-runs.json",
+        "No authorized idle GPU meets the 38GiB-free launch threshold",
+        "Predecessor observer does not match the fixed stage order"
+      ],
+      "allowed_gpus": [
+        1,
+        2,
+        3
+      ],
+      "idle_gpus_at_check": [],
+      "gpu_inventory": {
+        "checked_at_utc": "2026-11-11T02:35:57.223502+00:00",
+        "gpus": [
+          {
+            "index": "0",
+            "uuid": "GPU-b1f2b8f6-fe40-f074-7206-f73cf6e08738",
+            "name": "NVIDIA A40",
+            "memory.total": "46068",
+            "memory.free": "45357"
+          },
+          {
+            "index": "1",
+            "uuid": "GPU-6f6d0a9f-b84c-a94d-37ee-1ce29f66ba1f",
+            "name": "NVIDIA A40",
+            "memory.total": "46068",
+            "memory.free": "26710"
+          },
+          {
+            "index": "2",
+            "uuid": "GPU-e578717e-9e11-1464-269b-d5a17e564c8a",
+            "name": "NVIDIA A40",
+            "memory.total": "46068",
+            "memory.free": "20174"
+          },
+          {
+            "index": "3",
+            "uuid": "GPU-e345e195-e565-805c-b913-dc9a023ef37d",
+            "name": "NVIDIA A40",
+            "memory.total": "46068",
+            "memory.free": "25676"
+          },
+          {
+            "index": "4",
+            "uuid": "GPU-7e03cc60-2c77-01c4-3bb8-d0bfe70657be",
+            "name": "NVIDIA A40",
+            "memory.total": "46068",
+            "memory.free": "30950"
+          },
+          {
+            "index": "5",
+            "uuid": "GPU-875134a3-1b53-1712-a56d-a4192edb9728",
+            "name": "NVIDIA A40",
+            "memory.total": "46068",
+            "memory.free": "38711"
+          },
+          {
+            "index": "6",
+            "uuid": "GPU-c4579e9e-eb6e-0eda-0430-9b78b62c51b4",
+            "name": "NVIDIA A40",
+            "memory.total": "46068",
+            "memory.free": "38365"
+          },
+          {
+            "index": "7",
+            "uuid": "GPU-7ba3fcb6-cd24-e4eb-9fef-e2f8c32afae3",
+            "name": "NVIDIA A40",
+            "memory.total": "46068",
+            "memory.free": "38327"
+          }
+        ],
+        "compute_apps": [
+          {
+            "gpu_uuid": "GPU-6f6d0a9f-b84c-a94d-37ee-1ce29f66ba1f",
+            "pid": "703398",
+            "used_gpu_memory": "2560"
+          },
+          {
+            "gpu_uuid": "GPU-6f6d0a9f-b84c-a94d-37ee-1ce29f66ba1f",
+            "pid": "703462",
+            "used_gpu_memory": "16069"
+          },
+          {
+            "gpu_uuid": "GPU-e578717e-9e11-1464-269b-d5a17e564c8a",
+            "pid": "696877",
+            "used_gpu_memory": "8970"
+          },
+          {
+            "gpu_uuid": "GPU-e578717e-9e11-1464-269b-d5a17e564c8a",
+            "pid": "696909",
+            "used_gpu_memory": "16185"
+          },
+          {
+            "gpu_uuid": "GPU-e345e195-e565-805c-b913-dc9a023ef37d",
+            "pid": "668294",
+            "used_gpu_memory": "2562"
+          },
+          {
+            "gpu_uuid": "GPU-e345e195-e565-805c-b913-dc9a023ef37d",
+            "pid": "668397",
+            "used_gpu_memory": "17011"
+          },
+          {
+            "gpu_uuid": "GPU-7e03cc60-2c77-01c4-3bb8-d0bfe70657be",
+            "pid": "690783",
+            "used_gpu_memory": "6938"
+          },
+          {
+            "gpu_uuid": "GPU-7e03cc60-2c77-01c4-3bb8-d0bfe70657be",
+            "pid": "690898",
+            "used_gpu_memory": "6924"
+          },
+          {
+            "gpu_uuid": "GPU-875134a3-1b53-1712-a56d-a4192edb9728",
+            "pid": "564416",
+            "used_gpu_memory": "6374"
+          },
+          {
+            "gpu_uuid": "GPU-c4579e9e-eb6e-0eda-0430-9b78b62c51b4",
+            "pid": "564417",
+            "used_gpu_memory": "6374"
+          },
+          {
+            "gpu_uuid": "GPU-7ba3fcb6-cd24-e4eb-9fef-e2f8c32afae3",
+            "pid": "564418",
+            "used_gpu_memory": "6410"
+          }
+        ]
+      },
+      "scenes": 20,
+      "episodes": 400,
+      "adopt_existing_full": false,
+      "native_workers_started": false,
+      "native_source_entries": 161,
+      "source_sha256": "7ef409970ae9d2acce4acef94eb097ce8252ebe5aef8f377b3c59fbfab7b4b50",
+      "base_controller_sha256": "d238350a2733b56d258e774e5ca4f1537f09818cd34a313a638b9ec483c0b82f",
+      "parameter_sha256": "e1d75f3c9503c7439467748fc97be6ae2ad450c429f40dc7235b1564ff7852ae",
+      "output_free_bytes": 1058923536384
+    },
+    {
+      "checked_at_utc": "2026-11-11T02:35:57.631068+00:00",
+      "stage": "suffix_only",
+      "ready": false,
+      "reasons": [
+        "Missing checkpoint artifact: /nvme/khy/ForesightNav_exp4_depthfix/results/exp4/meta/evaluation-myopic-runs.json",
+        "No authorized idle GPU meets the 38GiB-free launch threshold",
+        "Predecessor observer does not match the fixed stage order"
+      ],
+      "allowed_gpus": [
+        1,
+        2,
+        3
+      ],
+      "idle_gpus_at_check": [],
+      "gpu_inventory": {
+        "checked_at_utc": "2026-11-11T02:35:57.630313+00:00",
+        "gpus": [
+          {
+            "index": "0",
+            "uuid": "GPU-b1f2b8f6-fe40-f074-7206-f73cf6e08738",
+            "name": "NVIDIA A40",
+            "memory.total": "46068",
+            "memory.free": "45357"
+          },
+          {
+            "index": "1",
+            "uuid": "GPU-6f6d0a9f-b84c-a94d-37ee-1ce29f66ba1f",
+            "name": "NVIDIA A40",
+            "memory.total": "46068",
+            "memory.free": "26708"
+          },
+          {
+            "index": "2",
+            "uuid": "GPU-e578717e-9e11-1464-269b-d5a17e564c8a",
+            "name": "NVIDIA A40",
+            "memory.total": "46068",
+            "memory.free": "20174"
+          },
+          {
+            "index": "3",
+            "uuid": "GPU-e345e195-e565-805c-b913-dc9a023ef37d",
+            "name": "NVIDIA A40",
+            "memory.total": "46068",
+            "memory.free": "25676"
+          },
+          {
+            "index": "4",
+            "uuid": "GPU-7e03cc60-2c77-01c4-3bb8-d0bfe70657be",
+            "name": "NVIDIA A40",
+            "memory.total": "46068",
+            "memory.free": "30947"
+          },
+          {
+            "index": "5",
+            "uuid": "GPU-875134a3-1b53-1712-a56d-a4192edb9728",
+            "name": "NVIDIA A40",
+            "memory.total": "46068",
+            "memory.free": "38711"
+          },
+          {
+            "index": "6",
+            "uuid": "GPU-c4579e9e-eb6e-0eda-0430-9b78b62c51b4",
+            "name": "NVIDIA A40",
+            "memory.total": "46068",
+            "memory.free": "38365"
+          },
+          {
+            "index": "7",
+            "uuid": "GPU-7ba3fcb6-cd24-e4eb-9fef-e2f8c32afae3",
+            "name": "NVIDIA A40",
+            "memory.total": "46068",
+            "memory.free": "38329"
+          }
+        ],
+        "compute_apps": [
+          {
+            "gpu_uuid": "GPU-6f6d0a9f-b84c-a94d-37ee-1ce29f66ba1f",
+            "pid": "703398",
+            "used_gpu_memory": "2560"
+          },
+          {
+            "gpu_uuid": "GPU-6f6d0a9f-b84c-a94d-37ee-1ce29f66ba1f",
+            "pid": "703462",
+            "used_gpu_memory": "16071"
+          },
+          {
+            "gpu_uuid": "GPU-e578717e-9e11-1464-269b-d5a17e564c8a",
+            "pid": "696877",
+            "used_gpu_memory": "8970"
+          },
+          {
+            "gpu_uuid": "GPU-e578717e-9e11-1464-269b-d5a17e564c8a",
+            "pid": "696909",
+            "used_gpu_memory": "16185"
+          },
+          {
+            "gpu_uuid": "GPU-e345e195-e565-805c-b913-dc9a023ef37d",
+            "pid": "668294",
+            "used_gpu_memory": "2562"
+          },
+          {
+            "gpu_uuid": "GPU-e345e195-e565-805c-b913-dc9a023ef37d",
+            "pid": "668397",
+            "used_gpu_memory": "17013"
+          },
+          {
+            "gpu_uuid": "GPU-7e03cc60-2c77-01c4-3bb8-d0bfe70657be",
+            "pid": "690783",
+            "used_gpu_memory": "6938"
+          },
+          {
+            "gpu_uuid": "GPU-7e03cc60-2c77-01c4-3bb8-d0bfe70657be",
+            "pid": "690898",
+            "used_gpu_memory": "6924"
+          },
+          {
+            "gpu_uuid": "GPU-875134a3-1b53-1712-a56d-a4192edb9728",
+            "pid": "564416",
+            "used_gpu_memory": "6374"
+          },
+          {
+            "gpu_uuid": "GPU-c4579e9e-eb6e-0eda-0430-9b78b62c51b4",
+            "pid": "564417",
+            "used_gpu_memory": "6374"
+          },
+          {
+            "gpu_uuid": "GPU-7ba3fcb6-cd24-e4eb-9fef-e2f8c32afae3",
+            "pid": "564418",
+            "used_gpu_memory": "6410"
+          }
+        ]
+      },
+      "scenes": 20,
+      "episodes": 400,
+      "adopt_existing_full": false,
+      "native_workers_started": false,
+      "native_source_entries": 161,
+      "source_sha256": "7ef409970ae9d2acce4acef94eb097ce8252ebe5aef8f377b3c59fbfab7b4b50",
+      "base_controller_sha256": "d238350a2733b56d258e774e5ca4f1537f09818cd34a313a638b9ec483c0b82f",
+      "parameter_sha256": "e1d75f3c9503c7439467748fc97be6ae2ad450c429f40dc7235b1564ff7852ae",
+      "output_free_bytes": 1058923491328
+    }
+  ],
+  "native_workers_started": false,
+  "production_processes_signaled": false,
+  "process_probe_scope": "Only test-spawned CPU toy parents/children; verified child progress under stopped parent and real exit0/17"
+}

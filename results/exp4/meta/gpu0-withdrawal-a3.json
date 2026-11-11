@@ -1,0 +1,359 @@
+{
+  "proof": "diagnostics/gpu0-withdrawal/20261111T023357572846Z/release.json",
+  "at_utc": "2026-11-11T02:34:00.371351+00:00",
+  "scope": "User withdrew GPU0; terminate only its experiment launcher subtree",
+  "scene": "cvZr5TUy5C5",
+  "job": {
+    "scene": "cvZr5TUy5C5",
+    "identities": [
+      {
+        "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+        "scene_id": "cvZr5TUy5C5",
+        "runtime_episode_id": "0",
+        "source_episode_ids": [
+          "89",
+          "85",
+          "56"
+        ],
+        "ordered_categories": [
+          "toilet",
+          "bed",
+          "chair"
+        ]
+      },
+      {
+        "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+        "scene_id": "cvZr5TUy5C5",
+        "runtime_episode_id": "1",
+        "source_episode_ids": [
+          "53",
+          "92",
+          "75"
+        ],
+        "ordered_categories": [
+          "chair",
+          "bed",
+          "tv"
+        ]
+      },
+      {
+        "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+        "scene_id": "cvZr5TUy5C5",
+        "runtime_episode_id": "2",
+        "source_episode_ids": [
+          "87",
+          "57",
+          "70"
+        ],
+        "ordered_categories": [
+          "bed",
+          "plant",
+          "bed"
+        ]
+      },
+      {
+        "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+        "scene_id": "cvZr5TUy5C5",
+        "runtime_episode_id": "3",
+        "source_episode_ids": [
+          "98",
+          "32",
+          "64"
+        ],
+        "ordered_categories": [
+          "tv",
+          "plant",
+          "chair"
+        ]
+      },
+      {
+        "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+        "scene_id": "cvZr5TUy5C5",
+        "runtime_episode_id": "4",
+        "source_episode_ids": [
+          "23",
+          "58",
+          "71"
+        ],
+        "ordered_categories": [
+          "chair",
+          "tv",
+          "bed"
+        ]
+      },
+      {
+        "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+        "scene_id": "cvZr5TUy5C5",
+        "runtime_episode_id": "5",
+        "source_episode_ids": [
+          "30",
+          "91",
+          "24"
+        ],
+        "ordered_categories": [
+          "plant",
+          "couch",
+          "toilet"
+        ]
+      },
+      {
+        "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+        "scene_id": "cvZr5TUy5C5",
+        "runtime_episode_id": "6",
+        "source_episode_ids": [
+          "82",
+          "61",
+          "47"
+        ],
+        "ordered_categories": [
+          "couch",
+          "tv",
+          "toilet"
+        ]
+      },
+      {
+        "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+        "scene_id": "cvZr5TUy5C5",
+        "runtime_episode_id": "7",
+        "source_episode_ids": [
+          "0",
+          "52",
+          "88"
+        ],
+        "ordered_categories": [
+          "couch",
+          "plant",
+          "bed"
+        ]
+      },
+      {
+        "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+        "scene_id": "cvZr5TUy5C5",
+        "runtime_episode_id": "8",
+        "source_episode_ids": [
+          "37",
+          "14",
+          "73"
+        ],
+        "ordered_categories": [
+          "plant",
+          "toilet",
+          "bed"
+        ]
+      },
+      {
+        "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+        "scene_id": "cvZr5TUy5C5",
+        "runtime_episode_id": "9",
+        "source_episode_ids": [
+          "62",
+          "44",
+          "65"
+        ],
+        "ordered_categories": [
+          "chair",
+          "couch",
+          "plant"
+        ]
+      },
+      {
+        "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+        "scene_id": "cvZr5TUy5C5",
+        "runtime_episode_id": "10",
+        "source_episode_ids": [
+          "94",
+          "95",
+          "6"
+        ],
+        "ordered_categories": [
+          "bed",
+          "plant",
+          "toilet"
+        ]
+      },
+      {
+        "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+        "scene_id": "cvZr5TUy5C5",
+        "runtime_episode_id": "11",
+        "source_episode_ids": [
+          "74",
+          "59",
+          "22"
+        ],
+        "ordered_categories": [
+          "bed",
+          "tv",
+          "couch"
+        ]
+      },
+      {
+        "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+        "scene_id": "cvZr5TUy5C5",
+        "runtime_episode_id": "12",
+        "source_episode_ids": [
+          "78",
+          "83",
+          "28"
+        ],
+        "ordered_categories": [
+          "tv",
+          "chair",
+          "couch"
+        ]
+      },
+      {
+        "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+        "scene_id": "cvZr5TUy5C5",
+        "runtime_episode_id": "13",
+        "source_episode_ids": [
+          "38",
+          "79",
+          "67"
+        ],
+        "ordered_categories": [
+          "chair",
+          "toilet",
+          "tv"
+        ]
+      },
+      {
+        "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+        "scene_id": "cvZr5TUy5C5",
+        "runtime_episode_id": "14",
+        "source_episode_ids": [
+          "33",
+          "77",
+          "50"
+        ],
+        "ordered_categories": [
+          "toilet",
+          "tv",
+          "toilet"
+        ]
+      },
+      {
+        "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+        "scene_id": "cvZr5TUy5C5",
+        "runtime_episode_id": "15",
+        "source_episode_ids": [
+          "81",
+          "63",
+          "55"
+        ],
+        "ordered_categories": [
+          "toilet",
+          "couch",
+          "chair"
+        ]
+      },
+      {
+        "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+        "scene_id": "cvZr5TUy5C5",
+        "runtime_episode_id": "16",
+        "source_episode_ids": [
+          "96",
+          "27",
+          "66"
+        ],
+        "ordered_categories": [
+          "couch",
+          "toilet",
+          "chair"
+        ]
+      },
+      {
+        "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+        "scene_id": "cvZr5TUy5C5",
+        "runtime_episode_id": "17",
+        "source_episode_ids": [
+          "86",
+          "93",
+          "39"
+        ],
+        "ordered_categories": [
+          "toilet",
+          "tv",
+          "chair"
+        ]
+      },
+      {
+        "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+        "scene_id": "cvZr5TUy5C5",
+        "runtime_episode_id": "18",
+        "source_episode_ids": [
+          "72",
+          "68",
+          "45"
+        ],
+        "ordered_categories": [
+          "plant",
+          "chair",
+          "couch"
+        ]
+      },
+      {
+        "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+        "scene_id": "cvZr5TUy5C5",
+        "runtime_episode_id": "19",
+        "source_episode_ids": [
+          "84",
+          "97",
+          "17"
+        ],
+        "ordered_categories": [
+          "tv",
+          "toilet",
+          "couch"
+        ]
+      }
+    ],
+    "gpu": 0,
+    "pid": 703342,
+    "pid_start_ticks": "17268312",
+    "log": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/logs/evaluation-full-a3-cvZr5TUy5C5.controller.log",
+    "command": [
+      "/nvme/khy/conda_envs/pbsp/navigation/bin/python",
+      "/nvme/khy/ForesightNav_exp4_depthfix/run.py",
+      "--config",
+      "configs/experiments/exp4_full.yaml",
+      "--runtime",
+      "runtime.exp4.local.yaml",
+      "--gpus",
+      "0,0",
+      "--scene",
+      "cvZr5TUy5C5",
+      "--tag",
+      "exp4-full-a3-cvZr5TUy5C5"
+    ],
+    "status": "running",
+    "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261111_103250_365991_exp4_full_exp4-full-a3-cvZr5TUy5C5"
+  },
+  "gpu0_native_completed_at_withdrawal": 0,
+  "signals": [
+    {
+      "pid": 703380,
+      "start_ticks": "17268771",
+      "signal": "SIGTERM"
+    },
+    {
+      "pid": 703382,
+      "start_ticks": "17268771",
+      "signal": "SIGTERM"
+    },
+    {
+      "pid": 703460,
+      "start_ticks": "17270556",
+      "signal": "SIGTERM"
+    },
+    {
+      "pid": 703342,
+      "start_ticks": "17268312",
+      "signal": "SIGTERM"
+    }
+  ],
+  "GPU0_experiment_processes_remaining": [],
+  "CPU_controller_stopped_for_scheduling_update": 703335,
+  "retained_native_1_2_3_not_signaled": true,
+  "raw_logs_retained": true,
+  "source_and_parameters_unchanged": true
+}
