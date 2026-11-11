@@ -1,10 +1,10 @@
 # Full400已完成回合的过程复核
 
-过程审计时点（UTC）：2026-11-11T16:34:24.847871+00:00。
+过程审计时点（UTC）：2026-11-11T17:03:32.037285+00:00。
 
-此快照核查已导出完整原生指标的391/400条回合，覆盖4ok3usBNeis：20条、5cdEh9F2hJL：20条、6s7QHgap2fW：20条、DYehNKdT76V：20条、Dd4bFSTQ8gi：20条、Nfvxx8J5NCo：20条、QaLdnwvtxbs：20条、TEEsavR23oF：20条、XB4GS9ShBRE：20条、bxsVRursffK：20条、mL8ThkuaVTM：20条、cvZr5TUy5C5：20条、mv2HUxq3B53：20条、p53SfW6mjZe：20条、q3zU7Yy5E5s：20条、qyAac8rV8Zk：20条、svBbv1Pavdk：20条、wcojb4TFT35：20条、ziup5kvtCCR：20条、zt1RVoi7PcG：11条。Full400尚未完成，以下仅是已导出回合的过程诊断。
+此快照核查已导出完整原生指标的397/400条回合，覆盖4ok3usBNeis：20条、5cdEh9F2hJL：20条、6s7QHgap2fW：20条、DYehNKdT76V：20条、Dd4bFSTQ8gi：20条、Nfvxx8J5NCo：20条、QaLdnwvtxbs：20条、TEEsavR23oF：20条、XB4GS9ShBRE：20条、bxsVRursffK：20条、mL8ThkuaVTM：20条、cvZr5TUy5C5：20条、mv2HUxq3B53：20条、p53SfW6mjZe：20条、q3zU7Yy5E5s：20条、qyAac8rV8Zk：20条、svBbv1Pavdk：20条、wcojb4TFT35：20条、ziup5kvtCCR：20条、zt1RVoi7PcG：17条。Full400尚未完成，以下仅是已导出回合的过程诊断。
 
-已核对1173个阶段的原生步数、终止STOP、实际轨迹及候选路径归属，全部完整，路径长度最大绝对差3.14272025e-06米。所有已完成回合均按记录顺序纳入，包括失败回合。
+已核对1191个阶段的原生步数、终止STOP、实际轨迹及候选路径归属，全部完整，路径长度最大绝对差3.14272025e-06米。所有已完成回合均按记录顺序纳入，包括失败回合。
 
 候选事件GT检查、逐动作路径及候选身份合并复用原有固定分析组件；逐快照核对场景参数、交叉拟合分组及文件SHA。没有修改正在运行场景的完成状态，也没有生成正式400条结果。
 
@@ -393,6 +393,12 @@
 | zt1RVoi7PcG/0 | 1/1/1 | 302 | true |
 | zt1RVoi7PcG/1 | 1/0/0 | 352 | true |
 | zt1RVoi7PcG/10 | 0/0/0 | 1500 | true |
+| zt1RVoi7PcG/11 | 1/0/1 | 457 | true |
+| zt1RVoi7PcG/12 | 0/1/0 | 696 | true |
+| zt1RVoi7PcG/13 | 1/0/1 | 240 | true |
+| zt1RVoi7PcG/14 | 0/0/0 | 911 | true |
+| zt1RVoi7PcG/15 | 0/0/1 | 598 | true |
+| zt1RVoi7PcG/16 | 0/1/1 | 129 | true |
 | zt1RVoi7PcG/2 | 0/0/0 | 1500 | true |
 | zt1RVoi7PcG/3 | 0/1/0 | 727 | true |
 | zt1RVoi7PcG/4 | 0/1/0 | 805 | true |
