@@ -1,8 +1,8 @@
 # Full400已完成回合的过程复核
 
-此快照核查已导出完整原生指标的143/400条回合，覆盖4ok3usBNeis：20条、5cdEh9F2hJL：20条、6s7QHgap2fW：20条、DYehNKdT76V：20条、Dd4bFSTQ8gi：20条、Nfvxx8J5NCo：20条、QaLdnwvtxbs：20条、TEEsavR23oF：3条。Full400尚未完成，以下仅是已导出回合的过程诊断。
+此快照核查已导出完整原生指标的146/400条回合，覆盖4ok3usBNeis：20条、5cdEh9F2hJL：20条、6s7QHgap2fW：20条、DYehNKdT76V：20条、Dd4bFSTQ8gi：20条、Nfvxx8J5NCo：20条、QaLdnwvtxbs：20条、TEEsavR23oF：5条、XB4GS9ShBRE：1条。Full400尚未完成，以下仅是已导出回合的过程诊断。
 
-已核对429个阶段的原生步数、终止STOP、实际轨迹及候选路径归属，全部完整，路径长度最大绝对差2.41422605e-06米。所有已完成回合均按记录顺序纳入，包括失败回合。
+已核对438个阶段的原生步数、终止STOP、实际轨迹及候选路径归属，全部完整，路径长度最大绝对差2.41422605e-06米。所有已完成回合均按记录顺序纳入，包括失败回合。
 
 候选事件GT检查、逐动作路径及候选身份合并复用原有固定分析组件；逐快照核对场景参数、交叉拟合分组及文件SHA。没有修改正在运行场景的完成状态，也没有生成正式400条结果。
 
@@ -151,6 +151,9 @@
 | TEEsavR23oF/0 | 1/0/0 | 1437 | true |
 | TEEsavR23oF/1 | 1/1/0 | 281 | true |
 | TEEsavR23oF/2 | 1/1/0 | 741 | true |
+| TEEsavR23oF/3 | 0/1/0 | 1081 | true |
+| TEEsavR23oF/4 | 0/1/1 | 482 | true |
+| XB4GS9ShBRE/0 | 0/0/0 | 1500 | true |
 
 [逐回合诊断与绑定](../diagnostics/completed-prefix/full/summary.json)。后续新增完整回合可增量复核；完成400条后仍需由原控制器做完整归一化及1200阶段核查。
 
