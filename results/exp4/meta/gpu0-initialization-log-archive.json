@@ -1,0 +1,49 @@
+{
+  "generated_at_utc": "2026-11-11T02:43:50.669398+00:00",
+  "scope": "User-withdrawn GPU0 initialization only; excluded from formal400; all original files retained",
+  "diagnostic_only": true,
+  "formal400_complete": false,
+  "n_completed_native_episodes": 0,
+  "scene_id": "cvZr5TUy5C5",
+  "native_run": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261111_103250_365991_exp4_full_exp4-full-a3-cvZr5TUy5C5",
+  "release_path": "meta/gpu0-withdrawal-a3.json",
+  "release_sha256": "b45146c25e4208d35dd592191a08216b0890edcb2ab9a3c8ebdafa41d95f3238",
+  "archive": "logs/native/resource_interruptions/full-cvZr5TUy5C5-gpu0-initialization.tar.gz",
+  "archive_sha256": "874b1223ebb848255819edfcc92c58e4452840130fda0329f2c0a9a06f5784ba",
+  "archive_bytes": 7388,
+  "raw_bytes": 66598,
+  "files": [
+    {
+      "path": "launch.json",
+      "bytes": 13302,
+      "sha256": "c74f4f7dd10075958be6ffe309ae977bcb78b44421daa3508ce6effac8d76603"
+    },
+    {
+      "path": "mapping_environment.json",
+      "bytes": 20719,
+      "sha256": "cd92ee9d9aeff23f25b1a38451403e38c4409be87e7da22fd179628b50ee4e91"
+    },
+    {
+      "path": "navigation_environment_10.json",
+      "bytes": 30668,
+      "sha256": "47c5414d4786a02badf9429cdd4f0a62616a26622d2987ed5fcfa86a51a3bd0e"
+    },
+    {
+      "path": "source_snapshot.json",
+      "bytes": 1803,
+      "sha256": "1a1130dfce609af5bee87f0a9fda34bd1daf33cc1beea1411753993a6af6a3cf"
+    },
+    {
+      "path": "status.json",
+      "bytes": 106,
+      "sha256": "20f8e3e2adb7412757967ddd47fbb5274420258e75a8c4229923a267cb59cfaa"
+    }
+  ],
+  "all_round_trip_sha256_match": true,
+  "source_sha256": "e6958dee8fa0ab07159b54bc395b7a981b4abceed8724530e3f426e1ab0ec472",
+  "native_source_entries": 161,
+  "source_and_parameters_unchanged": true,
+  "parameter_sha256": "e1d75f3c9503c7439467748fc97be6ae2ad450c429f40dc7235b1564ff7852ae",
+  "native_workers_signaled": false,
+  "excluded": "Images, model/map files, private runtime YAML and raw terminal output; originals remain on server"
+}
