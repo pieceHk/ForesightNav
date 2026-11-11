@@ -68,3 +68,9 @@ GPU3随后运行p53SfW6mjZe，GPU1运行q3zU7Yy5E5s。17:08的[启动审计](../
 17:15的[CPU采样](../diagnostics/resource-context/20261111T091548330767Z-cpu-pressure.json)中，load1降至341.5，最大外部用户采样占用约97.4个逻辑核，CPU some PSI avg10仍为83.68%。load和等待压力反映不同方面，不能仅据load下降判断拥堵解除。后续比较保留本段完整结果、规划时延及资源阶段记录，完成时间继续依据实际吞吐更新。
 
 18:34的[CPU采样](../diagnostics/resource-context/20261111T103446803764Z-cpu-pressure.json)记录到load1为542.95、CPU some PSI avg10为57.03%，最大外部用户在该次采样中占用约175.3个逻辑核。这些是主机及全用户层面的离散统计，不用于判断某一任务组的线程限制是否已生效；完整原生结果与规划时延继续保留。
+
+18:54:43，mv2HUxq3B53完成固定20条回合，当前控制器通过其持有的subprocess.Popen.poll取得退出码0。18:57的[队列快照](../diagnostics/resource-context/20261111T105734168023Z-shared-queue.json)中，GPU2已经没有本实验计算进程，但外部compute占用8280 MiB、空闲36354 MiB，未满足既定启动门槛，下一场景等待；GPU1、3继续运行。
+
+19:11的[队列复查](../diagnostics/resource-context/20261111T111139683407Z-shared-queue.json)确认GPU2已领取qyAac8rV8Zk，三张授权卡均有两个本实验计算进程，没有外部compute进程或空闲槽位等待。启动门槛、原生源码、冻结参数和任务身份均未改变。[启动审计](../diagnostics/full/parallel-scene-launch-audits/20261111T111149097034Z.json)已覆盖16个场景的320条固定身份；[环境索引](../diagnostics/environment-index/20261111T111158217842Z.json)核对20条冒烟和16个Full场景的双角色记录，剩余4个场景仍待启动。
+
+19:12的[CPU采样](../diagnostics/resource-context/20261111T111208325531Z-cpu-pressure.json)中，load1为10.73，CPU some PSI avg10、avg60均为0，最大外部用户采样占用约0.027个逻辑核。此前协调的进程组在本次只读采样中已不存在，主机等待压力明显缓解；采样没有核实具体的线程限制操作或任务结束原因。本次资源恢复与用户协调回复分别记录，不据此作因果归因。所有原生回合和规划时延仍完整保留，本实验未向外部任务发送信号，GPU0继续保留给用户。

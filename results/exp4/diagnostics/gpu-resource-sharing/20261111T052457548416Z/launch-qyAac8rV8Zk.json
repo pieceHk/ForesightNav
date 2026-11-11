@@ -1,0 +1,390 @@
+{
+  "scene": "qyAac8rV8Zk",
+  "identities": [
+    {
+      "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+      "scene_id": "qyAac8rV8Zk",
+      "runtime_episode_id": "0",
+      "source_episode_ids": [
+        "44",
+        "97",
+        "45"
+      ],
+      "ordered_categories": [
+        "bed",
+        "tv",
+        "toilet"
+      ]
+    },
+    {
+      "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+      "scene_id": "qyAac8rV8Zk",
+      "runtime_episode_id": "1",
+      "source_episode_ids": [
+        "64",
+        "86",
+        "47"
+      ],
+      "ordered_categories": [
+        "couch",
+        "bed",
+        "tv"
+      ]
+    },
+    {
+      "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+      "scene_id": "qyAac8rV8Zk",
+      "runtime_episode_id": "2",
+      "source_episode_ids": [
+        "36",
+        "42",
+        "41"
+      ],
+      "ordered_categories": [
+        "toilet",
+        "bed",
+        "tv"
+      ]
+    },
+    {
+      "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+      "scene_id": "qyAac8rV8Zk",
+      "runtime_episode_id": "3",
+      "source_episode_ids": [
+        "75",
+        "84",
+        "82"
+      ],
+      "ordered_categories": [
+        "tv",
+        "bed",
+        "chair"
+      ]
+    },
+    {
+      "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+      "scene_id": "qyAac8rV8Zk",
+      "runtime_episode_id": "4",
+      "source_episode_ids": [
+        "90",
+        "72",
+        "87"
+      ],
+      "ordered_categories": [
+        "chair",
+        "toilet",
+        "tv"
+      ]
+    },
+    {
+      "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+      "scene_id": "qyAac8rV8Zk",
+      "runtime_episode_id": "5",
+      "source_episode_ids": [
+        "63",
+        "62",
+        "56"
+      ],
+      "ordered_categories": [
+        "tv",
+        "couch",
+        "bed"
+      ]
+    },
+    {
+      "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+      "scene_id": "qyAac8rV8Zk",
+      "runtime_episode_id": "6",
+      "source_episode_ids": [
+        "93",
+        "54",
+        "91"
+      ],
+      "ordered_categories": [
+        "tv",
+        "couch",
+        "toilet"
+      ]
+    },
+    {
+      "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+      "scene_id": "qyAac8rV8Zk",
+      "runtime_episode_id": "7",
+      "source_episode_ids": [
+        "65",
+        "70",
+        "59"
+      ],
+      "ordered_categories": [
+        "tv",
+        "couch",
+        "chair"
+      ]
+    },
+    {
+      "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+      "scene_id": "qyAac8rV8Zk",
+      "runtime_episode_id": "8",
+      "source_episode_ids": [
+        "98",
+        "68",
+        "0"
+      ],
+      "ordered_categories": [
+        "bed",
+        "toilet",
+        "tv"
+      ]
+    },
+    {
+      "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+      "scene_id": "qyAac8rV8Zk",
+      "runtime_episode_id": "9",
+      "source_episode_ids": [
+        "77",
+        "58",
+        "88"
+      ],
+      "ordered_categories": [
+        "chair",
+        "toilet",
+        "chair"
+      ]
+    },
+    {
+      "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+      "scene_id": "qyAac8rV8Zk",
+      "runtime_episode_id": "10",
+      "source_episode_ids": [
+        "25",
+        "20",
+        "79"
+      ],
+      "ordered_categories": [
+        "couch",
+        "chair",
+        "bed"
+      ]
+    },
+    {
+      "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+      "scene_id": "qyAac8rV8Zk",
+      "runtime_episode_id": "11",
+      "source_episode_ids": [
+        "73",
+        "89",
+        "80"
+      ],
+      "ordered_categories": [
+        "bed",
+        "chair",
+        "tv"
+      ]
+    },
+    {
+      "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+      "scene_id": "qyAac8rV8Zk",
+      "runtime_episode_id": "12",
+      "source_episode_ids": [
+        "55",
+        "35",
+        "61"
+      ],
+      "ordered_categories": [
+        "tv",
+        "couch",
+        "bed"
+      ]
+    },
+    {
+      "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+      "scene_id": "qyAac8rV8Zk",
+      "runtime_episode_id": "13",
+      "source_episode_ids": [
+        "43",
+        "94",
+        "28"
+      ],
+      "ordered_categories": [
+        "toilet",
+        "bed",
+        "chair"
+      ]
+    },
+    {
+      "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+      "scene_id": "qyAac8rV8Zk",
+      "runtime_episode_id": "14",
+      "source_episode_ids": [
+        "76",
+        "49",
+        "74"
+      ],
+      "ordered_categories": [
+        "toilet",
+        "bed",
+        "tv"
+      ]
+    },
+    {
+      "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+      "scene_id": "qyAac8rV8Zk",
+      "runtime_episode_id": "15",
+      "source_episode_ids": [
+        "96",
+        "67",
+        "19"
+      ],
+      "ordered_categories": [
+        "chair",
+        "toilet",
+        "chair"
+      ]
+    },
+    {
+      "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+      "scene_id": "qyAac8rV8Zk",
+      "runtime_episode_id": "16",
+      "source_episode_ids": [
+        "53",
+        "24",
+        "66"
+      ],
+      "ordered_categories": [
+        "toilet",
+        "couch",
+        "toilet"
+      ]
+    },
+    {
+      "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+      "scene_id": "qyAac8rV8Zk",
+      "runtime_episode_id": "17",
+      "source_episode_ids": [
+        "81",
+        "83",
+        "95"
+      ],
+      "ordered_categories": [
+        "couch",
+        "tv",
+        "bed"
+      ]
+    },
+    {
+      "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+      "scene_id": "qyAac8rV8Zk",
+      "runtime_episode_id": "18",
+      "source_episode_ids": [
+        "60",
+        "85",
+        "71"
+      ],
+      "ordered_categories": [
+        "bed",
+        "couch",
+        "chair"
+      ]
+    },
+    {
+      "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+      "scene_id": "qyAac8rV8Zk",
+      "runtime_episode_id": "19",
+      "source_episode_ids": [
+        "52",
+        "78",
+        "92"
+      ],
+      "ordered_categories": [
+        "chair",
+        "toilet",
+        "couch"
+      ]
+    }
+  ],
+  "gpu": 2,
+  "pid": 911939,
+  "pid_start_ticks": "20315702",
+  "log": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/logs/evaluation-full-a3-qyAac8rV8Zk.controller.log",
+  "command": [
+    "/nvme/khy/conda_envs/pbsp/navigation/bin/python",
+    "/nvme/khy/ForesightNav_exp4_depthfix/run.py",
+    "--config",
+    "configs/experiments/exp4_full.yaml",
+    "--runtime",
+    "runtime.exp4.local.yaml",
+    "--gpus",
+    "2,2",
+    "--scene",
+    "qyAac8rV8Zk",
+    "--tag",
+    "exp4-full-a3-qyAac8rV8Zk"
+  ],
+  "status": "running",
+  "at_utc": "2026-11-11T11:00:39.792498+00:00",
+  "gpu_inventory_before_launch": {
+    "checked_at_utc": "2026-11-11T11:00:39.783896+00:00",
+    "gpus": [
+      {
+        "index": "1",
+        "uuid": "GPU-6f6d0a9f-b84c-a94d-37ee-1ce29f66ba1f",
+        "name": "NVIDIA A40",
+        "memory.total": "46068",
+        "memory.free": "22127"
+      },
+      {
+        "index": "2",
+        "uuid": "GPU-e578717e-9e11-1464-269b-d5a17e564c8a",
+        "name": "NVIDIA A40",
+        "memory.total": "46068",
+        "memory.free": "43110"
+      },
+      {
+        "index": "3",
+        "uuid": "GPU-e345e195-e565-805c-b913-dc9a023ef37d",
+        "name": "NVIDIA A40",
+        "memory.total": "46068",
+        "memory.free": "20806"
+      }
+    ],
+    "compute_apps": [
+      {
+        "gpu_uuid": "GPU-6f6d0a9f-b84c-a94d-37ee-1ce29f66ba1f",
+        "used_gpu_memory": "2560"
+      },
+      {
+        "gpu_uuid": "GPU-6f6d0a9f-b84c-a94d-37ee-1ce29f66ba1f",
+        "used_gpu_memory": "16167"
+      },
+      {
+        "gpu_uuid": "GPU-6f6d0a9f-b84c-a94d-37ee-1ce29f66ba1f",
+        "used_gpu_memory": "2070"
+      },
+      {
+        "gpu_uuid": "GPU-6f6d0a9f-b84c-a94d-37ee-1ce29f66ba1f",
+        "used_gpu_memory": "2070"
+      },
+      {
+        "gpu_uuid": "GPU-e578717e-9e11-1464-269b-d5a17e564c8a",
+        "used_gpu_memory": "2070"
+      },
+      {
+        "gpu_uuid": "GPU-e345e195-e565-805c-b913-dc9a023ef37d",
+        "used_gpu_memory": "2560"
+      },
+      {
+        "gpu_uuid": "GPU-e345e195-e565-805c-b913-dc9a023ef37d",
+        "used_gpu_memory": "17393"
+      },
+      {
+        "gpu_uuid": "GPU-e345e195-e565-805c-b913-dc9a023ef37d",
+        "used_gpu_memory": "2070"
+      },
+      {
+        "gpu_uuid": "GPU-e345e195-e565-805c-b913-dc9a023ef37d",
+        "used_gpu_memory": "2070"
+      }
+    ],
+    "external_usernames_and_PIDs_omitted": true
+  }
+}
