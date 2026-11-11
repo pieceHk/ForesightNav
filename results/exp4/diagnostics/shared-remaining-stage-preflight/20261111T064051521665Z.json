@@ -1,0 +1,373 @@
+{
+  "checked_at_utc": "2026-11-11T06:40:54.634853+00:00",
+  "checks": [
+    {
+      "stage": "nearest",
+      "exit_code": 0,
+      "actual_readiness": {
+        "checked_at_utc": "2026-11-11T06:40:52.742560+00:00",
+        "stage": "nearest",
+        "ready": false,
+        "reasons": [
+          "The preceding evaluation stage is not complete",
+          "No authorized GPU meets the bounded sharing headroom limits"
+        ],
+        "allowed_gpus": [
+          1,
+          2,
+          3
+        ],
+        "eligible_gpus_at_check": [],
+        "gpu_memory_policy": {
+          "min_free_mib": 38912,
+          "max_existing_compute_mib": 8192
+        },
+        "gpu_inventory": {
+          "checked_at_utc": "2026-11-11T06:40:52.741908+00:00",
+          "gpus": [
+            {
+              "index": "1",
+              "uuid": "GPU-6f6d0a9f-b84c-a94d-37ee-1ce29f66ba1f",
+              "name": "NVIDIA A40",
+              "memory.total": "46068",
+              "memory.free": "21551"
+            },
+            {
+              "index": "2",
+              "uuid": "GPU-e578717e-9e11-1464-269b-d5a17e564c8a",
+              "name": "NVIDIA A40",
+              "memory.total": "46068",
+              "memory.free": "21227"
+            },
+            {
+              "index": "3",
+              "uuid": "GPU-e345e195-e565-805c-b913-dc9a023ef37d",
+              "name": "NVIDIA A40",
+              "memory.total": "46068",
+              "memory.free": "21947"
+            }
+          ],
+          "compute_apps": [
+            {
+              "gpu_uuid": "GPU-6f6d0a9f-b84c-a94d-37ee-1ce29f66ba1f",
+              "used_gpu_memory": "3518"
+            },
+            {
+              "gpu_uuid": "GPU-6f6d0a9f-b84c-a94d-37ee-1ce29f66ba1f",
+              "used_gpu_memory": "16069"
+            },
+            {
+              "gpu_uuid": "GPU-6f6d0a9f-b84c-a94d-37ee-1ce29f66ba1f",
+              "used_gpu_memory": "2008"
+            },
+            {
+              "gpu_uuid": "GPU-6f6d0a9f-b84c-a94d-37ee-1ce29f66ba1f",
+              "used_gpu_memory": "2008"
+            },
+            {
+              "gpu_uuid": "GPU-e578717e-9e11-1464-269b-d5a17e564c8a",
+              "used_gpu_memory": "2008"
+            },
+            {
+              "gpu_uuid": "GPU-e578717e-9e11-1464-269b-d5a17e564c8a",
+              "used_gpu_memory": "2008"
+            },
+            {
+              "gpu_uuid": "GPU-e578717e-9e11-1464-269b-d5a17e564c8a",
+              "used_gpu_memory": "3644"
+            },
+            {
+              "gpu_uuid": "GPU-e578717e-9e11-1464-269b-d5a17e564c8a",
+              "used_gpu_memory": "16269"
+            },
+            {
+              "gpu_uuid": "GPU-e345e195-e565-805c-b913-dc9a023ef37d",
+              "used_gpu_memory": "2564"
+            },
+            {
+              "gpu_uuid": "GPU-e345e195-e565-805c-b913-dc9a023ef37d",
+              "used_gpu_memory": "16537"
+            },
+            {
+              "gpu_uuid": "GPU-e345e195-e565-805c-b913-dc9a023ef37d",
+              "used_gpu_memory": "2008"
+            },
+            {
+              "gpu_uuid": "GPU-e345e195-e565-805c-b913-dc9a023ef37d",
+              "used_gpu_memory": "2008"
+            }
+          ],
+          "external_usernames_and_PIDs_omitted": true
+        },
+        "scenes": 20,
+        "episodes": 400,
+        "adopt_existing_full": false,
+        "native_workers_started": false,
+        "native_source_entries": 161,
+        "source_sha256": "e4f9b37823c4ccfc9a884ae496bf044133f6d12a4582f7bf30d20ff5ca779eb4",
+        "base_controller_sha256": "d238350a2733b56d258e774e5ca4f1537f09818cd34a313a638b9ec483c0b82f",
+        "parameter_sha256": "e1d75f3c9503c7439467748fc97be6ae2ad450c429f40dc7235b1564ff7852ae",
+        "output_free_bytes": 1057938735104
+      },
+      "predecessor_gate_denial": "The preceding evaluation stage is not complete"
+    },
+    {
+      "stage": "myopic",
+      "exit_code": 0,
+      "actual_readiness": {
+        "checked_at_utc": "2026-11-11T06:40:53.847461+00:00",
+        "stage": "myopic",
+        "ready": false,
+        "reasons": [
+          "Missing checkpoint artifact: /nvme/khy/ForesightNav_exp4_depthfix/results/exp4/meta/evaluation-nearest-runs.json",
+          "No authorized GPU meets the bounded sharing headroom limits",
+          "Predecessor observer does not match the fixed stage order"
+        ],
+        "allowed_gpus": [
+          1,
+          2,
+          3
+        ],
+        "eligible_gpus_at_check": [],
+        "gpu_memory_policy": {
+          "min_free_mib": 38912,
+          "max_existing_compute_mib": 8192
+        },
+        "gpu_inventory": {
+          "checked_at_utc": "2026-11-11T06:40:53.846993+00:00",
+          "gpus": [
+            {
+              "index": "1",
+              "uuid": "GPU-6f6d0a9f-b84c-a94d-37ee-1ce29f66ba1f",
+              "name": "NVIDIA A40",
+              "memory.total": "46068",
+              "memory.free": "21269"
+            },
+            {
+              "index": "2",
+              "uuid": "GPU-e578717e-9e11-1464-269b-d5a17e564c8a",
+              "name": "NVIDIA A40",
+              "memory.total": "46068",
+              "memory.free": "20867"
+            },
+            {
+              "index": "3",
+              "uuid": "GPU-e345e195-e565-805c-b913-dc9a023ef37d",
+              "name": "NVIDIA A40",
+              "memory.total": "46068",
+              "memory.free": "21949"
+            }
+          ],
+          "compute_apps": [
+            {
+              "gpu_uuid": "GPU-6f6d0a9f-b84c-a94d-37ee-1ce29f66ba1f",
+              "used_gpu_memory": "3798"
+            },
+            {
+              "gpu_uuid": "GPU-6f6d0a9f-b84c-a94d-37ee-1ce29f66ba1f",
+              "used_gpu_memory": "16071"
+            },
+            {
+              "gpu_uuid": "GPU-6f6d0a9f-b84c-a94d-37ee-1ce29f66ba1f",
+              "used_gpu_memory": "2008"
+            },
+            {
+              "gpu_uuid": "GPU-6f6d0a9f-b84c-a94d-37ee-1ce29f66ba1f",
+              "used_gpu_memory": "2008"
+            },
+            {
+              "gpu_uuid": "GPU-e578717e-9e11-1464-269b-d5a17e564c8a",
+              "used_gpu_memory": "2008"
+            },
+            {
+              "gpu_uuid": "GPU-e578717e-9e11-1464-269b-d5a17e564c8a",
+              "used_gpu_memory": "2008"
+            },
+            {
+              "gpu_uuid": "GPU-e578717e-9e11-1464-269b-d5a17e564c8a",
+              "used_gpu_memory": "4004"
+            },
+            {
+              "gpu_uuid": "GPU-e578717e-9e11-1464-269b-d5a17e564c8a",
+              "used_gpu_memory": "16269"
+            },
+            {
+              "gpu_uuid": "GPU-e345e195-e565-805c-b913-dc9a023ef37d",
+              "used_gpu_memory": "2564"
+            },
+            {
+              "gpu_uuid": "GPU-e345e195-e565-805c-b913-dc9a023ef37d",
+              "used_gpu_memory": "16537"
+            },
+            {
+              "gpu_uuid": "GPU-e345e195-e565-805c-b913-dc9a023ef37d",
+              "used_gpu_memory": "2008"
+            },
+            {
+              "gpu_uuid": "GPU-e345e195-e565-805c-b913-dc9a023ef37d",
+              "used_gpu_memory": "2008"
+            }
+          ],
+          "external_usernames_and_PIDs_omitted": true
+        },
+        "scenes": 20,
+        "episodes": 400,
+        "adopt_existing_full": false,
+        "native_workers_started": false,
+        "native_source_entries": 161,
+        "source_sha256": "e4f9b37823c4ccfc9a884ae496bf044133f6d12a4582f7bf30d20ff5ca779eb4",
+        "base_controller_sha256": "d238350a2733b56d258e774e5ca4f1537f09818cd34a313a638b9ec483c0b82f",
+        "parameter_sha256": "e1d75f3c9503c7439467748fc97be6ae2ad450c429f40dc7235b1564ff7852ae",
+        "output_free_bytes": 1057938722816
+      },
+      "predecessor_gate_denial": "Missing checkpoint artifact: /nvme/khy/ForesightNav_exp4_depthfix/results/exp4/meta/evaluation-nearest-runs.json"
+    },
+    {
+      "stage": "suffix_only",
+      "exit_code": 0,
+      "actual_readiness": {
+        "checked_at_utc": "2026-11-11T06:40:54.540199+00:00",
+        "stage": "suffix_only",
+        "ready": false,
+        "reasons": [
+          "Missing checkpoint artifact: /nvme/khy/ForesightNav_exp4_depthfix/results/exp4/meta/evaluation-myopic-runs.json",
+          "No authorized GPU meets the bounded sharing headroom limits",
+          "Predecessor observer does not match the fixed stage order"
+        ],
+        "allowed_gpus": [
+          1,
+          2,
+          3
+        ],
+        "eligible_gpus_at_check": [],
+        "gpu_memory_policy": {
+          "min_free_mib": 38912,
+          "max_existing_compute_mib": 8192
+        },
+        "gpu_inventory": {
+          "checked_at_utc": "2026-11-11T06:40:54.539711+00:00",
+          "gpus": [
+            {
+              "index": "1",
+              "uuid": "GPU-6f6d0a9f-b84c-a94d-37ee-1ce29f66ba1f",
+              "name": "NVIDIA A40",
+              "memory.total": "46068",
+              "memory.free": "21269"
+            },
+            {
+              "index": "2",
+              "uuid": "GPU-e578717e-9e11-1464-269b-d5a17e564c8a",
+              "name": "NVIDIA A40",
+              "memory.total": "46068",
+              "memory.free": "18781"
+            },
+            {
+              "index": "3",
+              "uuid": "GPU-e345e195-e565-805c-b913-dc9a023ef37d",
+              "name": "NVIDIA A40",
+              "memory.total": "46068",
+              "memory.free": "21947"
+            }
+          ],
+          "compute_apps": [
+            {
+              "gpu_uuid": "GPU-6f6d0a9f-b84c-a94d-37ee-1ce29f66ba1f",
+              "used_gpu_memory": "3798"
+            },
+            {
+              "gpu_uuid": "GPU-6f6d0a9f-b84c-a94d-37ee-1ce29f66ba1f",
+              "used_gpu_memory": "16071"
+            },
+            {
+              "gpu_uuid": "GPU-6f6d0a9f-b84c-a94d-37ee-1ce29f66ba1f",
+              "used_gpu_memory": "2008"
+            },
+            {
+              "gpu_uuid": "GPU-6f6d0a9f-b84c-a94d-37ee-1ce29f66ba1f",
+              "used_gpu_memory": "2008"
+            },
+            {
+              "gpu_uuid": "GPU-e578717e-9e11-1464-269b-d5a17e564c8a",
+              "used_gpu_memory": "2008"
+            },
+            {
+              "gpu_uuid": "GPU-e578717e-9e11-1464-269b-d5a17e564c8a",
+              "used_gpu_memory": "2008"
+            },
+            {
+              "gpu_uuid": "GPU-e578717e-9e11-1464-269b-d5a17e564c8a",
+              "used_gpu_memory": "6112"
+            },
+            {
+              "gpu_uuid": "GPU-e578717e-9e11-1464-269b-d5a17e564c8a",
+              "used_gpu_memory": "16267"
+            },
+            {
+              "gpu_uuid": "GPU-e345e195-e565-805c-b913-dc9a023ef37d",
+              "used_gpu_memory": "2564"
+            },
+            {
+              "gpu_uuid": "GPU-e345e195-e565-805c-b913-dc9a023ef37d",
+              "used_gpu_memory": "16539"
+            },
+            {
+              "gpu_uuid": "GPU-e345e195-e565-805c-b913-dc9a023ef37d",
+              "used_gpu_memory": "2008"
+            },
+            {
+              "gpu_uuid": "GPU-e345e195-e565-805c-b913-dc9a023ef37d",
+              "used_gpu_memory": "2008"
+            }
+          ],
+          "external_usernames_and_PIDs_omitted": true
+        },
+        "scenes": 20,
+        "episodes": 400,
+        "adopt_existing_full": false,
+        "native_workers_started": false,
+        "native_source_entries": 161,
+        "source_sha256": "e4f9b37823c4ccfc9a884ae496bf044133f6d12a4582f7bf30d20ff5ca779eb4",
+        "base_controller_sha256": "d238350a2733b56d258e774e5ca4f1537f09818cd34a313a638b9ec483c0b82f",
+        "parameter_sha256": "e1d75f3c9503c7439467748fc97be6ae2ad450c429f40dc7235b1564ff7852ae",
+        "output_free_bytes": 1057938722816
+      },
+      "predecessor_gate_denial": "Missing checkpoint artifact: /nvme/khy/ForesightNav_exp4_depthfix/results/exp4/meta/evaluation-myopic-runs.json"
+    }
+  ],
+  "artifacts_before": {
+    "meta/evaluation-nearest-runs.json": false,
+    "meta/evaluation-myopic-runs.json": false,
+    "meta/evaluation-suffix_only-runs.json": false,
+    "meta/nearest-start-a3.json": false,
+    "meta/myopic-start-a3.json": false,
+    "meta/suffix_only-start-a3.json": false,
+    "meta/nearest-shared-gpu-launch-a3.json": false,
+    "meta/myopic-shared-gpu-launch-a3.json": false,
+    "meta/suffix_only-shared-gpu-launch-a3.json": false,
+    "logs/evaluation-nearest-controller-a3.log": false,
+    "logs/evaluation-myopic-controller-a3.log": false,
+    "logs/evaluation-suffix_only-controller-a3.log": false
+  },
+  "artifacts_after": {
+    "meta/evaluation-nearest-runs.json": false,
+    "meta/evaluation-myopic-runs.json": false,
+    "meta/evaluation-suffix_only-runs.json": false,
+    "meta/nearest-start-a3.json": false,
+    "meta/myopic-start-a3.json": false,
+    "meta/suffix_only-start-a3.json": false,
+    "meta/nearest-shared-gpu-launch-a3.json": false,
+    "meta/myopic-shared-gpu-launch-a3.json": false,
+    "meta/suffix_only-shared-gpu-launch-a3.json": false,
+    "logs/evaluation-nearest-controller-a3.log": false,
+    "logs/evaluation-myopic-controller-a3.log": false,
+    "logs/evaluation-suffix_only-controller-a3.log": false
+  },
+  "native_workers_launched": false,
+  "source_and_parameters_unchanged": true,
+  "controller_sha256": "e4f9b37823c4ccfc9a884ae496bf044133f6d12a4582f7bf30d20ff5ca779eb4",
+  "parameter_sha256": "e1d75f3c9503c7439467748fc97be6ae2ad450c429f40dc7235b1564ff7852ae",
+  "source_sha256": "0bbbc0418fa3dc63041ab9a43f01ef2e0a4894682c52ff03dd29a665ae081b3a",
+  "log": "logs/shared-remaining-stage-preflight-20261111T064051521665Z.jsonl",
+  "log_sha256": "268b7ad5590f1675c1ce43fbd303ad78b1dd03eb808d6aee872229cd788baac7",
+  "scope": "Actual read-only CLI checks: Full incomplete and later predecessor artifacts absent; CP4-reported acceptance after Full400 is not certified by this preflight"
+}
