@@ -100,3 +100,5 @@ wcojb4TFT35的[首条完整回合](../diagnostics/completed-prefix/full/wcojb4TF
 23:04:02，qyAac8rV8Zk完成固定20条回合，当前控制器通过其持有的subprocess.Popen.poll记录退出码0；23:05只读复查核对completed状态、20条覆盖和原生status文件SHA。GPU2随后接续最后一个待启动场景zt1RVoi7PcG。23:07的[启动审计](../diagnostics/full/parallel-scene-launch-audits/20261111T150733113327Z.json)覆盖全部20个场景的400条固定身份、顺序类别、source ID、seed=1和运行源码，[环境索引](../diagnostics/environment-index/20261111T150733690782Z.json)覆盖20条冒烟及20个Full场景的双角色环境。最后一个场景已产生实际导航动作，首条完整回合GT仍待原生指标导出后核查。全部场景已启动不表示全部400条已完成；仍继续运行每条固定回合，全部失败结果与规划时延保留。仅使用GPU1、2、3，没有修改源码、冻结参数或停止其他场景。
 
 23:12的增量GT审计已覆盖最后一个场景zt1RVoi7PcG的[首条完整回合](../diagnostics/completed-prefix/full/zt1RVoi7PcG/0.json)：302步结束，三阶段成功向量1/1/1，原生STOP、实际路径及候选路径归属、身份和冻结参数核查均通过。Full过程审计至此覆盖360/400条、1080个原生阶段；其余回合继续在线运行。全程保留失败和预算耗尽结果，没有根据首条结果修改算法或参数。
+
+23:14的[匿名资源快照](../diagnostics/resource-context/20261111T151422002111Z-shared-queue.json)记录到GPU1有2008 MiB外部compute占用，GPU2、3为0；三个原生场景仍在运行，已无未启动场景或空槽等待。该离散记录未确定外部任务身份，也不用于推断其对速度或成功率的影响。原启动门槛、GPU1/2/3分配与冻结参数保持不变，未向外部任务发送信号，全部回合和时延继续保留。
