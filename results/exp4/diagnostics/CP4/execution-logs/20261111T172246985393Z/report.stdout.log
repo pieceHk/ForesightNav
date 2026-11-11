@@ -1,0 +1,24 @@
+{
+  "prepared_at_utc": "2026-11-11T17:23:07.088244+00:00",
+  "checkpoint": "CP4",
+  "n_episodes_by_variant": {
+    "full": 400
+  },
+  "input_sha256": {
+    "meta/evaluation-full-runs.json": "d0a022e32b27f184bfb59a9840286981fab2d3a5468ab44c61e26b0147543837",
+    "summary/full.json": "08029d53fd8cfed808354183723b7c7e5efff0f8e349911ceb2c95fcdf7fb57e",
+    "logs/full_episodes.jsonl": "b4e8a4f5337d17d374781db39247176c5e3c4a0d506ecfdedf8a52cad1a71879",
+    "logs/full_decisions.jsonl": "c965e89360cb4995fa84bd1d60c1d9472f0a5638e9bbc79032a1c392e9fd7e15",
+    "meta/CP2b_acceptance.json": "cff89cbe85abcb7ad2e43c440a4625a6e2b4d9f71c36d4fecaa0b0b016780e1f",
+    "meta/calibration.json": "e1d75f3c9503c7439467748fc97be6ae2ad450c429f40dc7235b1564ff7852ae",
+    "meta/3mon-identities.json": "98baa13355e8dd223eaefdeec7f48964bb23f44d2b02cdba4261add62b594ac1",
+    "code/report_full_evaluation.py": "e1f469f39722d45dc00523cfa7c25e1e98ca6bcf0a7f44f47449a4131df23306"
+  },
+  "output_sha256": {
+    "reports/CP4.md": "b08284dbc8b4e9d15ea73a3f204fde95f4095b6de9ec1633e6689e75a0c0d379"
+  },
+  "reported_in_chat": false,
+  "authorizes_next_stage": false,
+  "launches_workers": false,
+  "figures_require_visual_review": false
+}

@@ -1,0 +1,1 @@
+{"proof": "diagnostics/environment-index/20261111T172247016892Z.json", "env_path": "meta/env.txt", "env_sha256": "4e14069fdf655c2072630f101d5b039fcacee653db30a1f460f7c369d8fbd82c", "recorded_role_pairs_by_stage": {"smoke": 20, "full": 20, "nearest": 0, "myopic": 0, "suffix_only": 0}, "source_and_parameters_unchanged": true, "workers_or_native_states_modified": false}
