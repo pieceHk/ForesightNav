@@ -92,3 +92,5 @@ wcojb4TFT35的[首条完整回合](../diagnostics/completed-prefix/full/wcojb4TF
 21:22的[资源复查](../diagnostics/resource-context/20261111T132224311264Z-shared-queue.json)仍记录到三张授权卡各4个外部compute进程、8280 MiB占用，三个本实验场景都在运行，无空闲槽位等待。再次只读核查确认该外部组覆盖0至7号GPU，没有发送信号。已向用户提出协调减少GPU1、2、3共享占用的请求，现有实验继续；请求不视为已经释放显存，后续按实测资源决定领取。
 
 22:06的[资源复查](../diagnostics/resource-context/20261111T140602229390Z-shared-queue.json)确认GPU1、2、3的外部compute进程数及显存占用均为0，各卡仍有两个本实验计算进程，三个原生场景继续运行，没有空闲槽位等待资源。此前提出的共享显存协调请求尚未收到用户答复；本次仅确认请求后观察到资源释放，未核实具体协调操作或释放原因。原启动门槛、冻结参数和GPU授权范围保持不变，本实验未向外部进程发送信号。所有回合和规划时延继续保留。
+
+22:35:10，svBbv1Pavdk完成固定20条回合，当前控制器通过其持有的subprocess.Popen.poll记录退出码0；22:36的只读复查核对completed状态、20条身份覆盖及原生状态文件SHA。GPU3随后接续ziup5kvtCCR。22:37的[启动审计](../diagnostics/full/parallel-scene-launch-audits/20261111T143717155226Z.json)已核对19个已启动场景的380条固定身份、类别顺序、source ID、seed=1及源码，[环境索引](../diagnostics/environment-index/20261111T143717596752Z.json)覆盖20条冒烟和19个Full场景的双角色环境。新场景已开始产生实际导航动作，仅zt1RVoi7PcG尚未启动；新场景的首条完整回合GT审计仍待其原生指标导出后进行。原启动门槛、GPU1/2/3分配和冻结参数保持不变，未停止或重启其他原生场景。
