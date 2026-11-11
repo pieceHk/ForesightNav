@@ -1,35 +1,35 @@
 {
-  "started_at_utc": "2026-11-11T00:47:37.382023+00:00",
-  "completed_at_utc": "2026-11-11T00:47:49.594741+00:00",
+  "started_at_utc": "2026-11-11T01:15:23.761735+00:00",
+  "completed_at_utc": "2026-11-11T01:15:36.616145+00:00",
   "stage": "full",
   "diagnostic_only": true,
   "formal400_complete": false,
-  "completed_native_metric_records_checked": 158,
+  "completed_native_metric_records_checked": 163,
   "newly_audited": [
     {
       "scene": "TEEsavR23oF",
-      "episode": "10",
-      "steps": 589,
+      "episode": "12",
+      "steps": 1026,
       "success_vector": [
-        0,
         1,
-        1
+        0,
+        0
       ]
     },
     {
       "scene": "TEEsavR23oF",
-      "episode": "11",
-      "steps": 934,
+      "episode": "13",
+      "steps": 1500,
       "success_vector": [
-        1,
+        0,
         0,
         0
       ]
     },
     {
       "scene": "XB4GS9ShBRE",
-      "episode": "3",
-      "steps": 738,
+      "episode": "6",
+      "steps": 563,
       "success_vector": [
         0,
         1,
@@ -38,22 +38,22 @@
     },
     {
       "scene": "XB4GS9ShBRE",
-      "episode": "4",
-      "steps": 543,
+      "episode": "7",
+      "steps": 1134,
       "success_vector": [
-        0,
-        0,
-        1
+        1,
+        1,
+        0
       ]
     },
     {
       "scene": "XB4GS9ShBRE",
-      "episode": "5",
-      "steps": 345,
+      "episode": "8",
+      "steps": 1138,
       "success_vector": [
         0,
-        1,
-        1
+        0,
+        0
       ]
     }
   ],
@@ -65,12 +65,12 @@
     "Dd4bFSTQ8gi": 20,
     "Nfvxx8J5NCo": 20,
     "QaLdnwvtxbs": 20,
-    "TEEsavR23oF": 12,
-    "XB4GS9ShBRE": 6
+    "TEEsavR23oF": 14,
+    "XB4GS9ShBRE": 9
   },
-  "native_stage_path_checks": 474,
+  "native_stage_path_checks": 489,
   "all_paths_complete": true,
-  "max_path_error_m": 2.414226045743817e-06,
+  "max_path_error_m": 3.1427202529243914e-06,
   "source_and_parameters_unchanged": true,
   "native_run_statuses_modified": false,
   "bindings": {
