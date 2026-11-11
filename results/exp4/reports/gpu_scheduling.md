@@ -96,3 +96,7 @@ wcojb4TFT35的[首条完整回合](../diagnostics/completed-prefix/full/wcojb4TF
 22:35:10，svBbv1Pavdk完成固定20条回合，当前控制器通过其持有的subprocess.Popen.poll记录退出码0；22:36的只读复查核对completed状态、20条身份覆盖及原生状态文件SHA。GPU3随后接续ziup5kvtCCR。22:37的[启动审计](../diagnostics/full/parallel-scene-launch-audits/20261111T143717155226Z.json)已核对19个已启动场景的380条固定身份、类别顺序、source ID、seed=1及源码，[环境索引](../diagnostics/environment-index/20261111T143717596752Z.json)覆盖20条冒烟和19个Full场景的双角色环境。新场景已开始产生实际导航动作，仅zt1RVoi7PcG尚未启动；新场景的首条完整回合GT审计仍待其原生指标导出后进行。原启动门槛、GPU1/2/3分配和冻结参数保持不变，未停止或重启其他原生场景。
 
 22:55的增量GT审计已覆盖新场景ziup5kvtCCR的[首条完整回合](../diagnostics/completed-prefix/full/ziup5kvtCCR/0.json)：830步结束，成功向量1/1/0；[第二条回合](../diagnostics/completed-prefix/full/ziup5kvtCCR/1.json)为662步、1/1/1。两条的三阶段原生STOP、实际路径、候选路径归属、身份和冻结参数均通过核查，首条的失败阶段照常保留。本次Full过程审计已达352/400条、1056个原生阶段，未修改运行源码、参数或重跑失败回合。
+
+23:04:02，qyAac8rV8Zk完成固定20条回合，当前控制器通过其持有的subprocess.Popen.poll记录退出码0；23:05只读复查核对completed状态、20条覆盖和原生status文件SHA。GPU2随后接续最后一个待启动场景zt1RVoi7PcG。23:07的[启动审计](../diagnostics/full/parallel-scene-launch-audits/20261111T150733113327Z.json)覆盖全部20个场景的400条固定身份、顺序类别、source ID、seed=1和运行源码，[环境索引](../diagnostics/environment-index/20261111T150733690782Z.json)覆盖20条冒烟及20个Full场景的双角色环境。最后一个场景已产生实际导航动作，首条完整回合GT仍待原生指标导出后核查。全部场景已启动不表示全部400条已完成；仍继续运行每条固定回合，全部失败结果与规划时延保留。仅使用GPU1、2、3，没有修改源码、冻结参数或停止其他场景。
+
+23:12的增量GT审计已覆盖最后一个场景zt1RVoi7PcG的[首条完整回合](../diagnostics/completed-prefix/full/zt1RVoi7PcG/0.json)：302步结束，三阶段成功向量1/1/1，原生STOP、实际路径及候选路径归属、身份和冻结参数核查均通过。Full过程审计至此覆盖360/400条、1080个原生阶段；其余回合继续在线运行。全程保留失败和预算耗尽结果，没有根据首条结果修改算法或参数。
