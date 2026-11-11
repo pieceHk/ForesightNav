@@ -1,0 +1,82 @@
+{
+  "observed_at_utc": "2026-11-11T05:06:06.823386+00:00",
+  "audit_started_at_utc": "2026-11-11T05:06:06.422974+00:00",
+  "stage": "full",
+  "diagnostic_only": true,
+  "formal400_complete": false,
+  "allowed_gpus": [
+    1,
+    2,
+    3
+  ],
+  "gpu_context": [
+    {
+      "gpu": 1,
+      "free_mib": 17990,
+      "experiment_compute_processes": 2,
+      "external_compute_processes": 4,
+      "external_compute_memory_mib": 8032,
+      "has_active_scene": true,
+      "eligible_under_current_controller": false,
+      "guard_requires_no_compute_processes": true,
+      "guard_min_free_mib": 38912
+    },
+    {
+      "gpu": 2,
+      "free_mib": 36633,
+      "experiment_compute_processes": 0,
+      "external_compute_processes": 4,
+      "external_compute_memory_mib": 8032,
+      "has_active_scene": false,
+      "eligible_under_current_controller": false,
+      "guard_requires_no_compute_processes": true,
+      "guard_min_free_mib": 38912
+    },
+    {
+      "gpu": 3,
+      "free_mib": 17436,
+      "experiment_compute_processes": 2,
+      "external_compute_processes": 4,
+      "external_compute_memory_mib": 8032,
+      "has_active_scene": true,
+      "eligible_under_current_controller": false,
+      "guard_requires_no_compute_processes": true,
+      "guard_min_free_mib": 38912
+    }
+  ],
+  "active_scenes": [
+    {
+      "scene": "mL8ThkuaVTM",
+      "gpu": 1
+    },
+    {
+      "scene": "cvZr5TUy5C5",
+      "gpu": 3
+    }
+  ],
+  "completed_scenes": 10,
+  "pending_scenes": [
+    "mv2HUxq3B53",
+    "p53SfW6mjZe",
+    "q3zU7Yy5E5s",
+    "qyAac8rV8Zk",
+    "svBbv1Pavdk",
+    "wcojb4TFT35",
+    "ziup5kvtCCR",
+    "zt1RVoi7PcG"
+  ],
+  "idle_scene_slots_waiting_for_resources": [
+    2
+  ],
+  "controller_live": true,
+  "observer_live": true,
+  "source_and_parameters_unchanged": true,
+  "controller_sha256": "7ef409970ae9d2acce4acef94eb097ce8252ebe5aef8f377b3c59fbfab7b4b50",
+  "parameter_sha256": "e1d75f3c9503c7439467748fc97be6ae2ad450c429f40dc7235b1564ff7852ae",
+  "source_path": "code/audit_queue_resource_wait.py",
+  "source_sha256": "859d85566d4dab80a37d4cbf3304fe18b57236d3861463b3d77e091aa7834927",
+  "signals_sent": false,
+  "native_states_modified": false,
+  "external_usernames_and_PIDs_omitted": true,
+  "scope": "Discrete queue and GPU-guard observation; no launch, parameter change, or causal timing claim"
+}
