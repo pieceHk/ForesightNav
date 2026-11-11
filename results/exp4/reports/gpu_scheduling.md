@@ -86,3 +86,5 @@ GPU3随后运行p53SfW6mjZe，GPU1运行q3zU7Yy5E5s。17:08的[启动审计](../
 20:53的[队列快照](../diagnostics/resource-context/20261111T125313584802Z-shared-queue.json)记录到新的共享占用：GPU1、2、3各有4个外部compute进程、共8280 MiB，同时各保留两个本实验计算进程，没有空闲槽位等待资源。20:54的[CPU采样](../diagnostics/resource-context/20261111T125432058649Z-cpu-pressure.json)中，384个逻辑核上的load1为196.4，CPU some/full PSI的avg10、avg60、avg300均为0；最大外部用户采样占用约180个逻辑核。最高15个CPU进程同属一个父进程，每个11线程；该组采样与全用户统计分开报告。本时点未观察到CPU等待压力。
 
 现有场景继续运行，38 GiB空闲及不超过8 GiB已有compute占用的领取门槛保持原值。8280 MiB已超过后一门槛；后续如仍保持这项占用，空出的授权卡将等待资源。只读范围检查发现该外部进程组同时占用0至7号GPU，因而没有向该组或其worker发送停止信号。GPU0继续保留给用户，所有已完成回合和时延记录照常保留。
+
+wcojb4TFT35的[首条完整回合](../diagnostics/completed-prefix/full/wcojb4TFT35/0.json)随后以1500步结束，成功向量为0/0/0；三阶段路径、原生STOP、身份及冻结参数均通过记录核查。所有阶段保留，未以这条结果调整参数或重跑失败回合。
