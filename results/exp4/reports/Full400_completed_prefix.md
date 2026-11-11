@@ -1,8 +1,8 @@
 # Full400已完成回合的过程复核
 
-此快照核查已导出完整原生指标的317/400条回合，覆盖4ok3usBNeis：20条、5cdEh9F2hJL：20条、6s7QHgap2fW：20条、DYehNKdT76V：20条、Dd4bFSTQ8gi：20条、Nfvxx8J5NCo：20条、QaLdnwvtxbs：20条、TEEsavR23oF：20条、XB4GS9ShBRE：20条、bxsVRursffK：20条、mL8ThkuaVTM：20条、cvZr5TUy5C5：20条、mv2HUxq3B53：20条、p53SfW6mjZe：20条、q3zU7Yy5E5s：20条、qyAac8rV8Zk：10条、svBbv1Pavdk：6条、wcojb4TFT35：1条。Full400尚未完成，以下仅是已导出回合的过程诊断。
+此快照核查已导出完整原生指标的321/400条回合，覆盖4ok3usBNeis：20条、5cdEh9F2hJL：20条、6s7QHgap2fW：20条、DYehNKdT76V：20条、Dd4bFSTQ8gi：20条、Nfvxx8J5NCo：20条、QaLdnwvtxbs：20条、TEEsavR23oF：20条、XB4GS9ShBRE：20条、bxsVRursffK：20条、mL8ThkuaVTM：20条、cvZr5TUy5C5：20条、mv2HUxq3B53：20条、p53SfW6mjZe：20条、q3zU7Yy5E5s：20条、qyAac8rV8Zk：11条、svBbv1Pavdk：7条、wcojb4TFT35：3条。Full400尚未完成，以下仅是已导出回合的过程诊断。
 
-已核对951个阶段的原生步数、终止STOP、实际轨迹及候选路径归属，全部完整，路径长度最大绝对差3.14272025e-06米。所有已完成回合均按记录顺序纳入，包括失败回合。
+已核对963个阶段的原生步数、终止STOP、实际轨迹及候选路径归属，全部完整，路径长度最大绝对差3.14272025e-06米。所有已完成回合均按记录顺序纳入，包括失败回合。
 
 候选事件GT检查、逐动作路径及候选身份合并复用原有固定分析组件；逐快照核对场景参数、交叉拟合分组及文件SHA。没有修改正在运行场景的完成状态，也没有生成正式400条结果。
 
@@ -310,6 +310,7 @@
 | q3zU7Yy5E5s/9 | 0/0/1 | 1253 | true |
 | qyAac8rV8Zk/0 | 0/0/0 | 1500 | true |
 | qyAac8rV8Zk/1 | 0/0/0 | 1500 | true |
+| qyAac8rV8Zk/10 | 0/0/0 | 1500 | true |
 | qyAac8rV8Zk/2 | 0/0/0 | 1500 | true |
 | qyAac8rV8Zk/3 | 0/0/0 | 1500 | true |
 | qyAac8rV8Zk/4 | 1/0/0 | 821 | true |
@@ -324,7 +325,10 @@
 | svBbv1Pavdk/3 | 1/1/1 | 431 | true |
 | svBbv1Pavdk/4 | 1/1/1 | 262 | true |
 | svBbv1Pavdk/5 | 0/1/1 | 1500 | true |
+| svBbv1Pavdk/6 | 1/1/1 | 569 | true |
 | wcojb4TFT35/0 | 0/0/0 | 1500 | true |
+| wcojb4TFT35/1 | 0/1/0 | 701 | true |
+| wcojb4TFT35/2 | 1/1/0 | 397 | true |
 
 [逐回合诊断与绑定](../diagnostics/completed-prefix/full/summary.json)。后续新增完整回合可增量复核；完成400条后仍需由当前绑定的控制器做完整归一化及1200阶段核查。
 
