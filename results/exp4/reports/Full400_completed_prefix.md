@@ -1,8 +1,8 @@
 # Full400已完成回合的过程复核
 
-此快照核查已导出完整原生指标的328/400条回合，覆盖4ok3usBNeis：20条、5cdEh9F2hJL：20条、6s7QHgap2fW：20条、DYehNKdT76V：20条、Dd4bFSTQ8gi：20条、Nfvxx8J5NCo：20条、QaLdnwvtxbs：20条、TEEsavR23oF：20条、XB4GS9ShBRE：20条、bxsVRursffK：20条、mL8ThkuaVTM：20条、cvZr5TUy5C5：20条、mv2HUxq3B53：20条、p53SfW6mjZe：20条、q3zU7Yy5E5s：20条、qyAac8rV8Zk：13条、svBbv1Pavdk：11条、wcojb4TFT35：4条。Full400尚未完成，以下仅是已导出回合的过程诊断。
+此快照核查已导出完整原生指标的335/400条回合，覆盖4ok3usBNeis：20条、5cdEh9F2hJL：20条、6s7QHgap2fW：20条、DYehNKdT76V：20条、Dd4bFSTQ8gi：20条、Nfvxx8J5NCo：20条、QaLdnwvtxbs：20条、TEEsavR23oF：20条、XB4GS9ShBRE：20条、bxsVRursffK：20条、mL8ThkuaVTM：20条、cvZr5TUy5C5：20条、mv2HUxq3B53：20条、p53SfW6mjZe：20条、q3zU7Yy5E5s：20条、qyAac8rV8Zk：14条、svBbv1Pavdk：15条、wcojb4TFT35：6条。Full400尚未完成，以下仅是已导出回合的过程诊断。
 
-已核对984个阶段的原生步数、终止STOP、实际轨迹及候选路径归属，全部完整，路径长度最大绝对差3.14272025e-06米。所有已完成回合均按记录顺序纳入，包括失败回合。
+已核对1005个阶段的原生步数、终止STOP、实际轨迹及候选路径归属，全部完整，路径长度最大绝对差3.14272025e-06米。所有已完成回合均按记录顺序纳入，包括失败回合。
 
 候选事件GT检查、逐动作路径及候选身份合并复用原有固定分析组件；逐快照核对场景参数、交叉拟合分组及文件SHA。没有修改正在运行场景的完成状态，也没有生成正式400条结果。
 
@@ -313,6 +313,7 @@
 | qyAac8rV8Zk/10 | 0/0/0 | 1500 | true |
 | qyAac8rV8Zk/11 | 0/1/0 | 588 | true |
 | qyAac8rV8Zk/12 | 0/1/0 | 1033 | true |
+| qyAac8rV8Zk/13 | 0/0/1 | 1012 | true |
 | qyAac8rV8Zk/2 | 0/0/0 | 1500 | true |
 | qyAac8rV8Zk/3 | 0/0/0 | 1500 | true |
 | qyAac8rV8Zk/4 | 1/0/0 | 821 | true |
@@ -324,6 +325,10 @@
 | svBbv1Pavdk/0 | 0/0/0 | 1500 | true |
 | svBbv1Pavdk/1 | 1/0/0 | 574 | true |
 | svBbv1Pavdk/10 | 0/1/1 | 584 | true |
+| svBbv1Pavdk/11 | 1/1/1 | 306 | true |
+| svBbv1Pavdk/12 | 1/1/1 | 393 | true |
+| svBbv1Pavdk/13 | 1/1/1 | 402 | true |
+| svBbv1Pavdk/14 | 1/1/1 | 637 | true |
 | svBbv1Pavdk/2 | 0/1/1 | 634 | true |
 | svBbv1Pavdk/3 | 1/1/1 | 431 | true |
 | svBbv1Pavdk/4 | 1/1/1 | 262 | true |
@@ -336,6 +341,8 @@
 | wcojb4TFT35/1 | 0/1/0 | 701 | true |
 | wcojb4TFT35/2 | 1/1/0 | 397 | true |
 | wcojb4TFT35/3 | 0/1/1 | 371 | true |
+| wcojb4TFT35/4 | 1/0/0 | 1446 | true |
+| wcojb4TFT35/5 | 0/0/0 | 1500 | true |
 
 [逐回合诊断与绑定](../diagnostics/completed-prefix/full/summary.json)。后续新增完整回合可增量复核；完成400条后仍需由当前绑定的控制器做完整归一化及1200阶段核查。
 
