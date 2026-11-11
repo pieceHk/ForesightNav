@@ -48,3 +48,5 @@ GPU分配按meta/evaluation-gpu-policy.json限制为1、2、3。早期三卡控�
 上述CPU拥堵、GPU2等待及共享接续均属于本次Full的运行条件，后续CP4/CP5应随过程指标披露。规划耗时与回退率的变化不能单独归因于BLP；所有成功、失败、预算耗尽回合和时延尾值均按完整固定任务池保留。
 
 13:34的[环境索引](../diagnostics/environment-index/20261111T053402670639Z.json)已核对20条冒烟和13个已启动Full场景的mapping/navigation双角色记录，签名与验收环境一致，GPU分配和运行源码匹配。其余7个场景尚未启动，后续仍需刷新索引。
+
+13:50的[CPU跟进采样](../diagnostics/resource-context/20261111T055039585799Z-cpu-pressure.json)中，load1为2110.11、CPU some PSI avg10为82.15%，最大外部用户采样占用约367.9个逻辑核。三卡导航继续运行，CPU拥堵仍未解除；本次跟进没有修改实验或停止其他任务。
