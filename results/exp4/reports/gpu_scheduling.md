@@ -58,3 +58,11 @@ GPU分配按meta/evaluation-gpu-policy.json限制为1、2、3。早期三卡控�
 15:00的[CPU跟进采样](../diagnostics/resource-context/20261111T070002281685Z-cpu-pressure.json)仍记录到load1为1986.5、CPU some PSI avg10为77.44%；最大外部用户在1.337秒采样中占用约373.7个逻辑核。CPU最高的15个进程中有13个来自同一父进程，这13个进程各有194–257线程。该采样与全用户统计的范围不同，不能把后者全部归入这个父进程。同一时点的[GPU队列核查](../diagnostics/resource-context/20261111T070001699814Z-shared-queue.json)显示GPU1、2、3各有两个本实验计算进程和两个外部计算进程，外部占用各4016 MiB；三个本实验场景均在运行，没有空闲卡等待领取。两次查询均未发送信号或修改原生任务，GPU0继续保留给用户。
 
 15:58的[CPU采样](../diagnostics/resource-context/20261111T075846904195Z-cpu-pressure.json)中，load1为1516.85，CPU some PSI avg10为67.45%，最大外部用户仍占用约371.7个逻辑核。最高15个CPU进程中有9个同属一个父进程，各有194–257线程；仍分别报告这组采样与全用户统计。同期[GPU队列核查](../diagnostics/resource-context/20261111T075846042206Z-shared-queue.json)确认三个本实验场景均在运行。相比此前采样，负载和等待压力有所下降，但资源拥堵仍未解除；不据此推断用户已完成线程协调或恢复原定完成时间。
+
+16:57的[CPU采样](../diagnostics/resource-context/20261111T085727532421Z-cpu-pressure.json)记录到load1为936.21、CPU some PSI avg10为52.98%，最大外部用户采样占用约340.5个逻辑核。[同期队列快照](../diagnostics/resource-context/20261111T085726772376Z-shared-queue.json)中，GPU3已领取p53SfW6mjZe，空闲41058 MiB、已有外部compute占用4016 MiB，满足原有38 GiB空闲和不超过8 GiB已有compute的门槛；当时NVML尚未记录到新场景的计算进程。
+
+cvZr5TUy5C5和mL8ThkuaVTM均完成各自20条固定回合后正常退出，控制器分别于16:57:21和17:03:46捕获Linux wait status=0，再回收停止的CPU父进程704760、703335。[CV核查](../diagnostics/gpu-resource-sharing/20261111T052457548416Z/native-completion-audits/20261111T090843197451Z-cvZr5TUy5C5.json)和[ML核查](../diagnostics/gpu-resource-sharing/20261111T052457548416Z/native-completion-audits/20261111T091146708094Z-mL8ThkuaVTM.json)复核原生completed状态、20条身份、三目标计数、退出记录与父进程回收记录，并绑定当前共享调度源码和冻结参数。两次只读核查均未发送信号或修改原生状态。原/proc记录已随父进程回收，本次使用控制器此前捕获的记录，独立OS重读标记均为false。回合结束和进程退出码0不表示所有导航目标成功；失败阶段和预算耗尽结果照常保留。
+
+GPU3随后运行p53SfW6mjZe，GPU1运行q3zU7Yy5E5s。17:08的[启动审计](../diagnostics/full/parallel-scene-launch-audits/20261111T090843336198Z.json)核对15个已启动场景的300条身份、类别顺序、source ID、seed=1和运行源码；[环境索引](../diagnostics/environment-index/20261111T090843204115Z.json)核对20条冒烟和15个Full场景的双角色记录。同期直接查询已见两个新场景0号回合分别有507和314个实际导航动作。p53SfW6mjZe的[首条完整回合](../diagnostics/completed-prefix/full/p53SfW6mjZe/0.json)随后以787步结束，成功向量为1/1/1，三个阶段的路径、身份及冻结参数核查通过。其余5个场景仍按原顺序排队。
+
+17:15的[CPU采样](../diagnostics/resource-context/20261111T091548330767Z-cpu-pressure.json)中，load1降至341.5，最大外部用户采样占用约97.4个逻辑核，CPU some PSI avg10仍为83.68%。load和等待压力反映不同方面，不能仅据load下降判断拥堵解除。后续比较保留本段完整结果、规划时延及资源阶段记录，完成时间继续依据实际吞吐更新。

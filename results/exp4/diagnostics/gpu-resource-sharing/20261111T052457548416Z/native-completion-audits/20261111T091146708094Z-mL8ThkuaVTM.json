@@ -1,0 +1,47 @@
+{
+  "checked_at_utc": "2026-11-11T09:11:46.708094+00:00",
+  "stage": "full",
+  "diagnostic_only": true,
+  "formal400_complete": false,
+  "scene": "mL8ThkuaVTM",
+  "gpu": 1,
+  "scope": "Actual completed adopted scene, native coverage, controller-captured OS exit and CPU retirement; independent OS recheck availability stated separately",
+  "native_completion_audit": {
+    "completed_episodes": 20,
+    "identity_count": 20
+  },
+  "native_status_sha256": "f26cd3d67ff790208d0043a297865c938b526d534773e1e05f04d99693134c2f",
+  "native_returncode": 0,
+  "controller_recorded_OS_exit": {
+    "pid": 703343,
+    "start_ticks": "17268313",
+    "wait_status": 0,
+    "stat_sha256": "90fb85901da453c7d095f7d183d7d516ee12fed3c90ca75cfe169af55e6d3689",
+    "captured_at_utc": "2026-11-11T09:03:46.079344+00:00",
+    "source": "/proc/PID/stat field52; original parent stopped"
+  },
+  "independent_proc_stat_recheck_available": false,
+  "independent_recheck_reason": "Original launcher record no longer retained after original CPU parent retirement",
+  "retirement_path": "diagnostics/gpu-resource-sharing/20261111T052457548416Z/predecessor-retired-703335.json",
+  "retirement_sha256": "455526bba63159088c27ce0d4e4015f0e9a5de4d42e9b18f7723ae6c2233803e",
+  "retirement": {
+    "pid": 703335,
+    "start_ticks": "17268263",
+    "at_utc": "2026-11-11T09:03:46.199795+00:00",
+    "signal": "SIGKILL to stopped CPU controller only after all retained native children exited0; user-withdrawn GPU0 child already exited",
+    "native_workers_signaled": false
+  },
+  "original_parent_live_at_original_birth": false,
+  "native_source_entries": 161,
+  "parameter_sha256": "e1d75f3c9503c7439467748fc97be6ae2ad450c429f40dc7235b1564ff7852ae",
+  "reader_source": "code/audit_shared_adopted_completion.py",
+  "reader_sha256": "d0c001c8683535909671bc525b8a9363214b47e107ec39deea7930df08da7ac9",
+  "controller_sha256": "e4f9b37823c4ccfc9a884ae496bf044133f6d12a4582f7bf30d20ff5ca779eb4",
+  "plan": "diagnostics/gpu-resource-sharing/20261111T052457548416Z/plan.json",
+  "plan_sha256": "67005d3f8d2ab89ed55f8596038f044d75d32a0e4a46d89267c7de22127d1cea",
+  "controller_pid": 777321,
+  "controller_start_ticks": "18301502",
+  "source_and_parameters_unchanged": true,
+  "native_states_modified": false,
+  "signals_sent_by_this_reader": false
+}

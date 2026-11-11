@@ -1,0 +1,7 @@
+{
+  "pid": 704760,
+  "start_ticks": "17289141",
+  "at_utc": "2026-11-11T08:57:21.951446+00:00",
+  "signal": "SIGKILL to stopped CPU controller only after all retained native children exited0; user-withdrawn GPU0 child already exited",
+  "native_workers_signaled": false
+}

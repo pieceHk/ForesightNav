@@ -1,8 +1,8 @@
 # Full400已完成回合的过程复核
 
-此快照核查已导出完整原生指标的244/400条回合，覆盖4ok3usBNeis：20条、5cdEh9F2hJL：20条、6s7QHgap2fW：20条、DYehNKdT76V：20条、Dd4bFSTQ8gi：20条、Nfvxx8J5NCo：20条、QaLdnwvtxbs：20条、TEEsavR23oF：20条、XB4GS9ShBRE：20条、bxsVRursffK：20条、mL8ThkuaVTM：18条、cvZr5TUy5C5：19条、mv2HUxq3B53：7条。Full400尚未完成，以下仅是已导出回合的过程诊断。
+此快照核查已导出完整原生指标的252/400条回合，覆盖4ok3usBNeis：20条、5cdEh9F2hJL：20条、6s7QHgap2fW：20条、DYehNKdT76V：20条、Dd4bFSTQ8gi：20条、Nfvxx8J5NCo：20条、QaLdnwvtxbs：20条、TEEsavR23oF：20条、XB4GS9ShBRE：20条、bxsVRursffK：20条、mL8ThkuaVTM：20条、cvZr5TUy5C5：20条、mv2HUxq3B53：10条、p53SfW6mjZe：1条、q3zU7Yy5E5s：1条。Full400尚未完成，以下仅是已导出回合的过程诊断。
 
-已核对732个阶段的原生步数、终止STOP、实际轨迹及候选路径归属，全部完整，路径长度最大绝对差3.14272025e-06米。所有已完成回合均按记录顺序纳入，包括失败回合。
+已核对756个阶段的原生步数、终止STOP、实际轨迹及候选路径归属，全部完整，路径长度最大绝对差3.14272025e-06米。所有已完成回合均按记录顺序纳入，包括失败回合。
 
 候选事件GT检查、逐动作路径及候选身份合并复用原有固定分析组件；逐快照核对场景参数、交叉拟合分组及文件SHA。没有修改正在运行场景的完成状态，也没有生成正式400条结果。
 
@@ -219,6 +219,7 @@
 | cvZr5TUy5C5/16 | 0/1/1 | 645 | true |
 | cvZr5TUy5C5/17 | 1/0/1 | 762 | true |
 | cvZr5TUy5C5/18 | 0/1/0 | 564 | true |
+| cvZr5TUy5C5/19 | 0/0/0 | 918 | true |
 | cvZr5TUy5C5/2 | 0/1/0 | 220 | true |
 | cvZr5TUy5C5/3 | 0/0/1 | 664 | true |
 | cvZr5TUy5C5/4 | 1/0/0 | 1232 | true |
@@ -237,6 +238,8 @@
 | mL8ThkuaVTM/15 | 0/0/0 | 1500 | true |
 | mL8ThkuaVTM/16 | 1/1/0 | 928 | true |
 | mL8ThkuaVTM/17 | 0/0/0 | 1500 | true |
+| mL8ThkuaVTM/18 | 0/0/0 | 1500 | true |
+| mL8ThkuaVTM/19 | 0/0/0 | 1065 | true |
 | mL8ThkuaVTM/2 | 1/1/1 | 385 | true |
 | mL8ThkuaVTM/3 | 0/0/0 | 1500 | true |
 | mL8ThkuaVTM/4 | 0/1/0 | 563 | true |
@@ -252,6 +255,11 @@
 | mv2HUxq3B53/4 | 0/1/0 | 637 | true |
 | mv2HUxq3B53/5 | 0/0/1 | 846 | true |
 | mv2HUxq3B53/6 | 1/0/1 | 423 | true |
+| mv2HUxq3B53/7 | 1/1/0 | 828 | true |
+| mv2HUxq3B53/8 | 1/0/1 | 740 | true |
+| mv2HUxq3B53/9 | 0/1/1 | 583 | true |
+| p53SfW6mjZe/0 | 1/1/1 | 787 | true |
+| q3zU7Yy5E5s/0 | 0/0/0 | 1500 | true |
 
 [逐回合诊断与绑定](../diagnostics/completed-prefix/full/summary.json)。后续新增完整回合可增量复核；完成400条后仍需由当前绑定的控制器做完整归一化及1200阶段核查。
 
@@ -261,10 +269,10 @@ CP4/CP5报告生成器已补充固定任务池的历史筛选和泛化范围说�
 
 逐场景启动核查现覆盖200条实际启动身份，核对目标顺序、source ID、seed、GPU分配与源码版本。已完成场景另查原生状态及20条三目标结果；该核查不代表400条汇总已完成。[最近核查](../diagnostics/full/scene-launch-audits/20261111T021053126278Z.json)。
 
-用户扩容后又明确保留GPU0、仅使用GPU1/2/3。当前三卡启动审计覆盖260条身份；先前两卡证明按历史时点保留。[三卡核查](../diagnostics/full/parallel-scene-launch-audits/20261111T053005561859Z.json)、[调度接续与GPU0释放](gpu_scheduling.md)。
+用户扩容后又明确保留GPU0、仅使用GPU1/2/3。当前三卡启动审计覆盖300条身份；先前两卡证明按历史时点保留。[三卡核查](../diagnostics/full/parallel-scene-launch-audits/20261111T090843336198Z.json)、[调度接续与GPU0释放](gpu_scheduling.md)。
 
 后续三个变体的启动工具已封装，继续调用现有CP4与顺序门禁，并保留防重复启动及观察器恢复保护。Full未完成时的三次实际预检均返回不可启动，未创建后续阶段记录或worker，原生源码、参数和控制器未变。[预检记录](../diagnostics/remaining-stage-launch-preflight.json)。
 
 通用阶段查询已在当前Full上与原查询实测对照，完成数、进程身份和来源绑定匹配；它按各阶段的原生episode身份读取轨迹。原Full查询与观察进程保持原样。[对照记录](../diagnostics/generic-evaluation-inspector-validation.json)。
 
-已补齐设计要求的[环境索引](../meta/env.txt)。索引时点已核对全部20条冒烟及Full中13/20个场景留存的mapping/navigation双角色环境，Python、依赖锁和包清单签名一致；CUDA分配按原生角色记录核查。框架版本沿用已验收的CPU导入探针，硬件与驱动另作当时实读。索引明确列出尚未启动或记录待齐的场景，后续阶段完成后需刷新。[逐文件证据](../diagnostics/environment-index/20261111T053402670639Z.json)。
+已补齐设计要求的[环境索引](../meta/env.txt)。索引时点已核对全部20条冒烟及Full中15/20个场景留存的mapping/navigation双角色环境，Python、依赖锁和包清单签名一致；CUDA分配按原生角色记录核查。框架版本沿用已验收的CPU导入探针，硬件与驱动另作当时实读。索引明确列出尚未启动或记录待齐的场景，后续阶段完成后需刷新。[逐文件证据](../diagnostics/environment-index/20261111T090843204115Z.json)。
