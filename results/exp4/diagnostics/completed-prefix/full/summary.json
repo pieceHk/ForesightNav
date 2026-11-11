@@ -1,35 +1,35 @@
 {
-  "started_at_utc": "2026-11-11T11:31:16.755171+00:00",
-  "completed_at_utc": "2026-11-11T11:31:31.269405+00:00",
+  "started_at_utc": "2026-11-11T11:49:01.240490+00:00",
+  "completed_at_utc": "2026-11-11T11:49:16.596007+00:00",
   "stage": "full",
   "diagnostic_only": true,
   "formal400_complete": false,
-  "completed_native_metric_records_checked": 286,
+  "completed_native_metric_records_checked": 291,
   "newly_audited": [
     {
       "scene": "p53SfW6mjZe",
-      "episode": "11",
-      "steps": 530,
+      "episode": "14",
+      "steps": 1259,
       "success_vector": [
         0,
-        1,
+        0,
         1
       ]
     },
     {
       "scene": "p53SfW6mjZe",
-      "episode": "12",
-      "steps": 625,
+      "episode": "15",
+      "steps": 1079,
       "success_vector": [
         1,
-        1,
+        0,
         0
       ]
     },
     {
-      "scene": "p53SfW6mjZe",
-      "episode": "13",
-      "steps": 269,
+      "scene": "q3zU7Yy5E5s",
+      "episode": "10",
+      "steps": 1057,
       "success_vector": [
         0,
         1,
@@ -38,8 +38,8 @@
     },
     {
       "scene": "q3zU7Yy5E5s",
-      "episode": "9",
-      "steps": 1253,
+      "episode": "11",
+      "steps": 1024,
       "success_vector": [
         0,
         0,
@@ -48,17 +48,7 @@
     },
     {
       "scene": "qyAac8rV8Zk",
-      "episode": "0",
-      "steps": 1500,
-      "success_vector": [
-        0,
-        0,
-        0
-      ]
-    },
-    {
-      "scene": "qyAac8rV8Zk",
-      "episode": "1",
+      "episode": "2",
       "steps": 1500,
       "success_vector": [
         0,
@@ -81,11 +71,11 @@
     "mL8ThkuaVTM": 20,
     "cvZr5TUy5C5": 20,
     "mv2HUxq3B53": 20,
-    "p53SfW6mjZe": 14,
-    "q3zU7Yy5E5s": 10,
-    "qyAac8rV8Zk": 2
+    "p53SfW6mjZe": 16,
+    "q3zU7Yy5E5s": 12,
+    "qyAac8rV8Zk": 3
   },
-  "native_stage_path_checks": 858,
+  "native_stage_path_checks": 873,
   "all_paths_complete": true,
   "max_path_error_m": 3.1427202529243914e-06,
   "source_and_parameters_unchanged": true,
