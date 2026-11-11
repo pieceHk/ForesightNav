@@ -1,0 +1,64 @@
+{
+  "observed_at_utc": "2026-11-11T04:15:07.092641+00:00",
+  "cpu_sample_at_utc": "2026-11-11T04:15:07.628688+00:00",
+  "stage": "full",
+  "diagnostic_only": true,
+  "scope": "Discrete shared-resource observation; not an aggregate benchmark result or a claim of causal slowdown",
+  "allowed_gpus": [
+    1,
+    2,
+    3
+  ],
+  "gpu_context": [
+    {
+      "gpu": 1,
+      "free_mib": 15295,
+      "utilization_percent": 66,
+      "experiment_compute_processes": 2,
+      "external_compute_processes": 4,
+      "external_compute_memory_mib": 8032
+    },
+    {
+      "gpu": 2,
+      "free_mib": 18020,
+      "utilization_percent": 41,
+      "experiment_compute_processes": 2,
+      "external_compute_processes": 4,
+      "external_compute_memory_mib": 8032
+    },
+    {
+      "gpu": 3,
+      "free_mib": 18033,
+      "utilization_percent": 1,
+      "experiment_compute_processes": 2,
+      "external_compute_processes": 4,
+      "external_compute_memory_mib": 7596
+    }
+  ],
+  "host_logical_cpus": 384,
+  "host_load_average": [
+    197.35,
+    110.95,
+    51.32
+  ],
+  "cpu_pressure": "some avg10=0.00 avg60=0.00 avg300=0.00 total=25116413081\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=0\n",
+  "cpu_sample_seconds": 1.1680417130119167,
+  "native_followup": {
+    "at_utc": "2026-11-11T04:16:17.680816+00:00",
+    "completed_native_episodes": 211,
+    "controller_live": true,
+    "observer_live": true,
+    "source_unchanged": true,
+    "parameters_unchanged": true,
+    "errors": {
+      "binding_error_count": 0,
+      "blp_error_bytes": 0,
+      "missing_action_targets": 0,
+      "structural_dispatch_errors": 0,
+      "unresolved_query_targets": 0
+    }
+  },
+  "signals_sent": false,
+  "external_usernames_and_PIDs_omitted": true,
+  "reporting_rule": "Retain all native results and planning-time tails; report resource phases without assigning changes solely to the BLP mechanism"
+}
