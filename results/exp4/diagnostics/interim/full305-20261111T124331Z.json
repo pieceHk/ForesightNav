@@ -1,0 +1,3738 @@
+{
+  "type": "interim_audited_native_scores",
+  "diagnostic_only": true,
+  "formal400_complete": false,
+  "observed_at_utc": "2026-11-11T12:43:31.283437+00:00",
+  "query_result": {
+    "checked_at_utc": "2026-11-11T12:43:31.283437+00:00",
+    "stage": "full",
+    "diagnostic_only": true,
+    "formal400_complete": false,
+    "audited_episodes": 305,
+    "current_native_completed_records": 308,
+    "successful_sequences": 45,
+    "successful_subtasks": 435,
+    "rates_pct_unrounded": {
+      "SR": 14.754098360655737,
+      "SPL": 4.874767716395426,
+      "PR": 47.540983606557376,
+      "PPL": 12.077498943047845
+    },
+    "conditional_counts": {
+      "rates": [
+        0.4426229508196721,
+        0.5851851851851851,
+        0.569620253164557
+      ],
+      "successes": [
+        135,
+        79,
+        45
+      ],
+      "conditioned_episodes": [
+        305,
+        135,
+        79
+      ],
+      "Joint": 0.14754098360655737,
+      "definition": "conditioned on prior successes, not prior execution"
+    },
+    "native_source_entries": 161,
+    "parameter_sha256": "e1d75f3c9503c7439467748fc97be6ae2ad450c429f40dc7235b1564ff7852ae",
+    "common_analysis_sha256": {
+      "report_variants.py": "d3d8617a83ccbd1ccebf18cf2b4149fd745be23c962e3dabeb42b057ad7626c3",
+      "action_path_metrics.py": "a89afc6504fcb5520bb8c227928961b3d7814bcfcc98c23c6311e35254089f1e",
+      "native_candidate_gt.py": "e2620454fe45d54933294286a518440ef16ec961c0eb0ca5aafe5ec2587a21a3",
+      "candidate_identities.py": "a311b37d45d59f379ce00b58d1350b5eb308da0b9a24d34ad2facdb495d9991d",
+      "blp_parameters.py": "039c6a660ab2a7cf2b6e9e78e810bfb44f32731e6c52a9194dc20f82daa63bad"
+    },
+    "source_and_parameters_unchanged": true,
+    "native_states_modified": false,
+    "writes_outputs": false,
+    "scope": "Interim scores over exactly the currently GT-audited native episode exports. Reuses unchanged native score aggregation and supplementary PPL; no GT recomputation, fitting, simulation or formal stage finalization.",
+    "actual_tool_exit_code": 0
+  },
+  "query_source": "code/inspect_audited_prefix_scores.py",
+  "query_source_sha256": "6d7583bce959e006459426d4ef9bad2173a8db712244d63820acd9cb416d39b9",
+  "audit_source_commit": "39fd3250d0a77b5cafe2edeb4051f16876fd66f9",
+  "audit_prefix_summary_sha256": "f9589bd37ab3f35063db405022cd89a7d39b491e7161ce9ec1e8c35f844eefc3",
+  "audit_bindings": {
+    "parameter_sha256": "e1d75f3c9503c7439467748fc97be6ae2ad450c429f40dc7235b1564ff7852ae",
+    "analysis_sources_sha256": {
+      "report_variants.py": "d3d8617a83ccbd1ccebf18cf2b4149fd745be23c962e3dabeb42b057ad7626c3",
+      "action_path_metrics.py": "a89afc6504fcb5520bb8c227928961b3d7814bcfcc98c23c6311e35254089f1e",
+      "native_candidate_gt.py": "e2620454fe45d54933294286a518440ef16ec961c0eb0ca5aafe5ec2587a21a3",
+      "candidate_identities.py": "a311b37d45d59f379ce00b58d1350b5eb308da0b9a24d34ad2facdb495d9991d",
+      "blp_parameters.py": "039c6a660ab2a7cf2b6e9e78e810bfb44f32731e6c52a9194dc20f82daa63bad"
+    },
+    "prefix_auditor_sha256": "8f8d39c16db9f724494867133e549c1c2eb07e67170d1f175011e35f5382a839",
+    "reader_source_sha256": "8b3ceb80cb3abbbe8e216a48c5e23596de436cafbed89f040f8583a8cee849d8"
+  },
+  "cohort": [
+    {
+      "scene_id": "4ok3usBNeis",
+      "episode_id": "0",
+      "raw_native_record_sha256": "02bade8c69a04fb1bfa59bbc27a85bfe8b722633d5af60f1011c54a30536fb09",
+      "audit_path": "diagnostics/completed-prefix/full/4ok3usBNeis/0.json",
+      "audit_sha256": "2dd5c6247bb9a158f466d4e2834d18f5814ec44eafeb8f34d6a4813d6ecd06a3",
+      "success_vector": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "scene_id": "4ok3usBNeis",
+      "episode_id": "1",
+      "raw_native_record_sha256": "868ec2f13671872586646cade751a5b674cc47f701a124bbcfa08815171ca0e3",
+      "audit_path": "diagnostics/completed-prefix/full/4ok3usBNeis/1.json",
+      "audit_sha256": "3e7f3bce6cb1d0d682d5144cda3c52f11e58af9a4708cb7e1d344ec4a47a90a5",
+      "success_vector": [
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "scene_id": "4ok3usBNeis",
+      "episode_id": "10",
+      "raw_native_record_sha256": "614b24a1d3c2f02d9d1ba8af4e0d86e630e28c4787126e5de7679de2ce5e0b11",
+      "audit_path": "diagnostics/completed-prefix/full/4ok3usBNeis/10.json",
+      "audit_sha256": "74fe572be9229154ca84cae444ac0a5468d381adb1d8e2d237156db91632b3e3",
+      "success_vector": [
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "scene_id": "4ok3usBNeis",
+      "episode_id": "11",
+      "raw_native_record_sha256": "21c3f9f096df68a0277c23456b29bc5f1f2bb5cdddab3f6c67edcff5ffafc5a6",
+      "audit_path": "diagnostics/completed-prefix/full/4ok3usBNeis/11.json",
+      "audit_sha256": "dcf3a57d8c936e4ac5e32d757a78bdd661d1a63208a1c175ce7337fc1429d6ed",
+      "success_vector": [
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "scene_id": "4ok3usBNeis",
+      "episode_id": "12",
+      "raw_native_record_sha256": "ed1828c0605a0f300d7f449fb6cb249d39cff951321f72c7daf9b7ed7d5ff5ba",
+      "audit_path": "diagnostics/completed-prefix/full/4ok3usBNeis/12.json",
+      "audit_sha256": "06dcfed115ea3367c6b12405c1c293b68a1dc325a8f161ffbf35615dd2403b58",
+      "success_vector": [
+        1,
+        0,
+        1
+      ]
+    },
+    {
+      "scene_id": "4ok3usBNeis",
+      "episode_id": "13",
+      "raw_native_record_sha256": "759c74144946081f304337f42c789fb13daeef93706a3794346efdf10e454cd4",
+      "audit_path": "diagnostics/completed-prefix/full/4ok3usBNeis/13.json",
+      "audit_sha256": "4a9ab143b4a26d366d6478cab948a4165ed2903bbba0f4c8a2a6fd5e962b8701",
+      "success_vector": [
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "scene_id": "4ok3usBNeis",
+      "episode_id": "14",
+      "raw_native_record_sha256": "9a4a15c3a1d67ec00c7841e0804712b7c6d132549cf593ff3e5d052010acefd4",
+      "audit_path": "diagnostics/completed-prefix/full/4ok3usBNeis/14.json",
+      "audit_sha256": "26b6174c291ce312428d7d7706b6bf32eb8c9fbbf45143d0488d60f2eb384abb",
+      "success_vector": [
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "scene_id": "4ok3usBNeis",
+      "episode_id": "15",
+      "raw_native_record_sha256": "41b5a7f36b20002955f9512f3fc90ef34c8dde4e73e3830916efa18a9dc8b70c",
+      "audit_path": "diagnostics/completed-prefix/full/4ok3usBNeis/15.json",
+      "audit_sha256": "e4529d28a3dd09bee5ab3d058125e6a23b0a4680eafbe8d0e5bb799bb0951fc5",
+      "success_vector": [
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "scene_id": "4ok3usBNeis",
+      "episode_id": "16",
+      "raw_native_record_sha256": "6ee421930de9fe66158cc9f724a45c240ae70bff078eea70fbfe30384fcb5a67",
+      "audit_path": "diagnostics/completed-prefix/full/4ok3usBNeis/16.json",
+      "audit_sha256": "0533d26da39b4d667a1ee330a58097fc6bcc866ff819a2ae02d05bcbff553114",
+      "success_vector": [
+        1,
+        0,
+        1
+      ]
+    },
+    {
+      "scene_id": "4ok3usBNeis",
+      "episode_id": "17",
+      "raw_native_record_sha256": "bd5137043249a1dba82f07a724a71e3551f580aa070acc00d061a1df3a04870c",
+      "audit_path": "diagnostics/completed-prefix/full/4ok3usBNeis/17.json",
+      "audit_sha256": "c6a9c3e637a0b544549edd9b2fced17d6b185dba09b8c3c1a708d54bcc1ddc5d",
+      "success_vector": [
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "scene_id": "4ok3usBNeis",
+      "episode_id": "18",
+      "raw_native_record_sha256": "9fe3be8ff25f7fbb10861013a705ea02c29fc73ad2a56a5088f6dbe69d4ef308",
+      "audit_path": "diagnostics/completed-prefix/full/4ok3usBNeis/18.json",
+      "audit_sha256": "f7ff78921a82468e66c36f940d4b9fb904bc325593319617c41623fbc2cce047",
+      "success_vector": [
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "scene_id": "4ok3usBNeis",
+      "episode_id": "19",
+      "raw_native_record_sha256": "052a7e7443555f4b59368911baa4bfbc6f144ce7f4f05dcebea77c101aa5a3b3",
+      "audit_path": "diagnostics/completed-prefix/full/4ok3usBNeis/19.json",
+      "audit_sha256": "34a8f4457a0dbd476421375d0f7cde42e2832a45df4f0d8e92d63abc2ab9222b",
+      "success_vector": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "scene_id": "4ok3usBNeis",
+      "episode_id": "2",
+      "raw_native_record_sha256": "675c149d05de873484d839af3f0aad680694e26994b679253f7ef30b0a9aa93f",
+      "audit_path": "diagnostics/completed-prefix/full/4ok3usBNeis/2.json",
+      "audit_sha256": "9b2c1e91619c50c6a9cb53e417cc91adc84d3601e2385594613b1efe33ba41fd",
+      "success_vector": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "scene_id": "4ok3usBNeis",
+      "episode_id": "3",
+      "raw_native_record_sha256": "4e763ae3b2ba91c8ad39805dd286fa50e21ce14ce8f93f105111797a54ea9105",
+      "audit_path": "diagnostics/completed-prefix/full/4ok3usBNeis/3.json",
+      "audit_sha256": "16e098b839c52da0473dac314c02ffd578fd359c194f949bad08d4661cbc4a11",
+      "success_vector": [
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "scene_id": "4ok3usBNeis",
+      "episode_id": "4",
+      "raw_native_record_sha256": "e464fac93c0cc9085882f6caa5bda58e061b52e40ffc593187a86e3b23bb87b2",
+      "audit_path": "diagnostics/completed-prefix/full/4ok3usBNeis/4.json",
+      "audit_sha256": "0e791febe590a806d68c2132c04efa2c76edbff662d98d2878ab4a86858ec7c5",
+      "success_vector": [
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "scene_id": "4ok3usBNeis",
+      "episode_id": "5",
+      "raw_native_record_sha256": "72fa1374bdd022529deedf20655507a04302765ca3fbd4f727439e99715c5924",
+      "audit_path": "diagnostics/completed-prefix/full/4ok3usBNeis/5.json",
+      "audit_sha256": "aa9f6891ef84f4ccaac727e179a19c7b5709c71c7a9f889df3fa18fe26bec410",
+      "success_vector": [
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "scene_id": "4ok3usBNeis",
+      "episode_id": "6",
+      "raw_native_record_sha256": "21ba22578fd5885f5dfdc3e3206f01d47ada1be4037f0bbf901588005107987f",
+      "audit_path": "diagnostics/completed-prefix/full/4ok3usBNeis/6.json",
+      "audit_sha256": "6245c78a8dd3afb1bdf3906fdae1b6ca931a47bcc7c2cf7a051927184b3eb39b",
+      "success_vector": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "scene_id": "4ok3usBNeis",
+      "episode_id": "7",
+      "raw_native_record_sha256": "c74c39e6d48d09fa70788bbdce0261e3eddd59fa0a9b6c8937aab01a1d70899e",
+      "audit_path": "diagnostics/completed-prefix/full/4ok3usBNeis/7.json",
+      "audit_sha256": "297bfdf599ade6c816c2ab455cd870844effd75dc2c14b71b9ec1fdfec21a346",
+      "success_vector": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "scene_id": "4ok3usBNeis",
+      "episode_id": "8",
+      "raw_native_record_sha256": "2c0dd4fd4eb29d3bd62b65775e75fc99c3812b701be683fdbfc63be14a1f4ce6",
+      "audit_path": "diagnostics/completed-prefix/full/4ok3usBNeis/8.json",
+      "audit_sha256": "89e9c2783a1805775b510306d6a7aaccd43f6fe1de5ac00cf21fb27dae67871c",
+      "success_vector": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "scene_id": "4ok3usBNeis",
+      "episode_id": "9",
+      "raw_native_record_sha256": "d63be6bffba405647d9e53759e07c3401724c41db5cf25805e0c0ee84cb1f7b9",
+      "audit_path": "diagnostics/completed-prefix/full/4ok3usBNeis/9.json",
+      "audit_sha256": "623a07136a91a07905fb87d8b66c54af7d5d5aa8072b8a1003b13bbb9a0ca48c",
+      "success_vector": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "scene_id": "5cdEh9F2hJL",
+      "episode_id": "0",
+      "raw_native_record_sha256": "503a23af44a0aba7d97dcf1437dc632c8db16fa896afb9de84f45743851ade5b",
+      "audit_path": "diagnostics/completed-prefix/full/5cdEh9F2hJL/0.json",
+      "audit_sha256": "79d9ef98ca22014c198b51cde1fd467c8611d7ba0724a24a2c9655d6e4bf7397",
+      "success_vector": [
+        1,
+        0,
+        1
+      ]
+    },
+    {
+      "scene_id": "5cdEh9F2hJL",
+      "episode_id": "1",
+      "raw_native_record_sha256": "0ad008b7e3721e5b91f448cba6e92bcf9b96c62f2fc0149d68366a7fa6c04d8e",
+      "audit_path": "diagnostics/completed-prefix/full/5cdEh9F2hJL/1.json",
+      "audit_sha256": "20ad0f1e1df88366f85b5c208cc728bad5edf8c1f994efeb221806f0d592aca2",
+      "success_vector": [
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "scene_id": "5cdEh9F2hJL",
+      "episode_id": "10",
+      "raw_native_record_sha256": "a2690365df2fb5aeff8170412a69f98c15c31537b554950ded3f40b134c61f71",
+      "audit_path": "diagnostics/completed-prefix/full/5cdEh9F2hJL/10.json",
+      "audit_sha256": "67f9625a26f43af8439bb6f03060e7c6bc2dd13ba077c5dfd47ee66fa0defea7",
+      "success_vector": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "scene_id": "5cdEh9F2hJL",
+      "episode_id": "11",
+      "raw_native_record_sha256": "a41383b74bae27edaac259ab55660e91b6d745078955efeef73e74247af35f52",
+      "audit_path": "diagnostics/completed-prefix/full/5cdEh9F2hJL/11.json",
+      "audit_sha256": "e6761edaf9f78a06dbd06308fddb66a8ea883a496994461b99bcd3d38932bfba",
+      "success_vector": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "scene_id": "5cdEh9F2hJL",
+      "episode_id": "12",
+      "raw_native_record_sha256": "d2b461c631eb6e046950422d846bb0ecd42974d07d48f22f63d1403981295fea",
+      "audit_path": "diagnostics/completed-prefix/full/5cdEh9F2hJL/12.json",
+      "audit_sha256": "b12a0b7f32ab5778377c24ffd8c5b8e31341f169492dd98e8000fa17ccc79366",
+      "success_vector": [
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "scene_id": "5cdEh9F2hJL",
+      "episode_id": "13",
+      "raw_native_record_sha256": "a39263917dff50b174265b8954c812cb93c2c15fef04d1385ea72d74f11bd45c",
+      "audit_path": "diagnostics/completed-prefix/full/5cdEh9F2hJL/13.json",
+      "audit_sha256": "2d3a1951214eae1a89c7e16472825fc1c80e33af1d1d8fb96aab0e786d86594c",
+      "success_vector": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "scene_id": "5cdEh9F2hJL",
+      "episode_id": "14",
+      "raw_native_record_sha256": "990b473c6b98c6f6d3b65cc78affd37eff88909303eddcd52cbec836f40f328e",
+      "audit_path": "diagnostics/completed-prefix/full/5cdEh9F2hJL/14.json",
+      "audit_sha256": "081edef6ad37522f59568c76c1a968b50d78386cdcb2e187d6ee1d3f4458d08c",
+      "success_vector": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "scene_id": "5cdEh9F2hJL",
+      "episode_id": "15",
+      "raw_native_record_sha256": "f805ddfd90f707ac06462eb80783c1cec5ac7d39eb36d268f99e448291ea4d61",
+      "audit_path": "diagnostics/completed-prefix/full/5cdEh9F2hJL/15.json",
+      "audit_sha256": "7e1d135fb0fdadcad5208fec2dc727925906e1f405b9d009c17a514d3a63229b",
+      "success_vector": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "scene_id": "5cdEh9F2hJL",
+      "episode_id": "16",
+      "raw_native_record_sha256": "041ff4f752baff74aba130572f4d5db0cea40bec4de88182ea0e7dd01079cb32",
+      "audit_path": "diagnostics/completed-prefix/full/5cdEh9F2hJL/16.json",
+      "audit_sha256": "8eb08e4bc1849f679d63f0734acbc8f1e3cb919846a1ca04f3d269f6a9f5d8bd",
+      "success_vector": [
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "scene_id": "5cdEh9F2hJL",
+      "episode_id": "17",
+      "raw_native_record_sha256": "e7d1162cfb297ea2b510dcfda61caac6d41b07ce81824bbb9682ac41c4759f2c",
+      "audit_path": "diagnostics/completed-prefix/full/5cdEh9F2hJL/17.json",
+      "audit_sha256": "f2e77d5d3600f9ae12c16d0da8337f4d71b57e4edd6d73c75e919ca101bdc730",
+      "success_vector": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "scene_id": "5cdEh9F2hJL",
+      "episode_id": "18",
+      "raw_native_record_sha256": "981a1632846a6c3b342d0f1bcbb17a01743fb47aed30298dff66892f60b2c9ef",
+      "audit_path": "diagnostics/completed-prefix/full/5cdEh9F2hJL/18.json",
+      "audit_sha256": "3505871437a9fef9ccf738160db32de948c6651b40f45288c28a197a6613365c",
+      "success_vector": [
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "scene_id": "5cdEh9F2hJL",
+      "episode_id": "19",
+      "raw_native_record_sha256": "1189fdb9c3c8b4ce6a1275f8ca4525c503a4293ab44aedc884336162906210b6",
+      "audit_path": "diagnostics/completed-prefix/full/5cdEh9F2hJL/19.json",
+      "audit_sha256": "d4753945f3a737fb67f9590f707184372a95deb4bf1cf206645206c941553439",
+      "success_vector": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "scene_id": "5cdEh9F2hJL",
+      "episode_id": "2",
+      "raw_native_record_sha256": "167d89b17a3de937f731541c95f95cf675cf4e23c1fd59dd6922ee09e516956d",
+      "audit_path": "diagnostics/completed-prefix/full/5cdEh9F2hJL/2.json",
+      "audit_sha256": "b9fda89600ef581fd7a06411cb1aa03ba4534c82489836ab63a5f232bd963686",
+      "success_vector": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "scene_id": "5cdEh9F2hJL",
+      "episode_id": "3",
+      "raw_native_record_sha256": "74709a8b9678057496284cf535eee7b96a8b344f04d6096ba039ab8499de6509",
+      "audit_path": "diagnostics/completed-prefix/full/5cdEh9F2hJL/3.json",
+      "audit_sha256": "711a820c23a946287c72e6e4822208f0ce93e3da1fd43704068e1f3a9da0a770",
+      "success_vector": [
+        1,
+        0,
+        1
+      ]
+    },
+    {
+      "scene_id": "5cdEh9F2hJL",
+      "episode_id": "4",
+      "raw_native_record_sha256": "64cb9e5f59a6910b3ee90732ff5cfb06dfd38b2e139d1505426595a1bd72c7d7",
+      "audit_path": "diagnostics/completed-prefix/full/5cdEh9F2hJL/4.json",
+      "audit_sha256": "88c6ce19b97a024ad5669e3296abe81c716c865d7b002cc6e6dec06d7d9a943f",
+      "success_vector": [
+        1,
+        0,
+        1
+      ]
+    },
+    {
+      "scene_id": "5cdEh9F2hJL",
+      "episode_id": "5",
+      "raw_native_record_sha256": "923c6fcb289839536c12a11179cabf699cb384eddb8f355162454e28a9bcc422",
+      "audit_path": "diagnostics/completed-prefix/full/5cdEh9F2hJL/5.json",
+      "audit_sha256": "9ebecd5a96cc081e6f2175b299e7f0c213fcec1dfec00a40a34df96efe172839",
+      "success_vector": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "scene_id": "5cdEh9F2hJL",
+      "episode_id": "6",
+      "raw_native_record_sha256": "44cb203dc30390c6bfe0a0e04e5895264aff4c96349fc7868b6fbfbe2087c64f",
+      "audit_path": "diagnostics/completed-prefix/full/5cdEh9F2hJL/6.json",
+      "audit_sha256": "7ae6c10994081daa8fa1225531afa6866a6435f40005aa14a4ce6d7147171e49",
+      "success_vector": [
+        1,
+        0,
+        1
+      ]
+    },
+    {
+      "scene_id": "5cdEh9F2hJL",
+      "episode_id": "7",
+      "raw_native_record_sha256": "dd66a03691f0b0ab5358289cc76022eb6f90de49733931c6e6c18deff9c9eb26",
+      "audit_path": "diagnostics/completed-prefix/full/5cdEh9F2hJL/7.json",
+      "audit_sha256": "11e71f8f2003223e47af5ac5a34dcc95284ac54dedc474c159c0fb772ee32b3a",
+      "success_vector": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "scene_id": "5cdEh9F2hJL",
+      "episode_id": "8",
+      "raw_native_record_sha256": "506662df0069a8a21eaf1db2a12793fddb5abbd0a40bc8a317a74f9f23134e89",
+      "audit_path": "diagnostics/completed-prefix/full/5cdEh9F2hJL/8.json",
+      "audit_sha256": "74b4f34ec211d8d2b6305850a4c46c637c731a922e6c9363687a928180d12447",
+      "success_vector": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "scene_id": "5cdEh9F2hJL",
+      "episode_id": "9",
+      "raw_native_record_sha256": "c46445dcc90ce90a0bae13f54fd275648cab2ff8f1a33fc63efa2e111f8014f9",
+      "audit_path": "diagnostics/completed-prefix/full/5cdEh9F2hJL/9.json",
+      "audit_sha256": "357732fde331a42273c7fcba39240a0a2ca74f649b690bab8abdd0567e1443d4",
+      "success_vector": [
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "scene_id": "6s7QHgap2fW",
+      "episode_id": "0",
+      "raw_native_record_sha256": "1a344749c838991fdd81c416b3168696eab39892d837ef30238927e342d568c4",
+      "audit_path": "diagnostics/completed-prefix/full/6s7QHgap2fW/0.json",
+      "audit_sha256": "309fb57a3400ec257ed3b28d0e604ffd1643176dab2d3f4f6d422bbd9b7beb14",
+      "success_vector": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "scene_id": "6s7QHgap2fW",
+      "episode_id": "1",
+      "raw_native_record_sha256": "91ab8a70001d5c77ad4ae3dc5d55823dc219d5830daf2171eb9b70624e7c77bf",
+      "audit_path": "diagnostics/completed-prefix/full/6s7QHgap2fW/1.json",
+      "audit_sha256": "8cc87085b2d54121ddbe0cf1c3c09577519326f4288c5e35fa13df7b85f28ecc",
+      "success_vector": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "scene_id": "6s7QHgap2fW",
+      "episode_id": "10",
+      "raw_native_record_sha256": "4890978e022e5ffb279a83923c5e7de295c40634ed1cf215ea9acb9acc0b1574",
+      "audit_path": "diagnostics/completed-prefix/full/6s7QHgap2fW/10.json",
+      "audit_sha256": "e5d6091ab5fd1116baa9d530915905ec474963e81cae0ba2948f012c6c61e428",
+      "success_vector": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "scene_id": "6s7QHgap2fW",
+      "episode_id": "11",
+      "raw_native_record_sha256": "852d9851bfae34a7d2eed7e50ab76dd54de1a4bc8b3fbacbf9382d4b4730f33a",
+      "audit_path": "diagnostics/completed-prefix/full/6s7QHgap2fW/11.json",
+      "audit_sha256": "e6cf92ecace1b26efd79c9ced0e83b03568f13b4db8aff662364f582c3b21443",
+      "success_vector": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "scene_id": "6s7QHgap2fW",
+      "episode_id": "12",
+      "raw_native_record_sha256": "154e88af64324d885a233f775396e16d23629fcefae32756afc56cf53080d96c",
+      "audit_path": "diagnostics/completed-prefix/full/6s7QHgap2fW/12.json",
+      "audit_sha256": "8aa5a66e24ce059b0b48367e85c78656d753ec5a50235366be29d137ca03b30c",
+      "success_vector": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "scene_id": "6s7QHgap2fW",
+      "episode_id": "13",
+      "raw_native_record_sha256": "a6aa24eca54d5a1805e05d3685550074476d4f63c08abaadc69cd71cb1ef7b52",
+      "audit_path": "diagnostics/completed-prefix/full/6s7QHgap2fW/13.json",
+      "audit_sha256": "11e7785c422ee7f747846ac6a1acbf8bb1a2583d76da7be8ad5c9b57e594f198",
+      "success_vector": [
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "scene_id": "6s7QHgap2fW",
+      "episode_id": "14",
+      "raw_native_record_sha256": "3fd7772fd519e1770121a76ddac198564c2b4bd7f056825e06d83313cfee1aed",
+      "audit_path": "diagnostics/completed-prefix/full/6s7QHgap2fW/14.json",
+      "audit_sha256": "1def648d1461802eca48a736ae1878269b4f407215e65ae72c5c83488abeb5ed",
+      "success_vector": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "scene_id": "6s7QHgap2fW",
+      "episode_id": "15",
+      "raw_native_record_sha256": "02eb3e6bfbf51ec92d2c2ad55da3ac21b91dd80219204be21817f7c6c9b78bc4",
+      "audit_path": "diagnostics/completed-prefix/full/6s7QHgap2fW/15.json",
+      "audit_sha256": "3d2004dc767b4bf5cf051f8ade743ba51376d17a58780ccdb62e79e877d94126",
+      "success_vector": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "scene_id": "6s7QHgap2fW",
+      "episode_id": "16",
+      "raw_native_record_sha256": "081ebe831a857bdd89cff6af5a65ad5f2dc5db1a9c431b1b8a79fdc34635720f",
+      "audit_path": "diagnostics/completed-prefix/full/6s7QHgap2fW/16.json",
+      "audit_sha256": "cb80b3d075387ef0f776ce9ba2dc99f6111df3f0482a74427cb16174618789fe",
+      "success_vector": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "scene_id": "6s7QHgap2fW",
+      "episode_id": "17",
+      "raw_native_record_sha256": "3c158f20f9a6b3bc2fcd42db6816a26390cc2bb3259df9844e83904e9f6d2fb5",
+      "audit_path": "diagnostics/completed-prefix/full/6s7QHgap2fW/17.json",
+      "audit_sha256": "3f085bfd12a6f29e19ad784109af4290b25884a8ea26c945ee4c472c45954d39",
+      "success_vector": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "scene_id": "6s7QHgap2fW",
+      "episode_id": "18",
+      "raw_native_record_sha256": "27682ba1b9a75df02c53b20f035f2d071cf6c9a248377db227e52876a02a70f4",
+      "audit_path": "diagnostics/completed-prefix/full/6s7QHgap2fW/18.json",
+      "audit_sha256": "fbc629a79ca9aee145479f8a0caa236d9481cab542dd3fe348962ec34944b769",
+      "success_vector": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "scene_id": "6s7QHgap2fW",
+      "episode_id": "19",
+      "raw_native_record_sha256": "9f5868833e7621caf049bdff8aa68358987aeb4e3cf43692bc776ba59ec2529c",
+      "audit_path": "diagnostics/completed-prefix/full/6s7QHgap2fW/19.json",
+      "audit_sha256": "992252d20bc1319871cae0eed2dc61ce79576785ba0bd112105fac4f6717479d",
+      "success_vector": [
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "scene_id": "6s7QHgap2fW",
+      "episode_id": "2",
+      "raw_native_record_sha256": "fb3d81b034dc2e9a526c2337e7c96caedd0a2043959f0ff43403f7d45ee42a50",
+      "audit_path": "diagnostics/completed-prefix/full/6s7QHgap2fW/2.json",
+      "audit_sha256": "ca6e5f27f1258e945887a0c04003f221251b119545d38868a54c4e05fc6241ce",
+      "success_vector": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "scene_id": "6s7QHgap2fW",
+      "episode_id": "3",
+      "raw_native_record_sha256": "57fb355f8d35ad57b1b855b37487da24be1b8b161902d2e1d8ba8d653ad8981b",
+      "audit_path": "diagnostics/completed-prefix/full/6s7QHgap2fW/3.json",
+      "audit_sha256": "ca1066eedaf0172c189f4574173fae38c69a9fe94a9b4b2f959432055eba426e",
+      "success_vector": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "scene_id": "6s7QHgap2fW",
+      "episode_id": "4",
+      "raw_native_record_sha256": "915dfb62d49775c8b97f71af2fcf87ba3d6008871c79386b649e0d208a7ea980",
+      "audit_path": "diagnostics/completed-prefix/full/6s7QHgap2fW/4.json",
+      "audit_sha256": "442ae38c7bcebba5e6c9287fe898fbc40935d761a1efcf1dfed318b9e976bcc3",
+      "success_vector": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "scene_id": "6s7QHgap2fW",
+      "episode_id": "5",
+      "raw_native_record_sha256": "6a7c3b9114e1033c28f99b01afcdb29be6ec05b49ebf8bf20e2fe7115b9b4a63",
+      "audit_path": "diagnostics/completed-prefix/full/6s7QHgap2fW/5.json",
+      "audit_sha256": "2d31bf09c39b58f6e527669c515bc7f0721aa8d573adab24a86e8b6cd0cfd33c",
+      "success_vector": [
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "scene_id": "6s7QHgap2fW",
+      "episode_id": "6",
+      "raw_native_record_sha256": "21b684ba71cb42e0890d72d57fd8b512643c27d8c447c5915f7677b35a450675",
+      "audit_path": "diagnostics/completed-prefix/full/6s7QHgap2fW/6.json",
+      "audit_sha256": "b266f327e1065fcce1be3c04c3885ce3edc3ddd24101a82167ab183babadfd18",
+      "success_vector": [
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "scene_id": "6s7QHgap2fW",
+      "episode_id": "7",
+      "raw_native_record_sha256": "6fceb6052eee969a0f0a3645e1a83737553d100e4f6518a40235f529e4887024",
+      "audit_path": "diagnostics/completed-prefix/full/6s7QHgap2fW/7.json",
+      "audit_sha256": "deb423c802a0d6ccfcfc64660b2cf3fe7fa09353e15b7715a4732cc717b4d3eb",
+      "success_vector": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "scene_id": "6s7QHgap2fW",
+      "episode_id": "8",
+      "raw_native_record_sha256": "9a2605af91a1833d997f3b78091b648e8cfde65a781a843d951177364cfb9dd2",
+      "audit_path": "diagnostics/completed-prefix/full/6s7QHgap2fW/8.json",
+      "audit_sha256": "23dd99f92c9178030b39cb7afa4aa242cd182c61facb50228250b1e69b0d77da",
+      "success_vector": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "scene_id": "6s7QHgap2fW",
+      "episode_id": "9",
+      "raw_native_record_sha256": "57b9657f3f01f9f5756175ed3f62fb4d6b62cfc5036ea6fd389510dec94f258c",
+      "audit_path": "diagnostics/completed-prefix/full/6s7QHgap2fW/9.json",
+      "audit_sha256": "b6a3ac697abb7a0d959ad851a16bb67cee0dd52a32a8af2061c76a7e225f1854",
+      "success_vector": [
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "scene_id": "DYehNKdT76V",
+      "episode_id": "0",
+      "raw_native_record_sha256": "8609f2ff993b227e07ad2cd359d1c85500949c0e04f488c13dd235f806b4b4b4",
+      "audit_path": "diagnostics/completed-prefix/full/DYehNKdT76V/0.json",
+      "audit_sha256": "50bda6188a1c58d19b195bb90d68675524fa40ecab88305f3fdbfef43cca3570",
+      "success_vector": [
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "scene_id": "DYehNKdT76V",
+      "episode_id": "1",
+      "raw_native_record_sha256": "0c088c763a8772a10a9d1af09bc012e9a1bf5cfc71b8fb27a0c9b43fdcef9c05",
+      "audit_path": "diagnostics/completed-prefix/full/DYehNKdT76V/1.json",
+      "audit_sha256": "c9950bdd97a7e4fc8f365190028401e77dca75dec3773e9f6c97305bbf6ef4a3",
+      "success_vector": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "scene_id": "DYehNKdT76V",
+      "episode_id": "10",
+      "raw_native_record_sha256": "8c9fb0c41f5777ccc4d1097b671de4d29c7a890ecd506225bae584549c4c1bad",
+      "audit_path": "diagnostics/completed-prefix/full/DYehNKdT76V/10.json",
+      "audit_sha256": "84e025ea5eabebdab656a5bfe2f944ed6a42f5695ec61bcab534a4835578bc57",
+      "success_vector": [
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "scene_id": "DYehNKdT76V",
+      "episode_id": "11",
+      "raw_native_record_sha256": "41ae7e6d20b8c42e93db0d500164e91caef970149fe71db70d36b82bc81207ce",
+      "audit_path": "diagnostics/completed-prefix/full/DYehNKdT76V/11.json",
+      "audit_sha256": "e9beb9acafafde3dd75d08dedaa9c3e67b9876e138175d3ed3c61fb1374fc720",
+      "success_vector": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "scene_id": "DYehNKdT76V",
+      "episode_id": "12",
+      "raw_native_record_sha256": "19bf6cf0f8f6168ae051690d2002c5cabcf80c0700b025a09e49ce793d5c1421",
+      "audit_path": "diagnostics/completed-prefix/full/DYehNKdT76V/12.json",
+      "audit_sha256": "4ba2a83f7e30ae3526238266a2ddee9d9dc8712103d474be9367b50191183163",
+      "success_vector": [
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "scene_id": "DYehNKdT76V",
+      "episode_id": "13",
+      "raw_native_record_sha256": "b3d7b72e99109086cd7069f2f8ec32d982b2ccb3ebf4a11e0dd2be5f8f1aef0d",
+      "audit_path": "diagnostics/completed-prefix/full/DYehNKdT76V/13.json",
+      "audit_sha256": "6d251e17ec1bfb4ee80af7ba2f4a15d027d3ec06054b0ceaa8a687dd6332c264",
+      "success_vector": [
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "scene_id": "DYehNKdT76V",
+      "episode_id": "14",
+      "raw_native_record_sha256": "22c8161fba169bc4fa03d8ac9374898545b11b737ccc00402849aef74e9c7976",
+      "audit_path": "diagnostics/completed-prefix/full/DYehNKdT76V/14.json",
+      "audit_sha256": "cbb416d6d32f28c3c8f4e66e6d8fdaa6e59508528ca77eaeb63237dd7f28caf7",
+      "success_vector": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "scene_id": "DYehNKdT76V",
+      "episode_id": "15",
+      "raw_native_record_sha256": "f541dfaf699f587dc397217d002c96e7309f8469e5fe9b5fd0abdb010efdc3e8",
+      "audit_path": "diagnostics/completed-prefix/full/DYehNKdT76V/15.json",
+      "audit_sha256": "1e665750f1eb4011d0815211f3d0b4f4091150821be6d8c2b30955250b8866e4",
+      "success_vector": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "scene_id": "DYehNKdT76V",
+      "episode_id": "16",
+      "raw_native_record_sha256": "3dbead15e50c3a32097f06ba7350cea5769973c9f3c4bcf64a29e9ba0df408b7",
+      "audit_path": "diagnostics/completed-prefix/full/DYehNKdT76V/16.json",
+      "audit_sha256": "b7eb22141727657ed06f39ec9e23e7dc157f533a1cc292bc51c0bc3dcc285971",
+      "success_vector": [
+        1,
+        0,
+        1
+      ]
+    },
+    {
+      "scene_id": "DYehNKdT76V",
+      "episode_id": "17",
+      "raw_native_record_sha256": "5d382675ff4f90a664076daf222f262c0ecb583ba9c67b020d8895f9d155164e",
+      "audit_path": "diagnostics/completed-prefix/full/DYehNKdT76V/17.json",
+      "audit_sha256": "079c32ab0da738bf7ee4b554b5e33c7ba6439666278dff7809c66e22d0645fb2",
+      "success_vector": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "scene_id": "DYehNKdT76V",
+      "episode_id": "18",
+      "raw_native_record_sha256": "f99bcaf91a59fcfeaafc2168a00eed201d840637e22530839a5a8ee24b9e8ccf",
+      "audit_path": "diagnostics/completed-prefix/full/DYehNKdT76V/18.json",
+      "audit_sha256": "14734eaf4154dc02107ffe7d7e17f6b32c98f2559c1e3c8888b5dbc36b3f2256",
+      "success_vector": [
+        1,
+        0,
+        1
+      ]
+    },
+    {
+      "scene_id": "DYehNKdT76V",
+      "episode_id": "19",
+      "raw_native_record_sha256": "11e9fe4b894e53299edd91392635a760a2400d9fd72ca80595be6f11b1db9cbe",
+      "audit_path": "diagnostics/completed-prefix/full/DYehNKdT76V/19.json",
+      "audit_sha256": "e9c576931a68aca4bf9296783e751ae27e3d8bbd0ea8c96c81fa682154d86c65",
+      "success_vector": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "scene_id": "DYehNKdT76V",
+      "episode_id": "2",
+      "raw_native_record_sha256": "d8e61cc859ce0b5d5dc3ece36fb84ed77c992fb05d0546aa2daded3498da32e3",
+      "audit_path": "diagnostics/completed-prefix/full/DYehNKdT76V/2.json",
+      "audit_sha256": "68b44be21be6e3ebc6ed02b6eb21022e7904d58378bd023773cf68450c5479bf",
+      "success_vector": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "scene_id": "DYehNKdT76V",
+      "episode_id": "3",
+      "raw_native_record_sha256": "af1da5e3b6eea4a310d8989d2efd7bc0e38e18cbca99a78d5a4432f69ac39168",
+      "audit_path": "diagnostics/completed-prefix/full/DYehNKdT76V/3.json",
+      "audit_sha256": "05d248d4bf09f6fce4668d11619a55b235ffcdf4e0f541da61a2710bcbc8db45",
+      "success_vector": [
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "scene_id": "DYehNKdT76V",
+      "episode_id": "4",
+      "raw_native_record_sha256": "4b92a2794ebbb238242eb02ed7cb596fe05350e77ef4d117fc541bb44125de1d",
+      "audit_path": "diagnostics/completed-prefix/full/DYehNKdT76V/4.json",
+      "audit_sha256": "1fc1c0262ba7b1fe397cf5a5dcdb4f51d73292604eb0009f31bba5a5cabbafac",
+      "success_vector": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "scene_id": "DYehNKdT76V",
+      "episode_id": "5",
+      "raw_native_record_sha256": "5631b7b15d8db321661be149d89f8609173b05973ff4eefb9224e66af0cf33a0",
+      "audit_path": "diagnostics/completed-prefix/full/DYehNKdT76V/5.json",
+      "audit_sha256": "160d9c07028f995a4ab36d5262f0221d57e63717a4423c250fa46c876a3ac9f7",
+      "success_vector": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "scene_id": "DYehNKdT76V",
+      "episode_id": "6",
+      "raw_native_record_sha256": "938893368611d91710a9987c5b93f26bf8f01a21910af05f2a021649dbe8ddfd",
+      "audit_path": "diagnostics/completed-prefix/full/DYehNKdT76V/6.json",
+      "audit_sha256": "83269828f8378ac6d94b738212a641136e350b9dc4eeb9725ece86e8baee7fba",
+      "success_vector": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "scene_id": "DYehNKdT76V",
+      "episode_id": "7",
+      "raw_native_record_sha256": "6e558cada52e61eb6a8244ed7314b563553b47e1ed5686092e155fb6646a6fb6",
+      "audit_path": "diagnostics/completed-prefix/full/DYehNKdT76V/7.json",
+      "audit_sha256": "9f5a1e03cde9f432a7837ed0d960f570114ad730e4b778008b92c831a47cb562",
+      "success_vector": [
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "scene_id": "DYehNKdT76V",
+      "episode_id": "8",
+      "raw_native_record_sha256": "f19c8f373baf186228eb6a36bd061a718a156d38baff2a9d5b799541719b20cf",
+      "audit_path": "diagnostics/completed-prefix/full/DYehNKdT76V/8.json",
+      "audit_sha256": "720fda486375f998a20b4171764f92d20ebb2add6c9283d430c27b2fe2404b95",
+      "success_vector": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "scene_id": "DYehNKdT76V",
+      "episode_id": "9",
+      "raw_native_record_sha256": "1062ef990ee3f59b0429828016eccba4471cf71548c31aea3684ee1882506197",
+      "audit_path": "diagnostics/completed-prefix/full/DYehNKdT76V/9.json",
+      "audit_sha256": "e00841b6a4ab76aa3939437ddd8147d366f360415c7fd65d25f13d56e708e087",
+      "success_vector": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "scene_id": "Dd4bFSTQ8gi",
+      "episode_id": "0",
+      "raw_native_record_sha256": "1d0c0f4980dd740e3bfe943a137ddeabc0d267f4032feb514b89e3deb455336c",
+      "audit_path": "diagnostics/completed-prefix/full/Dd4bFSTQ8gi/0.json",
+      "audit_sha256": "4188d6f791299996bdaa0c8dbf42cb158ef93b34f5cab238da89146e36320bbf",
+      "success_vector": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "scene_id": "Dd4bFSTQ8gi",
+      "episode_id": "1",
+      "raw_native_record_sha256": "85e20390bb5e5218683664e15a14c569dafc158001b80f40f7f3a21249067b3b",
+      "audit_path": "diagnostics/completed-prefix/full/Dd4bFSTQ8gi/1.json",
+      "audit_sha256": "ab84b1755dd415765a5c5ad67ff910aa8dc89b744544ac9eb914647900d5f240",
+      "success_vector": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "scene_id": "Dd4bFSTQ8gi",
+      "episode_id": "10",
+      "raw_native_record_sha256": "060bc1cbd2a75870532a3f551bb414c6e81cbe3b7a5b261e8fd5f4fb75e87ba0",
+      "audit_path": "diagnostics/completed-prefix/full/Dd4bFSTQ8gi/10.json",
+      "audit_sha256": "da39ada6cddd3d2deb75155b2b6be1add9b6c7dc3ccb9d02c722590fcbe13e8c",
+      "success_vector": [
+        1,
+        0,
+        1
+      ]
+    },
+    {
+      "scene_id": "Dd4bFSTQ8gi",
+      "episode_id": "11",
+      "raw_native_record_sha256": "256ce188e6495e9bb748cd373e6f70a6f2abc27becad0a13315a7aa5f90ca4a0",
+      "audit_path": "diagnostics/completed-prefix/full/Dd4bFSTQ8gi/11.json",
+      "audit_sha256": "94d16d81edcd4cf09bcabfd5d9504187f591d87d9b084f355e41608b5a913cc9",
+      "success_vector": [
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "scene_id": "Dd4bFSTQ8gi",
+      "episode_id": "12",
+      "raw_native_record_sha256": "bce976f8c834983e1ff847b5deb399ddff28b86f1da4fac22622b437bae31912",
+      "audit_path": "diagnostics/completed-prefix/full/Dd4bFSTQ8gi/12.json",
+      "audit_sha256": "6d627752b11478340042ecaa77368d9cd0abfc007f36a35c89211caddefbf5d2",
+      "success_vector": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "scene_id": "Dd4bFSTQ8gi",
+      "episode_id": "13",
+      "raw_native_record_sha256": "facdfa669918b867835950560d3eb36aad53d48b02f79f1aea56158d571bc151",
+      "audit_path": "diagnostics/completed-prefix/full/Dd4bFSTQ8gi/13.json",
+      "audit_sha256": "4c9826c3ebdecae8e48919c23a6e0106c59c43ba1113ed240d9be30837b422a4",
+      "success_vector": [
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "scene_id": "Dd4bFSTQ8gi",
+      "episode_id": "14",
+      "raw_native_record_sha256": "d817771fe6b97ed0680a175e5ab8949cf422d3ce340c9a65f6f37a2d829abbb8",
+      "audit_path": "diagnostics/completed-prefix/full/Dd4bFSTQ8gi/14.json",
+      "audit_sha256": "ab5b5d7682335bcbf3adb4a60de2922ce2145fc846226e64fe65ec0797da44b3",
+      "success_vector": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "scene_id": "Dd4bFSTQ8gi",
+      "episode_id": "15",
+      "raw_native_record_sha256": "2eb64a9f9f66bc333071e3b4db363f40635f6735692829cb969c1978142859c4",
+      "audit_path": "diagnostics/completed-prefix/full/Dd4bFSTQ8gi/15.json",
+      "audit_sha256": "7f21f58e5cb6341de3792e635d42077322089464a74039ecf1a493684ab9edbc",
+      "success_vector": [
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "scene_id": "Dd4bFSTQ8gi",
+      "episode_id": "16",
+      "raw_native_record_sha256": "2376f6a001e638e9b19b82e8ef84174ff1469b757137256ba63d72ddd4532ba3",
+      "audit_path": "diagnostics/completed-prefix/full/Dd4bFSTQ8gi/16.json",
+      "audit_sha256": "76eb22e73a034d7df6d821ae3f3b84ac759dd7bdf7b20563067b11fcac4abc22",
+      "success_vector": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "scene_id": "Dd4bFSTQ8gi",
+      "episode_id": "17",
+      "raw_native_record_sha256": "604e771a1bf43e2b7119395bebc9bccb3acf1cd06508da40c02cda65003e219f",
+      "audit_path": "diagnostics/completed-prefix/full/Dd4bFSTQ8gi/17.json",
+      "audit_sha256": "24530241122bd5b161b8c27c85377ac2e01b666cfe14d1e26ec1c0cb73f7baa9",
+      "success_vector": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "scene_id": "Dd4bFSTQ8gi",
+      "episode_id": "18",
+      "raw_native_record_sha256": "b407c228d62eabfb1b76e8f150c848333462617184779c3036eef4ecc5043bc7",
+      "audit_path": "diagnostics/completed-prefix/full/Dd4bFSTQ8gi/18.json",
+      "audit_sha256": "4c3d538d8a5707082764ba7fbc9dcf47d6165518ad7949db681fbe574db0920d",
+      "success_vector": [
+        1,
+        0,
+        1
+      ]
+    },
+    {
+      "scene_id": "Dd4bFSTQ8gi",
+      "episode_id": "19",
+      "raw_native_record_sha256": "30abcc605fcd455074b059136569347ef3fcfa758cebfd9e9928e645a9a5f922",
+      "audit_path": "diagnostics/completed-prefix/full/Dd4bFSTQ8gi/19.json",
+      "audit_sha256": "e52a71f24b868d5a9c11fb631cb7d08503ebd97977598de2fcda0abe319aa8b7",
+      "success_vector": [
+        1,
+        0,
+        1
+      ]
+    },
+    {
+      "scene_id": "Dd4bFSTQ8gi",
+      "episode_id": "2",
+      "raw_native_record_sha256": "d2c28a6681fa093e8ee5ae54015b7837583f9bf460535a2ab2153e91605d0473",
+      "audit_path": "diagnostics/completed-prefix/full/Dd4bFSTQ8gi/2.json",
+      "audit_sha256": "cb9a6aad4e773bd003ff2ac3e79ef2fc2d90c6e3cfb904905185a852d8e212b8",
+      "success_vector": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "scene_id": "Dd4bFSTQ8gi",
+      "episode_id": "3",
+      "raw_native_record_sha256": "8b148836931c23c7db7a65944d8d699d1c8efe58742352e523b184e9a62dfdd1",
+      "audit_path": "diagnostics/completed-prefix/full/Dd4bFSTQ8gi/3.json",
+      "audit_sha256": "ec33fc1a5e88840a27c299051abe8509026d5c5bfb92a138afd7ece10a7de7e8",
+      "success_vector": [
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "scene_id": "Dd4bFSTQ8gi",
+      "episode_id": "4",
+      "raw_native_record_sha256": "f18067a2beaef724ab3da7e6834095c6da3b952a61d8dc041c9131017bc66f1a",
+      "audit_path": "diagnostics/completed-prefix/full/Dd4bFSTQ8gi/4.json",
+      "audit_sha256": "96fcde0e69aa5f7576133e48f69a4e35ec58014af0794c16e9e8880e42de3c35",
+      "success_vector": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "scene_id": "Dd4bFSTQ8gi",
+      "episode_id": "5",
+      "raw_native_record_sha256": "5ce28ba8a7e0c4570fd9748b3ab20c072804a46e88eac97ef2a8672ad10237f9",
+      "audit_path": "diagnostics/completed-prefix/full/Dd4bFSTQ8gi/5.json",
+      "audit_sha256": "33c3005b790b2e2862ce272f0c81848a61921f7b9087e91c84a340dd3c0b289e",
+      "success_vector": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "scene_id": "Dd4bFSTQ8gi",
+      "episode_id": "6",
+      "raw_native_record_sha256": "e2f902716c127ba016037832f9517c97f044dcaa7948c5afa180e3f5cd64b714",
+      "audit_path": "diagnostics/completed-prefix/full/Dd4bFSTQ8gi/6.json",
+      "audit_sha256": "ae3cb9b933115191700c7f7dd98412ee1a85acc503d1024d2940a926fd92712c",
+      "success_vector": [
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "scene_id": "Dd4bFSTQ8gi",
+      "episode_id": "7",
+      "raw_native_record_sha256": "0e5ddfe758e75e50068ba8f9fe5298f36f2b2bb27f4ae14b6b2b85e0c1dff3b6",
+      "audit_path": "diagnostics/completed-prefix/full/Dd4bFSTQ8gi/7.json",
+      "audit_sha256": "4669b897d992371988b5641375225072729230f97a5b38b922e9bcc5b535ba70",
+      "success_vector": [
+        1,
+        0,
+        1
+      ]
+    },
+    {
+      "scene_id": "Dd4bFSTQ8gi",
+      "episode_id": "8",
+      "raw_native_record_sha256": "0d793875c729f97ecb18247758b7c96473ae35ca72592cb173c1aeffd855da41",
+      "audit_path": "diagnostics/completed-prefix/full/Dd4bFSTQ8gi/8.json",
+      "audit_sha256": "22d01f9dcc68858fd2ae6e2b23fa666f0025b378b175f866a868714436098ae8",
+      "success_vector": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "scene_id": "Dd4bFSTQ8gi",
+      "episode_id": "9",
+      "raw_native_record_sha256": "fd4b0ae6e633d341066abc3d52937b0c66991dcd1090d651f821ea562a8e0e92",
+      "audit_path": "diagnostics/completed-prefix/full/Dd4bFSTQ8gi/9.json",
+      "audit_sha256": "f3e00a7d36ea17ef44166feb5573a598053e2b475508ed2b3e11ca16dcba3c32",
+      "success_vector": [
+        1,
+        0,
+        1
+      ]
+    },
+    {
+      "scene_id": "Nfvxx8J5NCo",
+      "episode_id": "0",
+      "raw_native_record_sha256": "7fcc726452c85d5d02e03bee7b40b9275652f2c832d588f5226198135f3e1da7",
+      "audit_path": "diagnostics/completed-prefix/full/Nfvxx8J5NCo/0.json",
+      "audit_sha256": "57e56619aab4c68e4fc8988306c24286b87f6c2d7d7051ee4c5a6fe7ee33066d",
+      "success_vector": [
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "scene_id": "Nfvxx8J5NCo",
+      "episode_id": "1",
+      "raw_native_record_sha256": "f6e07edcfa161e1d305553c0eba7e2f50d4d353cb1e35324265129f0a87c10c9",
+      "audit_path": "diagnostics/completed-prefix/full/Nfvxx8J5NCo/1.json",
+      "audit_sha256": "eee85a75bf5326162f1507c0546dbd1601d00b14374057a340b5cbe2d78e99a8",
+      "success_vector": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "scene_id": "Nfvxx8J5NCo",
+      "episode_id": "10",
+      "raw_native_record_sha256": "8dc83f2c7257fc030340bdcd6e016e3446958cf2c6f3eaf7a5e8055073cae946",
+      "audit_path": "diagnostics/completed-prefix/full/Nfvxx8J5NCo/10.json",
+      "audit_sha256": "3734e1617b5969df51d7619d70face1f91f46f6c8e4388499a014ce7e575f2b6",
+      "success_vector": [
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "scene_id": "Nfvxx8J5NCo",
+      "episode_id": "11",
+      "raw_native_record_sha256": "716c432536d7c274eacc57d292d99309f13619b10ce9562f0ea082a9a18948df",
+      "audit_path": "diagnostics/completed-prefix/full/Nfvxx8J5NCo/11.json",
+      "audit_sha256": "8be727e89ad6514cdaea85000f83d657f76a11a5e40e67696e992cf68d37a4df",
+      "success_vector": [
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "scene_id": "Nfvxx8J5NCo",
+      "episode_id": "12",
+      "raw_native_record_sha256": "74c903d46e86e3aa51e1b609d7bd55914ee88989d302f2c24d2a7b59d7f48f18",
+      "audit_path": "diagnostics/completed-prefix/full/Nfvxx8J5NCo/12.json",
+      "audit_sha256": "90462bbe39a6d968e410a69a9f96eed9e2f4a4274d77d575d22909f3b11d2a80",
+      "success_vector": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "scene_id": "Nfvxx8J5NCo",
+      "episode_id": "13",
+      "raw_native_record_sha256": "5e2d28d6d46cc91e6701e09ab1d3cbe5729d33d4b599ec591b17c019d3fb2880",
+      "audit_path": "diagnostics/completed-prefix/full/Nfvxx8J5NCo/13.json",
+      "audit_sha256": "d6bec61e66a81393c48c358c18baa83d406c2d845f32f30d9ae0bd49d19a7f1f",
+      "success_vector": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "scene_id": "Nfvxx8J5NCo",
+      "episode_id": "14",
+      "raw_native_record_sha256": "1b098314b4fad85d1b75477e9a5ce0d73317409ba3add2e6b9820cf0d4822587",
+      "audit_path": "diagnostics/completed-prefix/full/Nfvxx8J5NCo/14.json",
+      "audit_sha256": "ce4850d5a6bcf21a6ff906e0ff63e726958c38a4bda29e9313f2d1f59fa0b6b7",
+      "success_vector": [
+        1,
+        0,
+        1
+      ]
+    },
+    {
+      "scene_id": "Nfvxx8J5NCo",
+      "episode_id": "15",
+      "raw_native_record_sha256": "70f3ee00e5b8711396fa168b68f9d583286a0dfae110b15cb2647e862d96e2f7",
+      "audit_path": "diagnostics/completed-prefix/full/Nfvxx8J5NCo/15.json",
+      "audit_sha256": "51bb509fff518b1cfb191a4ddda3b127a8aec71f116a5ac840f693e74ead1d80",
+      "success_vector": [
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "scene_id": "Nfvxx8J5NCo",
+      "episode_id": "16",
+      "raw_native_record_sha256": "9d355d1678e5977849c48e79ef7ce3da3f9c20e26c9b1745de1b6de65e956d06",
+      "audit_path": "diagnostics/completed-prefix/full/Nfvxx8J5NCo/16.json",
+      "audit_sha256": "d6a545be598326c3b256cbb89b26665267c7ae5bff307dfb42273be59840d514",
+      "success_vector": [
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "scene_id": "Nfvxx8J5NCo",
+      "episode_id": "17",
+      "raw_native_record_sha256": "54c623502109fb3b9272a2d5c016d826ecd8291f13c18114e624be97ac9f71a5",
+      "audit_path": "diagnostics/completed-prefix/full/Nfvxx8J5NCo/17.json",
+      "audit_sha256": "f74adeabb774c8bab2759076704de86e951ea4c71e276162fd504fc5ce610d89",
+      "success_vector": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "scene_id": "Nfvxx8J5NCo",
+      "episode_id": "18",
+      "raw_native_record_sha256": "2119bd46fadc672b8a04ce0fd6d2ec3812f766e0038ce8e707bbad8524c3f373",
+      "audit_path": "diagnostics/completed-prefix/full/Nfvxx8J5NCo/18.json",
+      "audit_sha256": "7139e00eff69e713dc1d1648ae5139b3a2669e2e29d41464961dd016ecbae8b6",
+      "success_vector": [
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "scene_id": "Nfvxx8J5NCo",
+      "episode_id": "19",
+      "raw_native_record_sha256": "8d14c2144db028c189ceacc2fee1d1539259f7a79d7820af4cfae0f690ecf7d1",
+      "audit_path": "diagnostics/completed-prefix/full/Nfvxx8J5NCo/19.json",
+      "audit_sha256": "0712a8495ac731ed72ce9f9892d5b63bed8f8fbfd9cfef8e81ab240c25495e1b",
+      "success_vector": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "scene_id": "Nfvxx8J5NCo",
+      "episode_id": "2",
+      "raw_native_record_sha256": "81ff60424d7956ee697fd490f3bb813f50a0ba1bc26ee1e5f485bd3053134223",
+      "audit_path": "diagnostics/completed-prefix/full/Nfvxx8J5NCo/2.json",
+      "audit_sha256": "3a3f708785c50bf9deba05729140092c374f6425fb6edc58622b46b226a73e51",
+      "success_vector": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "scene_id": "Nfvxx8J5NCo",
+      "episode_id": "3",
+      "raw_native_record_sha256": "b2bee60d0bc47f4179383fc4366a6cfa540282dece2012dd52d74830a89c21a3",
+      "audit_path": "diagnostics/completed-prefix/full/Nfvxx8J5NCo/3.json",
+      "audit_sha256": "9dd19078893033309a1e708c1e8d4779db7bbb8930d4439b68aabecb6ac8e498",
+      "success_vector": [
+        1,
+        0,
+        1
+      ]
+    },
+    {
+      "scene_id": "Nfvxx8J5NCo",
+      "episode_id": "4",
+      "raw_native_record_sha256": "7b82c8eb58592ca50243a54c0f260c671b9e9c076d931413fff238019309609a",
+      "audit_path": "diagnostics/completed-prefix/full/Nfvxx8J5NCo/4.json",
+      "audit_sha256": "92aeb5ae4cecdef542f1277a7ff527194e7cb659ec0b38263c7b559f8a9ae834",
+      "success_vector": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "scene_id": "Nfvxx8J5NCo",
+      "episode_id": "5",
+      "raw_native_record_sha256": "2974537df1c8cf5f579cc9b1ce890cd2f76085611e96b395e5699fd7cdf3a0d2",
+      "audit_path": "diagnostics/completed-prefix/full/Nfvxx8J5NCo/5.json",
+      "audit_sha256": "1900c69a14b712a2509894a391011786492f9870f60d50b8865e045f7b5eac05",
+      "success_vector": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "scene_id": "Nfvxx8J5NCo",
+      "episode_id": "6",
+      "raw_native_record_sha256": "841acc0003d9f6fd505cecdb9cd0f788508196dd0a60633b32bc538483738de8",
+      "audit_path": "diagnostics/completed-prefix/full/Nfvxx8J5NCo/6.json",
+      "audit_sha256": "efa00d5722ad2e647e175fbf26e531d99a99287d9120094b602247299d397c84",
+      "success_vector": [
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "scene_id": "Nfvxx8J5NCo",
+      "episode_id": "7",
+      "raw_native_record_sha256": "cd241606569adfca357eedd08c85e78e9cca1bc5eb46f0036c7cf796bd1aaab7",
+      "audit_path": "diagnostics/completed-prefix/full/Nfvxx8J5NCo/7.json",
+      "audit_sha256": "edad691375ccf7d6e7e7c97bded8931b0293c31ade85e9d0f240a017f5424052",
+      "success_vector": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "scene_id": "Nfvxx8J5NCo",
+      "episode_id": "8",
+      "raw_native_record_sha256": "2aafba4027f7fb9799378dc22076e50b718e3882dc28ff0d2819f382acb78023",
+      "audit_path": "diagnostics/completed-prefix/full/Nfvxx8J5NCo/8.json",
+      "audit_sha256": "6b0d95df03c42930fc8897c6d2702da972447006e05d0c280f1cb03f448badff",
+      "success_vector": [
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "scene_id": "Nfvxx8J5NCo",
+      "episode_id": "9",
+      "raw_native_record_sha256": "829d4d1266e3d842170b09089178c5d52ace700f96de6d0f630fe3f4dc6c2542",
+      "audit_path": "diagnostics/completed-prefix/full/Nfvxx8J5NCo/9.json",
+      "audit_sha256": "8db8e6ddb01d5fcd4a3495b1d48c04870352fbe384f702f178200b43d913635b",
+      "success_vector": [
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "scene_id": "QaLdnwvtxbs",
+      "episode_id": "0",
+      "raw_native_record_sha256": "cb458387c84c990f014209bd5e666ba5fe93ac5ab25cfef90c3cdf400b9be58f",
+      "audit_path": "diagnostics/completed-prefix/full/QaLdnwvtxbs/0.json",
+      "audit_sha256": "4018bbd73de0b9435427b9a9960b263ae3e5d9c3af2a2902b0b14488cdbb81d6",
+      "success_vector": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "scene_id": "QaLdnwvtxbs",
+      "episode_id": "1",
+      "raw_native_record_sha256": "c7be782d510cd602c50b76e7ccc5dd8e5ee4de1a29330976c5c0e1f2533d0f27",
+      "audit_path": "diagnostics/completed-prefix/full/QaLdnwvtxbs/1.json",
+      "audit_sha256": "f2e2692dbce2eeb569bb1054f3cd7d49f80430ea0e3b53e6f3f12ca447fa833c",
+      "success_vector": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "scene_id": "QaLdnwvtxbs",
+      "episode_id": "10",
+      "raw_native_record_sha256": "f42ccef28aecbe716f3efe451ae4e36fd3cdf627bdbf72188892fed7d0df89df",
+      "audit_path": "diagnostics/completed-prefix/full/QaLdnwvtxbs/10.json",
+      "audit_sha256": "54ea5de2e5f6c52477172ded9bc279b461cfe1f61da8f0eb6be234f77163fdac",
+      "success_vector": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "scene_id": "QaLdnwvtxbs",
+      "episode_id": "11",
+      "raw_native_record_sha256": "81eea24472fbb962a811bed84adaff0b40b3a55399d87b5a43924c2fab53dd9a",
+      "audit_path": "diagnostics/completed-prefix/full/QaLdnwvtxbs/11.json",
+      "audit_sha256": "dcfaca2ad69d4fc0bab4c1520d70a8b09496a7cd2274346cdb51efa9735c7204",
+      "success_vector": [
+        1,
+        0,
+        1
+      ]
+    },
+    {
+      "scene_id": "QaLdnwvtxbs",
+      "episode_id": "12",
+      "raw_native_record_sha256": "b84fe03bc784272bb59fafab4badeee57fe266d13bac86070a707a5446578048",
+      "audit_path": "diagnostics/completed-prefix/full/QaLdnwvtxbs/12.json",
+      "audit_sha256": "e3bd3f0812af388351e31d9af42caf49e15b9dacb27c2e0fb4e8066b4b6e3002",
+      "success_vector": [
+        1,
+        0,
+        1
+      ]
+    },
+    {
+      "scene_id": "QaLdnwvtxbs",
+      "episode_id": "13",
+      "raw_native_record_sha256": "15e7117eedb20a95bb661351168454f2381989c76d5b8f8a51d1d05f1ab66a6c",
+      "audit_path": "diagnostics/completed-prefix/full/QaLdnwvtxbs/13.json",
+      "audit_sha256": "a86ea4f7fd37e8d46540669da90094d209284ba9b9edf34e79e2c3a03ef80d86",
+      "success_vector": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "scene_id": "QaLdnwvtxbs",
+      "episode_id": "14",
+      "raw_native_record_sha256": "55d7ae5ad66039871199dbebeaa1827df3681a7b81564c320f4c2f13c2fc5532",
+      "audit_path": "diagnostics/completed-prefix/full/QaLdnwvtxbs/14.json",
+      "audit_sha256": "5deacabf714278ddd3f912dad6282a661ca7c11752c90c123fe56b5752a6795c",
+      "success_vector": [
+        1,
+        0,
+        1
+      ]
+    },
+    {
+      "scene_id": "QaLdnwvtxbs",
+      "episode_id": "15",
+      "raw_native_record_sha256": "61d116ec1e750d38f79e9badfc7338cf546f500ab26e259342f25f4b810946d7",
+      "audit_path": "diagnostics/completed-prefix/full/QaLdnwvtxbs/15.json",
+      "audit_sha256": "f95fdd61b695955279688a68e4a89c6bdb41c8af338b7814fc7bdefadfa37b15",
+      "success_vector": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "scene_id": "QaLdnwvtxbs",
+      "episode_id": "16",
+      "raw_native_record_sha256": "6878ef6727ecf489bb4c1645de6670760a328cb1430b526c5d384cfad291939a",
+      "audit_path": "diagnostics/completed-prefix/full/QaLdnwvtxbs/16.json",
+      "audit_sha256": "2c74c31db8266de6374c8eb6cedef6732a2483fc1a4d8ed4532399d08945685d",
+      "success_vector": [
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "scene_id": "QaLdnwvtxbs",
+      "episode_id": "17",
+      "raw_native_record_sha256": "ff1e76a1545415d1af04e20edc481b32deabcf7adc8abe4ae053093dfdae9037",
+      "audit_path": "diagnostics/completed-prefix/full/QaLdnwvtxbs/17.json",
+      "audit_sha256": "e73c1c248a508b4ce884f5e124226b424398388027f7981a330271c9a60f8289",
+      "success_vector": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "scene_id": "QaLdnwvtxbs",
+      "episode_id": "18",
+      "raw_native_record_sha256": "eb495f9d0f3fd341c98bc3f07a6bc513536c86cf8dce9eda8a92a5fd5ba74920",
+      "audit_path": "diagnostics/completed-prefix/full/QaLdnwvtxbs/18.json",
+      "audit_sha256": "232906363db9ed66eef753842355e6a3129e0a78e4472584cefbc4d505b03776",
+      "success_vector": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "scene_id": "QaLdnwvtxbs",
+      "episode_id": "19",
+      "raw_native_record_sha256": "16ea4b2ab625f2a540cfe72f75ecbafad42f53478d77beb8bfa9d210c95ef659",
+      "audit_path": "diagnostics/completed-prefix/full/QaLdnwvtxbs/19.json",
+      "audit_sha256": "a39db3c85e44cdca3e577ae6606d67ddcafb06ea25b7cf994e8c1f54bfbad71d",
+      "success_vector": [
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "scene_id": "QaLdnwvtxbs",
+      "episode_id": "2",
+      "raw_native_record_sha256": "f32e78c2d3d3d43e1ae4770315f2971b72ada7061622daf5a147365c60901833",
+      "audit_path": "diagnostics/completed-prefix/full/QaLdnwvtxbs/2.json",
+      "audit_sha256": "50b97d137976758f360ce0c6d506f5e5d2b015b7c855633ef8ca0986f20eef1e",
+      "success_vector": [
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "scene_id": "QaLdnwvtxbs",
+      "episode_id": "3",
+      "raw_native_record_sha256": "1fcae08d8cd5d9a1c6c0fd57e9ce35b0954ccdfeff71cc02c23c9327e599ecfe",
+      "audit_path": "diagnostics/completed-prefix/full/QaLdnwvtxbs/3.json",
+      "audit_sha256": "81445088c9218254bcefb7fe6f9a649a4514d156cd06fb747f7ec2ff7829d646",
+      "success_vector": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "scene_id": "QaLdnwvtxbs",
+      "episode_id": "4",
+      "raw_native_record_sha256": "1db72529cf4bd468755c87838cce2d7d2063fd41e40ee3130e0151aa8d438940",
+      "audit_path": "diagnostics/completed-prefix/full/QaLdnwvtxbs/4.json",
+      "audit_sha256": "54b01fa0734523038ac80c0d9d511772830f1a59185bf61a5541a8388c9ad1ab",
+      "success_vector": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "scene_id": "QaLdnwvtxbs",
+      "episode_id": "5",
+      "raw_native_record_sha256": "19f3002e3956188a09713c4b871775b45525d008def5403b661187f2a703cb43",
+      "audit_path": "diagnostics/completed-prefix/full/QaLdnwvtxbs/5.json",
+      "audit_sha256": "445bc0923f95ce728847af77e5faa29978faf884e469701cf12ee97e61e5ac1d",
+      "success_vector": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "scene_id": "QaLdnwvtxbs",
+      "episode_id": "6",
+      "raw_native_record_sha256": "ab9701e07dcd05a17152557ab156f9c1bc365e67365c4f0dcfe13b369f8f29d8",
+      "audit_path": "diagnostics/completed-prefix/full/QaLdnwvtxbs/6.json",
+      "audit_sha256": "2556fb2a028fc2880585984151b46023a5f7c6cd15e92c5894c518ce7a02354e",
+      "success_vector": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "scene_id": "QaLdnwvtxbs",
+      "episode_id": "7",
+      "raw_native_record_sha256": "5e5d3c93fc22e2e02d3a1d3e14621d94e3a4eaf1934ae8bd5a864f58f8c97bc5",
+      "audit_path": "diagnostics/completed-prefix/full/QaLdnwvtxbs/7.json",
+      "audit_sha256": "aec88666b64f25418127814401c72492830ad38947790ce7d3cc1da2aaa83254",
+      "success_vector": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "scene_id": "QaLdnwvtxbs",
+      "episode_id": "8",
+      "raw_native_record_sha256": "1d01f27d75836f97758ab225dea285feff8a4f183d1dc1e388e16318317728ca",
+      "audit_path": "diagnostics/completed-prefix/full/QaLdnwvtxbs/8.json",
+      "audit_sha256": "f947e4c8c23ec8671a09c35e9d11ab125c145496924f810e92aae1f5a2f95752",
+      "success_vector": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "scene_id": "QaLdnwvtxbs",
+      "episode_id": "9",
+      "raw_native_record_sha256": "415804f35e993fca7383d41e1a58604b1209a88bb740f1538dd207f4a73b5532",
+      "audit_path": "diagnostics/completed-prefix/full/QaLdnwvtxbs/9.json",
+      "audit_sha256": "08037503c580c6a25e7f2c6d720bc855aaabf23568a27c1ac6b2c8d398ca098a",
+      "success_vector": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "scene_id": "TEEsavR23oF",
+      "episode_id": "0",
+      "raw_native_record_sha256": "2bd2fa336e2a0decf70f207b16e54cffe8eb590c2c9051c16759465bb402aa78",
+      "audit_path": "diagnostics/completed-prefix/full/TEEsavR23oF/0.json",
+      "audit_sha256": "4d2782c00e0700f35a4267394ec8ab71faeb4ade265551d976127a336b2c776e",
+      "success_vector": [
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "scene_id": "TEEsavR23oF",
+      "episode_id": "1",
+      "raw_native_record_sha256": "6bec4b9cf8cdac1961f1d8f0a805de0afc9fe67ce9f5e6d3a0efbbe4644285be",
+      "audit_path": "diagnostics/completed-prefix/full/TEEsavR23oF/1.json",
+      "audit_sha256": "76e41716f4cb1a699082b517031a9c981f6d46ada4cb642fbe4a875d7406eb64",
+      "success_vector": [
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "scene_id": "TEEsavR23oF",
+      "episode_id": "10",
+      "raw_native_record_sha256": "25c841434f0418b53352264970970106e4be2277f740e5c9c90c17db7a085dff",
+      "audit_path": "diagnostics/completed-prefix/full/TEEsavR23oF/10.json",
+      "audit_sha256": "5e1ff023beefdad3c1f03b62bb314a0df12655baa01b5ad238021d830c80f11b",
+      "success_vector": [
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "scene_id": "TEEsavR23oF",
+      "episode_id": "11",
+      "raw_native_record_sha256": "2790e8b5cffe3c0baea92ed6b414bf242bd739f2bc46ab3c4812721482ca9a5b",
+      "audit_path": "diagnostics/completed-prefix/full/TEEsavR23oF/11.json",
+      "audit_sha256": "f44cd8c7186c97d5f0ef1796cb8d76a441d423e876b28ff3781a7b39898cbe78",
+      "success_vector": [
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "scene_id": "TEEsavR23oF",
+      "episode_id": "12",
+      "raw_native_record_sha256": "a9e1aef006f6cfffb640075b6b561e0901509d9af6e3562d34cf14506af3101f",
+      "audit_path": "diagnostics/completed-prefix/full/TEEsavR23oF/12.json",
+      "audit_sha256": "adc036f758fbe65fef2faa41b7660b5f2ebaa39ab2b740d0d1ec5e604c17c64a",
+      "success_vector": [
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "scene_id": "TEEsavR23oF",
+      "episode_id": "13",
+      "raw_native_record_sha256": "a8a24b1bc352f2efc7c783e5757505fdc3bf15bc621e9c71d0f73b6fb11877c9",
+      "audit_path": "diagnostics/completed-prefix/full/TEEsavR23oF/13.json",
+      "audit_sha256": "9c4555126419a7a9c5e313a13ea4806f0a9e238da73c564585093003895dec02",
+      "success_vector": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "scene_id": "TEEsavR23oF",
+      "episode_id": "14",
+      "raw_native_record_sha256": "5bdeeeb10b7e3b750da0d055fd01f7c3efc33a1528644974e74300f882faef3a",
+      "audit_path": "diagnostics/completed-prefix/full/TEEsavR23oF/14.json",
+      "audit_sha256": "4f0bf174abf6efc75ad08c5e977f138f5efcd87bd727cb2ed14c919aa41e4589",
+      "success_vector": [
+        1,
+        0,
+        1
+      ]
+    },
+    {
+      "scene_id": "TEEsavR23oF",
+      "episode_id": "15",
+      "raw_native_record_sha256": "7985c484cd3240b5101f6644548a36481198adfab50b3ed587611d350ca4ab7d",
+      "audit_path": "diagnostics/completed-prefix/full/TEEsavR23oF/15.json",
+      "audit_sha256": "8c08ee6cb26f319e4242d3b08da67aa8f67c8d5942224b76f114dd5c19543bbf",
+      "success_vector": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "scene_id": "TEEsavR23oF",
+      "episode_id": "16",
+      "raw_native_record_sha256": "1c8060741b132415c39061383b9e3f5cd30bb82e7983fde1f9b0386bb1f6f481",
+      "audit_path": "diagnostics/completed-prefix/full/TEEsavR23oF/16.json",
+      "audit_sha256": "10ab539f5510c0de9c1cf5de88b025fa4aac80886881ef1ae444477d77517eda",
+      "success_vector": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "scene_id": "TEEsavR23oF",
+      "episode_id": "17",
+      "raw_native_record_sha256": "d5d89514eb366165d7b1e11e6a8a840f7c3c2dc870d3977c44807c6cad622330",
+      "audit_path": "diagnostics/completed-prefix/full/TEEsavR23oF/17.json",
+      "audit_sha256": "f106b0fa01cc68e5ae0559d9d33bce1e10f280fe027f2bd2e6813388636544a9",
+      "success_vector": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "scene_id": "TEEsavR23oF",
+      "episode_id": "18",
+      "raw_native_record_sha256": "96f6bef2df9512e78f9fc730ea8e1fced0e8e1ec0c48c5fa67b377356bfdea73",
+      "audit_path": "diagnostics/completed-prefix/full/TEEsavR23oF/18.json",
+      "audit_sha256": "71a7ef00e3b79ec917a752b0d5c2e2d5653aea9a06ea61f3430b2999c3d6e95f",
+      "success_vector": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "scene_id": "TEEsavR23oF",
+      "episode_id": "19",
+      "raw_native_record_sha256": "bd7055c249623384480152f9b7deb8d2c5dcec7e0509ab5e94ebea145a89dd36",
+      "audit_path": "diagnostics/completed-prefix/full/TEEsavR23oF/19.json",
+      "audit_sha256": "a9e37f2749e9394bdb23563fdf121ef140aebba70f117166003b237133c94db3",
+      "success_vector": [
+        1,
+        0,
+        1
+      ]
+    },
+    {
+      "scene_id": "TEEsavR23oF",
+      "episode_id": "2",
+      "raw_native_record_sha256": "e2d53703bd1dc4954f6cc86a71b2021c27f687a4f7d79c776a970807f7b5ab50",
+      "audit_path": "diagnostics/completed-prefix/full/TEEsavR23oF/2.json",
+      "audit_sha256": "4c008c18520737c0b17e3fe6f1a67d26a1144440463ae0ae399fb7d6987a8c9b",
+      "success_vector": [
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "scene_id": "TEEsavR23oF",
+      "episode_id": "3",
+      "raw_native_record_sha256": "cc7ddc0db88fb71724b31eb319e0201c851c1eaf5b7d0b2932589dcf73acb9b1",
+      "audit_path": "diagnostics/completed-prefix/full/TEEsavR23oF/3.json",
+      "audit_sha256": "fd410064866e35aa880a27f7b3aa7ec568cdfe9804a21ac65fbc6a7432b2930f",
+      "success_vector": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "scene_id": "TEEsavR23oF",
+      "episode_id": "4",
+      "raw_native_record_sha256": "36a876b44c72a463809a72e8daa7f7b1e9408d78184bdb10348a2a232362af89",
+      "audit_path": "diagnostics/completed-prefix/full/TEEsavR23oF/4.json",
+      "audit_sha256": "548f417d8a00a15f39a4d68c329080b01103db8b6b65d012bd7d33906b0564be",
+      "success_vector": [
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "scene_id": "TEEsavR23oF",
+      "episode_id": "5",
+      "raw_native_record_sha256": "23a11c98b941c98e4667d4c0b6e5c90db388e3b720efdf73887cf9a2d139b134",
+      "audit_path": "diagnostics/completed-prefix/full/TEEsavR23oF/5.json",
+      "audit_sha256": "b66d7391a991808499264bf4bcab4c0b8f0c72208b8a3bb78af965c184cfc2fa",
+      "success_vector": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "scene_id": "TEEsavR23oF",
+      "episode_id": "6",
+      "raw_native_record_sha256": "eb0ab722b44576ea2a0620c2672d2cfbff02850aa346938fd9155f573c169f66",
+      "audit_path": "diagnostics/completed-prefix/full/TEEsavR23oF/6.json",
+      "audit_sha256": "7e4cf50ddf78adb228dd34429879d1124f671adc77374e43db330e1dc23fc12a",
+      "success_vector": [
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "scene_id": "TEEsavR23oF",
+      "episode_id": "7",
+      "raw_native_record_sha256": "5f429aac78c5223d1902b68dd7b50ae8f1fe541072063bc69ba010366c30ded0",
+      "audit_path": "diagnostics/completed-prefix/full/TEEsavR23oF/7.json",
+      "audit_sha256": "0dd9cfde14cc03ad602bcd134695c53119e2b0d0f539a6db19171023d94d98ee",
+      "success_vector": [
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "scene_id": "TEEsavR23oF",
+      "episode_id": "8",
+      "raw_native_record_sha256": "948a84199df29d29c6eb0970cbf07af637248697ada4337953cc50aab23ea202",
+      "audit_path": "diagnostics/completed-prefix/full/TEEsavR23oF/8.json",
+      "audit_sha256": "9f13a1be432f5e9a8fdfa7daa881ee1b07fe968b5e8ef6bce008a93ae3b4588d",
+      "success_vector": [
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "scene_id": "TEEsavR23oF",
+      "episode_id": "9",
+      "raw_native_record_sha256": "c32750fa83bd0efe7616f6a77beaa897c6154da4d0d789ab3b7dce9866f3a307",
+      "audit_path": "diagnostics/completed-prefix/full/TEEsavR23oF/9.json",
+      "audit_sha256": "0f2eb60991996e9f823c7dd6a4b2c303a0688b3950e933f5b5f4e22c564cd5cc",
+      "success_vector": [
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "scene_id": "XB4GS9ShBRE",
+      "episode_id": "0",
+      "raw_native_record_sha256": "51f9caa1df89d7e023ae216b389917c8d0a9ed34f0c5a95da2f387bc26ee6b58",
+      "audit_path": "diagnostics/completed-prefix/full/XB4GS9ShBRE/0.json",
+      "audit_sha256": "30b340f9db96f47e180721603767d6907f803c2abde8c029e8f7e3ab57573248",
+      "success_vector": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "scene_id": "XB4GS9ShBRE",
+      "episode_id": "1",
+      "raw_native_record_sha256": "983d6ee2002fd7c817dee7f9cbf7eb84ec8f9c45eec69e05092757345707d88c",
+      "audit_path": "diagnostics/completed-prefix/full/XB4GS9ShBRE/1.json",
+      "audit_sha256": "a86d30105f1aa54780a777ff012bde6ed1a39e9450e19e8b1451cd4e952f2005",
+      "success_vector": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "scene_id": "XB4GS9ShBRE",
+      "episode_id": "10",
+      "raw_native_record_sha256": "bfa3bfaad8893cb4f65b3898a1bbc8de0357c63c29a3580ff07dfb0e5082ddf4",
+      "audit_path": "diagnostics/completed-prefix/full/XB4GS9ShBRE/10.json",
+      "audit_sha256": "7b23a6e1cef46602205089047dd9ff3f3b1e55dd3bbf14ea2dc8aaa21693e4b9",
+      "success_vector": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "scene_id": "XB4GS9ShBRE",
+      "episode_id": "11",
+      "raw_native_record_sha256": "32194c9181a5db04c9f5c13c1bab04eb07def5197cb6199fab2a63071e919219",
+      "audit_path": "diagnostics/completed-prefix/full/XB4GS9ShBRE/11.json",
+      "audit_sha256": "7b13de1951c55313475a3cbfd4202e813c69717eeb6e46695f6d3f8e5e13f220",
+      "success_vector": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "scene_id": "XB4GS9ShBRE",
+      "episode_id": "12",
+      "raw_native_record_sha256": "40e910b79b685129d0e8bf81736d089cb0b564c0345d9357679082aea6e90bb1",
+      "audit_path": "diagnostics/completed-prefix/full/XB4GS9ShBRE/12.json",
+      "audit_sha256": "873c1b5bd3f351c030fb143f2d2758d1fd3ebcb2bc1359b7d8732a1666f67f6c",
+      "success_vector": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "scene_id": "XB4GS9ShBRE",
+      "episode_id": "13",
+      "raw_native_record_sha256": "d29183a1e26f09a8c3fd2cdffc0b6d4fdbfb8d0c5a8173a9c37bf863505f4046",
+      "audit_path": "diagnostics/completed-prefix/full/XB4GS9ShBRE/13.json",
+      "audit_sha256": "1fedcd87fd009f0e7f4a119c926995d9b2458c61c558d2ae9f244036cd042c4b",
+      "success_vector": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "scene_id": "XB4GS9ShBRE",
+      "episode_id": "14",
+      "raw_native_record_sha256": "54955f44879fbb31510af9719267e4a908620f22c744a636fdb44de326821f7a",
+      "audit_path": "diagnostics/completed-prefix/full/XB4GS9ShBRE/14.json",
+      "audit_sha256": "16f444d8c99c62b08db3a589683318c1f046912ff7cffc0ca8085a576c8b9b3b",
+      "success_vector": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "scene_id": "XB4GS9ShBRE",
+      "episode_id": "15",
+      "raw_native_record_sha256": "f20d821ca33fd3957d8f1141aff1958726d95a0c14cdb9903436deac08eceefb",
+      "audit_path": "diagnostics/completed-prefix/full/XB4GS9ShBRE/15.json",
+      "audit_sha256": "d897f47fa4407d6a49b25f83a667994a16f73384da69a54cfc3bfe8385e0587c",
+      "success_vector": [
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "scene_id": "XB4GS9ShBRE",
+      "episode_id": "16",
+      "raw_native_record_sha256": "28849f3a8711646bb1bf51f4981c918964b8cc60429083dc0adf3807fb07f901",
+      "audit_path": "diagnostics/completed-prefix/full/XB4GS9ShBRE/16.json",
+      "audit_sha256": "2b609ab09e8a762e6fe5457611fc71fa11d731d7c27e572d0bd25570e0c7325f",
+      "success_vector": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "scene_id": "XB4GS9ShBRE",
+      "episode_id": "17",
+      "raw_native_record_sha256": "1ecf9b32646a548811d48a4323bc74b98938c59ec5573abd6be01a9a853cb8ae",
+      "audit_path": "diagnostics/completed-prefix/full/XB4GS9ShBRE/17.json",
+      "audit_sha256": "9a61792922ecc48e1bf8d8751c38af102c5ea00f76c3ac602341976e990ab71b",
+      "success_vector": [
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "scene_id": "XB4GS9ShBRE",
+      "episode_id": "18",
+      "raw_native_record_sha256": "100ca32e0eeb4fa805715639e9b8ea51f8e990596c54f12a61a5e36b873f1ec4",
+      "audit_path": "diagnostics/completed-prefix/full/XB4GS9ShBRE/18.json",
+      "audit_sha256": "db2a721b3a09a4a004ecda7485ec5f9722241de006d2e599946be613c7d788d3",
+      "success_vector": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "scene_id": "XB4GS9ShBRE",
+      "episode_id": "19",
+      "raw_native_record_sha256": "52e83d4bd858ad5d957f298d141fd671d18e7ea4922ae4ff459363e56aadc96f",
+      "audit_path": "diagnostics/completed-prefix/full/XB4GS9ShBRE/19.json",
+      "audit_sha256": "fb1041e2c3e07181f181661a7e27ba8e7a09c851a5103f3aec9ba1e9e28895da",
+      "success_vector": [
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "scene_id": "XB4GS9ShBRE",
+      "episode_id": "2",
+      "raw_native_record_sha256": "06e250121b35a5a669779f09727c4dd0363be81949f527b5a0a02edc89a385e1",
+      "audit_path": "diagnostics/completed-prefix/full/XB4GS9ShBRE/2.json",
+      "audit_sha256": "4ef3a44a52dcc26acdcee23cf7de428d9ed4306aa706a5bb62b56a8c0a1978ca",
+      "success_vector": [
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "scene_id": "XB4GS9ShBRE",
+      "episode_id": "3",
+      "raw_native_record_sha256": "36f2a06906b29f6d266546038686c1c98e6a08b355a0bbf3eaa4cdc78b76759f",
+      "audit_path": "diagnostics/completed-prefix/full/XB4GS9ShBRE/3.json",
+      "audit_sha256": "27166b80c5831403e7498a6e1013b7524cfcf46a5b7f8807d834140ddb620c5f",
+      "success_vector": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "scene_id": "XB4GS9ShBRE",
+      "episode_id": "4",
+      "raw_native_record_sha256": "d555ccb157f25c1cc788bb09f1f62e3b1a2dad122d9fa367e809795c3b2ef910",
+      "audit_path": "diagnostics/completed-prefix/full/XB4GS9ShBRE/4.json",
+      "audit_sha256": "9efbce5f2d19664d6ba8cbf0acdf670206e0abd75bda957dce581c9eff841702",
+      "success_vector": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "scene_id": "XB4GS9ShBRE",
+      "episode_id": "5",
+      "raw_native_record_sha256": "9c7d8b834398389433d374769f578579780f3bc765883acc4c5fbf51942f78ca",
+      "audit_path": "diagnostics/completed-prefix/full/XB4GS9ShBRE/5.json",
+      "audit_sha256": "318e59f3dac69ea36620dc539cc6f7bd90825173707538a74c8bc61331bf3181",
+      "success_vector": [
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "scene_id": "XB4GS9ShBRE",
+      "episode_id": "6",
+      "raw_native_record_sha256": "c110b884598bdfd35c0d3772c825d9eaf3b5ebd11add8646420bab90184ce0cd",
+      "audit_path": "diagnostics/completed-prefix/full/XB4GS9ShBRE/6.json",
+      "audit_sha256": "e4d8f2942a3db320d18edfa358332f76eae5f69f2cf40c8f9f6493a95d69e2f7",
+      "success_vector": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "scene_id": "XB4GS9ShBRE",
+      "episode_id": "7",
+      "raw_native_record_sha256": "790059d2a5106d066bb56fbde123e4d4535b6abb26f388ff973d83b04d8b2851",
+      "audit_path": "diagnostics/completed-prefix/full/XB4GS9ShBRE/7.json",
+      "audit_sha256": "008e63c4a4f18239427c92bd74edbb5b18035b5e59c1a38459a51919b483fc6a",
+      "success_vector": [
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "scene_id": "XB4GS9ShBRE",
+      "episode_id": "8",
+      "raw_native_record_sha256": "5253d8c24fff2d8b2517f1cdeb734e7087fa423261d2d20143c2ba6278dcc25a",
+      "audit_path": "diagnostics/completed-prefix/full/XB4GS9ShBRE/8.json",
+      "audit_sha256": "26ceb88b7fc64c8152afd2e49c27f305d9d6c9630ab91965ae791654d195516c",
+      "success_vector": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "scene_id": "XB4GS9ShBRE",
+      "episode_id": "9",
+      "raw_native_record_sha256": "b1aba36749322dad25cec3e695f132fb446de58f9e2da69ed97a4b9ca3a3e7f2",
+      "audit_path": "diagnostics/completed-prefix/full/XB4GS9ShBRE/9.json",
+      "audit_sha256": "38740f7b57aa0d748fee2ab3d82094c18d2b01fc9a627188778c41063fe54521",
+      "success_vector": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "scene_id": "bxsVRursffK",
+      "episode_id": "0",
+      "raw_native_record_sha256": "eb4b8160577fe51a5e1bbe27ac669b51b52401603b0b91b46c10af38174d6a3d",
+      "audit_path": "diagnostics/completed-prefix/full/bxsVRursffK/0.json",
+      "audit_sha256": "c3e7de8df24d95838a8355aa90cfab3e1170ba7b163e6d64fce1187b4694faec",
+      "success_vector": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "scene_id": "bxsVRursffK",
+      "episode_id": "1",
+      "raw_native_record_sha256": "02d36ddcef56ec0b9ef7cad1036ef5a1beb7b95c1fb6066801187a448f5f4ab6",
+      "audit_path": "diagnostics/completed-prefix/full/bxsVRursffK/1.json",
+      "audit_sha256": "bd9352a165ad8d59c30cda1ae0a629f1278d42822537b582193380e212615b00",
+      "success_vector": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "scene_id": "bxsVRursffK",
+      "episode_id": "10",
+      "raw_native_record_sha256": "3607fa1a587799b00350339a17fde73b6678c93f5426f88264a186c5a46537ad",
+      "audit_path": "diagnostics/completed-prefix/full/bxsVRursffK/10.json",
+      "audit_sha256": "29b59113b112d6e78d2273fd5f72242efe1e4966566b32aca43a6e91caef99ed",
+      "success_vector": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "scene_id": "bxsVRursffK",
+      "episode_id": "11",
+      "raw_native_record_sha256": "a658bba391f65453c89afec23dd967c507250382148bd237543378d918434a8d",
+      "audit_path": "diagnostics/completed-prefix/full/bxsVRursffK/11.json",
+      "audit_sha256": "1f885a524ee4633129ae4fc734bf5fa641f13dca8561d8f0f425f2c912c00348",
+      "success_vector": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "scene_id": "bxsVRursffK",
+      "episode_id": "12",
+      "raw_native_record_sha256": "e2b9f094db35a2cfc4db0cb0ba95a91745f77285c5ae7db4705749411b44b6bc",
+      "audit_path": "diagnostics/completed-prefix/full/bxsVRursffK/12.json",
+      "audit_sha256": "4da2df6020db00a2e0bab87562d9728e7815e53f5de65d74d5dbbae355a94f33",
+      "success_vector": [
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "scene_id": "bxsVRursffK",
+      "episode_id": "13",
+      "raw_native_record_sha256": "034c388f3860f66d29f9074be8234e4ede196d73783904c6f441c56f673cf54d",
+      "audit_path": "diagnostics/completed-prefix/full/bxsVRursffK/13.json",
+      "audit_sha256": "cab379e11750587750fa614d5453acf6e9491c179e3f0cc0daf26a4da23fc9ec",
+      "success_vector": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "scene_id": "bxsVRursffK",
+      "episode_id": "14",
+      "raw_native_record_sha256": "0b8566fcc78c13547d9eb03979d14e232bc649d984e590a4606e1f6f711b745f",
+      "audit_path": "diagnostics/completed-prefix/full/bxsVRursffK/14.json",
+      "audit_sha256": "6a599b0607050b386a291c4af6f2ead7c61cf692aef71aaf0e4969f580ec200f",
+      "success_vector": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "scene_id": "bxsVRursffK",
+      "episode_id": "15",
+      "raw_native_record_sha256": "5075a0e8bfa6e4bbbab65acc129d380c3143a36058a46cdd46ff058065206f35",
+      "audit_path": "diagnostics/completed-prefix/full/bxsVRursffK/15.json",
+      "audit_sha256": "fdc1aa1c8e814b94386029386f525c3cffad61bf1d91f54c6ce102c1aff6e6fd",
+      "success_vector": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "scene_id": "bxsVRursffK",
+      "episode_id": "16",
+      "raw_native_record_sha256": "0f3ba948ddf4e1a1f85fe53a556bee7c518388d5cc4f45e2ce3b31a290c69be7",
+      "audit_path": "diagnostics/completed-prefix/full/bxsVRursffK/16.json",
+      "audit_sha256": "b4587d63e7cfc54d8b56b3ba2fa1f9471e36618057cbd110cbcfd84e6bc81170",
+      "success_vector": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "scene_id": "bxsVRursffK",
+      "episode_id": "17",
+      "raw_native_record_sha256": "bd161ea644c32aef383d38fe763c1a5cccb422bca065f1ebd5c3aa862ff99873",
+      "audit_path": "diagnostics/completed-prefix/full/bxsVRursffK/17.json",
+      "audit_sha256": "bfc3c60de438c9b2e52fc3e0cecc81b20d511fdc090a8c32d5586f2c380eb2aa",
+      "success_vector": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "scene_id": "bxsVRursffK",
+      "episode_id": "18",
+      "raw_native_record_sha256": "295cce25fe21e3e48bd5f20bac389f9680f26eb88f391982ee793d80f6563ee0",
+      "audit_path": "diagnostics/completed-prefix/full/bxsVRursffK/18.json",
+      "audit_sha256": "3e450ccfd428ddefbddd507e28272e5254f90988d476385c1139fc42054b9548",
+      "success_vector": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "scene_id": "bxsVRursffK",
+      "episode_id": "19",
+      "raw_native_record_sha256": "300e63873e1fa98218f6f4bf46fec3510d703888af4b0072b90746efca8fe04b",
+      "audit_path": "diagnostics/completed-prefix/full/bxsVRursffK/19.json",
+      "audit_sha256": "2cfea2e0550797024fd87121537a51183cced3f9b0fe93cc9024207655700645",
+      "success_vector": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "scene_id": "bxsVRursffK",
+      "episode_id": "2",
+      "raw_native_record_sha256": "80494e901641c6ffa80f5feb58b4663c7004f103093d90085b2d1efc67f36d15",
+      "audit_path": "diagnostics/completed-prefix/full/bxsVRursffK/2.json",
+      "audit_sha256": "7d1406076bff5e8a65c85a4c67dee4e77c0bf8c76c81c2a9433b22185641b5bc",
+      "success_vector": [
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "scene_id": "bxsVRursffK",
+      "episode_id": "3",
+      "raw_native_record_sha256": "c23bcc02459834c3cafe1c035b1c2b769337359a9f4a7f34151a7debf88ff13a",
+      "audit_path": "diagnostics/completed-prefix/full/bxsVRursffK/3.json",
+      "audit_sha256": "f93a3022fa72538e7b59e1881c9fd3b4b6d962e2c5142797ecdf517495f0f955",
+      "success_vector": [
+        1,
+        0,
+        1
+      ]
+    },
+    {
+      "scene_id": "bxsVRursffK",
+      "episode_id": "4",
+      "raw_native_record_sha256": "514ca02427a7d1fcbc3dcbdb6287b29a07fbf8d284e44651a4aeb5a195fb0ecd",
+      "audit_path": "diagnostics/completed-prefix/full/bxsVRursffK/4.json",
+      "audit_sha256": "2415cd066ffe9713b770a6e040e2f23f784b0952dc685bc67dd7ea2c8d7a1fb1",
+      "success_vector": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "scene_id": "bxsVRursffK",
+      "episode_id": "5",
+      "raw_native_record_sha256": "0ee0a36125947955ba722a78d47b278b0d5340fbffd2e1bdc90769cb816a0aff",
+      "audit_path": "diagnostics/completed-prefix/full/bxsVRursffK/5.json",
+      "audit_sha256": "752cfd4f87a847b8b7ad9e4e4cc588a98359219eeb324920a3101149f1a18d69",
+      "success_vector": [
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "scene_id": "bxsVRursffK",
+      "episode_id": "6",
+      "raw_native_record_sha256": "0c097eea15fbad00f62573380fbe73223dd5ba14f6bf90fc80544ea542a015f6",
+      "audit_path": "diagnostics/completed-prefix/full/bxsVRursffK/6.json",
+      "audit_sha256": "17765e54a80b293271bd3351b331859c4a8ae7406d20fb0af6c03ff2467d07a4",
+      "success_vector": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "scene_id": "bxsVRursffK",
+      "episode_id": "7",
+      "raw_native_record_sha256": "a3f02fb2ad9db5016b88501e30974cf3f1e19848a36fe2e54de77a6cf0345a4e",
+      "audit_path": "diagnostics/completed-prefix/full/bxsVRursffK/7.json",
+      "audit_sha256": "0294ebe37fda796d0fb7698d8f60e4f3bf92e4e5fe9a77767f7a50ab87ad7133",
+      "success_vector": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "scene_id": "bxsVRursffK",
+      "episode_id": "8",
+      "raw_native_record_sha256": "12326023bf1a65d3eac045af48001f0e8be290edc517b3068d039bf0ef6cc3ad",
+      "audit_path": "diagnostics/completed-prefix/full/bxsVRursffK/8.json",
+      "audit_sha256": "90855db6ac2a470b931c704fc1172eac9f1ad221941800be202a829576388504",
+      "success_vector": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "scene_id": "bxsVRursffK",
+      "episode_id": "9",
+      "raw_native_record_sha256": "80be4087fdcb511488d326d2b022dc17f5756e3744f59f02f82ccaa1277444d2",
+      "audit_path": "diagnostics/completed-prefix/full/bxsVRursffK/9.json",
+      "audit_sha256": "3772f5391cdd74aba5eb5ae7c6de986b60abb8ebb7479d2854315743796d8263",
+      "success_vector": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "scene_id": "cvZr5TUy5C5",
+      "episode_id": "0",
+      "raw_native_record_sha256": "572a7871673d83ea06ee08f37703f32527245bff903518097d181050df0bab64",
+      "audit_path": "diagnostics/completed-prefix/full/cvZr5TUy5C5/0.json",
+      "audit_sha256": "b8cb60fefe914e3037319f7ca8f4ad7ce4169c0d35003765a5a19fdfcaf91525",
+      "success_vector": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "scene_id": "cvZr5TUy5C5",
+      "episode_id": "1",
+      "raw_native_record_sha256": "68f4a17a3a7c7b13074bb8f65c6e0d2912f67b57d8c78d12ad366310c5517f6f",
+      "audit_path": "diagnostics/completed-prefix/full/cvZr5TUy5C5/1.json",
+      "audit_sha256": "e17d8de6898706b0a6e9387078435f33f5f9887efda9466c2f3d527b3be9dd6a",
+      "success_vector": [
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "scene_id": "cvZr5TUy5C5",
+      "episode_id": "10",
+      "raw_native_record_sha256": "ffb47a373fa9c01a712ba53fdfe466815e47951f35d97ab4523f45f962c52233",
+      "audit_path": "diagnostics/completed-prefix/full/cvZr5TUy5C5/10.json",
+      "audit_sha256": "92b2c90c97d3fbb4fc63f2073e74772f439458836c9b3087a8c6221c101fc19e",
+      "success_vector": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "scene_id": "cvZr5TUy5C5",
+      "episode_id": "11",
+      "raw_native_record_sha256": "f7e44fcdeced6eaf979edbcba0c3f824236b56868e1dd5e42c566b787e9eed07",
+      "audit_path": "diagnostics/completed-prefix/full/cvZr5TUy5C5/11.json",
+      "audit_sha256": "4a20a2853d8086f5111df78568204bda0db0ee854ba6ab3c768c8df2088b45a9",
+      "success_vector": [
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "scene_id": "cvZr5TUy5C5",
+      "episode_id": "12",
+      "raw_native_record_sha256": "07ea595826b0f1c0f394dfe7b07f66abacbbc0fa2dd3f2e0626ffe12db807dac",
+      "audit_path": "diagnostics/completed-prefix/full/cvZr5TUy5C5/12.json",
+      "audit_sha256": "efb68379600ce6f9f231bae12b83f3f2d1d84890515256d3af6a33a3bdf513d3",
+      "success_vector": [
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "scene_id": "cvZr5TUy5C5",
+      "episode_id": "13",
+      "raw_native_record_sha256": "c6f69a21a425fccb8a0edfa24804f59aeb84131e05a91b0ef1954816a3209cf0",
+      "audit_path": "diagnostics/completed-prefix/full/cvZr5TUy5C5/13.json",
+      "audit_sha256": "7552fd54f26712a08b9808b856d68a21a5ef318f82c322f6ba3f7f204ada0c71",
+      "success_vector": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "scene_id": "cvZr5TUy5C5",
+      "episode_id": "14",
+      "raw_native_record_sha256": "9263ac85f894d73d98386666a125e5fa6e7bc8bb762f7be7721d4f4ff27e8a1f",
+      "audit_path": "diagnostics/completed-prefix/full/cvZr5TUy5C5/14.json",
+      "audit_sha256": "4ff5e667f9f03a3fd1b2c2e71e5d33149e51eca064f892f3a4aab3be1171c38c",
+      "success_vector": [
+        1,
+        0,
+        1
+      ]
+    },
+    {
+      "scene_id": "cvZr5TUy5C5",
+      "episode_id": "15",
+      "raw_native_record_sha256": "42ccc36fa7e1bb0528e2550fa73259e0cd2e6cd007104b18210425987b78c4d0",
+      "audit_path": "diagnostics/completed-prefix/full/cvZr5TUy5C5/15.json",
+      "audit_sha256": "7b0a80899788124b5fa0fa988aacc49249ffcad620174e83b05be624f5576ea6",
+      "success_vector": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "scene_id": "cvZr5TUy5C5",
+      "episode_id": "16",
+      "raw_native_record_sha256": "84bc693e3398e167d1232e4b7bf5d668a014f8dea982a6309d9060bcbb8b8b6b",
+      "audit_path": "diagnostics/completed-prefix/full/cvZr5TUy5C5/16.json",
+      "audit_sha256": "2572c9418afff6aaf8f6cdc1778107e581cd58ec38da6cb0de5219b998f3cdb1",
+      "success_vector": [
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "scene_id": "cvZr5TUy5C5",
+      "episode_id": "17",
+      "raw_native_record_sha256": "f24a436be374ec8eacd61f9db77381b5d6f13c5b05b75b474bf24d3302974742",
+      "audit_path": "diagnostics/completed-prefix/full/cvZr5TUy5C5/17.json",
+      "audit_sha256": "a930e4fdb3b9e499cfb99cf2c71e5fe6e02fd45448aa5e413637408d58f03d0c",
+      "success_vector": [
+        1,
+        0,
+        1
+      ]
+    },
+    {
+      "scene_id": "cvZr5TUy5C5",
+      "episode_id": "18",
+      "raw_native_record_sha256": "38afb55357225af856b26f491a108164d0d10eb5432021a116d3e790e27c94eb",
+      "audit_path": "diagnostics/completed-prefix/full/cvZr5TUy5C5/18.json",
+      "audit_sha256": "d95033d26acc7baa91c86f27054d46a10e28200eeb68e161bb9f2a09eec65838",
+      "success_vector": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "scene_id": "cvZr5TUy5C5",
+      "episode_id": "19",
+      "raw_native_record_sha256": "2dfe42f69522ac73098e81dab44f7458ad718bffb0754bdd7670930a35fac9e7",
+      "audit_path": "diagnostics/completed-prefix/full/cvZr5TUy5C5/19.json",
+      "audit_sha256": "a0935f2545eb1b3ec8012cadad417c86030880d2a8dea03f792440475c63cf1e",
+      "success_vector": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "scene_id": "cvZr5TUy5C5",
+      "episode_id": "2",
+      "raw_native_record_sha256": "2ee331fd9ea661472d90ff2a2b0c6ff13aa2a5f1ed14ef8871424bfc02f69bd3",
+      "audit_path": "diagnostics/completed-prefix/full/cvZr5TUy5C5/2.json",
+      "audit_sha256": "370f26307167cc9bf08bb6dc6471ce41c40a82d5f084dfb13ee1ab837b9b8a80",
+      "success_vector": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "scene_id": "cvZr5TUy5C5",
+      "episode_id": "3",
+      "raw_native_record_sha256": "62664848be7254c245e30598baf88ca9ed49ddec495f558e2ac9c1f48d9f4ab4",
+      "audit_path": "diagnostics/completed-prefix/full/cvZr5TUy5C5/3.json",
+      "audit_sha256": "aa8054dfc4aa2e451b83d2ae215eafa6cc46761e0dd10bcd3eab05f873724e9c",
+      "success_vector": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "scene_id": "cvZr5TUy5C5",
+      "episode_id": "4",
+      "raw_native_record_sha256": "914d602041233e7d13eb3364590ce0b0c9f1d451c4e564e01975e3e729d9e464",
+      "audit_path": "diagnostics/completed-prefix/full/cvZr5TUy5C5/4.json",
+      "audit_sha256": "8535aae83882c130c9738f4e4730ff4143fe1fa4c87d512b6a0a9251381c52be",
+      "success_vector": [
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "scene_id": "cvZr5TUy5C5",
+      "episode_id": "5",
+      "raw_native_record_sha256": "9c36faf44fb05c588247e1729f63f90977dcbbeb2d92043f17826d63833b95ff",
+      "audit_path": "diagnostics/completed-prefix/full/cvZr5TUy5C5/5.json",
+      "audit_sha256": "0ce17d1f8f05d332b89977f7c4a069271703070c8be1fdfacd628efc54685c89",
+      "success_vector": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "scene_id": "cvZr5TUy5C5",
+      "episode_id": "6",
+      "raw_native_record_sha256": "d88f045a401213e4749366c916d72d89067cce4f939e681ef680e2290ab5286f",
+      "audit_path": "diagnostics/completed-prefix/full/cvZr5TUy5C5/6.json",
+      "audit_sha256": "dc2256cf9b1789ce97a09d99d84cf2befdfd4b2690d25735bef194f43a7abc15",
+      "success_vector": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "scene_id": "cvZr5TUy5C5",
+      "episode_id": "7",
+      "raw_native_record_sha256": "c3af7216a8eb18e88195b6260078050cdc81c1b151aef58d59007334d0debe4c",
+      "audit_path": "diagnostics/completed-prefix/full/cvZr5TUy5C5/7.json",
+      "audit_sha256": "d36f7beb1bb79d520b8427dcd166e9de7f8a661e7b8ef328268989a6998d96c3",
+      "success_vector": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "scene_id": "cvZr5TUy5C5",
+      "episode_id": "8",
+      "raw_native_record_sha256": "29df4a73911af4ee218c7b0586bb696149fabe909baaf9a64612db9bf6e29ec6",
+      "audit_path": "diagnostics/completed-prefix/full/cvZr5TUy5C5/8.json",
+      "audit_sha256": "42cda777ba7430f1563eb89fdcc503def0a20b8f6ef7300c1888eeb0b59b0bda",
+      "success_vector": [
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "scene_id": "cvZr5TUy5C5",
+      "episode_id": "9",
+      "raw_native_record_sha256": "790662d9c7abf5be6baf31a0a834194d8c3e4d7a95462af9b6d2d22a80a7dc23",
+      "audit_path": "diagnostics/completed-prefix/full/cvZr5TUy5C5/9.json",
+      "audit_sha256": "b6898e0f350640b4de43096852e042ed1ae365b3b14f2688cef2fb19a8c8dc7d",
+      "success_vector": [
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "scene_id": "mL8ThkuaVTM",
+      "episode_id": "0",
+      "raw_native_record_sha256": "3ce4d39351d8523ead3724560f47e8be49af70108e8b6a5dc1c2a0b3b04046b4",
+      "audit_path": "diagnostics/completed-prefix/full/mL8ThkuaVTM/0.json",
+      "audit_sha256": "39b17eed762e5ff6e7cb6961e6f7c29b8e86f76ae38ec4b0769488b4663f4501",
+      "success_vector": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "scene_id": "mL8ThkuaVTM",
+      "episode_id": "1",
+      "raw_native_record_sha256": "5f2ccbc425e988d570d09d954e0408bc58e2d92c3c4b129e75ad9ca7be1b415c",
+      "audit_path": "diagnostics/completed-prefix/full/mL8ThkuaVTM/1.json",
+      "audit_sha256": "5a9525fcaa2ab1a70fcfd1618c22b02ae2783015d1d841b6cbe694838f60a5e5",
+      "success_vector": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "scene_id": "mL8ThkuaVTM",
+      "episode_id": "10",
+      "raw_native_record_sha256": "83a99c24568217f7e95f322ee5b3adf4d99b19fcaa36e347a1b05e760747f05c",
+      "audit_path": "diagnostics/completed-prefix/full/mL8ThkuaVTM/10.json",
+      "audit_sha256": "0386defd58ea9993cfae90da005eafd49fa788d0dfceda9bacf3a1518f0d471b",
+      "success_vector": [
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "scene_id": "mL8ThkuaVTM",
+      "episode_id": "11",
+      "raw_native_record_sha256": "12c05e13fe61c1834635a4ada417e5bc9d5f4b98abc7c38e43c7f771a5eb08e3",
+      "audit_path": "diagnostics/completed-prefix/full/mL8ThkuaVTM/11.json",
+      "audit_sha256": "6c276922eeeff8d1c34e051c8cfbccd939a613707e9bb981b06a973ada5f23e4",
+      "success_vector": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "scene_id": "mL8ThkuaVTM",
+      "episode_id": "12",
+      "raw_native_record_sha256": "137a3449707fcceb1178802357acdec38f97ed41e175018338e005e876bfe85a",
+      "audit_path": "diagnostics/completed-prefix/full/mL8ThkuaVTM/12.json",
+      "audit_sha256": "77b95d35ea691f196f8331ed41aabaca1e3bae4d4748f39cad190c9da0da00ff",
+      "success_vector": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "scene_id": "mL8ThkuaVTM",
+      "episode_id": "13",
+      "raw_native_record_sha256": "a37c5f48e50a5d6825fd4afffcc4c33b8c10ced5551c39afaa7d0db91a088e3e",
+      "audit_path": "diagnostics/completed-prefix/full/mL8ThkuaVTM/13.json",
+      "audit_sha256": "54208f2b17fc6e83022c4c63bee958908b1d69727dcc915bf60f36d0ac8d3ab3",
+      "success_vector": [
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "scene_id": "mL8ThkuaVTM",
+      "episode_id": "14",
+      "raw_native_record_sha256": "9f65fff456064e2cab7cea9fbff28b631f04339f9e5d576cafbaddaea5588411",
+      "audit_path": "diagnostics/completed-prefix/full/mL8ThkuaVTM/14.json",
+      "audit_sha256": "7378fe97eab8e2f9db3c95a886aa36d3785f7295393634ea205dc37ec477b9af",
+      "success_vector": [
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "scene_id": "mL8ThkuaVTM",
+      "episode_id": "15",
+      "raw_native_record_sha256": "a20ec85286bdc8a297e40bd004837e593acedff19f7d5aea1981a8bac30768d4",
+      "audit_path": "diagnostics/completed-prefix/full/mL8ThkuaVTM/15.json",
+      "audit_sha256": "62c4a0c71b01407cb921e3e98a473ce3f95d1f70cdde98403819527e6312aeab",
+      "success_vector": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "scene_id": "mL8ThkuaVTM",
+      "episode_id": "16",
+      "raw_native_record_sha256": "68067ebfa6740d5d1af652bf4dc42b955bf37a91aa81d74f51c3ce9dddeaaf89",
+      "audit_path": "diagnostics/completed-prefix/full/mL8ThkuaVTM/16.json",
+      "audit_sha256": "c9cdeba029e9c350e6ca222100b37a60c2ab3d20bfdf6d70c022d1125db6551c",
+      "success_vector": [
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "scene_id": "mL8ThkuaVTM",
+      "episode_id": "17",
+      "raw_native_record_sha256": "42b648f30e99f8ca8701a5c2165fafa6177e37f14f53084bdf7c45fb38049b00",
+      "audit_path": "diagnostics/completed-prefix/full/mL8ThkuaVTM/17.json",
+      "audit_sha256": "b01e3b704f0775dbab4dfd5c1736372e4432c4878f20c46e8bedb1f62a9f2a1b",
+      "success_vector": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "scene_id": "mL8ThkuaVTM",
+      "episode_id": "18",
+      "raw_native_record_sha256": "54fac2155a33cfac41bd3d7088a12354675db7807ad6b5779f0d6ad6bdbf446d",
+      "audit_path": "diagnostics/completed-prefix/full/mL8ThkuaVTM/18.json",
+      "audit_sha256": "4fd6eef7e4bd1bca415e8adb89bc773de0efb5ae8aa6abe762a92e5e06286521",
+      "success_vector": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "scene_id": "mL8ThkuaVTM",
+      "episode_id": "19",
+      "raw_native_record_sha256": "d57506b618a4add3aa7d00c432c97a86fdfba7fe656fe09fc20b9f487cba422b",
+      "audit_path": "diagnostics/completed-prefix/full/mL8ThkuaVTM/19.json",
+      "audit_sha256": "1df530c6a8d4554b742f3b9d55a29e7fe59e3433587b9a829e6bf576b16ca0de",
+      "success_vector": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "scene_id": "mL8ThkuaVTM",
+      "episode_id": "2",
+      "raw_native_record_sha256": "2c1a4d0f60d647718844abb6d013b794a1fe7c6cf45f6a70986fc9d2f27564db",
+      "audit_path": "diagnostics/completed-prefix/full/mL8ThkuaVTM/2.json",
+      "audit_sha256": "f4d74ea58ec248b648c91a19895654fb33c65c17909dd4c00c80c76cb69dbc97",
+      "success_vector": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "scene_id": "mL8ThkuaVTM",
+      "episode_id": "3",
+      "raw_native_record_sha256": "501586d00eb9fbf1a9b733da900c0e786f4dcab020be14dce2266c755a32eab4",
+      "audit_path": "diagnostics/completed-prefix/full/mL8ThkuaVTM/3.json",
+      "audit_sha256": "458a8a1785cb1cad0489d5971d96d9b33ed7b1528bf059deac04a5926e4e5dd5",
+      "success_vector": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "scene_id": "mL8ThkuaVTM",
+      "episode_id": "4",
+      "raw_native_record_sha256": "a5f58fb903c72f4077c09db747c9531b5b8090d90b2c787a451545c6144cd302",
+      "audit_path": "diagnostics/completed-prefix/full/mL8ThkuaVTM/4.json",
+      "audit_sha256": "c794da2af7958632948a76bb2b450b11c7da0e5192fb72caa6fcc6fc8e6b191e",
+      "success_vector": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "scene_id": "mL8ThkuaVTM",
+      "episode_id": "5",
+      "raw_native_record_sha256": "5d8064d24d0bc356afce554db5769c8ce95fbd3aac9a05966339f1e8f09f5723",
+      "audit_path": "diagnostics/completed-prefix/full/mL8ThkuaVTM/5.json",
+      "audit_sha256": "d148d72f4a2267e4fad1e71c4bb26760c0224599ebc83b2e6e48472919a66685",
+      "success_vector": [
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "scene_id": "mL8ThkuaVTM",
+      "episode_id": "6",
+      "raw_native_record_sha256": "40e8d61f896a94248417c879f86d5088fd74ae7e6dee74e630711625f4076d90",
+      "audit_path": "diagnostics/completed-prefix/full/mL8ThkuaVTM/6.json",
+      "audit_sha256": "b4777efd92860823fa6f79d4bca5903ef4957b470ab0b9b01c363d74b64fa3d0",
+      "success_vector": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "scene_id": "mL8ThkuaVTM",
+      "episode_id": "7",
+      "raw_native_record_sha256": "037ae4b45f70e6b102c1b27ae978fa08db08c82aa372493b8f0a8e438ba2d92e",
+      "audit_path": "diagnostics/completed-prefix/full/mL8ThkuaVTM/7.json",
+      "audit_sha256": "2299a92fba080a49048d2c78f56052d68481e0fa83ce2dfe3593a47d2b787038",
+      "success_vector": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "scene_id": "mL8ThkuaVTM",
+      "episode_id": "8",
+      "raw_native_record_sha256": "099fc923cbc0cbe8cf9c51a50169a8d9ce76384b94d74ee03452051c97750641",
+      "audit_path": "diagnostics/completed-prefix/full/mL8ThkuaVTM/8.json",
+      "audit_sha256": "0162fd5af186efb4ee60b022777a1779c3457a7d28421d4e248c498fe14f962d",
+      "success_vector": [
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "scene_id": "mL8ThkuaVTM",
+      "episode_id": "9",
+      "raw_native_record_sha256": "052154b9b5ea40e0da0103b58ca032f3df51ed0204d045ae4739d3718998c636",
+      "audit_path": "diagnostics/completed-prefix/full/mL8ThkuaVTM/9.json",
+      "audit_sha256": "ca2afe8f368030d7deb873b40b0702ca5e3a130410b2b2481d6d66c3dd7739e4",
+      "success_vector": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "scene_id": "mv2HUxq3B53",
+      "episode_id": "0",
+      "raw_native_record_sha256": "f11185b1a0581ca45250d83819d51fed4dc8193ba4dc881b8b820eaa8647f7f2",
+      "audit_path": "diagnostics/completed-prefix/full/mv2HUxq3B53/0.json",
+      "audit_sha256": "c2fc381dcbc0c81f5eca1e4aa1f6e63edc9fb61bf6e9ae00f896bc77708f6a51",
+      "success_vector": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "scene_id": "mv2HUxq3B53",
+      "episode_id": "1",
+      "raw_native_record_sha256": "4c006c8102fedb27843a19330faaf1ee0ff691e3e77caa0d8fa3ab2ca17a8cd4",
+      "audit_path": "diagnostics/completed-prefix/full/mv2HUxq3B53/1.json",
+      "audit_sha256": "cdbe3d3c8f98182ac915521b6ba098501d02f8142aef0df726dee20f7c26ef4e",
+      "success_vector": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "scene_id": "mv2HUxq3B53",
+      "episode_id": "10",
+      "raw_native_record_sha256": "3aa0b02570034e37fad2ecf4d7bf757b7533eaac0e791eb9a9e7c998cac85587",
+      "audit_path": "diagnostics/completed-prefix/full/mv2HUxq3B53/10.json",
+      "audit_sha256": "f73c482bd0e93f2aba2450cdd89bc44e12323f1db764a2b4fe6cf4880f907ee0",
+      "success_vector": [
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "scene_id": "mv2HUxq3B53",
+      "episode_id": "11",
+      "raw_native_record_sha256": "2fb76ba9dcf4d84f9f60eee32d2e017e8d5588db2e9ee31bb2dc22716fdd3dba",
+      "audit_path": "diagnostics/completed-prefix/full/mv2HUxq3B53/11.json",
+      "audit_sha256": "d3c83fe99ae21d40c84828138b80ef87a51b7b17a523614ffb79e512cd8d7ce3",
+      "success_vector": [
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "scene_id": "mv2HUxq3B53",
+      "episode_id": "12",
+      "raw_native_record_sha256": "23fff7c9cf026ab4745f9653d55d99027a6aadd3ceeff6959072fa39c924e9d3",
+      "audit_path": "diagnostics/completed-prefix/full/mv2HUxq3B53/12.json",
+      "audit_sha256": "d5906eb6ac6b89c2bfff796ecb007ca6179707d4370dc48ff7767be6e55353b9",
+      "success_vector": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "scene_id": "mv2HUxq3B53",
+      "episode_id": "13",
+      "raw_native_record_sha256": "74581e8c39ac948720355aaa8db2d659ef4c84e30357360da5e6ef21086b0f51",
+      "audit_path": "diagnostics/completed-prefix/full/mv2HUxq3B53/13.json",
+      "audit_sha256": "90cc5e860449b8d796924ef58b1201b5b09f1609c891368640272541956adcd6",
+      "success_vector": [
+        1,
+        0,
+        1
+      ]
+    },
+    {
+      "scene_id": "mv2HUxq3B53",
+      "episode_id": "14",
+      "raw_native_record_sha256": "d83773f3b19889c1d913968083f88b23b448c510f2bcdfe4273191d52e905ef0",
+      "audit_path": "diagnostics/completed-prefix/full/mv2HUxq3B53/14.json",
+      "audit_sha256": "c7b7b251ca2afa114b7d837d6fd896a926e5766708573a5a522fb2d61be6aad9",
+      "success_vector": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "scene_id": "mv2HUxq3B53",
+      "episode_id": "15",
+      "raw_native_record_sha256": "fef7bbaeef1948163f527082118304df45746aa8adae803bb3b769879c1920b6",
+      "audit_path": "diagnostics/completed-prefix/full/mv2HUxq3B53/15.json",
+      "audit_sha256": "8aa0b5bf0fced9d66d3ff946049b6d1a0de98465c9c4f64a78b391da77025d33",
+      "success_vector": [
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "scene_id": "mv2HUxq3B53",
+      "episode_id": "16",
+      "raw_native_record_sha256": "d31c24fab877f201e298f1cf2c76dd7dd503b9aeb1a05863ae5f5812eaee4900",
+      "audit_path": "diagnostics/completed-prefix/full/mv2HUxq3B53/16.json",
+      "audit_sha256": "8e6e8ddab770cb0dc7a2f802a1f542a3e30fb7240783cf1cb31aa04f6f8a476f",
+      "success_vector": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "scene_id": "mv2HUxq3B53",
+      "episode_id": "17",
+      "raw_native_record_sha256": "462a432400770ef404954a0ac27320e5f13aa111e0649f927a064729adbc9777",
+      "audit_path": "diagnostics/completed-prefix/full/mv2HUxq3B53/17.json",
+      "audit_sha256": "2d0b503f51482f08c98579193b9936a1d817fedb516d3a3aeedf31c8c737898b",
+      "success_vector": [
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "scene_id": "mv2HUxq3B53",
+      "episode_id": "18",
+      "raw_native_record_sha256": "7f3ce6b71ecac3349414fca903906592b75d53514b6ebeec8a82602af637777f",
+      "audit_path": "diagnostics/completed-prefix/full/mv2HUxq3B53/18.json",
+      "audit_sha256": "6e804c96b6d7a1de80e58bdd6c123b4ef8ea670290769a29ec7b17d8b5bebebc",
+      "success_vector": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "scene_id": "mv2HUxq3B53",
+      "episode_id": "19",
+      "raw_native_record_sha256": "1990bdef43f447c0ec61b45554d4f8aee976992960f97c30e65094565d882f6c",
+      "audit_path": "diagnostics/completed-prefix/full/mv2HUxq3B53/19.json",
+      "audit_sha256": "45648c1fb1636ca6483394f8815cbf8d80dd33e544eacf72e14870d16fa11e85",
+      "success_vector": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "scene_id": "mv2HUxq3B53",
+      "episode_id": "2",
+      "raw_native_record_sha256": "661e0a7c77ecdd47e5714cf6cc8d895181a38562a14b7af33660546324b5be2d",
+      "audit_path": "diagnostics/completed-prefix/full/mv2HUxq3B53/2.json",
+      "audit_sha256": "7b85a04b075e873a36eeda4ae271aa603052e88327096d12f7af37eb2bab530a",
+      "success_vector": [
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "scene_id": "mv2HUxq3B53",
+      "episode_id": "3",
+      "raw_native_record_sha256": "eb36427f46887cf489bb8646782e83fca6dd97ba043422f246ab7e8509a26444",
+      "audit_path": "diagnostics/completed-prefix/full/mv2HUxq3B53/3.json",
+      "audit_sha256": "58104cfd562d4ae619be8860ed9711937baa4846845436f011d9fea565ea8b58",
+      "success_vector": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "scene_id": "mv2HUxq3B53",
+      "episode_id": "4",
+      "raw_native_record_sha256": "c859045e5769125fcb02cae66050cc838316f7398cf359fd7225a6fd423fbbc9",
+      "audit_path": "diagnostics/completed-prefix/full/mv2HUxq3B53/4.json",
+      "audit_sha256": "adb9364f177daca7fae5b86e524aa72f1f261311cd5ee077499baa628fa2f881",
+      "success_vector": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "scene_id": "mv2HUxq3B53",
+      "episode_id": "5",
+      "raw_native_record_sha256": "83de7c9010cfc304d113933eee5997417e894060b23814ebcd953bab8c86b1c1",
+      "audit_path": "diagnostics/completed-prefix/full/mv2HUxq3B53/5.json",
+      "audit_sha256": "3cbda0ab54b1a1c964fa1c862d95604644a10abee7367a65efbf3da146c4e684",
+      "success_vector": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "scene_id": "mv2HUxq3B53",
+      "episode_id": "6",
+      "raw_native_record_sha256": "f7c9dd2558ab2ecdb4a6838737f4f4283406e4d02c8962f19976497e3c4dd4a3",
+      "audit_path": "diagnostics/completed-prefix/full/mv2HUxq3B53/6.json",
+      "audit_sha256": "d8e9b054d578f5e2c162f566d6d019cac47dfa02cc723e9617b46dc491acfd81",
+      "success_vector": [
+        1,
+        0,
+        1
+      ]
+    },
+    {
+      "scene_id": "mv2HUxq3B53",
+      "episode_id": "7",
+      "raw_native_record_sha256": "8a86d71604e7bd36859fc70744b2d247958cb2b558a750e54e00cf19806ad5c0",
+      "audit_path": "diagnostics/completed-prefix/full/mv2HUxq3B53/7.json",
+      "audit_sha256": "9e064d033529a400d80c6463f84a7cac481a879c634dbee9c9577f9799f05f3e",
+      "success_vector": [
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "scene_id": "mv2HUxq3B53",
+      "episode_id": "8",
+      "raw_native_record_sha256": "c967c97219a6685111c612d240391ed458e21c85bdd1fe247eba5e85c116b822",
+      "audit_path": "diagnostics/completed-prefix/full/mv2HUxq3B53/8.json",
+      "audit_sha256": "e810fc7c2e1caae93f3403b8a1fd314caa0e7e5e474c186d50d536aaa0b559c9",
+      "success_vector": [
+        1,
+        0,
+        1
+      ]
+    },
+    {
+      "scene_id": "mv2HUxq3B53",
+      "episode_id": "9",
+      "raw_native_record_sha256": "b318a9895a49f59cbbef5f9cd8731e37f232273623e7b64a484ccc95470fe738",
+      "audit_path": "diagnostics/completed-prefix/full/mv2HUxq3B53/9.json",
+      "audit_sha256": "2c20486223bc9819c8e3b3272eca78dbbd4d5b9447531681bab5367703b13e88",
+      "success_vector": [
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "scene_id": "p53SfW6mjZe",
+      "episode_id": "0",
+      "raw_native_record_sha256": "aece638517a232b6ae85c406f51e72d6e9ab7e2cdd1da80b5d3534a6da2e9d47",
+      "audit_path": "diagnostics/completed-prefix/full/p53SfW6mjZe/0.json",
+      "audit_sha256": "b284a2e811b360eb26b210892bb3248a1af3c8ec3ded1917d098885128a045c8",
+      "success_vector": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "scene_id": "p53SfW6mjZe",
+      "episode_id": "1",
+      "raw_native_record_sha256": "7ad2ce35b4c92e867b047bfb5311398e4d63ed59274fb27a7990a6f76bf2b27c",
+      "audit_path": "diagnostics/completed-prefix/full/p53SfW6mjZe/1.json",
+      "audit_sha256": "5ff6b6f64f550ddac5d6e37ec969a85e0da7c8627747d5818d8348e280057f9e",
+      "success_vector": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "scene_id": "p53SfW6mjZe",
+      "episode_id": "10",
+      "raw_native_record_sha256": "292d9828362991114aa76e7c928f20050eb6ba190399de288c47b9883bf38fb5",
+      "audit_path": "diagnostics/completed-prefix/full/p53SfW6mjZe/10.json",
+      "audit_sha256": "1297702d3f56b7d07ff00948aae1c86a6891b7c1907dae4d4db6d5ee6cc74c7c",
+      "success_vector": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "scene_id": "p53SfW6mjZe",
+      "episode_id": "11",
+      "raw_native_record_sha256": "da6c7845a116e70cbafdad9617350780d33ed9451609902a5953846b74228f35",
+      "audit_path": "diagnostics/completed-prefix/full/p53SfW6mjZe/11.json",
+      "audit_sha256": "d3ba3fece72e086ac97aafd952d5bac373584e462ccd160fb7ac3d5382a82d82",
+      "success_vector": [
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "scene_id": "p53SfW6mjZe",
+      "episode_id": "12",
+      "raw_native_record_sha256": "d7e47af06bc4a8e14a1bcc1ed61a10c86584f8d6b5940156301333ebcb37c800",
+      "audit_path": "diagnostics/completed-prefix/full/p53SfW6mjZe/12.json",
+      "audit_sha256": "dfcad199ed73a15c27b123811bf27fd4d938068a3119205d04b8a0c5362838b4",
+      "success_vector": [
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "scene_id": "p53SfW6mjZe",
+      "episode_id": "13",
+      "raw_native_record_sha256": "c6bbe5a6923ef47c6e638c9efbac7f7250f1883c1927e11cdddaa0a5b9223d8d",
+      "audit_path": "diagnostics/completed-prefix/full/p53SfW6mjZe/13.json",
+      "audit_sha256": "a3b2c2865d7658119f402c1040e3c7e42faa980681a38d8ff07631dda1a9c80d",
+      "success_vector": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "scene_id": "p53SfW6mjZe",
+      "episode_id": "14",
+      "raw_native_record_sha256": "e565da37711139e22568e484085c0b5783ab0c5f94735b0e31a5f1f089a3db8d",
+      "audit_path": "diagnostics/completed-prefix/full/p53SfW6mjZe/14.json",
+      "audit_sha256": "5c91c0728c29929f6c503fc9e3989271eb7cc200eca72d7eaea0a98095aa35c3",
+      "success_vector": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "scene_id": "p53SfW6mjZe",
+      "episode_id": "15",
+      "raw_native_record_sha256": "0670b08e2fd8aea884edcbab1db772872894524dc36bf1ee0d2f8169243360ed",
+      "audit_path": "diagnostics/completed-prefix/full/p53SfW6mjZe/15.json",
+      "audit_sha256": "c2d882eb14a00beaaa62275f8a489bd5689594b6de1a9deb390aa15f259892c3",
+      "success_vector": [
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "scene_id": "p53SfW6mjZe",
+      "episode_id": "16",
+      "raw_native_record_sha256": "7762ceabfd9122d0088586bd62dcbfc9dd5513b34698662161c9b02e8e525af0",
+      "audit_path": "diagnostics/completed-prefix/full/p53SfW6mjZe/16.json",
+      "audit_sha256": "b7f14590274e15e847aca341fcf938306cd17d6d9db3edcbfe98b1c2d35580b1",
+      "success_vector": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "scene_id": "p53SfW6mjZe",
+      "episode_id": "17",
+      "raw_native_record_sha256": "55d7597201afc432c8d85d96acb075a0a692504da935bce5c2bc2a5d46895b4a",
+      "audit_path": "diagnostics/completed-prefix/full/p53SfW6mjZe/17.json",
+      "audit_sha256": "8d05a4c5286038527b47d84c0c9fdfde81fed99da314199557538a560adbf7b1",
+      "success_vector": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "scene_id": "p53SfW6mjZe",
+      "episode_id": "18",
+      "raw_native_record_sha256": "6526da20c4a9f06f7ddd57a865e7a4c0d2b643acc94943466fdf273ab0053bc7",
+      "audit_path": "diagnostics/completed-prefix/full/p53SfW6mjZe/18.json",
+      "audit_sha256": "1233ccc5e56213b44bb73de456a86042d8fed5ea121a13722dc3964a114e3f85",
+      "success_vector": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "scene_id": "p53SfW6mjZe",
+      "episode_id": "19",
+      "raw_native_record_sha256": "712786464e53ad0b7ef23eeeb24b7aa79330785bb22e8abf31847177d02fdc05",
+      "audit_path": "diagnostics/completed-prefix/full/p53SfW6mjZe/19.json",
+      "audit_sha256": "2c178bdf7c2be8cc309b12b062e906b65ec9b6c7f19414c9a1d9ef77aa9c64b0",
+      "success_vector": [
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "scene_id": "p53SfW6mjZe",
+      "episode_id": "2",
+      "raw_native_record_sha256": "b7b1b2688556a53c79f030ee86e3fca434e4dab22691c4cf82b643f3b8cac1d8",
+      "audit_path": "diagnostics/completed-prefix/full/p53SfW6mjZe/2.json",
+      "audit_sha256": "2a5185972e6e1cfdc7de1f30c11061ee32f4f0b242b65eb47f6d109692a1d5f0",
+      "success_vector": [
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "scene_id": "p53SfW6mjZe",
+      "episode_id": "3",
+      "raw_native_record_sha256": "fdfd827d3fb089e1a9836105f238c7e9bc54ac718728477db60ab770bc4a3b75",
+      "audit_path": "diagnostics/completed-prefix/full/p53SfW6mjZe/3.json",
+      "audit_sha256": "27bcc0878f39b6f3ec70dae3413956e45e33815d48ebe1e0d6ae640589016225",
+      "success_vector": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "scene_id": "p53SfW6mjZe",
+      "episode_id": "4",
+      "raw_native_record_sha256": "46b57968610b5c48086e7671d1c62416aaa0d5249baaf6d75bec2db2fa41dba2",
+      "audit_path": "diagnostics/completed-prefix/full/p53SfW6mjZe/4.json",
+      "audit_sha256": "7f74dcb752d06f91fa09b158e36e37b05324961b59c069ee469886f0422dfcbd",
+      "success_vector": [
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "scene_id": "p53SfW6mjZe",
+      "episode_id": "5",
+      "raw_native_record_sha256": "0397c724d4dff0337e47b12bbe2058601560e493227f8f6673c364ff2815617d",
+      "audit_path": "diagnostics/completed-prefix/full/p53SfW6mjZe/5.json",
+      "audit_sha256": "a2440f3459b9a1314d9c3aabc5578b5cbfc8ba67819df7bef8bc8577189f67eb",
+      "success_vector": [
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "scene_id": "p53SfW6mjZe",
+      "episode_id": "6",
+      "raw_native_record_sha256": "487c378afb59cb6e1c28cb756a0bdb853f20cbf39d3843e135c2550fba2c57f7",
+      "audit_path": "diagnostics/completed-prefix/full/p53SfW6mjZe/6.json",
+      "audit_sha256": "b24d73050316f960ec16a4fa3cd8bb53c6eec49ad08fd5a5c8408f75605abd4b",
+      "success_vector": [
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "scene_id": "p53SfW6mjZe",
+      "episode_id": "7",
+      "raw_native_record_sha256": "b0f151a76c431cad2cc3cfffac726a4290b2ee07c08e6b9a81b4ad6321ec423a",
+      "audit_path": "diagnostics/completed-prefix/full/p53SfW6mjZe/7.json",
+      "audit_sha256": "660f522725b9c77e862e1b81b926c3850eb9072b94ec63d8d00dfef86e3f8cb3",
+      "success_vector": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "scene_id": "p53SfW6mjZe",
+      "episode_id": "8",
+      "raw_native_record_sha256": "8d40f937ce9b196314f478bce279fa88246c72dca2b4dbed6f5f4a639ae3b2c7",
+      "audit_path": "diagnostics/completed-prefix/full/p53SfW6mjZe/8.json",
+      "audit_sha256": "1469ace117a7228858d9330090fa3c2b6a2bc3479297827e87b6d864e92564ea",
+      "success_vector": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "scene_id": "p53SfW6mjZe",
+      "episode_id": "9",
+      "raw_native_record_sha256": "78fb6b21de5b8e8d8b630367267be414ce27f8193eac672f70a8846e988e6547",
+      "audit_path": "diagnostics/completed-prefix/full/p53SfW6mjZe/9.json",
+      "audit_sha256": "09eb2bf7657948724ba3f61cc46417ca3a135696e1adcc013671d79db0fec04d",
+      "success_vector": [
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "scene_id": "q3zU7Yy5E5s",
+      "episode_id": "0",
+      "raw_native_record_sha256": "0bb8c56fc9f3db44b54775c30446c71ba4357f3dee3de48cfeb96322f9f73bb3",
+      "audit_path": "diagnostics/completed-prefix/full/q3zU7Yy5E5s/0.json",
+      "audit_sha256": "0955f68485d2f985ac3f31601da346734c7dd5f8bb52295f03144367584a5369",
+      "success_vector": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "scene_id": "q3zU7Yy5E5s",
+      "episode_id": "1",
+      "raw_native_record_sha256": "89cc71afa1cd275db56da500deb2c23302b10fbeefeba443da2832e48b57388b",
+      "audit_path": "diagnostics/completed-prefix/full/q3zU7Yy5E5s/1.json",
+      "audit_sha256": "487050bc40be811395c9124166f60979fa8191587dd06546784dcaef440a1fae",
+      "success_vector": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "scene_id": "q3zU7Yy5E5s",
+      "episode_id": "10",
+      "raw_native_record_sha256": "2c099e06a7d111ed35f9b0f5be94672a3e8ec496fbda5c0dc8ca0e3d7311f2f5",
+      "audit_path": "diagnostics/completed-prefix/full/q3zU7Yy5E5s/10.json",
+      "audit_sha256": "db1b9cb2d4a4fe4ce32110ff1623c05b0c433345c06a1a92b8e826c081764042",
+      "success_vector": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "scene_id": "q3zU7Yy5E5s",
+      "episode_id": "11",
+      "raw_native_record_sha256": "8f58332a60975151139fb429e03221798f9374f77e8d45a2b30232cdb525d597",
+      "audit_path": "diagnostics/completed-prefix/full/q3zU7Yy5E5s/11.json",
+      "audit_sha256": "d8d82caac6ea84e18424be714267ae65f58336275b98c5ce706029d8776d1203",
+      "success_vector": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "scene_id": "q3zU7Yy5E5s",
+      "episode_id": "12",
+      "raw_native_record_sha256": "e19bfa39864a2016dcd05b314c301888187d07ce5c12f4b3f22d6ba9654b90ac",
+      "audit_path": "diagnostics/completed-prefix/full/q3zU7Yy5E5s/12.json",
+      "audit_sha256": "99182fd1223b92bb1036d22d455833b04bbabaff0a8cf47077512946897f7490",
+      "success_vector": [
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "scene_id": "q3zU7Yy5E5s",
+      "episode_id": "13",
+      "raw_native_record_sha256": "e280a094100089d7783a6f24a44555809c810ffe452e98d6c39c9e83e49c4291",
+      "audit_path": "diagnostics/completed-prefix/full/q3zU7Yy5E5s/13.json",
+      "audit_sha256": "a291b35a2ed22423f2ddd1f7cdcaea07d7620e45d08f1da94edc67cc84f00454",
+      "success_vector": [
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "scene_id": "q3zU7Yy5E5s",
+      "episode_id": "14",
+      "raw_native_record_sha256": "3882131165c0cd7f8e3eb2ebc542425881f03413154b7edca91576fa1a385d1d",
+      "audit_path": "diagnostics/completed-prefix/full/q3zU7Yy5E5s/14.json",
+      "audit_sha256": "df4e38a29727501069aad726647024abb1f405497d265ae22af3f88b1b41f127",
+      "success_vector": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "scene_id": "q3zU7Yy5E5s",
+      "episode_id": "15",
+      "raw_native_record_sha256": "836c238ced84203062d5b654f1811dd7deb0f209d5ec0387f3d2f018fffee4f5",
+      "audit_path": "diagnostics/completed-prefix/full/q3zU7Yy5E5s/15.json",
+      "audit_sha256": "93b0e4c0d7820ee89e44a32e1db966a77e28612237699c7c17dc30c2e98a6865",
+      "success_vector": [
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "scene_id": "q3zU7Yy5E5s",
+      "episode_id": "16",
+      "raw_native_record_sha256": "91c50f524fa46b70f01b4082e73ccc10a68ce455b9dbc7407798ce36315e0ffa",
+      "audit_path": "diagnostics/completed-prefix/full/q3zU7Yy5E5s/16.json",
+      "audit_sha256": "fc316ed47e9113185d4418bf8d08d03448cfe1e1d3333f751a02e1088560b990",
+      "success_vector": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "scene_id": "q3zU7Yy5E5s",
+      "episode_id": "2",
+      "raw_native_record_sha256": "eac4beca0f80ed5e35d7411ab4532571dbd88d464c4d968250cde1124576fb35",
+      "audit_path": "diagnostics/completed-prefix/full/q3zU7Yy5E5s/2.json",
+      "audit_sha256": "7dd1d25e02ef0789fec2d319f9b69a1b168d7251f9f3a832c2abb9b8b52d90ba",
+      "success_vector": [
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "scene_id": "q3zU7Yy5E5s",
+      "episode_id": "3",
+      "raw_native_record_sha256": "ca0afcfd808ebee1b88380549baf34a72ce626d4d2427d14cc70a7e91595d683",
+      "audit_path": "diagnostics/completed-prefix/full/q3zU7Yy5E5s/3.json",
+      "audit_sha256": "4f6e91371fdc81d5dc4b678616b831c451bf82d37ea4147fcd168f825105fdde",
+      "success_vector": [
+        1,
+        0,
+        1
+      ]
+    },
+    {
+      "scene_id": "q3zU7Yy5E5s",
+      "episode_id": "4",
+      "raw_native_record_sha256": "2cff801e618c6730b25c3635ecb6732bf7a39cc6e41e8fc00306a0c4a06908a5",
+      "audit_path": "diagnostics/completed-prefix/full/q3zU7Yy5E5s/4.json",
+      "audit_sha256": "a813f818137470cadb04a50ebad3badfeb7c0994fbfc975d6e6648c2515cfc77",
+      "success_vector": [
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "scene_id": "q3zU7Yy5E5s",
+      "episode_id": "5",
+      "raw_native_record_sha256": "1e4a1b75d14686381b6e0a639481864b31d0665329e40c811ec48cdc0d84737d",
+      "audit_path": "diagnostics/completed-prefix/full/q3zU7Yy5E5s/5.json",
+      "audit_sha256": "401f78a29e53ed60d58339c8821415e81645cf57e7cf281733993e2cd65d2522",
+      "success_vector": [
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "scene_id": "q3zU7Yy5E5s",
+      "episode_id": "6",
+      "raw_native_record_sha256": "891395f3cce71efd3666b16d0047afe93bc5220c62e9d2aeb2e12d797fabc69d",
+      "audit_path": "diagnostics/completed-prefix/full/q3zU7Yy5E5s/6.json",
+      "audit_sha256": "2b98d6460d26802031f855343dace260f4fbf6c0edabcf78399f8a5e268e8fb2",
+      "success_vector": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "scene_id": "q3zU7Yy5E5s",
+      "episode_id": "7",
+      "raw_native_record_sha256": "ab92e62bfe26015c167cc15db5a4178d9b0812cc027334447271a5c1006de020",
+      "audit_path": "diagnostics/completed-prefix/full/q3zU7Yy5E5s/7.json",
+      "audit_sha256": "de3dbf7732fa235493d17924c18649ffb857c7677010aded629cf382805dd502",
+      "success_vector": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "scene_id": "q3zU7Yy5E5s",
+      "episode_id": "8",
+      "raw_native_record_sha256": "58d1b40ef0fbece3461e5a0190b1c2a34c7470ba7080877e5d6e24176b1c3995",
+      "audit_path": "diagnostics/completed-prefix/full/q3zU7Yy5E5s/8.json",
+      "audit_sha256": "cdfe4b910f7526b0127dbe793abf0795aea13df7be81b37e9863d2e8d8ea1d7e",
+      "success_vector": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "scene_id": "q3zU7Yy5E5s",
+      "episode_id": "9",
+      "raw_native_record_sha256": "b1d44c22e035a385a7a07459447bee6ae3a94e738ebd7abab2c62de18e43dc34",
+      "audit_path": "diagnostics/completed-prefix/full/q3zU7Yy5E5s/9.json",
+      "audit_sha256": "225e6b4b56f793489b900c669cfdebd1172778e19b01b04cdefe3e1d49cbd96b",
+      "success_vector": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "scene_id": "qyAac8rV8Zk",
+      "episode_id": "0",
+      "raw_native_record_sha256": "215e7d64493868e2a233ed234c46b1e41a335a60e2b06f9fc6a1019ff0d1c43c",
+      "audit_path": "diagnostics/completed-prefix/full/qyAac8rV8Zk/0.json",
+      "audit_sha256": "fc40b7644210cc323be3ab98b0dff4d9a938b48fd630dabb7dbaeb7123d5fa59",
+      "success_vector": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "scene_id": "qyAac8rV8Zk",
+      "episode_id": "1",
+      "raw_native_record_sha256": "431d4599ad36ceff137089a4e800397f05d3789d1dc858d008fb9bf5a97b5e02",
+      "audit_path": "diagnostics/completed-prefix/full/qyAac8rV8Zk/1.json",
+      "audit_sha256": "a0562bdf7a4177192bbc465ca22b37b9569f056cba9d30a25ab3ae406e8163c4",
+      "success_vector": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "scene_id": "qyAac8rV8Zk",
+      "episode_id": "2",
+      "raw_native_record_sha256": "a0c8eb9b7596eecfac2e69ff27be528c296ec2b49ae5f89b337547be3129c8bc",
+      "audit_path": "diagnostics/completed-prefix/full/qyAac8rV8Zk/2.json",
+      "audit_sha256": "e998e61cf3d0d1000fe767596cc2eb1ab8963dbe5f9aefbc8cf5c9909fe1aaaf",
+      "success_vector": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "scene_id": "qyAac8rV8Zk",
+      "episode_id": "3",
+      "raw_native_record_sha256": "97e8226de5d82e34508bbf9d094812d6d4c928205eb3e08f4fa3fc112209e000",
+      "audit_path": "diagnostics/completed-prefix/full/qyAac8rV8Zk/3.json",
+      "audit_sha256": "73b068daafe2475659df0037272141c1843ec8b6e90c1bdebb9369ec8319d8b1",
+      "success_vector": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "scene_id": "qyAac8rV8Zk",
+      "episode_id": "4",
+      "raw_native_record_sha256": "55b3907d9fbf2fdfb25dd47cfdf34c896c282162704cd8aa7a0d3f0499e590b3",
+      "audit_path": "diagnostics/completed-prefix/full/qyAac8rV8Zk/4.json",
+      "audit_sha256": "45b263add2f5f1217c4e1714e7c1a9d25dd4ca04d9f1e8731b654b2fc8b3fd96",
+      "success_vector": [
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "scene_id": "qyAac8rV8Zk",
+      "episode_id": "5",
+      "raw_native_record_sha256": "bd4016fd12c8ffa8e8ebb19e28ffae0bbe78268aa5de3730b77eb9d545938ec6",
+      "audit_path": "diagnostics/completed-prefix/full/qyAac8rV8Zk/5.json",
+      "audit_sha256": "6bf670cc494fd43f385ceffb84d6f9b87d0256b0fd164271c5cae59a872e739a",
+      "success_vector": [
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "scene_id": "qyAac8rV8Zk",
+      "episode_id": "6",
+      "raw_native_record_sha256": "a3c920eb025120cd4310b62919a52c65f05bf0967c831b39186f9ee10529c528",
+      "audit_path": "diagnostics/completed-prefix/full/qyAac8rV8Zk/6.json",
+      "audit_sha256": "a9c518006e31485daf9831a9086c2521453e41323b1c36f1d24c70d4d2810539",
+      "success_vector": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "scene_id": "svBbv1Pavdk",
+      "episode_id": "0",
+      "raw_native_record_sha256": "afe1efb82d8e8a9013152f25d0e67f516573666ef271d89fccb2444fec39bfc3",
+      "audit_path": "diagnostics/completed-prefix/full/svBbv1Pavdk/0.json",
+      "audit_sha256": "18947742299e4e0b8a4163910da7fc75400b16e62e78b582eb73fdbadefe7dd6",
+      "success_vector": [
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "cohort_count": 305,
+  "report_path": "reports/Full305_interim.md",
+  "scope": "Immutable record of the 305-case audited cohort used in the user-requested interim report; all completed audited cases, including failures. The query tool prints the latest audited prefix at invocation; this snapshot preserves the exact historical membership and raw-record SHA.",
+  "native_states_modified": false,
+  "formal_stage_finalized": false
+}
