@@ -1,0 +1,48 @@
+{
+  "checked_at_utc": "2026-11-11T03:28:33.711934+00:00",
+  "scope": "Actual complete adopted scenes with independently read retained OS exit records; not a synthetic test or Full400 completion",
+  "actual_OS_exit_status_verified": true,
+  "source_and_parameters_unchanged": true,
+  "native_workers_signaled": false,
+  "native_source_entries": 161,
+  "parameter_sha256": "e1d75f3c9503c7439467748fc97be6ae2ad450c429f40dc7235b1564ff7852ae",
+  "source_sha256": "066fcc93ede1c4d367dc29219ecc6fbed5138854d3206cfccba0de948101185a",
+  "controller_sha256": "7ef409970ae9d2acce4acef94eb097ce8252ebe5aef8f377b3c59fbfab7b4b50",
+  "scheduling_plan_sha256": "7248be234002b1804fa05c156d30340abc68d637c3fabb402003563dfcea8c08",
+  "scenes": [
+    {
+      "scene": "XB4GS9ShBRE",
+      "gpu": 3,
+      "pid": 668266,
+      "start_ticks": "16300551",
+      "parent_pid": 468645,
+      "parent_start_ticks": "11385483",
+      "proc_stat_exact": "668266 (python) Z 468645 668266 668266 0 -1 4227076 37155 1538663099 0 11 352 102 1210038 330402 20 0 1 0 16300551 0 0 18446744073709551615 0 0 0 0 0 0 0 16781312 0 1 0 0 17 140 0 0 0 0 0 0 0 0 0 0 0 0 0\n",
+      "ps_state_and_parent": [
+        "Zs",
+        "468645"
+      ],
+      "controller_exit_status_proof": {
+        "pid": 668266,
+        "start_ticks": "16300551",
+        "wait_status": 0,
+        "stat_sha256": "f5afd84cb1104eb3fc5b2b3aacc428b27622c127e159e10f511b9e739ace899c",
+        "captured_at_utc": "2026-11-11T03:27:42.975569+00:00",
+        "source": "/proc/PID/stat field52; original parent stopped"
+      },
+      "native_completion_audit": {
+        "completed_episodes": 20,
+        "identity_count": 20
+      },
+      "native_status_sha256": "85e0bfea7fa64ce9847f8cbc2273bffd386ac31d5508ca92829cc518d2584afe"
+    }
+  ],
+  "next_jobs_on_same_gpus": [
+    {
+      "scene": "cvZr5TUy5C5",
+      "gpu": 3,
+      "pid": 724204,
+      "status": "running"
+    }
+  ]
+}
