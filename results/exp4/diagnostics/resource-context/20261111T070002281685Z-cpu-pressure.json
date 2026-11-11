@@ -1,0 +1,30 @@
+{
+   "allowed_gpus" : [
+      1,
+      2,
+      3
+   ],
+   "cpu_pressure" : "some avg10=77.44 avg60=78.38 avg300=79.17 total=30280590069\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=0\n",
+   "cpu_sample_seconds" : 1.33746157601126,
+   "diagnostic_only" : true,
+   "external_usernames_and_PIDs_omitted" : true,
+   "formal400_complete" : false,
+   "host_load_average" : [
+      1986.5,
+      2089.14,
+      2116.63
+   ],
+   "host_logical_cpus" : 384,
+   "largest_external_user_sample_core_equivalents" : 373.678024822592,
+   "native_states_modified" : false,
+   "observed_at_utc" : "2026-11-11T07:00:02.281685+00:00",
+   "reporting_rule" : "Retain all native results and planning-time tails; disclose resource conditions with the later aggregate comparisons.",
+   "sampled_top_worker_thread_range" : [
+      194,
+      257
+   ],
+   "sampled_top_workers_sharing_one_parent" : 13,
+   "scope" : "Discrete CPU-pressure followup during the shared three-GPU run; sampled top workers and whole-user totals have different scopes.",
+   "signals_sent" : false,
+   "stage" : "full"
+}

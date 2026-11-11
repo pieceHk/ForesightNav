@@ -54,3 +54,5 @@ GPU分配按meta/evaluation-gpu-policy.json限制为1、2、3。早期三卡控�
 14:00已核查GPU2新场景的[首条完整回合](../diagnostics/completed-prefix/full/mv2HUxq3B53/0.json)：463步，三阶段成功向量为0/1/0。其身份、冻结参数、三个阶段的轨迹和STOP记录均通过检查；导航失败的两个阶段照常保留。这项核查验证了共享接续后的记录一致性，不代表该场景20条或Full400已完成。
 
 14:40以当前共享调度执行了[后续三个变体的只读启动预检](../diagnostics/shared-remaining-stage-preflight/20261111T064051521665Z.json)：Nearest因Full未完成而不可启动，Myopic和Suffix-only因各自前驱记录不存在而不可启动。三次CLI均返回ready=false，未新增后续阶段文件或worker，原生源码与参数不变。这项预检核对当前的前驱拒绝行为；Full400完成后的CP4汇报标记仍须届时实际核查，不由本次预检提前认可。
+
+15:00的[CPU跟进采样](../diagnostics/resource-context/20261111T070002281685Z-cpu-pressure.json)仍记录到load1为1986.5、CPU some PSI avg10为77.44%；最大外部用户在1.337秒采样中占用约373.7个逻辑核。CPU最高的15个进程中有13个来自同一父进程，这13个进程各有194–257线程。该采样与全用户统计的范围不同，不能把后者全部归入这个父进程。同一时点的[GPU队列核查](../diagnostics/resource-context/20261111T070001699814Z-shared-queue.json)显示GPU1、2、3各有两个本实验计算进程和两个外部计算进程，外部占用各4016 MiB；三个本实验场景均在运行，没有空闲卡等待领取。两次查询均未发送信号或修改原生任务，GPU0继续保留给用户。
