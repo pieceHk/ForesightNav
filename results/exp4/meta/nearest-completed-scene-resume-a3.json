@@ -1,0 +1,51 @@
+{
+  "status": "running",
+  "stage": "nearest",
+  "completed_at_utc": "2026-11-12T21:44:09.891518+00:00",
+  "controller_pid": 1920268,
+  "controller_start_ticks": "32816629",
+  "old_cpu_retired": 1479616,
+  "retained_completed_scenes": 6,
+  "scheduling_plan": "diagnostics/completed-scene-resume/20261112T214408940550Z/plan.json",
+  "activation": {
+    "pid": 1920268,
+    "at_utc": "2026-11-12T21:44:09.627651+00:00",
+    "adopted_native_launchers": [],
+    "pending_scenes": [
+      "QaLdnwvtxbs",
+      "TEEsavR23oF",
+      "XB4GS9ShBRE",
+      "bxsVRursffK",
+      "cvZr5TUy5C5",
+      "mL8ThkuaVTM",
+      "mv2HUxq3B53",
+      "p53SfW6mjZe",
+      "q3zU7Yy5E5s",
+      "qyAac8rV8Zk",
+      "svBbv1Pavdk",
+      "wcojb4TFT35",
+      "ziup5kvtCCR",
+      "zt1RVoi7PcG"
+    ],
+    "ledger_controller_pid": 1920268
+  },
+  "resource_sampler_pid": 1920277,
+  "gpu_memory_policy": {
+    "min_free_mib": 32768,
+    "max_existing_compute_mib": 11264
+  },
+  "predecessor_memory_log_archives": {
+    "log": {
+      "path": "diagnostics/completed-scene-resume/20261112T214408940550Z/predecessor-memory-watch.jsonl",
+      "sha256": "4490593a24558849bc4a47f85516e8fc2f3d9311b870f15a419ddcd26bfbd359"
+    },
+    "stderr": {
+      "path": "diagnostics/completed-scene-resume/20261112T214408940550Z/predecessor-memory-watch.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "native_workers_restarted": false,
+  "native_workers_signaled": false,
+  "other_user_signals": false,
+  "source_and_parameters_unchanged": true
+}

@@ -1,0 +1,18 @@
+{
+  "recorded_at_utc": "2026-11-12T13:10:44.923945+00:00",
+  "allowed_gpus": [
+    5,
+    6,
+    7
+  ],
+  "reserved_gpus": [
+    0,
+    3
+  ],
+  "user_instruction": "保留Exp2，Exp4再使用其他GPU",
+  "previous_policy_retained": "meta/evaluation-gpu-policy.json",
+  "min_free_mib": 34816,
+  "max_existing_compute_mib": 10240,
+  "scope": "CPU admission only; no frozen navigation, mapping, model, seed, episode or calibration change",
+  "rationale": "Cards5/6/7 have about35GiB free and8.2GiB pre-existing compute. Prior OOM recorded about25.8GiB in the two Exp4 processes. This is a shared-resource admission choice, not a proven peak-memory bound; monitor actual headroom and preserve any infrastructure failures."
+}

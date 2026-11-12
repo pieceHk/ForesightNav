@@ -1,13 +1,16 @@
 {
   "stage": "nearest",
-  "pid": 1484889,
-  "start_ticks": "29777754",
+  "pid": 1920277,
+  "start_ticks": "32816701",
   "boot_id": "23443655-6f2f-4063-a412-e255f3a91e62",
   "source": "code/watch_available_gpu_memory.py",
   "source_sha256": "ab63cd36d3c128a401d2c3be59ec1577ae83173017d4e935c1b1e0b97d86d3e8",
-  "log": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/logs/nearest-gpu-resource-watch-20261112T131740303795Z.jsonl",
-  "stderr": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/logs/nearest-gpu-resource-watch-20261112T131740303795Z.stderr.log",
+  "log": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/logs/nearest-gpu-resource-watch-20261112T214409779058Z.jsonl",
+  "stderr": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/logs/nearest-gpu-resource-watch-20261112T214409779058Z.stderr.log",
   "interval_seconds": 20,
   "max_seconds": 86400,
-  "scope": "Read-only sampling; no GPU allocation, worker signal, or algorithm change"
+  "controller_pid": 1920268,
+  "controller_start_ticks": "32816629",
+  "predecessor_sampler_pid": 1484889,
+  "scope": "Read-only sampling; no GPU allocation, native worker signal or algorithm change"
 }

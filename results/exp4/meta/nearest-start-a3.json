@@ -170,35 +170,45 @@
   "parameter_sha256": "e1d75f3c9503c7439467748fc97be6ae2ad450c429f40dc7235b1564ff7852ae",
   "CP3_acceptance_sha256": "e526f41c23116c43331e76338c63e325f721a5f6262a28ece7012c81690dbc6c",
   "status": "running",
-  "pid": 1479616,
-  "start_ticks": "29740928",
+  "pid": 1920268,
+  "start_ticks": "32816629",
   "command": [
     "/nvme/khy/conda_envs/pbsp/navigation/bin/python",
     "-u",
-    "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/code/available_gpu_evaluate_sequence.py",
+    "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/code/available_gpu_evaluate_sequence32.py",
     "--stage",
     "nearest",
     "--attempt",
     "a3",
     "--controller",
     "--plan",
-    "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/diagnostics/gpu-resource-sharing/20261112T131132037308Z/plan.json"
+    "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/diagnostics/completed-scene-resume/20261112T214408940550Z/plan.json"
   ],
-  "log": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/logs/evaluation-nearest-controller-a3.log",
+  "log": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/diagnostics/completed-scene-resume/20261112T214408940550Z/controller.log",
   "allowed_gpus": [
     5,
     6,
     7
   ],
   "scheduling": "bounded_memory_scene_parallel",
-  "controller_sha256": "bd5aded58754bed3179858831784e1f5aed1330b1ee61d7866e01e59117b4ac2",
+  "controller_sha256": "f941c06d450ba05bcbd2d45041e454ed727cc0232289f2fcc694771e46bf2c96",
   "base_controller_sha256": "d238350a2733b56d258e774e5ca4f1537f09818cd34a313a638b9ec483c0b82f",
-  "scheduling_plan": "diagnostics/gpu-resource-sharing/20261112T131132037308Z/plan.json",
-  "scheduling_started_at_utc": "2026-11-12T13:11:32.456888+00:00",
+  "scheduling_plan": "diagnostics/completed-scene-resume/20261112T214408940550Z/plan.json",
+  "scheduling_started_at_utc": "2026-11-12T21:44:09.466126+00:00",
   "CUDA_VISIBLE_DEVICES_in_native_parent": null,
   "detached_session": true,
   "predecessor_ledger_sha256": "d0a022e32b27f184bfb59a9840286981fab2d3a5468ab44c61e26b0147543837",
   "CP4_reported_sha256": "b70627880ecd50319c0a37102a423dd3e69d77ce384fd104b98f48889e907f6f",
   "observer_pid": 1479625,
-  "observer_start_ticks": "29740989"
+  "observer_start_ticks": "29740989",
+  "predecessor_controller": {
+    "pid": 1479616,
+    "start_ticks": "29740928",
+    "snapshot": "diagnostics/completed-scene-resume/20261112T214408940550Z/nearest-start-a3.json",
+    "state": "all native children had completed successfully before CPU replacement"
+  },
+  "completed_scene_resume_procedure": {
+    "path": "code/resume_completed_scene_controller.py",
+    "sha256": "296df9b78b9489452eabfd1b026a386a07bd129e75bbb89f954b21ad09423b0f"
+  }
 }

@@ -1,7 +1,7 @@
 {
   "recorded_at_utc": "2026-11-12T16:37:03.172768+00:00",
-  "status": "deferred_original_dispatcher_resumed",
-  "active": false,
+  "status": "active",
+  "active": true,
   "old_policy": {
     "min_free_mib": 34816,
     "max_existing_compute_mib": 10240
@@ -23,5 +23,8 @@
   "scope": "CPU scheduling only; no inference/quality/algorithm parameter or episode selection change",
   "latest_review_at_utc": "2026-11-12T16:53:49.309503+00:00",
   "latest_review_proof": "diagnostics/resource-disclosure/20261112T165349309503Z-gpu6-natural-resume.json",
-  "reason": "The original34GiB dispatcher resumed GPU6 naturally; keep the healthy active controller unchanged."
+  "reason": "The original34GiB dispatcher resumed GPU6 naturally; keep the healthy active controller unchanged.",
+  "activated_at_utc": "2026-11-12T21:44:09.898191+00:00",
+  "controller_pid": 1920268,
+  "scheduling_plan": "diagnostics/completed-scene-resume/20261112T214408940550Z/plan.json"
 }

@@ -137,3 +137,10 @@ Native throughput recovered under the unchanged sources, calibration and host po
 | 20:18:02 | 15022 | 18641 | 10390 |
 
 The first sample crossed the local6GiB review threshold. Exp4's sampled allocation subsequently fell, followed by reduced external occupancy. A24-log-prefix review at20:53 found no OOM, invalid-mapper-response or traceback matches. No process was signaled or restarted. These samples do not establish an upper bound on future memory use. The local observation interval was shortened to20seconds during review; native execution settings stayed unchanged.
+
+
+## Nearest CPU admission adjustment, 2026-11-12 21:44 UTC
+
+After six scenes completed all120 native episodes with captured launcher exit0, the idle dispatcher was replaced. The14 pending scenes retained their original identities and order. GPU5/6/7 each had about32.3GiB free and met the revised32GiB-free/11GiB-existing-compute admission rule; none met the previous34GiB/10GiB rule. This changes CPU resource admission only.
+
+The [handoff proof](../meta/nearest-completed-scene-resume-a3.json) records the retained six scenes, new CPU and sampler identities, and archived predecessor memory logs. No native worker was restarted or signaled, no other user's process was signaled, and the frozen native sources and calibration remained unchanged. QaLdnwvtxbs, TEEsavR23oF and XB4GS9ShBRE then started on GPU5,6,7 respectively. The17 completed-only transition checks passed before activation; sampled past memory use does not bound the remaining scenes. The6GiB observation threshold remains in force.

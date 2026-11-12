@@ -8,11 +8,12 @@
   "log": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/logs/evaluation-observer-nearest-a3-20261112T131132660235Z.jsonl",
   "stderr_log": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/logs/evaluation-observer-nearest-a3-20261112T131132660235Z.stderr.log",
   "watcher_sha256": "b0d1839082efc39cab8be8bbf2985fb9938d589d6abf33969606e9cd4651a8db",
-  "controller_pid": 1479616,
-  "controller_start_ticks": "29740928",
+  "controller_pid": 1920268,
+  "controller_start_ticks": "32816629",
   "detached_session": true,
   "scope": "Read-only; no native worker or parameter changes",
   "observer_pid": 1479625,
   "watcher_pid": 1479625,
-  "start_ticks": "29740989"
+  "start_ticks": "29740989",
+  "scheduling_handoff_plan": "diagnostics/completed-scene-resume/20261112T214408940550Z/plan.json"
 }

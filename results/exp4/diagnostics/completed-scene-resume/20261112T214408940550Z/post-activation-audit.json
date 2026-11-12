@@ -1,0 +1,23 @@
+{
+  "at_utc": "2026-11-12T21:45:29.114640+00:00",
+  "stage": "nearest",
+  "controller_pid": 1920268,
+  "controller_start_ticks": "32816629",
+  "old_cpu_retired": 1479616,
+  "retained_native_scenes": 6,
+  "retained_native_episodes": 120,
+  "retained_jobs_byte_equivalent_as_json": true,
+  "observer_pid": 1479625,
+  "sampler_pid": 1920277,
+  "predecessor_sampler_exited": true,
+  "source_and_parameters_unchanged": true,
+  "native_workers_restarted": false,
+  "native_workers_signaled": false,
+  "other_user_signals": false,
+  "gpu_memory_policy": {
+    "min_free_mib": 32768,
+    "max_existing_compute_mib": 11264
+  },
+  "report_sha256": "5b490387823a403cbbb749fea21f6c3609fa530de39ea541f428998a093996c5",
+  "previous_report_sha256": "e736c478d061e84f0b58260701fd5403734d6e7a1da9edd4bf675160dad72918"
+}
