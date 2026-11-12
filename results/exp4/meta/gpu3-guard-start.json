@@ -1,0 +1,18 @@
+{
+  "pid": 1132225,
+  "start_ticks": "25295884",
+  "boot_id": "23443655-6f2f-4063-a412-e255f3a91e62",
+  "source_sha256": "2aa5d5b32bea656b70c8f6c3c1769cd1431bf1f698e072020d0db186cf2a5a6d",
+  "log": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/logs/gpu3-foreign-task-guard.log",
+  "control": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/meta/gpu3-guard-control.json",
+  "max_seconds": 86400,
+  "interval_seconds": 20,
+  "authorized_gpu": 3,
+  "protected_gpus_not_targeted": [
+    0,
+    4,
+    5,
+    6,
+    7
+  ]
+}

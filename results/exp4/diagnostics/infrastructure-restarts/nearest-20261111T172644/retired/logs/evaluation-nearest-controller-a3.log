@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/code/shared_gpu_evaluate_sequence.py", line 564, in <module>
+    main()
+  File "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/code/shared_gpu_evaluate_sequence.py", line 556, in main
+    control(args.plan)
+  File "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/code/shared_gpu_evaluate_sequence.py", line 476, in control
+    raise GateError(f'Native scene exited unsuccessfully: {job["scene"]}, returncode={code}')
+evaluate_sequence.GateError: Native scene exited unsuccessfully: 6s7QHgap2fW, returncode=1

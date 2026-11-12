@@ -1,0 +1,36 @@
+{
+  "experiment": "exp4_nearest",
+  "dataset": "hm3dv1_3mon_balanced1200",
+  "scenes": [
+    "6s7QHgap2fW"
+  ],
+  "complete_episodes": 20,
+  "targets_per_episode": 3,
+  "gpus": {
+    "mapping": 3,
+    "navigation": 3
+  },
+  "configuration_sha256": "c6a9dcab7738047e8710cc917c36b37579ecd17f500e1aac7ee90a7f12dfb073",
+  "identity_sha256": "edfb1849bc008f3e74484af5d21c02c405c4c69a69fd7438cf9e98ecde4482b6",
+  "habitat_revision": "8df2661e5b2203c0ddc47798d5da0132d5686bbe",
+  "models": {
+    "status": "passed",
+    "files": 22,
+    "bytes": 5631339793,
+    "manifest_sha256": "f21ffdc59735aaf84fe5a0a4ebe99f35261f6dd45a643387900d003b6b7ac4a6"
+  }
+}
+Run: /nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261112_012649_643552_exp4_nearest_exp4-nearest-a3-6s7QHgap2fW
+/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261112_012649_643552_exp4_nearest_exp4-nearest-a3-6s7QHgap2fW
+Traceback (most recent call last):
+  File "/nvme/khy/ForesightNav_exp4_depthfix/run.py", line 97, in <module>
+    main()
+  File "/nvme/khy/ForesightNav_exp4_depthfix/run.py", line 93, in main
+    launch(plan, tag=args.tag, resource_checks=resources)
+  File "/nvme/khy/ForesightNav_exp4_depthfix/pbsp/runtime/launch.py", line 275, in launch
+    navigation.wait()
+  File "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/contextlib.py", line 126, in __exit__
+    next(self.gen)
+  File "/nvme/khy/ForesightNav_exp4_depthfix/pbsp/runtime/launch.py", line 163, in managed_process
+    raise RuntimeError(f"{label} worker exited with {process.returncode}")
+RuntimeError: navigation_6s7QHgap2fW worker exited with 1

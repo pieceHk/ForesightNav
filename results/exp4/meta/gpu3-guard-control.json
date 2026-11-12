@@ -1,0 +1,9 @@
+{
+  "enabled": true,
+  "operator_uid": 1001,
+  "authorized_gpu": 3,
+  "interval_seconds": 20,
+  "max_seconds": 86400,
+  "user_authorization": "Explicit user instruction to kill other users tasks on GPU3 and supervise periodically; GPU0 reserved",
+  "created_at_utc": "2026-11-12T00:50:41.555548+00:00"
+}

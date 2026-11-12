@@ -1,0 +1,11 @@
+{
+  "stage": "nearest",
+  "retired_attempt_manifest": "diagnostics/infrastructure-restarts/nearest-20261111T172644/manifest.json",
+  "retired_attempt_manifest_sha256": "14bd9aee9b34298752354cf229cb408a525525737ad785b2ae5c9c7829f2262c",
+  "retired_all_exported_records": 57,
+  "new_fixed_episodes": 400,
+  "reason": "Mapper CUDA OOM on physical GPU3; original worker failed and in-place resume unsupported",
+  "source_and_parameters_unchanged": true,
+  "restart_criterion": "Infrastructure worker failed, not a navigation success threshold",
+  "new_native_workers_started": false
+}

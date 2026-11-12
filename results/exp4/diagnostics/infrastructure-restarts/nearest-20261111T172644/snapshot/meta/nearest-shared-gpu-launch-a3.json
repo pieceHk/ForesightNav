@@ -1,0 +1,93 @@
+{
+  "status": "running",
+  "stage": "nearest",
+  "at_utc": "2026-11-11T17:26:44.841412+00:00",
+  "controller_pid": 1062224,
+  "controller_start_ticks": "22632144",
+  "plan": "diagnostics/gpu-resource-sharing/20261111T172644204318Z/plan.json",
+  "observer_pid": 1062230,
+  "adopted_launchers": [],
+  "native_workers_restarted": false,
+  "source_and_parameters_unchanged": true,
+  "activation": {
+    "pid": 1062224,
+    "at_utc": "2026-11-11T17:26:44.665519+00:00",
+    "adopted_native_launchers": [],
+    "pending_scenes": [
+      "4ok3usBNeis",
+      "5cdEh9F2hJL",
+      "6s7QHgap2fW",
+      "DYehNKdT76V",
+      "Dd4bFSTQ8gi",
+      "Nfvxx8J5NCo",
+      "QaLdnwvtxbs",
+      "TEEsavR23oF",
+      "XB4GS9ShBRE",
+      "bxsVRursffK",
+      "cvZr5TUy5C5",
+      "mL8ThkuaVTM",
+      "mv2HUxq3B53",
+      "p53SfW6mjZe",
+      "q3zU7Yy5E5s",
+      "qyAac8rV8Zk",
+      "svBbv1Pavdk",
+      "wcojb4TFT35",
+      "ziup5kvtCCR",
+      "zt1RVoi7PcG"
+    ],
+    "ledger_controller_pid": 1062224
+  },
+  "gpu_inventory_at_handoff": {
+    "checked_at_utc": "2026-11-11T17:26:44.192490+00:00",
+    "gpus": [
+      {
+        "index": "1",
+        "uuid": "GPU-6f6d0a9f-b84c-a94d-37ee-1ce29f66ba1f",
+        "name": "NVIDIA A40",
+        "memory.total": "46068",
+        "memory.free": "40040"
+      },
+      {
+        "index": "2",
+        "uuid": "GPU-e578717e-9e11-1464-269b-d5a17e564c8a",
+        "name": "NVIDIA A40",
+        "memory.total": "46068",
+        "memory.free": "40195"
+      },
+      {
+        "index": "3",
+        "uuid": "GPU-e345e195-e565-805c-b913-dc9a023ef37d",
+        "name": "NVIDIA A40",
+        "memory.total": "46068",
+        "memory.free": "39925"
+      }
+    ],
+    "compute_apps": [
+      {
+        "gpu_uuid": "GPU-6f6d0a9f-b84c-a94d-37ee-1ce29f66ba1f",
+        "used_gpu_memory": "2008"
+      },
+      {
+        "gpu_uuid": "GPU-6f6d0a9f-b84c-a94d-37ee-1ce29f66ba1f",
+        "used_gpu_memory": "2008"
+      },
+      {
+        "gpu_uuid": "GPU-e578717e-9e11-1464-269b-d5a17e564c8a",
+        "used_gpu_memory": "2008"
+      },
+      {
+        "gpu_uuid": "GPU-e578717e-9e11-1464-269b-d5a17e564c8a",
+        "used_gpu_memory": "2008"
+      },
+      {
+        "gpu_uuid": "GPU-e345e195-e565-805c-b913-dc9a023ef37d",
+        "used_gpu_memory": "2008"
+      },
+      {
+        "gpu_uuid": "GPU-e345e195-e565-805c-b913-dc9a023ef37d",
+        "used_gpu_memory": "2008"
+      }
+    ],
+    "external_usernames_and_PIDs_omitted": true
+  }
+}

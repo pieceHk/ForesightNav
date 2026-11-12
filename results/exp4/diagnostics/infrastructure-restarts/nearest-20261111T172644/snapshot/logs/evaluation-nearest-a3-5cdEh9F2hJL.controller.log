@@ -1,0 +1,24 @@
+{
+  "experiment": "exp4_nearest",
+  "dataset": "hm3dv1_3mon_balanced1200",
+  "scenes": [
+    "5cdEh9F2hJL"
+  ],
+  "complete_episodes": 20,
+  "targets_per_episode": 3,
+  "gpus": {
+    "mapping": 2,
+    "navigation": 2
+  },
+  "configuration_sha256": "af433a94211f7e0e2ba9338c7427489859f5027c874a8e14fceef39dd70c82ac",
+  "identity_sha256": "e3fc0e704437026fd0e01d2e023093ff84fdd26454b0c889c7c7de4a513451b4",
+  "habitat_revision": "8df2661e5b2203c0ddc47798d5da0132d5686bbe",
+  "models": {
+    "status": "passed",
+    "files": 22,
+    "bytes": 5631339793,
+    "manifest_sha256": "f21ffdc59735aaf84fe5a0a4ebe99f35261f6dd45a643387900d003b6b7ac4a6"
+  }
+}
+Run: /nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261112_012649_617263_exp4_nearest_exp4-nearest-a3-5cdEh9F2hJL
+/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261112_012649_617263_exp4_nearest_exp4-nearest-a3-5cdEh9F2hJL

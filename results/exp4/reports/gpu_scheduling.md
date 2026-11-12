@@ -108,3 +108,5 @@ wcojb4TFT35的[首条完整回合](../diagnostics/completed-prefix/full/wcojb4TF
 11月12日00:32:11，wcojb4TFT35完成固定20条回合，当前控制器通过其持有的subprocess.Popen.poll记录退出码0；00:34只读复查核对20条原生身份及status文件SHA。Full至此已有19个完整场景，最后的zt1RVoi7PcG继续在GPU2运行；GPU1、3均因各自场景正常结束而空出。Full没有未启动场景，后续变体仍在Full400及实际CP4汇报后依次启动。没有停止或重跑原生工作进程，全部失败回合和资源时延记录保留。
 
 11月12日01:19:51，最后一个Full场景zt1RVoi7PcG完成20条回合，原控制器持有的subprocess.Popen.poll记录退出码0；01:20只读复查核对20条原生身份和status文件SHA。至此20个场景均正常退出，固定400条原生结果全部导出，随后由原控制器执行全量GT与指标汇总。GPU1、2、3的Full任务均自然结束，没有通过停止、剔除或重跑失败回合改变结果。后续变体仍须在完整CP4核查、发布并实际汇报后启动，GPU0继续留给用户。
+
+Nearest首次尝试因物理GPU3的mapper CUDA OOM中断。此次57条整体归档，随后完整400条重新运行；具体记录和原始SHA见[恢复记录](Nearest_infrastructure_restart.md)。用户另行授权GPU3的其他用户进程清理与20秒周期监督，GPU0及4至7不作为信号目标。
