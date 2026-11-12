@@ -1,99 +1,29 @@
 {
-  "started_at_utc": "2026-11-12T17:43:38.199924+00:00",
-  "completed_at_utc": "2026-11-12T17:43:56.730447+00:00",
+  "started_at_utc": "2026-11-12T18:29:19.636021+00:00",
+  "completed_at_utc": "2026-11-12T18:29:32.246151+00:00",
   "stage": "nearest",
   "diagnostic_only": true,
   "formal400_complete": false,
-  "completed_native_metric_records_checked": 60,
+  "completed_native_metric_records_checked": 64,
   "newly_audited": [
     {
-      "scene": "4ok3usBNeis",
-      "episode": "16",
-      "steps": 830,
-      "success_vector": [
-        1,
-        0,
-        1
-      ]
-    },
-    {
-      "scene": "4ok3usBNeis",
-      "episode": "17",
-      "steps": 1060,
-      "success_vector": [
-        0,
-        1,
-        0
-      ]
-    },
-    {
-      "scene": "4ok3usBNeis",
+      "scene": "6s7QHgap2fW",
       "episode": "18",
-      "steps": 816,
-      "success_vector": [
-        1,
-        1,
-        0
-      ]
-    },
-    {
-      "scene": "6s7QHgap2fW",
-      "episode": "15",
-      "steps": 1046,
+      "steps": 702,
       "success_vector": [
         0,
         0,
-        0
-      ]
-    },
-    {
-      "scene": "6s7QHgap2fW",
-      "episode": "16",
-      "steps": 1500,
-      "success_vector": [
-        0,
-        0,
-        0
-      ]
-    },
-    {
-      "scene": "DYehNKdT76V",
-      "episode": "1",
-      "steps": 1033,
-      "success_vector": [
-        0,
-        1,
-        1
-      ]
-    },
-    {
-      "scene": "DYehNKdT76V",
-      "episode": "2",
-      "steps": 586,
-      "success_vector": [
-        0,
-        1,
-        1
-      ]
-    },
-    {
-      "scene": "DYehNKdT76V",
-      "episode": "3",
-      "steps": 345,
-      "success_vector": [
-        1,
-        1,
         1
       ]
     }
   ],
   "scene_exported_records": {
-    "4ok3usBNeis": 19,
+    "4ok3usBNeis": 20,
     "5cdEh9F2hJL": 20,
-    "6s7QHgap2fW": 17,
-    "DYehNKdT76V": 4
+    "6s7QHgap2fW": 19,
+    "DYehNKdT76V": 5
   },
-  "native_stage_path_checks": 180,
+  "native_stage_path_checks": 192,
   "all_paths_complete": true,
   "max_path_error_m": 2.073085795473162e-06,
   "source_and_parameters_unchanged": true,

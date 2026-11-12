@@ -1,0 +1,349 @@
+{
+  "checked_at_utc": "2026-11-12T18:19:43.632874+00:00",
+  "stage": "nearest",
+  "controller_pid": 1479616,
+  "gpus": [
+    {
+      "index": "0",
+      "memory.free": "17422",
+      "utilization.gpu": "39",
+      "utilization.memory": "3",
+      "pstate": "P0",
+      "clocks.current.sm": "1740",
+      "clocks.current.memory": "7250",
+      "power.draw": "108.17",
+      "power.limit": "300.00",
+      "temperature.gpu": "45"
+    },
+    {
+      "index": "1",
+      "memory.free": "6518",
+      "utilization.gpu": "19",
+      "utilization.memory": "1",
+      "pstate": "P0",
+      "clocks.current.sm": "1665",
+      "clocks.current.memory": "7250",
+      "power.draw": "107.06",
+      "power.limit": "300.00",
+      "temperature.gpu": "51"
+    },
+    {
+      "index": "2",
+      "memory.free": "13484",
+      "utilization.gpu": "0",
+      "utilization.memory": "0",
+      "pstate": "P0",
+      "clocks.current.sm": "1470",
+      "clocks.current.memory": "7250",
+      "power.draw": "116.90",
+      "power.limit": "300.00",
+      "temperature.gpu": "44"
+    },
+    {
+      "index": "3",
+      "memory.free": "14696",
+      "utilization.gpu": "28",
+      "utilization.memory": "14",
+      "pstate": "P0",
+      "clocks.current.sm": "1605",
+      "clocks.current.memory": "7250",
+      "power.draw": "98.02",
+      "power.limit": "300.00",
+      "temperature.gpu": "44"
+    },
+    {
+      "index": "4",
+      "memory.free": "29232",
+      "utilization.gpu": "6",
+      "utilization.memory": "0",
+      "pstate": "P0",
+      "clocks.current.sm": "1740",
+      "clocks.current.memory": "7250",
+      "power.draw": "108.23",
+      "power.limit": "300.00",
+      "temperature.gpu": "49"
+    },
+    {
+      "index": "5",
+      "memory.free": "16807",
+      "utilization.gpu": "4",
+      "utilization.memory": "1",
+      "pstate": "P0",
+      "clocks.current.sm": "1710",
+      "clocks.current.memory": "7250",
+      "power.draw": "137.36",
+      "power.limit": "300.00",
+      "temperature.gpu": "52"
+    },
+    {
+      "index": "6",
+      "memory.free": "16874",
+      "utilization.gpu": "11",
+      "utilization.memory": "1",
+      "pstate": "P0",
+      "clocks.current.sm": "1545",
+      "clocks.current.memory": "7250",
+      "power.draw": "133.43",
+      "power.limit": "300.00",
+      "temperature.gpu": "59"
+    },
+    {
+      "index": "7",
+      "memory.free": "13954",
+      "utilization.gpu": "17",
+      "utilization.memory": "6",
+      "pstate": "P0",
+      "clocks.current.sm": "1725",
+      "clocks.current.memory": "7250",
+      "power.draw": "110.38",
+      "power.limit": "300.00",
+      "temperature.gpu": "53"
+    }
+  ],
+  "pmon_exit_code": 0,
+  "pmon_stderr": "",
+  "native_processes": [
+    {
+      "scene": "6s7QHgap2fW",
+      "gpu": 7,
+      "pid": 1479630,
+      "entry_basename": "python",
+      "status": "sleeping",
+      "threads": 1,
+      "rss_bytes": 11268096,
+      "cpu_percent_0_2s": 0.0
+    },
+    {
+      "scene": "6s7QHgap2fW",
+      "gpu": 7,
+      "pid": 1479755,
+      "entry_basename": "python3.9",
+      "status": "sleeping",
+      "threads": 1,
+      "rss_bytes": 11055104,
+      "cpu_percent_0_2s": 0.0
+    },
+    {
+      "scene": "6s7QHgap2fW",
+      "gpu": 7,
+      "pid": 1479758,
+      "entry_basename": "python3.10",
+      "status": "sleeping",
+      "threads": 5,
+      "rss_bytes": 4413652992,
+      "cpu_percent_0_2s": 99.9
+    },
+    {
+      "scene": "6s7QHgap2fW",
+      "gpu": 7,
+      "pid": 1479981,
+      "entry_basename": "python3.9",
+      "status": "sleeping",
+      "threads": 388,
+      "rss_bytes": 1816133632,
+      "cpu_percent_0_2s": 0.0
+    },
+    {
+      "scene": "DYehNKdT76V",
+      "gpu": 6,
+      "pid": 1696201,
+      "entry_basename": "python",
+      "status": "sleeping",
+      "threads": 1,
+      "rss_bytes": 30146560,
+      "cpu_percent_0_2s": 0.0
+    },
+    {
+      "scene": "DYehNKdT76V",
+      "gpu": 6,
+      "pid": 1696467,
+      "entry_basename": "python3.9",
+      "status": "sleeping",
+      "threads": 1,
+      "rss_bytes": 14405632,
+      "cpu_percent_0_2s": 0.0
+    },
+    {
+      "scene": "DYehNKdT76V",
+      "gpu": 6,
+      "pid": 1696468,
+      "entry_basename": "python3.10",
+      "status": "sleeping",
+      "threads": 4,
+      "rss_bytes": 13510692864,
+      "cpu_percent_0_2s": 99.9
+    },
+    {
+      "scene": "DYehNKdT76V",
+      "gpu": 6,
+      "pid": 1696673,
+      "entry_basename": "python3.9",
+      "status": "sleeping",
+      "threads": 388,
+      "rss_bytes": 1924689920,
+      "cpu_percent_0_2s": 0.0
+    },
+    {
+      "scene": "Dd4bFSTQ8gi",
+      "gpu": 5,
+      "pid": 1745952,
+      "entry_basename": "python",
+      "status": "sleeping",
+      "threads": 1,
+      "rss_bytes": 30601216,
+      "cpu_percent_0_2s": 0.0
+    },
+    {
+      "scene": "Dd4bFSTQ8gi",
+      "gpu": 5,
+      "pid": 1746036,
+      "entry_basename": "python3.9",
+      "status": "sleeping",
+      "threads": 1,
+      "rss_bytes": 14614528,
+      "cpu_percent_0_2s": 0.0
+    },
+    {
+      "scene": "Dd4bFSTQ8gi",
+      "gpu": 5,
+      "pid": 1746037,
+      "entry_basename": "python3.10",
+      "status": "sleeping",
+      "threads": 5,
+      "rss_bytes": 9604661248,
+      "cpu_percent_0_2s": 99.8
+    },
+    {
+      "scene": "Dd4bFSTQ8gi",
+      "gpu": 5,
+      "pid": 1746515,
+      "entry_basename": "python3.9",
+      "status": "sleeping",
+      "threads": 388,
+      "rss_bytes": 2353979392,
+      "cpu_percent_0_2s": 0.0
+    }
+  ],
+  "load_average": [
+    93.58,
+    99.17,
+    132.13
+  ],
+  "host_memory": {
+    "MemTotal": "792202848 kB",
+    "MemAvailable": "61578612 kB",
+    "SwapTotal": "35651576 kB",
+    "SwapFree": "0 kB",
+    "Dirty": "100 kB",
+    "Writeback": "0 kB"
+  },
+  "pressure": {
+    "cpu": "some avg10=0.00 avg60=0.00 avg300=0.00 total=40776108139\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=0\n",
+    "memory": "some avg10=28.01 avg60=27.90 avg300=25.43 total=1812844019\nfull avg10=28.01 avg60=27.90 avg300=25.42 total=1713412944\n",
+    "io": "some avg10=0.00 avg60=0.00 avg300=0.06 total=1359243626\nfull avg10=0.00 avg60=0.00 avg300=0.06 total=1303154604\n"
+  },
+  "source_and_parameters_unchanged": true,
+  "signals_sent": false,
+  "scope": "Five discrete pmon samples and short CPU samples; diagnostic resource evidence, not an isolated causal benchmark",
+  "pmon_category_samples": [
+    {
+      "gpu": 5,
+      "category": "other_user",
+      "observations": 20,
+      "valid_SM_samples": []
+    },
+    {
+      "gpu": 5,
+      "category": "Exp1_preserved",
+      "observations": 10,
+      "valid_SM_samples": [
+        30,
+        0,
+        30,
+        0,
+        15,
+        0,
+        18,
+        7,
+        0
+      ]
+    },
+    {
+      "gpu": 5,
+      "category": "Exp4",
+      "observations": 10,
+      "valid_SM_samples": []
+    },
+    {
+      "gpu": 6,
+      "category": "other_user",
+      "observations": 20,
+      "valid_SM_samples": [
+        14,
+        11,
+        2,
+        11,
+        6
+      ]
+    },
+    {
+      "gpu": 6,
+      "category": "Exp4",
+      "observations": 10,
+      "valid_SM_samples": []
+    },
+    {
+      "gpu": 6,
+      "category": "Exp1_preserved",
+      "observations": 10,
+      "valid_SM_samples": [
+        13,
+        0,
+        12,
+        0,
+        10,
+        1,
+        18,
+        0,
+        0
+      ]
+    },
+    {
+      "gpu": 7,
+      "category": "other_user",
+      "observations": 30,
+      "valid_SM_samples": [
+        1,
+        6,
+        7,
+        6,
+        4
+      ]
+    },
+    {
+      "gpu": 7,
+      "category": "Exp4",
+      "observations": 10,
+      "valid_SM_samples": []
+    },
+    {
+      "gpu": 7,
+      "category": "Exp1_preserved",
+      "observations": 10,
+      "valid_SM_samples": [
+        19,
+        5,
+        14,
+        5,
+        1,
+        7,
+        14,
+        10,
+        9
+      ]
+    }
+  ],
+  "privacy_redaction_applied": true,
+  "original_private_sha256": "9decd4167fb5bd3572e3d615208c64104a2437fddedbfe599a070a2a86f078e8",
+  "privacy_scope": "Non-Exp4 PIDs and usernames omitted from public diagnostics. Raw evidence retained privately; RSS may double-count shared pages."
+}

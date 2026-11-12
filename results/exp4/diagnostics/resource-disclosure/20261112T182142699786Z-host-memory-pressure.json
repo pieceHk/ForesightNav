@@ -1,0 +1,422 @@
+{
+  "checked_at_utc": "2026-11-12T18:21:42.699502+00:00",
+  "stage": "nearest",
+  "controller_pid": 1479616,
+  "first": {
+    "at": "2026-11-12T18:21:34.321723+00:00",
+    "processes": {
+      "1479758": {
+        "scene": "6s7QHgap2fW",
+        "entry": "python3.10",
+        "start_ticks": "29741794",
+        "state": "S",
+        "minor_faults": 945434604,
+        "major_faults": 10090,
+        "user_seconds": 5647.98,
+        "system_seconds": 2934.75,
+        "rss_bytes": 4459155456,
+        "status_memory": {
+          "VmRSS": "4354644 kB",
+          "RssAnon": "2139652 kB",
+          "RssFile": "136468 kB",
+          "RssShmem": "2078524 kB",
+          "VmSwap": "6124 kB"
+        },
+        "affinity_count": 384,
+        "wchan": "do_sys_poll"
+      },
+      "1479981": {
+        "scene": "6s7QHgap2fW",
+        "entry": "python3.9",
+        "start_ticks": "29743879",
+        "state": "R",
+        "minor_faults": 734973022,
+        "major_faults": 12250,
+        "user_seconds": 9453.34,
+        "system_seconds": 2818.9,
+        "rss_bytes": 1835376640,
+        "status_memory": {
+          "VmRSS": "1792360 kB",
+          "RssAnon": "1621292 kB",
+          "RssFile": "168956 kB",
+          "RssShmem": "2112 kB",
+          "VmSwap": "124196 kB"
+        },
+        "affinity_count": 384,
+        "wchan": "0"
+      },
+      "1696468": {
+        "scene": "DYehNKdT76V",
+        "entry": "python3.10",
+        "start_ticks": "31010037",
+        "state": "S",
+        "minor_faults": 290531564,
+        "major_faults": 6262,
+        "user_seconds": 1647.5,
+        "system_seconds": 1292.1,
+        "rss_bytes": 13586427904,
+        "status_memory": {
+          "VmRSS": "13267996 kB",
+          "RssAnon": "7782760 kB",
+          "RssFile": "150256 kB",
+          "RssShmem": "5334980 kB",
+          "VmSwap": "2136 kB"
+        },
+        "affinity_count": 384,
+        "wchan": "do_sys_poll"
+      },
+      "1696673": {
+        "scene": "DYehNKdT76V",
+        "entry": "python3.9",
+        "start_ticks": "31012645",
+        "state": "S",
+        "minor_faults": 226001186,
+        "major_faults": 7029,
+        "user_seconds": 2322.6,
+        "system_seconds": 952.92,
+        "rss_bytes": 1924689920,
+        "status_memory": {
+          "VmRSS": "1879580 kB",
+          "RssAnon": "1670960 kB",
+          "RssFile": "192276 kB",
+          "RssShmem": "16344 kB",
+          "VmSwap": "4200 kB"
+        },
+        "affinity_count": 384,
+        "wchan": "unix_stream_read_generic"
+      },
+      "1746037": {
+        "scene": "Dd4bFSTQ8gi",
+        "entry": "python3.10",
+        "start_ticks": "31436945",
+        "state": "S",
+        "minor_faults": 37974703,
+        "major_faults": 13127,
+        "user_seconds": 253.92,
+        "system_seconds": 563.87,
+        "rss_bytes": 9423310848,
+        "status_memory": {
+          "VmRSS": "9202452 kB",
+          "RssAnon": "5809004 kB",
+          "RssFile": "518116 kB",
+          "RssShmem": "2875332 kB",
+          "VmSwap": "0 kB"
+        },
+        "affinity_count": 384,
+        "wchan": "do_sys_poll"
+      },
+      "1746515": {
+        "scene": "Dd4bFSTQ8gi",
+        "entry": "python3.9",
+        "start_ticks": "31439691",
+        "state": "R",
+        "minor_faults": 41958912,
+        "major_faults": 4805,
+        "user_seconds": 349.45,
+        "system_seconds": 511.1,
+        "rss_bytes": 2367778816,
+        "status_memory": {
+          "VmRSS": "2312284 kB",
+          "RssAnon": "1674104 kB",
+          "RssFile": "621836 kB",
+          "RssShmem": "16344 kB",
+          "VmSwap": "0 kB"
+        },
+        "affinity_count": 384,
+        "wchan": "0"
+      }
+    },
+    "vmstat": {
+      "numa_hit": 108609407907,
+      "numa_miss": 880092896,
+      "numa_foreign": 880058796,
+      "numa_interleave": 557798,
+      "numa_local": 108608758961,
+      "numa_other": 880741842,
+      "pswpin": 2640395,
+      "pswpout": 13485937,
+      "allocstall_dma": 0,
+      "allocstall_dma32": 0,
+      "allocstall_normal": 25477,
+      "allocstall_movable": 7166812,
+      "pgmajfault": 2321454,
+      "pgsteal_kswapd": 108444574,
+      "pgsteal_direct": 124573233,
+      "pgscan_kswapd": 763765491,
+      "pgscan_direct": 3704806701,
+      "pgscan_direct_throttle": 12784,
+      "pgscan_anon": 1876554919,
+      "pgscan_file": 2592017273,
+      "pgsteal_anon": 12732793,
+      "pgsteal_file": 220285014,
+      "numa_pte_updates": 154448327391,
+      "numa_huge_pte_updates": 140425004,
+      "numa_hint_faults": 77752739770,
+      "numa_hint_faults_local": 73447651829,
+      "numa_pages_migrated": 3133650327,
+      "compact_migrate_scanned": 14444775583,
+      "compact_free_scanned": 81388477090,
+      "compact_isolated": 2981810681,
+      "compact_stall": 12302684,
+      "compact_fail": 11994137,
+      "compact_success": 308547,
+      "compact_daemon_wake": 7637,
+      "compact_daemon_migrate_scanned": 103635606,
+      "compact_daemon_free_scanned": 1508774996
+    },
+    "pressure": {
+      "cpu": "some avg10=0.00 avg60=0.06 avg300=0.01 total=40776576486\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=0\n",
+      "memory": "some avg10=27.52 avg60=28.10 avg300=26.26 total=1843789396\nfull avg10=27.52 avg60=28.10 avg300=26.25 total=1744347059\n",
+      "io": "some avg10=0.00 avg60=0.00 avg300=0.03 total=1359247546\nfull avg10=0.00 avg60=0.00 avg300=0.03 total=1303158386\n"
+    }
+  },
+  "second": {
+    "at": "2026-11-12T18:21:42.330859+00:00",
+    "processes": {
+      "1479758": {
+        "scene": "6s7QHgap2fW",
+        "entry": "python3.10",
+        "start_ticks": "29741794",
+        "state": "S",
+        "minor_faults": 945442527,
+        "major_faults": 10090,
+        "user_seconds": 5648.02,
+        "system_seconds": 2934.78,
+        "rss_bytes": 4462309376,
+        "status_memory": {
+          "VmRSS": "4357724 kB",
+          "RssAnon": "2142732 kB",
+          "RssFile": "136468 kB",
+          "RssShmem": "2078524 kB",
+          "VmSwap": "6124 kB"
+        },
+        "affinity_count": 384,
+        "wchan": "do_sys_poll"
+      },
+      "1479981": {
+        "scene": "6s7QHgap2fW",
+        "entry": "python3.9",
+        "start_ticks": "29743879",
+        "state": "R",
+        "minor_faults": 735006629,
+        "major_faults": 12250,
+        "user_seconds": 9453.6,
+        "system_seconds": 2826.61,
+        "rss_bytes": 1824624640,
+        "status_memory": {
+          "VmRSS": "1781860 kB",
+          "RssAnon": "1610792 kB",
+          "RssFile": "168956 kB",
+          "RssShmem": "2112 kB",
+          "VmSwap": "124196 kB"
+        },
+        "affinity_count": 384,
+        "wchan": "0"
+      },
+      "1696468": {
+        "scene": "DYehNKdT76V",
+        "entry": "python3.10",
+        "start_ticks": "31010037",
+        "state": "S",
+        "minor_faults": 290531565,
+        "major_faults": 6262,
+        "user_seconds": 1647.54,
+        "system_seconds": 1300.09,
+        "rss_bytes": 13586427904,
+        "status_memory": {
+          "VmRSS": "13267996 kB",
+          "RssAnon": "7782760 kB",
+          "RssFile": "150256 kB",
+          "RssShmem": "5334980 kB",
+          "VmSwap": "2136 kB"
+        },
+        "affinity_count": 384,
+        "wchan": "do_sys_poll"
+      },
+      "1696673": {
+        "scene": "DYehNKdT76V",
+        "entry": "python3.9",
+        "start_ticks": "31012645",
+        "state": "S",
+        "minor_faults": 226001186,
+        "major_faults": 7029,
+        "user_seconds": 2322.6,
+        "system_seconds": 952.92,
+        "rss_bytes": 1924689920,
+        "status_memory": {
+          "VmRSS": "1879580 kB",
+          "RssAnon": "1670960 kB",
+          "RssFile": "192276 kB",
+          "RssShmem": "16344 kB",
+          "VmSwap": "4200 kB"
+        },
+        "affinity_count": 384,
+        "wchan": "unix_stream_read_generic"
+      },
+      "1746037": {
+        "scene": "Dd4bFSTQ8gi",
+        "entry": "python3.10",
+        "start_ticks": "31436945",
+        "state": "S",
+        "minor_faults": 37974703,
+        "major_faults": 13127,
+        "user_seconds": 254.01,
+        "system_seconds": 564.32,
+        "rss_bytes": 9423310848,
+        "status_memory": {
+          "VmRSS": "9202452 kB",
+          "RssAnon": "5809004 kB",
+          "RssFile": "518116 kB",
+          "RssShmem": "2875332 kB",
+          "VmSwap": "0 kB"
+        },
+        "affinity_count": 384,
+        "wchan": "do_sys_poll"
+      },
+      "1746515": {
+        "scene": "Dd4bFSTQ8gi",
+        "entry": "python3.9",
+        "start_ticks": "31439691",
+        "state": "R",
+        "minor_faults": 41959424,
+        "major_faults": 4805,
+        "user_seconds": 349.46,
+        "system_seconds": 519.09,
+        "rss_bytes": 2369941504,
+        "status_memory": {
+          "VmRSS": "2314396 kB",
+          "RssAnon": "1676216 kB",
+          "RssFile": "621836 kB",
+          "RssShmem": "16344 kB",
+          "VmSwap": "0 kB"
+        },
+        "affinity_count": 384,
+        "wchan": "0"
+      }
+    },
+    "vmstat": {
+      "numa_hit": 108610041765,
+      "numa_miss": 880092896,
+      "numa_foreign": 880058796,
+      "numa_interleave": 557798,
+      "numa_local": 108609392819,
+      "numa_other": 880741842,
+      "pswpin": 2640398,
+      "pswpout": 13485937,
+      "allocstall_dma": 0,
+      "allocstall_dma32": 0,
+      "allocstall_normal": 25477,
+      "allocstall_movable": 7166864,
+      "pgmajfault": 2321457,
+      "pgsteal_kswapd": 108444574,
+      "pgsteal_direct": 124573708,
+      "pgscan_kswapd": 763765491,
+      "pgscan_direct": 3704807176,
+      "pgscan_direct_throttle": 12784,
+      "pgscan_anon": 1876554919,
+      "pgscan_file": 2592017748,
+      "pgsteal_anon": 12732793,
+      "pgsteal_file": 220285489,
+      "numa_pte_updates": 154450107733,
+      "numa_huge_pte_updates": 140427045,
+      "numa_hint_faults": 77753376934,
+      "numa_hint_faults_local": 73448244628,
+      "numa_pages_migrated": 3133677312,
+      "compact_migrate_scanned": 14448805617,
+      "compact_free_scanned": 81391270974,
+      "compact_isolated": 2985355296,
+      "compact_stall": 12302826,
+      "compact_fail": 11994279,
+      "compact_success": 308547,
+      "compact_daemon_wake": 7637,
+      "compact_daemon_migrate_scanned": 103635606,
+      "compact_daemon_free_scanned": 1508774996
+    },
+    "pressure": {
+      "cpu": "some avg10=0.00 avg60=0.05 avg300=0.01 total=40776603033\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=0\n",
+      "memory": "some avg10=28.66 avg60=28.27 avg300=26.34 total=1846182616\nfull avg10=28.66 avg60=28.27 avg300=26.34 total=1746739561\n",
+      "io": "some avg10=0.00 avg60=0.00 avg300=0.03 total=1359247691\nfull avg10=0.00 avg60=0.00 avg300=0.03 total=1303158525\n"
+    }
+  },
+  "vmstat_delta_8s": {
+    "numa_hit": 633858,
+    "numa_miss": 0,
+    "numa_foreign": 0,
+    "numa_interleave": 0,
+    "numa_local": 633858,
+    "numa_other": 0,
+    "pswpin": 3,
+    "pswpout": 0,
+    "allocstall_dma": 0,
+    "allocstall_dma32": 0,
+    "allocstall_normal": 0,
+    "allocstall_movable": 52,
+    "pgmajfault": 3,
+    "pgsteal_kswapd": 0,
+    "pgsteal_direct": 475,
+    "pgscan_kswapd": 0,
+    "pgscan_direct": 475,
+    "pgscan_direct_throttle": 0,
+    "pgscan_anon": 0,
+    "pgscan_file": 475,
+    "pgsteal_anon": 0,
+    "pgsteal_file": 475,
+    "numa_pte_updates": 1780342,
+    "numa_huge_pte_updates": 2041,
+    "numa_hint_faults": 637164,
+    "numa_hint_faults_local": 592799,
+    "numa_pages_migrated": 26985,
+    "compact_migrate_scanned": 4030034,
+    "compact_free_scanned": 2793884,
+    "compact_isolated": 3544615,
+    "compact_stall": 142,
+    "compact_fail": 142,
+    "compact_success": 0,
+    "compact_daemon_wake": 0,
+    "compact_daemon_migrate_scanned": 0,
+    "compact_daemon_free_scanned": 0
+  },
+  "cgroups": {
+    "/user.slice/user-1001.slice/session-3158.scope": {}
+  },
+  "numa_nodes": {
+    "node0": [
+      "Node 0 MemTotal:       395977104 kB",
+      "Node 0 MemFree:        34244280 kB",
+      "Node 0 FilePages:      17688836 kB",
+      "Node 0 AnonPages:      331316264 kB",
+      "Node 0 SReclaimable:    2477236 kB"
+    ],
+    "node1": [
+      "Node 1 MemTotal:       396225744 kB",
+      "Node 1 MemFree:        14126340 kB",
+      "Node 1 FilePages:      19298980 kB",
+      "Node 1 AnonPages:      353451888 kB",
+      "Node 1 SReclaimable:     652232 kB"
+    ]
+  },
+  "read_only_profiler_availability": {
+    "py-spy": null,
+    "gdb": "/usr/bin/gdb",
+    "numastat": null,
+    "vmstat": "/usr/bin/vmstat"
+  },
+  "signals_sent": false,
+  "native_states_modified": false,
+  "scope": "Short resource diagnostic. RSS includes shared pages; these data alone do not prove a causal performance explanation.",
+  "top30_RSS_by_workload_category": [
+    {
+      "category": "other_user",
+      "process_count_in_top30": 29,
+      "summed_RSS_bytes_in_top30": 488404553728
+    },
+    {
+      "category": "Exp4",
+      "process_count_in_top30": 1,
+      "summed_RSS_bytes_in_top30": 13586427904
+    }
+  ],
+  "privacy_redaction_applied": true,
+  "original_private_sha256": "b73e0280fa2b1f816204a2c3b6ef08891bb3023cf17a362653ad0cc612d586d6",
+  "privacy_scope": "Non-Exp4 PIDs and usernames omitted from public diagnostics. Raw evidence retained privately; RSS may double-count shared pages."
+}

@@ -1,0 +1,101 @@
+{
+  "checked_at_utc": "2026-11-12T18:23:40.239007+00:00",
+  "stage": "nearest",
+  "controller_pid": 1479616,
+  "settings": {
+    "/sys/kernel/mm/transparent_hugepage/enabled": "always [madvise] never",
+    "/sys/kernel/mm/transparent_hugepage/defrag": "always defer defer+madvise [madvise] never",
+    "/sys/kernel/mm/transparent_hugepage/khugepaged/defrag": "1",
+    "/proc/sys/vm/zone_reclaim_mode": "0",
+    "/proc/sys/vm/swappiness": "60",
+    "/proc/sys/kernel/numa_balancing": "1"
+  },
+  "native_processes": {
+    "1479758": {
+      "THP_enabled": "1",
+      "Cpus_allowed_list": "0-383",
+      "Mems_allowed_list": "0-1",
+      "kernel_stack_read": "PermissionError",
+      "smaps_rollup": [
+        "Rss:             4468800 kB",
+        "Pss:             4427701 kB",
+        "Anonymous:       2253808 kB",
+        "AnonHugePages:     12288 kB",
+        "Swap:               6124 kB",
+        "SwapPss:            6124 kB"
+      ]
+    },
+    "1479981": {
+      "THP_enabled": "1",
+      "Cpus_allowed_list": "0-383",
+      "Mems_allowed_list": "0-1",
+      "kernel_stack_read": "PermissionError",
+      "smaps_rollup": [
+        "Rss:             1777024 kB",
+        "Pss:             1735034 kB",
+        "Anonymous:       1605956 kB",
+        "AnonHugePages:      2048 kB",
+        "Swap:             124196 kB",
+        "SwapPss:          124196 kB"
+      ]
+    },
+    "1696468": {
+      "THP_enabled": "1",
+      "Cpus_allowed_list": "0-383",
+      "Mems_allowed_list": "0-1",
+      "kernel_stack_read": "PermissionError",
+      "smaps_rollup": [
+        "Rss:            13314960 kB",
+        "Pss:            13262286 kB",
+        "Anonymous:       7829724 kB",
+        "AnonHugePages:     90112 kB",
+        "Swap:               2136 kB",
+        "SwapPss:            2136 kB"
+      ]
+    },
+    "1696673": {
+      "THP_enabled": "1",
+      "Cpus_allowed_list": "0-383",
+      "Mems_allowed_list": "0-1",
+      "kernel_stack_read": "PermissionError",
+      "smaps_rollup": [
+        "Rss:             1882140 kB",
+        "Pss:             1814537 kB",
+        "Anonymous:       1673520 kB",
+        "AnonHugePages:         0 kB",
+        "Swap:               4200 kB",
+        "SwapPss:            4200 kB"
+      ]
+    },
+    "1746037": {
+      "THP_enabled": "1",
+      "Cpus_allowed_list": "0-383",
+      "Mems_allowed_list": "0-1",
+      "kernel_stack_read": "PermissionError",
+      "smaps_rollup": [
+        "Rss:             9445652 kB",
+        "Pss:             9384602 kB",
+        "Anonymous:       6052216 kB",
+        "AnonHugePages:         0 kB",
+        "Swap:                  0 kB",
+        "SwapPss:               0 kB"
+      ]
+    },
+    "1746515": {
+      "THP_enabled": "1",
+      "Cpus_allowed_list": "0-383",
+      "Mems_allowed_list": "0-1",
+      "kernel_stack_read": "PermissionError",
+      "smaps_rollup": [
+        "Rss:             2300952 kB",
+        "Pss:             2144659 kB",
+        "Anonymous:       1662780 kB",
+        "AnonHugePages:         0 kB",
+        "Swap:                  0 kB",
+        "SwapPss:               0 kB"
+      ]
+    }
+  },
+  "settings_changed": false,
+  "signals_sent": false
+}
