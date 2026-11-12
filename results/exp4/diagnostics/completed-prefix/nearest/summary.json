@@ -1,145 +1,85 @@
 {
-  "started_at_utc": "2026-11-12T15:45:13.620852+00:00",
-  "completed_at_utc": "2026-11-12T15:45:30.467888+00:00",
+  "started_at_utc": "2026-11-12T16:54:09.618623+00:00",
+  "completed_at_utc": "2026-11-12T16:54:29.289633+00:00",
   "stage": "nearest",
   "diagnostic_only": true,
   "formal400_complete": false,
-  "completed_native_metric_records_checked": 41,
+  "completed_native_metric_records_checked": 52,
   "newly_audited": [
     {
       "scene": "4ok3usBNeis",
-      "episode": "8",
-      "steps": 1500,
-      "success_vector": [
-        0,
-        0,
-        0
-      ]
-    },
-    {
-      "scene": "4ok3usBNeis",
-      "episode": "9",
-      "steps": 244,
-      "success_vector": [
-        1,
-        1,
-        1
-      ]
-    },
-    {
-      "scene": "4ok3usBNeis",
-      "episode": "10",
-      "steps": 1030,
-      "success_vector": [
-        0,
-        0,
-        0
-      ]
-    },
-    {
-      "scene": "5cdEh9F2hJL",
-      "episode": "10",
-      "steps": 776,
-      "success_vector": [
-        0,
-        0,
-        1
-      ]
-    },
-    {
-      "scene": "5cdEh9F2hJL",
       "episode": "11",
-      "steps": 357,
+      "steps": 1321,
       "success_vector": [
         1,
-        1,
-        1
+        0,
+        0
       ]
     },
     {
-      "scene": "5cdEh9F2hJL",
+      "scene": "4ok3usBNeis",
       "episode": "12",
-      "steps": 388,
+      "steps": 869,
       "success_vector": [
-        0,
         1,
-        0
+        1,
+        1
       ]
     },
     {
-      "scene": "5cdEh9F2hJL",
+      "scene": "4ok3usBNeis",
       "episode": "13",
-      "steps": 533,
+      "steps": 534,
       "success_vector": [
-        0,
         1,
-        0
+        1,
+        1
       ]
     },
     {
-      "scene": "5cdEh9F2hJL",
+      "scene": "4ok3usBNeis",
       "episode": "14",
-      "steps": 294,
+      "steps": 690,
       "success_vector": [
-        0,
+        1,
         1,
         1
       ]
     },
     {
-      "scene": "5cdEh9F2hJL",
+      "scene": "4ok3usBNeis",
       "episode": "15",
-      "steps": 325,
-      "success_vector": [
-        0,
-        1,
-        0
-      ]
-    },
-    {
-      "scene": "5cdEh9F2hJL",
-      "episode": "16",
-      "steps": 213,
-      "success_vector": [
-        0,
-        0,
-        0
-      ]
-    },
-    {
-      "scene": "5cdEh9F2hJL",
-      "episode": "17",
-      "steps": 432,
+      "steps": 890,
       "success_vector": [
         1,
-        0,
-        1
-      ]
-    },
-    {
-      "scene": "5cdEh9F2hJL",
-      "episode": "18",
-      "steps": 438,
-      "success_vector": [
-        1,
-        1,
-        1
-      ]
-    },
-    {
-      "scene": "5cdEh9F2hJL",
-      "episode": "19",
-      "steps": 410,
-      "success_vector": [
-        0,
         1,
         0
       ]
     },
     {
       "scene": "6s7QHgap2fW",
-      "episode": "7",
-      "steps": 760,
+      "episode": "10",
+      "steps": 222,
+      "success_vector": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "scene": "6s7QHgap2fW",
+      "episode": "11",
+      "steps": 615,
+      "success_vector": [
+        1,
+        0,
+        1
+      ]
+    },
+    {
+      "scene": "6s7QHgap2fW",
+      "episode": "12",
+      "steps": 425,
       "success_vector": [
         0,
         0,
@@ -148,8 +88,18 @@
     },
     {
       "scene": "6s7QHgap2fW",
-      "episode": "8",
-      "steps": 1147,
+      "episode": "13",
+      "steps": 1369,
+      "success_vector": [
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "scene": "6s7QHgap2fW",
+      "episode": "14",
+      "steps": 653,
       "success_vector": [
         0,
         0,
@@ -157,24 +107,25 @@
       ]
     },
     {
-      "scene": "6s7QHgap2fW",
-      "episode": "9",
-      "steps": 1500,
+      "scene": "DYehNKdT76V",
+      "episode": "0",
+      "steps": 296,
       "success_vector": [
         1,
-        0,
-        0
+        1,
+        1
       ]
     }
   ],
   "scene_exported_records": {
-    "4ok3usBNeis": 11,
+    "4ok3usBNeis": 16,
     "5cdEh9F2hJL": 20,
-    "6s7QHgap2fW": 10
+    "6s7QHgap2fW": 15,
+    "DYehNKdT76V": 1
   },
-  "native_stage_path_checks": 123,
+  "native_stage_path_checks": 156,
   "all_paths_complete": true,
-  "max_path_error_m": 1.7584841600637446e-06,
+  "max_path_error_m": 2.073085795473162e-06,
   "source_and_parameters_unchanged": true,
   "native_run_statuses_modified": false,
   "bindings": {

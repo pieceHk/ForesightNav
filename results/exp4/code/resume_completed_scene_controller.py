@@ -1,0 +1,347 @@
+"""Resume only a healthy, idle Nearest dispatcher; never restart a native scene."""
+import argparse
+from datetime import datetime, timezone
+import fcntl
+import hashlib
+import importlib.util
+import json
+import os
+from pathlib import Path
+import signal
+import shutil
+import subprocess
+import sys
+import time
+import psutil
+
+from evaluate_sequence import OUT, REPO, GateError, digest, load, source_fingerprint
+from watch_evaluation import process
+
+STAGE = 'nearest'
+OLD_SOURCE = OUT / 'code/available_gpu_evaluate_sequence.py'
+OLD_SHA = 'bd5aded58754bed3179858831784e1f5aed1330b1ee61d7866e01e59117b4ac2'
+NEW_SOURCE = OUT / 'code/available_gpu_evaluate_sequence32.py'
+NEW_SHA = 'f941c06d450ba05bcbd2d45041e454ed727cc0232289f2fcc694771e46bf2c96'
+BASE_SHA = 'd238350a2733b56d258e774e5ca4f1537f09818cd34a313a638b9ec483c0b82f'
+WATCH_SOURCE = OUT / 'code/watch_available_gpu_memory.py'
+WATCH_SHA = 'ab63cd36d3c128a401d2c3be59ec1577ae83173017d4e935c1b1e0b97d86d3e8'
+OLD_POLICY = {'min_free_mib': 34816, 'max_existing_compute_mib': 10240}
+NEW_POLICY = {'min_free_mib': 32768, 'max_existing_compute_mib': 11264}
+CLAIM = OUT / 'meta/nearest-completed-scene-resume-a3.json'
+
+
+def now():
+    return datetime.now(timezone.utc).isoformat()
+
+
+def save(path, value):
+    temporary = path.with_name(path.name + f'.tmp-{os.getpid()}')
+    temporary.write_text(json.dumps(value, indent=2, ensure_ascii=False, allow_nan=False) + '\n')
+    temporary.replace(path)
+
+
+def engine():
+    assert digest(OLD_SOURCE) == OLD_SHA
+    assert digest(NEW_SOURCE) == NEW_SHA
+    assert digest(OUT / 'code/evaluate_sequence.py') == BASE_SHA
+    assert digest(WATCH_SOURCE) == WATCH_SHA
+    spec = importlib.util.spec_from_file_location('completed_resume_engine32', NEW_SOURCE)
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    assert module.MEMORY_POLICY == NEW_POLICY
+    return module
+
+
+def require_completed_jobs(ledger, controller_pid):
+    if ledger.get('status') != 'running' or ledger.get('controller_pid') != controller_pid:
+        raise GateError('Only the current healthy running dispatcher can be replaced')
+    jobs = ledger.get('jobs', [])
+    if not jobs or len({j['scene'] for j in jobs}) != len(jobs):
+        raise GateError('Completed assignments are missing or duplicated')
+    for job in jobs:
+        if job.get('status') != 'completed':
+            raise GateError('Wait for all current native scenes to finish; no native interruption is permitted')
+        if type(job.get('returncode')) is not int or job['returncode'] != 0:
+            raise GateError('A retained scene lacks an actual successful launcher exit')
+        if job.get('exit_status_proof', {}).get('source') != 'subprocess.Popen.poll':
+            raise GateError('A native status flag cannot substitute for the captured launcher exit')
+    return jobs
+
+
+def owned_cpu(pid, ticks, expected_text, *, stopped=False):
+    value = process(pid)
+    if not value.get('live') or value.get('start_ticks') != str(ticks):
+        raise GateError('CPU process identity changed')
+    if psutil.Process(pid).uids().real != os.getuid() or expected_text not in value.get('command', ''):
+        raise GateError('Refusing to signal an unrelated CPU process')
+    if stopped and value['state'] not in ('T', 't'):
+        raise GateError('The old CPU dispatcher is not stopped')
+    return value
+
+
+def eligible_with_policy(module, inventory, allowed, policy):
+    previous = module.MEMORY_POLICY
+    try:
+        module.MEMORY_POLICY = policy
+        return module.eligible_gpus(inventory, allowed)
+    finally:
+        module.MEMORY_POLICY = previous
+
+
+def require_unused_pending_logs(pending):
+    for assignment in pending:
+        path = OUT / f'logs/evaluation-{STAGE}-a3-{assignment["scene"]}.controller.log'
+        if path.exists():
+            raise GateError('An unassigned scene already has a launcher log; inspect before any new dispatcher')
+
+
+def readiness(module):
+    reasons = []
+    start = load(OUT / 'meta/nearest-start-a3.json')
+    ledger = load(OUT / 'meta/evaluation-nearest-runs.json')
+    gate = module.validate_gate(STAGE)
+    policy = load(OUT / 'meta/evaluation-available-gpu-policy.json')
+    allowed = policy['allowed_gpus']
+    if set(allowed) != {5, 6, 7} or policy.get('reserved_gpus') != [0, 3]:
+        raise GateError('This transition must retain the current GPU5/6/7 allocation')
+    if start['controller_sha256'] != OLD_SHA or Path(start['command'][2]).resolve() != OLD_SOURCE.resolve():
+        reasons.append('The expected predecessor dispatcher has already changed; inspect it')
+    if start['boot_id'] != Path('/proc/sys/kernel/random/boot_id').read_text().strip():
+        reasons.append('Server boot changed')
+    owned_cpu(start['pid'], start['start_ticks'], str(OLD_SOURCE))
+    if process(start['pid'])['state'] in ('T', 't'):
+        reasons.append('Predecessor is already stopped; inspect the existing transition')
+    if not (start['source_fingerprint'] == ledger['source_fingerprint'] == gate['source_fingerprint'] == source_fingerprint()):
+        raise GateError('Frozen native sources differ')
+    if not (start['parameter_sha256'] == ledger['parameter_sha256'] == gate['parameter_sha256']):
+        raise GateError('Frozen calibration differs')
+    try:
+        completed = require_completed_jobs(ledger, start['pid'])
+    except GateError as error:
+        completed = []
+        reasons.append(str(error))
+    pending = module.pending_assignments(STAGE, ledger['jobs'])
+    try:
+        require_unused_pending_logs(pending)
+    except GateError as error:
+        reasons.append(str(error))
+    if not pending:
+        reasons.append('No pending scene remains; allow original finalization')
+    if completed:
+        for job in completed:
+            if module.audit_scene(Path(job['run_directory']), job) != job['audit']:
+                raise GateError('A completed native scene changed since its original audit')
+    inventory = module.gpu_inventory()
+    old_eligible = eligible_with_policy(module, inventory, allowed, OLD_POLICY)
+    new_eligible = module.eligible_gpus(inventory, allowed)
+    if old_eligible:
+        reasons.append('The original dispatcher already has eligible capacity; let it continue')
+    if not new_eligible:
+        reasons.append('No card meets the proposed32GiB/11GiB resource gate')
+    if os.statvfs(OUT).f_bavail * os.statvfs(OUT).f_frsize < 30 * 1024**3:
+        reasons.append('Output space below30GiB')
+    result = {'checked_at_utc': now(), 'stage': STAGE, 'ready': not reasons, 'reasons': reasons,
+        'old_controller_pid': start['pid'], 'old_controller_start_ticks': start['start_ticks'],
+        'running_native_scenes': sum(j['status'] == 'running' for j in ledger['jobs']),
+        'completed_native_scenes': sum(j['status'] == 'completed' for j in ledger['jobs']),
+        'pending_native_scenes': len(pending), 'old_policy': OLD_POLICY, 'proposed_policy': NEW_POLICY,
+        'eligible_old_policy': old_eligible, 'eligible_proposed_policy': new_eligible,
+        'new_controller_sha256': NEW_SHA, 'base_controller_sha256': BASE_SHA,
+        'parameter_sha256': gate['parameter_sha256'], 'native_source_entries': len(gate['source_fingerprint']),
+        'native_workers_started': False, 'native_workers_signaled': False, 'other_user_signals': False}
+    return result, start, ledger, gate, policy
+
+
+def stop_sampler(meta):
+    value = process(meta['pid'])
+    if not value.get('live') or value.get('start_ticks') != meta['start_ticks']:
+        return
+    owned_cpu(meta['pid'], meta['start_ticks'], str(WATCH_SOURCE))
+    os.kill(meta['pid'], signal.SIGTERM)
+    deadline = time.monotonic() + 5
+    while time.monotonic() < deadline and process(meta['pid']).get('live'):
+        time.sleep(.1)
+    if process(meta['pid']).get('live'):
+        raise GateError('Read-only sampler did not stop; no forced native action is allowed')
+
+
+def start_sampler(record, predecessor):
+    stamp = datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S%fZ')
+    log = OUT / f'logs/nearest-gpu-resource-watch-{stamp}.jsonl'
+    error = log.with_name(log.stem + '.stderr.log')
+    with log.open('xb') as out, error.open('xb') as err:
+        child = subprocess.Popen([sys.executable, '-u', str(WATCH_SOURCE), '--stage', STAGE,
+            '--watch-seconds', '86400'], cwd=REPO, env=dict(os.environ, CUDA_VISIBLE_DEVICES=''),
+            stdin=subprocess.DEVNULL, stdout=out, stderr=err, start_new_session=True)
+    value = process(child.pid)
+    assert value['live']
+    meta = {'stage': STAGE, 'pid': child.pid, 'start_ticks': value['start_ticks'], 'boot_id': record['boot_id'],
+        'source': WATCH_SOURCE.relative_to(OUT).as_posix(), 'source_sha256': WATCH_SHA,
+        'log': str(log), 'stderr': str(error), 'interval_seconds': 20, 'max_seconds': 86400,
+        'controller_pid': record['pid'], 'controller_start_ticks': record['start_ticks'],
+        'predecessor_sampler_pid': predecessor['pid'],
+        'scope': 'Read-only sampling; no GPU allocation, native worker signal or algorithm change'}
+    save(OUT / 'meta/nearest-resource-watch.json', meta)
+    return meta
+
+
+def resume(module):
+    with (OUT / 'meta/evaluation-launch.lock').open('a') as lock:
+        fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
+        if CLAIM.exists():
+            previous = load(CLAIM)
+            if previous['status'] == 'running':
+                current = load(OUT / 'meta/nearest-start-a3.json')
+                assert current['pid'] == previous['controller_pid']
+                owned_cpu(current['pid'], current['start_ticks'], str(NEW_SOURCE))
+                return previous
+            if previous['status'] != 'rolled_back_before_activation':
+                raise GateError('Inspect the existing transition claim; never duplicate it')
+        check, old, ledger, gate, policy = readiness(module)
+        if not check['ready']:
+            return {'status': 'not_ready', 'check': check, 'native_states_modified': False}
+        stamp = datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S%fZ')
+        directory = OUT / 'diagnostics/completed-scene-resume' / stamp
+        directory.mkdir(parents=True)
+        originals = {}
+        paused = activated = sampler_stopped = False
+        child = None
+        sampler = load(OUT / 'meta/nearest-resource-watch.json')
+        try:
+            owned_cpu(old['pid'], old['start_ticks'], str(OLD_SOURCE))
+            os.kill(old['pid'], signal.SIGSTOP)
+            paused = True
+            for _ in range(30):
+                if process(old['pid']).get('state') in ('T', 't'):
+                    break
+                time.sleep(.1)
+            owned_cpu(old['pid'], old['start_ticks'], str(OLD_SOURCE), stopped=True)
+            ledger = load(OUT / 'meta/evaluation-nearest-runs.json')
+            jobs = require_completed_jobs(ledger, old['pid'])
+            module.verify_no_unrecorded_children(old['pid'], jobs)
+            pending = module.pending_assignments(STAGE, jobs)
+            if not pending:
+                raise GateError('No pending scene remains; let the original dispatcher finalize')
+            require_unused_pending_logs(pending)
+            assert ledger['source_fingerprint'] == gate['source_fingerprint'] == source_fingerprint()
+            assert ledger['parameter_sha256'] == old['parameter_sha256'] == gate['parameter_sha256']
+            assert digest(OUT / 'meta/calibration.json') == gate['parameter_sha256']
+            for relative in ('meta/evaluation-nearest-runs.json', 'meta/nearest-start-a3.json',
+                'meta/nearest-observer-a3.json', 'meta/last-evaluation-observer.json',
+                'meta/evaluation-available-gpu-policy.json', 'meta/nearest-resource-watch.json'):
+                data = (OUT / relative).read_bytes()
+                originals[relative] = data
+                (directory / Path(relative).name).write_bytes(data)
+            module.write(directory / 'ledger-before.json', ledger)
+            plan = {'stage': STAGE, 'attempt': 'a3', 'created_at_utc': now(), 'boot_id': old['boot_id'],
+                'allowed_gpus': policy['allowed_gpus'], 'source_fingerprint': gate['source_fingerprint'],
+                'parameter_sha256': gate['parameter_sha256'], 'controller_sha256': NEW_SHA,
+                'base_controller_sha256': BASE_SHA, 'old_controller': {'pid': old['pid'],
+                    'start_ticks': old['start_ticks'], 'snapshot': 'nearest-start-a3.json'},
+                'adopted_launchers': [], 'parent_controllers': [], 'resource_withdrawal': None,
+                'ledger_snapshot_sha256': digest(directory / 'ledger-before.json'),
+                'gpu_memory_policy': NEW_POLICY, 'preflight': check,
+                'retained_completed_scenes': len(jobs), 'native_commands_and_inputs_unchanged': True,
+                'scope': 'Only complete scenes retained; no active or failed native scene can be adopted'}
+            module.write(directory / 'plan.json', plan)
+            save(CLAIM, {'status': 'preparing', 'directory': str(directory), 'old_controller_pid': old['pid']})
+            log = directory / 'controller.log'
+            argv = [sys.executable, '-u', str(NEW_SOURCE), '--stage', STAGE, '--attempt', 'a3',
+                    '--controller', '--plan', str(directory / 'plan.json')]
+            with log.open('xb') as out:
+                child = subprocess.Popen(argv, cwd=REPO, env=dict(os.environ, CUDA_VISIBLE_DEVICES=''),
+                    stdin=subprocess.DEVNULL, stdout=out, stderr=subprocess.STDOUT, start_new_session=True)
+            ready = module.wait_for(directory / 'ready.json', child)
+            assert ready['pid'] == child.pid and ready['plan_sha256'] == digest(directory / 'plan.json')
+            record = dict(old)
+            record.update(pid=child.pid, start_ticks=ready['start_ticks'], command=argv, log=str(log),
+                controller_sha256=NEW_SHA, base_controller_sha256=BASE_SHA,
+                scheduling_plan=(directory / 'plan.json').relative_to(OUT).as_posix(),
+                scheduling_started_at_utc=now(), scheduling='bounded_memory_scene_parallel',
+                predecessor_controller={'pid': old['pid'], 'start_ticks': old['start_ticks'],
+                    'snapshot': (directory / 'nearest-start-a3.json').relative_to(OUT).as_posix(),
+                    'state': 'all native children had completed successfully before CPU replacement'},
+                completed_scene_resume_procedure={'path': Path(__file__).relative_to(OUT).as_posix(),
+                    'sha256': digest(Path(__file__))})
+            stop_sampler(sampler)
+            sampler_stopped = True
+            sampler_archives = {}
+            for key, name in (('log', 'predecessor-memory-watch.jsonl'), ('stderr', 'predecessor-memory-watch.stderr.log')):
+                source = Path(sampler[key])
+                copied = directory / name
+                shutil.copy2(source, copied)
+                assert digest(source) == digest(copied)
+                sampler_archives[key] = {'path': copied.relative_to(OUT).as_posix(), 'sha256': digest(copied)}
+            save(OUT / 'meta/nearest-start-a3.json', record)
+            for relative in ('meta/nearest-observer-a3.json', 'meta/last-evaluation-observer.json'):
+                observer = load(OUT / relative)
+                assert observer['stage'] == STAGE
+                observer.update(controller_pid=record['pid'], controller_start_ticks=record['start_ticks'],
+                                scheduling_handoff_plan=record['scheduling_plan'])
+                save(OUT / relative, observer)
+            policy.update(**NEW_POLICY, resource_policy_changed_at_utc=now(),
+                prior_policy_snapshot=(directory / 'evaluation-available-gpu-policy.json').relative_to(OUT).as_posix(),
+                scope='CPU resource admission only; frozen native algorithm, model, identities and calibration unchanged')
+            save(OUT / 'meta/evaluation-available-gpu-policy.json', policy)
+            module.write(directory / 'activate.json', {'pid': child.pid, 'start_ticks': ready['start_ticks'],
+                'plan_sha256': digest(directory / 'plan.json'), 'activated_at_utc': now()})
+            activated = True
+            active = module.wait_for(directory / 'activated.json', child)
+            observer = load(OUT / 'meta/nearest-observer-a3.json')
+            module.checked_process(observer['observer_pid'], observer['start_ticks'])
+            new_sampler = start_sampler(record, sampler)
+            owned_cpu(old['pid'], old['start_ticks'], str(OLD_SOURCE), stopped=True)
+            module.assert_no_live_children(old['pid'])
+            os.kill(old['pid'], signal.SIGKILL)
+            proof = {'status': 'running', 'stage': STAGE, 'completed_at_utc': now(),
+                'controller_pid': child.pid, 'controller_start_ticks': ready['start_ticks'],
+                'old_cpu_retired': old['pid'], 'retained_completed_scenes': len(jobs),
+                'scheduling_plan': record['scheduling_plan'], 'activation': active,
+                'resource_sampler_pid': new_sampler['pid'], 'gpu_memory_policy': NEW_POLICY,
+                'predecessor_memory_log_archives': sampler_archives,
+                'native_workers_restarted': False, 'native_workers_signaled': False, 'other_user_signals': False,
+                'source_and_parameters_unchanged': source_fingerprint() == gate['source_fingerprint'] and
+                    digest(OUT / 'meta/calibration.json') == gate['parameter_sha256']}
+            save(CLAIM, proof)
+            save(directory / 'handoff.json', proof)
+            proposal_path = OUT / 'meta/memory-admission32-proposal.json'
+            if proposal_path.exists():
+                proposal = load(proposal_path)
+                proposal.update(status='active', active=True, activated_at_utc=now(),
+                    controller_pid=child.pid, scheduling_plan=record['scheduling_plan'])
+                save(proposal_path, proposal)
+            return proof
+        except BaseException as error:
+            if not activated:
+                if child and child.poll() is None:
+                    child.terminate()
+                    child.wait(timeout=10)
+                for relative, data in originals.items():
+                    (OUT / relative).write_bytes(data)
+                if paused:
+                    owned_cpu(old['pid'], old['start_ticks'], str(OLD_SOURCE), stopped=True)
+                    os.kill(old['pid'], signal.SIGCONT)
+                if sampler_stopped:
+                    start_sampler(old, sampler)
+            failure = {'status': 'inspect_activated_controller' if activated else 'rolled_back_before_activation',
+                'checked_at_utc': now(), 'error': f'{type(error).__name__}: {error}',
+                'controller_pid': child.pid if child else None, 'directory': str(directory),
+                'native_workers_restarted': False, 'other_user_signals': False}
+            save(CLAIM, failure)
+            save(directory / 'failure.json', failure)
+            raise
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    mode = parser.add_mutually_exclusive_group(required=True)
+    mode.add_argument('--check', action='store_true')
+    mode.add_argument('--start', action='store_true')
+    args = parser.parse_args()
+    module = engine()
+    result = readiness(module)[0] if args.check else resume(module)
+    print(json.dumps(result))
+
+
+if __name__ == '__main__':
+    main()

@@ -1,0 +1,48 @@
+{
+  "checked_at_utc": "2026-11-12T16:32:24.021412+00:00",
+  "status": "tests_passed",
+  "installed_source_sha256": {
+    "code/available_gpu_evaluate_sequence32.py": "f941c06d450ba05bcbd2d45041e454ed727cc0232289f2fcc694771e46bf2c96",
+    "code/resume_completed_scene_controller.py": "c20a61c2e1140d561fdc23ba45728d88d1f22a55d699acae408b9541f039c660",
+    "code/test_completed_scene_resume.py": "582e306a0cf8be68b75680cce5a6737b876935f369eacef1ed4e3a1dc9ab9baa"
+  },
+  "tests_exit_code": 0,
+  "source_and_parameters_unchanged": true,
+  "native_workers_started": false,
+  "native_workers_signaled": false,
+  "other_user_signals": false,
+  "scope": "CPU resource admission and completed-only resume checks; not new native algorithm tests",
+  "readiness_exit_code": 0,
+  "actual_readiness": {
+    "checked_at_utc": "2026-11-12T16:32:25.212181+00:00",
+    "stage": "nearest",
+    "ready": false,
+    "reasons": [
+      "Wait for all current native scenes to finish; no native interruption is permitted"
+    ],
+    "old_controller_pid": 1479616,
+    "old_controller_start_ticks": "29740928",
+    "running_native_scenes": 2,
+    "completed_native_scenes": 1,
+    "pending_native_scenes": 17,
+    "old_policy": {
+      "min_free_mib": 34816,
+      "max_existing_compute_mib": 10240
+    },
+    "proposed_policy": {
+      "min_free_mib": 32768,
+      "max_existing_compute_mib": 11264
+    },
+    "eligible_old_policy": [],
+    "eligible_proposed_policy": [
+      6
+    ],
+    "new_controller_sha256": "f941c06d450ba05bcbd2d45041e454ed727cc0232289f2fcc694771e46bf2c96",
+    "base_controller_sha256": "d238350a2733b56d258e774e5ca4f1537f09818cd34a313a638b9ec483c0b82f",
+    "parameter_sha256": "e1d75f3c9503c7439467748fc97be6ae2ad450c429f40dc7235b1564ff7852ae",
+    "native_source_entries": 161,
+    "native_workers_started": false,
+    "native_workers_signaled": false,
+    "other_user_signals": false
+  }
+}

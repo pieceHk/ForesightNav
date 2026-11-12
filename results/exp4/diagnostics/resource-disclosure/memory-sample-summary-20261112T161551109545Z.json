@@ -1,0 +1,96 @@
+{
+  "checked_at_utc": "2026-11-12T16:15:51.108697+00:00",
+  "stage": "nearest",
+  "memory_watch_pid": 1484889,
+  "source_log": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/logs/nearest-gpu-resource-watch-20261112T131740303795Z.jsonl",
+  "source_complete_prefix_sha256": "139dd2addc9418ff2f49396099271da40fac0a1a36ca945df2a2d4d0d3381445",
+  "source_complete_lines": 511,
+  "first_sample": "2026-11-12T13:17:40.725795+00:00",
+  "last_sample": "2026-11-12T16:15:30.920536+00:00",
+  "gpus": {
+    "5": {
+      "samples": 511,
+      "below_6GiB": 0,
+      "below_3GiB": 0,
+      "own_peak": {
+        "at": "2026-11-12T15:45:36.375384+00:00",
+        "gpu": 5,
+        "free_mib": 6546,
+        "experiment_compute_mib": 26631,
+        "experiment_compute_processes": 2,
+        "other_compute_mib": 10426,
+        "other_compute_processes": 3,
+        "low_headroom": false,
+        "other_compute_growth_mib": 2528
+      },
+      "minimum_free": {
+        "at": "2026-11-12T15:45:16.018873+00:00",
+        "gpu": 5,
+        "free_mib": 6546,
+        "experiment_compute_mib": 26611,
+        "experiment_compute_processes": 2,
+        "other_compute_mib": 10426,
+        "other_compute_processes": 3,
+        "low_headroom": false,
+        "other_compute_growth_mib": 2528
+      }
+    },
+    "6": {
+      "samples": 511,
+      "below_6GiB": 0,
+      "below_3GiB": 0,
+      "own_peak": {
+        "at": "2026-11-12T14:01:57.030167+00:00",
+        "gpu": 6,
+        "free_mib": 9985,
+        "experiment_compute_mib": 25337,
+        "experiment_compute_processes": 2,
+        "other_compute_mib": 8416,
+        "other_compute_processes": 2,
+        "low_headroom": false,
+        "other_compute_growth_mib": 0
+      },
+      "minimum_free": {
+        "at": "2026-11-12T14:46:56.357583+00:00",
+        "gpu": 6,
+        "free_mib": 8118,
+        "experiment_compute_mib": 25099,
+        "experiment_compute_processes": 2,
+        "other_compute_mib": 10424,
+        "other_compute_processes": 3,
+        "low_headroom": false,
+        "other_compute_growth_mib": 2008
+      }
+    },
+    "7": {
+      "samples": 511,
+      "below_6GiB": 1,
+      "below_3GiB": 0,
+      "own_peak": {
+        "at": "2026-11-12T15:13:55.949949+00:00",
+        "gpu": 7,
+        "free_mib": 5622,
+        "experiment_compute_mib": 27743,
+        "experiment_compute_processes": 2,
+        "other_compute_mib": 10426,
+        "other_compute_processes": 3,
+        "low_headroom": false,
+        "other_compute_growth_mib": 2008
+      },
+      "minimum_free": {
+        "at": "2026-11-12T15:13:55.949949+00:00",
+        "gpu": 7,
+        "free_mib": 5622,
+        "experiment_compute_mib": 27743,
+        "experiment_compute_processes": 2,
+        "other_compute_mib": 10426,
+        "other_compute_processes": 3,
+        "low_headroom": false,
+        "other_compute_growth_mib": 2008
+      }
+    }
+  },
+  "signals_sent": false,
+  "native_states_modified": false,
+  "scope": "All complete20-second samples available at read time; observed maxima are not proven upper bounds"
+}

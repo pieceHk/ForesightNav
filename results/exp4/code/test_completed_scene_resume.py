@@ -1,0 +1,225 @@
+import copy
+from pathlib import Path
+import signal
+from types import SimpleNamespace
+import tempfile
+import unittest
+from unittest.mock import patch
+
+import resume_completed_scene_controller as r
+
+
+def job(scene='sceneA'):
+    return {'scene': scene, 'status': 'completed', 'returncode': 0,
+            'exit_status_proof': {'source': 'subprocess.Popen.poll'},
+            'audit': {'completed_episodes': 20, 'identity_count': 20}}
+
+
+def ledger():
+    return {'status': 'running', 'controller_pid': 1234, 'jobs': [job()],
+            'source_fingerprint': {'native': 'fixed'}, 'parameter_sha256': 'cal'}
+
+
+class Admission(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.module = r.engine()
+
+    def inventory(self, free=32768, occupied=(11264,), index=6):
+        return {'gpus': [{'index': str(index), 'uuid': 'GPU', 'memory.free': str(free)}],
+                'compute_apps': [{'gpu_uuid': 'GPU', 'used_gpu_memory': str(x)} for x in occupied]}
+
+    def test_accepts_exact_resource_boundaries(self):
+        self.assertEqual(self.module.eligible_gpus(self.inventory(), [6]), [6])
+
+    def test_rejects_insufficient_free_memory(self):
+        self.assertEqual(self.module.eligible_gpus(self.inventory(free=32767), [6]), [])
+
+    def test_rejects_excess_existing_compute(self):
+        self.assertEqual(self.module.eligible_gpus(self.inventory(occupied=(11265,)), [6]), [])
+
+    def test_unknown_or_negative_memory_fails_closed(self):
+        for inv in (self.inventory(free='N/A'), self.inventory(occupied=('N/A',)),
+                    self.inventory(occupied=(-1,))):
+            with self.subTest(inv=inv):
+                self.assertEqual(self.module.eligible_gpus(inv, [6]), [])
+
+    def test_reserved_cards_are_never_eligible(self):
+        for index in (0, 3):
+            self.assertEqual(self.module.eligible_gpus(self.inventory(index=index), [index]), [])
+
+    def test_observed_gpu6_snapshot_and_legacy_comparison(self):
+        inv = self.inventory(free=33287, occupied=(6408, 2008, 2008))
+        self.assertEqual(self.module.eligible_gpus(inv, [6]), [6])
+        self.assertEqual(r.eligible_with_policy(self.module, inv, [6], r.OLD_POLICY), [])
+        self.assertEqual(self.module.MEMORY_POLICY, r.NEW_POLICY)
+
+
+class CompletedOnly(unittest.TestCase):
+    def test_accepts_completed_scene_with_captured_exit0(self):
+        self.assertEqual(len(r.require_completed_jobs(ledger(), 1234)), 1)
+
+    def test_raw_episode_completion_cannot_replace_launcher_exit(self):
+        value = ledger()
+        value['jobs'][0].update(status='running', completed_native_records=20)
+        with self.assertRaises(r.GateError):
+            r.require_completed_jobs(value, 1234)
+
+    def test_rejects_missing_wait_proof(self):
+        value = ledger()
+        value['jobs'][0].pop('exit_status_proof')
+        with self.assertRaises(r.GateError):
+            r.require_completed_jobs(value, 1234)
+
+    def test_rejects_nonzero_or_missing_or_boolean_exit(self):
+        for code in (1, None, False):
+            value = ledger()
+            value['jobs'][0]['returncode'] = code
+            with self.subTest(code=code), self.assertRaises(r.GateError):
+                r.require_completed_jobs(value, 1234)
+
+    def test_refuses_failed_or_terminal_or_wrong_controller(self):
+        for state in ('stopped_for_review', 'completed'):
+            value = ledger()
+            value['status'] = state
+            with self.assertRaises(r.GateError):
+                r.require_completed_jobs(value, 1234)
+        with self.assertRaises(r.GateError):
+            r.require_completed_jobs(ledger(), 4321)
+
+    def test_rejects_duplicate_scene_assignments(self):
+        value = ledger()
+        value['jobs'].append(copy.deepcopy(value['jobs'][0]))
+        with self.assertRaises(r.GateError):
+            r.require_completed_jobs(value, 1234)
+
+    def test_unassigned_existing_launcher_log_prevents_duplicate_scene(self):
+        with tempfile.TemporaryDirectory() as temp:
+            out = Path(temp)
+            (out / 'logs').mkdir()
+            (out / 'logs/evaluation-nearest-a3-sceneB.controller.log').write_text('existing launch')
+            with patch.object(r, 'OUT', out), self.assertRaises(r.GateError):
+                r.require_unused_pending_logs([{'scene': 'sceneB'}])
+
+
+class Transition(unittest.TestCase):
+    def root(self, temp):
+        out = Path(temp)
+        (out / 'meta').mkdir()
+        return out
+
+    def test_not_ready_never_signals_or_starts_a_process(self):
+        with tempfile.TemporaryDirectory() as temp:
+            out = self.root(temp)
+            with patch.object(r, 'OUT', out), patch.object(r, 'CLAIM', out / 'meta/claim.json'), \
+                 patch.object(r, 'readiness', return_value=({'ready': False}, None, None, None, None)), \
+                 patch.object(r.os, 'kill') as kill, patch.object(r.subprocess, 'Popen') as popen:
+                result = r.resume(object())
+                self.assertEqual(result['status'], 'not_ready')
+                kill.assert_not_called()
+                popen.assert_not_called()
+
+    def fixtures(self, out):
+        (out / 'logs').mkdir()
+        old_log = out / 'logs/old-memory.jsonl'
+        old_error = out / 'logs/old-memory.stderr.log'
+        old_log.write_text('{"sample":"retained"}\n')
+        old_error.write_text('')
+        old = {'pid': 1234, 'start_ticks': '55', 'boot_id': 'BOOT',
+               'source_fingerprint': {'native': 'fixed'}, 'parameter_sha256': 'cal',
+               'command': ['python', str(r.OLD_SOURCE)], 'started_at_utc': 'original-native-start'}
+        observer = {'stage': 'nearest', 'observer_pid': 2222, 'start_ticks': '66',
+                    'controller_pid': 1234, 'controller_start_ticks': '55'}
+        data = {'meta/evaluation-nearest-runs.json': ledger(), 'meta/nearest-start-a3.json': old,
+                'meta/nearest-resource-watch.json': {'pid': 2000, 'start_ticks': '77',
+                    'log': str(old_log), 'stderr': str(old_error)},
+                'meta/nearest-observer-a3.json': observer, 'meta/last-evaluation-observer.json': observer,
+                'meta/evaluation-available-gpu-policy.json': {'allowed_gpus': [5, 6, 7], 'reserved_gpus': [0, 3]}}
+        for name, value in data.items():
+            r.save(out / name, value)
+        return old
+
+    def test_unrecorded_child_rolls_back_before_launch(self):
+        with tempfile.TemporaryDirectory() as temp:
+            out = self.root(temp)
+            old = self.fixtures(out)
+            module = SimpleNamespace(verify_no_unrecorded_children=lambda *args: (_ for _ in ()).throw(r.GateError('unrecorded child')))
+            with patch.object(r, 'OUT', out), patch.object(r, 'CLAIM', out / 'meta/claim.json'), \
+                 patch.object(r, 'readiness', return_value=({'ready': True}, old, ledger(), {}, {})), \
+                 patch.object(r, 'owned_cpu'), patch.object(r, 'process', return_value={'state': 'T'}), \
+                 patch.object(r.os, 'kill') as kill, patch.object(r.subprocess, 'Popen') as popen:
+                with self.assertRaises(r.GateError):
+                    r.resume(module)
+                self.assertEqual(kill.call_args_list[0].args, (1234, signal.SIGSTOP))
+                self.assertEqual(kill.call_args_list[-1].args, (1234, signal.SIGCONT))
+                popen.assert_not_called()
+                self.assertEqual(r.load(out / 'meta/claim.json')['status'], 'rolled_back_before_activation')
+
+    def test_no_pending_scene_rolls_back_to_original_dispatcher(self):
+        with tempfile.TemporaryDirectory() as temp:
+            out = self.root(temp)
+            old = self.fixtures(out)
+            module = SimpleNamespace(verify_no_unrecorded_children=lambda *args: None,
+                                     pending_assignments=lambda *args: [])
+            with patch.object(r, 'OUT', out), patch.object(r, 'CLAIM', out / 'meta/claim.json'), \
+                 patch.object(r, 'readiness', return_value=({'ready': True}, old, ledger(), {}, {})), \
+                 patch.object(r, 'owned_cpu'), patch.object(r, 'process', return_value={'state': 'T'}), \
+                 patch.object(r.os, 'kill') as kill, patch.object(r.subprocess, 'Popen') as popen:
+                with self.assertRaises(r.GateError):
+                    r.resume(module)
+                self.assertEqual([x.args for x in kill.call_args_list],
+                                 [(1234, signal.SIGSTOP), (1234, signal.SIGCONT)])
+                popen.assert_not_called()
+
+    def test_successful_metadata_transition_retains_complete_native_jobs(self):
+        with tempfile.TemporaryDirectory() as temp:
+            out = self.root(temp)
+            old = self.fixtures(out)
+            (out / 'code').mkdir()
+            procedure = out / 'code/resume_completed_scene_controller.py'
+            procedure.write_text('test procedure')
+            (out / 'meta/calibration.json').write_text('frozen-calibration')
+            r.save(out / 'meta/memory-admission32-proposal.json', {'status': 'proposed', 'active': False})
+            parameter = r.digest(out / 'meta/calibration.json')
+            gate = {'source_fingerprint': {'native': 'fixed'}, 'parameter_sha256': parameter}
+            old['parameter_sha256'] = parameter
+            stored_ledger = r.load(out / 'meta/evaluation-nearest-runs.json')
+            stored_ledger['parameter_sha256'] = parameter
+            r.save(out / 'meta/evaluation-nearest-runs.json', stored_ledger)
+            r.save(out / 'meta/nearest-start-a3.json', old)
+            child = SimpleNamespace(pid=9999, poll=lambda: None)
+            def wait_for(path, unused):
+                if path.name == 'ready.json':
+                    return {'pid': 9999, 'start_ticks': '99', 'plan_sha256': r.digest(path.parent / 'plan.json')}
+                return {'pid': 9999, 'ledger_controller_pid': 9999}
+            module = SimpleNamespace(verify_no_unrecorded_children=lambda *args: None,
+                pending_assignments=lambda *args: [{'scene': 'nextScene'}],
+                write=r.save, wait_for=wait_for, checked_process=lambda *args: None,
+                assert_no_live_children=lambda *args: None)
+            with patch.object(r, 'OUT', out), patch.object(r, 'CLAIM', out / 'meta/claim.json'), \
+                 patch.object(r, '__file__', str(procedure)), \
+                 patch.object(r, 'readiness', return_value=({'ready': True}, old, stored_ledger, gate,
+                     {'allowed_gpus': [5, 6, 7], 'reserved_gpus': [0, 3]})), \
+                 patch.object(r, 'source_fingerprint', return_value={'native': 'fixed'}), \
+                 patch.object(r, 'owned_cpu'), patch.object(r, 'process', return_value={'state': 'T'}), \
+                 patch.object(r, 'stop_sampler') as stop_sampler, \
+                 patch.object(r, 'start_sampler', return_value={'pid': 8888}), \
+                 patch.object(r.os, 'kill') as kill, patch.object(r.subprocess, 'Popen', return_value=child) as popen:
+                result = r.resume(module)
+                self.assertEqual(result['status'], 'running')
+                self.assertEqual(result['retained_completed_scenes'], 1)
+                self.assertFalse(result['native_workers_restarted'])
+                self.assertFalse(result['other_user_signals'])
+                argv = popen.call_args.args[0]
+                self.assertIn('--controller', argv)
+                self.assertEqual(argv[2], str(r.NEW_SOURCE))
+                self.assertEqual([x.args for x in kill.call_args_list],
+                                 [(1234, signal.SIGSTOP), (1234, signal.SIGKILL)])
+                stop_sampler.assert_called_once()
+                self.assertEqual(r.load(out / 'meta/nearest-start-a3.json')['started_at_utc'], 'original-native-start')
+                self.assertEqual(r.load(out / result['scheduling_plan']).get('adopted_launchers'), [])
+                self.assertTrue(r.load(out / 'meta/memory-admission32-proposal.json')['active'])
+
+
+if __name__ == '__main__':
+    unittest.main(verbosity=2)

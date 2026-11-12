@@ -1,0 +1,22 @@
+test_accepts_exact_resource_boundaries (test_completed_scene_resume.Admission) ... ok
+test_observed_gpu6_snapshot_and_legacy_comparison (test_completed_scene_resume.Admission) ... ok
+test_rejects_excess_existing_compute (test_completed_scene_resume.Admission) ... ok
+test_rejects_insufficient_free_memory (test_completed_scene_resume.Admission) ... ok
+test_reserved_cards_are_never_eligible (test_completed_scene_resume.Admission) ... ok
+test_unknown_or_negative_memory_fails_closed (test_completed_scene_resume.Admission) ... ok
+test_accepts_completed_scene_with_captured_exit0 (test_completed_scene_resume.CompletedOnly) ... ok
+test_raw_episode_completion_cannot_replace_launcher_exit (test_completed_scene_resume.CompletedOnly) ... ok
+test_refuses_failed_or_terminal_or_wrong_controller (test_completed_scene_resume.CompletedOnly) ... ok
+test_rejects_duplicate_scene_assignments (test_completed_scene_resume.CompletedOnly) ... ok
+test_rejects_missing_wait_proof (test_completed_scene_resume.CompletedOnly) ... ok
+test_rejects_nonzero_or_missing_or_boolean_exit (test_completed_scene_resume.CompletedOnly) ... ok
+test_unassigned_existing_launcher_log_prevents_duplicate_scene (test_completed_scene_resume.CompletedOnly) ... ok
+test_no_pending_scene_rolls_back_to_original_dispatcher (test_completed_scene_resume.Transition) ... ok
+test_not_ready_never_signals_or_starts_a_process (test_completed_scene_resume.Transition) ... ok
+test_successful_metadata_transition_retains_complete_native_jobs (test_completed_scene_resume.Transition) ... ok
+test_unrecorded_child_rolls_back_before_launch (test_completed_scene_resume.Transition) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 0.042s
+
+OK
