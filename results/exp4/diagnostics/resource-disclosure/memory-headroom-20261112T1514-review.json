@@ -1,0 +1,101 @@
+{
+  "checked_at_utc": "2026-11-12T15:19:18.279547+00:00",
+  "stage": "nearest",
+  "controller_pid": 1479616,
+  "controller_start_ticks": "29740928",
+  "local_review_threshold_mib": 6144,
+  "ended_local_observation_session": 32398,
+  "actual_samples": [
+    {
+      "at": "2026-11-12T15:13:55.949949+00:00",
+      "stage": "nearest",
+      "controller_pid": 1479616,
+      "controller_start_ticks": "29740928",
+      "gpus": [
+        {
+          "gpu": 5,
+          "free_mib": 10083,
+          "experiment_compute_mib": 22903,
+          "experiment_compute_processes": 2,
+          "other_compute_mib": 10426,
+          "other_compute_processes": 3,
+          "low_headroom": false,
+          "other_compute_growth_mib": 2528
+        },
+        {
+          "gpu": 6,
+          "free_mib": 12323,
+          "experiment_compute_mib": 18789,
+          "experiment_compute_processes": 2,
+          "other_compute_mib": 10424,
+          "other_compute_processes": 3,
+          "low_headroom": false,
+          "other_compute_growth_mib": 2008
+        },
+        {
+          "gpu": 7,
+          "free_mib": 5622,
+          "experiment_compute_mib": 27743,
+          "experiment_compute_processes": 2,
+          "other_compute_mib": 10426,
+          "other_compute_processes": 3,
+          "low_headroom": false,
+          "other_compute_growth_mib": 2008
+        }
+      ],
+      "signals_sent": false,
+      "native_states_modified": false,
+      "scope": "Discrete memory samples, not a proven peak-memory bound"
+    },
+    {
+      "at": "2026-11-12T15:14:43.673065+00:00",
+      "stage": "nearest",
+      "controller_pid": 1479616,
+      "controller_start_ticks": "29740928",
+      "gpus": [
+        {
+          "gpu": 5,
+          "free_mib": 14251,
+          "experiment_compute_mib": 18737,
+          "experiment_compute_processes": 2,
+          "other_compute_mib": 10426,
+          "other_compute_processes": 3,
+          "low_headroom": false,
+          "other_compute_growth_mib": 2528
+        },
+        {
+          "gpu": 6,
+          "free_mib": 14363,
+          "experiment_compute_mib": 19229,
+          "experiment_compute_processes": 2,
+          "other_compute_mib": 10424,
+          "other_compute_processes": 3,
+          "low_headroom": false,
+          "other_compute_growth_mib": 2008
+        },
+        {
+          "gpu": 7,
+          "free_mib": 14685,
+          "experiment_compute_mib": 18667,
+          "experiment_compute_processes": 2,
+          "other_compute_mib": 10426,
+          "other_compute_processes": 3,
+          "low_headroom": false,
+          "other_compute_growth_mib": 2008
+        }
+      ],
+      "signals_sent": false,
+      "native_states_modified": false,
+      "scope": "Discrete memory samples, not a proven peak-memory bound"
+    }
+  ],
+  "log_review_path": "diagnostics/resource-disclosure/memory-headroom-20261112T1514-log-review.json",
+  "log_review_sha256": "b505a31a6f3b920cc188cd7f79fd8968f8b190290822741f3df6d8aeadeae847",
+  "scheduling_report_before_sha256": "9fd66ee7b091b086898a774fd5016dc1dc430a1793f10280367189394568e52c",
+  "scheduling_report_after_sha256": "98aa0a446f5a264e8e22a95d792539b877d1c2d7f036eb8005196d2af4590ef7",
+  "native_workers_restarted": false,
+  "signals_sent": false,
+  "native_states_modified": false,
+  "source_and_parameters_unchanged": true,
+  "scope": "Observed transient headroom dip, recovered sample and current log prefixes; no claim about later peaks"
+}
