@@ -1,0 +1,55 @@
+{
+  "at_utc": "2026-11-12T22:05:34.766851+00:00",
+  "stage": "nearest",
+  "controller_pid": 1920268,
+  "controller_source_sha256": "f941c06d450ba05bcbd2d45041e454ed727cc0232289f2fcc694771e46bf2c96",
+  "first_native_completions_after_resource_admission_change": [
+    {
+      "scene": "QaLdnwvtxbs",
+      "gpu": 5,
+      "episode_id": "0",
+      "steps": 649,
+      "success_vector": [
+        0,
+        1,
+        0
+      ],
+      "audit_path": "diagnostics/completed-prefix/nearest/QaLdnwvtxbs/0.json",
+      "audit_sha256": "d393c8b7453463f3073a674fb4ab1cdbfd7b5da7a1072f9d535c2c4178c42c4f",
+      "native_stage_path_checks": 3
+    },
+    {
+      "scene": "TEEsavR23oF",
+      "gpu": 6,
+      "episode_id": "0",
+      "steps": 1090,
+      "success_vector": [
+        1,
+        0,
+        0
+      ],
+      "audit_path": "diagnostics/completed-prefix/nearest/TEEsavR23oF/0.json",
+      "audit_sha256": "594953449d0ba2873ff1eed8f13db070f68908ba01beea728891ed244a6e600a",
+      "native_stage_path_checks": 3
+    },
+    {
+      "scene": "XB4GS9ShBRE",
+      "gpu": 7,
+      "episode_id": "0",
+      "steps": 1500,
+      "success_vector": [
+        0,
+        0,
+        0
+      ],
+      "audit_path": "diagnostics/completed-prefix/nearest/XB4GS9ShBRE/0.json",
+      "audit_sha256": "2d34013c70556242cd4962ec9388a49bea017bf32f35ebcbe0cc3cdcd80d9890",
+      "native_stage_path_checks": 3
+    }
+  ],
+  "all_three_original_first_episodes_retained": true,
+  "source_and_parameters_unchanged": true,
+  "native_workers_restarted": false,
+  "signals_sent": false,
+  "scope": "First complete native episode on each of the three cards after the CPU resource admission change; not a Nearest400 summary or a memory bound"
+}

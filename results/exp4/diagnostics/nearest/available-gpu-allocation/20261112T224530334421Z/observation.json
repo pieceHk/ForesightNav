@@ -1,0 +1,25 @@
+{
+  "at_utc": "2026-11-12T22:45:30.335807+00:00",
+  "stage": "nearest",
+  "controller_pid": 1920268,
+  "controller_start_ticks": "32816629",
+  "observer_pid": 1479625,
+  "allowed_gpus": [
+    5,
+    6,
+    7
+  ],
+  "reserved_gpus": [
+    0,
+    3
+  ],
+  "GPU3_cleanup_enabled": false,
+  "user_choice": "保留Exp2，Exp4再使用其他GPU",
+  "CP4_Full400_unchanged": true,
+  "audited_native_episodes": 140,
+  "audited_native_stage_paths": 420,
+  "controller_source_sha256": "f941c06d450ba05bcbd2d45041e454ed727cc0232289f2fcc694771e46bf2c96",
+  "source_and_parameters_unchanged": true,
+  "Exp2_signals_sent": false,
+  "scope": "Actual live launch, role and audited-prefix evidence; not a formal complete Nearest400 result"
+}
