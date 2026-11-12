@@ -2,7 +2,7 @@
   "checked_at_utc": "2026-11-12T13:50:27.955912+00:00",
   "file": "deviations.md",
   "before_sha256": "ee3ac00351ab64eb4c81c68a496bf3798d84c1631430feeb5c267d4d5f3f7f3f",
-  "after_sha256": "e2181086746b883436973f0aa2cf3af1f1123ad26a3a42462b8b8f453a2f12f1",
+  "after_sha256": "58845e8d10e1f673f2b94bb29e9684659fda290cefe31781ddee9dd6bd28f5bb",
   "controller_pid": 1479616,
   "controller_start_ticks": "29740928",
   "allowed_gpus": [
@@ -15,5 +15,8 @@
   "source_and_parameters_unchanged": true,
   "native_states_modified": false,
   "signals_sent": false,
-  "scope": "Documentation only; preserves historical records and whole-attempt exclusion"
+  "scope": "Documentation only; preserves historical records and whole-attempt exclusion",
+  "initial_after_sha256": "e2181086746b883436973f0aa2cf3af1f1123ad26a3a42462b8b8f453a2f12f1",
+  "formatting_corrected_at_utc": "2026-11-12T13:57:36.753090+00:00",
+  "formatting_correction": "Exactly one terminal newline; all prose and data unchanged"
 }
