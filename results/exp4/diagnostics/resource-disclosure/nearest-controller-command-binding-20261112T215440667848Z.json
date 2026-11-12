@@ -1,0 +1,19 @@
+{
+  "at_utc": "2026-11-12T21:54:40.667806+00:00",
+  "stage": "nearest",
+  "controller_pid": 1920268,
+  "controller_start_ticks": "32816629",
+  "controller_UID_matches_current_operator": true,
+  "exact_actual_argv_matches_canonical_start": true,
+  "controller_source_sha256": "f941c06d450ba05bcbd2d45041e454ed727cc0232289f2fcc694771e46bf2c96",
+  "controller_source_matches": true,
+  "observer_pid": 1479625,
+  "legacy_observer_source_sha256": "b0d1839082efc39cab8be8bbf2985fb9938d589d6abf33969606e9cd4651a8db",
+  "legacy_observer_filename_predicate": "'evaluate_sequence.py' in control.get('command', '')",
+  "legacy_filename_predicate_result": false,
+  "reason": "The older observer filename predicate omits available_gpu_evaluate_sequence32.py; actual argv, process birth, UID and pinned current source are verified independently.",
+  "historical_observer_rows_rewritten": false,
+  "source_and_parameters_unchanged": true,
+  "signals_sent": false,
+  "native_states_modified": false
+}
