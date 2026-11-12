@@ -1,0 +1,505 @@
+{
+  "checked_at_utc": "2026-11-12T20:13:19.464203+00:00",
+  "stage": "nearest",
+  "controller_pid": 1479616,
+  "controller_start_ticks": "29740928",
+  "file_prefixes_checked": 24,
+  "pattern_totals": {
+    "cuda out of memory": 0,
+    "cuda error: out of memory": 0,
+    "outofmemoryerror": 0,
+    "cublas_status_alloc_failed": 0,
+    "invalid mapper response": 0,
+    "invalid mapping response": 0,
+    "traceback (most recent call last)": 0
+  },
+  "files": [
+    {
+      "path": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/logs/evaluation-nearest-a3-4ok3usBNeis.controller.log",
+      "prefix_bytes": 890,
+      "prefix_sha256": "1e21679746db47e1646753862f60c47b2470a8a80de3cb14447607e3bb84f694",
+      "matches": {
+        "cuda out of memory": 0,
+        "cuda error: out of memory": 0,
+        "outofmemoryerror": 0,
+        "cublas_status_alloc_failed": 0,
+        "invalid mapper response": 0,
+        "invalid mapping response": 0,
+        "traceback (most recent call last)": 0
+      }
+    },
+    {
+      "path": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/logs/evaluation-nearest-a3-5cdEh9F2hJL.controller.log",
+      "prefix_bytes": 890,
+      "prefix_sha256": "850e33c09a0f5a70c8f8bb0a6f63aff24d919e9160bd717a81c79156655b9ad3",
+      "matches": {
+        "cuda out of memory": 0,
+        "cuda error: out of memory": 0,
+        "outofmemoryerror": 0,
+        "cublas_status_alloc_failed": 0,
+        "invalid mapper response": 0,
+        "invalid mapping response": 0,
+        "traceback (most recent call last)": 0
+      }
+    },
+    {
+      "path": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/logs/evaluation-nearest-a3-6s7QHgap2fW.controller.log",
+      "prefix_bytes": 890,
+      "prefix_sha256": "ba2088346a1699f122363774e1512e6f22e2184fede126ada2e8260dcdbf053a",
+      "matches": {
+        "cuda out of memory": 0,
+        "cuda error: out of memory": 0,
+        "outofmemoryerror": 0,
+        "cublas_status_alloc_failed": 0,
+        "invalid mapper response": 0,
+        "invalid mapping response": 0,
+        "traceback (most recent call last)": 0
+      }
+    },
+    {
+      "path": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/logs/evaluation-nearest-a3-DYehNKdT76V.controller.log",
+      "prefix_bytes": 771,
+      "prefix_sha256": "038d8d61e912e5222790ea64a29ae3b45e85261ed05d6c952a18e653ebd1e60d",
+      "matches": {
+        "cuda out of memory": 0,
+        "cuda error: out of memory": 0,
+        "outofmemoryerror": 0,
+        "cublas_status_alloc_failed": 0,
+        "invalid mapper response": 0,
+        "invalid mapping response": 0,
+        "traceback (most recent call last)": 0
+      }
+    },
+    {
+      "path": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/logs/evaluation-nearest-a3-Dd4bFSTQ8gi.controller.log",
+      "prefix_bytes": 771,
+      "prefix_sha256": "414d071ceda2866875c85ec08d37e928913ef87928b60169b9ff5285d22a083a",
+      "matches": {
+        "cuda out of memory": 0,
+        "cuda error: out of memory": 0,
+        "outofmemoryerror": 0,
+        "cublas_status_alloc_failed": 0,
+        "invalid mapper response": 0,
+        "invalid mapping response": 0,
+        "traceback (most recent call last)": 0
+      }
+    },
+    {
+      "path": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/logs/evaluation-nearest-a3-Nfvxx8J5NCo.controller.log",
+      "prefix_bytes": 771,
+      "prefix_sha256": "55164acf0fc48e7579e69674132356e352cac68b3742bb326b15565a27125457",
+      "matches": {
+        "cuda out of memory": 0,
+        "cuda error: out of memory": 0,
+        "outofmemoryerror": 0,
+        "cublas_status_alloc_failed": 0,
+        "invalid mapper response": 0,
+        "invalid mapping response": 0,
+        "traceback (most recent call last)": 0
+      }
+    },
+    {
+      "path": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261112_211140_597010_exp4_nearest_exp4-nearest-a3-5cdEh9F2hJL/logs/mapping.log",
+      "prefix_bytes": 3000246,
+      "prefix_sha256": "3fdec1591a88c989ee0d35fc3b5c846368986a1a7627450f3cc8b846c330bb2b",
+      "matches": {
+        "cuda out of memory": 0,
+        "cuda error: out of memory": 0,
+        "outofmemoryerror": 0,
+        "cublas_status_alloc_failed": 0,
+        "invalid mapper response": 0,
+        "invalid mapping response": 0,
+        "traceback (most recent call last)": 0
+      }
+    },
+    {
+      "path": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261112_211140_597010_exp4_nearest_exp4-nearest-a3-5cdEh9F2hJL/logs/monitor.log",
+      "prefix_bytes": 0,
+      "prefix_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "matches": {
+        "cuda out of memory": 0,
+        "cuda error: out of memory": 0,
+        "outofmemoryerror": 0,
+        "cublas_status_alloc_failed": 0,
+        "invalid mapper response": 0,
+        "invalid mapping response": 0,
+        "traceback (most recent call last)": 0
+      }
+    },
+    {
+      "path": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261112_211140_597010_exp4_nearest_exp4-nearest-a3-5cdEh9F2hJL/logs/navigation_5cdEh9F2hJL.log",
+      "prefix_bytes": 4944102,
+      "prefix_sha256": "f942a596aba05edba58ed9af0ac1f71340900a48d02c0511d72822c15ac504cf",
+      "matches": {
+        "cuda out of memory": 0,
+        "cuda error: out of memory": 0,
+        "outofmemoryerror": 0,
+        "cublas_status_alloc_failed": 0,
+        "invalid mapper response": 0,
+        "invalid mapping response": 0,
+        "traceback (most recent call last)": 0
+      }
+    },
+    {
+      "path": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261112_211140_597167_exp4_nearest_exp4-nearest-a3-6s7QHgap2fW/logs/mapping.log",
+      "prefix_bytes": 4966362,
+      "prefix_sha256": "8f9c1f26cd96bb97bc5e81bbd1baa56835bf913cc2e0f92eba4605e6ecec8591",
+      "matches": {
+        "cuda out of memory": 0,
+        "cuda error: out of memory": 0,
+        "outofmemoryerror": 0,
+        "cublas_status_alloc_failed": 0,
+        "invalid mapper response": 0,
+        "invalid mapping response": 0,
+        "traceback (most recent call last)": 0
+      }
+    },
+    {
+      "path": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261112_211140_597167_exp4_nearest_exp4-nearest-a3-6s7QHgap2fW/logs/monitor.log",
+      "prefix_bytes": 0,
+      "prefix_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "matches": {
+        "cuda out of memory": 0,
+        "cuda error: out of memory": 0,
+        "outofmemoryerror": 0,
+        "cublas_status_alloc_failed": 0,
+        "invalid mapper response": 0,
+        "invalid mapping response": 0,
+        "traceback (most recent call last)": 0
+      }
+    },
+    {
+      "path": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261112_211140_597167_exp4_nearest_exp4-nearest-a3-6s7QHgap2fW/logs/navigation_6s7QHgap2fW.log",
+      "prefix_bytes": 8585376,
+      "prefix_sha256": "297045fc9958f811dafde11681db34be5d6474f3cba4b5de9f5012c53166f4f7",
+      "matches": {
+        "cuda out of memory": 0,
+        "cuda error: out of memory": 0,
+        "outofmemoryerror": 0,
+        "cublas_status_alloc_failed": 0,
+        "invalid mapper response": 0,
+        "invalid mapping response": 0,
+        "traceback (most recent call last)": 0
+      }
+    },
+    {
+      "path": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261112_211140_597174_exp4_nearest_exp4-nearest-a3-4ok3usBNeis/logs/mapping.log",
+      "prefix_bytes": 4957669,
+      "prefix_sha256": "54b8babb492aaf1fb59fb5e11e39dd40952e8182554bf392a3385f64bc947f47",
+      "matches": {
+        "cuda out of memory": 0,
+        "cuda error: out of memory": 0,
+        "outofmemoryerror": 0,
+        "cublas_status_alloc_failed": 0,
+        "invalid mapper response": 0,
+        "invalid mapping response": 0,
+        "traceback (most recent call last)": 0
+      }
+    },
+    {
+      "path": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261112_211140_597174_exp4_nearest_exp4-nearest-a3-4ok3usBNeis/logs/monitor.log",
+      "prefix_bytes": 0,
+      "prefix_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "matches": {
+        "cuda out of memory": 0,
+        "cuda error: out of memory": 0,
+        "outofmemoryerror": 0,
+        "cublas_status_alloc_failed": 0,
+        "invalid mapper response": 0,
+        "invalid mapping response": 0,
+        "traceback (most recent call last)": 0
+      }
+    },
+    {
+      "path": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261112_211140_597174_exp4_nearest_exp4-nearest-a3-4ok3usBNeis/logs/navigation_4ok3usBNeis.log",
+      "prefix_bytes": 8534261,
+      "prefix_sha256": "41372a5f9c8c88c8cde37a2961a24361f74f1c884473cc30f5eceeba3c72b078",
+      "matches": {
+        "cuda out of memory": 0,
+        "cuda error: out of memory": 0,
+        "outofmemoryerror": 0,
+        "cublas_status_alloc_failed": 0,
+        "invalid mapper response": 0,
+        "invalid mapping response": 0,
+        "traceback (most recent call last)": 0
+      }
+    },
+    {
+      "path": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261113_004303_015599_exp4_nearest_exp4-nearest-a3-DYehNKdT76V/logs/mapping.log",
+      "prefix_bytes": 3036548,
+      "prefix_sha256": "0c9b4b26db763d007e807714f719174c50996f1e49bb9c034525958820935339",
+      "matches": {
+        "cuda out of memory": 0,
+        "cuda error: out of memory": 0,
+        "outofmemoryerror": 0,
+        "cublas_status_alloc_failed": 0,
+        "invalid mapper response": 0,
+        "invalid mapping response": 0,
+        "traceback (most recent call last)": 0
+      }
+    },
+    {
+      "path": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261113_004303_015599_exp4_nearest_exp4-nearest-a3-DYehNKdT76V/logs/monitor.log",
+      "prefix_bytes": 0,
+      "prefix_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "matches": {
+        "cuda out of memory": 0,
+        "cuda error: out of memory": 0,
+        "outofmemoryerror": 0,
+        "cublas_status_alloc_failed": 0,
+        "invalid mapper response": 0,
+        "invalid mapping response": 0,
+        "traceback (most recent call last)": 0
+      }
+    },
+    {
+      "path": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261113_004303_015599_exp4_nearest_exp4-nearest-a3-DYehNKdT76V/logs/navigation_DYehNKdT76V.log",
+      "prefix_bytes": 5630730,
+      "prefix_sha256": "e514b45812a9561955c42089665d6a0e37ece72420d9db4e1bbcf7f573a2df46",
+      "matches": {
+        "cuda out of memory": 0,
+        "cuda error: out of memory": 0,
+        "outofmemoryerror": 0,
+        "cublas_status_alloc_failed": 0,
+        "invalid mapper response": 0,
+        "invalid mapping response": 0,
+        "traceback (most recent call last)": 0
+      }
+    },
+    {
+      "path": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261113_015412_108850_exp4_nearest_exp4-nearest-a3-Dd4bFSTQ8gi/logs/mapping.log",
+      "prefix_bytes": 1911700,
+      "prefix_sha256": "1d90c0dd0d4c83274862cde699b4b7230c3b82e9c0faff257603d6171c875191",
+      "matches": {
+        "cuda out of memory": 0,
+        "cuda error: out of memory": 0,
+        "outofmemoryerror": 0,
+        "cublas_status_alloc_failed": 0,
+        "invalid mapper response": 0,
+        "invalid mapping response": 0,
+        "traceback (most recent call last)": 0
+      }
+    },
+    {
+      "path": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261113_015412_108850_exp4_nearest_exp4-nearest-a3-Dd4bFSTQ8gi/logs/monitor.log",
+      "prefix_bytes": 0,
+      "prefix_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "matches": {
+        "cuda out of memory": 0,
+        "cuda error: out of memory": 0,
+        "outofmemoryerror": 0,
+        "cublas_status_alloc_failed": 0,
+        "invalid mapper response": 0,
+        "invalid mapping response": 0,
+        "traceback (most recent call last)": 0
+      }
+    },
+    {
+      "path": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261113_015412_108850_exp4_nearest_exp4-nearest-a3-Dd4bFSTQ8gi/logs/navigation_Dd4bFSTQ8gi.log",
+      "prefix_bytes": 3116540,
+      "prefix_sha256": "c70ee513db84340d8949d56ebfb342b950589ac17ba4c76e902f1288471dbcf5",
+      "matches": {
+        "cuda out of memory": 0,
+        "cuda error: out of memory": 0,
+        "outofmemoryerror": 0,
+        "cublas_status_alloc_failed": 0,
+        "invalid mapper response": 0,
+        "invalid mapping response": 0,
+        "traceback (most recent call last)": 0
+      }
+    },
+    {
+      "path": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261113_030708_704741_exp4_nearest_exp4-nearest-a3-Nfvxx8J5NCo/logs/mapping.log",
+      "prefix_bytes": 1387993,
+      "prefix_sha256": "8e2472efeb07949bdde6ef2a5125d94d24da508433e20dc183a39211c6a3107d",
+      "matches": {
+        "cuda out of memory": 0,
+        "cuda error: out of memory": 0,
+        "outofmemoryerror": 0,
+        "cublas_status_alloc_failed": 0,
+        "invalid mapper response": 0,
+        "invalid mapping response": 0,
+        "traceback (most recent call last)": 0
+      }
+    },
+    {
+      "path": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261113_030708_704741_exp4_nearest_exp4-nearest-a3-Nfvxx8J5NCo/logs/monitor.log",
+      "prefix_bytes": 0,
+      "prefix_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "matches": {
+        "cuda out of memory": 0,
+        "cuda error: out of memory": 0,
+        "outofmemoryerror": 0,
+        "cublas_status_alloc_failed": 0,
+        "invalid mapper response": 0,
+        "invalid mapping response": 0,
+        "traceback (most recent call last)": 0
+      }
+    },
+    {
+      "path": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261113_030708_704741_exp4_nearest_exp4-nearest-a3-Nfvxx8J5NCo/logs/navigation_Nfvxx8J5NCo.log",
+      "prefix_bytes": 2544477,
+      "prefix_sha256": "8c582617b6e88b32df8a174750d27271398801ad3382f96bcb16e9acc153fe76",
+      "matches": {
+        "cuda out of memory": 0,
+        "cuda error: out of memory": 0,
+        "outofmemoryerror": 0,
+        "cublas_status_alloc_failed": 0,
+        "invalid mapper response": 0,
+        "invalid mapping response": 0,
+        "traceback (most recent call last)": 0
+      }
+    }
+  ],
+  "stdout_stderr_fd_observations": [
+    {
+      "scene": "DYehNKdT76V",
+      "pid": 1696201,
+      "fd": 1,
+      "target": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/logs/evaluation-nearest-a3-DYehNKdT76V.controller.log"
+    },
+    {
+      "scene": "DYehNKdT76V",
+      "pid": 1696201,
+      "fd": 2,
+      "target": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/logs/evaluation-nearest-a3-DYehNKdT76V.controller.log"
+    },
+    {
+      "scene": "DYehNKdT76V",
+      "pid": 1696467,
+      "fd": 1,
+      "target": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261113_004303_015599_exp4_nearest_exp4-nearest-a3-DYehNKdT76V/logs/monitor.log"
+    },
+    {
+      "scene": "DYehNKdT76V",
+      "pid": 1696467,
+      "fd": 2,
+      "target": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261113_004303_015599_exp4_nearest_exp4-nearest-a3-DYehNKdT76V/logs/monitor.log"
+    },
+    {
+      "scene": "DYehNKdT76V",
+      "pid": 1696468,
+      "fd": 1,
+      "target": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261113_004303_015599_exp4_nearest_exp4-nearest-a3-DYehNKdT76V/logs/mapping.log"
+    },
+    {
+      "scene": "DYehNKdT76V",
+      "pid": 1696468,
+      "fd": 2,
+      "target": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261113_004303_015599_exp4_nearest_exp4-nearest-a3-DYehNKdT76V/logs/mapping.log"
+    },
+    {
+      "scene": "DYehNKdT76V",
+      "pid": 1696673,
+      "fd": 1,
+      "target": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261113_004303_015599_exp4_nearest_exp4-nearest-a3-DYehNKdT76V/logs/navigation_DYehNKdT76V.log"
+    },
+    {
+      "scene": "DYehNKdT76V",
+      "pid": 1696673,
+      "fd": 2,
+      "target": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261113_004303_015599_exp4_nearest_exp4-nearest-a3-DYehNKdT76V/logs/navigation_DYehNKdT76V.log"
+    },
+    {
+      "scene": "Dd4bFSTQ8gi",
+      "pid": 1745952,
+      "fd": 1,
+      "target": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/logs/evaluation-nearest-a3-Dd4bFSTQ8gi.controller.log"
+    },
+    {
+      "scene": "Dd4bFSTQ8gi",
+      "pid": 1745952,
+      "fd": 2,
+      "target": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/logs/evaluation-nearest-a3-Dd4bFSTQ8gi.controller.log"
+    },
+    {
+      "scene": "Dd4bFSTQ8gi",
+      "pid": 1746036,
+      "fd": 1,
+      "target": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261113_015412_108850_exp4_nearest_exp4-nearest-a3-Dd4bFSTQ8gi/logs/monitor.log"
+    },
+    {
+      "scene": "Dd4bFSTQ8gi",
+      "pid": 1746036,
+      "fd": 2,
+      "target": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261113_015412_108850_exp4_nearest_exp4-nearest-a3-Dd4bFSTQ8gi/logs/monitor.log"
+    },
+    {
+      "scene": "Dd4bFSTQ8gi",
+      "pid": 1746037,
+      "fd": 1,
+      "target": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261113_015412_108850_exp4_nearest_exp4-nearest-a3-Dd4bFSTQ8gi/logs/mapping.log"
+    },
+    {
+      "scene": "Dd4bFSTQ8gi",
+      "pid": 1746037,
+      "fd": 2,
+      "target": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261113_015412_108850_exp4_nearest_exp4-nearest-a3-Dd4bFSTQ8gi/logs/mapping.log"
+    },
+    {
+      "scene": "Dd4bFSTQ8gi",
+      "pid": 1746515,
+      "fd": 1,
+      "target": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261113_015412_108850_exp4_nearest_exp4-nearest-a3-Dd4bFSTQ8gi/logs/navigation_Dd4bFSTQ8gi.log"
+    },
+    {
+      "scene": "Dd4bFSTQ8gi",
+      "pid": 1746515,
+      "fd": 2,
+      "target": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261113_015412_108850_exp4_nearest_exp4-nearest-a3-Dd4bFSTQ8gi/logs/navigation_Dd4bFSTQ8gi.log"
+    },
+    {
+      "scene": "Nfvxx8J5NCo",
+      "pid": 1800436,
+      "fd": 1,
+      "target": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/logs/evaluation-nearest-a3-Nfvxx8J5NCo.controller.log"
+    },
+    {
+      "scene": "Nfvxx8J5NCo",
+      "pid": 1800436,
+      "fd": 2,
+      "target": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/logs/evaluation-nearest-a3-Nfvxx8J5NCo.controller.log"
+    },
+    {
+      "scene": "Nfvxx8J5NCo",
+      "pid": 1800504,
+      "fd": 1,
+      "target": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261113_030708_704741_exp4_nearest_exp4-nearest-a3-Nfvxx8J5NCo/logs/monitor.log"
+    },
+    {
+      "scene": "Nfvxx8J5NCo",
+      "pid": 1800504,
+      "fd": 2,
+      "target": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261113_030708_704741_exp4_nearest_exp4-nearest-a3-Nfvxx8J5NCo/logs/monitor.log"
+    },
+    {
+      "scene": "Nfvxx8J5NCo",
+      "pid": 1800505,
+      "fd": 1,
+      "target": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261113_030708_704741_exp4_nearest_exp4-nearest-a3-Nfvxx8J5NCo/logs/mapping.log"
+    },
+    {
+      "scene": "Nfvxx8J5NCo",
+      "pid": 1800505,
+      "fd": 2,
+      "target": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261113_030708_704741_exp4_nearest_exp4-nearest-a3-Nfvxx8J5NCo/logs/mapping.log"
+    },
+    {
+      "scene": "Nfvxx8J5NCo",
+      "pid": 1800798,
+      "fd": 1,
+      "target": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261113_030708_704741_exp4_nearest_exp4-nearest-a3-Nfvxx8J5NCo/logs/navigation_Nfvxx8J5NCo.log"
+    },
+    {
+      "scene": "Nfvxx8J5NCo",
+      "pid": 1800798,
+      "fd": 2,
+      "target": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261113_030708_704741_exp4_nearest_exp4-nearest-a3-Nfvxx8J5NCo/logs/navigation_Nfvxx8J5NCo.log"
+    }
+  ],
+  "source_and_parameters_unchanged": true,
+  "signals_sent": false,
+  "native_states_modified": false,
+  "scope": "Current-ledger launcher logs, run .log files and related regular-file stdout/stderr targets; live byte prefixes, not a claim about future log content",
+  "proof_path": "diagnostics/resource-disclosure/nearest-live-log-review-20261112T201319464221Z.json"
+}

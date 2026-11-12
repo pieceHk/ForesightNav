@@ -1,0 +1,178 @@
+{
+  "checked_at_utc": "2026-11-12T20:14:24.609314+00:00",
+  "stage": "nearest",
+  "gpu": 5,
+  "controller_pid": 1479616,
+  "sampler_pid": 1484889,
+  "samples": [
+    {
+      "at": "2026-11-12T20:10:07.730490+00:00",
+      "gpu": 5,
+      "free_mib": 9684,
+      "experiment_compute_mib": 18637,
+      "experiment_compute_processes": 2,
+      "other_compute_mib": 14956,
+      "other_compute_processes": 5,
+      "low_headroom": false,
+      "other_compute_growth_mib": 7058
+    },
+    {
+      "at": "2026-11-12T20:10:28.110540+00:00",
+      "gpu": 5,
+      "free_mib": 9686,
+      "experiment_compute_mib": 18640,
+      "experiment_compute_processes": 2,
+      "other_compute_mib": 14960,
+      "other_compute_processes": 5,
+      "low_headroom": false,
+      "other_compute_growth_mib": 7062
+    },
+    {
+      "at": "2026-11-12T20:10:48.484631+00:00",
+      "gpu": 5,
+      "free_mib": 5182,
+      "experiment_compute_mib": 23139,
+      "experiment_compute_processes": 2,
+      "other_compute_mib": 14960,
+      "other_compute_processes": 5,
+      "low_headroom": false,
+      "other_compute_growth_mib": 7062
+    },
+    {
+      "at": "2026-11-12T20:11:09.159656+00:00",
+      "gpu": 5,
+      "free_mib": 9686,
+      "experiment_compute_mib": 18639,
+      "experiment_compute_processes": 2,
+      "other_compute_mib": 14956,
+      "other_compute_processes": 5,
+      "low_headroom": false,
+      "other_compute_growth_mib": 7058
+    },
+    {
+      "at": "2026-11-12T20:11:30.128703+00:00",
+      "gpu": 5,
+      "free_mib": 8806,
+      "experiment_compute_mib": 20137,
+      "experiment_compute_processes": 2,
+      "other_compute_mib": 14960,
+      "other_compute_processes": 5,
+      "low_headroom": false,
+      "other_compute_growth_mib": 7062
+    },
+    {
+      "at": "2026-11-12T20:11:50.726424+00:00",
+      "gpu": 5,
+      "free_mib": 9686,
+      "experiment_compute_mib": 18639,
+      "experiment_compute_processes": 2,
+      "other_compute_mib": 14956,
+      "other_compute_processes": 5,
+      "low_headroom": false,
+      "other_compute_growth_mib": 7058
+    },
+    {
+      "at": "2026-11-12T20:12:12.138214+00:00",
+      "gpu": 5,
+      "free_mib": 9688,
+      "experiment_compute_mib": 18639,
+      "experiment_compute_processes": 2,
+      "other_compute_mib": 14956,
+      "other_compute_processes": 5,
+      "low_headroom": false,
+      "other_compute_growth_mib": 7058
+    },
+    {
+      "at": "2026-11-12T20:12:33.111451+00:00",
+      "gpu": 5,
+      "free_mib": 4276,
+      "experiment_compute_mib": 24601,
+      "experiment_compute_processes": 2,
+      "other_compute_mib": 14406,
+      "other_compute_processes": 5,
+      "low_headroom": false,
+      "other_compute_growth_mib": 6508
+    },
+    {
+      "at": "2026-11-12T20:12:53.506211+00:00",
+      "gpu": 5,
+      "free_mib": 4234,
+      "experiment_compute_mib": 24641,
+      "experiment_compute_processes": 2,
+      "other_compute_mib": 14406,
+      "other_compute_processes": 5,
+      "low_headroom": false,
+      "other_compute_growth_mib": 6508
+    },
+    {
+      "at": "2026-11-12T20:13:13.870084+00:00",
+      "gpu": 5,
+      "free_mib": 9606,
+      "experiment_compute_mib": 19269,
+      "experiment_compute_processes": 2,
+      "other_compute_mib": 14406,
+      "other_compute_processes": 5,
+      "low_headroom": false,
+      "other_compute_growth_mib": 6508
+    },
+    {
+      "at": "2026-11-12T20:13:34.235210+00:00",
+      "gpu": 5,
+      "free_mib": 10238,
+      "experiment_compute_mib": 18635,
+      "experiment_compute_processes": 2,
+      "other_compute_mib": 14406,
+      "other_compute_processes": 5,
+      "low_headroom": false,
+      "other_compute_growth_mib": 6508
+    },
+    {
+      "at": "2026-11-12T20:13:54.989257+00:00",
+      "gpu": 5,
+      "free_mib": 9340,
+      "experiment_compute_mib": 19535,
+      "experiment_compute_processes": 2,
+      "other_compute_mib": 14406,
+      "other_compute_processes": 5,
+      "low_headroom": false,
+      "other_compute_growth_mib": 6508
+    },
+    {
+      "at": "2026-11-12T20:14:15.387862+00:00",
+      "gpu": 5,
+      "free_mib": 10217,
+      "experiment_compute_mib": 18639,
+      "experiment_compute_processes": 2,
+      "other_compute_mib": 14406,
+      "other_compute_processes": 5,
+      "low_headroom": false,
+      "other_compute_growth_mib": 6508
+    }
+  ],
+  "minimum_free_sample": {
+    "at": "2026-11-12T20:12:53.506211+00:00",
+    "gpu": 5,
+    "free_mib": 4234,
+    "experiment_compute_mib": 24641,
+    "experiment_compute_processes": 2,
+    "other_compute_mib": 14406,
+    "other_compute_processes": 5,
+    "low_headroom": false,
+    "other_compute_growth_mib": 6508
+  },
+  "latest_sample_in_interval": {
+    "at": "2026-11-12T20:14:15.387862+00:00",
+    "gpu": 5,
+    "free_mib": 10217,
+    "experiment_compute_mib": 18639,
+    "experiment_compute_processes": 2,
+    "other_compute_mib": 14406,
+    "other_compute_processes": 5,
+    "low_headroom": false,
+    "other_compute_growth_mib": 6508
+  },
+  "Native_source_and_parameters_unchanged": true,
+  "native_restarted": false,
+  "signals_sent": false,
+  "scope": "Discrete samples spanning the local6144MiB review alert. Recovery is not a guarantee against future memory peaks."
+}

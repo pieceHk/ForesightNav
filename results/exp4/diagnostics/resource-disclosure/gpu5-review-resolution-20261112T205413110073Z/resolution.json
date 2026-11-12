@@ -1,0 +1,15 @@
+{
+  "recorded_at_utc": "2026-11-12T20:54:13.110531+00:00",
+  "stage": "nearest",
+  "review": "diagnostics/resource-disclosure/20261112T201424609341Z-gpu5-headroom-review.json",
+  "review_sha256": "0b63c6152ddd8a46fe018fe223f4cea8b7e3bfca8dd2eba25ab0b70900e83ef5",
+  "report": "reports/gpu_scheduling.md",
+  "report_before_sha256": "977d374678618fb665b86c0a965dc82caf99c425c7fd9a4ad2054ab6a93937ad",
+  "report_after_sha256": "e736c478d061e84f0b58260701fd5403734d6e7a1da9edd4bf675160dad72918",
+  "log_review": "diagnostics/resource-disclosure/nearest-live-log-review-20261112T205333021859Z.json",
+  "native_source_and_parameters_unchanged": true,
+  "signals_sent": false,
+  "native_restarted": false,
+  "other_user_cleanup_authorized": false,
+  "scope": "Resolved local review alert; keep supervising memory and retain every native outcome."
+}

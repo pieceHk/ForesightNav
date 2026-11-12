@@ -127,3 +127,13 @@ Nearest首次尝试因物理GPU3的mapper CUDA OOM中断。此次57条整体归�
 | Host policy writes by this agent | 0 | 0 |
 
 Native throughput recovered under the unchanged sources, calibration and host policy. The proposed THP adjustment was not applied. Other workload memory occupancy also decreased; these observations do not assign the external change to a particular operator or provide an isolated comparison of method timing.
+
+## GPU5 headroom review, 2026-11-12
+
+| Discrete sample, UTC | Free MiB | Exp4 compute MiB | Other compute MiB |
+|---|---:|---:|---:|
+| 20:12:53 | 4234 | 24641 | 14406 |
+| 20:13:13 | 9606 | 19269 | 14406 |
+| 20:18:02 | 15022 | 18641 | 10390 |
+
+The first sample crossed the local6GiB review threshold. Exp4's sampled allocation subsequently fell, followed by reduced external occupancy. A24-log-prefix review at20:53 found no OOM, invalid-mapper-response or traceback matches. No process was signaled or restarted. These samples do not establish an upper bound on future memory use. The local observation interval was shortened to20seconds during review; native execution settings stayed unchanged.
