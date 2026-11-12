@@ -1,0 +1,126 @@
+{
+  "checked_at_utc": "2026-11-12T19:08:46.297602+00:00",
+  "stage": "nearest",
+  "diagnostic_only": true,
+  "scope": "Actual launched scene plans, live launchers and completed native scenes; does not certify aggregate stage metrics",
+  "ledger_sha256_at_read": "fcdb18aa429cfcb366df7ba475812645f607b048e7156eea51bb165bdec53c13",
+  "auditor_sha256": "b0a81de6cd896e07ae705172a3679f59acabe909806a5c31e2690b4a92074b1f",
+  "parameter_sha256": "e1d75f3c9503c7439467748fc97be6ae2ad450c429f40dc7235b1564ff7852ae",
+  "source_and_parameters_unchanged": true,
+  "controller_identity_at_read": {
+    "live": true,
+    "state": "S",
+    "start_ticks": "29740928",
+    "command": "/nvme/khy/conda_envs/pbsp/navigation/bin/python -u /nvme/khy/ForesightNav_exp4_depthfix/results/exp4/code/available_gpu_evaluate_sequence.py --stage nearest --attempt a3 --controller --plan /nvme/khy/ForesightNav_exp4_depthfix/results/exp4/diagnostics/gpu-resource-sharing/20261112T131132037308Z/plan.json "
+  },
+  "expected_stage_scenes": 20,
+  "expected_stage_episodes": 400,
+  "checked_native_identities": 120,
+  "scene_launches": [
+    {
+      "scene": "4ok3usBNeis",
+      "gpu": 5,
+      "ledger_status": "completed",
+      "native_completion_audit": {
+        "completed_episodes": 20,
+        "identity_count": 20
+      },
+      "state": "completed",
+      "native_identities": 20,
+      "categories_and_source_ids_match": true,
+      "seed": 1,
+      "source_commit": "03242fda76fd6a631596a7269c8e7990c657ea30",
+      "launcher_pid": 1479628,
+      "launcher_live_at_read": false,
+      "launch_sha256": "65dc0402cf54a4a826f7d981be40a392b07e072a68af62c60c86d120f1f38d68"
+    },
+    {
+      "scene": "5cdEh9F2hJL",
+      "gpu": 6,
+      "ledger_status": "completed",
+      "native_completion_audit": {
+        "completed_episodes": 20,
+        "identity_count": 20
+      },
+      "state": "completed",
+      "native_identities": 20,
+      "categories_and_source_ids_match": true,
+      "seed": 1,
+      "source_commit": "03242fda76fd6a631596a7269c8e7990c657ea30",
+      "launcher_pid": 1479629,
+      "launcher_live_at_read": false,
+      "launch_sha256": "c2d2b716e4f362ad33e05520aadb44330ebdb2d940f75d5cb987e63cdf58d09d"
+    },
+    {
+      "scene": "6s7QHgap2fW",
+      "gpu": 7,
+      "ledger_status": "completed",
+      "native_completion_audit": {
+        "completed_episodes": 20,
+        "identity_count": 20
+      },
+      "state": "completed",
+      "native_identities": 20,
+      "categories_and_source_ids_match": true,
+      "seed": 1,
+      "source_commit": "03242fda76fd6a631596a7269c8e7990c657ea30",
+      "launcher_pid": 1479630,
+      "launcher_live_at_read": false,
+      "launch_sha256": "3d3c7b94ed96525f095ad430232b6249998767c5bc8b86be7eff5df69b9ccb63"
+    },
+    {
+      "scene": "DYehNKdT76V",
+      "gpu": 6,
+      "ledger_status": "running",
+      "state": "running",
+      "launcher_start_ticks": "31009207",
+      "native_identities": 20,
+      "categories_and_source_ids_match": true,
+      "seed": 1,
+      "source_commit": "03242fda76fd6a631596a7269c8e7990c657ea30",
+      "launcher_pid": 1696201,
+      "launcher_live_at_read": true,
+      "launch_sha256": "4e87c4b3e97494ecbd3adb0cca70fabce74be76cc0f9673cdf5f7fe0dbe26240"
+    },
+    {
+      "scene": "Dd4bFSTQ8gi",
+      "gpu": 5,
+      "ledger_status": "running",
+      "state": "running",
+      "launcher_start_ticks": "31436150",
+      "native_identities": 20,
+      "categories_and_source_ids_match": true,
+      "seed": 1,
+      "source_commit": "03242fda76fd6a631596a7269c8e7990c657ea30",
+      "launcher_pid": 1745952,
+      "launcher_live_at_read": true,
+      "launch_sha256": "311ef1a5d21c224be89b5cd87fb288fab16b47ef06716bc417fa7d01f746efe5"
+    },
+    {
+      "scene": "Nfvxx8J5NCo",
+      "gpu": 7,
+      "ledger_status": "running",
+      "state": "running",
+      "launcher_start_ticks": "31873954",
+      "native_identities": 20,
+      "categories_and_source_ids_match": true,
+      "seed": 1,
+      "source_commit": "03242fda76fd6a631596a7269c8e7990c657ea30",
+      "launcher_pid": 1800436,
+      "launcher_live_at_read": true,
+      "launch_sha256": "cff9a275c35606d228c4abab45fc03f1c0e35a47d6d7b7d7d08c4d0a18868e7b"
+    }
+  ],
+  "native_states_modified": false,
+  "allowed_gpus": [
+    5,
+    6,
+    7
+  ],
+  "scheduling": {
+    "mode": "bounded_memory_scene_parallel",
+    "plan": "diagnostics/gpu-resource-sharing/20261112T131132037308Z/plan.json",
+    "controller_sha256": "bd5aded58754bed3179858831784e1f5aed1330b1ee61d7866e01e59117b4ac2",
+    "base_controller_sha256": "d238350a2733b56d258e774e5ca4f1537f09818cd34a313a638b9ec483c0b82f"
+  }
+}

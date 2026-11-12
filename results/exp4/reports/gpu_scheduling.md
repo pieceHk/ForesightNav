@@ -114,3 +114,16 @@ Nearest首次尝试因物理GPU3的mapper CUDA OOM中断。此次57条整体归�
 11月12日用户确认保留Exp2，Exp4改用其他GPU。GPU3清理监控已关闭并核实退出，未停止Exp2。新一轮固定400条Nearest在物理GPU5、6、7启动；两种原生角色继续同卡运行，所有算法、模型、seed、回合身份及冻结参数不变。三张卡各约35 GiB空闲，按共享资源条件将本轮CPU准入设为至少34 GiB空闲、已有compute不超过10 GiB。旧OOM日志中的两个Exp4进程约25.8 GiB是个例诊断值，不能视为峰值显存上限。新调度器单独保存，旧Full调度器与CP4证据原样保留；另外按20秒采样实际空闲、实验及其他进程显存，采样器不发信号、不改原生状态。
 
 11月12日23:14，GPU7空闲5622 MiB触发本机6 GiB提前审查。两次实际采样中，Exp4 compute占用由27743降至18667 MiB，其他compute均为10426 MiB，空闲回到14685 MiB。审查了当前12份launcher、运行目录及相关标准输出/错误日志前缀，未匹配CUDA OOM、mapper无效响应或traceback。原生控制器及worker继续运行；没有重启、发信号或修改参数，全部回合保留。本次约27.1 GiB的Exp4占用也是离散观测，不作为峰值显存上界。采样与日志依据见[显存审查](../diagnostics/resource-disclosure/memory-headroom-20261112T1514-review.json)。
+
+## Host memory pressure and recovery, 2026-11-12
+
+| Observation | 18:19–18:21 UTC | 19:09 UTC |
+|---|---:|---:|
+| Available host RAM | about 58.7 GiB | 347.08 GiB |
+| Compaction stalls in an 8-second sample | 142 | 0 |
+| Failed compactions in that sample | 142 | 0 |
+| Memory PSI full, avg10 | 28.66% | 0.00% |
+| THP defrag policy | madvise | madvise |
+| Host policy writes by this agent | 0 | 0 |
+
+Native throughput recovered under the unchanged sources, calibration and host policy. The proposed THP adjustment was not applied. Other workload memory occupancy also decreased; these observations do not assign the external change to a particular operator or provide an isolated comparison of method timing.

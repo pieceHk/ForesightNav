@@ -1,0 +1,79 @@
+{
+  "checked_at_utc": "2026-11-12T19:08:46.727170+00:00",
+  "stage": "nearest",
+  "controller_pid": 1479616,
+  "settings": {
+    "/sys/kernel/mm/transparent_hugepage/enabled": "always [madvise] never",
+    "/sys/kernel/mm/transparent_hugepage/defrag": "always defer defer+madvise [madvise] never",
+    "/sys/kernel/mm/transparent_hugepage/khugepaged/defrag": "1",
+    "/proc/sys/vm/zone_reclaim_mode": "0",
+    "/proc/sys/vm/swappiness": "60",
+    "/proc/sys/kernel/numa_balancing": "1"
+  },
+  "native_processes": {
+    "1479758": {
+      "state": "exited"
+    },
+    "1479981": {
+      "state": "exited"
+    },
+    "1696468": {
+      "THP_enabled": "1",
+      "Cpus_allowed_list": "0-383",
+      "Mems_allowed_list": "0-1",
+      "kernel_stack_read": "PermissionError",
+      "smaps_rollup": [
+        "Rss:             8953720 kB",
+        "Pss:             8902355 kB",
+        "Anonymous:       3464652 kB",
+        "AnonHugePages:         0 kB",
+        "Swap:               2500 kB",
+        "SwapPss:            2500 kB"
+      ]
+    },
+    "1696673": {
+      "THP_enabled": "1",
+      "Cpus_allowed_list": "0-383",
+      "Mems_allowed_list": "0-1",
+      "kernel_stack_read": "PermissionError",
+      "smaps_rollup": [
+        "Rss:             1881580 kB",
+        "Pss:             1812649 kB",
+        "Anonymous:       1672376 kB",
+        "AnonHugePages:         0 kB",
+        "Swap:               4860 kB",
+        "SwapPss:            4860 kB"
+      ]
+    },
+    "1746037": {
+      "THP_enabled": "1",
+      "Cpus_allowed_list": "0-383",
+      "Mems_allowed_list": "0-1",
+      "kernel_stack_read": "PermissionError",
+      "smaps_rollup": [
+        "Rss:             7578332 kB",
+        "Pss:             7434677 kB",
+        "Anonymous:       4279072 kB",
+        "AnonHugePages:         0 kB",
+        "Swap:                  0 kB",
+        "SwapPss:               0 kB"
+      ]
+    },
+    "1746515": {
+      "THP_enabled": "1",
+      "Cpus_allowed_list": "0-383",
+      "Mems_allowed_list": "0-1",
+      "kernel_stack_read": "PermissionError",
+      "smaps_rollup": [
+        "Rss:             2324920 kB",
+        "Pss:             2049577 kB",
+        "Anonymous:       1688104 kB",
+        "AnonHugePages:         0 kB",
+        "Swap:                  0 kB",
+        "SwapPss:               0 kB"
+      ]
+    }
+  },
+  "settings_changed": false,
+  "signals_sent": false
+}

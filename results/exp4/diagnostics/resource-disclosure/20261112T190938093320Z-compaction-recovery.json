@@ -1,0 +1,168 @@
+{
+  "checked_at_utc": "2026-11-12T19:09:38.087104+00:00",
+  "stage": "nearest",
+  "controller_pid": 1479616,
+  "before": {
+    "at": "2026-11-12T19:09:30.073444+00:00",
+    "vmstat": {
+      "pswpin": 2845576,
+      "pswpout": 13549529,
+      "allocstall_dma": 0,
+      "allocstall_dma32": 0,
+      "allocstall_normal": 25477,
+      "allocstall_movable": 7244335,
+      "pgsteal_direct": 125122552,
+      "pgscan_direct": 3706560361,
+      "pgscan_direct_throttle": 12784,
+      "compact_migrate_scanned": 21103008900,
+      "compact_free_scanned": 87704654354,
+      "compact_isolated": 4469176674,
+      "compact_stall": 12507555,
+      "compact_fail": 12193493,
+      "compact_success": 314062,
+      "compact_daemon_wake": 7637,
+      "compact_daemon_migrate_scanned": 103635606,
+      "compact_daemon_free_scanned": 1508774996
+    },
+    "processes": {
+      "1696468": {
+        "scene": "DYehNKdT76V",
+        "created_at": 1794501782.37,
+        "user_s": 1944.02,
+        "sys_s": 3675.89,
+        "rss_bytes": 9524621312
+      },
+      "1696673": {
+        "scene": "DYehNKdT76V",
+        "created_at": 1794501808.45,
+        "user_s": 2563.71,
+        "sys_s": 1242.94,
+        "rss_bytes": 1930940416
+      },
+      "1746037": {
+        "scene": "Dd4bFSTQ8gi",
+        "created_at": 1794506051.45,
+        "user_s": 545.71,
+        "sys_s": 2108.91,
+        "rss_bytes": 10474950656
+      },
+      "1746515": {
+        "scene": "Dd4bFSTQ8gi",
+        "created_at": 1794506078.91,
+        "user_s": 623.12,
+        "sys_s": 1484.8,
+        "rss_bytes": 2355372032
+      },
+      "1800505": {
+        "scene": "Nfvxx8J5NCo",
+        "created_at": 1794510428.04,
+        "user_s": 17.67,
+        "sys_s": 6.96,
+        "rss_bytes": 2042978304
+      },
+      "1800798": {
+        "scene": "Nfvxx8J5NCo",
+        "created_at": 1794510450.89,
+        "user_s": 78.74,
+        "sys_s": 27.04,
+        "rss_bytes": 2345570304
+      }
+    },
+    "host_available_bytes": 373069144064,
+    "memory_pressure": "some avg10=0.00 avg60=0.02 avg300=9.83 total=2815347303\nfull avg10=0.00 avg60=0.02 avg300=9.83 total=2715571150\n"
+  },
+  "after": {
+    "at": "2026-11-12T19:09:38.087104+00:00",
+    "vmstat": {
+      "pswpin": 2845638,
+      "pswpout": 13549529,
+      "allocstall_dma": 0,
+      "allocstall_dma32": 0,
+      "allocstall_normal": 25477,
+      "allocstall_movable": 7244335,
+      "pgsteal_direct": 125122552,
+      "pgscan_direct": 3706560361,
+      "pgscan_direct_throttle": 12784,
+      "compact_migrate_scanned": 21103008900,
+      "compact_free_scanned": 87704654354,
+      "compact_isolated": 4469176674,
+      "compact_stall": 12507555,
+      "compact_fail": 12193493,
+      "compact_success": 314062,
+      "compact_daemon_wake": 7637,
+      "compact_daemon_migrate_scanned": 103635606,
+      "compact_daemon_free_scanned": 1508774996
+    },
+    "processes": {
+      "1696468": {
+        "scene": "DYehNKdT76V",
+        "created_at": 1794501782.37,
+        "user_s": 1949.13,
+        "sys_s": 3677.24,
+        "rss_bytes": 9626791936
+      },
+      "1696673": {
+        "scene": "DYehNKdT76V",
+        "created_at": 1794501808.45,
+        "user_s": 2568.45,
+        "sys_s": 1244.13,
+        "rss_bytes": 1931890688
+      },
+      "1746037": {
+        "scene": "Dd4bFSTQ8gi",
+        "created_at": 1794506051.45,
+        "user_s": 549.1,
+        "sys_s": 2110.69,
+        "rss_bytes": 10540269568
+      },
+      "1746515": {
+        "scene": "Dd4bFSTQ8gi",
+        "created_at": 1794506078.91,
+        "user_s": 627.53,
+        "sys_s": 1486.0,
+        "rss_bytes": 2353324032
+      },
+      "1800505": {
+        "scene": "Nfvxx8J5NCo",
+        "created_at": 1794510428.04,
+        "user_s": 20.65,
+        "sys_s": 7.4,
+        "rss_bytes": 2115997696
+      },
+      "1800798": {
+        "scene": "Nfvxx8J5NCo",
+        "created_at": 1794510450.89,
+        "user_s": 84.49,
+        "sys_s": 28.49,
+        "rss_bytes": 2353876992
+      }
+    },
+    "host_available_bytes": 372669882368,
+    "memory_pressure": "some avg10=0.00 avg60=0.01 avg300=9.57 total=2815347316\nfull avg10=0.00 avg60=0.01 avg300=9.56 total=2715571162\n"
+  },
+  "vmstat_delta_8s": {
+    "pswpin": 62,
+    "pswpout": 0,
+    "allocstall_dma": 0,
+    "allocstall_dma32": 0,
+    "allocstall_normal": 0,
+    "allocstall_movable": 0,
+    "pgsteal_direct": 0,
+    "pgscan_direct": 0,
+    "pgscan_direct_throttle": 0,
+    "compact_migrate_scanned": 0,
+    "compact_free_scanned": 0,
+    "compact_isolated": 0,
+    "compact_stall": 0,
+    "compact_fail": 0,
+    "compact_success": 0,
+    "compact_daemon_wake": 0,
+    "compact_daemon_migrate_scanned": 0,
+    "compact_daemon_free_scanned": 0
+  },
+  "THP_defrag": "always defer defer+madvise [madvise] never",
+  "source_and_parameters_unchanged": true,
+  "settings_changed": false,
+  "signals_sent": false,
+  "scope": "Observed recovery under the unchanged host setting; external cause not assigned by this measurement."
+}

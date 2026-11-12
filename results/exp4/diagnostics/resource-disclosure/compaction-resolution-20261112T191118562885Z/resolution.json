@@ -1,0 +1,16 @@
+{
+  "at_utc": "2026-11-12T19:11:18.563994+00:00",
+  "stage": "nearest",
+  "proposal_status": "deferred_after_observed_resource_recovery",
+  "approved": false,
+  "THP_defrag": "madvise",
+  "host_setting_changes": 0,
+  "native_source_and_parameters_unchanged": true,
+  "recovery_proof": "diagnostics/resource-disclosure/20261112T190938093320Z-compaction-recovery.json",
+  "recovery_proof_sha256": "942f97011a1897b3997f79ce627b13014be1df6844ea5c5d5282251a1d33978c",
+  "report": "reports/gpu_scheduling.md",
+  "report_before_sha256": "98aa0a446f5a264e8e22a95d792539b877d1c2d7f036eb8005196d2af4590ef7",
+  "report_after_sha256": "977d374678618fb665b86c0a965dc82caf99c425c7fd9a4ad2054ab6a93937ad",
+  "signals_sent": false,
+  "native_restarted": false
+}

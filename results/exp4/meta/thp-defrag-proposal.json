@@ -1,6 +1,6 @@
 {
   "recorded_at_utc": "2026-11-12T18:29:19.642520+00:00",
-  "status": "awaiting_explicit_user_approval",
+  "status": "deferred_after_observed_resource_recovery",
   "approved": false,
   "scope": "temporary_host_thp_defrag_madvise_to_defer",
   "target": "/sys/kernel/mm/transparent_hugepage/defrag",
@@ -37,5 +37,13 @@
   "non_Exp4_identifiers_sanitized_public_diagnostics": [
     "diagnostics/resource-disclosure/20261112T181943633185Z-compute-performance.json",
     "diagnostics/resource-disclosure/20261112T182142699786Z-host-memory-pressure.json"
-  ]
+  ],
+  "resolution_at_utc": "2026-11-12T19:11:18.563436+00:00",
+  "recovery_proof": "diagnostics/resource-disclosure/20261112T190938093320Z-compaction-recovery.json",
+  "action_currently_needed": false,
+  "global_setting_write_performed": false,
+  "restoration_required": false,
+  "user_approval_received": false,
+  "late_approval_handling": "Record an explicit answer if received, then reassess current need; never execute a stale plan automatically.",
+  "reason": "Native throughput recovered while THP remained madvise, available host RAM increased and sampled compaction stalls fell to zero. No host setting was changed by this agent."
 }
