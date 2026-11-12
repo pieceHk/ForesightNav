@@ -1,0 +1,15 @@
+{
+  "at_utc": "2026-11-12T01:03:42.662116+00:00",
+  "guard_pid": 1132225,
+  "guard_start_ticks": "25295884",
+  "guard_live_matching": true,
+  "guard_source_sha256": "2aa5d5b32bea656b70c8f6c3c1769cd1431bf1f698e072020d0db186cf2a5a6d",
+  "interval_seconds": 20,
+  "max_seconds": 86400,
+  "physical_gpu": 3,
+  "authorized_scope": "Other users on GPU3; own UID preserved; processes spanning GPU0 or GPU4-7 skipped",
+  "infrastructure_old_records_retired_together": 57,
+  "new_fixed_episode_count": 400,
+  "new_nearest_stage_started": false,
+  "source_and_parameters_unchanged": true
+}
