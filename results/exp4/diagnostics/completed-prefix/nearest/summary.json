@@ -1,25 +1,85 @@
 {
-  "started_at_utc": "2026-11-12T13:51:02.323349+00:00",
-  "completed_at_utc": "2026-11-12T13:51:15.161726+00:00",
+  "started_at_utc": "2026-11-12T14:39:47.830346+00:00",
+  "completed_at_utc": "2026-11-12T14:40:02.506810+00:00",
   "stage": "nearest",
   "diagnostic_only": true,
   "formal400_complete": false,
-  "completed_native_metric_records_checked": 10,
+  "completed_native_metric_records_checked": 25,
   "newly_audited": [
     {
       "scene": "4ok3usBNeis",
-      "episode": "2",
-      "steps": 717,
+      "episode": "4",
+      "steps": 568,
       "success_vector": [
         0,
+        1,
+        1
+      ]
+    },
+    {
+      "scene": "4ok3usBNeis",
+      "episode": "5",
+      "steps": 796,
+      "success_vector": [
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "scene": "4ok3usBNeis",
+      "episode": "6",
+      "steps": 334,
+      "success_vector": [
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "scene": "4ok3usBNeis",
+      "episode": "7",
+      "steps": 485,
+      "success_vector": [
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "scene": "5cdEh9F2hJL",
+      "episode": "7",
+      "steps": 509,
+      "success_vector": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "scene": "5cdEh9F2hJL",
+      "episode": "8",
+      "steps": 500,
+      "success_vector": [
+        1,
         0,
         1
       ]
     },
     {
       "scene": "5cdEh9F2hJL",
-      "episode": "3",
-      "steps": 763,
+      "episode": "9",
+      "steps": 608,
+      "success_vector": [
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "scene": "6s7QHgap2fW",
+      "episode": "4",
+      "steps": 558,
       "success_vector": [
         1,
         1,
@@ -28,21 +88,31 @@
     },
     {
       "scene": "6s7QHgap2fW",
-      "episode": "2",
-      "steps": 701,
+      "episode": "5",
+      "steps": 590,
       "success_vector": [
         0,
         1,
         1
       ]
+    },
+    {
+      "scene": "6s7QHgap2fW",
+      "episode": "6",
+      "steps": 614,
+      "success_vector": [
+        1,
+        0,
+        0
+      ]
     }
   ],
   "scene_exported_records": {
-    "4ok3usBNeis": 3,
-    "5cdEh9F2hJL": 4,
-    "6s7QHgap2fW": 3
+    "4ok3usBNeis": 8,
+    "5cdEh9F2hJL": 10,
+    "6s7QHgap2fW": 7
   },
-  "native_stage_path_checks": 30,
+  "native_stage_path_checks": 75,
   "all_paths_complete": true,
   "max_path_error_m": 1.7584841600637446e-06,
   "source_and_parameters_unchanged": true,
