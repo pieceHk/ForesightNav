@@ -9,3 +9,5 @@
 原始身份、轨迹、指标、BLP/SCSP记录及角色环境见[归档清单](../diagnostics/infrastructure-restarts/nearest-20261111T172644/manifest.json)，其中也列出了建图与导航stdout日志的原始SHA及压缩包往返核验。原始运行目录未删除；旧canonical元数据和日志已可逆移入清单列出的retired路径。
 
 用户已授权清理物理GPU3上的其他用户任务并持续监督。清理按进程身份与实际GPU范围复查，GPU0及GPU4至7不作为信号目标，父进程组不作为清理目标。资源监控按20秒间隔运行，最长24小时，并可通过其控制文件关闭。
+
+用户随后选择保留Exp2，关闭GPU3清理监控，改在GPU5、6、7共享运行新的完整Nearest400条。实际新启动记录见meta/nearest-start-a3.json；旧57条仍全部保留在归档中。

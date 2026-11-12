@@ -1,0 +1,30 @@
+{
+  "at_utc": "2026-11-12T13:14:16.007710+00:00",
+  "source": "code/complete_checkpoint_evidence_available.py",
+  "source_sha256": "5496d3821305c742ca4d55efa56c4613846a3e45845343bd4131683bee07b6fd",
+  "reference_CP4_executor_sha256": "f45fe79477fc83bf1fcbed7b1d59232fcebd280eccf4f56149d1cb2146c6e9eb",
+  "actual_incomplete_CP5_check_exit_code": 0,
+  "readiness": {
+    "checkpoint": "CP5",
+    "ready": false,
+    "reason": "The preceding evaluation stage is not complete",
+    "writes_outputs": false,
+    "native_states_modified": false,
+    "launches_workers": false
+  },
+  "formal_outputs_before": {
+    "reports/CP5.md": false,
+    "meta/CP5_report_prepared.json": false,
+    "diagnostics/CP5/complete-evidence-execution.json": false,
+    "figures/CP5": false
+  },
+  "formal_outputs_after": {
+    "reports/CP5.md": false,
+    "meta/CP5_report_prepared.json": false,
+    "diagnostics/CP5/complete-evidence-execution.json": false,
+    "figures/CP5": false
+  },
+  "source_and_parameters_unchanged": true,
+  "native_workers_started": false,
+  "scope": "Only CPU role-assignment validation follows each recorded stage GPU policy. Positive complete-stage execution remains pending."
+}

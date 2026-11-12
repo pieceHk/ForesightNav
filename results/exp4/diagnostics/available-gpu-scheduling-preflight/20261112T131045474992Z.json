@@ -1,0 +1,172 @@
+{
+  "checked_at_utc": "2026-11-12T13:10:45.475031+00:00",
+  "source": "code/available_gpu_evaluate_sequence.py",
+  "source_sha256": "bd5aded58754bed3179858831784e1f5aed1330b1ee61d7866e01e59117b4ac2",
+  "base_controller_sha256": "d238350a2733b56d258e774e5ca4f1537f09818cd34a313a638b9ec483c0b82f",
+  "reference_E4_unchanged_sha256": "e4f9b37823c4ccfc9a884ae496bf044133f6d12a4582f7bf30d20ff5ca779eb4",
+  "actual_admission_tests": 5,
+  "failures": 0,
+  "errors": 0,
+  "actual_readiness": {
+    "checked_at_utc": "2026-11-12T13:10:45.457649+00:00",
+    "stage": "nearest",
+    "ready": true,
+    "reasons": [],
+    "allowed_gpus": [
+      5,
+      6,
+      7
+    ],
+    "eligible_gpus_at_check": [
+      5,
+      6,
+      7
+    ],
+    "gpu_memory_policy": {
+      "min_free_mib": 34816,
+      "max_existing_compute_mib": 10240
+    },
+    "gpu_inventory": {
+      "checked_at_utc": "2026-11-12T13:10:45.456833+00:00",
+      "gpus": [
+        {
+          "index": "1",
+          "uuid": "GPU-6f6d0a9f-b84c-a94d-37ee-1ce29f66ba1f",
+          "name": "NVIDIA A40",
+          "memory.total": "46068",
+          "memory.free": "29407"
+        },
+        {
+          "index": "2",
+          "uuid": "GPU-e578717e-9e11-1464-269b-d5a17e564c8a",
+          "name": "NVIDIA A40",
+          "memory.total": "46068",
+          "memory.free": "29297"
+        },
+        {
+          "index": "4",
+          "uuid": "GPU-7e03cc60-2c77-01c4-3bb8-d0bfe70657be",
+          "name": "NVIDIA A40",
+          "memory.total": "46068",
+          "memory.free": "28754"
+        },
+        {
+          "index": "5",
+          "uuid": "GPU-875134a3-1b53-1712-a56d-a4192edb9728",
+          "name": "NVIDIA A40",
+          "memory.total": "46068",
+          "memory.free": "35914"
+        },
+        {
+          "index": "6",
+          "uuid": "GPU-c4579e9e-eb6e-0eda-0430-9b78b62c51b4",
+          "name": "NVIDIA A40",
+          "memory.total": "46068",
+          "memory.free": "35957"
+        },
+        {
+          "index": "7",
+          "uuid": "GPU-7ba3fcb6-cd24-e4eb-9fef-e2f8c32afae3",
+          "name": "NVIDIA A40",
+          "memory.total": "46068",
+          "memory.free": "35704"
+        }
+      ],
+      "compute_apps": [
+        {
+          "gpu_uuid": "GPU-6f6d0a9f-b84c-a94d-37ee-1ce29f66ba1f",
+          "used_gpu_memory": "6350"
+        },
+        {
+          "gpu_uuid": "GPU-6f6d0a9f-b84c-a94d-37ee-1ce29f66ba1f",
+          "used_gpu_memory": "2008"
+        },
+        {
+          "gpu_uuid": "GPU-6f6d0a9f-b84c-a94d-37ee-1ce29f66ba1f",
+          "used_gpu_memory": "6350"
+        },
+        {
+          "gpu_uuid": "GPU-e578717e-9e11-1464-269b-d5a17e564c8a",
+          "used_gpu_memory": "6348"
+        },
+        {
+          "gpu_uuid": "GPU-e578717e-9e11-1464-269b-d5a17e564c8a",
+          "used_gpu_memory": "6350"
+        },
+        {
+          "gpu_uuid": "GPU-e578717e-9e11-1464-269b-d5a17e564c8a",
+          "used_gpu_memory": "2008"
+        },
+        {
+          "gpu_uuid": "GPU-7e03cc60-2c77-01c4-3bb8-d0bfe70657be",
+          "used_gpu_memory": "2008"
+        },
+        {
+          "gpu_uuid": "GPU-7e03cc60-2c77-01c4-3bb8-d0bfe70657be",
+          "used_gpu_memory": "6348"
+        },
+        {
+          "gpu_uuid": "GPU-7e03cc60-2c77-01c4-3bb8-d0bfe70657be",
+          "used_gpu_memory": "6936"
+        },
+        {
+          "gpu_uuid": "GPU-875134a3-1b53-1712-a56d-a4192edb9728",
+          "used_gpu_memory": "6410"
+        },
+        {
+          "gpu_uuid": "GPU-875134a3-1b53-1712-a56d-a4192edb9728",
+          "used_gpu_memory": "2008"
+        },
+        {
+          "gpu_uuid": "GPU-c4579e9e-eb6e-0eda-0430-9b78b62c51b4",
+          "used_gpu_memory": "6408"
+        },
+        {
+          "gpu_uuid": "GPU-c4579e9e-eb6e-0eda-0430-9b78b62c51b4",
+          "used_gpu_memory": "2008"
+        },
+        {
+          "gpu_uuid": "GPU-7ba3fcb6-cd24-e4eb-9fef-e2f8c32afae3",
+          "used_gpu_memory": "6410"
+        },
+        {
+          "gpu_uuid": "GPU-7ba3fcb6-cd24-e4eb-9fef-e2f8c32afae3",
+          "used_gpu_memory": "2008"
+        }
+      ],
+      "external_usernames_and_PIDs_omitted": true
+    },
+    "scenes": 20,
+    "episodes": 400,
+    "adopt_existing_full": false,
+    "native_workers_started": false,
+    "native_source_entries": 161,
+    "source_sha256": "bd5aded58754bed3179858831784e1f5aed1330b1ee61d7866e01e59117b4ac2",
+    "base_controller_sha256": "d238350a2733b56d258e774e5ca4f1537f09818cd34a313a638b9ec483c0b82f",
+    "parameter_sha256": "e1d75f3c9503c7439467748fc97be6ae2ad450c429f40dc7235b1564ff7852ae",
+    "output_free_bytes": 1047306264576
+  },
+  "policy": {
+    "recorded_at_utc": "2026-11-12T13:10:44.923945+00:00",
+    "allowed_gpus": [
+      5,
+      6,
+      7
+    ],
+    "reserved_gpus": [
+      0,
+      3
+    ],
+    "user_instruction": "保留Exp2，Exp4再使用其他GPU",
+    "previous_policy_retained": "meta/evaluation-gpu-policy.json",
+    "min_free_mib": 34816,
+    "max_existing_compute_mib": 10240,
+    "scope": "CPU admission only; no frozen navigation, mapping, model, seed, episode or calibration change",
+    "rationale": "Cards5/6/7 have about35GiB free and8.2GiB pre-existing compute. Prior OOM recorded about25.8GiB in the two Exp4 processes. This is a shared-resource admission choice, not a proven peak-memory bound; monitor actual headroom and preserve any infrastructure failures."
+  },
+  "parameter_sha256": "e1d75f3c9503c7439467748fc97be6ae2ad450c429f40dc7235b1564ff7852ae",
+  "native_source_entries": 161,
+  "source_and_parameters_unchanged": true,
+  "native_workers_started": false,
+  "old_gpu3_guard_stopped": true
+}

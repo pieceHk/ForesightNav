@@ -1,0 +1,18 @@
+{
+  "at_utc": "2026-11-12T13:23:22.468935+00:00",
+  "setup_source": "code/setup_available_gpu_scheduler.py",
+  "setup_source_sha256": "93a71baa98d5cb72d1cd234471a3a772fb8eb48e6dcdd6eb4e78057f8c4f4425",
+  "actual_prior_test_proof": "diagnostics/available-gpu-scheduling-preflight/20261112T131045474992Z.json",
+  "actual_prior_test_proof_sha256": "b56e05bb79f872140e89c4b4f903d0a86347d61f597bc8d8cb85414c3529f377",
+  "preserved_test_names": [
+    "test_free_boundary",
+    "test_compute_boundary",
+    "test_reserved_zero_and_three",
+    "test_unrequested_card",
+    "test_unknown_memory_fails_closed"
+  ],
+  "actual_prior_tests": 5,
+  "tests_reexecuted": false,
+  "native_states_modified": false,
+  "scope": "Preserved the exact local setup source used for the actual five admission tests; no new test result or native run is claimed"
+}

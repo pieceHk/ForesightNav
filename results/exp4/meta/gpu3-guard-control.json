@@ -1,9 +1,11 @@
 {
-  "enabled": true,
+  "enabled": false,
   "operator_uid": 1001,
   "authorized_gpu": 3,
   "interval_seconds": 20,
   "max_seconds": 86400,
   "user_authorization": "Explicit user instruction to kill other users tasks on GPU3 and supervise periodically; GPU0 reserved",
-  "created_at_utc": "2026-11-12T00:50:41.555548+00:00"
+  "created_at_utc": "2026-11-12T00:50:41.555548+00:00",
+  "disabled_at_utc": "2026-11-12T13:06:44.435565+00:00",
+  "reason": "User explicitly chose to preserve OneMap_exp2 and move Exp4 to other GPUs; GPU3 released"
 }

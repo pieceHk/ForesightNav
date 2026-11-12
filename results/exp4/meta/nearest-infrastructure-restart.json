@@ -7,5 +7,19 @@
   "reason": "Mapper CUDA OOM on physical GPU3; original worker failed and in-place resume unsupported",
   "source_and_parameters_unchanged": true,
   "restart_criterion": "Infrastructure worker failed, not a navigation success threshold",
-  "new_native_workers_started": false
+  "new_native_workers_started": true,
+  "clean_start": {
+    "pid": 1479616,
+    "start_ticks": "29740928",
+    "source_commit": "03242fda76fd6a631596a7269c8e7990c657ea30",
+    "started_at_utc": "2026-11-12T13:11:32.449013+00:00",
+    "allowed_gpus": [
+      5,
+      6,
+      7
+    ],
+    "controller_sha256": "bd5aded58754bed3179858831784e1f5aed1330b1ee61d7866e01e59117b4ac2",
+    "parameter_sha256": "e1d75f3c9503c7439467748fc97be6ae2ad450c429f40dc7235b1564ff7852ae",
+    "canonical_start_path": "meta/nearest-start-a3.json"
+  }
 }
