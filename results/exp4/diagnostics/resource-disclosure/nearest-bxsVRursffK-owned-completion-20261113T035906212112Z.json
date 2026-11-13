@@ -1,0 +1,27 @@
+{
+  "checked_at_utc": "2026-11-13T03:59:06.212011+00:00",
+  "stage": "nearest",
+  "scene": "bxsVRursffK",
+  "gpu": 5,
+  "launcher_pid": 1997129,
+  "native_completion": {
+    "completed_episodes": 20,
+    "identity_count": 20
+  },
+  "native_returncode": 0,
+  "controller_exit_status_proof": {
+    "source": "subprocess.Popen.poll",
+    "at_utc": "2026-11-13T03:00:55.627450+00:00"
+  },
+  "exit_record_scope": "Controller-owned Popen result; no retained zombie OS record is claimed",
+  "native_status_sha256": "93f0434f4880751cb6fe125f7fb6957576c696632afe259ab7e102f5bc03471f",
+  "ledger_sha256_at_read": "5155d454d809241ed0aa9df444980833be0ec80891bcdae3ef73f7d7160b3bd8",
+  "controller_pid": 1920268,
+  "controller_start_ticks": "32816629",
+  "controller_sha256": "f941c06d450ba05bcbd2d45041e454ed727cc0232289f2fcc694771e46bf2c96",
+  "parameter_sha256": "e1d75f3c9503c7439467748fc97be6ae2ad450c429f40dc7235b1564ff7852ae",
+  "native_source_entries": 161,
+  "source_and_parameters_unchanged": true,
+  "native_states_modified": false,
+  "signals_sent": false
+}
