@@ -1,5 +1,5 @@
 {
-  "at_utc": "2026-11-13T10:09:40.052884+00:00",
+  "at_utc": "2026-11-13T11:40:22.244572+00:00",
   "helper_sha256": "a626e32667f9beb9408f8a304edf8228857906c12e49767d5234efb7b26bcefb",
   "audits": [
     {
@@ -199,6 +199,15 @@
       "n_snapshots": 1776,
       "n_candidates": 5369,
       "max_float_abs_error": 0.0
+    },
+    {
+      "proof": "scopes/first8/diagnostics/snapshot-replay/myopic/DYehNKdT76V.json",
+      "proof_sha256": "3982fc8b8c76e1ccd78ae75f02fa193baaeda49ab275d126661fca150f0b4786",
+      "variant": "myopic",
+      "scene": "DYehNKdT76V",
+      "n_snapshots": 1588,
+      "n_candidates": 5165,
+      "max_float_abs_error": 0.0
     }
   ],
   "pending_whole_variants": [
@@ -206,8 +215,8 @@
     "suffix_only"
   ],
   "all_four_complete": false,
-  "episodes_verified": 440,
-  "snapshots_verified": 28740,
+  "episodes_verified": 460,
+  "snapshots_verified": 30328,
   "source_fingerprint": {
     "pbsp/__init__.py": "204a77e8c809c9b8f38114173d35f5bcf7585e9893383c3eef5b2dca30aeb619",
     "pbsp/adapters/__init__.py": "9da64df015e12dd3130227acc397bd90bf58d5cd5f4c52108dfb9fc48830e12d",

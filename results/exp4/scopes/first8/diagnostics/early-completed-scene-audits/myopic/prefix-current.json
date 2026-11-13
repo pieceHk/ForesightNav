@@ -1,9 +1,9 @@
 {
-  "at_utc": "2026-11-13T09:44:29.439391+00:00",
+  "at_utc": "2026-11-13T11:37:24.665177+00:00",
   "stage": "myopic",
-  "fully_completed_scenes_audited": 6,
-  "audited_native_episodes": 120,
-  "audited_stage_paths": 360,
+  "fully_completed_scenes_audited": 7,
+  "audited_native_episodes": 140,
+  "audited_stage_paths": 420,
   "n_error": 0,
   "full_stage160_complete": false,
   "canonical_summary_modified": false,
@@ -172,7 +172,7 @@
     "results/exp4/meta/protocol_decisions.json": "c4596befc6337dab5a9963c69f4416992f7b0108f8d0c69c9e77cfa8f39c69ed"
   },
   "parameter_sha256": "e1d75f3c9503c7439467748fc97be6ae2ad450c429f40dc7235b1564ff7852ae",
-  "ledger_snapshot_sha256": "f6f85e2181aacf8ac95766077c3320634c4a7aabde46e535bdd050cd7918c366",
+  "ledger_snapshot_sha256": "f2e44913bbdb5b74ec5b6a58463e28416bd48475749aac3bd0cef79ee0b52eb2",
   "proofs": [
     {
       "scene": "4ok3usBNeis",
@@ -191,6 +191,15 @@
       "launch_sha256": "5a21e9c3e03fd9afa701bb61359d11bfbb9428457cd243780f184388bafb0527",
       "status_sha256": "a72f2bcdabeb7afbf2bac86f1b912b7d815c0f037b39aa6801ee1f7d61a0304c",
       "max_native_path_abs_error_m": 1.288473626459563e-06
+    },
+    {
+      "scene": "DYehNKdT76V",
+      "proof": "scopes/first8/diagnostics/early-completed-scene-audits/myopic/DYehNKdT76V/result.json",
+      "proof_sha256": "f7a536d49db1c7803143157c5686a67316fd624d393ed059040283b4e4ecab29",
+      "native_run": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261113_165323_772173_exp4_myopic_exp4-myopic-a5-first8-infrastructure-20261113-DYehNKdT76V",
+      "launch_sha256": "dd19547ec61469f91cdadb02a7bb7697e7c58c1edb215299eda7c0f1b0d28aeb",
+      "status_sha256": "8d01cebdcb4c0d2ea0a069a3f647876dbfad09e18175abac9a65aad6601d3302",
+      "max_native_path_abs_error_m": 1.6167922325394102e-06
     },
     {
       "scene": "Dd4bFSTQ8gi",
