@@ -1,0 +1,29 @@
+{
+  "at_utc": "2026-11-13T06:57:11.089075+00:00",
+  "stage": "myopic",
+  "scene": "5cdEh9F2hJL",
+  "completed_native_episodes": 20,
+  "audited_stage_paths": 60,
+  "max_native_path_abs_error_m": 1.288473626459563e-06,
+  "invalid_paths_complete": true,
+  "n_error": 0,
+  "native_launcher_returncode": 0,
+  "exit_status_proof": {
+    "pid": 2197432,
+    "start_ticks": "35305284",
+    "wait_status": 0,
+    "stat_sha256": "07434f609aa7e5a1e71fdb81f21079940133ce64ed47a8ae19ac4193ee019b67",
+    "captured_at_utc": "2026-11-13T06:56:11.997986+00:00",
+    "source": "/proc/PID/stat field52; original parent stopped"
+  },
+  "source_and_parameters_unchanged": true,
+  "native_states_modified": false,
+  "new_Native_workers_started": false,
+  "normalization_uses_CPU_PathFinder_only": true,
+  "full_stage160_complete": false,
+  "artifact_sha256": {
+    "summary.json": "195f1f148caaac96ad73b2b4e94a8866dadde2bc2600c3bcda2ce3c58416fc60",
+    "episodes.jsonl": "3bae09ed410baa71fc1a250e8c085040c365ee02335d098ee55f8038e8ee328a",
+    "decisions.jsonl": "5bdfac50a6dcd584dc16ff4cf0ef686e3968d06e66920fc9654622ad3b54668c"
+  }
+}
