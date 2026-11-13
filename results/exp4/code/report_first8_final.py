@@ -135,9 +135,15 @@ def prepare():
         '[固定身份与范围](../meta/scope.json)、[冻结参数](../../../meta/calibration.json)、[数据适用范围](../../../reports/dataset_scope.md)、[六组配对CSV](../summary/paired/manifest.json)、[原始归档清单](../meta/raw-archives/manifest.json)。',
         '[CP1](../../../reports/CP1.md)、[CP2a](../../../reports/CP2a.md)、[CP3](../../../reports/CP3.md)、[原Full400 CP4](../../../reports/CP4.md)、[范围内四组汇总](../summary/all.csv)。','']
     path=SCOPE/'reports/CP5.md';path.write_text('\n'.join(lines))
+    # Keep the named CP5 entry at the original results root, with working links.
+    root_text=path.read_text().replace('../../../','@EXP4_ROOT@/')
+    root_text=root_text.replace('../','../scopes/first8/')
+    root_text=root_text.replace('@EXP4_ROOT@/','../')
+    root_report=ROOT/'reports/CP5.md';root_report.write_text(root_text)
     proof={'scope':'first8','prepared_at_utc':datetime.now(timezone.utc).isoformat(),
         'n_episodes_by_variant':{name:160 for name in NAMES},'raw_archives':32,'paired_csvs':6,
         'report_sha256':base.digest(path),'figure_sha256':{name:base.digest(SCOPE/name) for name in plots},
+        'root_report':'reports/CP5.md','root_report_sha256':base.digest(root_report),
         'visual_review_required':True,'actual_visual_review_performed':False,
         'environment_index':str(environment.relative_to(ROOT)),'environment_index_sha256':base.digest(environment),
         'source_fingerprint':scope['source_fingerprint'],'parameter_sha256':scope['parameter_sha256'],

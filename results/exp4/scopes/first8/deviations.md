@@ -11,3 +11,11 @@
 CP5当前继续按Nearest完成后运行Belief-myopic，再运行Suffix-only的全局阶段顺序。评估期间算法、交叉拟合参数、种子、任务及source ID、步数预算、精度和共享导航机制均保持冻结。
 
 证据：[固定范围](meta/scope.json)、[范围切换与保留记录](../../meta/first8-scope-cutoff.json)、[当前8卡授权](meta/gpu-allocation.json)、[CPU交接与原生保留](meta/eight-gpu-handoff.json)。
+
+## 2026-11-13：缩减范围后的交付目录
+
+<!-- exp4-first8-delivery-layout-20261113 -->
+
+| 位置 | 原规定 | 实际做法 | 原因 |
+| --- | --- | --- | --- |
+| 最终日志与汇总目录 | 交付清单将四组日志、汇总及图表直接放在exp4根目录下 | 当前四组160条的完整结果统一放在`exp4/scopes/first8/`，包含logs、summary、figures及CP5。完成时同时生成根目录`exp4/reports/CP5.md`的完整报告，链接指向当前范围的证据。 | 保留原Full400和范围外原生记录，避免将400条历史统计与当前160条消融混用。`meta/active-evaluation-scope.json`明确当前有效范围。 |
