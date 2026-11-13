@@ -1,0 +1,12 @@
+{
+  "at_utc": "2026-11-13T07:13:43.885245+00:00",
+  "old_state_sha256": "6c09f96a510ce1477f3c99bfb6be8633ba7586bc385a00134c67a222d339fdc7",
+  "new_state_sha256": "e03507a4c2cdef6e081e69b4b5f6bab175e2e43a19ad23c99e12cecca3c08193",
+  "backup": "scopes/first8/diagnostics/state-history/20261113T071343879335Z/STATE-before-first8-entry.md",
+  "backup_sha256": "6c09f96a510ce1477f3c99bfb6be8633ba7586bc385a00134c67a222d339fdc7",
+  "n_scenes": 8,
+  "episodes_each_variant": 160,
+  "runtime_source_and_parameters_unchanged": true,
+  "native_states_modified": false,
+  "completion_claimed": false
+}
