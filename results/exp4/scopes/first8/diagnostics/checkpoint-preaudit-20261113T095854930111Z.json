@@ -1,0 +1,128 @@
+{
+  "at_utc": "2026-11-13T09:58:54.928956+00:00",
+  "scope": "Existing checkpoints only; final CP5 still requires four complete160-episode variants",
+  "checks": [
+    {
+      "requirement": "CP1 accepted evidence retained",
+      "passed": true,
+      "evidence_sha256": {
+        "meta/CP1_acceptance.json": "92dcdc9ad7560ab2b8f2ffe048d12b73a12cc98123b4770297a688c4a92eac0e",
+        "code/depth-normalization-tests.txt": "e0ac530dbb3f67d509b9d2bba5997cfa71c5eb1fd32e31918d11c8e48b12fbf5",
+        "diagnostics/depth-normalization-regression.json": "99851e53b6261d9fca3190af35ae6c18b099590d362258ec7350771f5c1353b4",
+        "diagnostics/depth-unit-fix/native-plumbing-audit.json": "3283e9874e444eb9d8e7b0b45600d7c5162c0914fe4f2d79fb5958e6d67312f2",
+        "diagnostics/depth-unit-fix/preflight.json": "1a4d56eba3e9c995465f49d83e106867cfa3e99b3715acdfbc4d03187841346e"
+      }
+    },
+    {
+      "requirement": "CP2b accepted evidence retained",
+      "passed": true,
+      "evidence_sha256": {
+        "meta/CP2b_acceptance.json": "cff89cbe85abcb7ad2e43c440a4625a6e2b4d9f71c36d4fecaa0b0b016780e1f",
+        "meta/CP1_acceptance.json": "92dcdc9ad7560ab2b8f2ffe048d12b73a12cc98123b4770297a688c4a92eac0e",
+        "meta/calibration-fit-binding.json": "3f4d8236622d579b79410eb2d97fab84ccb1e9a9e14341aa822c034aa849d680",
+        "code/depth-normalization-tests.txt": "e0ac530dbb3f67d509b9d2bba5997cfa71c5eb1fd32e31918d11c8e48b12fbf5",
+        "diagnostics/depth-normalization-regression.json": "99851e53b6261d9fca3190af35ae6c18b099590d362258ec7350771f5c1353b4",
+        "code/finalize_cp2b.py": "06e41c0964cac9aea9b2999db796c849162ec7ad10567278ae72b0acad39ef16",
+        "meta/evaluation-runtime-validation.json": "9ac7188902bc3a3b1d6bce8c4b4bbdba12ba789228e6ff5d608bf72c165b1acf",
+        "code/evaluation_runtime_binding.py": "07674a1d93e27aeaf1c8ab3d467ba817b1f6d037a5baf940284cb6f392af4573",
+        "code/validate_evaluation_runtime.py": "36d16163d150f5990a81231784f92422dfcbe832b28639bd023ff444ea8b9386"
+      }
+    },
+    {
+      "requirement": "CP2b runtime and parameter binding",
+      "passed": true,
+      "evidence_sha256": {
+        "meta/CP2b_acceptance.json": "cff89cbe85abcb7ad2e43c440a4625a6e2b4d9f71c36d4fecaa0b0b016780e1f"
+      }
+    },
+    {
+      "requirement": "CP3 accepted evidence retained",
+      "passed": true,
+      "evidence_sha256": {
+        "meta/CP3_acceptance.json": "e526f41c23116c43331e76338c63e325f721a5f6262a28ece7012c81690dbc6c",
+        "reports/CP3.md": "88534e6f6e61c6b18cf8d0259b654ed84306faf88a879c43bc21d7a616c8ce2d",
+        "reports/CP3_review.md": "e8f78162cc1fe274082d02aa549a2a2d7d043bc474c015b8f4853597461f3960",
+        "reports/dataset_scope.md": "5a24dd7421f2e8d6c8be41c7a28f455175ba43bc9d76b963c34c8a734538e3e2",
+        "diagnostics/CP3/summary/full.json": "d797a28697f8bbe39d71ef869171d7acea15641b05130a3ea23048d85038f748",
+        "diagnostics/CP3/logs/full_episodes.jsonl": "fc0d9d5531a7a5f2cd8c398f2d8a1e7349505ddc5492781ded1665efbcc532a0",
+        "diagnostics/CP3/logs/full_decisions.jsonl": "2b577d580943824b9d716458d8e5f8c943e9ab76f77767dc5560840ee84e9d0f",
+        "diagnostics/CP3/complete-evidence-execution.json": "d4898085df1064ad8b40df381f1cd48af9c14fe870d46d5d74b021fb859c55cb",
+        "diagnostics/CP3/figure-review.json": "72087b86dbc782ab6201aca128c713542078d3b47e85a98355408e67134a0bcc",
+        "diagnostics/CP3/final-figure-review.json": "ba3d67ed6982f9cc7a8ad6b4a880006c7ea99de0477e56cb75be2c41ef0779ab",
+        "diagnostics/CP3/confirmation-failure-review.json": "ee628282266c4cb7dc2f7659bb85ca331f4b539bd86019f57803d04b6d4aee8e",
+        "diagnostics/CP3/latency-tail-review.json": "0345ab8e9418b3dfc3cbd5fa11569976b048f12427a4d2006e02188c4eb92590",
+        "meta/environment-smoke.json": "71f938d54a921caebe2a9db8b97d73f59712c30e109da7a21438d312c2e5e3bf",
+        "meta/evaluation-smoke-log-archive.json": "c7ae36f65caf5c1d6724c4f20d3af91b3382e239d7e63942da3737893192dc46"
+      }
+    },
+    {
+      "requirement": "CP3 runtime and parameter binding",
+      "passed": true,
+      "evidence_sha256": {
+        "meta/CP3_acceptance.json": "e526f41c23116c43331e76338c63e325f721a5f6262a28ece7012c81690dbc6c"
+      }
+    },
+    {
+      "requirement": "360 calibration episodes across12 completed scenes",
+      "passed": true,
+      "evidence_sha256": {
+        "meta/completed-calibration-scene-audits.json": "99e9483c508e9f140390bf958a01e5ad0505b61f1b883e4c13ed72f8faf12b4f"
+      }
+    },
+    {
+      "requirement": "Three independent folds each200 successful episode bootstraps",
+      "passed": true,
+      "evidence_sha256": {
+        "meta/calibration_per_fold.json": "88bd43083c73f4af1482abd4aa74fdc95fddf183817ede7475b5a5356735ab5f"
+      }
+    },
+    {
+      "requirement": "Five groups of four unique scenes retained",
+      "passed": true,
+      "evidence_sha256": {
+        "meta/folds.json": "e5984774614e3eef936728637c494a88f11269bf1508d719e87cf17879f2590b"
+      }
+    },
+    {
+      "requirement": "Frozen cross-fit document remains unchanged",
+      "passed": true,
+      "evidence_sha256": {
+        "meta/calibration.json": "e1d75f3c9503c7439467748fc97be6ae2ad450c429f40dc7235b1564ff7852ae"
+      }
+    },
+    {
+      "requirement": "Original Full400 complete evidence retained",
+      "passed": true,
+      "evidence_sha256": {
+        "meta/evaluation-full-runs.json": "d0a022e32b27f184bfb59a9840286981fab2d3a5468ab44c61e26b0147543837",
+        "summary/full.json": "08029d53fd8cfed808354183723b7c7e5efff0f8e349911ceb2c95fcdf7fb57e"
+      }
+    },
+    {
+      "requirement": "Prior named reports, calibration figures and CP3 figures retained",
+      "passed": true,
+      "evidence_sha256": {
+        "meta/env.txt": "ab3a354d8fb67f451e077c80d1105e7cb27316b464b3aca28710d1f4b3575488",
+        "meta/folds.json": "e5984774614e3eef936728637c494a88f11269bf1508d719e87cf17879f2590b",
+        "meta/calibration.json": "e1d75f3c9503c7439467748fc97be6ae2ad450c429f40dc7235b1564ff7852ae",
+        "meta/calibration_per_fold.json": "88bd43083c73f4af1482abd4aa74fdc95fddf183817ede7475b5a5356735ab5f",
+        "reports/CP1.md": "d8730badd74f792ca195a52317abc37dc88c1a247c845859d062cf369032fa7b",
+        "reports/CP2a.md": "2932216c4f942f57a7d91516f13bd892451c06f299b626c62d034648ca2cba33",
+        "reports/CP2b.md": "4a737c52bfa6d1a4f27ead09a85dc02fd75e74cc9dd4d139081fb2208aff7da1",
+        "reports/CP3.md": "88534e6f6e61c6b18cf8d0259b654ed84306faf88a879c43bc21d7a616c8ce2d",
+        "reports/CP4.md": "28ce8888ecec1029c53af8624c52b557fdc75026828d9cdc6e7f378418883dbf",
+        "figures/calibration_evidence.png": "613939533299e64d2ef7f3f615311d07300004a2f91e4e42b82fac881f465354",
+        "figures/calibration_evidence_common_bins.png": "a58aa5a21371264678f35d4fa2144fb7682146dc8caf21938b7393a01dc0ca58",
+        "figures/calibration_reliability.png": "6deac3fdb7a9d9cb48c2993bcbe15989df0fd202ec8c499a498ba69e152d953e",
+        "figures/calibration_bootstrap_intervals.png": "ac3e6195733cba9e0f44919e0ac13d63b170699d1fc3b323c243975f2018b979",
+        "figures/CP3/4ok3usBNeis_0.png": "112562d3294e9661594dfb59ea868464dc0feebc96c4487034aad59dcf918817",
+        "figures/CP3/5cdEh9F2hJL_0.png": "bb28f41c96dbeb66249c3eac81ed9603f559e1c39919f8146902d6d2347328a5",
+        "figures/CP3/planning_latency.png": "87c806ef5492954bbcd982e91980ba985f978f2f4d1cdf66e4366bae6f179355"
+      }
+    }
+  ],
+  "existing_checkpoint_checks_all_pass": true,
+  "final_completion_claimed": false,
+  "evaluation_status": "running",
+  "native_states_modified": false
+}

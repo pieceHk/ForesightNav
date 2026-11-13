@@ -1,0 +1,11 @@
+{
+  "at_utc": "2026-11-13T10:09:31.861316+00:00",
+  "passed_tests": 10,
+  "returncode": 0,
+  "helper_sha256": {
+    "audit_first8_snapshot_replay.py": "a626e32667f9beb9408f8a304edf8228857906c12e49767d5234efb7b26bcefb",
+    "test_first8_snapshot_replay.py": "37a1570f889751173b397b11f7bb1ea4ad25d5d5631fa3d2b9f8830c2bbfcddd"
+  },
+  "output": "..........\n----------------------------------------------------------------------\nRan 10 tests in 0.001s\n\nOK\n",
+  "Native_or_GPU_workers_started": false
+}
