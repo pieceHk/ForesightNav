@@ -1,0 +1,8 @@
+{
+  "scope": "first8",
+  "scope_path": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/scopes/first8/meta/scope.json",
+  "n_scenes": 8,
+  "n_episodes_per_variant": 160,
+  "original_400_target_cancelled": true,
+  "at_utc": "2026-11-13T04:37:25.416662+00:00"
+}

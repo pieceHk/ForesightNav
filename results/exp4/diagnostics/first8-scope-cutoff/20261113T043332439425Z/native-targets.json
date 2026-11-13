@@ -1,0 +1,197 @@
+[
+  {
+    "pid": 2103366,
+    "uid": 1001,
+    "start_ticks": "34322591",
+    "command": [
+      "/nvme/khy/conda_envs/pbsp/navigation/bin/python",
+      "/nvme/khy/ForesightNav_exp4_depthfix/run.py",
+      "--config",
+      "configs/experiments/exp4_nearest.yaml",
+      "--runtime",
+      "runtime.exp4.local.yaml",
+      "--gpus",
+      "6,6",
+      "--scene",
+      "cvZr5TUy5C5",
+      "--tag",
+      "exp4-nearest-a3-cvZr5TUy5C5"
+    ],
+    "ppid": 1920268
+  },
+  {
+    "pid": 2103399,
+    "uid": 1001,
+    "start_ticks": "34323045",
+    "command": [
+      "/nvme/khy/conda_envs/pbsp/navigation/bin/python3.9",
+      "-m",
+      "pbsp.runtime.monitor",
+      "--output",
+      "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261113_095513_110802_exp4_nearest_exp4-nearest-a3-cvZr5TUy5C5/resource_timeline.jsonl",
+      "--root-pid",
+      "2103366",
+      "--gpus",
+      "6,6"
+    ],
+    "ppid": 2103366
+  },
+  {
+    "pid": 2103400,
+    "uid": 1001,
+    "start_ticks": "34323045",
+    "command": [
+      "/nvme/khy/conda_envs/pbsp/mapping/bin/python3.10",
+      "-m",
+      "pbsp.runtime.mapping_worker",
+      "--run-plan",
+      "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261113_095513_110802_exp4_nearest_exp4-nearest-a3-cvZr5TUy5C5/launch.json"
+    ],
+    "ppid": 2103366
+  },
+  {
+    "pid": 2103583,
+    "uid": 1001,
+    "start_ticks": "34325050",
+    "command": [
+      "/nvme/khy/conda_envs/pbsp/navigation/bin/python3.9",
+      "-m",
+      "pbsp.runtime.navigation_worker",
+      "--run-plan",
+      "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261113_095513_110802_exp4_nearest_exp4-nearest-a3-cvZr5TUy5C5/launch.json",
+      "--scene",
+      "cvZr5TUy5C5"
+    ],
+    "ppid": 2103366
+  },
+  {
+    "pid": 2116371,
+    "uid": 1001,
+    "start_ticks": "34477229",
+    "command": [
+      "/nvme/khy/conda_envs/pbsp/navigation/bin/python",
+      "/nvme/khy/ForesightNav_exp4_depthfix/run.py",
+      "--config",
+      "configs/experiments/exp4_nearest.yaml",
+      "--runtime",
+      "runtime.exp4.local.yaml",
+      "--gpus",
+      "7,7",
+      "--scene",
+      "mL8ThkuaVTM",
+      "--tag",
+      "exp4-nearest-a3-mL8ThkuaVTM"
+    ],
+    "ppid": 1920268
+  },
+  {
+    "pid": 2116440,
+    "uid": 1001,
+    "start_ticks": "34477689",
+    "command": [
+      "/nvme/khy/conda_envs/pbsp/navigation/bin/python3.9",
+      "-m",
+      "pbsp.runtime.monitor",
+      "--output",
+      "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261113_102059_574428_exp4_nearest_exp4-nearest-a3-mL8ThkuaVTM/resource_timeline.jsonl",
+      "--root-pid",
+      "2116371",
+      "--gpus",
+      "7,7"
+    ],
+    "ppid": 2116371
+  },
+  {
+    "pid": 2116441,
+    "uid": 1001,
+    "start_ticks": "34477689",
+    "command": [
+      "/nvme/khy/conda_envs/pbsp/mapping/bin/python3.10",
+      "-m",
+      "pbsp.runtime.mapping_worker",
+      "--run-plan",
+      "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261113_102059_574428_exp4_nearest_exp4-nearest-a3-mL8ThkuaVTM/launch.json"
+    ],
+    "ppid": 2116371
+  },
+  {
+    "pid": 2116594,
+    "uid": 1001,
+    "start_ticks": "34479693",
+    "command": [
+      "/nvme/khy/conda_envs/pbsp/navigation/bin/python3.9",
+      "-m",
+      "pbsp.runtime.navigation_worker",
+      "--run-plan",
+      "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261113_102059_574428_exp4_nearest_exp4-nearest-a3-mL8ThkuaVTM/launch.json",
+      "--scene",
+      "mL8ThkuaVTM"
+    ],
+    "ppid": 2116371
+  },
+  {
+    "pid": 2144465,
+    "uid": 1001,
+    "start_ticks": "34717344",
+    "command": [
+      "/nvme/khy/conda_envs/pbsp/navigation/bin/python",
+      "/nvme/khy/ForesightNav_exp4_depthfix/run.py",
+      "--config",
+      "configs/experiments/exp4_nearest.yaml",
+      "--runtime",
+      "runtime.exp4.local.yaml",
+      "--gpus",
+      "5,5",
+      "--scene",
+      "mv2HUxq3B53",
+      "--tag",
+      "exp4-nearest-a3-mv2HUxq3B53"
+    ],
+    "ppid": 1920268
+  },
+  {
+    "pid": 2144499,
+    "uid": 1001,
+    "start_ticks": "34717800",
+    "command": [
+      "/nvme/khy/conda_envs/pbsp/navigation/bin/python3.9",
+      "-m",
+      "pbsp.runtime.monitor",
+      "--output",
+      "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261113_110100_664895_exp4_nearest_exp4-nearest-a3-mv2HUxq3B53/resource_timeline.jsonl",
+      "--root-pid",
+      "2144465",
+      "--gpus",
+      "5,5"
+    ],
+    "ppid": 2144465
+  },
+  {
+    "pid": 2144500,
+    "uid": 1001,
+    "start_ticks": "34717801",
+    "command": [
+      "/nvme/khy/conda_envs/pbsp/mapping/bin/python3.10",
+      "-m",
+      "pbsp.runtime.mapping_worker",
+      "--run-plan",
+      "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261113_110100_664895_exp4_nearest_exp4-nearest-a3-mv2HUxq3B53/launch.json"
+    ],
+    "ppid": 2144465
+  },
+  {
+    "pid": 2144688,
+    "uid": 1001,
+    "start_ticks": "34719705",
+    "command": [
+      "/nvme/khy/conda_envs/pbsp/navigation/bin/python3.9",
+      "-m",
+      "pbsp.runtime.navigation_worker",
+      "--run-plan",
+      "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261113_110100_664895_exp4_nearest_exp4-nearest-a3-mv2HUxq3B53/launch.json",
+      "--scene",
+      "mv2HUxq3B53"
+    ],
+    "ppid": 2144465
+  }
+]

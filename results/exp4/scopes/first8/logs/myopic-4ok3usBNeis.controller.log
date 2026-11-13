@@ -1,0 +1,23 @@
+{
+  "experiment": "exp4_myopic",
+  "dataset": "hm3dv1_3mon_balanced1200",
+  "scenes": [
+    "4ok3usBNeis"
+  ],
+  "complete_episodes": 20,
+  "targets_per_episode": 3,
+  "gpus": {
+    "mapping": 5,
+    "navigation": 5
+  },
+  "configuration_sha256": "7c8bb01aaf99d2956cf768e1ca7a2d0a3a396954b5846e27872dcf0fc3c39820",
+  "identity_sha256": "e9a7ea117c55fcb007921601369555a63cb683f0efc192300de7cf91217aa0db",
+  "habitat_revision": "8df2661e5b2203c0ddc47798d5da0132d5686bbe",
+  "models": {
+    "status": "passed",
+    "files": 22,
+    "bytes": 5631339793,
+    "manifest_sha256": "f21ffdc59735aaf84fe5a0a4ebe99f35261f6dd45a643387900d003b6b7ac4a6"
+  }
+}
+Run: /nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261113_123900_080282_exp4_myopic_exp4-myopic-a3-first8-4ok3usBNeis

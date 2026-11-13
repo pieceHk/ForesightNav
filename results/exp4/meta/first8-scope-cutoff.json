@@ -1,0 +1,319 @@
+{
+  "proof": "diagnostics/first8-scope-cutoff/20261113T043332439425Z/result.json",
+  "at_utc": "2026-11-13T04:33:46.056627+00:00",
+  "selected_scenes": [
+    "4ok3usBNeis",
+    "5cdEh9F2hJL",
+    "6s7QHgap2fW",
+    "DYehNKdT76V",
+    "Dd4bFSTQ8gi",
+    "Nfvxx8J5NCo",
+    "QaLdnwvtxbs",
+    "TEEsavR23oF"
+  ],
+  "episodes_per_variant": 160,
+  "original_identity_sha256": "98baa13355e8dd223eaefdeec7f48964bb23f44d2b02cdba4261add62b594ac1",
+  "excluded_running_scenes_stopped": [
+    "cvZr5TUy5C5",
+    "mL8ThkuaVTM",
+    "mv2HUxq3B53"
+  ],
+  "controller_stopped": 1920268,
+  "signals": [
+    {
+      "pid": 1920268,
+      "start_ticks": "32816629",
+      "signal": "SIGSTOP",
+      "uid": 1001
+    },
+    {
+      "pid": 2103366,
+      "start_ticks": "34322591",
+      "signal": "SIGSTOP",
+      "uid": 1001
+    },
+    {
+      "pid": 2116371,
+      "start_ticks": "34477229",
+      "signal": "SIGSTOP",
+      "uid": 1001
+    },
+    {
+      "pid": 2144465,
+      "start_ticks": "34717344",
+      "signal": "SIGSTOP",
+      "uid": 1001
+    },
+    {
+      "pid": 2103366,
+      "start_ticks": "34322591",
+      "signal": "SIGSTOP",
+      "uid": 1001
+    },
+    {
+      "pid": 2103399,
+      "start_ticks": "34323045",
+      "signal": "SIGSTOP",
+      "uid": 1001
+    },
+    {
+      "pid": 2103400,
+      "start_ticks": "34323045",
+      "signal": "SIGSTOP",
+      "uid": 1001
+    },
+    {
+      "pid": 2103583,
+      "start_ticks": "34325050",
+      "signal": "SIGSTOP",
+      "uid": 1001
+    },
+    {
+      "pid": 2116371,
+      "start_ticks": "34477229",
+      "signal": "SIGSTOP",
+      "uid": 1001
+    },
+    {
+      "pid": 2116440,
+      "start_ticks": "34477689",
+      "signal": "SIGSTOP",
+      "uid": 1001
+    },
+    {
+      "pid": 2116441,
+      "start_ticks": "34477689",
+      "signal": "SIGSTOP",
+      "uid": 1001
+    },
+    {
+      "pid": 2116594,
+      "start_ticks": "34479693",
+      "signal": "SIGSTOP",
+      "uid": 1001
+    },
+    {
+      "pid": 2144465,
+      "start_ticks": "34717344",
+      "signal": "SIGSTOP",
+      "uid": 1001
+    },
+    {
+      "pid": 2144499,
+      "start_ticks": "34717800",
+      "signal": "SIGSTOP",
+      "uid": 1001
+    },
+    {
+      "pid": 2144500,
+      "start_ticks": "34717801",
+      "signal": "SIGSTOP",
+      "uid": 1001
+    },
+    {
+      "pid": 2144688,
+      "start_ticks": "34719705",
+      "signal": "SIGSTOP",
+      "uid": 1001
+    },
+    {
+      "pid": 1920268,
+      "start_ticks": "32816629",
+      "signal": "SIGTERM",
+      "uid": 1001
+    },
+    {
+      "pid": 1920268,
+      "start_ticks": "32816629",
+      "signal": "SIGCONT",
+      "uid": 1001
+    },
+    {
+      "pid": 2103366,
+      "start_ticks": "34322591",
+      "signal": "SIGTERM",
+      "uid": 1001
+    },
+    {
+      "pid": 2103366,
+      "start_ticks": "34322591",
+      "signal": "SIGCONT",
+      "uid": 1001
+    },
+    {
+      "pid": 2103399,
+      "start_ticks": "34323045",
+      "signal": "SIGTERM",
+      "uid": 1001
+    },
+    {
+      "pid": 2103399,
+      "start_ticks": "34323045",
+      "signal": "SIGCONT",
+      "uid": 1001
+    },
+    {
+      "pid": 2103400,
+      "start_ticks": "34323045",
+      "signal": "SIGTERM",
+      "uid": 1001
+    },
+    {
+      "pid": 2103400,
+      "start_ticks": "34323045",
+      "signal": "SIGCONT",
+      "uid": 1001
+    },
+    {
+      "pid": 2103583,
+      "start_ticks": "34325050",
+      "signal": "SIGTERM",
+      "uid": 1001
+    },
+    {
+      "pid": 2103583,
+      "start_ticks": "34325050",
+      "signal": "SIGCONT",
+      "uid": 1001
+    },
+    {
+      "pid": 2116371,
+      "start_ticks": "34477229",
+      "signal": "SIGTERM",
+      "uid": 1001
+    },
+    {
+      "pid": 2116371,
+      "start_ticks": "34477229",
+      "signal": "SIGCONT",
+      "uid": 1001
+    },
+    {
+      "pid": 2116440,
+      "start_ticks": "34477689",
+      "signal": "SIGTERM",
+      "uid": 1001
+    },
+    {
+      "pid": 2116440,
+      "start_ticks": "34477689",
+      "signal": "SIGCONT",
+      "uid": 1001
+    },
+    {
+      "pid": 2116441,
+      "start_ticks": "34477689",
+      "signal": "SIGTERM",
+      "uid": 1001
+    },
+    {
+      "pid": 2116441,
+      "start_ticks": "34477689",
+      "signal": "SIGCONT",
+      "uid": 1001
+    },
+    {
+      "pid": 2116594,
+      "start_ticks": "34479693",
+      "signal": "SIGTERM",
+      "uid": 1001
+    },
+    {
+      "pid": 2116594,
+      "start_ticks": "34479693",
+      "signal": "SIGCONT",
+      "uid": 1001
+    },
+    {
+      "pid": 2144465,
+      "start_ticks": "34717344",
+      "signal": "SIGTERM",
+      "uid": 1001
+    },
+    {
+      "pid": 2144465,
+      "start_ticks": "34717344",
+      "signal": "SIGCONT",
+      "uid": 1001
+    },
+    {
+      "pid": 2144499,
+      "start_ticks": "34717800",
+      "signal": "SIGTERM",
+      "uid": 1001
+    },
+    {
+      "pid": 2144499,
+      "start_ticks": "34717800",
+      "signal": "SIGCONT",
+      "uid": 1001
+    },
+    {
+      "pid": 2144500,
+      "start_ticks": "34717801",
+      "signal": "SIGTERM",
+      "uid": 1001
+    },
+    {
+      "pid": 2144500,
+      "start_ticks": "34717801",
+      "signal": "SIGCONT",
+      "uid": 1001
+    },
+    {
+      "pid": 2144688,
+      "start_ticks": "34719705",
+      "signal": "SIGTERM",
+      "uid": 1001
+    },
+    {
+      "pid": 2144688,
+      "start_ticks": "34719705",
+      "signal": "SIGCONT",
+      "uid": 1001
+    },
+    {
+      "pid": 2103366,
+      "start_ticks": "34322591",
+      "signal": "SIGKILL",
+      "uid": 1001
+    },
+    {
+      "pid": 1479625,
+      "start_ticks": "29740989",
+      "signal": "SIGTERM",
+      "uid": 1001
+    }
+  ],
+  "remaining_target_pids": [],
+  "full_and_nearest_complete": {
+    "full": [
+      "4ok3usBNeis",
+      "5cdEh9F2hJL",
+      "6s7QHgap2fW",
+      "DYehNKdT76V",
+      "Dd4bFSTQ8gi",
+      "Nfvxx8J5NCo",
+      "QaLdnwvtxbs",
+      "TEEsavR23oF"
+    ],
+    "nearest": [
+      "4ok3usBNeis",
+      "5cdEh9F2hJL",
+      "6s7QHgap2fW",
+      "DYehNKdT76V",
+      "Dd4bFSTQ8gi",
+      "Nfvxx8J5NCo",
+      "QaLdnwvtxbs",
+      "TEEsavR23oF"
+    ]
+  },
+  "raw_records_deleted": false,
+  "other_user_signals": false,
+  "process_groups_signaled": false,
+  "reserved_gpus": [
+    0,
+    3
+  ],
+  "source_and_parameters_unchanged": true
+}
