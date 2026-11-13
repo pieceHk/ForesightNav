@@ -1,0 +1,978 @@
+{
+  "schema_version": "pbsp_environment_v1",
+  "role": "navigation",
+  "scene_id": "6s7QHgap2fW",
+  "recorded_at": "2026-11-10T17:00:20.518746+00:00",
+  "launch_source_commit": "03242fda76fd6a631596a7269c8e7990c657ea30",
+  "configuration_sha256": "0541ce325fca8e03943e12879f7aac4e58be5e46ecd3a82687002572c490b89c",
+  "identity_sha256": "edfb1849bc008f3e74484af5d21c02c405c4c69a69fd7438cf9e98ecde4482b6",
+  "python_executable": "/nvme/khy/conda_envs/pbsp/navigation/bin/python3.9",
+  "python_version": "3.9.25",
+  "prefix": "/nvme/khy/conda_envs/pbsp/navigation",
+  "base_prefix": "/nvme/khy/conda_envs/pbsp/navigation",
+  "platform": "Linux-5.15.0-139-generic-x86_64-with-glibc2.31",
+  "machine": "x86_64",
+  "user_site_enabled": false,
+  "cuda_visible_devices": "3",
+  "source_search_paths": [
+    "/nvme/khy/ForesightNav_exp4_depthfix",
+    "/nvme/khy/ForesightNav_exp4_depthfix",
+    "/nvme/khy/ForesightNav_exp4_depthfix/third_party/habitat-lab/habitat-lab",
+    "/nvme/khy/ForesightNav_exp4_depthfix/third_party/habitat-lab/habitat-baselines",
+    "/nvme/khy/ForesightNav_exp4_depthfix/third_party",
+    "/nvme/khy/conda_envs/pbsp/navigation/lib/python39.zip",
+    "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9",
+    "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/lib-dynload",
+    "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages",
+    "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages/cmeel.prefix/lib/python3.9/site-packages",
+    "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages/setuptools/_vendor"
+  ],
+  "lock_sha256": "9a5835cfdb3aee1f148d1aedbc228a7d861936725cf171bbde2b28e01ab8f180",
+  "packages": [
+    {
+      "name": "absl-py",
+      "version": "2.3.1",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "accelerate",
+      "version": "0.23.0",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "antlr4-python3-runtime",
+      "version": "4.9.3",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "anyio",
+      "version": "4.12.1",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "appdirs",
+      "version": "1.4.4",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "attrs",
+      "version": "25.4.0",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "autocommand",
+      "version": "2.2.2",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "autocommand",
+      "version": "2.2.2",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages/setuptools/_vendor"
+    },
+    {
+      "name": "backports.tarfile",
+      "version": "1.2.0",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "backports.tarfile",
+      "version": "1.2.0",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages/setuptools/_vendor"
+    },
+    {
+      "name": "black",
+      "version": "25.11.0",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "braceexpand",
+      "version": "0.1.7",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "certifi",
+      "version": "2026.1.4",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "charset-normalizer",
+      "version": "2.1.1",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "click",
+      "version": "8.1.8",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "cloudpickle",
+      "version": "3.1.2",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "cmake",
+      "version": "3.31.10",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "cmeel",
+      "version": "0.57.3",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "contourpy",
+      "version": "1.3.0",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "cycler",
+      "version": "0.12.1",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "decorator",
+      "version": "4.4.2",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "detectron2",
+      "version": "0.6",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "dill",
+      "version": "0.4.0",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "docker-pycreds",
+      "version": "0.4.0",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "einops",
+      "version": "0.7.0",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "evdev",
+      "version": "1.9.2",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "exceptiongroup",
+      "version": "1.3.1",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "faster-fifo",
+      "version": "1.5.2",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "filelock",
+      "version": "3.19.1",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "fonttools",
+      "version": "4.60.2",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "frontier_exploration",
+      "version": "0.1",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "fsspec",
+      "version": "2025.10.0",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "ftfy",
+      "version": "6.1.1",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "fvcore",
+      "version": "0.1.5.post20221221",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "gitdb",
+      "version": "4.0.12",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "GitPython",
+      "version": "3.1.46",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "google-auth",
+      "version": "2.47.0",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "google-auth-oauthlib",
+      "version": "0.4.6",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "grpcio",
+      "version": "1.76.0",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "gym",
+      "version": "0.26.2",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "gym-notices",
+      "version": "0.1.0",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "h11",
+      "version": "0.16.0",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "habitat-baselines",
+      "version": "0.2.3",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "habitat-lab",
+      "version": "0.2.3",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "habitat_sim",
+      "version": "0.3.3",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "httpcore",
+      "version": "1.0.9",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "httpx",
+      "version": "0.28.1",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "huggingface-hub",
+      "version": "0.17.3",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "hydra-core",
+      "version": "1.3.2",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "idna",
+      "version": "3.11",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "ifcfg",
+      "version": "0.24",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "ImageIO",
+      "version": "2.37.2",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "imageio-ffmpeg",
+      "version": "0.6.0",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "importlib_metadata",
+      "version": "8.0.0",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "importlib_metadata",
+      "version": "8.0.0",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages/setuptools/_vendor"
+    },
+    {
+      "name": "importlib_resources",
+      "version": "6.5.2",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "inflect",
+      "version": "7.3.1",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "inflect",
+      "version": "7.3.1",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages/setuptools/_vendor"
+    },
+    {
+      "name": "iniconfig",
+      "version": "2.1.0",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "iopath",
+      "version": "0.1.9",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "jaraco.collections",
+      "version": "5.1.0",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages/setuptools/_vendor"
+    },
+    {
+      "name": "jaraco.context",
+      "version": "5.3.0",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "jaraco.context",
+      "version": "5.3.0",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages/setuptools/_vendor"
+    },
+    {
+      "name": "jaraco.functools",
+      "version": "4.0.1",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "jaraco.functools",
+      "version": "4.0.1",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages/setuptools/_vendor"
+    },
+    {
+      "name": "jaraco.text",
+      "version": "3.12.1",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "jaraco.text",
+      "version": "3.12.1",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages/setuptools/_vendor"
+    },
+    {
+      "name": "Jinja2",
+      "version": "3.1.6",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "joblib",
+      "version": "1.5.3",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "kiwisolver",
+      "version": "1.4.7",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "kornia",
+      "version": "0.7.0",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "lazy_loader",
+      "version": "0.4",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "llvmlite",
+      "version": "0.43.0",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "lmdb",
+      "version": "1.7.5",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "magnum",
+      "version": "0.0.0",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "Markdown",
+      "version": "3.9",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "markdown-it-py",
+      "version": "3.0.0",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "MarkupSafe",
+      "version": "3.0.3",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "matplotlib",
+      "version": "3.9.4",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "mdurl",
+      "version": "0.1.2",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "meson",
+      "version": "1.8.5",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "meson-python",
+      "version": "0.18.0",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "more-itertools",
+      "version": "10.3.0",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "more-itertools",
+      "version": "10.3.0",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages/setuptools/_vendor"
+    },
+    {
+      "name": "moviepy",
+      "version": "1.0.3",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "mpi4py_mpich",
+      "version": "3.1.5",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "mpmath",
+      "version": "1.3.0",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "msgpack",
+      "version": "1.1.2",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "mypy_extensions",
+      "version": "1.1.0",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "natsort",
+      "version": "8.4.0",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "networkx",
+      "version": "3.2.1",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "ninja",
+      "version": "1.13.0",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "nltk",
+      "version": "3.8.1",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "numba",
+      "version": "0.60.0",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "numpy",
+      "version": "1.26.4",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "numpy-quaternion",
+      "version": "2023.0.4",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "oauthlib",
+      "version": "3.3.1",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "objectio",
+      "version": "0.2.29",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "omegaconf",
+      "version": "2.3.0",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "open_clip_torch",
+      "version": "3.2.0",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "openai-clip",
+      "version": "1.0.1",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "opencv-python",
+      "version": "4.11.0.86",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "packaging",
+      "version": "24.2",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "packaging",
+      "version": "24.2",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages/setuptools/_vendor"
+    },
+    {
+      "name": "pandas",
+      "version": "2.0.3",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "pathspec",
+      "version": "1.0.2",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "pathtools",
+      "version": "0.1.2",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "pbsp",
+      "version": "0.1.0",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "pillow",
+      "version": "10.4.0",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "pip",
+      "version": "25.3",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "platformdirs",
+      "version": "4.2.2",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "platformdirs",
+      "version": "4.2.2",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages/setuptools/_vendor"
+    },
+    {
+      "name": "pluggy",
+      "version": "1.6.0",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "portalocker",
+      "version": "3.2.0",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "proglog",
+      "version": "0.1.12",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "protobuf",
+      "version": "3.20.1",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "psutil",
+      "version": "7.2.1",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "pyarrow",
+      "version": "13.0.0",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "pyasn1",
+      "version": "0.6.1",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "pyasn1_modules",
+      "version": "0.4.2",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "pybullet",
+      "version": "3.2.7",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "pycocotools",
+      "version": "2.0.7",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "Pygments",
+      "version": "2.19.2",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "pynput",
+      "version": "1.8.1",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "pyparsing",
+      "version": "3.3.1",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "pyproject-metadata",
+      "version": "0.9.1",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "pytest",
+      "version": "8.4.2",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "pytest-runner",
+      "version": "6.0.1",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "python-dateutil",
+      "version": "2.9.0.post0",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "python-xlib",
+      "version": "0.33",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "pytokens",
+      "version": "0.3.0",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "pytz",
+      "version": "2025.2",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "PyWavelets",
+      "version": "1.6.0",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "PyYAML",
+      "version": "6.0.2",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "regex",
+      "version": "2023.10.3",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "requests",
+      "version": "2.32.5",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "requests-oauthlib",
+      "version": "2.0.0",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "rich",
+      "version": "14.2.0",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "rsa",
+      "version": "4.9.1",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "safetensors",
+      "version": "0.7.0",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "scikit-fmm",
+      "version": "2025.1.29",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "scikit-image",
+      "version": "0.21.0",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "scikit-learn",
+      "version": "1.3.1",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "scipy",
+      "version": "1.13.1",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "sentencepiece",
+      "version": "0.1.99",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "sentry-sdk",
+      "version": "2.49.0",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "setproctitle",
+      "version": "1.3.7",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "setuptools",
+      "version": "80.9.0",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "Shapely",
+      "version": "1.8.0",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "shellingham",
+      "version": "1.5.4",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "simplejson",
+      "version": "3.20.2",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "six",
+      "version": "1.17.0",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "smmap",
+      "version": "5.0.2",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "sophuspy",
+      "version": "1.2.0",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "sympy",
+      "version": "1.14.0",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "tabulate",
+      "version": "0.9.0",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "tensorboard",
+      "version": "2.8.0",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "tensorboard-data-server",
+      "version": "0.6.1",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "tensorboard-plugin-wit",
+      "version": "1.8.1",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "termcolor",
+      "version": "3.1.0",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "threadpoolctl",
+      "version": "3.6.0",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "tifffile",
+      "version": "2024.8.30",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "timm",
+      "version": "1.0.27",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "tokenizers",
+      "version": "0.14.1",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "tomli",
+      "version": "2.0.1",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages/setuptools/_vendor"
+    },
+    {
+      "name": "tomli",
+      "version": "2.4.0",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "torch",
+      "version": "2.1.2+cu118",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "torchvision",
+      "version": "0.16.2+cu118",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "tqdm",
+      "version": "4.67.1",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "transformers",
+      "version": "4.34.0",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "trimesh",
+      "version": "4.11.0",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "triton",
+      "version": "2.1.0",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "typeguard",
+      "version": "4.3.0",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "typeguard",
+      "version": "4.3.0",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages/setuptools/_vendor"
+    },
+    {
+      "name": "typer",
+      "version": "0.21.1",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "typing_extensions",
+      "version": "4.12.2",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "typing_extensions",
+      "version": "4.12.2",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages/setuptools/_vendor"
+    },
+    {
+      "name": "tzdata",
+      "version": "2025.3",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "urllib3",
+      "version": "1.26.13",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "wandb",
+      "version": "0.15.12",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "wcwidth",
+      "version": "0.2.14",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "webdataset",
+      "version": "0.1.40",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "Werkzeug",
+      "version": "3.1.4",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "wheel",
+      "version": "0.45.1",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "wheel",
+      "version": "0.45.1",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages/setuptools/_vendor"
+    },
+    {
+      "name": "xxhash",
+      "version": "3.6.0",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "yacs",
+      "version": "0.1.8",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "zipp",
+      "version": "3.19.2",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages"
+    },
+    {
+      "name": "zipp",
+      "version": "3.19.2",
+      "location": "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/site-packages/setuptools/_vendor"
+    }
+  ]
+}

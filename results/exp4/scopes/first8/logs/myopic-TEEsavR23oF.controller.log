@@ -1,0 +1,23 @@
+{
+  "experiment": "exp4_myopic",
+  "dataset": "hm3dv1_3mon_balanced1200",
+  "scenes": [
+    "TEEsavR23oF"
+  ],
+  "complete_episodes": 20,
+  "targets_per_episode": 3,
+  "gpus": {
+    "mapping": 4,
+    "navigation": 4
+  },
+  "configuration_sha256": "a7a6b94d53691d32be259179b0e24ddfddfbc23e7429b76d7c496bde0307b68a",
+  "identity_sha256": "943ccad4aa54e2604e96755f46179b8f068c8340a1b57e7bb00bd951d3f51a0d",
+  "habitat_revision": "8df2661e5b2203c0ddc47798d5da0132d5686bbe",
+  "models": {
+    "status": "passed",
+    "files": 22,
+    "bytes": 5631339793,
+    "manifest_sha256": "f21ffdc59735aaf84fe5a0a4ebe99f35261f6dd45a643387900d003b6b7ac4a6"
+  }
+}
+Run: /nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261113_134511_838224_exp4_myopic_exp4-myopic-a3-first8-TEEsavR23oF

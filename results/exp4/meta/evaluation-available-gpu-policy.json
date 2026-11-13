@@ -1,20 +1,20 @@
 {
-  "recorded_at_utc": "2026-11-12T13:10:44.923945+00:00",
   "allowed_gpus": [
+    0,
+    1,
+    2,
+    3,
+    4,
     5,
     6,
     7
   ],
-  "reserved_gpus": [
-    0,
-    3
-  ],
-  "user_instruction": "保留Exp2，Exp4再使用其他GPU",
-  "previous_policy_retained": "meta/evaluation-gpu-policy.json",
+  "reserved_gpus": [],
   "min_free_mib": 32768,
   "max_existing_compute_mib": 11264,
-  "scope": "CPU resource admission only; frozen native algorithm, model, identities and calibration unchanged",
-  "rationale": "Cards5/6/7 have about35GiB free and8.2GiB pre-existing compute. Prior OOM recorded about25.8GiB in the two Exp4 processes. This is a shared-resource admission choice, not a proven peak-memory bound; monitor actual headroom and preserve any infrastructure failures.",
-  "resource_policy_changed_at_utc": "2026-11-12T21:44:09.577936+00:00",
-  "prior_policy_snapshot": "diagnostics/completed-scene-resume/20261112T214408940550Z/evaluation-available-gpu-policy.json"
+  "user_authorized_all_eight": true,
+  "at_utc": "2026-11-13T05:45:06.743198+00:00",
+  "user_instruction": "我准备先暂停Exp2，先8卡全速跑完Exp4，我现在已经释放GPU，请你持续每10分钟进行监督，避免OOM、CPU等待等问题出现，确保11/13日晚上能完成Exp4的实验结果。",
+  "other_task_termination_authorized": false,
+  "Exp2_data_preserved": true
 }

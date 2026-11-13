@@ -1,0 +1,56 @@
+{
+  "recorded_at_utc": "2026-11-13T04:52:31.923111+00:00",
+  "scope": "first8",
+  "user_response": "\u534f\u8c03\u4fdd\u969cGPU5\u30016\u30017\u4e09\u5361",
+  "question_item_id": "call_e4918a2ff64c4e56b184426a0d1b539b",
+  "requested_gpus": [
+    5,
+    6,
+    7
+  ],
+  "requested_max_other_compute_mib_per_card": 10240,
+  "interpretation": "User will coordinate capacity for these three cards; this is not confirmation that memory has already been released and does not authorize terminating other tasks.",
+  "reserved_gpus": [
+    0,
+    3
+  ],
+  "preserve_Exp2": true,
+  "other_task_termination_authorized": false,
+  "actual_capacity_release_verified": true,
+  "latest_actual_check_at_utc": "2026-11-13T04:51:32.147857+00:00",
+  "latest_other_compute_mib": [
+    17880,
+    17868,
+    17866
+  ],
+  "source_and_parameters_unchanged": true,
+  "native_states_modified": false,
+  "signals_sent": false,
+  "actual_checked_at_utc": "2026-11-13T04:58:47.609102+00:00",
+  "verified_resource_proof": "scopes/first8/diagnostics/live-launch-audit-20261113T045847609032Z.json",
+  "verified_resource_proof_sha256": "ba5d2951423b9b60d5fc855bfba4ae6d08edb0f4f1f9dff96da119fddc14b1f6",
+  "resources_at_verification": [
+    {
+      "gpu": 5,
+      "free_mib": 21294,
+      "experiment_compute_mib": 18733,
+      "other_compute_mib": 4016,
+      "other_user_processes_not_signaled": true
+    },
+    {
+      "gpu": 6,
+      "free_mib": 21101,
+      "experiment_compute_mib": 18791,
+      "other_compute_mib": 4016,
+      "other_user_processes_not_signaled": true
+    },
+    {
+      "gpu": 7,
+      "free_mib": 20306,
+      "experiment_compute_mib": 19629,
+      "other_compute_mib": 4016,
+      "other_user_processes_not_signaled": true
+    }
+  ],
+  "current_launch_admission_note": "All cards currently have active Exp4 jobs. Non-Exp4 compute is below the existing 11GiB sharing limit; after each current job exits, recheck both free>=32GiB and other compute<=11GiB before the next scene."
+}

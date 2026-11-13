@@ -1,0 +1,58 @@
+{
+  "at_utc": "2026-11-13T05:45:07.051870+00:00",
+  "controller_pid": 2236364,
+  "controller_start_ticks": "35702398",
+  "source_sha256": "3d47c382318af84c80ff010da87c6a2a85fc0511797af9c727083fab156690ff",
+  "plan": "scopes/first8/diagnostics/eight-gpu-handoff/20261113T054506671105Z/plan.json",
+  "old_controller_stopped": 2196875,
+  "native_launchers_retained": [
+    {
+      "scene": "4ok3usBNeis",
+      "pid": 2197428,
+      "start_ticks": "35305272",
+      "parent_pid": 2196875,
+      "parent_start_ticks": "35297197"
+    },
+    {
+      "scene": "5cdEh9F2hJL",
+      "pid": 2197432,
+      "start_ticks": "35305284",
+      "parent_pid": 2196875,
+      "parent_start_ticks": "35297197"
+    },
+    {
+      "scene": "6s7QHgap2fW",
+      "pid": 2197440,
+      "start_ticks": "35305299",
+      "parent_pid": 2196875,
+      "parent_start_ticks": "35297197"
+    }
+  ],
+  "allowed_gpus": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "activation": {
+    "pid": 2236364,
+    "at_utc": "2026-11-13T05:45:07.022530+00:00",
+    "retained_native": 3,
+    "pending_scenes": [
+      "DYehNKdT76V",
+      "Dd4bFSTQ8gi",
+      "Nfvxx8J5NCo",
+      "QaLdnwvtxbs",
+      "TEEsavR23oF"
+    ],
+    "native_restarted": false
+  },
+  "native_restarted": false,
+  "native_signaled": false,
+  "other_user_signals": false,
+  "source_and_parameters_unchanged": true
+}

@@ -1,0 +1,83 @@
+{
+  "cv2_version": "4.11.0",
+  "default_cv2_threads": 384,
+  "torch_threads": 1,
+  "torch_interop_threads": 192,
+  "cv2_parallel_backend": [
+    "Parallel framework:            pthreads"
+  ],
+  "results": [
+    {
+      "threads": 384,
+      "operation": "dilate",
+      "median_ms": 0.2162949531339109,
+      "output_sha256": "3f530b86cfa6ac9f691b122ac47eb6f255fb38e46b575b639ea1afdc68f9d236"
+    },
+    {
+      "threads": 384,
+      "operation": "connected_components",
+      "median_ms": 7.929079991299659,
+      "output_sha256": "1f7028d587d3a28e1910f138c8a8dfa8f8881fc993cdd6b516003a383be25a31"
+    },
+    {
+      "threads": 1,
+      "operation": "dilate",
+      "median_ms": 0.16885396325960755,
+      "output_sha256": "3f530b86cfa6ac9f691b122ac47eb6f255fb38e46b575b639ea1afdc68f9d236"
+    },
+    {
+      "threads": 1,
+      "operation": "connected_components",
+      "median_ms": 6.552635983098298,
+      "output_sha256": "1f7028d587d3a28e1910f138c8a8dfa8f8881fc993cdd6b516003a383be25a31"
+    },
+    {
+      "threads": 4,
+      "operation": "dilate",
+      "median_ms": 0.10762095917016268,
+      "output_sha256": "3f530b86cfa6ac9f691b122ac47eb6f255fb38e46b575b639ea1afdc68f9d236"
+    },
+    {
+      "threads": 4,
+      "operation": "connected_components",
+      "median_ms": 2.6963240234181285,
+      "output_sha256": "1f7028d587d3a28e1910f138c8a8dfa8f8881fc993cdd6b516003a383be25a31"
+    },
+    {
+      "threads": 384,
+      "operation": "dilate",
+      "median_ms": 0.112209003418684,
+      "output_sha256": "3f530b86cfa6ac9f691b122ac47eb6f255fb38e46b575b639ea1afdc68f9d236"
+    },
+    {
+      "threads": 384,
+      "operation": "connected_components",
+      "median_ms": 6.584694026969373,
+      "output_sha256": "1f7028d587d3a28e1910f138c8a8dfa8f8881fc993cdd6b516003a383be25a31"
+    }
+  ],
+  "scope": "Isolated kernels on a synthetic1000x1000 binary grid; not a navigation end-to-end benchmark; only this throwaway process changes thread settings.",
+  "at_utc": "2026-11-13T05:17:25.640212+00:00",
+  "source_sha256": "462be9d215ba7e753cf4d18695749f927e2e5c5d806b9fa4bdc2bb8151ed4977",
+  "navigation_worker_relevant_lines": [
+    {
+      "line": 127,
+      "text": "    # GLUEAgent historically uses ``visualize`` both to materialize planner"
+    },
+    {
+      "line": 131,
+      "text": "    agent.visualize = True"
+    },
+    {
+      "line": 180,
+      "text": "    from pbsp.adapters.lagmemo_agent import LagMemoAgent"
+    },
+    {
+      "line": 238,
+      "text": "    agent = LagMemoAgent("
+    }
+  ],
+  "signals_sent": false,
+  "native_states_modified": false,
+  "source_and_parameters_unchanged": true
+}

@@ -1,0 +1,12 @@
+{
+  "started_at_utc": "2026-11-13T05:52:06.454852+00:00",
+  "pid": 2240513,
+  "start_ticks": "35744368",
+  "source": "code/archive_first8_runs.py",
+  "source_sha256": "d8f9e7101e70586bf0b068b827d562f8bf80c5e61b9ce3a05bbfa9b6634068a2",
+  "log": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/scopes/first8/logs/raw-archive-watch.log",
+  "stderr": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/scopes/first8/logs/raw-archive-watch.stderr.log",
+  "max_seconds": 43200,
+  "threads": 2,
+  "scope": "Archive completed Native only; exact source byte round trips, no GPU use or Native changes"
+}

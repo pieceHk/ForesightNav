@@ -1,0 +1,20 @@
+{
+  "allowed_gpus": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "reserved_gpus": [],
+  "min_free_mib": 32768,
+  "max_existing_compute_mib": 11264,
+  "user_authorized_all_eight": true,
+  "at_utc": "2026-11-13T05:45:06.743198+00:00",
+  "user_instruction": "我准备先暂停Exp2，先8卡全速跑完Exp4，我现在已经释放GPU，请你持续每10分钟进行监督，避免OOM、CPU等待等问题出现，确保11/13日晚上能完成Exp4的实验结果。",
+  "other_task_termination_authorized": false,
+  "Exp2_data_preserved": true
+}

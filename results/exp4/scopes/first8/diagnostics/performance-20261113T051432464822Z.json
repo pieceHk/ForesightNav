@@ -1,0 +1,1163 @@
+{
+  "at_utc": "2026-11-13T05:14:32.458699+00:00",
+  "scope": "first8",
+  "stage": "myopic",
+  "elapsed_seconds": 15.093914388970006,
+  "gpus": [
+    {
+      "gpu": 5,
+      "utilization_gpu_mean": 37.25,
+      "utilization_gpu_min": 10.0,
+      "utilization_gpu_max": 67.0,
+      "free_mib_min": 17120.0,
+      "power_w_mean": 119.28625
+    },
+    {
+      "gpu": 6,
+      "utilization_gpu_mean": 46.375,
+      "utilization_gpu_min": 7.0,
+      "utilization_gpu_max": 82.0,
+      "free_mib_min": 19685.0,
+      "power_w_mean": 142.73
+    },
+    {
+      "gpu": 7,
+      "utilization_gpu_mean": 38.75,
+      "utilization_gpu_min": 6.0,
+      "utilization_gpu_max": 72.0,
+      "free_mib_min": 15866.0,
+      "power_w_mean": 124.61625000000001
+    }
+  ],
+  "native_process_cpu": [
+    {
+      "pid": 2197428,
+      "scene": "4ok3usBNeis",
+      "user_s": 3.44,
+      "system_s": 1.16,
+      "threads": 1,
+      "rss_mib": 29.26953125,
+      "affinity_cpus": 384,
+      "status": "sleeping",
+      "thread_environment": {
+        "OMP_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "NUMEXPR_NUM_THREADS": null
+      },
+      "cpu_percent": 0.0
+    },
+    {
+      "pid": 2197520,
+      "scene": "4ok3usBNeis",
+      "user_s": 9.94,
+      "system_s": 19.65,
+      "threads": 1,
+      "rss_mib": 13.6328125,
+      "affinity_cpus": 384,
+      "status": "sleeping",
+      "thread_environment": {
+        "OMP_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "NUMEXPR_NUM_THREADS": "1"
+      },
+      "cpu_percent": 0.0
+    },
+    {
+      "pid": 2197521,
+      "scene": "4ok3usBNeis",
+      "user_s": 738.17,
+      "system_s": 318.47,
+      "threads": 9,
+      "rss_mib": 7752.421875,
+      "affinity_cpus": 384,
+      "status": "sleeping",
+      "thread_environment": {
+        "OMP_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "NUMEXPR_NUM_THREADS": "1"
+      },
+      "cpu_percent": 49.02638115800809
+    },
+    {
+      "pid": 2197913,
+      "scene": "4ok3usBNeis",
+      "user_s": 1142.33,
+      "system_s": 318.82,
+      "threads": 388,
+      "rss_mib": 2256.078125,
+      "affinity_cpus": 384,
+      "status": "running",
+      "thread_environment": {
+        "OMP_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "NUMEXPR_NUM_THREADS": "1"
+      },
+      "cpu_percent": 59.427924187477146
+    },
+    {
+      "pid": 2197432,
+      "scene": "5cdEh9F2hJL",
+      "user_s": 3.34,
+      "system_s": 1.32,
+      "threads": 1,
+      "rss_mib": 29.29296875,
+      "affinity_cpus": 384,
+      "status": "sleeping",
+      "thread_environment": {
+        "OMP_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "NUMEXPR_NUM_THREADS": null
+      },
+      "cpu_percent": 0.0
+    },
+    {
+      "pid": 2197541,
+      "scene": "5cdEh9F2hJL",
+      "user_s": 9.77,
+      "system_s": 19.42,
+      "threads": 1,
+      "rss_mib": 13.73828125,
+      "affinity_cpus": 384,
+      "status": "sleeping",
+      "thread_environment": {
+        "OMP_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "NUMEXPR_NUM_THREADS": "1"
+      },
+      "cpu_percent": 0.0
+    },
+    {
+      "pid": 2197542,
+      "scene": "5cdEh9F2hJL",
+      "user_s": 734.75,
+      "system_s": 244.22,
+      "threads": 10,
+      "rss_mib": 5788.37890625,
+      "affinity_cpus": 384,
+      "status": "sleeping",
+      "thread_environment": {
+        "OMP_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "NUMEXPR_NUM_THREADS": "1"
+      },
+      "cpu_percent": 42.997461312902544
+    },
+    {
+      "pid": 2197903,
+      "scene": "5cdEh9F2hJL",
+      "user_s": 1147.54,
+      "system_s": 355.86,
+      "threads": 388,
+      "rss_mib": 2308.7734375,
+      "affinity_cpus": 384,
+      "status": "running",
+      "thread_environment": {
+        "OMP_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "NUMEXPR_NUM_THREADS": "1"
+      },
+      "cpu_percent": 78.64096545210441
+    },
+    {
+      "pid": 2197440,
+      "scene": "6s7QHgap2fW",
+      "user_s": 3.46,
+      "system_s": 1.18,
+      "threads": 1,
+      "rss_mib": 29.1640625,
+      "affinity_cpus": 384,
+      "status": "sleeping",
+      "thread_environment": {
+        "OMP_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "NUMEXPR_NUM_THREADS": null
+      },
+      "cpu_percent": 0.0
+    },
+    {
+      "pid": 2197560,
+      "scene": "6s7QHgap2fW",
+      "user_s": 10.1,
+      "system_s": 23.81,
+      "threads": 1,
+      "rss_mib": 13.7734375,
+      "affinity_cpus": 384,
+      "status": "sleeping",
+      "thread_environment": {
+        "OMP_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "NUMEXPR_NUM_THREADS": "1"
+      },
+      "cpu_percent": 0.0662518664297287
+    },
+    {
+      "pid": 2197561,
+      "scene": "6s7QHgap2fW",
+      "user_s": 605.98,
+      "system_s": 276.57,
+      "threads": 9,
+      "rss_mib": 10590.109375,
+      "affinity_cpus": 384,
+      "status": "sleeping",
+      "thread_environment": {
+        "OMP_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "NUMEXPR_NUM_THREADS": "1"
+      },
+      "cpu_percent": 41.539920251448045
+    },
+    {
+      "pid": 2197905,
+      "scene": "6s7QHgap2fW",
+      "user_s": 1200.55,
+      "system_s": 314.43,
+      "threads": 388,
+      "rss_mib": 2323.37890625,
+      "affinity_cpus": 384,
+      "status": "running",
+      "thread_environment": {
+        "OMP_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "NUMEXPR_NUM_THREADS": "1"
+      },
+      "cpu_percent": 45.84629156938187
+    }
+  ],
+  "trajectory_rates": [
+    {
+      "scene": "4ok3usBNeis",
+      "episode": "3",
+      "frames_per_second": 1.192533595735354
+    },
+    {
+      "scene": "5cdEh9F2hJL",
+      "episode": "7",
+      "frames_per_second": 1.5237929278840634
+    },
+    {
+      "scene": "6s7QHgap2fW",
+      "episode": "2",
+      "frames_per_second": 0.7287705307271608
+    }
+  ],
+  "gpu_samples": [
+    {
+      "at_utc": "2026-11-13T05:14:18.751842+00:00",
+      "gpus": [
+        {
+          "index": "0",
+          "memory.free": "10854",
+          "utilization.gpu": "0",
+          "utilization.memory": "0",
+          "pstate": "P0",
+          "clocks.current.sm": "1740",
+          "power.draw": "102.57",
+          "power.limit": "300.00",
+          "temperature.gpu": "48"
+        },
+        {
+          "index": "1",
+          "memory.free": "11604",
+          "utilization.gpu": "37",
+          "utilization.memory": "14",
+          "pstate": "P0",
+          "clocks.current.sm": "1725",
+          "power.draw": "138.21",
+          "power.limit": "300.00",
+          "temperature.gpu": "52"
+        },
+        {
+          "index": "2",
+          "memory.free": "11053",
+          "utilization.gpu": "1",
+          "utilization.memory": "0",
+          "pstate": "P0",
+          "clocks.current.sm": "1740",
+          "power.draw": "171.09",
+          "power.limit": "300.00",
+          "temperature.gpu": "48"
+        },
+        {
+          "index": "3",
+          "memory.free": "11374",
+          "utilization.gpu": "71",
+          "utilization.memory": "33",
+          "pstate": "P0",
+          "clocks.current.sm": "1725",
+          "power.draw": "114.74",
+          "power.limit": "300.00",
+          "temperature.gpu": "47"
+        },
+        {
+          "index": "4",
+          "memory.free": "10533",
+          "utilization.gpu": "38",
+          "utilization.memory": "16",
+          "pstate": "P0",
+          "clocks.current.sm": "1725",
+          "power.draw": "164.54",
+          "power.limit": "300.00",
+          "temperature.gpu": "60"
+        },
+        {
+          "index": "5",
+          "memory.free": "21268",
+          "utilization.gpu": "12",
+          "utilization.memory": "1",
+          "pstate": "P0",
+          "clocks.current.sm": "1740",
+          "power.draw": "122.42",
+          "power.limit": "300.00",
+          "temperature.gpu": "49"
+        },
+        {
+          "index": "6",
+          "memory.free": "21105",
+          "utilization.gpu": "28",
+          "utilization.memory": "13",
+          "pstate": "P0",
+          "clocks.current.sm": "1740",
+          "power.draw": "130.75",
+          "power.limit": "300.00",
+          "temperature.gpu": "59"
+        },
+        {
+          "index": "7",
+          "memory.free": "20265",
+          "utilization.gpu": "39",
+          "utilization.memory": "18",
+          "pstate": "P0",
+          "clocks.current.sm": "1740",
+          "power.draw": "113.96",
+          "power.limit": "300.00",
+          "temperature.gpu": "52"
+        }
+      ]
+    },
+    {
+      "at_utc": "2026-11-13T05:14:20.370557+00:00",
+      "gpus": [
+        {
+          "index": "0",
+          "memory.free": "10858",
+          "utilization.gpu": "95",
+          "utilization.memory": "51",
+          "pstate": "P0",
+          "clocks.current.sm": "1725",
+          "power.draw": "144.30",
+          "power.limit": "300.00",
+          "temperature.gpu": "50"
+        },
+        {
+          "index": "1",
+          "memory.free": "11599",
+          "utilization.gpu": "61",
+          "utilization.memory": "25",
+          "pstate": "P0",
+          "clocks.current.sm": "1590",
+          "power.draw": "149.27",
+          "power.limit": "300.00",
+          "temperature.gpu": "55"
+        },
+        {
+          "index": "2",
+          "memory.free": "11068",
+          "utilization.gpu": "54",
+          "utilization.memory": "25",
+          "pstate": "P0",
+          "clocks.current.sm": "1725",
+          "power.draw": "164.17",
+          "power.limit": "300.00",
+          "temperature.gpu": "50"
+        },
+        {
+          "index": "3",
+          "memory.free": "11372",
+          "utilization.gpu": "12",
+          "utilization.memory": "1",
+          "pstate": "P0",
+          "clocks.current.sm": "1725",
+          "power.draw": "139.38",
+          "power.limit": "300.00",
+          "temperature.gpu": "46"
+        },
+        {
+          "index": "4",
+          "memory.free": "10540",
+          "utilization.gpu": "59",
+          "utilization.memory": "30",
+          "pstate": "P0",
+          "clocks.current.sm": "1725",
+          "power.draw": "169.99",
+          "power.limit": "300.00",
+          "temperature.gpu": "58"
+        },
+        {
+          "index": "5",
+          "memory.free": "21267",
+          "utilization.gpu": "46",
+          "utilization.memory": "35",
+          "pstate": "P0",
+          "clocks.current.sm": "1740",
+          "power.draw": "115.42",
+          "power.limit": "300.00",
+          "temperature.gpu": "49"
+        },
+        {
+          "index": "6",
+          "memory.free": "21103",
+          "utilization.gpu": "28",
+          "utilization.memory": "16",
+          "pstate": "P0",
+          "clocks.current.sm": "1740",
+          "power.draw": "132.39",
+          "power.limit": "300.00",
+          "temperature.gpu": "59"
+        },
+        {
+          "index": "7",
+          "memory.free": "20265",
+          "utilization.gpu": "33",
+          "utilization.memory": "15",
+          "pstate": "P0",
+          "clocks.current.sm": "1740",
+          "power.draw": "136.07",
+          "power.limit": "300.00",
+          "temperature.gpu": "52"
+        }
+      ]
+    },
+    {
+      "at_utc": "2026-11-13T05:14:21.831237+00:00",
+      "gpus": [
+        {
+          "index": "0",
+          "memory.free": "10852",
+          "utilization.gpu": "87",
+          "utilization.memory": "49",
+          "pstate": "P0",
+          "clocks.current.sm": "1725",
+          "power.draw": "156.54",
+          "power.limit": "300.00",
+          "temperature.gpu": "50"
+        },
+        {
+          "index": "1",
+          "memory.free": "11603",
+          "utilization.gpu": "58",
+          "utilization.memory": "28",
+          "pstate": "P0",
+          "clocks.current.sm": "1575",
+          "power.draw": "130.85",
+          "power.limit": "300.00",
+          "temperature.gpu": "54"
+        },
+        {
+          "index": "2",
+          "memory.free": "11057",
+          "utilization.gpu": "86",
+          "utilization.memory": "42",
+          "pstate": "P0",
+          "clocks.current.sm": "1545",
+          "power.draw": "155.25",
+          "power.limit": "300.00",
+          "temperature.gpu": "53"
+        },
+        {
+          "index": "3",
+          "memory.free": "11372",
+          "utilization.gpu": "59",
+          "utilization.memory": "28",
+          "pstate": "P0",
+          "clocks.current.sm": "1725",
+          "power.draw": "139.28",
+          "power.limit": "300.00",
+          "temperature.gpu": "47"
+        },
+        {
+          "index": "4",
+          "memory.free": "10531",
+          "utilization.gpu": "10",
+          "utilization.memory": "1",
+          "pstate": "P0",
+          "clocks.current.sm": "1740",
+          "power.draw": "148.26",
+          "power.limit": "300.00",
+          "temperature.gpu": "58"
+        },
+        {
+          "index": "5",
+          "memory.free": "21267",
+          "utilization.gpu": "10",
+          "utilization.memory": "1",
+          "pstate": "P0",
+          "clocks.current.sm": "1740",
+          "power.draw": "100.06",
+          "power.limit": "300.00",
+          "temperature.gpu": "48"
+        },
+        {
+          "index": "6",
+          "memory.free": "20037",
+          "utilization.gpu": "68",
+          "utilization.memory": "38",
+          "pstate": "P0",
+          "clocks.current.sm": "1740",
+          "power.draw": "132.09",
+          "power.limit": "300.00",
+          "temperature.gpu": "61"
+        },
+        {
+          "index": "7",
+          "memory.free": "20264",
+          "utilization.gpu": "6",
+          "utilization.memory": "1",
+          "pstate": "P0",
+          "clocks.current.sm": "1740",
+          "power.draw": "112.29",
+          "power.limit": "300.00",
+          "temperature.gpu": "51"
+        }
+      ]
+    },
+    {
+      "at_utc": "2026-11-13T05:14:23.619122+00:00",
+      "gpus": [
+        {
+          "index": "0",
+          "memory.free": "10758",
+          "utilization.gpu": "20",
+          "utilization.memory": "7",
+          "pstate": "P0",
+          "clocks.current.sm": "1725",
+          "power.draw": "133.18",
+          "power.limit": "300.00",
+          "temperature.gpu": "50"
+        },
+        {
+          "index": "1",
+          "memory.free": "11599",
+          "utilization.gpu": "35",
+          "utilization.memory": "17",
+          "pstate": "P0",
+          "clocks.current.sm": "1725",
+          "power.draw": "150.23",
+          "power.limit": "300.00",
+          "temperature.gpu": "52"
+        },
+        {
+          "index": "2",
+          "memory.free": "11055",
+          "utilization.gpu": "9",
+          "utilization.memory": "0",
+          "pstate": "P0",
+          "clocks.current.sm": "1740",
+          "power.draw": "130.55",
+          "power.limit": "300.00",
+          "temperature.gpu": "47"
+        },
+        {
+          "index": "3",
+          "memory.free": "11372",
+          "utilization.gpu": "69",
+          "utilization.memory": "31",
+          "pstate": "P0",
+          "clocks.current.sm": "1710",
+          "power.draw": "144.25",
+          "power.limit": "300.00",
+          "temperature.gpu": "48"
+        },
+        {
+          "index": "4",
+          "memory.free": "10528",
+          "utilization.gpu": "67",
+          "utilization.memory": "33",
+          "pstate": "P0",
+          "clocks.current.sm": "1635",
+          "power.draw": "157.55",
+          "power.limit": "300.00",
+          "temperature.gpu": "60"
+        },
+        {
+          "index": "5",
+          "memory.free": "21267",
+          "utilization.gpu": "42",
+          "utilization.memory": "23",
+          "pstate": "P0",
+          "clocks.current.sm": "1740",
+          "power.draw": "112.94",
+          "power.limit": "300.00",
+          "temperature.gpu": "50"
+        },
+        {
+          "index": "6",
+          "memory.free": "19705",
+          "utilization.gpu": "82",
+          "utilization.memory": "46",
+          "pstate": "P0",
+          "clocks.current.sm": "1725",
+          "power.draw": "165.36",
+          "power.limit": "300.00",
+          "temperature.gpu": "62"
+        },
+        {
+          "index": "7",
+          "memory.free": "17204",
+          "utilization.gpu": "33",
+          "utilization.memory": "3",
+          "pstate": "P0",
+          "clocks.current.sm": "1740",
+          "power.draw": "91.11",
+          "power.limit": "300.00",
+          "temperature.gpu": "50"
+        }
+      ]
+    },
+    {
+      "at_utc": "2026-11-13T05:14:25.363023+00:00",
+      "gpus": [
+        {
+          "index": "0",
+          "memory.free": "10752",
+          "utilization.gpu": "41",
+          "utilization.memory": "18",
+          "pstate": "P0",
+          "clocks.current.sm": "1575",
+          "power.draw": "130.94",
+          "power.limit": "300.00",
+          "temperature.gpu": "52"
+        },
+        {
+          "index": "1",
+          "memory.free": "11601",
+          "utilization.gpu": "24",
+          "utilization.memory": "9",
+          "pstate": "P0",
+          "clocks.current.sm": "1725",
+          "power.draw": "149.16",
+          "power.limit": "300.00",
+          "temperature.gpu": "53"
+        },
+        {
+          "index": "2",
+          "memory.free": "11061",
+          "utilization.gpu": "58",
+          "utilization.memory": "29",
+          "pstate": "P0",
+          "clocks.current.sm": "1725",
+          "power.draw": "148.26",
+          "power.limit": "300.00",
+          "temperature.gpu": "49"
+        },
+        {
+          "index": "3",
+          "memory.free": "11368",
+          "utilization.gpu": "41",
+          "utilization.memory": "18",
+          "pstate": "P0",
+          "clocks.current.sm": "1725",
+          "power.draw": "115.94",
+          "power.limit": "300.00",
+          "temperature.gpu": "46"
+        },
+        {
+          "index": "4",
+          "memory.free": "10540",
+          "utilization.gpu": "63",
+          "utilization.memory": "30",
+          "pstate": "P0",
+          "clocks.current.sm": "1725",
+          "power.draw": "141.77",
+          "power.limit": "300.00",
+          "temperature.gpu": "59"
+        },
+        {
+          "index": "5",
+          "memory.free": "20409",
+          "utilization.gpu": "51",
+          "utilization.memory": "39",
+          "pstate": "P0",
+          "clocks.current.sm": "1740",
+          "power.draw": "114.72",
+          "power.limit": "300.00",
+          "temperature.gpu": "49"
+        },
+        {
+          "index": "6",
+          "memory.free": "19685",
+          "utilization.gpu": "77",
+          "utilization.memory": "52",
+          "pstate": "P0",
+          "clocks.current.sm": "1740",
+          "power.draw": "188.88",
+          "power.limit": "300.00",
+          "temperature.gpu": "62"
+        },
+        {
+          "index": "7",
+          "memory.free": "15868",
+          "utilization.gpu": "60",
+          "utilization.memory": "30",
+          "pstate": "P0",
+          "clocks.current.sm": "1725",
+          "power.draw": "146.59",
+          "power.limit": "300.00",
+          "temperature.gpu": "53"
+        }
+      ]
+    },
+    {
+      "at_utc": "2026-11-13T05:14:27.471480+00:00",
+      "gpus": [
+        {
+          "index": "0",
+          "memory.free": "10756",
+          "utilization.gpu": "8",
+          "utilization.memory": "0",
+          "pstate": "P0",
+          "clocks.current.sm": "1740",
+          "power.draw": "128.90",
+          "power.limit": "300.00",
+          "temperature.gpu": "48"
+        },
+        {
+          "index": "1",
+          "memory.free": "11599",
+          "utilization.gpu": "55",
+          "utilization.memory": "23",
+          "pstate": "P0",
+          "clocks.current.sm": "1725",
+          "power.draw": "134.97",
+          "power.limit": "300.00",
+          "temperature.gpu": "53"
+        },
+        {
+          "index": "2",
+          "memory.free": "11053",
+          "utilization.gpu": "58",
+          "utilization.memory": "27",
+          "pstate": "P0",
+          "clocks.current.sm": "1725",
+          "power.draw": "169.38",
+          "power.limit": "300.00",
+          "temperature.gpu": "52"
+        },
+        {
+          "index": "3",
+          "memory.free": "11372",
+          "utilization.gpu": "6",
+          "utilization.memory": "1",
+          "pstate": "P0",
+          "clocks.current.sm": "1740",
+          "power.draw": "115.63",
+          "power.limit": "300.00",
+          "temperature.gpu": "45"
+        },
+        {
+          "index": "4",
+          "memory.free": "10532",
+          "utilization.gpu": "7",
+          "utilization.memory": "0",
+          "pstate": "P0",
+          "clocks.current.sm": "1740",
+          "power.draw": "167.56",
+          "power.limit": "300.00",
+          "temperature.gpu": "56"
+        },
+        {
+          "index": "5",
+          "memory.free": "17120",
+          "utilization.gpu": "59",
+          "utilization.memory": "33",
+          "pstate": "P0",
+          "clocks.current.sm": "1740",
+          "power.draw": "127.80",
+          "power.limit": "300.00",
+          "temperature.gpu": "49"
+        },
+        {
+          "index": "6",
+          "memory.free": "21103",
+          "utilization.gpu": "7",
+          "utilization.memory": "1",
+          "pstate": "P0",
+          "clocks.current.sm": "1740",
+          "power.draw": "128.48",
+          "power.limit": "300.00",
+          "temperature.gpu": "60"
+        },
+        {
+          "index": "7",
+          "memory.free": "15866",
+          "utilization.gpu": "72",
+          "utilization.memory": "21",
+          "pstate": "P0",
+          "clocks.current.sm": "1740",
+          "power.draw": "150.30",
+          "power.limit": "300.00",
+          "temperature.gpu": "52"
+        }
+      ]
+    },
+    {
+      "at_utc": "2026-11-13T05:14:29.427925+00:00",
+      "gpus": [
+        {
+          "index": "0",
+          "memory.free": "10754",
+          "utilization.gpu": "10",
+          "utilization.memory": "0",
+          "pstate": "P0",
+          "clocks.current.sm": "1740",
+          "power.draw": "98.24",
+          "power.limit": "300.00",
+          "temperature.gpu": "48"
+        },
+        {
+          "index": "1",
+          "memory.free": "11603",
+          "utilization.gpu": "100",
+          "utilization.memory": "50",
+          "pstate": "P0",
+          "clocks.current.sm": "1725",
+          "power.draw": "167.45",
+          "power.limit": "300.00",
+          "temperature.gpu": "54"
+        },
+        {
+          "index": "2",
+          "memory.free": "11059",
+          "utilization.gpu": "43",
+          "utilization.memory": "21",
+          "pstate": "P0",
+          "clocks.current.sm": "1560",
+          "power.draw": "140.06",
+          "power.limit": "300.00",
+          "temperature.gpu": "52"
+        },
+        {
+          "index": "3",
+          "memory.free": "11368",
+          "utilization.gpu": "16",
+          "utilization.memory": "2",
+          "pstate": "P0",
+          "clocks.current.sm": "1740",
+          "power.draw": "105.85",
+          "power.limit": "300.00",
+          "temperature.gpu": "49"
+        },
+        {
+          "index": "4",
+          "memory.free": "10536",
+          "utilization.gpu": "60",
+          "utilization.memory": "27",
+          "pstate": "P0",
+          "clocks.current.sm": "1725",
+          "power.draw": "141.07",
+          "power.limit": "300.00",
+          "temperature.gpu": "57"
+        },
+        {
+          "index": "5",
+          "memory.free": "17121",
+          "utilization.gpu": "67",
+          "utilization.memory": "34",
+          "pstate": "P0",
+          "clocks.current.sm": "1725",
+          "power.draw": "176.47",
+          "power.limit": "300.00",
+          "temperature.gpu": "52"
+        },
+        {
+          "index": "6",
+          "memory.free": "21099",
+          "utilization.gpu": "47",
+          "utilization.memory": "36",
+          "pstate": "P0",
+          "clocks.current.sm": "1740",
+          "power.draw": "128.32",
+          "power.limit": "300.00",
+          "temperature.gpu": "59"
+        },
+        {
+          "index": "7",
+          "memory.free": "20266",
+          "utilization.gpu": "37",
+          "utilization.memory": "22",
+          "pstate": "P0",
+          "clocks.current.sm": "1740",
+          "power.draw": "119.32",
+          "power.limit": "300.00",
+          "temperature.gpu": "52"
+        }
+      ]
+    },
+    {
+      "at_utc": "2026-11-13T05:14:31.280871+00:00",
+      "gpus": [
+        {
+          "index": "0",
+          "memory.free": "10758",
+          "utilization.gpu": "6",
+          "utilization.memory": "0",
+          "pstate": "P0",
+          "clocks.current.sm": "1740",
+          "power.draw": "119.83",
+          "power.limit": "300.00",
+          "temperature.gpu": "48"
+        },
+        {
+          "index": "1",
+          "memory.free": "11601",
+          "utilization.gpu": "13",
+          "utilization.memory": "1",
+          "pstate": "P0",
+          "clocks.current.sm": "1740",
+          "power.draw": "126.58",
+          "power.limit": "300.00",
+          "temperature.gpu": "52"
+        },
+        {
+          "index": "2",
+          "memory.free": "11055",
+          "utilization.gpu": "83",
+          "utilization.memory": "49",
+          "pstate": "P0",
+          "clocks.current.sm": "1725",
+          "power.draw": "132.37",
+          "power.limit": "300.00",
+          "temperature.gpu": "49"
+        },
+        {
+          "index": "3",
+          "memory.free": "11370",
+          "utilization.gpu": "63",
+          "utilization.memory": "30",
+          "pstate": "P0",
+          "clocks.current.sm": "1725",
+          "power.draw": "104.38",
+          "power.limit": "300.00",
+          "temperature.gpu": "46"
+        },
+        {
+          "index": "4",
+          "memory.free": "10541",
+          "utilization.gpu": "68",
+          "utilization.memory": "36",
+          "pstate": "P0",
+          "clocks.current.sm": "1725",
+          "power.draw": "144.86",
+          "power.limit": "300.00",
+          "temperature.gpu": "57"
+        },
+        {
+          "index": "5",
+          "memory.free": "21249",
+          "utilization.gpu": "11",
+          "utilization.memory": "1",
+          "pstate": "P0",
+          "clocks.current.sm": "1740",
+          "power.draw": "84.46",
+          "power.limit": "300.00",
+          "temperature.gpu": "48"
+        },
+        {
+          "index": "6",
+          "memory.free": "21101",
+          "utilization.gpu": "34",
+          "utilization.memory": "22",
+          "pstate": "P0",
+          "clocks.current.sm": "1740",
+          "power.draw": "135.57",
+          "power.limit": "300.00",
+          "temperature.gpu": "60"
+        },
+        {
+          "index": "7",
+          "memory.free": "20264",
+          "utilization.gpu": "30",
+          "utilization.memory": "18",
+          "pstate": "P0",
+          "clocks.current.sm": "1740",
+          "power.draw": "127.29",
+          "power.limit": "300.00",
+          "temperature.gpu": "53"
+        }
+      ]
+    }
+  ],
+  "pmon_stdout": "# gpu         pid   type     sm    mem    enc    dec    jpg    ofa     fb   ccpm    command \n# Idx           #    C/G      %      %      %      %      %      %     MB     MB    name \n    5     320361     G      -      -      -      -      -      -      4      0    Xorg           \n    5     398868     G      -      -      -      -      -      -     17      0    Xorg           \n    5    2017876     C      -      -      -      -      -      -   2008      0    python3        \n    5    2018026     G      -      -      -      -      -      -    656      0    thor-Linux64-lo\n    5    2019429     C      -      -      -      -      -      -   2008      0    python3        \n    5    2019497     G     12      6      -      -      -      -    622      0    thor-Linux64-lo\n    5    2197521     C      -      -      -      -      -      -   2562      0    python3.10     \n    5    2197913   C+G     21     16      -      -      -      -  16171      0    python3.9      \n    6     320361     G      -      -      -      -      -      -      4      0    Xorg           \n    6     398868     G      -      -      -      -      -      -     17      0    Xorg           \n    6    2018180     C      -      -      -      -      -      -   2008      0    python3        \n    6    2018212     G      -      -      -      -      -      -    806      0    thor-Linux64-lo\n    6    2019634     C      -      -      -      -      -      -   2008      0    python3        \n    6    2019663     G      -      -      -      -      -      -    582      0    thor-Linux64-lo\n    6    2197542     C      -      -      -      -      -      -   2562      0    python3.10     \n    6    2197903   C+G     35     23      -      -      -      -  16227      0    python3.9      \n    7     320361     G      -      -      -      -      -      -      4      0    Xorg           \n    7     398868     G      -      -      -      -      -      -     17      0    Xorg           \n    7    2018348     C      -      -      -      -      -      -   2008      0    python3        \n    7    2018407     G      3      2      -      -      -      -    611      0    thor-Linux64-lo\n    7    2019810     C      -      -      -      -      -      -   2008      0    python3        \n    7    2019847     G     15      8      -      -      -      -    775      0    thor-Linux64-lo\n    7    2197561     C      -      -      -      -      -      -   2564      0    python3.10     \n    7    2197905   C+G     13      9      -      -      -      -  17065      0    python3.9      \n    5     320361     G      -      -      -      -      -      -      4      0    Xorg           \n    5     398868     G      -      -      -      -      -      -     17      0    Xorg           \n    5    2017876     C      -      -      -      -      -      -   2008      0    python3        \n    5    2018026     G      9      7      -      -      -      -    656      0    thor-Linux64-lo\n    5    2019429     C      -      -      -      -      -      -   2008      0    python3        \n    5    2019497     G     18     12      -      -      -      -    622      0    thor-Linux64-lo\n    5    2197521     C      -      -      -      -      -      -   2562      0    python3.10     \n    5    2197913   C+G      4      2      -      -      -      -  16171      0    python3.9      \n    6     320361     G      -      -      -      -      -      -      4      0    Xorg           \n    6     398868     G      -      -      -      -      -      -     17      0    Xorg           \n    6    2018180     C      -      -      -      -      -      -   2008      0    python3        \n    6    2018212     G      9      5      -      -      -      -    806      0    thor-Linux64-lo\n    6    2019634     C      -      -      -      -      -      -   2008      0    python3        \n    6    2019663     G     10      7      -      -      -      -    582      0    thor-Linux64-lo\n    6    2197542     C      -      -      -      -      -      -   2562      0    python3.10     \n    6    2197903   C+G     12      8      -      -      -      -  16225      0    python3.9      \n    7     320361     G      -      -      -      -      -      -      4      0    Xorg           \n    7     398868     G      -      -      -      -      -      -     17      0    Xorg           \n    7    2018348     C      -      -      -      -      -      -   2008      0    python3        \n    7    2018407     G      -      -      -      -      -      -    611      0    thor-Linux64-lo\n# gpu         pid   type     sm    mem    enc    dec    jpg    ofa     fb   ccpm    command \n# Idx           #    C/G      %      %      %      %      %      %     MB     MB    name \n    7    2019810     C      -      -      -      -      -      -   2008      0    python3        \n    7    2019847     G     11      7      -      -      -      -    775      0    thor-Linux64-lo\n    7    2197561     C      -      -      -      -      -      -   2564      0    python3.10     \n    7    2197905   C+G     22     13      -      -      -      -  17065      0    python3.9      \n    5     320361     G      -      -      -      -      -      -      4      0    Xorg           \n    5     398868     G      -      -      -      -      -      -     17      0    Xorg           \n    5    2017876     C      -      -      -      -      -      -   2008      0    python3        \n    5    2018026     G      1      0      -      -      -      -    656      0    thor-Linux64-lo\n    5    2019429     C      -      -      -      -      -      -   2008      0    python3        \n    5    2019497     G      7      2      -      -      -      -    622      0    thor-Linux64-lo\n    5    2197521     C      -      -      -      -      -      -   2562      0    python3.10     \n    5    2197913   C+G     11      8      -      -      -      -  16173      0    python3.9      \n    6     320361     G      -      -      -      -      -      -      4      0    Xorg           \n    6     398868     G      -      -      -      -      -      -     17      0    Xorg           \n    6    2018180     C      -      -      -      -      -      -   2008      0    python3        \n    6    2018212     G      6      1      -      -      -      -    806      0    thor-Linux64-lo\n    6    2019634     C      -      -      -      -      -      -   2008      0    python3        \n    6    2019663     G      -      -      -      -      -      -    582      0    thor-Linux64-lo\n    6    2197542     C      7      4      -      -      -      -   3960      0    python3.10     \n    6    2197903   C+G     30     21      -      -      -      -  16225      0    python3.9      \n    7     320361     G      -      -      -      -      -      -      4      0    Xorg           \n    7     398868     G      -      -      -      -      -      -     17      0    Xorg           \n    7    2018348     C      -      -      -      -      -      -   2008      0    python3        \n    7    2018407     G      2      0      -      -      -      -    611      0    thor-Linux64-lo\n    7    2019810     C      -      -      -      -      -      -   2008      0    python3        \n    7    2019847     G     11      3      -      -      -      -    775      0    thor-Linux64-lo\n    7    2197561     C      -      -      -      -      -      -   3304      0    python3.10     \n    7    2197905   C+G      -      -      -      -      -      -  17067      0    python3.9      \n    5     320361     G      -      -      -      -      -      -      4      0    Xorg           \n    5     398868     G      -      -      -      -      -      -     17      0    Xorg           \n    5    2017876     C      -      -      -      -      -      -   2008      0    python3        \n    5    2018026     G      3      0      -      -      -      -    656      0    thor-Linux64-lo\n    5    2019429     C      -      -      -      -      -      -   2008      0    python3        \n    5    2019497     G     11      8      -      -      -      -    622      0    thor-Linux64-lo\n    5    2197521     C      -      -      -      -      -      -   2562      0    python3.10     \n    5    2197913   C+G     10      5      -      -      -      -  16172      0    python3.9      \n    6     320361     G      -      -      -      -      -      -      4      0    Xorg           \n    6     398868     G      -      -      -      -      -      -     17      0    Xorg           \n    6    2018180     C      -      -      -      -      -      -   2008      0    python3        \n    6    2018212     G      -      -      -      -      -      -    806      0    thor-Linux64-lo\n    6    2019634     C      -      -      -      -      -      -   2008      0    python3        \n    6    2019663     G      -      -      -      -      -      -    582      0    thor-Linux64-lo\n    6    2197542     C     78     42      -      -      -      -   3980      0    python3.10     \n    6    2197903   C+G      -      -      -      -      -      -  16228      0    python3.9      \n# gpu         pid   type     sm    mem    enc    dec    jpg    ofa     fb   ccpm    command \n# Idx           #    C/G      %      %      %      %      %      %     MB     MB    name \n    7     320361     G      -      -      -      -      -      -      4      0    Xorg           \n    7     398868     G      -      -      -      -      -      -     17      0    Xorg           \n    7    2018348     C      -      -      -      -      -      -   2008      0    python3        \n    7    2018407     G      3      2      -      -      -      -    611      0    thor-Linux64-lo\n    7    2019810     C      -      -      -      -      -      -   2008      0    python3        \n    7    2019847     G     10      3      -      -      -      -    775      0    thor-Linux64-lo\n    7    2197561     C     17      5      -      -      -      -   6960      0    python3.10     \n    7    2197905   C+G      -      -      -      -      -      -  17067      0    python3.9      \n    5     320361     G      -      -      -      -      -      -      4      0    Xorg           \n    5     398868     G      -      -      -      -      -      -     17      0    Xorg           \n    5    2017876     C      -      -      -      -      -      -   2008      0    python3        \n    5    2018026     G     10      7      -      -      -      -    656      0    thor-Linux64-lo\n    5    2019429     C      -      -      -      -      -      -   2008      0    python3        \n    5    2019497     G      7      2      -      -      -      -    622      0    thor-Linux64-lo\n    5    2197521     C      6      2      -      -      -      -   4964      0    python3.10     \n    5    2197913   C+G     14      8      -      -      -      -  16171      0    python3.9      \n    6     320361     G      -      -      -      -      -      -      4      0    Xorg           \n    6     398868     G      -      -      -      -      -      -     17      0    Xorg           \n    6    2018180     C      -      -      -      -      -      -   2008      0    python3        \n    6    2018212     G     10      5      -      -      -      -    806      0    thor-Linux64-lo\n    6    2019634     C      -      -      -      -      -      -   2008      0    python3        \n    6    2019663     G      6      5      -      -      -      -    582      0    thor-Linux64-lo\n    6    2197542     C     21     11      -      -      -      -   3160      0    python3.10     \n    6    2197903   C+G     22     13      -      -      -      -  16225      0    python3.9      \n    7     320361     G      -      -      -      -      -      -      4      0    Xorg           \n    7     398868     G      -      -      -      -      -      -     17      0    Xorg           \n    7    2018348     C      -      -      -      -      -      -   2008      0    python3        \n    7    2018407     G      -      -      -      -      -      -    611      0    thor-Linux64-lo\n    7    2019810     C      -      -      -      -      -      -   2008      0    python3        \n    7    2019847     G     14      6      -      -      -      -    775      0    thor-Linux64-lo\n    7    2197561     C     46     24      -      -      -      -   6960      0    python3.10     \n    7    2197905   C+G      -      -      -      -      -      -  17067      0    python3.9      \n    5     320361     G      -      -      -      -      -      -      4      0    Xorg           \n    5     398868     G      -      -      -      -      -      -     17      0    Xorg           \n    5    2017876     C      -      -      -      -      -      -   2008      0    python3        \n    5    2018026     G      7      4      -      -      -      -    656      0    thor-Linux64-lo\n    5    2019429     C      -      -      -      -      -      -   2008      0    python3        \n    5    2019497     G      -      -      -      -      -      -    622      0    thor-Linux64-lo\n    5    2197521     C     35     20      -      -      -      -   6708      0    python3.10     \n    5    2197913   C+G     14      8      -      -      -      -  16173      0    python3.9      \n    6     320361     G      -      -      -      -      -      -      4      0    Xorg           \n    6     398868     G      -      -      -      -      -      -     17      0    Xorg           \n    6    2018180     C      -      -      -      -      -      -   2008      0    python3        \n    6    2018212     G     15      9      -      -      -      -    806      0    thor-Linux64-lo\n# gpu         pid   type     sm    mem    enc    dec    jpg    ofa     fb   ccpm    command \n# Idx           #    C/G      %      %      %      %      %      %     MB     MB    name \n    6    2019634     C      -      -      -      -      -      -   2008      0    python3        \n    6    2019663     G      1      0      -      -      -      -    582      0    thor-Linux64-lo\n    6    2197542     C      -      -      -      -      -      -   2564      0    python3.10     \n    6    2197903   C+G      6      5      -      -      -      -  16225      0    python3.9      \n    7     320361     G      -      -      -      -      -      -      4      0    Xorg           \n    7     398868     G      -      -      -      -      -      -     17      0    Xorg           \n    7    2018348     C      -      -      -      -      -      -   2008      0    python3        \n    7    2018407     G      3      0      -      -      -      -    611      0    thor-Linux64-lo\n    7    2019810     C      -      -      -      -      -      -   2008      0    python3        \n    7    2019847     G     21      3      -      -      -      -    775      0    thor-Linux64-lo\n    7    2197561     C      -      -      -      -      -      -   2564      0    python3.10     \n    7    2197905   C+G      1      0      -      -      -      -  17067      0    python3.9      \n    5     320361     G      -      -      -      -      -      -      4      0    Xorg           \n    5     398868     G      -      -      -      -      -      -     17      0    Xorg           \n    5    2017876     C      -      -      -      -      -      -   2008      0    python3        \n    5    2018026     G      1      0      -      -      -      -    656      0    thor-Linux64-lo\n    5    2019429     C      -      -      -      -      -      -   2008      0    python3        \n    5    2019497     G      8      2      -      -      -      -    622      0    thor-Linux64-lo\n    5    2197521     C     43     23      -      -      -      -   6268      0    python3.10     \n    5    2197913   C+G      -      -      -      -      -      -  16173      0    python3.9      \n    6     320361     G      -      -      -      -      -      -      4      0    Xorg           \n    6     398868     G      -      -      -      -      -      -     17      0    Xorg           \n    6    2018180     C      -      -      -      -      -      -   2008      0    python3        \n    6    2018212     G      2      0      -      -      -      -    806      0    thor-Linux64-lo\n    6    2019634     C      -      -      -      -      -      -   2008      0    python3        \n    6    2019663     G      8      6      -      -      -      -    582      0    thor-Linux64-lo\n    6    2197542     C      -      -      -      -      -      -   2564      0    python3.10     \n    6    2197903   C+G     17     12      -      -      -      -  16227      0    python3.9      \n    7     320361     G      -      -      -      -      -      -      4      0    Xorg           \n    7     398868     G      -      -      -      -      -      -     17      0    Xorg           \n    7    2018348     C      -      -      -      -      -      -   2008      0    python3        \n    7    2018407     G      -      -      -      -      -      -    611      0    thor-Linux64-lo\n    7    2019810     C      -      -      -      -      -      -   2008      0    python3        \n    7    2019847     G     27     16      -      -      -      -    775      0    thor-Linux64-lo\n    7    2197561     C      -      -      -      -      -      -   2564      0    python3.10     \n    7    2197905   C+G     15      9      -      -      -      -  17065      0    python3.9      \n    5     320361     G      -      -      -      -      -      -      4      0    Xorg           \n    5     398868     G      -      -      -      -      -      -     17      0    Xorg           \n    5    2017876     C      -      -      -      -      -      -   2008      0    python3        \n    5    2018026     G      5      0      -      -      -      -    656      0    thor-Linux64-lo\n    5    2019429     C      -      -      -      -      -      -   2008      0    python3        \n    5    2019497     G      7      0      -      -      -      -    622      0    thor-Linux64-lo\n    5    2197521     C      -      -      -      -      -      -   2564      0    python3.10     \n    5    2197913   C+G      -      -      -      -      -      -  16173      0    python3.9      \n# gpu         pid   type     sm    mem    enc    dec    jpg    ofa     fb   ccpm    command \n# Idx           #    C/G      %      %      %      %      %      %     MB     MB    name \n    6     320361     G      -      -      -      -      -      -      4      0    Xorg           \n    6     398868     G      -      -      -      -      -      -     17      0    Xorg           \n    6    2018180     C      -      -      -      -      -      -   2008      0    python3        \n    6    2018212     G     14     10      -      -      -      -    806      0    thor-Linux64-lo\n    6    2019634     C      -      -      -      -      -      -   2008      0    python3        \n    6    2019663     G      4      2      -      -      -      -    582      0    thor-Linux64-lo\n    6    2197542     C      -      -      -      -      -      -   2564      0    python3.10     \n    6    2197903   C+G      7      5      -      -      -      -  16225      0    python3.9      \n    7     320361     G      -      -      -      -      -      -      4      0    Xorg           \n    7     398868     G      -      -      -      -      -      -     17      0    Xorg           \n    7    2018348     C      -      -      -      -      -      -   2008      0    python3        \n    7    2018407     G      -      -      -      -      -      -    611      0    thor-Linux64-lo\n    7    2019810     C      -      -      -      -      -      -   2008      0    python3        \n    7    2019847     G     14      4      -      -      -      -    775      0    thor-Linux64-lo\n    7    2197561     C      -      -      -      -      -      -   2564      0    python3.10     \n    7    2197905   C+G     14      9      -      -      -      -  17069      0    python3.9      \n",
+  "pmon_exit_code": 0,
+  "completed_episode_timings": [
+    {
+      "key": "4ok3usBNeis_0",
+      "steps": 550,
+      "frame_timing": {
+        "fps": 1.04566112564445,
+        "frame_count": 550,
+        "frame_time_sum_ms": 525983.0230955849,
+        "mean_frame_time_ms": 956.3327692646999,
+        "median_frame_time_ms": 692.1983284992166,
+        "p95_frame_time_ms": 2763.806941054642
+      }
+    },
+    {
+      "key": "4ok3usBNeis_1",
+      "steps": 333,
+      "frame_timing": {
+        "fps": 1.2171098227343775,
+        "frame_count": 333,
+        "frame_time_sum_ms": 273598.97503076354,
+        "mean_frame_time_ms": 821.6185436359266,
+        "median_frame_time_ms": 688.9571539941244,
+        "p95_frame_time_ms": 1218.1383572053155
+      }
+    },
+    {
+      "key": "4ok3usBNeis_2",
+      "steps": 1019,
+      "frame_timing": {
+        "fps": 1.2035241992328511,
+        "frame_count": 1019,
+        "frame_time_sum_ms": 846680.108841625,
+        "mean_frame_time_ms": 830.8931391968842,
+        "median_frame_time_ms": 603.5765209817328,
+        "p95_frame_time_ms": 2598.5846547642504
+      }
+    },
+    {
+      "key": "5cdEh9F2hJL_0",
+      "steps": 285,
+      "frame_timing": {
+        "fps": 1.2483659533410025,
+        "frame_count": 285,
+        "frame_time_sum_ms": 228298.44024282647,
+        "mean_frame_time_ms": 801.0471587467596,
+        "median_frame_time_ms": 623.1479290290736,
+        "p95_frame_time_ms": 1149.6853587566875
+      }
+    },
+    {
+      "key": "5cdEh9F2hJL_1",
+      "steps": 418,
+      "frame_timing": {
+        "fps": 1.1240085247452538,
+        "frame_count": 418,
+        "frame_time_sum_ms": 371883.3005245542,
+        "mean_frame_time_ms": 889.6729677620914,
+        "median_frame_time_ms": 674.9502089805901,
+        "p95_frame_time_ms": 2237.6946891046796
+      }
+    },
+    {
+      "key": "5cdEh9F2hJL_2",
+      "steps": 331,
+      "frame_timing": {
+        "fps": 1.126904844355674,
+        "frame_count": 331,
+        "frame_time_sum_ms": 293724.8887143214,
+        "mean_frame_time_ms": 887.3863707381312,
+        "median_frame_time_ms": 643.466598005034,
+        "p95_frame_time_ms": 1974.4870954891667
+      }
+    },
+    {
+      "key": "5cdEh9F2hJL_3",
+      "steps": 391,
+      "frame_timing": {
+        "fps": 1.3060785813038975,
+        "frame_count": 391,
+        "frame_time_sum_ms": 299369.4296783069,
+        "mean_frame_time_ms": 765.6507152897875,
+        "median_frame_time_ms": 585.7647020020522,
+        "p95_frame_time_ms": 1640.4624495189637
+      }
+    },
+    {
+      "key": "5cdEh9F2hJL_4",
+      "steps": 499,
+      "frame_timing": {
+        "fps": 1.4271901905323223,
+        "frame_count": 499,
+        "frame_time_sum_ms": 349638.0533654592,
+        "mean_frame_time_ms": 700.6774616542268,
+        "median_frame_time_ms": 580.6346189929172,
+        "p95_frame_time_ms": 1234.0623058902563
+      }
+    },
+    {
+      "key": "5cdEh9F2hJL_5",
+      "steps": 43,
+      "frame_timing": {
+        "fps": 1.458799288600258,
+        "frame_count": 43,
+        "frame_time_sum_ms": 29476.2962499517,
+        "mean_frame_time_ms": 685.4952616267838,
+        "median_frame_time_ms": 617.9878109833226,
+        "p95_frame_time_ms": 1093.3282769110517
+      }
+    },
+    {
+      "key": "5cdEh9F2hJL_6",
+      "steps": 352,
+      "frame_timing": {
+        "fps": 1.3634028829627831,
+        "frame_count": 352,
+        "frame_time_sum_ms": 258177.53827472916,
+        "mean_frame_time_ms": 733.4589155532078,
+        "median_frame_time_ms": 592.62730248156,
+        "p95_frame_time_ms": 1521.9667471304967
+      }
+    },
+    {
+      "key": "6s7QHgap2fW_0",
+      "steps": 663,
+      "frame_timing": {
+        "fps": 1.1133802933999215,
+        "frame_count": 663,
+        "frame_time_sum_ms": 595483.8647048455,
+        "mean_frame_time_ms": 898.165708453764,
+        "median_frame_time_ms": 706.0783969936892,
+        "p95_frame_time_ms": 1527.9524834943004
+      }
+    },
+    {
+      "key": "6s7QHgap2fW_1",
+      "steps": 1038,
+      "frame_timing": {
+        "fps": 1.1345340661821286,
+        "frame_count": 1038,
+        "frame_time_sum_ms": 914913.0298863747,
+        "mean_frame_time_ms": 881.4191039367772,
+        "median_frame_time_ms": 651.7274809884839,
+        "p95_frame_time_ms": 1759.4753925106484
+      }
+    }
+  ],
+  "load_average": [
+    97.34,
+    97.38,
+    97.89
+  ],
+  "pressure": {
+    "cpu": "some avg10=0.00 avg60=0.00 avg300=0.02 total=41028139982\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=0\n",
+    "memory": "some avg10=0.00 avg60=0.00 avg300=0.00 total=2818621075\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=2718827566\n",
+    "io": "some avg10=0.00 avg60=0.00 avg300=0.00 total=1375233256\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=1318704809\n"
+  },
+  "source_and_parameters_unchanged": true,
+  "signals_sent": false,
+  "native_states_modified": false,
+  "scope_limit": "Eight short GPU samples and CPU/trajectory deltas; not an isolated benchmark or peak memory bound."
+}

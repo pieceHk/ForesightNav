@@ -1,0 +1,29 @@
+{
+  "recorded_at_utc": "2026-11-13T04:52:31.923111+00:00",
+  "scope": "first8",
+  "user_response": "\u534f\u8c03\u4fdd\u969cGPU5\u30016\u30017\u4e09\u5361",
+  "question_item_id": "call_e4918a2ff64c4e56b184426a0d1b539b",
+  "requested_gpus": [
+    5,
+    6,
+    7
+  ],
+  "requested_max_other_compute_mib_per_card": 10240,
+  "interpretation": "User will coordinate capacity for these three cards; this is not confirmation that memory has already been released and does not authorize terminating other tasks.",
+  "reserved_gpus": [
+    0,
+    3
+  ],
+  "preserve_Exp2": true,
+  "other_task_termination_authorized": false,
+  "actual_capacity_release_verified": false,
+  "latest_actual_check_at_utc": "2026-11-13T04:51:32.147857+00:00",
+  "latest_other_compute_mib": [
+    17880,
+    17868,
+    17866
+  ],
+  "source_and_parameters_unchanged": true,
+  "native_states_modified": false,
+  "signals_sent": false
+}

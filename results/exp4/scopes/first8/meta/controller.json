@@ -1,14 +1,15 @@
 {
   "scope": "first8",
-  "pid": 2196875,
-  "start_ticks": "35297197",
+  "pid": 2236364,
+  "start_ticks": "35702398",
   "command": [
     "/nvme/khy/conda_envs/pbsp/navigation/bin/python",
     "-u",
-    "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/code/first8_evaluate.py",
-    "--run"
+    "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/code/first8_evaluate8.py",
+    "--run-plan",
+    "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/scopes/first8/diagnostics/eight-gpu-handoff/20261113T054506671105Z/plan.json"
   ],
-  "source_sha256": "c6d68b83f784224894677484cf6e88420864fb71e6b1612ddb802ca77a21b3de",
+  "source_sha256": "3d47c382318af84c80ff010da87c6a2a85fc0511797af9c727083fab156690ff",
   "source_fingerprint": {
     "pbsp/__init__.py": "204a77e8c809c9b8f38114173d35f5bcf7585e9893383c3eef5b2dca30aeb619",
     "pbsp/adapters/__init__.py": "9da64df015e12dd3130227acc397bd90bf58d5cd5f4c52108dfb9fc48830e12d",
@@ -173,7 +174,23 @@
     "results/exp4/meta/protocol_decisions.json": "c4596befc6337dab5a9963c69f4416992f7b0108f8d0c69c9e77cfa8f39c69ed"
   },
   "parameter_sha256": "e1d75f3c9503c7439467748fc97be6ae2ad450c429f40dc7235b1564ff7852ae",
-  "log": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/scopes/first8/logs/pipeline-controller.log",
-  "started_at_utc": "2026-11-13T04:37:34.939453+00:00",
-  "boot_id": "23443655-6f2f-4063-a412-e255f3a91e62"
+  "log": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/scopes/first8/diagnostics/eight-gpu-handoff/20261113T054506671105Z/controller.log",
+  "started_at_utc": "2026-11-13T05:45:06.949458+00:00",
+  "boot_id": "23443655-6f2f-4063-a412-e255f3a91e62",
+  "allowed_gpus": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "handoff_plan": "scopes/first8/diagnostics/eight-gpu-handoff/20261113T054506671105Z/plan.json",
+  "predecessor_controller": {
+    "pid": 2196875,
+    "start_ticks": "35297197",
+    "status": "stopped CPU only; original native launchers continue until actual exit capture"
+  }
 }

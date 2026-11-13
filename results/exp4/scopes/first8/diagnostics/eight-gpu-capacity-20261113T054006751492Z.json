@@ -1,0 +1,241 @@
+{
+  "at_utc": "2026-11-13T05:40:06.750765+00:00",
+  "gpus": [
+    {
+      "gpu": 0,
+      "free_mib": 37642,
+      "total_mib": 46068,
+      "all_compute_mib": 6024,
+      "apps": [
+        {
+          "pid": 1858673,
+          "memory_mib": 2008,
+          "same_account": false,
+          "exp2_marker": false,
+          "exp4_marker": false
+        },
+        {
+          "pid": 2016964,
+          "memory_mib": 2008,
+          "same_account": false,
+          "exp2_marker": false,
+          "exp4_marker": false
+        },
+        {
+          "pid": 2018543,
+          "memory_mib": 2008,
+          "same_account": false,
+          "exp2_marker": false,
+          "exp4_marker": false
+        }
+      ]
+    },
+    {
+      "gpu": 1,
+      "free_mib": 39887,
+      "total_mib": 46068,
+      "all_compute_mib": 4016,
+      "apps": [
+        {
+          "pid": 2018701,
+          "memory_mib": 2008,
+          "same_account": false,
+          "exp2_marker": false,
+          "exp4_marker": false
+        },
+        {
+          "pid": 2017127,
+          "memory_mib": 2008,
+          "same_account": false,
+          "exp2_marker": false,
+          "exp4_marker": false
+        }
+      ]
+    },
+    {
+      "gpu": 2,
+      "free_mib": 39897,
+      "total_mib": 46068,
+      "all_compute_mib": 4016,
+      "apps": [
+        {
+          "pid": 2018881,
+          "memory_mib": 2008,
+          "same_account": false,
+          "exp2_marker": false,
+          "exp4_marker": false
+        },
+        {
+          "pid": 2017317,
+          "memory_mib": 2008,
+          "same_account": false,
+          "exp2_marker": false,
+          "exp4_marker": false
+        }
+      ]
+    },
+    {
+      "gpu": 3,
+      "free_mib": 39739,
+      "total_mib": 46068,
+      "all_compute_mib": 4016,
+      "apps": [
+        {
+          "pid": 2019081,
+          "memory_mib": 2008,
+          "same_account": false,
+          "exp2_marker": false,
+          "exp4_marker": false
+        },
+        {
+          "pid": 2017501,
+          "memory_mib": 2008,
+          "same_account": false,
+          "exp2_marker": false,
+          "exp4_marker": false
+        }
+      ]
+    },
+    {
+      "gpu": 4,
+      "free_mib": 39981,
+      "total_mib": 46068,
+      "all_compute_mib": 4016,
+      "apps": [
+        {
+          "pid": 2017666,
+          "memory_mib": 2008,
+          "same_account": false,
+          "exp2_marker": false,
+          "exp4_marker": false
+        },
+        {
+          "pid": 2019251,
+          "memory_mib": 2008,
+          "same_account": false,
+          "exp2_marker": false,
+          "exp4_marker": false
+        }
+      ]
+    },
+    {
+      "gpu": 5,
+      "free_mib": 16933,
+      "total_mib": 46068,
+      "all_compute_mib": 27067,
+      "apps": [
+        {
+          "pid": 2019429,
+          "memory_mib": 2008,
+          "same_account": false,
+          "exp2_marker": false,
+          "exp4_marker": false
+        },
+        {
+          "pid": 2017876,
+          "memory_mib": 2008,
+          "same_account": false,
+          "exp2_marker": false,
+          "exp4_marker": false
+        },
+        {
+          "pid": 2197521,
+          "memory_mib": 6878,
+          "same_account": true,
+          "exp2_marker": false,
+          "exp4_marker": true
+        },
+        {
+          "pid": 2197913,
+          "memory_mib": 16173,
+          "same_account": true,
+          "exp2_marker": false,
+          "exp4_marker": true
+        }
+      ]
+    },
+    {
+      "gpu": 6,
+      "free_mib": 19994,
+      "total_mib": 46068,
+      "all_compute_mib": 24031,
+      "apps": [
+        {
+          "pid": 2018180,
+          "memory_mib": 2008,
+          "same_account": false,
+          "exp2_marker": false,
+          "exp4_marker": false
+        },
+        {
+          "pid": 2019634,
+          "memory_mib": 2008,
+          "same_account": false,
+          "exp2_marker": false,
+          "exp4_marker": false
+        },
+        {
+          "pid": 2197542,
+          "memory_mib": 3790,
+          "same_account": true,
+          "exp2_marker": false,
+          "exp4_marker": true
+        },
+        {
+          "pid": 2197903,
+          "memory_mib": 16225,
+          "same_account": true,
+          "exp2_marker": false,
+          "exp4_marker": true
+        }
+      ]
+    },
+    {
+      "gpu": 7,
+      "free_mib": 20249,
+      "total_mib": 46068,
+      "all_compute_mib": 23641,
+      "apps": [
+        {
+          "pid": 2018348,
+          "memory_mib": 2008,
+          "same_account": false,
+          "exp2_marker": false,
+          "exp4_marker": false
+        },
+        {
+          "pid": 2019810,
+          "memory_mib": 2008,
+          "same_account": false,
+          "exp2_marker": false,
+          "exp4_marker": false
+        },
+        {
+          "pid": 2197561,
+          "memory_mib": 2560,
+          "same_account": true,
+          "exp2_marker": false,
+          "exp4_marker": true
+        },
+        {
+          "pid": 2197905,
+          "memory_mib": 17065,
+          "same_account": true,
+          "exp2_marker": false,
+          "exp4_marker": true
+        }
+      ]
+    }
+  ],
+  "available_host_memory_gib": 268.5205421447754,
+  "cpu_load": [
+    72.9,
+    80.24,
+    90.42
+  ],
+  "cpu_pressure": "some avg10=0.00 avg60=0.00 avg300=0.05 total=41033114431\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=0\n",
+  "memory_pressure": "some avg10=0.00 avg60=0.00 avg300=0.00 total=2818647136\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=2718853074\n",
+  "signals_sent": false,
+  "native_states_modified": false,
+  "source_and_parameters_unchanged": true
+}
