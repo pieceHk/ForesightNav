@@ -1,0 +1,23 @@
+{
+  "created_at_utc": "2026-11-13T08:57:02.916766+00:00",
+  "boot_id": "23443655-6f2f-4063-a412-e255f3a91e62",
+  "operator_uid": 1001,
+  "target_pid": 2284560,
+  "target_uid": 1008,
+  "target_start_ticks": "36298978",
+  "target_pgid": 2281367,
+  "target_command_sha256": "3b4ac9b8a574da8ab188b98b5113cce134b42c0e5dc51d4814587d2c385fa16a",
+  "exclusive_GPU_indices": [
+    0
+  ],
+  "current_GPU0_free_mib": 31110,
+  "target_GPU0_memory_mib": 2070,
+  "current_total_compute_mib": 10288,
+  "projected_free_mib_if_only_this_allocation_released": 33180,
+  "projected_compute_mib": 8218,
+  "GPU0_admission_would_pass_if_other_allocations_unchanged": true,
+  "planned_action": "Only after explicit approval for this exact PID and birth: TERM; wait30sec; KILL only this same matching process if still necessary. Never signal its group or other GPU workers.",
+  "authorization_status": "New GPU0 foreign-process action requires explicit permission; prior clearance was GPU3",
+  "signals_sent": false,
+  "source_and_parameters_unchanged": true
+}

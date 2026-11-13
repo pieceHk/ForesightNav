@@ -1,0 +1,205 @@
+{
+  "at_utc": "2026-11-13T09:12:19.995818+00:00",
+  "active_native_jobs": [
+    {
+      "scene": "TEEsavR23oF",
+      "gpu": 4,
+      "launcher_pid": 2236375,
+      "worker_logs": {
+        "monitor.log": {
+          "tail_error_matches": 0,
+          "recent_errors": [],
+          "log_age_seconds": 12428.046021461487
+        },
+        "navigation_TEEsavR23oF.log": {
+          "tail_error_matches": 0,
+          "recent_errors": [],
+          "log_age_seconds": 0.01862049102783203
+        },
+        "mapping.log": {
+          "tail_error_matches": 0,
+          "recent_errors": [],
+          "log_age_seconds": 4.594405889511108
+        }
+      },
+      "native_status": {
+        "episode_ids": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16",
+          "17",
+          "18",
+          "19"
+        ],
+        "scene": "TEEsavR23oF",
+        "status": "running",
+        "timestamp": "2026-11-13T05:45:31.175008+00:00"
+      }
+    },
+    {
+      "scene": "6s7QHgap2fW",
+      "gpu": 3,
+      "launcher_pid": 2316356,
+      "worker_logs": {
+        "monitor.log": {
+          "tail_error_matches": 0,
+          "recent_errors": [],
+          "log_age_seconds": 1143.7905910015106
+        },
+        "navigation_6s7QHgap2fW.log": {
+          "tail_error_matches": 0,
+          "recent_errors": [],
+          "log_age_seconds": 0.86238694190979
+        },
+        "mapping.log": {
+          "tail_error_matches": 0,
+          "recent_errors": [],
+          "log_age_seconds": 6.382161855697632
+        }
+      },
+      "native_status": {
+        "episode_ids": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16",
+          "17",
+          "18",
+          "19"
+        ],
+        "scene": "6s7QHgap2fW",
+        "status": "running",
+        "timestamp": "2026-11-13T08:53:38.847854+00:00"
+      }
+    },
+    {
+      "scene": "DYehNKdT76V",
+      "gpu": 1,
+      "launcher_pid": 2317565,
+      "worker_logs": {
+        "navigation_DYehNKdT76V.log": {
+          "tail_error_matches": 0,
+          "recent_errors": [],
+          "log_age_seconds": 0.06620383262634277
+        },
+        "monitor.log": {
+          "tail_error_matches": 0,
+          "recent_errors": [],
+          "log_age_seconds": 1136.1342403888702
+        },
+        "mapping.log": {
+          "tail_error_matches": 0,
+          "recent_errors": [],
+          "log_age_seconds": 3.7219717502593994
+        }
+      },
+      "native_status": {
+        "episode_ids": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16",
+          "17",
+          "18",
+          "19"
+        ],
+        "scene": "DYehNKdT76V",
+        "status": "running",
+        "timestamp": "2026-11-13T08:53:44.911438+00:00"
+      }
+    }
+  ],
+  "gpu_ownership": [
+    {
+      "gpu": 0,
+      "free_mib": 34068,
+      "Exp4_compute_mib": 0,
+      "other_compute_mib": 8280
+    },
+    {
+      "gpu": 1,
+      "free_mib": 15473,
+      "Exp4_compute_mib": 18657,
+      "other_compute_mib": 8280
+    },
+    {
+      "gpu": 2,
+      "free_mib": 33922,
+      "Exp4_compute_mib": 0,
+      "other_compute_mib": 8280
+    },
+    {
+      "gpu": 3,
+      "free_mib": 17225,
+      "Exp4_compute_mib": 19629,
+      "other_compute_mib": 6210
+    },
+    {
+      "gpu": 4,
+      "free_mib": 15197,
+      "Exp4_compute_mib": 18815,
+      "other_compute_mib": 8280
+    },
+    {
+      "gpu": 5,
+      "free_mib": 33968,
+      "Exp4_compute_mib": 0,
+      "other_compute_mib": 8280
+    },
+    {
+      "gpu": 6,
+      "free_mib": 34015,
+      "Exp4_compute_mib": 0,
+      "other_compute_mib": 8280
+    },
+    {
+      "gpu": 7,
+      "free_mib": 34024,
+      "Exp4_compute_mib": 0,
+      "other_compute_mib": 8284
+    }
+  ],
+  "available_memory_gib": 345.4394226074219,
+  "signals_sent": false,
+  "settings_changed": false
+}

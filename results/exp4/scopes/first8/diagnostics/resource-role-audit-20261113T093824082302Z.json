@@ -1,0 +1,615 @@
+{
+  "at_utc": "2026-11-13T09:38:24.081728+00:00",
+  "groups": [
+    {
+      "uid": 1008,
+      "pgid": 2281367,
+      "same_account": false,
+      "role": "other",
+      "GPUs": {
+        "0": 8280,
+        "1": 8280,
+        "2": 8280,
+        "3": 6210,
+        "4": 8280,
+        "5": 8280,
+        "6": 8280,
+        "7": 8284
+      },
+      "PIDs": {
+        "2284560": {
+          "start_ticks": "36298978",
+          "ppid": 2281367,
+          "threads": 11,
+          "rss_gib": 8.57766342163086
+        },
+        "2281722": {
+          "start_ticks": "36292585",
+          "ppid": 2281367,
+          "threads": 11,
+          "rss_gib": 10.115734100341797
+        },
+        "2286080": {
+          "start_ticks": "36302792",
+          "ppid": 2281367,
+          "threads": 11,
+          "rss_gib": 10.929431915283203
+        },
+        "2283182": {
+          "start_ticks": "36295645",
+          "ppid": 2281367,
+          "threads": 11,
+          "rss_gib": 9.12917709350586
+        },
+        "2281769": {
+          "start_ticks": "36292972",
+          "ppid": 2281367,
+          "threads": 11,
+          "rss_gib": 8.927139282226562
+        },
+        "2283352": {
+          "start_ticks": "36296049",
+          "ppid": 2281367,
+          "threads": 11,
+          "rss_gib": 10.9501953125
+        },
+        "2284722": {
+          "start_ticks": "36299395",
+          "ppid": 2281367,
+          "threads": 11,
+          "rss_gib": 8.821197509765625
+        },
+        "2286254": {
+          "start_ticks": "36303269",
+          "ppid": 2281367,
+          "threads": 11,
+          "rss_gib": 10.931156158447266
+        },
+        "2282063": {
+          "start_ticks": "36293339",
+          "ppid": 2281367,
+          "threads": 11,
+          "rss_gib": 10.3892822265625
+        },
+        "2283537": {
+          "start_ticks": "36296450",
+          "ppid": 2281367,
+          "threads": 11,
+          "rss_gib": 7.757320404052734
+        },
+        "2286420": {
+          "start_ticks": "36303719",
+          "ppid": 2281367,
+          "threads": 11,
+          "rss_gib": 10.510784149169922
+        },
+        "2284974": {
+          "start_ticks": "36299895",
+          "ppid": 2281367,
+          "threads": 11,
+          "rss_gib": 10.348201751708984
+        },
+        "2283717": {
+          "start_ticks": "36296849",
+          "ppid": 2281367,
+          "threads": 11,
+          "rss_gib": 7.3632965087890625
+        },
+        "2286599": {
+          "start_ticks": "36304213",
+          "ppid": 2281367,
+          "threads": 11,
+          "rss_gib": 10.550128936767578
+        },
+        "2285220": {
+          "start_ticks": "36300470",
+          "ppid": 2281367,
+          "threads": 11,
+          "rss_gib": 10.744983673095703
+        },
+        "2282448": {
+          "start_ticks": "36294073",
+          "ppid": 2281367,
+          "threads": 11,
+          "rss_gib": 8.75509262084961
+        },
+        "2285407": {
+          "start_ticks": "36300901",
+          "ppid": 2281367,
+          "threads": 11,
+          "rss_gib": 8.615413665771484
+        },
+        "2283900": {
+          "start_ticks": "36297280",
+          "ppid": 2281367,
+          "threads": 18,
+          "rss_gib": 8.510257720947266
+        },
+        "2286870": {
+          "start_ticks": "36304914",
+          "ppid": 2281367,
+          "threads": 11,
+          "rss_gib": 9.329463958740234
+        },
+        "2282628": {
+          "start_ticks": "36294468",
+          "ppid": 2281367,
+          "threads": 11,
+          "rss_gib": 10.90048599243164
+        },
+        "2284073": {
+          "start_ticks": "36297681",
+          "ppid": 2281367,
+          "threads": 11,
+          "rss_gib": 9.152999877929688
+        },
+        "2285573": {
+          "start_ticks": "36301363",
+          "ppid": 2281367,
+          "threads": 11,
+          "rss_gib": 8.76620101928711
+        },
+        "2287024": {
+          "start_ticks": "36305425",
+          "ppid": 2281367,
+          "threads": 11,
+          "rss_gib": 9.801403045654297
+        },
+        "2284237": {
+          "start_ticks": "36298109",
+          "ppid": 2281367,
+          "threads": 11,
+          "rss_gib": 8.173271179199219
+        },
+        "2282841": {
+          "start_ticks": "36294866",
+          "ppid": 2281367,
+          "threads": 11,
+          "rss_gib": 9.168560028076172
+        },
+        "2285739": {
+          "start_ticks": "36301847",
+          "ppid": 2281367,
+          "threads": 11,
+          "rss_gib": 10.422508239746094
+        },
+        "2287225": {
+          "start_ticks": "36305969",
+          "ppid": 2281367,
+          "threads": 11,
+          "rss_gib": 10.48410415649414
+        },
+        "2283011": {
+          "start_ticks": "36295255",
+          "ppid": 2281367,
+          "threads": 11,
+          "rss_gib": 8.464130401611328
+        },
+        "2287389": {
+          "start_ticks": "36306471",
+          "ppid": 2281367,
+          "threads": 11,
+          "rss_gib": 8.787979125976562
+        },
+        "2284401": {
+          "start_ticks": "36298542",
+          "ppid": 2281367,
+          "threads": 11,
+          "rss_gib": 10.460758209228516
+        },
+        "2285904": {
+          "start_ticks": "36302304",
+          "ppid": 2281367,
+          "threads": 11,
+          "rss_gib": 11.18686294555664
+        }
+      },
+      "programs": [
+        "python"
+      ],
+      "live_GPU_processes": 31,
+      "RSS_sum_GiB_shared_pages_may_be_counted_multiple_times": 297.02518463134766
+    },
+    {
+      "uid": 1001,
+      "pgid": 2317657,
+      "same_account": true,
+      "role": "Exp4",
+      "GPUs": {
+        "1": 2564
+      },
+      "PIDs": {
+        "2317657": {
+          "start_ticks": "36832110",
+          "ppid": 2317565,
+          "threads": 6,
+          "rss_gib": 9.714736938476562
+        }
+      },
+      "programs": [
+        "python3.10"
+      ],
+      "live_GPU_processes": 1,
+      "RSS_sum_GiB_shared_pages_may_be_counted_multiple_times": 9.714736938476562
+    },
+    {
+      "uid": 1001,
+      "pgid": 2317907,
+      "same_account": true,
+      "role": "Exp4",
+      "GPUs": {
+        "1": 16095
+      },
+      "PIDs": {
+        "2317907": {
+          "start_ticks": "36834215",
+          "ppid": 2317565,
+          "threads": 388,
+          "rss_gib": 2.2585296630859375
+        }
+      },
+      "programs": [
+        "python3.9"
+      ],
+      "live_GPU_processes": 1,
+      "RSS_sum_GiB_shared_pages_may_be_counted_multiple_times": 2.2585296630859375
+    },
+    {
+      "uid": 1013,
+      "pgid": 2336553,
+      "same_account": false,
+      "role": "other",
+      "GPUs": {
+        "1": 2008
+      },
+      "PIDs": {
+        "2336553": {
+          "start_ticks": "37037191",
+          "ppid": 2334542,
+          "threads": 11,
+          "rss_gib": 13.221755981445312
+        }
+      },
+      "programs": [
+        "python3"
+      ],
+      "live_GPU_processes": 1,
+      "RSS_sum_GiB_shared_pages_may_be_counted_multiple_times": 13.221755981445312
+    },
+    {
+      "uid": 1013,
+      "pgid": 2335081,
+      "same_account": false,
+      "role": "other",
+      "GPUs": {
+        "1": 2008
+      },
+      "PIDs": {
+        "2335081": {
+          "start_ticks": "37033750",
+          "ppid": 2334542,
+          "threads": 11,
+          "rss_gib": 8.876136779785156
+        }
+      },
+      "programs": [
+        "python3"
+      ],
+      "live_GPU_processes": 1,
+      "RSS_sum_GiB_shared_pages_may_be_counted_multiple_times": 8.876136779785156
+    },
+    {
+      "uid": 1013,
+      "pgid": 2336812,
+      "same_account": false,
+      "role": "other",
+      "GPUs": {
+        "2": 2008
+      },
+      "PIDs": {
+        "2336812": {
+          "start_ticks": "37037602",
+          "ppid": 2334542,
+          "threads": 11,
+          "rss_gib": 13.105083465576172
+        }
+      },
+      "programs": [
+        "python3"
+      ],
+      "live_GPU_processes": 1,
+      "RSS_sum_GiB_shared_pages_may_be_counted_multiple_times": 13.105083465576172
+    },
+    {
+      "uid": 1001,
+      "pgid": 2317523,
+      "same_account": true,
+      "role": "Exp4",
+      "GPUs": {
+        "3": 2564
+      },
+      "PIDs": {
+        "2317523": {
+          "start_ticks": "36831343",
+          "ppid": 2316356,
+          "threads": 7,
+          "rss_gib": 8.84515380859375
+        }
+      },
+      "programs": [
+        "python3.10"
+      ],
+      "live_GPU_processes": 1,
+      "RSS_sum_GiB_shared_pages_may_be_counted_multiple_times": 8.84515380859375
+    },
+    {
+      "uid": 1001,
+      "pgid": 2317815,
+      "same_account": true,
+      "role": "Exp4",
+      "GPUs": {
+        "3": 17069
+      },
+      "PIDs": {
+        "2317815": {
+          "start_ticks": "36833608",
+          "ppid": 2316356,
+          "threads": 388,
+          "rss_gib": 2.2703285217285156
+        }
+      },
+      "programs": [
+        "python3.9"
+      ],
+      "live_GPU_processes": 1,
+      "RSS_sum_GiB_shared_pages_may_be_counted_multiple_times": 2.2703285217285156
+    },
+    {
+      "uid": 1013,
+      "pgid": 2335520,
+      "same_account": false,
+      "role": "other",
+      "GPUs": {
+        "3": 2008
+      },
+      "PIDs": {
+        "2335520": {
+          "start_ticks": "37034628",
+          "ppid": 2334542,
+          "threads": 11,
+          "rss_gib": 9.660175323486328
+        }
+      },
+      "programs": [
+        "python3"
+      ],
+      "live_GPU_processes": 1,
+      "RSS_sum_GiB_shared_pages_may_be_counted_multiple_times": 9.660175323486328
+    },
+    {
+      "uid": 1013,
+      "pgid": 2336967,
+      "same_account": false,
+      "role": "other",
+      "GPUs": {
+        "3": 2008
+      },
+      "PIDs": {
+        "2336967": {
+          "start_ticks": "37038031",
+          "ppid": 2334542,
+          "threads": 11,
+          "rss_gib": 10.026920318603516
+        }
+      },
+      "programs": [
+        "python3"
+      ],
+      "live_GPU_processes": 1,
+      "RSS_sum_GiB_shared_pages_may_be_counted_multiple_times": 10.026920318603516
+    },
+    {
+      "uid": 1001,
+      "pgid": 2236495,
+      "same_account": true,
+      "role": "Exp4",
+      "GPUs": {
+        "4": 6858
+      },
+      "PIDs": {
+        "2236495": {
+          "start_ticks": "35702917",
+          "ppid": 2236375,
+          "threads": 7,
+          "rss_gib": 9.651691436767578
+        }
+      },
+      "programs": [
+        "python3.10"
+      ],
+      "live_GPU_processes": 1,
+      "RSS_sum_GiB_shared_pages_may_be_counted_multiple_times": 9.651691436767578
+    },
+    {
+      "uid": 1001,
+      "pgid": 2236609,
+      "same_account": true,
+      "role": "Exp4",
+      "GPUs": {
+        "4": 16249
+      },
+      "PIDs": {
+        "2236609": {
+          "start_ticks": "35704841",
+          "ppid": 2236375,
+          "threads": 388,
+          "rss_gib": 1.7477226257324219
+        }
+      },
+      "programs": [
+        "python3.9"
+      ],
+      "live_GPU_processes": 1,
+      "RSS_sum_GiB_shared_pages_may_be_counted_multiple_times": 1.7477226257324219
+    },
+    {
+      "uid": 1013,
+      "pgid": 2335719,
+      "same_account": false,
+      "role": "other",
+      "GPUs": {
+        "4": 2008
+      },
+      "PIDs": {
+        "2335719": {
+          "start_ticks": "37035055",
+          "ppid": 2334542,
+          "threads": 11,
+          "rss_gib": 12.3372802734375
+        }
+      },
+      "programs": [
+        "python3"
+      ],
+      "live_GPU_processes": 1,
+      "RSS_sum_GiB_shared_pages_may_be_counted_multiple_times": 12.3372802734375
+    },
+    {
+      "uid": 1013,
+      "pgid": 2337323,
+      "same_account": false,
+      "role": "other",
+      "GPUs": {
+        "5": 2008
+      },
+      "PIDs": {
+        "2337323": {
+          "start_ticks": "37038910",
+          "ppid": 2334542,
+          "threads": 11,
+          "rss_gib": 10.52536392211914
+        }
+      },
+      "programs": [
+        "python3"
+      ],
+      "live_GPU_processes": 1,
+      "RSS_sum_GiB_shared_pages_may_be_counted_multiple_times": 10.52536392211914
+    },
+    {
+      "uid": 1013,
+      "pgid": 2337651,
+      "same_account": false,
+      "role": "other",
+      "GPUs": {
+        "7": 2008
+      },
+      "PIDs": {
+        "2337651": {
+          "start_ticks": "37039743",
+          "ppid": 2334542,
+          "threads": 11,
+          "rss_gib": 10.344905853271484
+        }
+      },
+      "programs": [
+        "python3"
+      ],
+      "live_GPU_processes": 1,
+      "RSS_sum_GiB_shared_pages_may_be_counted_multiple_times": 10.344905853271484
+    },
+    {
+      "uid": 1013,
+      "pgid": 2336235,
+      "same_account": false,
+      "role": "other",
+      "GPUs": {
+        "7": 2008
+      },
+      "PIDs": {
+        "2336235": {
+          "start_ticks": "37036327",
+          "ppid": 2334542,
+          "threads": 11,
+          "rss_gib": 12.027706146240234
+        }
+      },
+      "programs": [
+        "python3"
+      ],
+      "live_GPU_processes": 1,
+      "RSS_sum_GiB_shared_pages_may_be_counted_multiple_times": 12.027706146240234
+    }
+  ],
+  "gpus": [
+    {
+      "index": "0",
+      "uuid": "GPU-b1f2b8f6-fe40-f074-7206-f73cf6e08738",
+      "name": "NVIDIA A40",
+      "memory.total": "46068",
+      "memory.free": "32779"
+    },
+    {
+      "index": "1",
+      "uuid": "GPU-6f6d0a9f-b84c-a94d-37ee-1ce29f66ba1f",
+      "name": "NVIDIA A40",
+      "memory.total": "46068",
+      "memory.free": "10095"
+    },
+    {
+      "index": "2",
+      "uuid": "GPU-e578717e-9e11-1464-269b-d5a17e564c8a",
+      "name": "NVIDIA A40",
+      "memory.total": "46068",
+      "memory.free": "30653"
+    },
+    {
+      "index": "3",
+      "uuid": "GPU-e345e195-e565-805c-b913-dc9a023ef37d",
+      "name": "NVIDIA A40",
+      "memory.total": "46068",
+      "memory.free": "11833"
+    },
+    {
+      "index": "4",
+      "uuid": "GPU-7e03cc60-2c77-01c4-3bb8-d0bfe70657be",
+      "name": "NVIDIA A40",
+      "memory.total": "46068",
+      "memory.free": "7973"
+    },
+    {
+      "index": "5",
+      "uuid": "GPU-875134a3-1b53-1712-a56d-a4192edb9728",
+      "name": "NVIDIA A40",
+      "memory.total": "46068",
+      "memory.free": "30658"
+    },
+    {
+      "index": "6",
+      "uuid": "GPU-c4579e9e-eb6e-0eda-0430-9b78b62c51b4",
+      "name": "NVIDIA A40",
+      "memory.total": "46068",
+      "memory.free": "32689"
+    },
+    {
+      "index": "7",
+      "uuid": "GPU-7ba3fcb6-cd24-e4eb-9fef-e2f8c32afae3",
+      "name": "NVIDIA A40",
+      "memory.total": "46068",
+      "memory.free": "28581"
+    }
+  ],
+  "available_memory_gib": 122.99727249145508,
+  "cpu_load": [
+    242.77,
+    236.34,
+    216.12
+  ],
+  "pressure": {
+    "cpu": "some avg10=0.00 avg60=0.25 avg300=0.50 total=41141123959\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=0\n",
+    "memory": "some avg10=0.00 avg60=0.00 avg300=0.00 total=3358171053\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=3253336048\n",
+    "io": "some avg10=0.00 avg60=0.00 avg300=0.03 total=1522887708\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=1456393839\n"
+  },
+  "signals_sent": false,
+  "Native_states_modified": false
+}

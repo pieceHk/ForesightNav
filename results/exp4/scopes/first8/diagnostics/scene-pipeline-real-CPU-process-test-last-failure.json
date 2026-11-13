@@ -1,0 +1,17 @@
+{
+  "at_utc": "2026-11-13T09:56:06.827184+00:00",
+  "passed": false,
+  "coordinator_returncode": 1,
+  "coordinator_state": null,
+  "log_tail": "Traceback (most recent call last):\n  File \"/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/code/first8_scene_pipeline.py\", line 220, in run\n    disk=os.statvfs(SCOPE);assert disk.f_bavail*disk.f_frsize>=30*1024**3\nAssertionError\nTraceback (most recent call last):\n  File \"/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/code/first8_scene_pipeline.py\", line 220, in run\n    disk=os.statvfs(SCOPE);assert disk.f_bavail*disk.f_frsize>=30*1024**3\nAssertionError\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"<string>\", line 85, in <module>\n  File \"/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/code/first8_scene_pipeline.py\", line 288, in run\n    except BaseException as error:hold(type(error).__name__+': '+str(error))\n  File \"/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/code/first8_scene_pipeline.py\", line 204, in hold\n    while True:os.kill(os.getpid(),signal.SIGSTOP);time.sleep(.1)\n  File \"<string>\", line 82, in fixture_kill\nRuntimeError: Synthetic coordinator reached guarded hold; inspect original traceback\n",
+  "synthetic_scope_error": {
+    "at_utc": "2026-11-13T09:56:06.779646+00:00",
+    "error": "AssertionError: ",
+    "controller_held_to_preserve_actual_child_exits": true,
+    "Native_not_restarted": true,
+    "no_outcome_selected_retry": true
+  },
+  "scheduled_CPU_jobs": [],
+  "Native_or_GPU_workers_started": false,
+  "source_sha256": "9ac0ccce54e0e75502ae49bc13e736ba7ea3fdd51d1a16076a230d9425a67147"
+}

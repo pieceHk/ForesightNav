@@ -1,0 +1,95 @@
+{
+  "at_utc": "2026-11-13T08:59:00.698604+00:00",
+  "controller": {
+    "pid": 2311693,
+    "state": "S",
+    "start_ticks": "36789196",
+    "live_matching": true,
+    "uid": 1001
+  },
+  "controller_source_matches": true,
+  "parameter_sha256": "e1d75f3c9503c7439467748fc97be6ae2ad450c429f40dc7235b1564ff7852ae",
+  "stages": {
+    "full": {
+      "status": "completed",
+      "completed_native": 160,
+      "unknown_scenes": []
+    },
+    "nearest": {
+      "status": "completed",
+      "completed_native": 160,
+      "unknown_scenes": []
+    },
+    "myopic": {
+      "status": "running",
+      "completed_native": 116,
+      "unknown_scenes": []
+    },
+    "suffix_only": {
+      "status": "not_started",
+      "completed_native": 0
+    }
+  },
+  "active_jobs": [
+    {
+      "stage": "myopic",
+      "scene": "TEEsavR23oF",
+      "gpu": 4,
+      "pid_start_ticks": "35702462",
+      "completed_metrics": 16,
+      "launcher": {
+        "pid": 2236375,
+        "state": "S",
+        "start_ticks": "35702462",
+        "live_matching": true,
+        "uid": 1001
+      },
+      "trajectory_age_seconds": 0.059723854064941406,
+      "episode": "16"
+    },
+    {
+      "stage": "myopic",
+      "scene": "6s7QHgap2fW",
+      "gpu": 3,
+      "pid_start_ticks": "36830508",
+      "completed_metrics": 0,
+      "launcher": {
+        "pid": 2316356,
+        "state": "S",
+        "start_ticks": "36830508",
+        "live_matching": true,
+        "uid": 1001
+      },
+      "trajectory_age_seconds": 0.16401028633117676,
+      "episode": "0"
+    },
+    {
+      "stage": "myopic",
+      "scene": "DYehNKdT76V",
+      "gpu": 1,
+      "pid_start_ticks": "36831589",
+      "completed_metrics": 0,
+      "launcher": {
+        "pid": 2317565,
+        "state": "S",
+        "start_ticks": "36831589",
+        "live_matching": true,
+        "uid": 1001
+      },
+      "trajectory_age_seconds": 0.7562556266784668,
+      "episode": "0"
+    }
+  ],
+  "progress_status": "running",
+  "progress_timestamp": "2026-11-13T08:58:56.223429+00:00",
+  "error": null,
+  "available_memory_gib": 363.1349983215332,
+  "pressure": {
+    "cpu": "some avg10=0.00 avg60=0.00 avg300=0.23 total=41133673442\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=0\n",
+    "memory": "some avg10=0.00 avg60=0.00 avg300=0.00 total=3358133978\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=3253301986\n",
+    "io": "some avg10=0.00 avg60=0.00 avg300=0.00 total=1521602055\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=1455257309\n"
+  },
+  "THP_defrag": "always defer defer+madvise [madvise] never",
+  "signals_sent": false,
+  "settings_changed": false
+}

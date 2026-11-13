@@ -15,8 +15,16 @@ Myopic、Suffix-only顺序运行同样8个场景，使用原冻结算法、参�
 
 [范围与固定身份](../meta/scope.json)、[当前运行](../meta/progress.json)、[Full](../summary/full.json)、[Nearest](../summary/nearest.json)。
 
-2026年11月13日Myopic的DY、6s场景先后发生mapper CUDA OOM。两次失败尝试的13、16条导出整体留档并全部排除。16:46已激活第二次CPU恢复调度，保留五个完整场景和健康TE任务；资源达标后，两场景分别按相同固定20条身份、seed和冻结参数完整补跑。Suffix仍待Myopic160全完成。五个完整场景的100条、300段路径已提前通过CPU核查；这不等于Myopic160阶段已完成。
+2026年11月13日Myopic的DY、6s场景先后发生mapper CUDA OOM。两次失败尝试的13、16条导出整体留档并全部排除。16:46已激活第二次CPU恢复调度，保留五个完整场景和当时仍健康的TE任务；资源达标后，两场景分别按相同固定20条身份、seed和冻结参数完整补跑。TE已在17:41实际退出0。Suffix仍待Myopic160全完成。截至本次发布，6个完整场景的120条、360段路径已通过CPU核查；这不等于Myopic160阶段已完成。
 
 调度器新增mapper致命错误检查，故障时只清理身份核对通过的本账号启动器，并停止自身CPU保留真实子进程退出状态供复核；其他任务继续。启动期在原64GiB主机内存底线之外，为每路刚启动任务暂留16GiB、保持60秒，避免集中启动时重复使用同一份空闲内存额度。没有修改Native算法、精度、步数或参数，也没有终止其他用户任务。
 
 [当前故障恢复计划](../meta/infrastructure-recovery-v2-20261113.json)、[范围内执行偏差](../deviations.md)。
+
+新增CPU决策日志审计已核对Full、Nearest的候选字段、冻结参数代入和S/q/B/Q公式、变体退化关系及过程汇总；Nearest无约束提议偏离率为0。已完成Myopic场景也逐场核查，整组Myopic和Suffix的最终决策审计仍须等待各160条完成。E继续使用当前候选高斯的加权文本分数，论文由用户自行修改描述。
+
+[决策字段与公式核查](../diagnostics/decision-field-audit-20261113T095550508965Z.json)。
+
+按场景完成Myopic20和60段路径核查后接续Suffix20的调度方案已准备并测试，但尚未获得用户对运行顺序变更的确认，也未启动。当前仍按设计要求整组Myopic160后再启动Suffix160，空卡不会据此自动运行另一阶段。
+
+[未激活的调度提案](../meta/scene-pipeline-proposal.json)。

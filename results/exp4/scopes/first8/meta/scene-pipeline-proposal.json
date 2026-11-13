@@ -1,0 +1,46 @@
+{
+  "at_utc": "2026-11-13T09:46:19.334564+00:00",
+  "proposal_only": true,
+  "approval_present": false,
+  "Native_workers_started": false,
+  "signals_sent": false,
+  "current_controller": {
+    "pid": 2311693,
+    "start_ticks": "36789196",
+    "source_sha256": "9d16337ef903a0a0e46de102c7eb2c02f1a44bceb973289b0406e23ed8f7cc40"
+  },
+  "source_sha256": "9ac0ccce54e0e75502ae49bc13e736ba7ea3fdd51d1a16076a230d9425a67147",
+  "scope_sha256": "b1fead1ae53cdf20c8caec46d7a245289b251a2c2aa52576674e6227074a6ceb",
+  "parameter_sha256": "e1d75f3c9503c7439467748fc97be6ae2ad450c429f40dc7235b1564ff7852ae",
+  "ready_completed_scenes": [
+    "4ok3usBNeis",
+    "5cdEh9F2hJL",
+    "Dd4bFSTQ8gi",
+    "Nfvxx8J5NCo",
+    "QaLdnwvtxbs",
+    "TEEsavR23oF"
+  ],
+  "verified_ready_episodes": 120,
+  "verified_ready_GT_paths": 360,
+  "available_idle_GPUs": [
+    0,
+    2,
+    4,
+    5,
+    6,
+    7
+  ],
+  "available_memory_gib": 453.2498588562012,
+  "actual_change": "Only the scheduling order: each fixed scene starts Suffix after its entire Myopic20 and60 GT paths pass, while other Myopic scenes continue.",
+  "current_design_order": "Nearest160 -> Myopic160 -> Suffix160",
+  "fixed_scope": "Same original first8 scenes and20 identities each, seed1; no algorithm/configuration/calibration change",
+  "design_reference": {
+    "file": "exp4_blp_2x2.md",
+    "sha256": "382d3c679441d237d2648989a514171064075acca33225a1b2c0499b660be1ee",
+    "order_lines": [
+      179,
+      213
+    ]
+  },
+  "required_decision": "Approve this per-scene scheduling exception, or keep the original global order"
+}

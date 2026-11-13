@@ -1,0 +1,518 @@
+{
+  "at_utc": "2026-11-13T08:53:54.840363+00:00",
+  "scope": "first8",
+  "role_pairs": [
+    {
+      "stage": "full",
+      "scene": "4ok3usBNeis",
+      "gpu": 2,
+      "mapping_recorded": true,
+      "navigation_recorded": true,
+      "files": [
+        {
+          "file": "scopes/first8/diagnostics/native-role-environments/full/4ok3usBNeis/launch.json",
+          "sha256": "9838df074aed20ebad0dc8c350315e0d20e34a64d08c8469974ba6193cfc83d8"
+        },
+        {
+          "file": "scopes/first8/diagnostics/native-role-environments/full/4ok3usBNeis/mapping_environment.json",
+          "sha256": "cae57bde9b97b858e48ee916758afd88b1293b5fc3b2d7bc16a7047361f3bb64"
+        },
+        {
+          "file": "scopes/first8/diagnostics/native-role-environments/full/4ok3usBNeis/navigation_environment_0.json",
+          "sha256": "e02e95ff35f82043d4537c29faef217e436be3d18307d6598c97fa98b36cdf17"
+        }
+      ]
+    },
+    {
+      "stage": "full",
+      "scene": "5cdEh9F2hJL",
+      "gpu": 3,
+      "mapping_recorded": true,
+      "navigation_recorded": true,
+      "files": [
+        {
+          "file": "scopes/first8/diagnostics/native-role-environments/full/5cdEh9F2hJL/launch.json",
+          "sha256": "b73c530355a6685e5af32dec32d52b7519d9e4b459505429917d4b079cda7d16"
+        },
+        {
+          "file": "scopes/first8/diagnostics/native-role-environments/full/5cdEh9F2hJL/mapping_environment.json",
+          "sha256": "f813ad7b785fcad7e9b408d69d2c6f9f9ffa89ba0dcffb9eecd62dcd3d733a27"
+        },
+        {
+          "file": "scopes/first8/diagnostics/native-role-environments/full/5cdEh9F2hJL/navigation_environment_1.json",
+          "sha256": "504b0585abfbf9e167e4561e28c60a021aaa6368098ca12eda1cb77e76a7746e"
+        }
+      ]
+    },
+    {
+      "stage": "full",
+      "scene": "6s7QHgap2fW",
+      "gpu": 3,
+      "mapping_recorded": true,
+      "navigation_recorded": true,
+      "files": [
+        {
+          "file": "scopes/first8/diagnostics/native-role-environments/full/6s7QHgap2fW/launch.json",
+          "sha256": "51f21073e7d53a2f503674374b3826595ed3d7a0b5bca87292b92eb5b271ad31"
+        },
+        {
+          "file": "scopes/first8/diagnostics/native-role-environments/full/6s7QHgap2fW/mapping_environment.json",
+          "sha256": "6b2c4dd997b7a118fec8233c8330762650e009aa1953bcaf7e93136d01e36f4a"
+        },
+        {
+          "file": "scopes/first8/diagnostics/native-role-environments/full/6s7QHgap2fW/navigation_environment_2.json",
+          "sha256": "ef67aeb856be02ff967e7412700f3dfacf0b52daa94cd6ffe136bccfe8007b78"
+        }
+      ]
+    },
+    {
+      "stage": "full",
+      "scene": "DYehNKdT76V",
+      "gpu": 2,
+      "mapping_recorded": true,
+      "navigation_recorded": true,
+      "files": [
+        {
+          "file": "scopes/first8/diagnostics/native-role-environments/full/DYehNKdT76V/launch.json",
+          "sha256": "c4a14ee717697e6c32f6b21cb3d75d28549c301e1c91005e4cad0394d96e9135"
+        },
+        {
+          "file": "scopes/first8/diagnostics/native-role-environments/full/DYehNKdT76V/mapping_environment.json",
+          "sha256": "c9477f92c840cef5ffb04d0fce219c63ab6478e8799c02fa6ba8d2bed080e402"
+        },
+        {
+          "file": "scopes/first8/diagnostics/native-role-environments/full/DYehNKdT76V/navigation_environment_3.json",
+          "sha256": "26b4718bf9e8e8549d75f2e1135d2658ea9672821b8cda6055a3a7194039e34d"
+        }
+      ]
+    },
+    {
+      "stage": "full",
+      "scene": "Dd4bFSTQ8gi",
+      "gpu": 3,
+      "mapping_recorded": true,
+      "navigation_recorded": true,
+      "files": [
+        {
+          "file": "scopes/first8/diagnostics/native-role-environments/full/Dd4bFSTQ8gi/launch.json",
+          "sha256": "d47eb090867da51c35a45880727444a2b6909110c6673535d4ae9f9abcf05994"
+        },
+        {
+          "file": "scopes/first8/diagnostics/native-role-environments/full/Dd4bFSTQ8gi/mapping_environment.json",
+          "sha256": "6c59f885b12e3156e3f5558117f8e8f09b439e76166ee993ea7f82dd25a700d8"
+        },
+        {
+          "file": "scopes/first8/diagnostics/native-role-environments/full/Dd4bFSTQ8gi/navigation_environment_4.json",
+          "sha256": "505e1556a5a97220eb0ed38d8323c786d7c50e277d948c7db1487453ae7d9d15"
+        }
+      ]
+    },
+    {
+      "stage": "full",
+      "scene": "Nfvxx8J5NCo",
+      "gpu": 2,
+      "mapping_recorded": true,
+      "navigation_recorded": true,
+      "files": [
+        {
+          "file": "scopes/first8/diagnostics/native-role-environments/full/Nfvxx8J5NCo/launch.json",
+          "sha256": "ba779424c02381a20a37eaae08d50bb174936418aad8ccdf691f2fd5f975c38e"
+        },
+        {
+          "file": "scopes/first8/diagnostics/native-role-environments/full/Nfvxx8J5NCo/mapping_environment.json",
+          "sha256": "1155a3764fe0480f892b6f02cb10726a4dfe4ac39315ffdd918608bc1fd2c9b7"
+        },
+        {
+          "file": "scopes/first8/diagnostics/native-role-environments/full/Nfvxx8J5NCo/navigation_environment_5.json",
+          "sha256": "9132b99215d0e8ecd9a89a62ad2fd6b3751bea1f4e92247cabb2b9859700a188"
+        }
+      ]
+    },
+    {
+      "stage": "full",
+      "scene": "QaLdnwvtxbs",
+      "gpu": 3,
+      "mapping_recorded": true,
+      "navigation_recorded": true,
+      "files": [
+        {
+          "file": "scopes/first8/diagnostics/native-role-environments/full/QaLdnwvtxbs/launch.json",
+          "sha256": "f585eb03b6ef6787dd7ff58350fa8b04d834dca4692e7ff525c110f193ec7033"
+        },
+        {
+          "file": "scopes/first8/diagnostics/native-role-environments/full/QaLdnwvtxbs/mapping_environment.json",
+          "sha256": "e110193c7b9ba5164671d094d8c37a13b61a472022425a039edefdb451166083"
+        },
+        {
+          "file": "scopes/first8/diagnostics/native-role-environments/full/QaLdnwvtxbs/navigation_environment_6.json",
+          "sha256": "d4b482b8f5711b8e708a9d6a0ee84257247b11b648c427312b64b5a03af5d726"
+        }
+      ]
+    },
+    {
+      "stage": "full",
+      "scene": "TEEsavR23oF",
+      "gpu": 2,
+      "mapping_recorded": true,
+      "navigation_recorded": true,
+      "files": [
+        {
+          "file": "scopes/first8/diagnostics/native-role-environments/full/TEEsavR23oF/launch.json",
+          "sha256": "126041185313caf1ed6ae1aa6485634b90eded9d413047c7c512e3ec73e7d609"
+        },
+        {
+          "file": "scopes/first8/diagnostics/native-role-environments/full/TEEsavR23oF/mapping_environment.json",
+          "sha256": "95070d49d851c0b2334eeda58365c33121f440b88b6aed905353f1331134cdbf"
+        },
+        {
+          "file": "scopes/first8/diagnostics/native-role-environments/full/TEEsavR23oF/navigation_environment_7.json",
+          "sha256": "6b957fc07c4e84ce3c2aeeb285db98cca9e5fd47dbf9c3c7b81113066c351a81"
+        }
+      ]
+    },
+    {
+      "stage": "nearest",
+      "scene": "4ok3usBNeis",
+      "gpu": 5,
+      "mapping_recorded": true,
+      "navigation_recorded": true,
+      "files": [
+        {
+          "file": "scopes/first8/diagnostics/native-role-environments/nearest/4ok3usBNeis/launch.json",
+          "sha256": "65dc0402cf54a4a826f7d981be40a392b07e072a68af62c60c86d120f1f38d68"
+        },
+        {
+          "file": "scopes/first8/diagnostics/native-role-environments/nearest/4ok3usBNeis/mapping_environment.json",
+          "sha256": "b2e14ab26c89c87a96331fd8bc8389c65ca437e03f0a40e1f7046e7e2ebfbb5b"
+        },
+        {
+          "file": "scopes/first8/diagnostics/native-role-environments/nearest/4ok3usBNeis/navigation_environment_0.json",
+          "sha256": "3f1e89dd036c27d75f8d19bf864537d0d862b77111a8b852d6926e77e6af50cb"
+        }
+      ]
+    },
+    {
+      "stage": "nearest",
+      "scene": "5cdEh9F2hJL",
+      "gpu": 6,
+      "mapping_recorded": true,
+      "navigation_recorded": true,
+      "files": [
+        {
+          "file": "scopes/first8/diagnostics/native-role-environments/nearest/5cdEh9F2hJL/launch.json",
+          "sha256": "c2d2b716e4f362ad33e05520aadb44330ebdb2d940f75d5cb987e63cdf58d09d"
+        },
+        {
+          "file": "scopes/first8/diagnostics/native-role-environments/nearest/5cdEh9F2hJL/mapping_environment.json",
+          "sha256": "1f25605b01932c17874e08b394582ba189866912ecb88040274f85b144591365"
+        },
+        {
+          "file": "scopes/first8/diagnostics/native-role-environments/nearest/5cdEh9F2hJL/navigation_environment_1.json",
+          "sha256": "81fc6be9e63f280bffbc00ef50580ab0e5ae930cee04c9766ea8422bccffd5b5"
+        }
+      ]
+    },
+    {
+      "stage": "nearest",
+      "scene": "6s7QHgap2fW",
+      "gpu": 7,
+      "mapping_recorded": true,
+      "navigation_recorded": true,
+      "files": [
+        {
+          "file": "scopes/first8/diagnostics/native-role-environments/nearest/6s7QHgap2fW/launch.json",
+          "sha256": "3d3c7b94ed96525f095ad430232b6249998767c5bc8b86be7eff5df69b9ccb63"
+        },
+        {
+          "file": "scopes/first8/diagnostics/native-role-environments/nearest/6s7QHgap2fW/mapping_environment.json",
+          "sha256": "9fd815b49f7a3e6b0aebaf8c7803a3aaf3c6dd9bd15382465bb55aba6f2fe1db"
+        },
+        {
+          "file": "scopes/first8/diagnostics/native-role-environments/nearest/6s7QHgap2fW/navigation_environment_2.json",
+          "sha256": "c577b777482054ab652ee75701a4568d83995d7ee7948b3286990e17174eb670"
+        }
+      ]
+    },
+    {
+      "stage": "nearest",
+      "scene": "DYehNKdT76V",
+      "gpu": 6,
+      "mapping_recorded": true,
+      "navigation_recorded": true,
+      "files": [
+        {
+          "file": "scopes/first8/diagnostics/native-role-environments/nearest/DYehNKdT76V/launch.json",
+          "sha256": "4e87c4b3e97494ecbd3adb0cca70fabce74be76cc0f9673cdf5f7fe0dbe26240"
+        },
+        {
+          "file": "scopes/first8/diagnostics/native-role-environments/nearest/DYehNKdT76V/mapping_environment.json",
+          "sha256": "6d0e0a2ee074843ee0e9216d06be4282c2187ba32b9e5df90968c1ddd1cd2a77"
+        },
+        {
+          "file": "scopes/first8/diagnostics/native-role-environments/nearest/DYehNKdT76V/navigation_environment_3.json",
+          "sha256": "56305914691080323cbd4a61b90c653009e56d52336bedfa7e2e0f1037b91654"
+        }
+      ]
+    },
+    {
+      "stage": "nearest",
+      "scene": "Dd4bFSTQ8gi",
+      "gpu": 5,
+      "mapping_recorded": true,
+      "navigation_recorded": true,
+      "files": [
+        {
+          "file": "scopes/first8/diagnostics/native-role-environments/nearest/Dd4bFSTQ8gi/launch.json",
+          "sha256": "311ef1a5d21c224be89b5cd87fb288fab16b47ef06716bc417fa7d01f746efe5"
+        },
+        {
+          "file": "scopes/first8/diagnostics/native-role-environments/nearest/Dd4bFSTQ8gi/mapping_environment.json",
+          "sha256": "265dbfb6b40b7d40914d857fbd862bc3e61e67522e31bcce58539e3f421c789b"
+        },
+        {
+          "file": "scopes/first8/diagnostics/native-role-environments/nearest/Dd4bFSTQ8gi/navigation_environment_4.json",
+          "sha256": "ab36c36e2e7aff00e207d0d9577ac1c321c248567aacf6ec89310122e2031298"
+        }
+      ]
+    },
+    {
+      "stage": "nearest",
+      "scene": "Nfvxx8J5NCo",
+      "gpu": 7,
+      "mapping_recorded": true,
+      "navigation_recorded": true,
+      "files": [
+        {
+          "file": "scopes/first8/diagnostics/native-role-environments/nearest/Nfvxx8J5NCo/launch.json",
+          "sha256": "cff9a275c35606d228c4abab45fc03f1c0e35a47d6d7b7d7d08c4d0a18868e7b"
+        },
+        {
+          "file": "scopes/first8/diagnostics/native-role-environments/nearest/Nfvxx8J5NCo/mapping_environment.json",
+          "sha256": "b8789465ad377fca9831890688ec8914148068a704067e53d922c2597299e23b"
+        },
+        {
+          "file": "scopes/first8/diagnostics/native-role-environments/nearest/Nfvxx8J5NCo/navigation_environment_5.json",
+          "sha256": "7d2a315d331b67d2caeeb07e8e3c816b51e9b1136ff99a389f3f81d54f8a10d2"
+        }
+      ]
+    },
+    {
+      "stage": "nearest",
+      "scene": "QaLdnwvtxbs",
+      "gpu": 5,
+      "mapping_recorded": true,
+      "navigation_recorded": true,
+      "files": [
+        {
+          "file": "scopes/first8/diagnostics/native-role-environments/nearest/QaLdnwvtxbs/launch.json",
+          "sha256": "ae39e4605c165f2544cad560d4e7df8fb86de96a90b1d4e21825d4bb543293d9"
+        },
+        {
+          "file": "scopes/first8/diagnostics/native-role-environments/nearest/QaLdnwvtxbs/mapping_environment.json",
+          "sha256": "b861878514aaac04929f611af72bd97d80256fac08de61ece0cd327f15e5bbff"
+        },
+        {
+          "file": "scopes/first8/diagnostics/native-role-environments/nearest/QaLdnwvtxbs/navigation_environment_6.json",
+          "sha256": "18ab071080a35977d9c9fc34a75038adf2b1623349fe75aeddc31d1e7f8362dd"
+        }
+      ]
+    },
+    {
+      "stage": "nearest",
+      "scene": "TEEsavR23oF",
+      "gpu": 6,
+      "mapping_recorded": true,
+      "navigation_recorded": true,
+      "files": [
+        {
+          "file": "scopes/first8/diagnostics/native-role-environments/nearest/TEEsavR23oF/launch.json",
+          "sha256": "27eda7c485eabe846886e9ae1fabd3bb289c14a78837f9a9de8069e210dd038f"
+        },
+        {
+          "file": "scopes/first8/diagnostics/native-role-environments/nearest/TEEsavR23oF/mapping_environment.json",
+          "sha256": "fb283ade323f426f36721b7a9c6091428615efd8be22614fdbef9df55659b306"
+        },
+        {
+          "file": "scopes/first8/diagnostics/native-role-environments/nearest/TEEsavR23oF/navigation_environment_7.json",
+          "sha256": "b9b71c69836acfaffe9b5a05db40d25617f14b78fcc5929f3d8f4e68a0684b97"
+        }
+      ]
+    },
+    {
+      "stage": "myopic",
+      "scene": "4ok3usBNeis",
+      "gpu": 5,
+      "mapping_recorded": true,
+      "navigation_recorded": true,
+      "files": [
+        {
+          "file": "scopes/first8/diagnostics/native-role-environments/myopic/4ok3usBNeis/launch.json",
+          "sha256": "361234207ddcd3cf75147993602c77b79f15374d1c4c90ebed69402c7914623c"
+        },
+        {
+          "file": "scopes/first8/diagnostics/native-role-environments/myopic/4ok3usBNeis/mapping_environment.json",
+          "sha256": "016bc842192a61d90eae0973b7a47a75e5174b4b3855974f744dd881a27319ca"
+        },
+        {
+          "file": "scopes/first8/diagnostics/native-role-environments/myopic/4ok3usBNeis/navigation_environment_0.json",
+          "sha256": "9e5efb1f6c8673738c6345dd9509fb405b0be4e2667f6b36b3c7fa1d3a74087e"
+        }
+      ]
+    },
+    {
+      "stage": "myopic",
+      "scene": "5cdEh9F2hJL",
+      "gpu": 6,
+      "mapping_recorded": true,
+      "navigation_recorded": true,
+      "files": [
+        {
+          "file": "scopes/first8/diagnostics/native-role-environments/myopic/5cdEh9F2hJL/launch.json",
+          "sha256": "5a21e9c3e03fd9afa701bb61359d11bfbb9428457cd243780f184388bafb0527"
+        },
+        {
+          "file": "scopes/first8/diagnostics/native-role-environments/myopic/5cdEh9F2hJL/mapping_environment.json",
+          "sha256": "82eff18eeab9a75b3f32d9fe31514db798826b50c581909dc708fcfbac6ff422"
+        },
+        {
+          "file": "scopes/first8/diagnostics/native-role-environments/myopic/5cdEh9F2hJL/navigation_environment_1.json",
+          "sha256": "a024d6c5b3ebf97e2a79bd3a3ca87a92265ac8f8d03ad785bc9d582211008e7b"
+        }
+      ]
+    },
+    {
+      "stage": "myopic",
+      "scene": "Dd4bFSTQ8gi",
+      "gpu": 1,
+      "mapping_recorded": true,
+      "navigation_recorded": true,
+      "files": [
+        {
+          "file": "scopes/first8/diagnostics/native-role-environments/myopic/Dd4bFSTQ8gi/launch.json",
+          "sha256": "ad76e5ee244f820c4b15f2f5011c640701b98f391a738de39d44c836c682eacc"
+        },
+        {
+          "file": "scopes/first8/diagnostics/native-role-environments/myopic/Dd4bFSTQ8gi/mapping_environment.json",
+          "sha256": "256b7bdd4e266434dddab49a98eae221f2fcc51b85294534450da02043468cc6"
+        },
+        {
+          "file": "scopes/first8/diagnostics/native-role-environments/myopic/Dd4bFSTQ8gi/navigation_environment_4.json",
+          "sha256": "76746f6d111e6dd3d8d0f389f4be2f4d793b12471f38453621175fab5ad237a2"
+        }
+      ]
+    },
+    {
+      "stage": "myopic",
+      "scene": "Nfvxx8J5NCo",
+      "gpu": 2,
+      "mapping_recorded": true,
+      "navigation_recorded": true,
+      "files": [
+        {
+          "file": "scopes/first8/diagnostics/native-role-environments/myopic/Nfvxx8J5NCo/launch.json",
+          "sha256": "7f888cb60d889fb7a3c6cae375e037e5cda149dd678076ba6395057ad6a0193b"
+        },
+        {
+          "file": "scopes/first8/diagnostics/native-role-environments/myopic/Nfvxx8J5NCo/mapping_environment.json",
+          "sha256": "02bc1e1ae79d60b4d07eee4ee3ae4ce801a378ac268eb588b33f7a4e2681c6bb"
+        },
+        {
+          "file": "scopes/first8/diagnostics/native-role-environments/myopic/Nfvxx8J5NCo/navigation_environment_5.json",
+          "sha256": "0e5682cb15ee085c59b3ba939206775cd6e1b617589005a774fc790ce7eee84a"
+        }
+      ]
+    },
+    {
+      "stage": "myopic",
+      "scene": "QaLdnwvtxbs",
+      "gpu": 3,
+      "mapping_recorded": true,
+      "navigation_recorded": true,
+      "files": [
+        {
+          "file": "scopes/first8/diagnostics/native-role-environments/myopic/QaLdnwvtxbs/launch.json",
+          "sha256": "5364ab59de52149db61934555308b3c1898752454e25df1b7a48fcbfe0934c39"
+        },
+        {
+          "file": "scopes/first8/diagnostics/native-role-environments/myopic/QaLdnwvtxbs/mapping_environment.json",
+          "sha256": "b3b6b01e4116ea45f08d2b74ae10f22f18766d4c3e7fd200047ca14e930b44aa"
+        },
+        {
+          "file": "scopes/first8/diagnostics/native-role-environments/myopic/QaLdnwvtxbs/navigation_environment_6.json",
+          "sha256": "704ecfb67d0242ba586723725b055d1a3184b818f7b2889bdc1bd5ba016f5824"
+        }
+      ]
+    },
+    {
+      "stage": "myopic",
+      "scene": "TEEsavR23oF",
+      "gpu": 4,
+      "mapping_recorded": true,
+      "navigation_recorded": true,
+      "files": [
+        {
+          "file": "scopes/first8/diagnostics/native-role-environments/myopic/TEEsavR23oF/launch.json",
+          "sha256": "c7303b4285bf90d69604ac6523739d03b22015a02a2cb08952ef532697587f88"
+        },
+        {
+          "file": "scopes/first8/diagnostics/native-role-environments/myopic/TEEsavR23oF/mapping_environment.json",
+          "sha256": "2cfa87b438af2062b4125115bfe69582e3b58bdfed1b7ae2b56155215d42bafa"
+        },
+        {
+          "file": "scopes/first8/diagnostics/native-role-environments/myopic/TEEsavR23oF/navigation_environment_7.json",
+          "sha256": "a7b7442b8757c88aba5c1b1aca991915336a52e466fc4a72b19c2bf3c89b43d5"
+        }
+      ]
+    },
+    {
+      "stage": "myopic",
+      "scene": "6s7QHgap2fW",
+      "gpu": 3,
+      "mapping_recorded": true,
+      "navigation_recorded": true,
+      "files": [
+        {
+          "file": "scopes/first8/diagnostics/native-role-environments/myopic/6s7QHgap2fW/launch.json",
+          "sha256": "44166e41b281e263865ab34d4f5669403cf6a40c4565b5b9a33e6dfd11050842"
+        },
+        {
+          "file": "scopes/first8/diagnostics/native-role-environments/myopic/6s7QHgap2fW/mapping_environment.json",
+          "sha256": "dd5594d9c63cc278d77363f50054c1ce87b6164f03e994a8e29886015d18793a"
+        },
+        {
+          "file": "scopes/first8/diagnostics/native-role-environments/myopic/6s7QHgap2fW/navigation_environment_2.json",
+          "sha256": "c407d8ac7f4a6659313d0879a9009affb8b75fed9d1e16cf328716cbdd1c8de3"
+        }
+      ]
+    },
+    {
+      "stage": "myopic",
+      "scene": "DYehNKdT76V",
+      "gpu": 1,
+      "mapping_recorded": true,
+      "navigation_recorded": true,
+      "files": [
+        {
+          "file": "scopes/first8/diagnostics/native-role-environments/myopic/DYehNKdT76V/launch.json",
+          "sha256": "dd19547ec61469f91cdadb02a7bb7697e7c58c1edb215299eda7c0f1b0d28aeb"
+        },
+        {
+          "file": "scopes/first8/diagnostics/native-role-environments/myopic/DYehNKdT76V/mapping_environment.json",
+          "sha256": "af624995ad088c5369430ccd39b08686d6879d398e626168d63e4defb5a9a86e"
+        },
+        {
+          "file": "scopes/first8/diagnostics/native-role-environments/myopic/DYehNKdT76V/navigation_environment_3.json",
+          "sha256": "92a99ae85813f68cb2a8aaa1a296225ddde22b81ad4067e263dbb4b53cce98d6"
+        }
+      ]
+    }
+  ],
+  "recorded_pairs_by_stage": {
+    "full": 8,
+    "nearest": 8,
+    "myopic": 8,
+    "suffix_only": 0
+  },
+  "source_and_parameters_unchanged": true,
+  "native_states_modified": false
+}

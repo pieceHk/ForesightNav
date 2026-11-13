@@ -1,11 +1,11 @@
 {
-  "at_utc": "2026-11-13T06:40:57.067035+00:00",
+  "at_utc": "2026-11-13T09:12:03.940311+00:00",
   "current_helper_sha256": {
-    "report_first8_final.py": "8d885a474980e3647ddf9133f50cea28ebe08dccbc2a6be68ca2e76e64b0bb71",
+    "report_first8_final.py": "e71744478b23808c097dfd4456e23fe3d97e4284442cf90531aaf86289644800",
     "validate_first8_pairs.py": "7403a7e52874e26b52585384ef3e3dd591eb346de66aa6307a46ab2178dbe738",
     "test_first8_pairs.py": "671f8ecac94099e9613ba2d95bb802b1a9d944ff40ede8003282f0e5982445d4"
   },
-  "reporter_change": "Add complete CP5 at the original root path with adjusted links; pair validator unchanged",
+  "reporter_change": "Document both whole-scene OOM exclusions and exact replacements; verify failed archive bindings and Nearest proposal0; no scientific calculations changed",
   "startup_record_is_historical_and_preserved": true,
   "watcher_pid": 2250471,
   "watcher_start_ticks": "35947903",
@@ -16,5 +16,6 @@
   "root_deviations_sha256": "182ed709cab0cbcfaa8b11c670a2dfd742784b16b5c7456d4415b12f30e51318",
   "scope_deviations_sha256": "0dd4ed26a05aa83a717fc7a9d1b4cf61f29b7f7ab11239ff6ce7593a7ee935c9",
   "source_and_parameters_unchanged": true,
-  "native_states_modified": false
+  "native_states_modified": false,
+  "reporter_update_proof": "scopes/first8/diagnostics/report-helper-updates/20261113T091203659875Z/result.json"
 }

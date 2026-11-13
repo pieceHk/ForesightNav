@@ -1,9 +1,9 @@
 {
-  "at_utc": "2026-11-13T08:38:44.299959+00:00",
+  "at_utc": "2026-11-13T09:44:29.439391+00:00",
   "stage": "myopic",
-  "fully_completed_scenes_audited": 5,
-  "audited_native_episodes": 100,
-  "audited_stage_paths": 300,
+  "fully_completed_scenes_audited": 6,
+  "audited_native_episodes": 120,
+  "audited_stage_paths": 360,
   "n_error": 0,
   "full_stage160_complete": false,
   "canonical_summary_modified": false,
@@ -172,7 +172,7 @@
     "results/exp4/meta/protocol_decisions.json": "c4596befc6337dab5a9963c69f4416992f7b0108f8d0c69c9e77cfa8f39c69ed"
   },
   "parameter_sha256": "e1d75f3c9503c7439467748fc97be6ae2ad450c429f40dc7235b1564ff7852ae",
-  "ledger_snapshot_sha256": "c0f76e3583501ef90d789769ea6a0a3025330cf87b94721963e039b9932ae481",
+  "ledger_snapshot_sha256": "f6f85e2181aacf8ac95766077c3320634c4a7aabde46e535bdd050cd7918c366",
   "proofs": [
     {
       "scene": "4ok3usBNeis",
@@ -218,6 +218,15 @@
       "launch_sha256": "5364ab59de52149db61934555308b3c1898752454e25df1b7a48fcbfe0934c39",
       "status_sha256": "573248f76436afc45449a898442baa7790b77b6dfb0af67eff2818cd01d89a8d",
       "max_native_path_abs_error_m": 1.7280004840358743e-06
+    },
+    {
+      "scene": "TEEsavR23oF",
+      "proof": "scopes/first8/diagnostics/early-completed-scene-audits/myopic/TEEsavR23oF/result.json",
+      "proof_sha256": "02da9372696b7203180e2c0fb653a65c334b73422c1f3e8070124e1d488ec2c8",
+      "native_run": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261113_134511_838224_exp4_myopic_exp4-myopic-a3-first8-TEEsavR23oF",
+      "launch_sha256": "c7303b4285bf90d69604ac6523739d03b22015a02a2cb08952ef532697587f88",
+      "status_sha256": "69ef5844113b06295f38b6ecd1c16a08e02084b81887e83c0d541e1764122a9e",
+      "max_native_path_abs_error_m": 2.357546136977362e-06
     }
   ],
   "helper_sha256": "8ff552d47b3f3655b02990675ff6335e8c5b20e31a7822907ea4d2dd5ee89424"

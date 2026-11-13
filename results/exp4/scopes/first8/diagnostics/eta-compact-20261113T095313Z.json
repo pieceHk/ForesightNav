@@ -1,0 +1,232 @@
+{
+  "at_utc": "2026-11-13T09:53:13.170633+00:00",
+  "rows": [
+    {
+      "stage": "nearest",
+      "scene": "4ok3usBNeis",
+      "status": "completed",
+      "completed": 20,
+      "steps": 15807,
+      "launch_times": {},
+      "status_times": {
+        "timestamp": "2026-11-12T17:53:53.219378+00:00"
+      }
+    },
+    {
+      "stage": "nearest",
+      "scene": "5cdEh9F2hJL",
+      "status": "completed",
+      "completed": 20,
+      "steps": 9310,
+      "launch_times": {},
+      "status_times": {
+        "timestamp": "2026-11-12T15:42:41.682403+00:00"
+      }
+    },
+    {
+      "stage": "nearest",
+      "scene": "6s7QHgap2fW",
+      "status": "completed",
+      "completed": 20,
+      "steps": 16030,
+      "launch_times": {},
+      "status_times": {
+        "timestamp": "2026-11-12T19:06:55.207206+00:00"
+      }
+    },
+    {
+      "stage": "nearest",
+      "scene": "DYehNKdT76V",
+      "status": "completed",
+      "completed": 20,
+      "steps": 14788,
+      "launch_times": {},
+      "status_times": {
+        "timestamp": "2026-11-12T21:18:52.171391+00:00"
+      }
+    },
+    {
+      "stage": "nearest",
+      "scene": "Dd4bFSTQ8gi",
+      "status": "completed",
+      "completed": 20,
+      "steps": 12033,
+      "launch_times": {},
+      "status_times": {
+        "timestamp": "2026-11-12T21:43:32.976967+00:00"
+      }
+    },
+    {
+      "stage": "nearest",
+      "scene": "Nfvxx8J5NCo",
+      "status": "completed",
+      "completed": 20,
+      "steps": 11162,
+      "launch_times": {},
+      "status_times": {
+        "timestamp": "2026-11-12T21:36:12.132892+00:00"
+      }
+    },
+    {
+      "stage": "nearest",
+      "scene": "QaLdnwvtxbs",
+      "status": "completed",
+      "completed": 20,
+      "steps": 6907,
+      "launch_times": {},
+      "status_times": {
+        "timestamp": "2026-11-12T23:23:47.968974+00:00"
+      }
+    },
+    {
+      "stage": "nearest",
+      "scene": "TEEsavR23oF",
+      "status": "completed",
+      "completed": 20,
+      "steps": 16925,
+      "launch_times": {},
+      "status_times": {
+        "timestamp": "2026-11-13T01:55:04.445987+00:00"
+      }
+    },
+    {
+      "stage": "myopic",
+      "scene": "4ok3usBNeis",
+      "status": "completed",
+      "completed": 20,
+      "steps": 13094,
+      "launch_times": {},
+      "status_times": {
+        "timestamp": "2026-11-13T07:55:57.433805+00:00"
+      }
+    },
+    {
+      "stage": "myopic",
+      "scene": "5cdEh9F2hJL",
+      "status": "completed",
+      "completed": 20,
+      "steps": 10665,
+      "launch_times": {},
+      "status_times": {
+        "timestamp": "2026-11-13T06:56:09.425689+00:00"
+      }
+    },
+    {
+      "stage": "myopic",
+      "scene": "Dd4bFSTQ8gi",
+      "status": "completed",
+      "completed": 20,
+      "steps": 10618,
+      "launch_times": {},
+      "status_times": {
+        "timestamp": "2026-11-13T08:12:04.793988+00:00"
+      }
+    },
+    {
+      "stage": "myopic",
+      "scene": "Nfvxx8J5NCo",
+      "status": "completed",
+      "completed": 20,
+      "steps": 11209,
+      "launch_times": {},
+      "status_times": {
+        "timestamp": "2026-11-13T08:12:09.780002+00:00"
+      }
+    },
+    {
+      "stage": "myopic",
+      "scene": "QaLdnwvtxbs",
+      "status": "completed",
+      "completed": 20,
+      "steps": 7395,
+      "launch_times": {},
+      "status_times": {
+        "timestamp": "2026-11-13T07:14:41.331556+00:00"
+      }
+    },
+    {
+      "stage": "myopic",
+      "scene": "TEEsavR23oF",
+      "status": "completed",
+      "completed": 20,
+      "steps": 17283,
+      "launch_times": {},
+      "status_times": {
+        "timestamp": "2026-11-13T09:41:16.545411+00:00"
+      }
+    },
+    {
+      "stage": "myopic",
+      "scene": "6s7QHgap2fW",
+      "status": "running",
+      "completed": 4,
+      "steps": 3897,
+      "launch_times": {},
+      "status_times": {
+        "timestamp": "2026-11-13T08:53:38.847854+00:00"
+      },
+      "elapsed_seconds": 3605.2299999999814,
+      "episode": "4",
+      "last_trajectory": {
+        "frame_index": 181
+      },
+      "timing_samples": [
+        {
+          "fps": 1.176597970413237,
+          "frame_count": 1063,
+          "frame_time_sum_ms": 903452.1788497223,
+          "mean_frame_time_ms": 849.9079763402843,
+          "median_frame_time_ms": 615.444588009268,
+          "p95_frame_time_ms": 2211.363886209437
+        },
+        {
+          "fps": 1.2061518929582187,
+          "frame_count": 1133,
+          "frame_time_sum_ms": 939351.0109420749,
+          "mean_frame_time_ms": 829.0829752357237,
+          "median_frame_time_ms": 593.8779679709114,
+          "p95_frame_time_ms": 1745.4313880065445
+        }
+      ]
+    },
+    {
+      "stage": "myopic",
+      "scene": "DYehNKdT76V",
+      "status": "running",
+      "completed": 5,
+      "steps": 4595,
+      "launch_times": {},
+      "status_times": {
+        "timestamp": "2026-11-13T08:53:44.911438+00:00"
+      },
+      "elapsed_seconds": 3594.4199999999837,
+      "episode": "5",
+      "last_trajectory": {
+        "frame_index": 373
+      },
+      "timing_samples": [
+        {
+          "fps": 1.2622054026909386,
+          "frame_count": 572,
+          "frame_time_sum_ms": 453175.0527929398,
+          "mean_frame_time_ms": 792.2640783093353,
+          "median_frame_time_ms": 603.9226654684171,
+          "p95_frame_time_ms": 2012.007401793378
+        },
+        {
+          "fps": 1.6972380963888143,
+          "frame_count": 1500,
+          "frame_time_sum_ms": 883788.7879087357,
+          "mean_frame_time_ms": 589.1925252724905,
+          "median_frame_time_ms": 385.7896799745504,
+          "p95_frame_time_ms": 1273.9742442645365
+        }
+      ]
+    }
+  ],
+  "pipeline_CPU_test": {
+    "proof_exists": false
+  },
+  "scene_pipeline_approval_exists": false,
+  "read_only": true
+}

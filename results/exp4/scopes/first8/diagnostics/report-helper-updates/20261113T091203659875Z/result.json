@@ -1,0 +1,50 @@
+{
+  "at_utc": "2026-11-13T09:12:03.948677+00:00",
+  "current_reporter_sha256": "e71744478b23808c097dfd4456e23fe3d97e4284442cf90531aaf86289644800",
+  "watcher_PID": 2250471,
+  "watcher_restarted": false,
+  "all_Native_workers_unchanged": true,
+  "source_and_parameters_unchanged": true,
+  "actual_partial_infrastructure_check": {
+    "infrastructure_evidence_verified": true,
+    "infrastructure": {
+      "metadata": "meta/infrastructure-recovery-v2-20261113.json",
+      "metadata_sha256": "cc2672818f1b8f7ee44ff192a893fda915c270eb42313e7f94e931f4417d9863",
+      "plan": "scopes/first8/diagnostics/infrastructure-recovery/20261113T084323101289Z/plan.json",
+      "plan_sha256": "316099532c2d8b633e088b76db78a3c1d89921eaddd5f908601bb260aa03309c",
+      "attempts": [
+        {
+          "scene": "DYehNKdT76V",
+          "failed_run": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261113_134511_831506_exp4_myopic_exp4-myopic-a3-first8-DYehNKdT76V",
+          "old_exports_all_excluded": 13,
+          "fixed_replacement_episodes": 20,
+          "replacement_run": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261113_165323_772173_exp4_myopic_exp4-myopic-a5-first8-infrastructure-20261113-DYehNKdT76V",
+          "replacement_completed": false,
+          "failed_archive": "scopes/first8/diagnostics/infrastructure-recovery/20261113T082617366060Z/failed-DY-entire-attempt.tar.gz",
+          "failed_archive_sha256": "5af741ea713cde844df69ec7f49d5b12d9b2067ae754fecbd63e87a470ab615b"
+        },
+        {
+          "scene": "6s7QHgap2fW",
+          "failed_run": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261113_123900_372052_exp4_myopic_exp4-myopic-a3-first8-6s7QHgap2fW",
+          "old_exports_all_excluded": 16,
+          "fixed_replacement_episodes": 20,
+          "replacement_run": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261113_165316_081484_exp4_myopic_exp4-myopic-a5-first8-infrastructure-20261113-6s7QHgap2fW",
+          "replacement_completed": false,
+          "failed_archive": "scopes/first8/diagnostics/infrastructure-recovery/20261113T084323101289Z/failed-6s-entire-attempt.tar.gz",
+          "failed_archive_sha256": "915ca34b14ee1709b971c3a09ce0d34ac0c6b6403cb025bf9e217c55dc26dc37"
+        }
+      ],
+      "old_exports_all_excluded": 29,
+      "all_replacements_completed": false,
+      "scientific_sources_or_parameters_changed": false
+    },
+    "final_four_variant_completion_claimed": false
+  },
+  "actual_incomplete_four_variant_gate": {
+    "ready": false,
+    "reason": "AssertionError: ",
+    "native_states_modified": false
+  },
+  "actual_complete_four_variant_and_visual_QA_still_required": true,
+  "reporter_not_run_for_final": true
+}

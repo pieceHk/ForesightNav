@@ -122,9 +122,9 @@
     "name": "exp4_myopic",
     "runtime": {
       "data": "/nvme/khy/PBSP-open-source/data",
-      "mapping_gpu": 0,
+      "mapping_gpu": 1,
       "mapping_python": "/nvme/khy/conda_envs/pbsp/mapping/bin/python3.10",
-      "navigation_gpu": 0,
+      "navigation_gpu": 1,
       "navigation_python": "/nvme/khy/conda_envs/pbsp/navigation/bin/python3.9",
       "outputs": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs",
       "weights": "/nvme/khy/weights/projects/pbsp"
@@ -138,7 +138,7 @@
       "/nvme/khy/ForesightNav_exp4_depthfix/runtime.exp4.local.yaml": "ed47810f08afd80d5059cfff4c437b91ffa92d653abaa1949e920e8e7041854b"
     }
   },
-  "configuration_sha256": "0c4ce0e7ea1e0d5d5d1dc6dad0394fbe21142bdae254c7221a5300d975c49bd6",
+  "configuration_sha256": "cf0379aee36a5df081fc8e5c5f028a62333f3ca67e68efe4e56f4b3e547675c1",
   "identities": [
     {
       "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
@@ -460,7 +460,7 @@
     "root": "/nvme/khy/ForesightNav_exp4_depthfix",
     "weights": "/nvme/khy/weights/projects/pbsp"
   },
-  "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261113_134511_831506_exp4_myopic_exp4-myopic-a3-first8-DYehNKdT76V",
+  "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261113_165323_772173_exp4_myopic_exp4-myopic-a5-first8-infrastructure-20261113-DYehNKdT76V",
   "scenes": [
     {
       "episode_ids": [

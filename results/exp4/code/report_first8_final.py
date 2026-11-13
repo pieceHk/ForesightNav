@@ -11,6 +11,44 @@ ROOT=base.OUT;SCOPE=ROOT/'scopes/first8'
 NAMES=('nearest','suffix_only','myopic','full')
 LABELS={'nearest':'Nearest','suffix_only':'Suffix-only','myopic':'Belief-myopic','full':'Full BLP'}
 
+def infrastructure_provenance(require_complete_replacements=True):
+    metadata=SCOPE/'meta/infrastructure-recovery-v2-20261113.json'
+    if not metadata.exists():return None
+    recovery=base.load(metadata);plan_path=ROOT/recovery['plan']
+    assert base.digest(plan_path)==recovery['plan_sha256']
+    plan=base.load(plan_path);scope=base.load(SCOPE/'meta/scope.json')
+    assert plan['source_fingerprint']==scope['source_fingerprint']
+    assert plan['parameter_sha256']==scope['parameter_sha256'] and not plan['outcome_selection_used']
+    ledger=base.load(SCOPE/'meta/evaluation-myopic-runs.json')
+    attempts=[];all_complete=True
+    for attempt in plan['failed_attempts']:
+        scene=attempt['scene'];old=attempt['job'];archive=attempt['native_archive']
+        expected=[r for r in scope['identities'] if r['scene_id']==scene]
+        assert len(expected)==20 and old['identities']==expected
+        assert archive['native_run']==old['run_directory'] and archive['all_round_trip_sha256_match']
+        assert base.digest(ROOT/archive['archive'])==archive['archive_sha256']
+        for log in attempt['worker_logs']:assert base.digest(ROOT/log['archive'])==log['archive_sha256']
+        job=next(j for j in ledger['jobs'] if j['scene']==scene)
+        assert job['identities']==expected and job['run_directory']!=old['run_directory']
+        assert job['excluded_failed_run']==old['run_directory']
+        launch=base.load(Path(job['run_directory'])/'launch.json')
+        assert launch['identities']==expected and launch['configuration']['seed']==1
+        assert launch['configuration']['method']['suffix']['blp_variant']=='myopic'
+        complete=job['status']=='completed' and job.get('returncode')==0
+        all_complete=all_complete and complete
+        if require_complete_replacements:
+            assert complete,'Every infrastructure replacement must finish its entire fixed20'
+            base.audit_scene(Path(job['run_directory']),job)
+        attempts.append({'scene':scene,'failed_run':old['run_directory'],
+            'old_exports_all_excluded':attempt['exported_records_excluded'],'fixed_replacement_episodes':20,
+            'replacement_run':job['run_directory'],'replacement_completed':complete,
+            'failed_archive':archive['archive'],'failed_archive_sha256':archive['archive_sha256']})
+    assert len(attempts)==2 and {r['scene'] for r in attempts}=={'DYehNKdT76V','6s7QHgap2fW'}
+    return {'metadata':str(metadata.relative_to(SCOPE)),'metadata_sha256':base.digest(metadata),
+        'plan':recovery['plan'],'plan_sha256':recovery['plan_sha256'],'attempts':attempts,
+        'old_exports_all_excluded':sum(r['old_exports_all_excluded'] for r in attempts),
+        'all_replacements_completed':all_complete,'scientific_sources_or_parameters_changed':False}
+
 def data():
     scope=base.load(SCOPE/'meta/scope.json')
     assert base.source_fingerprint()==scope['source_fingerprint']
@@ -25,6 +63,7 @@ def data():
         assert summary['process']['native_stage_path_check_count']==480
         assert summary['process']['invalid_path_complete']
         variants[stage]=(rows,[],summary)
+    assert variants['nearest'][2]['process']['deviation_from_nearest_proposal_pct']==0
     comparison=effects_and_pairs(variants)
     assert comparison==base.load(SCOPE/'summary/effects.json')
     manifest=base.load(SCOPE/'summary/paired/manifest.json')
@@ -57,6 +96,7 @@ def data():
     assert env['recorded_pairs_by_stage']=={name:8 for name in NAMES}
     for row in env['role_pairs']:
         for file in row['files']:assert base.digest(ROOT/file['file'])==file['sha256']
+    infrastructure_provenance(require_complete_replacements=True)
     return scope,variants,comparison,archive,environment
 
 def number(x):return '' if x is None else f'{x:.2f}'
@@ -97,6 +137,7 @@ def figures(variants,comparison):
 
 def prepare():
     scope,variants,comparison,archive,environment=data()
+    recovery=infrastructure_provenance(require_complete_replacements=True)
     plots=figures(variants,comparison)
     rows=[]
     for stage in NAMES:
@@ -108,7 +149,12 @@ def prepare():
     lines=['# Exp4 CP5：固定前8场景的2×2消融','',
         '四个变体各完成同样160条3-MON任务，覆盖原固定清单前8个场景、每场景20条，共640条。所有场景都保留成功和失败回合；每组480段实际动作路径已经核对。', '',
         '用户在已获得部分结果后将范围从20场景缩至固定前8场景。场景沿用原清单顺序，没有根据本次成绩重排。原任务池本身经过历史1-MON结果筛选，因此本报告描述该固定池内的消融，不作为独立盲测或未见任务泛化证据。原Full400及范围外原始记录保留。', '',
-        '算法、三组交叉拟合参数和共享导航机制沿用已确认版本。实验后半段按用户授权扩至8张GPU，保留此前3路原生进程，CPU调度交接记录了真实进程退出状态。不同阶段的共享资源条件有变化，规划耗时不能作为已隔离资源影响的独立因果比较。','']
+        '算法、三组交叉拟合参数和共享导航机制沿用已确认版本。实验后半段按用户授权扩至8张GPU，健康原生进程在CPU交接时继续运行，完成状态保留真实OS退出证据。不同阶段的共享资源条件有变化，规划耗时不能作为已隔离资源影响的独立因果比较。','',
+        'E沿用当前代码的候选高斯加权文本分数，并非邻近支撑集上的平均目标相关度；这是用户已确认保留的实现口径。belief参数只使用系统两阶段验证标签拟合，真值标签用于诊断，评估期间参数冻结。详见[E定义与论文表述说明](../../../reports/eq5_wording.md)及[标定报告](../../../reports/CP2a.md)。','']
+    if recovery:
+        lines+=['Myopic的DY与6s场景各有一次因显存不足而废弃的原生尝试，分别导出13条、16条。两次尝试的29条记录整体保留并全部排除；两个场景各按同样固定20条身份、seed及冻结算法参数完整重跑后进入本表，其余健康场景保留。没有按导航成败选择重跑回合。故障发生在共享资源占用变化期间；候选地图已经失效时，仍更新的导航轨迹不能证明运行健康。','',
+            '第二次故障经日志确认后，由操作器对该本账号场景启动器发送SIGTERM并调用原生清理流程，原启动器实际退出143；该状态不记为成功退出。当前表格中所有正式场景均已完整结束并记录真实退出0。两个故障原始档案额外保留，不计入下述32个正式场景档案。','',
+            '[故障恢复计划](../'+recovery['metadata']+')、[执行偏差与资源保护](../deviations.md)。','']
     lines+=table(['Variant','Future','Belief','SR (%)','SPL (%)','PR (%)','PPL (%)','P(C1) (%)',
         'P(C2∣C1) (%)','P(C3∣C1,C2) (%)','Invalid visits/ep','Proposal deviation (%)'],rows)
     lines+=['','SR、SPL、PR来自原生评估器；PPL为补充指标，按全部阶段PR与成功前缀路径效率计算。比率展示保留两位，主效应及交互项使用未舍入值。条件成功率只在前序全部成功的回合中计算。','']
@@ -125,7 +171,7 @@ def prepare():
         [[LABELS[n],*[number(variants[n][2]['process'][key]) for key in ('invalid_visit_path_m_per_ep',
           'invalid_identity_pursuit_path_m_per_ep','deviation_from_nearest_after_hysteresis_pct','deviation_from_nearest_realized_pct')],
           number(variants[n][2]['process']['planning_ms']['median']),number(variants[n][2]['process']['planning_ms']['p95'])] for n in NAMES])
-    lines+=['','Nearest的无约束proposal偏离率应为0。四组共享的1米切换滞回、类别冷却等机制仍可改变最终实际下发，三个偏离口径分别保留。无效访问路径按接受动作与检查时坐标GT关联；身份追逐路径单列为上界。','']
+    lines+=['','Nearest的无约束proposal偏离率已核对为0。四组共享的1米切换滞回、类别冷却等机制仍可改变最终实际下发，三个偏离口径分别保留。无效访问路径按接受动作与检查时坐标GT关联；身份追逐路径单列为上界。','']
     lines+=table(['Variant','Boundary','Root decisions','Decision incidence','Memo-state hits'],
         [[LABELS[n],key,p['fallback_root_decisions'].get(key,0),p['fallback_decision_incidence'].get(key,0),
           p['fallback_memo_state_counts'].get(key,0)] for n in NAMES for p in [variants[n][2]['process']]
@@ -148,13 +194,18 @@ def prepare():
         'environment_index':str(environment.relative_to(ROOT)),'environment_index_sha256':base.digest(environment),
         'source_fingerprint':scope['source_fingerprint'],'parameter_sha256':scope['parameter_sha256'],
         'reporter_source_sha256':base.digest(Path(__file__)),
+        'infrastructure_recovery':recovery,
         'native_states_modified':False,'launches_workers':False}
     save=SCOPE/'meta/CP5-report-prepared.json';save.write_text(json.dumps(proof,indent=2)+'\n')
     print(json.dumps({'report':str(path.relative_to(ROOT)),**proof}))
 
 if __name__=='__main__':
-    parser=argparse.ArgumentParser();parser.add_argument('--check',action='store_true');args=parser.parse_args()
-    if args.check:
+    parser=argparse.ArgumentParser();group=parser.add_mutually_exclusive_group()
+    group.add_argument('--check',action='store_true');group.add_argument('--check-infrastructure',action='store_true');args=parser.parse_args()
+    if args.check_infrastructure:
+        result=infrastructure_provenance(require_complete_replacements=False)
+        print(json.dumps({'infrastructure_evidence_verified':True,'infrastructure':result,'final_four_variant_completion_claimed':False}))
+    elif args.check:
         try:data()
         except (AssertionError,base.GateError,FileNotFoundError) as error:
             print(json.dumps({'ready':False,'reason':f'{type(error).__name__}: {error}','native_states_modified':False}))

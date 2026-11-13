@@ -1,0 +1,24 @@
+{
+  "at_utc": "2026-11-13T09:44:30.953229+00:00",
+  "audited_native_episodes": 120,
+  "audited_stage_paths": 360,
+  "n_error": 0,
+  "TE_actual_launcher_exit": {
+    "receipt": "scopes/first8/diagnostics/infrastructure-recovery/20261113T084323101289Z/actual-exits/pid-2236375-exit.json",
+    "sha256": "910dba8b054f957b60c1be530961bcd4140a9749283f2012da3ff902dfd92725",
+    "at_utc": "2026-11-13T09:41:16.644322+00:00",
+    "pid": 2236375,
+    "start_ticks": "35702462",
+    "uid": 1001,
+    "returncode": 0,
+    "actual_wait_status": 0,
+    "exit_event_status": 0,
+    "source": "real os.waitpid of traced launcher after PTRACE_EVENT_EXIT",
+    "code_or_parameters_changed": false,
+    "Native_restarted": false
+  },
+  "whole160_complete": false,
+  "subprocess_returncode": 0,
+  "Native_workers_modified": false,
+  "source_and_parameters_unchanged": true
+}

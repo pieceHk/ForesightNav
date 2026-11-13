@@ -1,0 +1,98 @@
+{
+  "at_utc": "2026-11-13T08:55:54.886143+00:00",
+  "GPU0": {
+    "index": "0",
+    "uuid": "GPU-b1f2b8f6-fe40-f074-7206-f73cf6e08738",
+    "name": "NVIDIA A40",
+    "memory.total": "46068",
+    "memory.free": "31110"
+  },
+  "process_roles": [
+    {
+      "pid": 1858673,
+      "uid": 1013,
+      "same_account": false,
+      "ppid": 1858534,
+      "pgid": 1858534,
+      "start_ticks": "32281649",
+      "used_gpu0_mib": 2008,
+      "all_GPU_indices": [
+        0
+      ],
+      "program": "python3",
+      "script_names": [],
+      "exp2_marker": false,
+      "exp4_marker": false,
+      "command_sha256": "189436720828caa771ad02f653270e751ae756d5a06fb08994a59ed0ce4dce4b"
+    },
+    {
+      "pid": 2284560,
+      "uid": 1008,
+      "same_account": false,
+      "ppid": 2281367,
+      "pgid": 2281367,
+      "start_ticks": "36298978",
+      "used_gpu0_mib": 2070,
+      "all_GPU_indices": [
+        0
+      ],
+      "program": "python",
+      "script_names": [],
+      "exp2_marker": false,
+      "exp4_marker": false,
+      "command_sha256": "3b4ac9b8a574da8ab188b98b5113cce134b42c0e5dc51d4814587d2c385fa16a"
+    },
+    {
+      "pid": 2281722,
+      "uid": 1008,
+      "same_account": false,
+      "ppid": 2281367,
+      "pgid": 2281367,
+      "start_ticks": "36292585",
+      "used_gpu0_mib": 2070,
+      "all_GPU_indices": [
+        0
+      ],
+      "program": "python",
+      "script_names": [],
+      "exp2_marker": false,
+      "exp4_marker": false,
+      "command_sha256": "8e122dedbc80a07a19840dbfcd9c9335478b3c12e114f414f5c4c4c2dff84b01"
+    },
+    {
+      "pid": 2286080,
+      "uid": 1008,
+      "same_account": false,
+      "ppid": 2281367,
+      "pgid": 2281367,
+      "start_ticks": "36302792",
+      "used_gpu0_mib": 2070,
+      "all_GPU_indices": [
+        0
+      ],
+      "program": "python",
+      "script_names": [],
+      "exp2_marker": false,
+      "exp4_marker": false,
+      "command_sha256": "b345858013bc68a138e6f7a6dd7d7531ceb09ba50b11ea850fd677065a98ffc2"
+    },
+    {
+      "pid": 2283182,
+      "uid": 1008,
+      "same_account": false,
+      "ppid": 2281367,
+      "pgid": 2281367,
+      "start_ticks": "36295645",
+      "used_gpu0_mib": 2070,
+      "all_GPU_indices": [
+        0
+      ],
+      "program": "python",
+      "script_names": [],
+      "exp2_marker": false,
+      "exp4_marker": false,
+      "command_sha256": "fc4eb431d472a59f17a970785dcf8fbf802adcd5e4709dd75073ad4ad238289b"
+    }
+  ],
+  "signals_sent": false
+}
