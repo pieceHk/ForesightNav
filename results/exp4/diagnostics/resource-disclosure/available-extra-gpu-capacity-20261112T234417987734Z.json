@@ -1,0 +1,115 @@
+{
+  "checked_at_utc": "2026-11-12T23:44:17.987708+00:00",
+  "stage": "nearest",
+  "active_controller_source_sha256": "f941c06d450ba05bcbd2d45041e454ed727cc0232289f2fcc694771e46bf2c96",
+  "gpus": [
+    {
+      "gpu": 0,
+      "free_mib": 29886,
+      "all_compute_mib": 14708,
+      "compute_processes": 3,
+      "reserved": true,
+      "memory_values_known": true,
+      "extra_idle_card_at_baseline_gate": false,
+      "extra_idle_card_at_active_gate": false
+    },
+    {
+      "gpu": 1,
+      "free_mib": 32117,
+      "all_compute_mib": 12702,
+      "compute_processes": 2,
+      "reserved": false,
+      "memory_values_known": true,
+      "extra_idle_card_at_baseline_gate": false,
+      "extra_idle_card_at_active_gate": false
+    },
+    {
+      "gpu": 2,
+      "free_mib": 31703,
+      "all_compute_mib": 12702,
+      "compute_processes": 2,
+      "reserved": false,
+      "memory_values_known": true,
+      "extra_idle_card_at_baseline_gate": false,
+      "extra_idle_card_at_active_gate": false
+    },
+    {
+      "gpu": 3,
+      "free_mib": 31903,
+      "all_compute_mib": 12704,
+      "compute_processes": 2,
+      "reserved": true,
+      "memory_values_known": true,
+      "extra_idle_card_at_baseline_gate": false,
+      "extra_idle_card_at_active_gate": false
+    },
+    {
+      "gpu": 4,
+      "free_mib": 32085,
+      "all_compute_mib": 12738,
+      "compute_processes": 2,
+      "reserved": false,
+      "memory_values_known": true,
+      "extra_idle_card_at_baseline_gate": false,
+      "extra_idle_card_at_active_gate": false
+    },
+    {
+      "gpu": 5,
+      "free_mib": 14356,
+      "all_compute_mib": 29137,
+      "compute_processes": 5,
+      "reserved": false,
+      "memory_values_known": true,
+      "extra_idle_card_at_baseline_gate": false,
+      "extra_idle_card_at_active_gate": false
+    },
+    {
+      "gpu": 6,
+      "free_mib": 17664,
+      "all_compute_mib": 27455,
+      "compute_processes": 3,
+      "reserved": false,
+      "memory_values_known": true,
+      "extra_idle_card_at_baseline_gate": false,
+      "extra_idle_card_at_active_gate": false
+    },
+    {
+      "gpu": 7,
+      "free_mib": 18521,
+      "all_compute_mib": 26539,
+      "compute_processes": 3,
+      "reserved": false,
+      "memory_values_known": true,
+      "extra_idle_card_at_baseline_gate": false,
+      "extra_idle_card_at_active_gate": false
+    }
+  ],
+  "extra_card_gate": {
+    "free_mib_at_least": 34816,
+    "all_compute_mib_at_most": 10240,
+    "candidate_gpus": [
+      1,
+      2,
+      4
+    ]
+  },
+  "active_extra_card_gate": {
+    "free_mib_at_least": 32768,
+    "all_compute_mib_at_most": 11264,
+    "candidate_gpus": [
+      1,
+      2,
+      4
+    ]
+  },
+  "active_allowed_gpus": [
+    5,
+    6,
+    7
+  ],
+  "eligible_additional_candidates": [],
+  "scope": "Read-only prospective capacity check using the active dispatcher admission rule; no GPU allocation change",
+  "source_and_parameters_unchanged": true,
+  "native_states_modified": false,
+  "signals_sent": false
+}
