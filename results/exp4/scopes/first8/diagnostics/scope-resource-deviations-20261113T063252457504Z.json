@@ -1,0 +1,21 @@
+{
+  "at_utc": "2026-11-13T06:32:52.452033+00:00",
+  "root_deviations_before_sha256": "58845e8d10e1f673f2b94bb29e9684659fda290cefe31781ddee9dd6bd28f5bb",
+  "root_deviations_sha256": "33d3b9ee2932347ff78fea0483b3f80abde28a6a89e9fc3e1b75f5c6371a8f6c",
+  "scope_deviations_sha256": "7379a84bb6134cad5e06529438a5995749d19ec0a88b5123261abbc3c09a9b8b",
+  "n_episodes_each_variant": 160,
+  "total_target": 640,
+  "allowed_gpus": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "source_and_parameters_unchanged": true,
+  "native_states_modified": false,
+  "user_authorized_scope_and_resource_changes_recorded": true
+}

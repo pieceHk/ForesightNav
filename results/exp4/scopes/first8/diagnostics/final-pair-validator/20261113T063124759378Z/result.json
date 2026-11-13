@@ -1,0 +1,37 @@
+{
+  "at_utc": "2026-11-13T06:31:24.759752+00:00",
+  "six_counterexample_tests_passed": true,
+  "actual_completed_pair_episodes": 160,
+  "contingency_counts": {
+    "both_success": 18,
+    "left_only_success": 18,
+    "right_only_success": 15,
+    "both_failure": 109,
+    "n_paired": 160
+  },
+  "rates_pct_unrounded": {
+    "left": {
+      "SR": 22.5,
+      "SPL": 9.048255016469543,
+      "PR": 56.45833333333333,
+      "PPL": 15.14838038537051
+    },
+    "right": {
+      "SR": 20.625,
+      "SPL": 7.040273203114023,
+      "PR": 56.25,
+      "PPL": 15.182485974136549
+    }
+  },
+  "csv": "scopes/first8/diagnostics/final-pair-validator/20261113T063124759378Z/nearest_vs_full.csv",
+  "csv_sha256": "f4b21dab6c2cb49476a8bc857f286a9004c7e3ba76ebd784034be1efea2ae9a2",
+  "test_log": "scopes/first8/diagnostics/final-pair-validator/20261113T063124759378Z/tests.txt",
+  "helper_sha256": {
+    "validate_first8_pairs.py": "7403a7e52874e26b52585384ef3e3dd591eb346de66aa6307a46ab2178dbe738",
+    "test_first8_pairs.py": "671f8ecac94099e9613ba2d95bb802b1a9d944ff40ede8003282f0e5982445d4",
+    "report_first8_final.py": "ffe8dcf6832ae75e2dc816b91aebafc494094c1a2ccc18cca79bacfed746aa71"
+  },
+  "source_and_parameters_unchanged": true,
+  "scope": "Preparatory nearest/full pair only; final six pairs and all-four report remain pending",
+  "native_states_modified": false
+}

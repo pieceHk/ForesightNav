@@ -71,3 +71,16 @@
 | --- | --- | --- | --- |
 | GPU分配与共享条件 | 四个变体使用同一评估协议；记录实际运行环境 | Full沿用其实际资源记录。用户要求保留Exp2后，新Nearest改在物理GPU5、6、7运行，GPU0留给用户，GPU3留给Exp2；GPU3清理监控已停用并核实退出。新调度的准入门槛为34 GiB空闲、已有compute不超过10 GiB；另有20秒只读显存采样 | 只调整CPU调度和资源记录，算法、模型、seed、回合身份及冻结参数不变。离散显存采样不构成峰值保证；规划耗时与2×2结果须结合共享资源条件解释，详见[资源记录](reports/gpu_scheduling.md)和[实际新启动](meta/nearest-start-a3.json) |
 | Nearest基础设施中断 | Nearest在固定400条3-MON上完整评估 | 旧GPU1/2/3尝试因GPU3 mapper显存不足失败，原地续跑不受支持。旧尝试全部57条记录整体归档、排除于正式比较；新尝试从同一固定400身份清单完整重跑 | 重跑依据是基础设施故障，不按导航成败选择回合。旧运行目录和原始日志保留，失败记录不伪造成功或退出码。详见[基础设施报告](reports/Nearest_infrastructure_restart.md)及[整次归档清单](diagnostics/infrastructure-restarts/nearest-20261111T172644/manifest.json) |
+
+## 2026-11-13：用户调整评估范围与GPU分配
+
+<!-- exp4-first8-user-authorized-scope-and-eight-gpu-20261113 -->
+
+| 位置 | 原规定或先前安排 | 实际做法 | 原因与影响 |
+| --- | --- | --- | --- |
+| CP4/CP5评估条数 | 20场景，每变体400条3-MON | 用户要求仅运行原固定清单前8场景，每场景20条、每变体160条，四变体共640条。Full和Nearest复用对应8场景的全部原生记录，并重新审计；Myopic、Suffix使用完全相同160条身份。原Full400和范围外记录保留。 | 用户在已有部分结果之后明确缩减范围；没有根据本次成绩重排场景或筛除回合。原任务池本身曾由历史1-MON结果筛选，本范围不能作为独立盲测或未见任务泛化证据。 |
+| 执行资源 | 曾使用GPU5、6、7，保留GPU0及Exp2资源 | 用户暂停Exp2并释放8卡后，当前允许物理GPU0–7，每卡一路Native，仍执行32GiB空闲/既有compute≤11GiB准入。已运行的三路Native保留，五路新场景加入；仅CPU调度器交接，不重启原生。 | 用户最新明确授权覆盖旧GPU0/3保留安排；保留Exp2数据，不清理其他用户任务。不同阶段的共享资源条件变化，耗时不能视为隔离资源因素后的因果比较。 |
+
+CP5当前继续按Nearest完成后运行Belief-myopic，再运行Suffix-only的全局阶段顺序。评估期间算法、交叉拟合参数、种子、任务及source ID、步数预算、精度和共享导航机制均保持冻结。
+
+证据：[固定范围](scopes/first8/meta/scope.json)、[范围切换与保留记录](meta/first8-scope-cutoff.json)、[当前8卡授权](scopes/first8/meta/gpu-allocation.json)、[CPU交接与原生保留](scopes/first8/meta/eight-gpu-handoff.json)。

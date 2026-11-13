@@ -1,0 +1,196 @@
+{
+  "at_utc": "2026-11-13T06:26:09.436361+00:00",
+  "scope": "first8",
+  "scene_launches": [
+    {
+      "stage": "myopic",
+      "scene": "4ok3usBNeis",
+      "gpu": 5,
+      "native_identities": 20,
+      "seed": 1,
+      "launch_sha256": "361234207ddcd3cf75147993602c77b79f15374d1c4c90ebed69402c7914623c",
+      "launcher_pid": 2197428,
+      "errors": {
+        "cuda out of memory": 0,
+        "outofmemoryerror": 0,
+        "invalid mapper response": 0,
+        "traceback (most recent call last)": 0
+      },
+      "source_commit": "03242fda76fd6a631596a7269c8e7990c657ea30"
+    },
+    {
+      "stage": "myopic",
+      "scene": "5cdEh9F2hJL",
+      "gpu": 6,
+      "native_identities": 20,
+      "seed": 1,
+      "launch_sha256": "5a21e9c3e03fd9afa701bb61359d11bfbb9428457cd243780f184388bafb0527",
+      "launcher_pid": 2197432,
+      "errors": {
+        "cuda out of memory": 0,
+        "outofmemoryerror": 0,
+        "invalid mapper response": 0,
+        "traceback (most recent call last)": 0
+      },
+      "source_commit": "03242fda76fd6a631596a7269c8e7990c657ea30"
+    },
+    {
+      "stage": "myopic",
+      "scene": "6s7QHgap2fW",
+      "gpu": 7,
+      "native_identities": 20,
+      "seed": 1,
+      "launch_sha256": "c689351743084dee3c915b898a0e78fc03f9ad57028e28bc77767c936a44f580",
+      "launcher_pid": 2197440,
+      "errors": {
+        "cuda out of memory": 0,
+        "outofmemoryerror": 0,
+        "invalid mapper response": 0,
+        "traceback (most recent call last)": 0
+      },
+      "source_commit": "03242fda76fd6a631596a7269c8e7990c657ea30"
+    },
+    {
+      "stage": "myopic",
+      "scene": "DYehNKdT76V",
+      "gpu": 0,
+      "native_identities": 20,
+      "seed": 1,
+      "launch_sha256": "b118b0c9cd06c58641d8b77d0f2290e847a93ba06aa9aaf09ce5a9f00a40a03d",
+      "launcher_pid": 2236371,
+      "errors": {
+        "cuda out of memory": 0,
+        "outofmemoryerror": 0,
+        "invalid mapper response": 0,
+        "traceback (most recent call last)": 0
+      },
+      "source_commit": "03242fda76fd6a631596a7269c8e7990c657ea30"
+    },
+    {
+      "stage": "myopic",
+      "scene": "Dd4bFSTQ8gi",
+      "gpu": 1,
+      "native_identities": 20,
+      "seed": 1,
+      "launch_sha256": "ad76e5ee244f820c4b15f2f5011c640701b98f391a738de39d44c836c682eacc",
+      "launcher_pid": 2236372,
+      "errors": {
+        "cuda out of memory": 0,
+        "outofmemoryerror": 0,
+        "invalid mapper response": 0,
+        "traceback (most recent call last)": 0
+      },
+      "source_commit": "03242fda76fd6a631596a7269c8e7990c657ea30"
+    },
+    {
+      "stage": "myopic",
+      "scene": "Nfvxx8J5NCo",
+      "gpu": 2,
+      "native_identities": 20,
+      "seed": 1,
+      "launch_sha256": "7f888cb60d889fb7a3c6cae375e037e5cda149dd678076ba6395057ad6a0193b",
+      "launcher_pid": 2236373,
+      "errors": {
+        "cuda out of memory": 0,
+        "outofmemoryerror": 0,
+        "invalid mapper response": 0,
+        "traceback (most recent call last)": 0
+      },
+      "source_commit": "03242fda76fd6a631596a7269c8e7990c657ea30"
+    },
+    {
+      "stage": "myopic",
+      "scene": "QaLdnwvtxbs",
+      "gpu": 3,
+      "native_identities": 20,
+      "seed": 1,
+      "launch_sha256": "5364ab59de52149db61934555308b3c1898752454e25df1b7a48fcbfe0934c39",
+      "launcher_pid": 2236374,
+      "errors": {
+        "cuda out of memory": 0,
+        "outofmemoryerror": 0,
+        "invalid mapper response": 0,
+        "traceback (most recent call last)": 0
+      },
+      "source_commit": "03242fda76fd6a631596a7269c8e7990c657ea30"
+    },
+    {
+      "stage": "myopic",
+      "scene": "TEEsavR23oF",
+      "gpu": 4,
+      "native_identities": 20,
+      "seed": 1,
+      "launch_sha256": "c7303b4285bf90d69604ac6523739d03b22015a02a2cb08952ef532697587f88",
+      "launcher_pid": 2236375,
+      "errors": {
+        "cuda out of memory": 0,
+        "outofmemoryerror": 0,
+        "invalid mapper response": 0,
+        "traceback (most recent call last)": 0
+      },
+      "source_commit": "03242fda76fd6a631596a7269c8e7990c657ea30"
+    }
+  ],
+  "checked_native_identities": 160,
+  "resources": [
+    {
+      "gpu": 0,
+      "free_mib": 18917,
+      "experiment_compute_mib": 18657,
+      "other_compute_mib": 6024,
+      "other_user_processes_not_signaled": true
+    },
+    {
+      "gpu": 1,
+      "free_mib": 21210,
+      "experiment_compute_mib": 18639,
+      "other_compute_mib": 4016,
+      "other_user_processes_not_signaled": true
+    },
+    {
+      "gpu": 2,
+      "free_mib": 20668,
+      "experiment_compute_mib": 19173,
+      "other_compute_mib": 4016,
+      "other_user_processes_not_signaled": true
+    },
+    {
+      "gpu": 3,
+      "free_mib": 21125,
+      "experiment_compute_mib": 18577,
+      "other_compute_mib": 4016,
+      "other_user_processes_not_signaled": true
+    },
+    {
+      "gpu": 4,
+      "free_mib": 18249,
+      "experiment_compute_mib": 21653,
+      "other_compute_mib": 4016,
+      "other_user_processes_not_signaled": true
+    },
+    {
+      "gpu": 5,
+      "free_mib": 19934,
+      "experiment_compute_mib": 20167,
+      "other_compute_mib": 4016,
+      "other_user_processes_not_signaled": true
+    },
+    {
+      "gpu": 6,
+      "free_mib": 21007,
+      "experiment_compute_mib": 18791,
+      "other_compute_mib": 4016,
+      "other_user_processes_not_signaled": true
+    },
+    {
+      "gpu": 7,
+      "free_mib": 20200,
+      "experiment_compute_mib": 19631,
+      "other_compute_mib": 4016,
+      "other_user_processes_not_signaled": true
+    }
+  ],
+  "signals_sent": false,
+  "native_states_modified": false,
+  "source_and_parameters_unchanged": true
+}

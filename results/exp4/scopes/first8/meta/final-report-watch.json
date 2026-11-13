@@ -1,0 +1,30 @@
+{
+  "started_at_utc": "2026-11-13T06:26:01.802141+00:00",
+  "pid": 2250471,
+  "start_ticks": "35947903",
+  "command": [
+    "/nvme/khy/conda_envs/pbsp/navigation/bin/python",
+    "-u",
+    "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/code/watch_first8_final_report.py"
+  ],
+  "source_sha256": "2e43fe40e2145cdf0cdcc34a617075aecb41955c23e35fbcef2b7fbf6aaf83b4",
+  "files": {
+    "watch_first8_final_report.py": {
+      "exists": true,
+      "sha256": "2e43fe40e2145cdf0cdcc34a617075aecb41955c23e35fbcef2b7fbf6aaf83b4"
+    },
+    "record_first8_environments.py": {
+      "exists": true,
+      "sha256": "63039c0a97054a54dfb1e29a414ebe9e9a8dd32741bf5da93dac4ff6975ebc7a"
+    },
+    "report_first8_final.py": {
+      "exists": true,
+      "sha256": "cc7f6610b7ab39655fa0ea31eaa012fd721e36ec002f5cfb7c9ef10b22119b51"
+    }
+  },
+  "log": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/scopes/first8/logs/final-report-watch.log",
+  "stderr": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/scopes/first8/logs/final-report-watch.stderr.log",
+  "max_seconds": 43200,
+  "native_states_modified": false,
+  "requires_actual_final_visual_QA": true
+}

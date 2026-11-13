@@ -1,0 +1,49 @@
+{
+  "at_utc": "2026-11-13T06:33:46.515657+00:00",
+  "publication_commit": "7ad20dc80166d7c3c54257336a4f968318c0805f",
+  "files": [
+    {
+      "file": "code/report_variants.py",
+      "runtime_sha256": "d3d8617a83ccbd1ccebf18cf2b4149fd745be23c962e3dabeb42b057ad7626c3",
+      "git_HEAD_blob_sha256": "d3d8617a83ccbd1ccebf18cf2b4149fd745be23c962e3dabeb42b057ad7626c3",
+      "actual_HEAD_matches_frozen_analysis": true,
+      "included_in_recent_transport_manifest": false
+    },
+    {
+      "file": "code/action_path_metrics.py",
+      "runtime_sha256": "a89afc6504fcb5520bb8c227928961b3d7814bcfcc98c23c6311e35254089f1e",
+      "git_HEAD_blob_sha256": "a89afc6504fcb5520bb8c227928961b3d7814bcfcc98c23c6311e35254089f1e",
+      "actual_HEAD_matches_frozen_analysis": true,
+      "included_in_recent_transport_manifest": false
+    },
+    {
+      "file": "code/native_candidate_gt.py",
+      "runtime_sha256": "e2620454fe45d54933294286a518440ef16ec961c0eb0ca5aafe5ec2587a21a3",
+      "git_HEAD_blob_sha256": "e2620454fe45d54933294286a518440ef16ec961c0eb0ca5aafe5ec2587a21a3",
+      "actual_HEAD_matches_frozen_analysis": true,
+      "included_in_recent_transport_manifest": false
+    },
+    {
+      "file": "code/candidate_identities.py",
+      "runtime_sha256": "a311b37d45d59f379ce00b58d1350b5eb308da0b9a24d34ad2facdb495d9991d",
+      "git_HEAD_blob_sha256": "a311b37d45d59f379ce00b58d1350b5eb308da0b9a24d34ad2facdb495d9991d",
+      "actual_HEAD_matches_frozen_analysis": true,
+      "included_in_recent_transport_manifest": false
+    },
+    {
+      "file": "code/evaluate_sequence.py",
+      "runtime_sha256": "d238350a2733b56d258e774e5ca4f1537f09818cd34a313a638b9ec483c0b82f",
+      "git_HEAD_blob_sha256": "d238350a2733b56d258e774e5ca4f1537f09818cd34a313a638b9ec483c0b82f",
+      "actual_HEAD_matches_runtime": true,
+      "included_in_recent_transport_manifest": false
+    },
+    {
+      "file": "code/watch_evaluation.py",
+      "runtime_sha256": "b0d1839082efc39cab8be8bbf2985fb9938d589d6abf33969606e9cd4651a8db",
+      "git_HEAD_blob_sha256": "b0d1839082efc39cab8be8bbf2985fb9938d589d6abf33969606e9cd4651a8db",
+      "actual_HEAD_matches_runtime": true,
+      "included_in_recent_transport_manifest": false
+    }
+  ],
+  "native_states_modified": false
+}
