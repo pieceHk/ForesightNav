@@ -32,3 +32,7 @@ Myopic、Suffix-only顺序运行同样8个场景，使用原冻结算法、参�
 已对440条已完整结束任务的28740份在线快照进行CPU重放，逐条核对实际变体的递归代价、候选字段、滞回结果与完整输入候选排列；Myopic还核对了未查询未来目标。重放使用原冻结参数和原快照，不替代其他变体的在线轨迹，也不改写原始规划计时。剩余场景必须完整结束后再补齐全640条核查。
 
 [逐场景快照重放证据](../diagnostics/snapshot-replay/current.json)。
+
+两次故障还分别保留了独立的episode级错误日志，stop_reason为error。DY的下一reset目标13由连续已导出前缀和reset异常推得，未开始接受动作；6s的回合16保留了1499条动作引用。日志明确区分观察和推断，未完成回合的成功、路径与耗时不补零，两个错误回合均不进入当前正式成绩。
+
+[未计分错误回合](../logs/infrastructure_failed_episodes.jsonl)、[错误日志来源与SHA](../meta/infrastructure-error-episode-log.json)。

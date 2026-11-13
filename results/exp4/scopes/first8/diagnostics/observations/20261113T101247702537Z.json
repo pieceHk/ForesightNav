@@ -1,0 +1,373 @@
+{
+  "checked_at_utc": "2026-11-13T10:12:47.700704+00:00",
+  "scope": "first8",
+  "n_scenes": 8,
+  "episodes_per_variant": 160,
+  "controller_pid": 2311693,
+  "controller_start_ticks": "36789196",
+  "controller_live_matching": true,
+  "controller_source_sha256": "9d16337ef903a0a0e46de102c7eb2c02f1a44bceb973289b0406e23ed8f7cc40",
+  "status": "running",
+  "error": null,
+  "stages": {
+    "full": {
+      "status": "completed",
+      "completed_native": 160,
+      "audited": 160,
+      "jobs": [
+        {
+          "scene": "4ok3usBNeis",
+          "gpu": 2,
+          "status": "completed",
+          "completed_native": 20
+        },
+        {
+          "scene": "5cdEh9F2hJL",
+          "gpu": 3,
+          "status": "completed",
+          "completed_native": 20
+        },
+        {
+          "scene": "6s7QHgap2fW",
+          "gpu": 3,
+          "status": "completed",
+          "completed_native": 20
+        },
+        {
+          "scene": "DYehNKdT76V",
+          "gpu": 2,
+          "status": "completed",
+          "completed_native": 20
+        },
+        {
+          "scene": "Dd4bFSTQ8gi",
+          "gpu": 3,
+          "status": "completed",
+          "completed_native": 20
+        },
+        {
+          "scene": "Nfvxx8J5NCo",
+          "gpu": 2,
+          "status": "completed",
+          "completed_native": 20
+        },
+        {
+          "scene": "QaLdnwvtxbs",
+          "gpu": 3,
+          "status": "completed",
+          "completed_native": 20
+        },
+        {
+          "scene": "TEEsavR23oF",
+          "gpu": 2,
+          "status": "completed",
+          "completed_native": 20
+        }
+      ],
+      "metrics": {
+        "SR": 20.62,
+        "SPL": 7.04,
+        "PR": 56.25,
+        "PPL": 15.18,
+        "P_C1": 52.5,
+        "P_C2_given_C1": 59.52,
+        "P_C3_given_C1C2": 66.0
+      }
+    },
+    "nearest": {
+      "status": "completed",
+      "completed_native": 160,
+      "audited": 160,
+      "jobs": [
+        {
+          "scene": "4ok3usBNeis",
+          "gpu": 5,
+          "status": "completed",
+          "completed_native": 20
+        },
+        {
+          "scene": "5cdEh9F2hJL",
+          "gpu": 6,
+          "status": "completed",
+          "completed_native": 20
+        },
+        {
+          "scene": "6s7QHgap2fW",
+          "gpu": 7,
+          "status": "completed",
+          "completed_native": 20
+        },
+        {
+          "scene": "DYehNKdT76V",
+          "gpu": 6,
+          "status": "completed",
+          "completed_native": 20
+        },
+        {
+          "scene": "Dd4bFSTQ8gi",
+          "gpu": 5,
+          "status": "completed",
+          "completed_native": 20
+        },
+        {
+          "scene": "Nfvxx8J5NCo",
+          "gpu": 7,
+          "status": "completed",
+          "completed_native": 20
+        },
+        {
+          "scene": "QaLdnwvtxbs",
+          "gpu": 5,
+          "status": "completed",
+          "completed_native": 20
+        },
+        {
+          "scene": "TEEsavR23oF",
+          "gpu": 6,
+          "status": "completed",
+          "completed_native": 20
+        }
+      ],
+      "metrics": {
+        "SR": 22.5,
+        "SPL": 9.05,
+        "PR": 56.46,
+        "PPL": 15.15,
+        "P_C1": 50.62,
+        "P_C2_given_C1": 66.67,
+        "P_C3_given_C1C2": 66.67
+      }
+    },
+    "myopic": {
+      "status": "running",
+      "completed_native": 135,
+      "audited": 0,
+      "jobs": [
+        {
+          "scene": "4ok3usBNeis",
+          "gpu": 5,
+          "status": "completed",
+          "completed_native": 20
+        },
+        {
+          "scene": "5cdEh9F2hJL",
+          "gpu": 6,
+          "status": "completed",
+          "completed_native": 20
+        },
+        {
+          "scene": "Dd4bFSTQ8gi",
+          "gpu": 1,
+          "status": "completed",
+          "completed_native": 20
+        },
+        {
+          "scene": "Nfvxx8J5NCo",
+          "gpu": 2,
+          "status": "completed",
+          "completed_native": 20
+        },
+        {
+          "scene": "QaLdnwvtxbs",
+          "gpu": 3,
+          "status": "completed",
+          "completed_native": 20
+        },
+        {
+          "scene": "TEEsavR23oF",
+          "gpu": 4,
+          "status": "completed",
+          "completed_native": 20
+        },
+        {
+          "scene": "6s7QHgap2fW",
+          "gpu": 3,
+          "status": "running",
+          "completed_native": 6,
+          "pid": 2316356,
+          "launcher_live": true,
+          "launcher_birth_matches": true,
+          "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261113_165316_081484_exp4_myopic_exp4-myopic-a5-first8-infrastructure-20261113-6s7QHgap2fW",
+          "current_episode": "6",
+          "last_frame": 489,
+          "trajectory_age_seconds": 3.6370296478271484
+        },
+        {
+          "scene": "DYehNKdT76V",
+          "gpu": 1,
+          "status": "running",
+          "completed_native": 9,
+          "pid": 2317565,
+          "launcher_live": true,
+          "launcher_birth_matches": true,
+          "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261113_165323_772173_exp4_myopic_exp4-myopic-a5-first8-infrastructure-20261113-DYehNKdT76V",
+          "current_episode": "9",
+          "last_frame": 502,
+          "trajectory_age_seconds": 0.010572671890258789
+        }
+      ]
+    },
+    "suffix_only": {
+      "status": "not_started",
+      "completed_native": 0,
+      "audited": 0
+    }
+  },
+  "allowed_gpus": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "gpu_inventory": {
+    "checked_at_utc": "2026-11-13T10:12:47.700623+00:00",
+    "gpus": [
+      {
+        "index": "0",
+        "uuid": "GPU-b1f2b8f6-fe40-f074-7206-f73cf6e08738",
+        "name": "NVIDIA A40",
+        "memory.total": "46068",
+        "memory.free": "39948"
+      },
+      {
+        "index": "1",
+        "uuid": "GPU-6f6d0a9f-b84c-a94d-37ee-1ce29f66ba1f",
+        "name": "NVIDIA A40",
+        "memory.total": "46068",
+        "memory.free": "21265"
+      },
+      {
+        "index": "2",
+        "uuid": "GPU-e578717e-9e11-1464-269b-d5a17e564c8a",
+        "name": "NVIDIA A40",
+        "memory.total": "46068",
+        "memory.free": "40067"
+      },
+      {
+        "index": "3",
+        "uuid": "GPU-e345e195-e565-805c-b913-dc9a023ef37d",
+        "name": "NVIDIA A40",
+        "memory.total": "46068",
+        "memory.free": "20247"
+      },
+      {
+        "index": "4",
+        "uuid": "GPU-7e03cc60-2c77-01c4-3bb8-d0bfe70657be",
+        "name": "NVIDIA A40",
+        "memory.total": "46068",
+        "memory.free": "40161"
+      },
+      {
+        "index": "5",
+        "uuid": "GPU-875134a3-1b53-1712-a56d-a4192edb9728",
+        "name": "NVIDIA A40",
+        "memory.total": "46068",
+        "memory.free": "40059"
+      },
+      {
+        "index": "6",
+        "uuid": "GPU-c4579e9e-eb6e-0eda-0430-9b78b62c51b4",
+        "name": "NVIDIA A40",
+        "memory.total": "46068",
+        "memory.free": "39906"
+      },
+      {
+        "index": "7",
+        "uuid": "GPU-7ba3fcb6-cd24-e4eb-9fef-e2f8c32afae3",
+        "name": "NVIDIA A40",
+        "memory.total": "46068",
+        "memory.free": "39922"
+      }
+    ],
+    "compute_apps": [
+      {
+        "gpu_uuid": "GPU-b1f2b8f6-fe40-f074-7206-f73cf6e08738",
+        "used_gpu_memory": "2008"
+      },
+      {
+        "gpu_uuid": "GPU-b1f2b8f6-fe40-f074-7206-f73cf6e08738",
+        "used_gpu_memory": "2008"
+      },
+      {
+        "gpu_uuid": "GPU-6f6d0a9f-b84c-a94d-37ee-1ce29f66ba1f",
+        "used_gpu_memory": "2562"
+      },
+      {
+        "gpu_uuid": "GPU-6f6d0a9f-b84c-a94d-37ee-1ce29f66ba1f",
+        "used_gpu_memory": "16093"
+      },
+      {
+        "gpu_uuid": "GPU-6f6d0a9f-b84c-a94d-37ee-1ce29f66ba1f",
+        "used_gpu_memory": "2008"
+      },
+      {
+        "gpu_uuid": "GPU-6f6d0a9f-b84c-a94d-37ee-1ce29f66ba1f",
+        "used_gpu_memory": "2008"
+      },
+      {
+        "gpu_uuid": "GPU-e578717e-9e11-1464-269b-d5a17e564c8a",
+        "used_gpu_memory": "2008"
+      },
+      {
+        "gpu_uuid": "GPU-e578717e-9e11-1464-269b-d5a17e564c8a",
+        "used_gpu_memory": "2008"
+      },
+      {
+        "gpu_uuid": "GPU-e345e195-e565-805c-b913-dc9a023ef37d",
+        "used_gpu_memory": "2562"
+      },
+      {
+        "gpu_uuid": "GPU-e345e195-e565-805c-b913-dc9a023ef37d",
+        "used_gpu_memory": "17065"
+      },
+      {
+        "gpu_uuid": "GPU-e345e195-e565-805c-b913-dc9a023ef37d",
+        "used_gpu_memory": "2008"
+      },
+      {
+        "gpu_uuid": "GPU-e345e195-e565-805c-b913-dc9a023ef37d",
+        "used_gpu_memory": "2008"
+      },
+      {
+        "gpu_uuid": "GPU-7e03cc60-2c77-01c4-3bb8-d0bfe70657be",
+        "used_gpu_memory": "2008"
+      },
+      {
+        "gpu_uuid": "GPU-7e03cc60-2c77-01c4-3bb8-d0bfe70657be",
+        "used_gpu_memory": "2008"
+      },
+      {
+        "gpu_uuid": "GPU-875134a3-1b53-1712-a56d-a4192edb9728",
+        "used_gpu_memory": "2008"
+      },
+      {
+        "gpu_uuid": "GPU-875134a3-1b53-1712-a56d-a4192edb9728",
+        "used_gpu_memory": "2008"
+      },
+      {
+        "gpu_uuid": "GPU-c4579e9e-eb6e-0eda-0430-9b78b62c51b4",
+        "used_gpu_memory": "2008"
+      },
+      {
+        "gpu_uuid": "GPU-c4579e9e-eb6e-0eda-0430-9b78b62c51b4",
+        "used_gpu_memory": "2008"
+      },
+      {
+        "gpu_uuid": "GPU-7ba3fcb6-cd24-e4eb-9fef-e2f8c32afae3",
+        "used_gpu_memory": "2008"
+      },
+      {
+        "gpu_uuid": "GPU-7ba3fcb6-cd24-e4eb-9fef-e2f8c32afae3",
+        "used_gpu_memory": "2008"
+      }
+    ],
+    "external_process_names_and_PIDs_omitted": true
+  },
+  "THP_defrag": "always defer defer+madvise [madvise] never",
+  "memory_pressure": "some avg10=0.00 avg60=0.00 avg300=0.00 total=3358255481\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=3253414718\n",
+  "source_and_parameters_unchanged": true
+}

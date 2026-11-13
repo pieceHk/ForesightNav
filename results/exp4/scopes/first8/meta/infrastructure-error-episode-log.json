@@ -1,0 +1,14 @@
+{
+  "at_utc": "2026-11-13T10:14:35.287405+00:00",
+  "error_episode_log": "scopes/first8/logs/infrastructure_failed_episodes.jsonl",
+  "error_episode_log_sha256": "0cbbe227f8e758759fe134adc3b51813bfc2a7e94222052869d6dcfdcaac1fab",
+  "failed_native_attempts": 2,
+  "unscored_error_episode_records": 2,
+  "completed_prefix_exports_excluded_in_full": 29,
+  "complete_fixed_replacements_each": 20,
+  "recovery_plan": "scopes/first8/diagnostics/infrastructure-recovery/20261113T084323101289Z/plan.json",
+  "recovery_plan_sha256": "316099532c2d8b633e088b76db78a3c1d89921eaddd5f908601bb260aa03309c",
+  "Native_or_GPU_workers_started": false,
+  "formal_scores_modified": false,
+  "unavailable_metrics_imputed": false
+}
