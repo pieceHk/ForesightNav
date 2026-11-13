@@ -144,3 +144,9 @@ The first sample crossed the local6GiB review threshold. Exp4's sampled allocati
 After six scenes completed all120 native episodes with captured launcher exit0, the idle dispatcher was replaced. The14 pending scenes retained their original identities and order. GPU5/6/7 each had about32.3GiB free and met the revised32GiB-free/11GiB-existing-compute admission rule; none met the previous34GiB/10GiB rule. This changes CPU resource admission only.
 
 The [handoff proof](../meta/nearest-completed-scene-resume-a3.json) records the retained six scenes, new CPU and sampler identities, and archived predecessor memory logs. No native worker was restarted or signaled, no other user's process was signaled, and the frozen native sources and calibration remained unchanged. QaLdnwvtxbs, TEEsavR23oF and XB4GS9ShBRE then started on GPU5,6,7 respectively. The17 completed-only transition checks passed before activation; sampled past memory use does not bound the remaining scenes. The6GiB observation threshold remains in force.
+
+## 2026年11月13日资源复查（北京时间）
+
+09:30至10:35的GPU6离散采样中，最低空闲显存为4456 MiB，Exp4 compute占用最高为29261 MiB。控制器于09:55捕获TE启动器退出码0；该场景的20条回合已核查完整，GPU6随后接续CV场景。10:35采样时空闲显存为14301 MiB；10:33检查的48份日志前缀中，OOM、无效mapper响应和traceback匹配数均为0。本次复查未重启原生worker或向其他任务发信号，所有回合均保留。采样极值不构成后续显存使用上限，详见[GPU6显存复查](../diagnostics/resource-disclosure/gpu6-headroom-review-20261113T023512720339Z/review.json)。
+
+收到用户授权后，10:27完成8.02秒THP defrag基线复测：compact_stall和compact_fail增量均为0，memory PSI full avg10为0%。复测期间未观察到内存整理停顿，本次保留madvise，没有进行defer效果对比，也无需恢复设置。已记录的许可附带无改善立即恢复、实验结束恢复原值的条件，见[THP授权与复测](../diagnostics/resource-disclosure/thp-approval-reassessment-20261113T022733255095Z/decision.json)。

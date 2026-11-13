@@ -1,7 +1,7 @@
 {
   "recorded_at_utc": "2026-11-12T18:29:19.642520+00:00",
-  "status": "deferred_after_observed_resource_recovery",
-  "approved": false,
+  "status": "approved_deferred_after_fresh_baseline",
+  "approved": true,
   "scope": "temporary_host_thp_defrag_madvise_to_defer",
   "target": "/sys/kernel/mm/transparent_hugepage/defrag",
   "before": "madvise",
@@ -43,7 +43,12 @@
   "action_currently_needed": false,
   "global_setting_write_performed": false,
   "restoration_required": false,
-  "user_approval_received": false,
+  "user_approval_received": true,
   "late_approval_handling": "Record an explicit answer if received, then reassess current need; never execute a stale plan automatically.",
-  "reason": "Native throughput recovered while THP remained madvise, available host RAM increased and sampled compaction stalls fell to zero. No host setting was changed by this agent."
+  "reason": "No current direct-compaction stall was observed, or the expected original policy changed; no host setting write is needed from this sample.",
+  "approval_record": "meta/thp-defrag-user-approval.json",
+  "approval_sha256": "6fb29ab641a6d3decfd914a4c991db705493a858d858140b53cbcd937646561e",
+  "reassessed_at_utc": "2026-11-13T02:27:41.496709+00:00",
+  "fresh_baseline": "diagnostics/resource-disclosure/thp-approval-reassessment-20261113T022733255095Z/baseline.json",
+  "fresh_baseline_sha256": "2b06cb853db99a3e54c4e4a3398cc3327b8b4525112c893814983fe258be522d"
 }

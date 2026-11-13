@@ -1,0 +1,18 @@
+{
+  "at_utc": "2026-11-13T02:38:46.771244+00:00",
+  "report": "reports/gpu_scheduling.md",
+  "previous_report": "diagnostics/resource-disclosure/combined-review-update-20261113T023846764475Z/gpu_scheduling-before.md",
+  "previous_report_sha256": "5b490387823a403cbbb749fea21f6c3609fa530de39ea541f428998a093996c5",
+  "current_report_sha256": "5042f4ef9521d04d82405bbb216992970ce70715e6b01d71f78a15d4fc1791c8",
+  "gpu6_review": "diagnostics/resource-disclosure/gpu6-headroom-review-20261113T023512720339Z/review.json",
+  "gpu6_review_sha256": "a933550b6497333364749b519a56fc307f5df3562f670e394c40e75e413d3fb7",
+  "thp_decision": "diagnostics/resource-disclosure/thp-approval-reassessment-20261113T022733255095Z/decision.json",
+  "thp_decision_sha256": "f81ddaf5f8edeb7c7934ab7201ed4548d2a64a6f73eccfd1284c3522804cec90",
+  "thp_approval_sha256": "6fb29ab641a6d3decfd914a4c991db705493a858d858140b53cbcd937646561e",
+  "prose_review": "humanizer embedded mode; measured values, times, links and execution scope retained",
+  "source_and_parameters_unchanged": true,
+  "native_states_modified": false,
+  "signals_sent": false,
+  "host_settings_changed": false,
+  "prose_finalized_at_utc": "2026-11-13T02:39:59.817635+00:00"
+}

@@ -1,0 +1,228 @@
+{
+  "checked_at_utc": "2026-11-13T02:31:48.684013+00:00",
+  "stage": "nearest",
+  "diagnostic_only": true,
+  "scope": "Actual launched scene plans, live launchers and completed native scenes; does not certify aggregate stage metrics",
+  "ledger_sha256_at_read": "65f207a4b49092c78870a3db19b520894f03295f34bf3a883ffb5a529a1cf442",
+  "auditor_sha256": "b0a81de6cd896e07ae705172a3679f59acabe909806a5c31e2690b4a92074b1f",
+  "parameter_sha256": "e1d75f3c9503c7439467748fc97be6ae2ad450c429f40dc7235b1564ff7852ae",
+  "source_and_parameters_unchanged": true,
+  "controller_identity_at_read": {
+    "live": true,
+    "state": "S",
+    "start_ticks": "32816629",
+    "command": "/nvme/khy/conda_envs/pbsp/navigation/bin/python -u /nvme/khy/ForesightNav_exp4_depthfix/results/exp4/code/available_gpu_evaluate_sequence32.py --stage nearest --attempt a3 --controller --plan /nvme/khy/ForesightNav_exp4_depthfix/results/exp4/diagnostics/completed-scene-resume/20261112T214408940550Z/plan.json "
+  },
+  "expected_stage_scenes": 20,
+  "expected_stage_episodes": 400,
+  "checked_native_identities": 240,
+  "scene_launches": [
+    {
+      "scene": "4ok3usBNeis",
+      "gpu": 5,
+      "ledger_status": "completed",
+      "native_completion_audit": {
+        "completed_episodes": 20,
+        "identity_count": 20
+      },
+      "state": "completed",
+      "native_identities": 20,
+      "categories_and_source_ids_match": true,
+      "seed": 1,
+      "source_commit": "03242fda76fd6a631596a7269c8e7990c657ea30",
+      "launcher_pid": 1479628,
+      "launcher_live_at_read": false,
+      "launch_sha256": "65dc0402cf54a4a826f7d981be40a392b07e072a68af62c60c86d120f1f38d68"
+    },
+    {
+      "scene": "5cdEh9F2hJL",
+      "gpu": 6,
+      "ledger_status": "completed",
+      "native_completion_audit": {
+        "completed_episodes": 20,
+        "identity_count": 20
+      },
+      "state": "completed",
+      "native_identities": 20,
+      "categories_and_source_ids_match": true,
+      "seed": 1,
+      "source_commit": "03242fda76fd6a631596a7269c8e7990c657ea30",
+      "launcher_pid": 1479629,
+      "launcher_live_at_read": false,
+      "launch_sha256": "c2d2b716e4f362ad33e05520aadb44330ebdb2d940f75d5cb987e63cdf58d09d"
+    },
+    {
+      "scene": "6s7QHgap2fW",
+      "gpu": 7,
+      "ledger_status": "completed",
+      "native_completion_audit": {
+        "completed_episodes": 20,
+        "identity_count": 20
+      },
+      "state": "completed",
+      "native_identities": 20,
+      "categories_and_source_ids_match": true,
+      "seed": 1,
+      "source_commit": "03242fda76fd6a631596a7269c8e7990c657ea30",
+      "launcher_pid": 1479630,
+      "launcher_live_at_read": false,
+      "launch_sha256": "3d3c7b94ed96525f095ad430232b6249998767c5bc8b86be7eff5df69b9ccb63"
+    },
+    {
+      "scene": "DYehNKdT76V",
+      "gpu": 6,
+      "ledger_status": "completed",
+      "native_completion_audit": {
+        "completed_episodes": 20,
+        "identity_count": 20
+      },
+      "state": "completed",
+      "native_identities": 20,
+      "categories_and_source_ids_match": true,
+      "seed": 1,
+      "source_commit": "03242fda76fd6a631596a7269c8e7990c657ea30",
+      "launcher_pid": 1696201,
+      "launcher_live_at_read": false,
+      "launch_sha256": "4e87c4b3e97494ecbd3adb0cca70fabce74be76cc0f9673cdf5f7fe0dbe26240"
+    },
+    {
+      "scene": "Dd4bFSTQ8gi",
+      "gpu": 5,
+      "ledger_status": "completed",
+      "native_completion_audit": {
+        "completed_episodes": 20,
+        "identity_count": 20
+      },
+      "state": "completed",
+      "native_identities": 20,
+      "categories_and_source_ids_match": true,
+      "seed": 1,
+      "source_commit": "03242fda76fd6a631596a7269c8e7990c657ea30",
+      "launcher_pid": 1745952,
+      "launcher_live_at_read": false,
+      "launch_sha256": "311ef1a5d21c224be89b5cd87fb288fab16b47ef06716bc417fa7d01f746efe5"
+    },
+    {
+      "scene": "Nfvxx8J5NCo",
+      "gpu": 7,
+      "ledger_status": "completed",
+      "native_completion_audit": {
+        "completed_episodes": 20,
+        "identity_count": 20
+      },
+      "state": "completed",
+      "native_identities": 20,
+      "categories_and_source_ids_match": true,
+      "seed": 1,
+      "source_commit": "03242fda76fd6a631596a7269c8e7990c657ea30",
+      "launcher_pid": 1800436,
+      "launcher_live_at_read": false,
+      "launch_sha256": "cff9a275c35606d228c4abab45fc03f1c0e35a47d6d7b7d7d08c4d0a18868e7b"
+    },
+    {
+      "scene": "QaLdnwvtxbs",
+      "gpu": 5,
+      "ledger_status": "completed",
+      "native_completion_audit": {
+        "completed_episodes": 20,
+        "identity_count": 20
+      },
+      "state": "completed",
+      "native_identities": 20,
+      "categories_and_source_ids_match": true,
+      "seed": 1,
+      "source_commit": "03242fda76fd6a631596a7269c8e7990c657ea30",
+      "launcher_pid": 1920283,
+      "launcher_live_at_read": false,
+      "launch_sha256": "ae39e4605c165f2544cad560d4e7df8fb86de96a90b1d4e21825d4bb543293d9"
+    },
+    {
+      "scene": "TEEsavR23oF",
+      "gpu": 6,
+      "ledger_status": "completed",
+      "native_completion_audit": {
+        "completed_episodes": 20,
+        "identity_count": 20
+      },
+      "state": "completed",
+      "native_identities": 20,
+      "categories_and_source_ids_match": true,
+      "seed": 1,
+      "source_commit": "03242fda76fd6a631596a7269c8e7990c657ea30",
+      "launcher_pid": 1920284,
+      "launcher_live_at_read": false,
+      "launch_sha256": "27eda7c485eabe846886e9ae1fabd3bb289c14a78837f9a9de8069e210dd038f"
+    },
+    {
+      "scene": "XB4GS9ShBRE",
+      "gpu": 7,
+      "ledger_status": "completed",
+      "native_completion_audit": {
+        "completed_episodes": 20,
+        "identity_count": 20
+      },
+      "state": "completed",
+      "native_identities": 20,
+      "categories_and_source_ids_match": true,
+      "seed": 1,
+      "source_commit": "03242fda76fd6a631596a7269c8e7990c657ea30",
+      "launcher_pid": 1920285,
+      "launcher_live_at_read": false,
+      "launch_sha256": "d0764dc66bff1fda95b799ace4e3c5f674f2f02ea8bd8a9f7561b84fa00b5360"
+    },
+    {
+      "scene": "bxsVRursffK",
+      "gpu": 5,
+      "ledger_status": "running",
+      "state": "running",
+      "launcher_start_ticks": "33414770",
+      "native_identities": 20,
+      "categories_and_source_ids_match": true,
+      "seed": 1,
+      "source_commit": "03242fda76fd6a631596a7269c8e7990c657ea30",
+      "launcher_pid": 1997129,
+      "launcher_live_at_read": true,
+      "launch_sha256": "8ccb6387f24c62d561b65998a0439078557c823a8d5e5421df956fab6005aa6c"
+    },
+    {
+      "scene": "cvZr5TUy5C5",
+      "gpu": 6,
+      "ledger_status": "running",
+      "state": "running",
+      "launcher_start_ticks": "34322591",
+      "native_identities": 20,
+      "categories_and_source_ids_match": true,
+      "seed": 1,
+      "source_commit": "03242fda76fd6a631596a7269c8e7990c657ea30",
+      "launcher_pid": 2103366,
+      "launcher_live_at_read": true,
+      "launch_sha256": "2f95aebce3eaeaba1fa2a59b1eac71985c56b08bfb6823285f8b9a75de677ec9"
+    },
+    {
+      "scene": "mL8ThkuaVTM",
+      "gpu": 7,
+      "ledger_status": "running",
+      "state": "running",
+      "launcher_start_ticks": "34477229",
+      "native_identities": 20,
+      "categories_and_source_ids_match": true,
+      "seed": 1,
+      "source_commit": "03242fda76fd6a631596a7269c8e7990c657ea30",
+      "launcher_pid": 2116371,
+      "launcher_live_at_read": true,
+      "launch_sha256": "d8165f40935f1cc88ec86a5dfc11db39a7431523a767bbdcdce0236251d89cc1"
+    }
+  ],
+  "native_states_modified": false,
+  "allowed_gpus": [
+    5,
+    6,
+    7
+  ],
+  "scheduling": {
+    "mode": "bounded_memory_scene_parallel",
+    "plan": "diagnostics/completed-scene-resume/20261112T214408940550Z/plan.json",
+    "controller_sha256": "f941c06d450ba05bcbd2d45041e454ed727cc0232289f2fcc694771e46bf2c96",
+    "base_controller_sha256": "d238350a2733b56d258e774e5ca4f1537f09818cd34a313a638b9ec483c0b82f"
+  }
+}

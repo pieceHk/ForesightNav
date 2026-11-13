@@ -1,0 +1,49 @@
+{
+  "recorded_at_utc": "2026-11-12T18:29:19.642520+00:00",
+  "status": "deferred_after_observed_resource_recovery",
+  "approved": false,
+  "scope": "temporary_host_thp_defrag_madvise_to_defer",
+  "target": "/sys/kernel/mm/transparent_hugepage/defrag",
+  "before": "madvise",
+  "proposed": "defer",
+  "rollback": "madvise",
+  "policy_duration": "If approved, validate against the same live native PIDs; restore promptly without improvement and restore original setting at experiment end.",
+  "source_sha256": {
+    "code/apply_thp_defrag_password_op.py": "f6df9d769ae245cf9d0817895631844e73c08d6b873b1dec22e6aa58b900b3bc",
+    "code/prepare_thp_defrag_plan_op.py": "7d00b7bbd955cc841e64a8ab03b4fe3d823b289e5c0fb893eff615ab389b0f45"
+  },
+  "actual_read_only_check": {
+    "status": "read_only_preflight_passed",
+    "target": "/sys/kernel/mm/transparent_hugepage/defrag",
+    "before": "madvise",
+    "proposed": "defer",
+    "rollback": "madvise",
+    "available_modes": "always defer defer+madvise [madvise] never",
+    "settings_changed": false,
+    "signals_sent": false,
+    "scope": "Host-wide THP defrag policy only. Explicit user approval is required before apply."
+  },
+  "actual_check_exit_code": 0,
+  "settings_changed": false,
+  "native_restarted": false,
+  "signals_sent": false,
+  "source_and_parameters_unchanged": true,
+  "kernel_documentation": "https://docs.kernel.org/admin-guide/mm/transhuge.html",
+  "evidence": [
+    "diagnostics/resource-disclosure/20261112T181943633185Z-compute-performance.json",
+    "diagnostics/resource-disclosure/20261112T182142699786Z-host-memory-pressure.json",
+    "diagnostics/resource-disclosure/20261112T182340239049Z-thp-settings.json"
+  ],
+  "non_Exp4_identifiers_sanitized_public_diagnostics": [
+    "diagnostics/resource-disclosure/20261112T181943633185Z-compute-performance.json",
+    "diagnostics/resource-disclosure/20261112T182142699786Z-host-memory-pressure.json"
+  ],
+  "resolution_at_utc": "2026-11-12T19:11:18.563436+00:00",
+  "recovery_proof": "diagnostics/resource-disclosure/20261112T190938093320Z-compaction-recovery.json",
+  "action_currently_needed": false,
+  "global_setting_write_performed": false,
+  "restoration_required": false,
+  "user_approval_received": false,
+  "late_approval_handling": "Record an explicit answer if received, then reassess current need; never execute a stale plan automatically.",
+  "reason": "Native throughput recovered while THP remained madvise, available host RAM increased and sampled compaction stalls fell to zero. No host setting was changed by this agent."
+}

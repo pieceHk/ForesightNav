@@ -1,0 +1,674 @@
+{
+  "schema_version": "pbsp_environment_v1",
+  "role": "mapping",
+  "scene_id": null,
+  "recorded_at": "2026-11-13T01:55:14.683495+00:00",
+  "launch_source_commit": "03242fda76fd6a631596a7269c8e7990c657ea30",
+  "configuration_sha256": "76bfcdd50efbff2905216993e6cce4a4d0d81b19197e30f074b7fb3685aff0ac",
+  "identity_sha256": "56c385338d76a10bbc23850e09b1d45bd370d630ec928d17b36ad6ef325b3708",
+  "python_executable": "/nvme/khy/conda_envs/pbsp/mapping/bin/python3.10",
+  "python_version": "3.10.20",
+  "prefix": "/nvme/khy/conda_envs/pbsp/mapping",
+  "base_prefix": "/nvme/khy/conda_envs/pbsp/mapping",
+  "platform": "Linux-5.15.0-139-generic-x86_64-with-glibc2.31",
+  "machine": "x86_64",
+  "user_site_enabled": false,
+  "cuda_visible_devices": "6",
+  "source_search_paths": [
+    "/nvme/khy/ForesightNav_exp4_depthfix",
+    "/nvme/khy/ForesightNav_exp4_depthfix",
+    "/nvme/khy/ForesightNav_exp4_depthfix/third_party",
+    "/nvme/khy/conda_envs/pbsp/mapping/lib/python310.zip",
+    "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10",
+    "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/lib-dynload",
+    "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+  ],
+  "lock_sha256": "eff5e7d28ad212aa6f2a7784ff4f972af3d160bc6caf288af74ea87ad1414eb8",
+  "packages": [
+    {
+      "name": "addict",
+      "version": "2.4.0",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "annotated-doc",
+      "version": "0.0.4",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "annotated-types",
+      "version": "0.7.0",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "antialiased-cnns",
+      "version": "0.3",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "antlr4-python3-runtime",
+      "version": "4.9.3",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "anyio",
+      "version": "4.13.0",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "asttokens",
+      "version": "3.0.1",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "astunparse",
+      "version": "1.6.3",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "attrs",
+      "version": "26.1.0",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "certifi",
+      "version": "2026.5.20",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "charset-normalizer",
+      "version": "3.4.7",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "click",
+      "version": "8.4.1",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "clip",
+      "version": "1.0",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "colorama",
+      "version": "0.4.6",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "colorspacious",
+      "version": "1.1.2",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "contourpy",
+      "version": "1.3.2",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "cycler",
+      "version": "0.12.1",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "dacite",
+      "version": "1.9.2",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "decorator",
+      "version": "4.4.2",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "deformable_aggregation_ext",
+      "version": "0.0.0",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "diff_gaussian_rasterization",
+      "version": "0.0.0",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "diff_gaussian_rasterization_lang",
+      "version": "0.0.0",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "e3nn",
+      "version": "0.6.0",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "einops",
+      "version": "0.8.2",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "exceptiongroup",
+      "version": "1.3.1",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "executing",
+      "version": "2.2.1",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "filelock",
+      "version": "3.29.0",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "fonttools",
+      "version": "4.63.0",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "fsspec",
+      "version": "2026.4.0",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "ftfy",
+      "version": "6.3.1",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "gitdb",
+      "version": "4.0.12",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "GitPython",
+      "version": "3.1.50",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "h11",
+      "version": "0.16.0",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "hf-xet",
+      "version": "1.5.0",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "httpcore",
+      "version": "1.0.9",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "httpx",
+      "version": "0.28.1",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "huggingface_hub",
+      "version": "1.16.1",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "hydra-core",
+      "version": "1.3.2",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "idna",
+      "version": "3.16",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "ipython",
+      "version": "8.39.0",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "jaxtyping",
+      "version": "0.3.7",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "jedi",
+      "version": "0.20.0",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "Jinja2",
+      "version": "3.1.6",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "kiwisolver",
+      "version": "1.5.0",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "kornia",
+      "version": "0.6.7",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "lightning-utilities",
+      "version": "0.15.3",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "lpips",
+      "version": "0.1.4",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "markdown-it-py",
+      "version": "4.2.0",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "MarkupSafe",
+      "version": "3.0.3",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "matplotlib",
+      "version": "3.10.9",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "matplotlib-inline",
+      "version": "0.2.2",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "mdurl",
+      "version": "0.1.2",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "mmcv-lite",
+      "version": "2.2.0",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "mmengine",
+      "version": "0.10.7",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "mpmath",
+      "version": "1.3.0",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "networkx",
+      "version": "3.4.2",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "numpy",
+      "version": "2.1.3",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "nvidia-cublas-cu11",
+      "version": "11.11.3.6",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "nvidia-cuda-cupti-cu11",
+      "version": "11.8.87",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "nvidia-cuda-nvrtc-cu11",
+      "version": "11.8.89",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "nvidia-cuda-runtime-cu11",
+      "version": "11.8.89",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "nvidia-cudnn-cu11",
+      "version": "9.1.0.70",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "nvidia-cufft-cu11",
+      "version": "10.9.0.58",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "nvidia-curand-cu11",
+      "version": "10.3.0.86",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "nvidia-cusolver-cu11",
+      "version": "11.4.1.48",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "nvidia-cusparse-cu11",
+      "version": "11.7.5.86",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "nvidia-nccl-cu11",
+      "version": "2.21.5",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "nvidia-nvtx-cu11",
+      "version": "11.8.86",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "omegaconf",
+      "version": "2.3.0",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "open_clip_torch",
+      "version": "3.3.0",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "opencv-python",
+      "version": "4.13.0.92",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "opt-einsum-fx",
+      "version": "0.1.4",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "opt_einsum",
+      "version": "3.4.0",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "optree",
+      "version": "0.19.1",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "packaging",
+      "version": "26.0",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "pandas",
+      "version": "2.3.3",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "parso",
+      "version": "0.8.7",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "pbsp",
+      "version": "0.1.0",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "pexpect",
+      "version": "4.9.0",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "pillow",
+      "version": "12.2.0",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "pip",
+      "version": "26.0.1",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "platformdirs",
+      "version": "4.9.6",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "plyfile",
+      "version": "1.1.3",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "prompt_toolkit",
+      "version": "3.0.52",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "protobuf",
+      "version": "5.29.6",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "psutil",
+      "version": "7.2.2",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "ptyprocess",
+      "version": "0.7.0",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "pure_eval",
+      "version": "0.2.3",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "pydantic",
+      "version": "2.13.4",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "pydantic_core",
+      "version": "2.46.4",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "Pygments",
+      "version": "2.20.0",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "pyparsing",
+      "version": "3.3.2",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "python-dateutil",
+      "version": "2.9.0.post0",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "pytorch-lightning",
+      "version": "2.6.4",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "pytz",
+      "version": "2026.2",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "PyYAML",
+      "version": "6.0.2",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "regex",
+      "version": "2026.5.9",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "requests",
+      "version": "2.34.2",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "rich",
+      "version": "15.0.0",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "safetensors",
+      "version": "0.7.0",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "scipy",
+      "version": "1.15.3",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "sentry-sdk",
+      "version": "2.60.0",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "setuptools",
+      "version": "80.10.2",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "shellingham",
+      "version": "1.5.4",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "simple_knn",
+      "version": "0.0.0",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "six",
+      "version": "1.17.0",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "smmap",
+      "version": "5.0.3",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "stack-data",
+      "version": "0.6.3",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "sympy",
+      "version": "1.14.0",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "termcolor",
+      "version": "3.3.0",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "tifffile",
+      "version": "2025.5.10",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "timm",
+      "version": "1.0.27",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "tomli",
+      "version": "2.4.1",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "torch",
+      "version": "2.7.1+cu118",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "torchmetrics",
+      "version": "1.9.0",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "torchvision",
+      "version": "0.22.1+cu118",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "tqdm",
+      "version": "4.67.3",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "traitlets",
+      "version": "5.15.0",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "triton",
+      "version": "3.3.1",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "typer",
+      "version": "0.25.1",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "typing-inspection",
+      "version": "0.4.2",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "typing_extensions",
+      "version": "4.15.0",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "tzdata",
+      "version": "2026.2",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "urllib3",
+      "version": "2.7.0",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "wadler_lindig",
+      "version": "0.1.7",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "wandb",
+      "version": "0.27.0",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "wcwidth",
+      "version": "0.7.0",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "wheel",
+      "version": "0.46.3",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    },
+    {
+      "name": "yapf",
+      "version": "0.43.0",
+      "location": "/nvme/khy/conda_envs/pbsp/mapping/lib/python3.10/site-packages"
+    }
+  ]
+}

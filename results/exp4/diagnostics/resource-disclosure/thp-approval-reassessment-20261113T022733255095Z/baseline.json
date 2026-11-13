@@ -1,0 +1,198 @@
+{
+  "at_utc": "2026-11-13T02:27:41.496051+00:00",
+  "stage": "nearest",
+  "controller_pid": 1920268,
+  "approval_path": "meta/thp-defrag-user-approval.json",
+  "approval_sha256": "6fb29ab641a6d3decfd914a4c991db705493a858d858140b53cbcd937646561e",
+  "elapsed_seconds": 8.021833704027813,
+  "before": {
+    "at_utc": "2026-11-13T02:27:33.471219+00:00",
+    "vmstat": {
+      "pswpin": 3336953,
+      "pswpout": 13549529,
+      "allocstall_dma": 0,
+      "allocstall_dma32": 0,
+      "allocstall_normal": 25477,
+      "allocstall_movable": 7244335,
+      "pgsteal_direct": 125122552,
+      "pgscan_direct": 3706560361,
+      "pgscan_direct_throttle": 12784,
+      "compact_migrate_scanned": 21140215845,
+      "compact_free_scanned": 87822649362,
+      "compact_isolated": 4518342617,
+      "compact_stall": 12507555,
+      "compact_fail": 12193493,
+      "compact_success": 314062,
+      "compact_daemon_wake": 7637,
+      "compact_daemon_migrate_scanned": 103635606,
+      "compact_daemon_free_scanned": 1508774996
+    },
+    "native_processes": {
+      "1997191": {
+        "scene": "bxsVRursffK",
+        "created_at": 1794525834.14,
+        "user_s": 3777.42,
+        "sys_s": 1219.8,
+        "rss_bytes": 10320277504
+      },
+      "1997350": {
+        "scene": "bxsVRursffK",
+        "created_at": 1794525853.39,
+        "user_s": 6626.26,
+        "sys_s": 1381.25,
+        "rss_bytes": 2398601216
+      },
+      "2103400": {
+        "scene": "cvZr5TUy5C5",
+        "created_at": 1794534912.45,
+        "user_s": 734.33,
+        "sys_s": 237.55,
+        "rss_bytes": 9772351488
+      },
+      "2103583": {
+        "scene": "cvZr5TUy5C5",
+        "created_at": 1794534932.5,
+        "user_s": 1047.16,
+        "sys_s": 267.6,
+        "rss_bytes": 2765684736
+      },
+      "2116441": {
+        "scene": "mL8ThkuaVTM",
+        "created_at": 1794536458.89,
+        "user_s": 115.48,
+        "sys_s": 29.04,
+        "rss_bytes": 4866240512
+      },
+      "2116594": {
+        "scene": "mL8ThkuaVTM",
+        "created_at": 1794536478.93,
+        "user_s": 257.21,
+        "sys_s": 59.0,
+        "rss_bytes": 2369921024
+      }
+    },
+    "memory_pressure": {
+      "some": {
+        "avg10": 0.0,
+        "avg60": 0.0,
+        "avg300": 0.0,
+        "total": 2815653188
+      },
+      "full": {
+        "avg10": 0.0,
+        "avg60": 0.0,
+        "avg300": 0.0,
+        "total": 2715862140
+      }
+    },
+    "host_available_memory_bytes": 295256805376,
+    "THP_defrag": "always defer defer+madvise [madvise] never"
+  },
+  "after": {
+    "at_utc": "2026-11-13T02:27:41.488573+00:00",
+    "vmstat": {
+      "pswpin": 3336953,
+      "pswpout": 13549529,
+      "allocstall_dma": 0,
+      "allocstall_dma32": 0,
+      "allocstall_normal": 25477,
+      "allocstall_movable": 7244335,
+      "pgsteal_direct": 125122552,
+      "pgscan_direct": 3706560361,
+      "pgscan_direct_throttle": 12784,
+      "compact_migrate_scanned": 21140215845,
+      "compact_free_scanned": 87822649362,
+      "compact_isolated": 4518342617,
+      "compact_stall": 12507555,
+      "compact_fail": 12193493,
+      "compact_success": 314062,
+      "compact_daemon_wake": 7637,
+      "compact_daemon_migrate_scanned": 103635606,
+      "compact_daemon_free_scanned": 1508774996
+    },
+    "native_processes": {
+      "1997191": {
+        "scene": "bxsVRursffK",
+        "created_at": 1794525834.14,
+        "user_s": 3778.2,
+        "sys_s": 1220.32,
+        "rss_bytes": 10334269440
+      },
+      "1997350": {
+        "scene": "bxsVRursffK",
+        "created_at": 1794525853.39,
+        "user_s": 6631.86,
+        "sys_s": 1382.38,
+        "rss_bytes": 2395635712
+      },
+      "2103400": {
+        "scene": "cvZr5TUy5C5",
+        "created_at": 1794534912.45,
+        "user_s": 738.25,
+        "sys_s": 238.6,
+        "rss_bytes": 10024980480
+      },
+      "2103583": {
+        "scene": "cvZr5TUy5C5",
+        "created_at": 1794534932.5,
+        "user_s": 1049.63,
+        "sys_s": 268.22,
+        "rss_bytes": 2758254592
+      },
+      "2116441": {
+        "scene": "mL8ThkuaVTM",
+        "created_at": 1794536458.89,
+        "user_s": 117.85,
+        "sys_s": 30.01,
+        "rss_bytes": 4924329984
+      },
+      "2116594": {
+        "scene": "mL8ThkuaVTM",
+        "created_at": 1794536478.93,
+        "user_s": 263.3,
+        "sys_s": 60.19,
+        "rss_bytes": 2373619712
+      }
+    },
+    "memory_pressure": {
+      "some": {
+        "avg10": 0.0,
+        "avg60": 0.0,
+        "avg300": 0.0,
+        "total": 2815653188
+      },
+      "full": {
+        "avg10": 0.0,
+        "avg60": 0.0,
+        "avg300": 0.0,
+        "total": 2715862140
+      }
+    },
+    "host_available_memory_bytes": 295031463936,
+    "THP_defrag": "always defer defer+madvise [madvise] never"
+  },
+  "vmstat_delta": {
+    "pswpin": 0,
+    "pswpout": 0,
+    "allocstall_dma": 0,
+    "allocstall_dma32": 0,
+    "allocstall_normal": 0,
+    "allocstall_movable": 0,
+    "pgsteal_direct": 0,
+    "pgscan_direct": 0,
+    "pgscan_direct_throttle": 0,
+    "compact_migrate_scanned": 0,
+    "compact_free_scanned": 0,
+    "compact_isolated": 0,
+    "compact_stall": 0,
+    "compact_fail": 0,
+    "compact_success": 0,
+    "compact_daemon_wake": 0,
+    "compact_daemon_migrate_scanned": 0,
+    "compact_daemon_free_scanned": 0
+  },
+  "source_and_parameters_unchanged": true,
+  "settings_changed": false,
+  "signals_sent": false,
+  "scope": "Fresh baseline after explicit permission. No sysfs write or native worker action. A zero-stall sample does not prove future absence."
+}

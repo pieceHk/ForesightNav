@@ -1,0 +1,17 @@
+{
+  "approved": true,
+  "scope": "temporary_host_thp_defrag_madvise_to_defer",
+  "target": "/sys/kernel/mm/transparent_hugepage/defrag",
+  "source": "explicit_user_reply_in_current_chat",
+  "question_item_id": "call_cd0b566ea35447fe8869f234daff12ea",
+  "user_response": "允许临时调整并验证（推荐）",
+  "recorded_at_utc": "2026-11-13T02:27:33.255234+00:00",
+  "constraints": {
+    "only_one_host_setting": true,
+    "preserve_all_processes": true,
+    "preserve_experiment_parameters": true,
+    "restore_on_no_improvement": true,
+    "restore_original_at_experiment_end": true
+  },
+  "fresh_need_and_current_policy_recheck_required": true
+}

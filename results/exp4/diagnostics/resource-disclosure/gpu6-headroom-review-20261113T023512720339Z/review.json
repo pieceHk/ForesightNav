@@ -1,0 +1,94 @@
+{
+  "at_utc": "2026-11-13T02:35:12.721155+00:00",
+  "stage": "nearest",
+  "controller_pid": 1920268,
+  "controller_start_ticks": "32816629",
+  "status": "resolved_without_native_action",
+  "local_review_threshold_mib": 6144,
+  "sampler_low_headroom_flag_threshold_mib": 3072,
+  "checked_since_utc": "2026-11-13T01:30:00Z",
+  "gpu6_samples_checked": 191,
+  "gpu6_low_headroom_samples": [
+    {
+      "at": "2026-11-13T01:36:31.128845+00:00",
+      "gpu": 6,
+      "free_mib": 6140,
+      "experiment_compute_mib": 27255,
+      "experiment_compute_processes": 2,
+      "other_compute_mib": 10426,
+      "other_compute_processes": 3,
+      "low_headroom": false,
+      "other_compute_growth_mib": 0
+    },
+    {
+      "at": "2026-11-13T01:38:13.412742+00:00",
+      "gpu": 6,
+      "free_mib": 4456,
+      "experiment_compute_mib": 29079,
+      "experiment_compute_processes": 2,
+      "other_compute_mib": 10426,
+      "other_compute_processes": 3,
+      "low_headroom": false,
+      "other_compute_growth_mib": 0
+    },
+    {
+      "at": "2026-11-13T01:39:14.686145+00:00",
+      "gpu": 6,
+      "free_mib": 5756,
+      "experiment_compute_mib": 29261,
+      "experiment_compute_processes": 2,
+      "other_compute_mib": 10426,
+      "other_compute_processes": 3,
+      "low_headroom": false,
+      "other_compute_growth_mib": 0
+    }
+  ],
+  "gpu6_min_free_sample": {
+    "at": "2026-11-13T01:38:13.412742+00:00",
+    "gpu": 6,
+    "free_mib": 4456,
+    "experiment_compute_mib": 29079,
+    "experiment_compute_processes": 2,
+    "other_compute_mib": 10426,
+    "other_compute_processes": 3,
+    "low_headroom": false,
+    "other_compute_growth_mib": 0
+  },
+  "gpu6_peak_sampled_experiment_compute_mib": 29261,
+  "latest_sample_at_utc": "2026-11-13T02:35:04.868488+00:00",
+  "current_gpu6_sample": {
+    "gpu": 6,
+    "free_mib": 14301,
+    "experiment_compute_mib": 19103,
+    "experiment_compute_processes": 2,
+    "other_compute_mib": 10426,
+    "other_compute_processes": 3,
+    "low_headroom": false,
+    "other_compute_growth_mib": 0
+  },
+  "completed_TE_scene_returncode": 0,
+  "completed_TE_exit_proof": {
+    "source": "subprocess.Popen.poll",
+    "at_utc": "2026-11-13T01:55:08.155313+00:00"
+  },
+  "memory_prefix": "diagnostics/resource-disclosure/gpu6-headroom-review-20261113T023512720339Z/memory-prefix.jsonl",
+  "memory_prefix_sha256": "17d84f84ae40b7304025048c38deaeea482abcaee8db71d2844f7f735cca19a0",
+  "memory_prefix_bytes": 763018,
+  "native_log_review": "diagnostics/resource-disclosure/nearest-live-log-review-20261113T023343347155Z.json",
+  "native_log_review_sha256": "3a936396400b9eecb2ecde23785b817bd03b9e4f053bd3ca001f07ec655cbdf9",
+  "log_error_pattern_totals": {
+    "cuda out of memory": 0,
+    "cuda error: out of memory": 0,
+    "outofmemoryerror": 0,
+    "cublas_status_alloc_failed": 0,
+    "invalid mapper response": 0,
+    "invalid mapping response": 0,
+    "traceback (most recent call last)": 0
+  },
+  "sampled_peak_is_not_a_bound": true,
+  "source_and_parameters_unchanged": true,
+  "native_workers_restarted": false,
+  "signals_sent": false,
+  "host_settings_changed": false,
+  "scope": "Discrete GPU6 memory review with actual completed-scene exit and fresh log-prefix checks. No native result is filtered or rerun."
+}

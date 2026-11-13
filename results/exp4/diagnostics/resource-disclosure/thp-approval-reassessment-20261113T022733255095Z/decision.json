@@ -1,0 +1,21 @@
+{
+  "at_utc": "2026-11-13T02:27:41.496983+00:00",
+  "status": "approved_deferred_after_fresh_baseline",
+  "current_THP_defrag": "madvise",
+  "compact_stall_delta": 0,
+  "compact_fail_delta": 0,
+  "sample_seconds": 8.021833704027813,
+  "memory_PSI_full_avg10": 0.0,
+  "host_available_GiB": 274.7694625854492,
+  "user_approval_received": true,
+  "approval_sha256": "6fb29ab641a6d3decfd914a4c991db705493a858d858140b53cbcd937646561e",
+  "baseline_path": "diagnostics/resource-disclosure/thp-approval-reassessment-20261113T022733255095Z/baseline.json",
+  "baseline_sha256": "2b06cb853db99a3e54c4e4a3398cc3327b8b4525112c893814983fe258be522d",
+  "proposal_sha256": "c15a0d50226f4eb30fbb59fbc336978f07d05d1713e82914ae2e6b3f4a0a26c1",
+  "action_currently_needed": false,
+  "settings_changed": false,
+  "restoration_required": false,
+  "signals_sent": false,
+  "source_and_parameters_unchanged": true,
+  "reason": "No current direct-compaction stall was observed, or the expected original policy changed; no host setting write is needed from this sample."
+}
