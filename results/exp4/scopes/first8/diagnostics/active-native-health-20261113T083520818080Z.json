@@ -1,0 +1,164 @@
+{
+  "at_utc": "2026-11-13T08:35:20.818037+00:00",
+  "active_native_jobs": [
+    {
+      "scene": "6s7QHgap2fW",
+      "gpu": 7,
+      "launcher_pid": 2197440,
+      "worker_logs": {
+        "monitor.log": {
+          "tail_error_matches": 0,
+          "recent_errors": [],
+          "log_age_seconds": 14180.337755918503
+        },
+        "navigation_6s7QHgap2fW.log": {
+          "tail_error_matches": 22,
+          "recent_errors": [
+            "ix/pbsp/runtime/mapping_worker.py\", line 68, in handle_push_live_frame\\n    st = self._live_mapper.get_status()\\n  File \"/nvme/khy/ForesightNav_exp4_depthfix/pbsp/mapping/mapper.py\", line 427, in get_status\\n    self._check_rebuild_error()\\n  File \"/nvme/khy/ForesightNav_exp4_depthfix/pbsp/mapping/mapper.py\", line 423, in _check_rebuild_error\\n    raise RuntimeError(\\'Mapping rebuild failed; incomplete maps cannot be used: \\'\\nRuntimeError: Mapping rebuild failed; incomplete maps cannot be used: OutOfMemoryError(\\'CUDA out of memory. Tried to allocate 1.59 GiB. GPU 0 has a total capacity of 44.34 GiB of which 1.71 GiB is free. Process 2018348 has 1.96 GiB memory in use. Process 2019810 has 1.96 GiB memory in use. Including non-PyTorch memory, this process has 10.12 GiB memory in use. Process 2197905 has 16.67 GiB memory in use. Process 2283011 has 2.03 GiB memory in use. Process 2287389 has 2.02 GiB memory in use. Process 2284401 has 2.02 GiB memory in use. Process 2285904 has 2.02 GiB memory in use. Of the allocated memory 9.54 GiB is allocated by PyTorch, and 80.03 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)\\')\\n', 'protocol_version': 1}",
+            "ix/pbsp/runtime/mapping_worker.py\", line 68, in handle_push_live_frame\\n    st = self._live_mapper.get_status()\\n  File \"/nvme/khy/ForesightNav_exp4_depthfix/pbsp/mapping/mapper.py\", line 427, in get_status\\n    self._check_rebuild_error()\\n  File \"/nvme/khy/ForesightNav_exp4_depthfix/pbsp/mapping/mapper.py\", line 423, in _check_rebuild_error\\n    raise RuntimeError(\\'Mapping rebuild failed; incomplete maps cannot be used: \\'\\nRuntimeError: Mapping rebuild failed; incomplete maps cannot be used: OutOfMemoryError(\\'CUDA out of memory. Tried to allocate 1.59 GiB. GPU 0 has a total capacity of 44.34 GiB of which 1.71 GiB is free. Process 2018348 has 1.96 GiB memory in use. Process 2019810 has 1.96 GiB memory in use. Including non-PyTorch memory, this process has 10.12 GiB memory in use. Process 2197905 has 16.67 GiB memory in use. Process 2283011 has 2.03 GiB memory in use. Process 2287389 has 2.02 GiB memory in use. Process 2284401 has 2.02 GiB memory in use. Process 2285904 has 2.02 GiB memory in use. Of the allocated memory 9.54 GiB is allocated by PyTorch, and 80.03 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)\\')\\n', 'protocol_version': 1}",
+            "ix/pbsp/runtime/mapping_worker.py\", line 68, in handle_push_live_frame\\n    st = self._live_mapper.get_status()\\n  File \"/nvme/khy/ForesightNav_exp4_depthfix/pbsp/mapping/mapper.py\", line 427, in get_status\\n    self._check_rebuild_error()\\n  File \"/nvme/khy/ForesightNav_exp4_depthfix/pbsp/mapping/mapper.py\", line 423, in _check_rebuild_error\\n    raise RuntimeError(\\'Mapping rebuild failed; incomplete maps cannot be used: \\'\\nRuntimeError: Mapping rebuild failed; incomplete maps cannot be used: OutOfMemoryError(\\'CUDA out of memory. Tried to allocate 1.59 GiB. GPU 0 has a total capacity of 44.34 GiB of which 1.71 GiB is free. Process 2018348 has 1.96 GiB memory in use. Process 2019810 has 1.96 GiB memory in use. Including non-PyTorch memory, this process has 10.12 GiB memory in use. Process 2197905 has 16.67 GiB memory in use. Process 2283011 has 2.03 GiB memory in use. Process 2287389 has 2.02 GiB memory in use. Process 2284401 has 2.02 GiB memory in use. Process 2285904 has 2.02 GiB memory in use. Of the allocated memory 9.54 GiB is allocated by PyTorch, and 80.03 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)\\')\\n', 'protocol_version': 1}"
+          ],
+          "log_age_seconds": 0.004072904586791992
+        },
+        "mapping.log": {
+          "tail_error_matches": 91,
+          "recent_errors": [
+            "Traceback (most recent call last):",
+            "    raise RuntimeError('Mapping rebuild failed; incomplete maps cannot be used: '",
+            "RuntimeError: Mapping rebuild failed; incomplete maps cannot be used: OutOfMemoryError('CUDA out of memory. Tried to allocate 1.59 GiB. GPU 0 has a total capacity of 44.34 GiB of which 1.69 GiB is free. Process 2018348 has 1.96 GiB memory in use. Process 2019810 has 1.96 GiB memory in use. Including non-PyTorch memory, this process has 10.14 GiB memory in use. Process 2197905 has 16.67 GiB memory in use. Process 2283011 has 2.03 GiB memory in use. Process 2287389 has 2.02 GiB memory in use. Process 2284401 has 2.02 GiB memory in use. Process 2285904 has 2.02 GiB memory in use. Of the allocated memory 9.58 GiB is allocated by PyTorch, and 68.09 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)')"
+          ],
+          "log_age_seconds": 0.005957126617431641
+        }
+      },
+      "native_status": {
+        "episode_ids": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16",
+          "17",
+          "18",
+          "19"
+        ],
+        "scene": "6s7QHgap2fW",
+        "status": "running",
+        "timestamp": "2026-11-13T04:39:20.921304+00:00"
+      }
+    },
+    {
+      "scene": "TEEsavR23oF",
+      "gpu": 4,
+      "launcher_pid": 2236375,
+      "worker_logs": {
+        "monitor.log": {
+          "tail_error_matches": 0,
+          "recent_errors": [],
+          "log_age_seconds": 10208.885853290558
+        },
+        "navigation_TEEsavR23oF.log": {
+          "tail_error_matches": 0,
+          "recent_errors": [],
+          "log_age_seconds": 0.25716519355773926
+        },
+        "mapping.log": {
+          "tail_error_matches": 0,
+          "recent_errors": [],
+          "log_age_seconds": 1.236053228378296
+        }
+      },
+      "native_status": {
+        "episode_ids": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16",
+          "17",
+          "18",
+          "19"
+        ],
+        "scene": "TEEsavR23oF",
+        "status": "running",
+        "timestamp": "2026-11-13T05:45:31.175008+00:00"
+      }
+    }
+  ],
+  "gpu_ownership": [
+    {
+      "gpu": 0,
+      "free_mib": 17603,
+      "Exp4_compute_mib": 0,
+      "other_compute_mib": 23544
+    },
+    {
+      "gpu": 1,
+      "free_mib": 29916,
+      "Exp4_compute_mib": 0,
+      "other_compute_mib": 11968
+    },
+    {
+      "gpu": 2,
+      "free_mib": 31880,
+      "Exp4_compute_mib": 0,
+      "other_compute_mib": 10288
+    },
+    {
+      "gpu": 3,
+      "free_mib": 31766,
+      "Exp4_compute_mib": 0,
+      "other_compute_mib": 10226
+    },
+    {
+      "gpu": 4,
+      "free_mib": 13088,
+      "Exp4_compute_mib": 18815,
+      "other_compute_mib": 10128
+    },
+    {
+      "gpu": 5,
+      "free_mib": 31722,
+      "Exp4_compute_mib": 0,
+      "other_compute_mib": 10288
+    },
+    {
+      "gpu": 6,
+      "free_mib": 28735,
+      "Exp4_compute_mib": 0,
+      "other_compute_mib": 12296
+    },
+    {
+      "gpu": 7,
+      "free_mib": 4731,
+      "Exp4_compute_mib": 24449,
+      "other_compute_mib": 12300
+    }
+  ],
+  "available_memory_gib": 24.060462951660156,
+  "signals_sent": false,
+  "settings_changed": false
+}

@@ -1,0 +1,11 @@
+{
+  "at_utc": "2026-11-13T08:46:15.033754+00:00",
+  "plan": "scopes/first8/diagnostics/infrastructure-recovery/20261113T084323101289Z/plan.json",
+  "plan_sha256": "316099532c2d8b633e088b76db78a3c1d89921eaddd5f908601bb260aa03309c",
+  "state": "activated",
+  "controller_pid": 2311693,
+  "controller_start_ticks": "36789196",
+  "living_native_restarted": false,
+  "other_user_signals_sent": false,
+  "scientific_sources_or_parameters_changed": false
+}

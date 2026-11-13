@@ -1,0 +1,12 @@
+{
+  "at_utc": "2026-11-13T08:46:14.671387+00:00",
+  "pid": 2304501,
+  "start_ticks": "36672358",
+  "source_sha256": "a3a6d638c76f8953a09ae705437e4b03bb185ebe21c1d9e31d7b4226098362df",
+  "no_living_children_verified": true,
+  "reason": "Release shared dispatcher lock before replacement starts; only stopped CPU has no living children",
+  "Native_processes_signaled": false,
+  "retirement_signal_sent": true,
+  "actual_old_CPU_no_longer_live": true,
+  "retired_at_utc": "2026-11-13T08:46:14.722123+00:00"
+}

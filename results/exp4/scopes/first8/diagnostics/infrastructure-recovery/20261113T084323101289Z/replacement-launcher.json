@@ -1,0 +1,13 @@
+{
+  "at_utc": "2026-11-13T08:46:14.729499+00:00",
+  "pid": 2311693,
+  "start_ticks": "36789196",
+  "command": [
+    "/nvme/khy/conda_envs/pbsp/navigation/bin/python",
+    "-u",
+    "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/code/first8_infrastructure_recovery_v2.py",
+    "--run-plan",
+    "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/scopes/first8/diagnostics/infrastructure-recovery/20261113T084323101289Z/plan.json"
+  ],
+  "source_sha256": "9d16337ef903a0a0e46de102c7eb2c02f1a44bceb973289b0406e23ed8f7cc40"
+}

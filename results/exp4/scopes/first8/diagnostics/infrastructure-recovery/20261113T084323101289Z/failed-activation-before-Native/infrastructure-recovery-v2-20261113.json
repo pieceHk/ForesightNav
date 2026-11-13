@@ -1,0 +1,9 @@
+{
+  "at_utc": "2026-11-13T08:43:23.959604+00:00",
+  "plan": "scopes/first8/diagnostics/infrastructure-recovery/20261113T084323101289Z/plan.json",
+  "plan_sha256": "db07cdd245e49a2db89cfa1e4ace8eb035b8cd3eacef003ca135273132772015",
+  "state": "prepared_not_activated",
+  "retained_jobs": 6,
+  "full_scene_retry_count_each": 20,
+  "fixed_retry_total": 40
+}

@@ -1,0 +1,282 @@
+{
+  "method": "ForesightNav",
+  "variant": "myopic",
+  "task": "3-MON",
+  "n_episodes": 20,
+  "n_error": 0,
+  "SR": 40.0,
+  "SPL": 19.48,
+  "PR": 76.67,
+  "PSR": 76.67,
+  "PeSPL": 33.31,
+  "PPL": 28.62,
+  "P_C1": 75.0,
+  "P_C2_given_C1": 60.0,
+  "P_C3_given_C1C2": 88.89,
+  "P_C4_given_C1C2C3": null,
+  "Joint": 40.0,
+  "PPL_implementation": "new supplementary implementation: all-stage PR times successful-prefix path efficiency",
+  "conditional_counts": {
+    "rates": [
+      0.75,
+      0.6,
+      0.8888888888888888
+    ],
+    "successes": [
+      15,
+      9,
+      8
+    ],
+    "conditioned_episodes": [
+      20,
+      15,
+      9
+    ],
+    "Joint": 0.3999999999999999,
+    "definition": "conditioned on prior successes, not prior execution"
+  },
+  "native_aggregate": {
+    "schema_version": "mon_metrics_v3",
+    "counts": {
+      "completed_episodes": 20,
+      "completed_subtasks": 60,
+      "targets_per_episode": 3,
+      "successful_episodes": 8,
+      "successful_subtasks": 46,
+      "finite_shortest_path_episodes": 20,
+      "episodes_with_unreachable": 0,
+      "finite_shortest_path_subtasks": 60,
+      "unreachable_subtasks": 0
+    },
+    "mon_metrics": {
+      "sr": 0.4,
+      "spl": 0.1947603628216827,
+      "pespl": 0.33314579103337016,
+      "psr": 0.7666666666666667,
+      "pespl_numerator": 19.98874746200221,
+      "pespl_denominator": 60,
+      "psr_numerator": 46,
+      "psr_denominator": 60,
+      "psr_by_category": {
+        "bed": {
+          "targets": 16,
+          "successes": 6,
+          "success_rate": 0.375,
+          "psr_contribution": 0.1
+        },
+        "tv": {
+          "targets": 14,
+          "successes": 12,
+          "success_rate": 0.8571428571428571,
+          "psr_contribution": 0.2
+        },
+        "couch": {
+          "targets": 15,
+          "successes": 15,
+          "success_rate": 1.0,
+          "psr_contribution": 0.25
+        },
+        "chair": {
+          "targets": 15,
+          "successes": 13,
+          "success_rate": 0.8666666666666667,
+          "psr_contribution": 0.21666666666666667
+        }
+      }
+    },
+    "navigation_efficiency": {
+      "total_actual_path_length_m": 639.1434578308827,
+      "total_shortest_path_length_m": 218.7078573666513,
+      "shortest_path_status": "finite",
+      "aggregate_path_efficiency": 0.3421889947976615,
+      "mean_episode_path_efficiency": 0.46316441695683164,
+      "mean_subtask_path_efficiency": 0.46678974470013185,
+      "finite_actual_path_length_m": 639.1434578308827,
+      "finite_shortest_path_length_m": 218.7078573666513,
+      "finite_aggregate_path_efficiency": 0.3421889947976615,
+      "mean_finite_episode_path_efficiency": 0.46316441695683164,
+      "mean_finite_subtask_path_efficiency": 0.46678974470013185,
+      "finite_shortest_path_subtask_count": 60,
+      "unreachable_subtask_count": 0,
+      "finite_shortest_path_episode_count": 20,
+      "episodes_with_unreachable": 0,
+      "finite_shortest_path_coverage": 1.0,
+      "mean_episode_steps": 369.75,
+      "mean_subtask_steps": 123.25,
+      "successful_subtasks_per_100_steps": 0.6220419202163624,
+      "max_steps_rate": 0.05
+    },
+    "frame_timing": {
+      "frame_count": 7395,
+      "frame_time_sum_ms": 5062647.225494146,
+      "mean_frame_time_ms": 684.604087287917,
+      "median_frame_time_ms": null,
+      "p95_frame_time_ms": null,
+      "fps": 1.4606982613287263
+    }
+  },
+  "process": {
+    "Invalid_visits_per_ep": 7.15,
+    "invalid_visit_events_per_ep": 8.3,
+    "checked_distinct_candidates": 194,
+    "invalid_approach_and_verification_path_m": 221.33525628623684,
+    "invalid_confirmed_approach_tail_m": 27.659959308979452,
+    "invalid_visit_path_m": 248.9952155952164,
+    "invalid_visit_path_m_per_ep": 12.449760779760819,
+    "invalid_path_association_gaps": [],
+    "invalid_path_complete": true,
+    "invalid_path_definition": "accepted displacement pursuing a checked-invalid query identity while its recorded target coordinate is native-GT-invalid; confirmed visual continuation retains the parent; recovery/frontier excluded",
+    "invalid_visit_definition": "distinct checked (episode, task, persistent spatial identity) with GT-invalid verification; event count also retained",
+    "nonquery_recovery_verification_frames": 270,
+    "deviation_from_nearest_proposal_pct": 12.025316455696203,
+    "deviation_from_nearest_after_hysteresis_pct": 16.930379746835442,
+    "deviation_from_nearest_realized_pct": 24.841772151898734,
+    "eligible_proposals": 632,
+    "eligible_realized_dispatches": 632,
+    "planning_ms": {
+      "n": 790,
+      "median": 5.934173997957259,
+      "p95": 10.88067686650902
+    },
+    "fallback_root_decisions": {
+      "empty_candidates": 158
+    },
+    "fallback_decision_incidence": {
+      "empty_candidates": 632,
+      "no_reachable_frontier": 4
+    },
+    "fallback_memo_state_counts": {
+      "empty_candidates": 2443,
+      "frontier_coordinates_unavailable": 0,
+      "no_reachable_frontier": 20
+    },
+    "fallback_count_definition": "root decisions and per-decision incidence are separate from recursion-state counts",
+    "n_computed_snapshots": 790,
+    "n_recorded_dispatch_events": 790,
+    "legacy_interval_diagnostics": {
+      "invalid_visit_path_m": 269.2452164190545,
+      "invalid_path_complete": true,
+      "invalid_path_association_gaps": [],
+      "invalid_path_definition": "union of recorded active-candidate approach/check path intervals plus an unambiguous final confirmation-to-STOP tail"
+    },
+    "invalid_path_source": "blp_action_target_v1_native_gt",
+    "invalid_identity_pursuit_path_m": 248.9952155952164,
+    "invalid_identity_pursuit_path_m_per_ep": 12.449760779760819,
+    "checked_invalid_identity_but_current_target_GT_valid_path_m": 0.0,
+    "checked_invalid_identities_with_current_valid_targets": 0,
+    "mixed_GT_checked_identities": [],
+    "invalid_identity_pursuit_definition": "all accepted displacement pursuing identities that had at least one GT-invalid check; explicit upper bound, including any later GT-valid coordinates",
+    "accepted_action_path_m": 639.1434738523367,
+    "accepted_action_path_partition_m": {
+      "invalid_identity_upper": 248.9952155952164,
+      "checked_valid": 128.50000903927196,
+      "unchecked_query": 42.50000225750038,
+      "unresolved_query": 0.0,
+      "recovery": 92.75000396965274,
+      "frontier": 126.3982429906981
+    },
+    "accepted_action_rows_by_source": {
+      "frontier": 1221,
+      "query_candidate": 5318,
+      "navmesh_override": 856
+    },
+    "native_target_GT_labelled_action_rows": 3454,
+    "native_stage_path_max_abs_error_m": 1.7280004840358743e-06,
+    "native_stage_path_check_count": 60,
+    "native_stage_path_check_tolerance": {
+      "abs_m": 0.001,
+      "relative": 1e-06
+    },
+    "last_STOP_without_after_pose_assumed_stationary": 20,
+    "verification_then_effective_recovery_actions": 16,
+    "checked_candidate_identity": {
+      "definition": "recorded registry identity, merging checked IDs sharing an exact full-XYZ final-check coordinate within one scene/episode/task/resample; unchecked first-appearance IDs alias a checked group only at that exact XYZ",
+      "source_sha256": "a311b37d45d59f379ce00b58d1350b5eb308da0b9a24d34ad2facdb495d9991d",
+      "raw_checked_registry_identities": 194,
+      "canonical_checked_identities": 194,
+      "identities_merged": 0,
+      "verification_rows_retained": 222,
+      "unchecked_first_appearance_aliases": 0,
+      "GT_or_labels_used_to_group": false,
+      "raw_events_modified": false
+    },
+    "native_target_gt_provenance": [
+      {
+        "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261113_134511_954267_exp4_myopic_exp4-myopic-a3-first8-QaLdnwvtxbs",
+        "recorded_label_verification": {
+          "candidate_verifications": 222,
+          "recovery_verifications": 270,
+          "max_distance_error_m": 0.0
+        },
+        "method": "native GOAT measures and geodesic wrapper on CPU PathFinder",
+        "habitat_source": {
+          "revision": "8df2661e5b2203c0ddc47798d5da0132d5686bbe",
+          "kind": "archive",
+          "files": 550,
+          "content_sha256": "31226fdca10c6ea69c23b6c3dbf707745210f7df5785c1c7116eda98c6dfc77c"
+        },
+        "measurements": {
+          "distance": {
+            "type": "GOATDistanceToSubGoal",
+            "distance_to": "VIEW_POINTS",
+            "goals_attr": "goals",
+            "distance_from": "BASE"
+          },
+          "success": {
+            "type": "GOATSubTaskSuccess",
+            "success_distance": 1.0
+          }
+        },
+        "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+        "queries": 3946,
+        "cache_hits": 3600,
+        "distinct_positions": 346,
+        "scenes": {
+          "QaLdnwvtxbs": {
+            "content_sha256": "f4368e14805ae394cce82f0145a3c8bcf4b5427e7ebd2f194b7164b683a46f1a",
+            "navmesh": "/nvme/khy/PBSP-open-source/data/scenes/hm3dv1/hm3d/val/00829-QaLdnwvtxbs/QaLdnwvtxbs.basis.navmesh",
+            "navmesh_sha256": "9dbbfcd516ddd1da9ccadf0efd0a7e0ff89e6d3bc794d5bc6f2515e2d7742d97"
+          }
+        }
+      }
+    ]
+  },
+  "analysis_sources_sha256": {
+    "report_variants.py": "d3d8617a83ccbd1ccebf18cf2b4149fd745be23c962e3dabeb42b057ad7626c3",
+    "action_path_metrics.py": "a89afc6504fcb5520bb8c227928961b3d7814bcfcc98c23c6311e35254089f1e",
+    "native_candidate_gt.py": "e2620454fe45d54933294286a518440ef16ec961c0eb0ca5aafe5ec2587a21a3",
+    "blp_parameters.py": "039c6a660ab2a7cf2b6e9e78e810bfb44f32731e6c52a9194dc20f82daa63bad",
+    "candidate_identities.py": "a311b37d45d59f379ce00b58d1350b5eb308da0b9a24d34ad2facdb495d9991d"
+  },
+  "source_commits": [
+    "03242fda76fd6a631596a7269c8e7990c657ea30"
+  ],
+  "diagnostic_only": false,
+  "calibration_binding": {
+    "selection": "cross_fit",
+    "parameter_sha256": "e1d75f3c9503c7439467748fc97be6ae2ad450c429f40dc7235b1564ff7852ae",
+    "parameters_by_scene": {
+      "QaLdnwvtxbs": {
+        "a": 48.11459908252667,
+        "b0": -12.856439210146924,
+        "pi": 0.16010230179028134,
+        "c_exp": 1.2759422599453465
+      }
+    }
+  },
+  "coverage": "One complete scene in an incomplete fixed eight-scene stage",
+  "complete_stage160": false,
+  "rates_pct_unrounded": {
+    "SR": 40.0,
+    "SPL": 19.47603628216827,
+    "PR": 76.66666666666667,
+    "PPL": 28.619866012473828,
+    "PSR": 76.66666666666667,
+    "PeSPL": 33.31457910333702,
+    "P_C1": 75.0,
+    "P_C2_given_C1": 60.0,
+    "P_C3_given_C1C2": 88.88888888888889,
+    "P_C4_given_C1C2C3": null,
+    "Joint": 39.99999999999999
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "at_utc": "2026-11-13T08:38:18.328729+00:00",
+  "pid": 2310051,
+  "start_ticks": "36741556",
+  "command": [
+    "/nvme/khy/conda_envs/pbsp/navigation/bin/python",
+    "-u",
+    "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/code/audit_first8_completed_prefix.py",
+    "myopic"
+  ],
+  "source_sha256": "8ff552d47b3f3655b02990675ff6335e8c5b20e31a7822907ea4d2dd5ee89424",
+  "log": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/scopes/first8/logs/myopic-prefix-audit-20261113.log",
+  "Native_state_modified": false
+}

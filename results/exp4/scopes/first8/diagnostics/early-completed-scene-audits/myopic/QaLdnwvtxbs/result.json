@@ -1,0 +1,26 @@
+{
+  "at_utc": "2026-11-13T08:38:44.291841+00:00",
+  "stage": "myopic",
+  "scene": "QaLdnwvtxbs",
+  "completed_native_episodes": 20,
+  "audited_stage_paths": 60,
+  "max_native_path_abs_error_m": 1.7280004840358743e-06,
+  "invalid_paths_complete": true,
+  "n_error": 0,
+  "native_launcher_returncode": 0,
+  "exit_status_proof": {
+    "source": "subprocess.Popen.poll",
+    "at_utc": "2026-11-13T07:14:43.624770+00:00"
+  },
+  "source_and_parameters_unchanged": true,
+  "native_states_modified": false,
+  "new_Native_workers_started": false,
+  "normalization_uses_CPU_PathFinder_only": true,
+  "full_stage160_complete": false,
+  "helper_sha256": "8ff552d47b3f3655b02990675ff6335e8c5b20e31a7822907ea4d2dd5ee89424",
+  "artifact_sha256": {
+    "summary.json": "565af6621c00e83254293c758f3301a251ecaf2f4d2b431b6f061fb6e3d3f641",
+    "episodes.jsonl": "aabccf4107fbf2d030a529eae75e38dc17862f912e986c6268d77e9602ea7b0a",
+    "decisions.jsonl": "d1aa9283162e44fed44afd9966dc972f0ec8b1decf25041bfeb5db7212069c26"
+  }
+}

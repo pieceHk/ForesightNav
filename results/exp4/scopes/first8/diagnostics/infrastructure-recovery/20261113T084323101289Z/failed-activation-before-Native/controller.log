@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/code/first8_infrastructure_recovery_v2.py", line 290, in <module>
+    if args.run_plan:run(args.run_plan)
+  File "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/code/first8_infrastructure_recovery_v2.py", line 284, in run
+    engine.control(plan_path)
+  File "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/code/first8_evaluate8.py", line 264, in control
+    fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
+BlockingIOError: [Errno 11] Resource temporarily unavailable

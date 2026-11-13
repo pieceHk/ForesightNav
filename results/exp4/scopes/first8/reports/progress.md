@@ -15,6 +15,8 @@ Myopic、Suffix-only顺序运行同样8个场景，使用原冻结算法、参�
 
 [范围与固定身份](../meta/scope.json)、[当前运行](../meta/progress.json)、[Full](../summary/full.json)、[Nearest](../summary/nearest.json)。
 
-2026年11月13日15:52，Myopic的DY场景因mapper CUDA OOM失败，原调度器退出。16:26已激活仅CPU的恢复调度器，保留五个完整场景和两路活任务。失败尝试13条整体留档排除，资源达标后按相同固定身份、seed和冻结参数完整补跑20条；Suffix尚待Myopic160全完成。不能把失败前142条导出全部当作有效进度，也不能继续沿用故障前的完成时间估计。
+2026年11月13日Myopic的DY、6s场景先后发生mapper CUDA OOM。两次失败尝试的13、16条导出整体留档并全部排除。16:46已激活第二次CPU恢复调度，保留五个完整场景和健康TE任务；资源达标后，两场景分别按相同固定20条身份、seed和冻结参数完整补跑。Suffix仍待Myopic160全完成。五个完整场景的100条、300段路径已提前通过CPU核查；这不等于Myopic160阶段已完成。
 
-[故障与恢复计划](../meta/infrastructure-recovery-20261113.json)、[范围内执行偏差](../deviations.md)。
+调度器新增mapper致命错误检查，故障时只清理身份核对通过的本账号启动器，并停止自身CPU保留真实子进程退出状态供复核；其他任务继续。启动期在原64GiB主机内存底线之外，为每路刚启动任务暂留16GiB、保持60秒，避免集中启动时重复使用同一份空闲内存额度。没有修改Native算法、精度、步数或参数，也没有终止其他用户任务。
+
+[当前故障恢复计划](../meta/infrastructure-recovery-v2-20261113.json)、[范围内执行偏差](../deviations.md)。

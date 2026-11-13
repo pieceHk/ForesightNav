@@ -1,0 +1,72 @@
+{
+  "at_utc": "2026-11-13T08:30:59.823360+00:00",
+  "controller": {
+    "pid": 2304501,
+    "state": "S",
+    "live_matching": true,
+    "uid": 1001
+  },
+  "controller_source_matches": true,
+  "parameter_sha256": "e1d75f3c9503c7439467748fc97be6ae2ad450c429f40dc7235b1564ff7852ae",
+  "stages": {
+    "full": {
+      "status": "completed",
+      "completed_native": 160,
+      "unknown_scenes": []
+    },
+    "nearest": {
+      "status": "completed",
+      "completed_native": 160,
+      "unknown_scenes": []
+    },
+    "myopic": {
+      "status": "running",
+      "completed_native": 130,
+      "unknown_scenes": []
+    },
+    "suffix_only": {
+      "status": "not_started",
+      "completed_native": 0
+    }
+  },
+  "active_jobs": [
+    {
+      "stage": "myopic",
+      "scene": "6s7QHgap2fW",
+      "completed_metrics": 16,
+      "launcher": {
+        "pid": 2197440,
+        "state": "S",
+        "live_matching": true,
+        "uid": 1001
+      },
+      "trajectory_age_seconds": 0.0461578369140625,
+      "episode": "16"
+    },
+    {
+      "stage": "myopic",
+      "scene": "TEEsavR23oF",
+      "completed_metrics": 14,
+      "launcher": {
+        "pid": 2236375,
+        "state": "S",
+        "live_matching": true,
+        "uid": 1001
+      },
+      "trajectory_age_seconds": 0.21712684631347656,
+      "episode": "14"
+    }
+  ],
+  "progress_status": "running",
+  "progress_timestamp": "2026-11-13T08:30:50.189393+00:00",
+  "error": null,
+  "available_memory_gib": 33.62272644042969,
+  "pressure": {
+    "cpu": "some avg10=9.30 avg60=5.24 avg300=1.88 total=41081997876\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=0\n",
+    "memory": "some avg10=0.02 avg60=0.09 avg300=0.54 total=3351805230\nfull avg10=0.02 avg60=0.09 avg300=0.53 total=3247046440\n",
+    "io": "some avg10=0.06 avg60=0.02 avg300=0.08 total=1519016223\nfull avg10=0.06 avg60=0.02 avg300=0.07 total=1453124285\n"
+  },
+  "THP_defrag": "always defer defer+madvise [madvise] never",
+  "signals_sent": false,
+  "settings_changed": false
+}

@@ -1,0 +1,54 @@
+{
+  "at_utc": "2026-11-13T08:43:24.044372+00:00",
+  "passed": true,
+  "test_kind": "Two disposable CPU-only processes; no Native or GPU workers",
+  "source_sha256": "0d8b72a0ce7eb635dd5464d59d161e80d7a00961f27bab265b0b649e29cf1c9d",
+  "real_parent_stopped_before_reaping": true,
+  "dummy_child_actual_exit": 143,
+  "dummy_child_exit_stat": {
+    "pid": 2310892,
+    "state": "Z",
+    "start_ticks": "36772121",
+    "uid": 1001,
+    "wait_status": 36608,
+    "stat_sha256": "0845983c5349780aa70837ab1206a1a6c24177d6971b763a3a4561bdbaeca4d3"
+  },
+  "coordinator_birth": "36772117",
+  "fault_record": {
+    "at_utc": "2026-11-13T08:43:24.021188+00:00",
+    "controller_pid": 2310891,
+    "controller_source_sha256": "0d8b72a0ce7eb635dd5464d59d161e80d7a00961f27bab265b0b649e29cf1c9d",
+    "job": {
+      "pid": 2310892,
+      "pid_start_ticks": "36772121",
+      "command": [
+        "/nvme/khy/conda_envs/pbsp/navigation/bin/python",
+        "-c",
+        "import signal,sys,time;from pathlib import Path;signal.signal(signal.SIGTERM,lambda *_:sys.exit(143));Path(sys.argv[1]).write_text(\"ready\");time.sleep(60)",
+        "/tmp/exp4-guard-cpu-test-s9ni57l5/dummy-ready"
+      ],
+      "scene": "CPU_DUMMY_ONLY",
+      "status": "running",
+      "run_directory": "/tmp/exp4-guard-cpu-test-s9ni57l5/dummy-native"
+    },
+    "mapping_log": "/tmp/exp4-guard-cpu-test-s9ni57l5/dummy-native/logs/mapping.log",
+    "mapping_tail": "RuntimeError: Mapping rebuild failed; incomplete maps cannot be used: OutOfMemoryError('CUDA out of memory.')",
+    "reason": "Confirmed fatal mapper CUDA OOM; fresh navigation frames cannot validate an unusable map",
+    "matching_own_launcher_to_cleanup": 2310892,
+    "other_user_signals_sent": false,
+    "own_CPU_will_stop_to_preserve_all_actual_child_exit_statuses": true,
+    "scientific_sources_or_parameters_changed": false
+  },
+  "cleanup_record": {
+    "at_utc": "2026-11-13T08:43:24.021544+00:00",
+    "pid": 2310892,
+    "start_ticks": "36772121",
+    "signal": "SIGTERM",
+    "uid": 1001,
+    "other_Native_workers_signaled": false
+  },
+  "actual_wait_status_preserved_while_parent_stopped": true,
+  "foreign_tasks_signaled": false,
+  "Native_workers_started": false,
+  "frozen_sources_and_parameters_unchanged": true
+}

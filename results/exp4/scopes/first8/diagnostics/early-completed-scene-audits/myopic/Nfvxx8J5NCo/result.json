@@ -1,0 +1,36 @@
+{
+  "at_utc": "2026-11-13T08:38:40.662226+00:00",
+  "stage": "myopic",
+  "scene": "Nfvxx8J5NCo",
+  "completed_native_episodes": 20,
+  "audited_stage_paths": 60,
+  "max_native_path_abs_error_m": 2.190481694697155e-06,
+  "invalid_paths_complete": true,
+  "n_error": 0,
+  "native_launcher_returncode": 0,
+  "exit_status_proof": {
+    "receipt": "scopes/first8/diagnostics/infrastructure-recovery/20261113T082617366060Z/actual-exits/pid-2236373-exit.json",
+    "sha256": "8e8bdfa3ad12d59e68cf1f9e8bf441555e6c6f73cd574e9e77a815e972bcbb9f",
+    "at_utc": "2026-11-13T08:12:09.838429+00:00",
+    "pid": 2236373,
+    "start_ticks": "35702460",
+    "uid": 1001,
+    "returncode": 0,
+    "actual_wait_status": 0,
+    "exit_event_status": 0,
+    "source": "real os.waitpid of traced launcher after PTRACE_EVENT_EXIT",
+    "code_or_parameters_changed": false,
+    "Native_restarted": false
+  },
+  "source_and_parameters_unchanged": true,
+  "native_states_modified": false,
+  "new_Native_workers_started": false,
+  "normalization_uses_CPU_PathFinder_only": true,
+  "full_stage160_complete": false,
+  "helper_sha256": "8ff552d47b3f3655b02990675ff6335e8c5b20e31a7822907ea4d2dd5ee89424",
+  "artifact_sha256": {
+    "summary.json": "56ca6649365635f360778aa95980765d6cb4384f5c7b225a8ce40417565a37b9",
+    "episodes.jsonl": "8cedac68f96b3715966b09749682bd29f3729dbbfc55132c9a9fe74afb41973e",
+    "decisions.jsonl": "20275fb83f5a081e50fb85935f958a90841dc279e6b6533b86dcfbd249eab77d"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "at_utc": "2026-11-13T08:45:41.499868+00:00",
+  "classification": "Terminal CPU replacement exited before ready/activation because stopped predecessor retained shared dispatcher lock",
+  "no_replacement_process_live": true,
+  "no_Native_workers_started": true,
+  "predecessor_still_stopped": true,
+  "preserved_sha256": {
+    "infrastructure-recovery-v2-20261113.json": "b15924969d44fc57aa6cc7bb0b79045bca45378797ecf3debbf61b4cf630df63",
+    "activation-claim.json": "6b83be211c5d00a4a04588549be8cb4666bfc59123907891c63b60bfb4637391",
+    "plan.json": "db07cdd245e49a2db89cfa1e4ace8eb035b8cd3eacef003ca135273132772015",
+    "first8_infrastructure_recovery_v2.py": "0d8b72a0ce7eb635dd5464d59d161e80d7a00961f27bab265b0b649e29cf1c9d",
+    "controller.log": "38dc6eb0e28b9d674f0197e74073cd6f911de5fe9ab5a3cd209b5fd5f93fe367"
+  },
+  "frozen_Native_sources_and_parameters_unchanged": true
+}

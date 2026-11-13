@@ -1,0 +1,33 @@
+{
+  "at_utc": "2026-11-13T08:50:19.972913+00:00",
+  "controller_pid": 2311693,
+  "controller_start_ticks": "36789196",
+  "controller_live_matching": true,
+  "source_sha256": "9d16337ef903a0a0e46de102c7eb2c02f1a44bceb973289b0406e23ed8f7cc40",
+  "plan": "scopes/first8/diagnostics/infrastructure-recovery/20261113T084323101289Z/plan.json",
+  "plan_sha256": "316099532c2d8b633e088b76db78a3c1d89921eaddd5f908601bb260aa03309c",
+  "own_6s_graceful_cleanup_after_confirmed_OOM": true,
+  "own_6s_actual_returncode": 143,
+  "own_CPU_predecessor_retired_after_child_audit": true,
+  "failed_prefixes_all_excluded": {
+    "DYehNKdT76V": 13,
+    "6s7QHgap2fW": 16
+  },
+  "whole_fixed_retries_total": 40,
+  "CPU_audited_complete_scene_episodes": 100,
+  "CPU_audited_native_paths": 300,
+  "full_Myopic160_complete": false,
+  "unit_tests_passed": 18,
+  "real_CPU_guard_test": "scopes/first8/diagnostics/recovery-v2-real-CPU-guard-test-9d16337ef903.json",
+  "real_CPU_guard_test_sha256": "a01a062e9360b235e702cef521d74510ea5a8048795ceb70d2a01237685eed68",
+  "foreign_tasks_signaled": false,
+  "active_Native_TE_restarted": false,
+  "scientific_sources_and_parameters_unchanged": true,
+  "startup_host_floor_gib": 64,
+  "startup_reserve_gib": 16,
+  "startup_reserve_seconds": 60,
+  "deviations_sha256": {
+    "deviations.md": "66ae9bf8a29bcdba5779a54833071c994eea7b2959ef29106ad2050958c7db1f",
+    "scopes/first8/deviations.md": "9c3f2f0b6b5133a74770a17a8f3c6b694cdc51bcfe9f3e2c31a0806bd4365d3c"
+  }
+}

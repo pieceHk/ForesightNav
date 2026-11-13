@@ -1,0 +1,59 @@
+{
+  "at_utc": "2026-11-13T08:46:22.070041+00:00",
+  "controller": {
+    "pid": 2311693,
+    "state": "S",
+    "live_matching": true,
+    "uid": 1001
+  },
+  "controller_source_matches": true,
+  "parameter_sha256": "e1d75f3c9503c7439467748fc97be6ae2ad450c429f40dc7235b1564ff7852ae",
+  "stages": {
+    "full": {
+      "status": "completed",
+      "completed_native": 160,
+      "unknown_scenes": []
+    },
+    "nearest": {
+      "status": "completed",
+      "completed_native": 160,
+      "unknown_scenes": []
+    },
+    "myopic": {
+      "status": "running",
+      "completed_native": 115,
+      "unknown_scenes": []
+    },
+    "suffix_only": {
+      "status": "not_started",
+      "completed_native": 0
+    }
+  },
+  "active_jobs": [
+    {
+      "stage": "myopic",
+      "scene": "TEEsavR23oF",
+      "completed_metrics": 15,
+      "launcher": {
+        "pid": 2236375,
+        "state": "S",
+        "live_matching": true,
+        "uid": 1001
+      },
+      "trajectory_age_seconds": 0.25548672676086426,
+      "episode": "15"
+    }
+  ],
+  "progress_status": "running",
+  "progress_timestamp": "2026-11-13T08:46:15.496012+00:00",
+  "error": null,
+  "available_memory_gib": 43.3593635559082,
+  "pressure": {
+    "cpu": "some avg10=0.00 avg60=0.17 avg300=3.59 total=41130843020\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=0\n",
+    "memory": "some avg10=0.00 avg60=0.00 avg300=0.08 total=3357234154\nfull avg10=0.00 avg60=0.00 avg300=0.08 total=3252412850\n",
+    "io": "some avg10=0.24 avg60=0.10 avg300=0.02 total=1521085258\nfull avg10=0.17 avg60=0.05 avg300=0.00 total=1454804115\n"
+  },
+  "THP_defrag": "always defer defer+madvise [madvise] never",
+  "signals_sent": false,
+  "settings_changed": false
+}

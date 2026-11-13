@@ -1,15 +1,15 @@
 {
   "scope": "first8",
-  "pid": 2304501,
-  "start_ticks": "36672358",
+  "pid": 2311693,
+  "start_ticks": "36789196",
   "command": [
     "/nvme/khy/conda_envs/pbsp/navigation/bin/python",
     "-u",
-    "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/code/first8_infrastructure_recovery.py",
+    "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/code/first8_infrastructure_recovery_v2.py",
     "--run-plan",
-    "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/scopes/first8/diagnostics/infrastructure-recovery/20261113T082617366060Z/plan.json"
+    "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/scopes/first8/diagnostics/infrastructure-recovery/20261113T084323101289Z/plan.json"
   ],
-  "source_sha256": "a3a6d638c76f8953a09ae705437e4b03bb185ebe21c1d9e31d7b4226098362df",
+  "source_sha256": "9d16337ef903a0a0e46de102c7eb2c02f1a44bceb973289b0406e23ed8f7cc40",
   "source_fingerprint": {
     "pbsp/__init__.py": "204a77e8c809c9b8f38114173d35f5bcf7585e9893383c3eef5b2dca30aeb619",
     "pbsp/adapters/__init__.py": "9da64df015e12dd3130227acc397bd90bf58d5cd5f4c52108dfb9fc48830e12d",
@@ -174,8 +174,8 @@
     "results/exp4/meta/protocol_decisions.json": "c4596befc6337dab5a9963c69f4416992f7b0108f8d0c69c9e77cfa8f39c69ed"
   },
   "parameter_sha256": "e1d75f3c9503c7439467748fc97be6ae2ad450c429f40dc7235b1564ff7852ae",
-  "log": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/scopes/first8/diagnostics/infrastructure-recovery/20261113T082617366060Z/controller.log",
-  "started_at_utc": "2026-11-13T08:26:46.554649+00:00",
+  "log": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/scopes/first8/diagnostics/infrastructure-recovery/20261113T084323101289Z/controller.log",
+  "started_at_utc": "2026-11-13T08:46:14.931542+00:00",
   "boot_id": "23443655-6f2f-4063-a412-e255f3a91e62",
   "allowed_gpus": [
     0,
@@ -187,12 +187,26 @@
     6,
     7
   ],
-  "handoff_plan": "scopes/first8/diagnostics/infrastructure-recovery/20261113T082617366060Z/plan.json",
+  "handoff_plan": "scopes/first8/diagnostics/infrastructure-recovery/20261113T084323101289Z/plan.json",
   "predecessor_controller": {
-    "pid": 2236364,
-    "start_ticks": "35702398",
-    "status": "failed after confirmed Native CUDA OOM; all original files retained"
+    "pid": 2304501,
+    "start_ticks": "36672358",
+    "status": "Stopped CPU with no living children was retired before replacement acquired the shared dispatcher lock; Native TE continued"
   },
   "living_native_restarted": false,
-  "infrastructure_full_scene_retry": "DYehNKdT76V"
+  "infrastructure_full_scene_retry": [
+    "6s7QHgap2fW",
+    "DYehNKdT76V"
+  ],
+  "startup_host_floor_gib": 64,
+  "startup_allocation_reserve_gib": 16,
+  "startup_reservation_seconds": 60,
+  "mapper_fatal_error_guard": "Graceful stop of only the matching own launcher, then stop own CPU to preserve all child wait statuses for review",
+  "original_6s_launcher_exit": {
+    "pid": 2197440,
+    "start_ticks": "35305299",
+    "actual_returncode": 143,
+    "excluded_failed_attempt": true,
+    "proof": "scopes/first8/diagnostics/infrastructure-recovery/20261113T084323101289Z/6s-original-actual-exit.json"
+  }
 }
