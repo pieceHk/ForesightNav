@@ -36,3 +36,7 @@ Myopic、Suffix-only顺序运行同样8个场景，使用原冻结算法、参�
 两次故障还分别保留了独立的episode级错误日志，stop_reason为error。DY的下一reset目标13由连续已导出前缀和reset异常推得，未开始接受动作；6s的回合16保留了1499条动作引用。日志明确区分观察和推断，未完成回合的成功、路径与耗时不补零，两个错误回合均不进入当前正式成绩。
 
 [未计分错误回合](../logs/infrastructure_failed_episodes.jsonl)、[错误日志来源与SHA](../meta/infrastructure-error-episode-log.json)。
+
+更早一次Nearest共享显存故障的57条导出已整次排除，包括两个20条场景和一个17条场景前缀。三个旧原生档案和worker日志已重新逐文件SHA核验；当前Nearest160条来自重跑后完整结束的8场景。缺失的旧启动器退出码保持未知，失败reset目标17另有未计分错误日志，身份推断已明确标注。
+
+[Nearest历史核查](../meta/retired-nearest-history-audit.json)、[未计分错误日志](../logs/retired_nearest_failed_episodes.jsonl)、[完整历史执行偏差](../../../deviations.md)。

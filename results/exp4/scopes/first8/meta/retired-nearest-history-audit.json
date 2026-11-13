@@ -1,0 +1,47 @@
+{
+  "at_utc": "2026-11-13T11:03:15.656350+00:00",
+  "retired_manifest": "diagnostics/infrastructure-restarts/nearest-20261111T172644/manifest.json",
+  "retired_manifest_sha256": "14bd9aee9b34298752354cf229cb408a525525737ad785b2ae5c9c7829f2262c",
+  "native_archives_deep_verified": [
+    {
+      "scene": "4ok3usBNeis",
+      "retired_native_run": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261112_012649_470244_exp4_nearest_exp4-nearest-a3-4ok3usBNeis",
+      "archive": "diagnostics/infrastructure-restarts/nearest-20261111T172644/native/4ok3usBNeis.tar.gz",
+      "archive_sha256": "784ffede2be529fa41ac18bf1b29426fdc388af5b4c2f8182a6b3609dae5c4d5",
+      "inner_files_SHA_verified": 50,
+      "all_exports_excluded": 20,
+      "old_native_status": "completed",
+      "current_native_run": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261112_211140_597174_exp4_nearest_exp4-nearest-a3-4ok3usBNeis"
+    },
+    {
+      "scene": "5cdEh9F2hJL",
+      "retired_native_run": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261112_012649_617263_exp4_nearest_exp4-nearest-a3-5cdEh9F2hJL",
+      "archive": "diagnostics/infrastructure-restarts/nearest-20261111T172644/native/5cdEh9F2hJL.tar.gz",
+      "archive_sha256": "7640fadbd7a282aa6eeed040d241bdf513c2d48c584f0998e52e83a9ca60f712",
+      "inner_files_SHA_verified": 50,
+      "all_exports_excluded": 20,
+      "old_native_status": "completed",
+      "current_native_run": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261112_211140_597010_exp4_nearest_exp4-nearest-a3-5cdEh9F2hJL"
+    },
+    {
+      "scene": "6s7QHgap2fW",
+      "retired_native_run": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261112_012649_643552_exp4_nearest_exp4-nearest-a3-6s7QHgap2fW",
+      "archive": "diagnostics/infrastructure-restarts/nearest-20261111T172644/native/6s7QHgap2fW.tar.gz",
+      "archive_sha256": "88cba95af8483a37bfc6cb8600340a03ff9def35bc94ec2e521e1b947f15eb5f",
+      "inner_files_SHA_verified": 44,
+      "all_exports_excluded": 17,
+      "old_native_status": "failed",
+      "current_native_run": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261112_211140_597167_exp4_nearest_exp4-nearest-a3-6s7QHgap2fW"
+    }
+  ],
+  "worker_log_archive": "diagnostics/infrastructure-restarts/nearest-20261111T172644/worker-logs.tar.gz",
+  "worker_log_archive_sha256": "1ce3cee2cb569ab73d5c217b6566755efc278b3c68799a98acf39f93bbc8e2ab",
+  "all57_exports_excluded_together": true,
+  "error_episode_log": "scopes/first8/logs/retired_nearest_failed_episodes.jsonl",
+  "error_episode_log_sha256": "21ebbeb83ff5d8dafff2f4162e59bd9e7878845bfcd301dd4897fa1949699a57",
+  "error_episode_records": 1,
+  "current_nearest_episodes": 160,
+  "old_launcher_exit_codes_not_invented": true,
+  "formal_scores_modified": false,
+  "Native_states_modified": false
+}

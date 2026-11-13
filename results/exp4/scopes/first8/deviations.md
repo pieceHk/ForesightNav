@@ -63,3 +63,13 @@ DY的13条和6s的16条失败尝试整体保留、压缩归档并逐文件SHA及
 | 位置 | 规定 | 实际做法 | 原因 |
 | --- | --- | --- | --- |
 | 中断回合日志 | 通用约定第3节要求中断或报错回合记录stop_reason=error并单列 | `scopes/first8/logs/infrastructure_failed_episodes.jsonl`单列两个未计分错误回合：DY的下一reset目标13、6s的已观察回合16。前者在创建轨迹前报错，其身份由严格连续的已导出前缀和reset异常推得，日志明确标为推断。后者保留1499条实际动作及阶段索引引用。未知成功值、未核查路径和耗时保留null，不补零、不计入当前640条正式结果。 | 两次原生尝试的状态和worker异常已完整留档；独立错误日志补齐统一episode级入口。两个失败前缀的29条导出仍全部排除，两场景各完整补跑原20条，不挑选导航成败。 |
+
+## Nearest早期废弃尝试与历史执行记录
+
+<!-- exp4-first8-retired-nearest-history-20261113 -->
+
+Nearest在缩减范围前有一次因GPU3显存故障而废弃的尝试，共57条导出，来自两个完整20条场景和一个17条场景前缀。57条全部保留并整体排除，当前Nearest160条来自同一固定身份、seed和冻结版本重新完成后的8个场景。三个旧原生档案及worker日志已重新逐文件SHA核验；旧启动器缺失的真实退出码继续保留为未知。
+
+错误回合另记于[Nearest未计分错误日志](logs/retired_nearest_failed_episodes.jsonl)，stop_reason为error，缺失成功值、路径和耗时保留null。6s下一reset目标17的身份由连续0..16已导出前缀和reset异常推得，日志已标明推断来源。
+
+证据：[本次历史核查](meta/retired-nearest-history-audit.json)、[原Nearest故障报告](../../reports/Nearest_infrastructure_restart.md)、[更早的完整执行偏差](../../deviations.md)。当前Myopic两场景错误日志继续单列，不改写正式成绩。

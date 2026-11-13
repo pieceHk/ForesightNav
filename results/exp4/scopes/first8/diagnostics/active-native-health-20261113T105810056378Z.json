@@ -1,0 +1,156 @@
+{
+  "at_utc": "2026-11-13T10:58:10.056351+00:00",
+  "active_native_jobs": [
+    {
+      "scene": "6s7QHgap2fW",
+      "gpu": 3,
+      "launcher_pid": 2316356,
+      "worker_logs": {
+        "monitor.log": {
+          "tail_error_matches": 0,
+          "recent_errors": [],
+          "log_age_seconds": 7493.853579998016
+        },
+        "navigation_6s7QHgap2fW.log": {
+          "tail_error_matches": 0,
+          "recent_errors": [],
+          "log_age_seconds": 0.2148418426513672
+        },
+        "mapping.log": {
+          "tail_error_matches": 0,
+          "recent_errors": [],
+          "log_age_seconds": 0.6573629379272461
+        }
+      },
+      "native_status": {
+        "episode_ids": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16",
+          "17",
+          "18",
+          "19"
+        ],
+        "scene": "6s7QHgap2fW",
+        "status": "running",
+        "timestamp": "2026-11-13T08:53:38.847854+00:00"
+      }
+    },
+    {
+      "scene": "DYehNKdT76V",
+      "gpu": 1,
+      "launcher_pid": 2317565,
+      "worker_logs": {
+        "navigation_DYehNKdT76V.log": {
+          "tail_error_matches": 0,
+          "recent_errors": [],
+          "log_age_seconds": 0.12022256851196289
+        },
+        "monitor.log": {
+          "tail_error_matches": 0,
+          "recent_errors": [],
+          "log_age_seconds": 7486.196011066437
+        },
+        "mapping.log": {
+          "tail_error_matches": 0,
+          "recent_errors": [],
+          "log_age_seconds": 0.14277148246765137
+        }
+      },
+      "native_status": {
+        "episode_ids": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16",
+          "17",
+          "18",
+          "19"
+        ],
+        "scene": "DYehNKdT76V",
+        "status": "running",
+        "timestamp": "2026-11-13T08:53:44.911438+00:00"
+      }
+    }
+  ],
+  "gpu_ownership": [
+    {
+      "gpu": 0,
+      "free_mib": 39809,
+      "Exp4_compute_mib": 0,
+      "other_compute_mib": 4016
+    },
+    {
+      "gpu": 1,
+      "free_mib": 20855,
+      "Exp4_compute_mib": 19557,
+      "other_compute_mib": 4016
+    },
+    {
+      "gpu": 2,
+      "free_mib": 39912,
+      "Exp4_compute_mib": 0,
+      "other_compute_mib": 4016
+    },
+    {
+      "gpu": 3,
+      "free_mib": 20097,
+      "Exp4_compute_mib": 19631,
+      "other_compute_mib": 4016
+    },
+    {
+      "gpu": 4,
+      "free_mib": 39972,
+      "Exp4_compute_mib": 0,
+      "other_compute_mib": 4016
+    },
+    {
+      "gpu": 5,
+      "free_mib": 39859,
+      "Exp4_compute_mib": 0,
+      "other_compute_mib": 4016
+    },
+    {
+      "gpu": 6,
+      "free_mib": 39794,
+      "Exp4_compute_mib": 0,
+      "other_compute_mib": 4016
+    },
+    {
+      "gpu": 7,
+      "free_mib": 39744,
+      "Exp4_compute_mib": 0,
+      "other_compute_mib": 4016
+    }
+  ],
+  "available_memory_gib": 347.8931579589844,
+  "signals_sent": false,
+  "settings_changed": false
+}

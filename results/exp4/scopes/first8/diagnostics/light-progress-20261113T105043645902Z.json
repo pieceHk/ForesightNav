@@ -1,0 +1,79 @@
+{
+  "at_utc": "2026-11-13T10:50:43.645504+00:00",
+  "controller": {
+    "pid": 2311693,
+    "state": "S",
+    "start_ticks": "36789196",
+    "live_matching": true,
+    "uid": 1001
+  },
+  "controller_source_matches": true,
+  "parameter_sha256": "e1d75f3c9503c7439467748fc97be6ae2ad450c429f40dc7235b1564ff7852ae",
+  "stages": {
+    "full": {
+      "status": "completed",
+      "completed_native": 160,
+      "unknown_scenes": []
+    },
+    "nearest": {
+      "status": "completed",
+      "completed_native": 160,
+      "unknown_scenes": []
+    },
+    "myopic": {
+      "status": "running",
+      "completed_native": 142,
+      "unknown_scenes": []
+    },
+    "suffix_only": {
+      "status": "not_started",
+      "completed_native": 0
+    }
+  },
+  "active_jobs": [
+    {
+      "stage": "myopic",
+      "scene": "6s7QHgap2fW",
+      "gpu": 3,
+      "pid_start_ticks": "36830508",
+      "completed_metrics": 8,
+      "launcher": {
+        "pid": 2316356,
+        "state": "S",
+        "start_ticks": "36830508",
+        "live_matching": true,
+        "uid": 1001
+      },
+      "trajectory_age_seconds": 0.5443203449249268,
+      "episode": "8"
+    },
+    {
+      "stage": "myopic",
+      "scene": "DYehNKdT76V",
+      "gpu": 1,
+      "pid_start_ticks": "36831589",
+      "completed_metrics": 14,
+      "launcher": {
+        "pid": 2317565,
+        "state": "S",
+        "start_ticks": "36831589",
+        "live_matching": true,
+        "uid": 1001
+      },
+      "trajectory_age_seconds": 1.571669340133667,
+      "episode": "14"
+    }
+  ],
+  "progress_status": "running",
+  "progress_timestamp": "2026-11-13T10:50:42.841374+00:00",
+  "error": null,
+  "available_memory_gib": 352.2039260864258,
+  "pressure": {
+    "cpu": "some avg10=0.86 avg60=0.40 avg300=0.45 total=41178436280\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=0\n",
+    "memory": "some avg10=0.00 avg60=0.00 avg300=0.00 total=3358255950\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=3253415170\n",
+    "io": "some avg10=0.00 avg60=0.00 avg300=0.00 total=1523788609\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=1457262620\n"
+  },
+  "THP_defrag": "always defer defer+madvise [madvise] never",
+  "signals_sent": false,
+  "settings_changed": false
+}
