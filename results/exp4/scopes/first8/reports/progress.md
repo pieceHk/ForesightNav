@@ -14,3 +14,7 @@ Myopic、Suffix-only顺序运行同样8个场景，使用原冻结算法、参�
 最终比较将使用四组相同160条任务，输出2×2效应、六组逐回合配对CSV、该范围32个原始配置/日志归档及核查过的图表。原20场景/400条完成时间估计已作废。
 
 [范围与固定身份](../meta/scope.json)、[当前运行](../meta/progress.json)、[Full](../summary/full.json)、[Nearest](../summary/nearest.json)。
+
+2026年11月13日15:52，Myopic的DY场景因mapper CUDA OOM失败，原调度器退出。16:26已激活仅CPU的恢复调度器，保留五个完整场景和两路活任务。失败尝试13条整体留档排除，资源达标后按相同固定身份、seed和冻结参数完整补跑20条；Suffix尚待Myopic160全完成。不能把失败前142条导出全部当作有效进度，也不能继续沿用故障前的完成时间估计。
+
+[故障与恢复计划](../meta/infrastructure-recovery-20261113.json)、[范围内执行偏差](../deviations.md)。

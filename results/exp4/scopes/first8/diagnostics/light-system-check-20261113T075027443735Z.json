@@ -1,0 +1,130 @@
+{
+  "at_utc": "2026-11-13T07:50:27.443385+00:00",
+  "controller": {
+    "pid": 2236364,
+    "live": true,
+    "state": "S",
+    "start_ticks": "35702398",
+    "uid": 1001,
+    "birth_matches": true
+  },
+  "active_jobs": [
+    {
+      "stage": "myopic",
+      "scene": "4ok3usBNeis",
+      "launcher": {
+        "pid": 2197428,
+        "live": true,
+        "state": "S",
+        "start_ticks": "35305272",
+        "uid": 1001
+      }
+    },
+    {
+      "stage": "myopic",
+      "scene": "6s7QHgap2fW",
+      "launcher": {
+        "pid": 2197440,
+        "live": true,
+        "state": "S",
+        "start_ticks": "35305299",
+        "uid": 1001
+      }
+    },
+    {
+      "stage": "myopic",
+      "scene": "DYehNKdT76V",
+      "launcher": {
+        "pid": 2236371,
+        "live": true,
+        "state": "S",
+        "start_ticks": "35702458",
+        "uid": 1001
+      }
+    },
+    {
+      "stage": "myopic",
+      "scene": "Dd4bFSTQ8gi",
+      "launcher": {
+        "pid": 2236372,
+        "live": true,
+        "state": "S",
+        "start_ticks": "35702460",
+        "uid": 1001
+      }
+    },
+    {
+      "stage": "myopic",
+      "scene": "Nfvxx8J5NCo",
+      "launcher": {
+        "pid": 2236373,
+        "live": true,
+        "state": "S",
+        "start_ticks": "35702460",
+        "uid": 1001
+      }
+    },
+    {
+      "stage": "myopic",
+      "scene": "TEEsavR23oF",
+      "launcher": {
+        "pid": 2236375,
+        "live": true,
+        "state": "S",
+        "start_ticks": "35702462",
+        "uid": 1001
+      }
+    }
+  ],
+  "controller_source_matches": true,
+  "parameter_sha256": "e1d75f3c9503c7439467748fc97be6ae2ad450c429f40dc7235b1564ff7852ae",
+  "THP_defrag": "always defer defer+madvise [madvise] never",
+  "available_memory_gib": 4.9659576416015625,
+  "pressure": {
+    "cpu": "some avg10=0.00 avg60=0.03 avg300=0.22 total=41064435795\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=0\n",
+    "memory": "some avg10=72.69 avg60=50.50 avg300=42.02 total=3251284152\nfull avg10=71.79 avg60=49.91 avg300=41.70 total=3148301455\n",
+    "io": "some avg10=72.61 avg60=37.32 avg300=14.20 total=1470900069\nfull avg10=71.71 avg60=36.55 avg300=13.79 total=1410383955\n"
+  },
+  "THP_operation": {
+    "recorded_at_utc": "2026-11-13T07:45:37.855002+00:00",
+    "plan": "/tmp/exp4-first8-thp-plan-20261113T074448Z.json",
+    "result": {
+      "status": "applied",
+      "action": "apply",
+      "at_utc": "2026-11-13T07:45:37.841865+00:00",
+      "before": "madvise",
+      "after": "defer",
+      "boot_id": "23443655-6f2f-4063-a412-e255f3a91e62",
+      "only_one_sysfs_setting_written": true,
+      "settings_changed": true,
+      "signals_sent": false,
+      "native_sources_changed": false,
+      "native_parameters_changed": false,
+      "automatic_restore_seconds": 150,
+      "automatic_restore_pid": 2294137,
+      "automatic_restore_log": "/tmp/exp4-first8-thp-plan-20261113T074448Z-automatic-restore.jsonl"
+    },
+    "automatic_restore_armed": true
+  },
+  "automatic_restore_log": {
+    "file": "/tmp/exp4-first8-thp-plan-20261113T074448Z-automatic-restore.jsonl",
+    "owner_uid": 0,
+    "records": [
+      {
+        "status": "automatic_restore_armed",
+        "at_utc": "2026-11-13T07:45:37.867968+00:00",
+        "seconds": 150
+      },
+      {
+        "status": "automatic_restore_finished",
+        "at_utc": "2026-11-13T07:48:49.180572+00:00",
+        "before": "defer",
+        "after": "madvise",
+        "settings_changed": true,
+        "signals_sent": false
+      }
+    ]
+  },
+  "settings_changed": false,
+  "signals_sent": false
+}

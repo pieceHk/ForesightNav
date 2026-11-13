@@ -1,0 +1,125 @@
+{
+  "at_utc": "2026-11-13T08:07:09.203357+00:00",
+  "controller": {
+    "pid": 2236364,
+    "live_matching": false
+  },
+  "controller_source_matches": true,
+  "parameter_sha256": "e1d75f3c9503c7439467748fc97be6ae2ad450c429f40dc7235b1564ff7852ae",
+  "stages": {
+    "full": {
+      "status": "completed",
+      "completed_native": 160,
+      "unknown_scenes": []
+    },
+    "nearest": {
+      "status": "completed",
+      "completed_native": 160,
+      "unknown_scenes": []
+    },
+    "myopic": {
+      "status": "running",
+      "completed_native": 138,
+      "unknown_scenes": []
+    },
+    "suffix_only": {
+      "status": "not_started",
+      "completed_native": 0
+    }
+  },
+  "active_jobs": [
+    {
+      "stage": "myopic",
+      "scene": "4ok3usBNeis",
+      "completed_metrics": 20,
+      "launcher": {
+        "pid": 2197428,
+        "state": "Z",
+        "live_matching": false,
+        "uid": 1001
+      },
+      "trajectory_age_seconds": 704.2576904296875,
+      "episode": "19"
+    },
+    {
+      "stage": "myopic",
+      "scene": "6s7QHgap2fW",
+      "completed_metrics": 15,
+      "launcher": {
+        "pid": 2197440,
+        "state": "S",
+        "live_matching": true,
+        "uid": 1001
+      },
+      "trajectory_age_seconds": 0.1775672435760498,
+      "episode": "15"
+    },
+    {
+      "stage": "myopic",
+      "scene": "DYehNKdT76V",
+      "completed_metrics": 13,
+      "launcher": {
+        "pid": 2236371,
+        "live_matching": false
+      },
+      "trajectory_age_seconds": 1028.402226448059,
+      "episode": "12"
+    },
+    {
+      "stage": "myopic",
+      "scene": "Dd4bFSTQ8gi",
+      "completed_metrics": 19,
+      "launcher": {
+        "pid": 2236372,
+        "state": "S",
+        "live_matching": true,
+        "uid": 1001
+      },
+      "trajectory_age_seconds": 0.5139980316162109,
+      "episode": "19"
+    },
+    {
+      "stage": "myopic",
+      "scene": "Nfvxx8J5NCo",
+      "completed_metrics": 19,
+      "launcher": {
+        "pid": 2236373,
+        "state": "S",
+        "live_matching": true,
+        "uid": 1001
+      },
+      "trajectory_age_seconds": 0.9852688312530518,
+      "episode": "19"
+    },
+    {
+      "stage": "myopic",
+      "scene": "TEEsavR23oF",
+      "completed_metrics": 12,
+      "launcher": {
+        "pid": 2236375,
+        "state": "S",
+        "live_matching": true,
+        "uid": 1001
+      },
+      "trajectory_age_seconds": 0.12065744400024414,
+      "episode": "12"
+    }
+  ],
+  "progress_status": "running",
+  "progress_timestamp": "2026-11-13T07:52:41.323930+00:00",
+  "error": {
+    "at_utc": "2026-11-13T07:52:51.368562+00:00",
+    "error": "GateError: Native scene failed: DYehNKdT76V, returncode=1",
+    "native_workers_left_running_for_inspection": true,
+    "no_outcome_selected_retry": true
+  },
+  "available_memory_gib": 27.959423065185547,
+  "pressure": {
+    "cpu": "some avg10=0.00 avg60=0.00 avg300=0.00 total=41069700518\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=0\n",
+    "memory": "some avg10=0.68 avg60=5.43 avg300=6.17 total=3345708409\nfull avg10=0.67 avg60=5.35 avg300=6.04 total=3241202361\n",
+    "io": "some avg10=3.81 avg60=5.16 avg300=3.16 total=1510509381\nfull avg10=2.66 avg60=4.29 avg300=2.76 total=1446784447\n"
+  },
+  "THP_defrag": "always defer defer+madvise [madvise] never",
+  "signals_sent": false,
+  "settings_changed": false
+}

@@ -1,0 +1,12 @@
+{
+  "at_utc": "2026-11-13T08:12:09.838429+00:00",
+  "pid": 2236373,
+  "start_ticks": "35702460",
+  "uid": 1001,
+  "returncode": 0,
+  "actual_wait_status": 0,
+  "exit_event_status": 0,
+  "source": "real os.waitpid of traced launcher after PTRACE_EVENT_EXIT",
+  "code_or_parameters_changed": false,
+  "Native_restarted": false
+}

@@ -19,3 +19,19 @@ CP5当前继续按Nearest完成后运行Belief-myopic，再运行Suffix-only的�
 | 位置 | 原规定 | 实际做法 | 原因 |
 | --- | --- | --- | --- |
 | 最终日志与汇总目录 | 交付清单将四组日志、汇总及图表直接放在exp4根目录下 | 当前四组160条的完整结果统一放在`exp4/scopes/first8/`，包含logs、summary、figures及CP5。完成时同时生成根目录`exp4/reports/CP5.md`的完整报告，链接指向当前范围的证据。 | 保留原Full400和范围外原生记录，避免将400条历史统计与当前160条消融混用。`meta/active-evaluation-scope.json`明确当前有效范围。 |
+
+## 2026-11-13：Myopic显存故障与场景级基础设施恢复
+
+<!-- exp4-first8-infrastructure-recovery-20261113 -->
+
+15:52:50北京时间，Myopic的DYehNKdT76V建图工作进程发生CUDA OOM，reset_episode继而失败，原CPU调度器2236364实际退出。映射日志明确报告只余137.44MiB，申请40MiB失败；不是SSH超时。故障前主机可用内存一度降至约5GiB，并有显著内存及I/O等待。新增其他任务与既有占用均有记录，不能据此保证它们是OOM的唯一原因。
+
+五个完整场景已有真实OS退出0；原6s与TE两个Native继续运行。为避免丢失被原调度器孤立的启动器退出状态，仅对本账号Dd/Nfv/TE启动器以PTRACE_SEIZE和TRACEEXIT收集真实waitpid结果，无EXITKILL，不跟踪Native子工作进程，不重启活任务，不影响外部进程。Dd/Nfv均已捕获实际0；TE待退出时捕获。旧停止父CPU保留至全部被接管场景退出确认后才退役。
+
+16:26北京时间已激活仅CPU的恢复适配器，复用原八卡调度与全局Myopic160再Suffix160顺序。失败DY尝试的13条导出整体保留并全部排除；待资源达标后，使用相同20条固定身份、seed及冻结源码/参数完整重跑该场景，不按导航成败挑选回合，也不混接失败尝试。其余七个场景保留，故障归档和原worker日志已逐SHA及解压回读核验。
+
+新任务继续要求单卡至少32GiB空闲、已有compute不超过11GiB、主机至少64GiB可用内存。恢复当时主机未达门槛，补跑处于等待，不宣称八路已运行。没有降低精度、回合预算、显存门槛或修改科学参数，没有终止其他用户进程。
+
+同日15:45:37在此前明确许可下，仅将THP defrag从madvise临时改为defer，设置150秒自动恢复。实际因主机负载延迟，15:48:49恢复为madvise；16:27再次实查仍为madvise。未取得有效的干净对照来证明改善，不把资源变化归因于该设置，不继续保留defer。实际root回滚记录在本范围diagnostics/thp-first8-actual-automatic-restore.jsonl。
+
+本次故障完整原始证据、恢复计划及真实退出记录见meta/infrastructure-recovery-20261113.json指向的计划目录。先前22:30至次日00:30交付估计已失效；若资源立即恢复并持续八卡，现规划还需8–10小时，资源等待另计。

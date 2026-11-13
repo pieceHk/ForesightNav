@@ -21,3 +21,16 @@
   }
 }
 Run: /nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261113_134511_831506_exp4_myopic_exp4-myopic-a3-first8-DYehNKdT76V
+/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261113_134511_831506_exp4_myopic_exp4-myopic-a3-first8-DYehNKdT76V
+Traceback (most recent call last):
+  File "/nvme/khy/ForesightNav_exp4_depthfix/run.py", line 97, in <module>
+    main()
+  File "/nvme/khy/ForesightNav_exp4_depthfix/run.py", line 93, in main
+    launch(plan, tag=args.tag, resource_checks=resources)
+  File "/nvme/khy/ForesightNav_exp4_depthfix/pbsp/runtime/launch.py", line 275, in launch
+    navigation.wait()
+  File "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/contextlib.py", line 126, in __exit__
+    next(self.gen)
+  File "/nvme/khy/ForesightNav_exp4_depthfix/pbsp/runtime/launch.py", line 163, in managed_process
+    raise RuntimeError(f"{label} worker exited with {process.returncode}")
+RuntimeError: navigation_DYehNKdT76V worker exited with 1

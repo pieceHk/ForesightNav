@@ -1,0 +1,121 @@
+{
+  "at_utc": "2026-11-13T08:21:31.036917+00:00",
+  "controller": {
+    "pid": 2236364,
+    "live_matching": false
+  },
+  "controller_source_matches": true,
+  "parameter_sha256": "e1d75f3c9503c7439467748fc97be6ae2ad450c429f40dc7235b1564ff7852ae",
+  "stages": {
+    "full": {
+      "status": "completed",
+      "completed_native": 160,
+      "unknown_scenes": []
+    },
+    "nearest": {
+      "status": "completed",
+      "completed_native": 160,
+      "unknown_scenes": []
+    },
+    "myopic": {
+      "status": "running",
+      "completed_native": 142,
+      "unknown_scenes": []
+    },
+    "suffix_only": {
+      "status": "not_started",
+      "completed_native": 0
+    }
+  },
+  "active_jobs": [
+    {
+      "stage": "myopic",
+      "scene": "4ok3usBNeis",
+      "completed_metrics": 20,
+      "launcher": {
+        "pid": 2197428,
+        "state": "Z",
+        "live_matching": false,
+        "uid": 1001
+      },
+      "trajectory_age_seconds": 1566.114645242691,
+      "episode": "19"
+    },
+    {
+      "stage": "myopic",
+      "scene": "6s7QHgap2fW",
+      "completed_metrics": 16,
+      "launcher": {
+        "pid": 2197440,
+        "state": "S",
+        "live_matching": true,
+        "uid": 1001
+      },
+      "trajectory_age_seconds": 0.5034751892089844,
+      "episode": "16"
+    },
+    {
+      "stage": "myopic",
+      "scene": "DYehNKdT76V",
+      "completed_metrics": 13,
+      "launcher": {
+        "pid": 2236371,
+        "live_matching": false
+      },
+      "trajectory_age_seconds": 1890.255248785019,
+      "episode": "12"
+    },
+    {
+      "stage": "myopic",
+      "scene": "Dd4bFSTQ8gi",
+      "completed_metrics": 20,
+      "launcher": {
+        "pid": 2236372,
+        "live_matching": false
+      },
+      "trajectory_age_seconds": 589.4255802631378,
+      "episode": "19"
+    },
+    {
+      "stage": "myopic",
+      "scene": "Nfvxx8J5NCo",
+      "completed_metrics": 20,
+      "launcher": {
+        "pid": 2236373,
+        "live_matching": false
+      },
+      "trajectory_age_seconds": 584.332633972168,
+      "episode": "19"
+    },
+    {
+      "stage": "myopic",
+      "scene": "TEEsavR23oF",
+      "completed_metrics": 13,
+      "launcher": {
+        "pid": 2236375,
+        "state": "S",
+        "live_matching": true,
+        "uid": 1001
+      },
+      "trajectory_age_seconds": 1.0426814556121826,
+      "episode": "13"
+    }
+  ],
+  "progress_status": "running",
+  "progress_timestamp": "2026-11-13T07:52:41.323930+00:00",
+  "error": {
+    "at_utc": "2026-11-13T07:52:51.368562+00:00",
+    "error": "GateError: Native scene failed: DYehNKdT76V, returncode=1",
+    "native_workers_left_running_for_inspection": true,
+    "no_outcome_selected_retry": true
+  },
+  "available_memory_gib": 25.710716247558594,
+  "pressure": {
+    "cpu": "some avg10=0.00 avg60=0.53 avg300=0.41 total=41074082490\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=0\n",
+    "memory": "some avg10=0.00 avg60=0.01 avg300=0.31 total=3346301127\nfull avg10=0.00 avg60=0.00 avg300=0.29 total=3241738506\n",
+    "io": "some avg10=0.00 avg60=0.06 avg300=0.36 total=1517107521\nfull avg10=0.00 avg60=0.05 avg300=0.29 total=1451502012\n"
+  },
+  "THP_defrag": "always defer defer+madvise [madvise] never",
+  "signals_sent": false,
+  "settings_changed": false
+}

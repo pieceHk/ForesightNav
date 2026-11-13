@@ -1,0 +1,2 @@
+{"status": "automatic_restore_armed", "at_utc": "2026-11-13T07:45:37.867968+00:00", "seconds": 150}
+{"status": "automatic_restore_finished", "at_utc": "2026-11-13T07:48:49.180572+00:00", "before": "defer", "after": "madvise", "settings_changed": true, "signals_sent": false}

@@ -1,0 +1,141 @@
+nked': True, 'suffix_eligible': False, 'suffix_intervention': False, 'reason': 'version_valid_blp', 'dispatch_version_gate': {'would_invalidate': False, 'reason': 'none', 'scene_id': 'DYehNKdT76V', 'episode_id': '12', 'query_serial': 1045, 'batch_map_revision': 120, 'status_last_fused_keyframes': 120, 'status_rebuilding': False}, 'stale_suffix_dispatch': 0, 'ordered_raw_ranks': [0, 278, 55, 328, 331, 566, 2459, 4536, 9039, 9177], 'version_token': {'scene_id': 'DYehNKdT76V', 'episode_id': '12', 'map_revision': 120, 'last_fused_keyframes': 120, 'query_serial': 1045}, 'pre_cooldown_selected_raw_rank': 0, 'post_cooldown_selected_raw_rank': 0, 'cooldown_vetoed': False}
+[CATEGORY_COOLDOWN] {"category": "chair", "cooldown_steps": 10, "elapsed_since_switch": 453, "held": 0, "proposed_active_position": [-5.835909366607666, 0.13650700449943542, -5.0768303871154785], "proposed_switch": 0, "realized_active_position": [-5.835909366607666, 0.13650700449943542, -5.0768303871154785], "realized_switch": 0, "reason": "LATEST_UNCHANGED", "refresh_applied": 1, "subtask_step": 453, "task_idx": 2}
+[SCSP_RUNTIME] {"current_task": 2, "dispatched_selected": 0, "fallback_reason": null, "idea1_selected": null, "legacy_selected": null, "phase": "periodic_refresh", "status": "planned", "suffix_selected": null}
+[GOAL_MAP_RECOVERY] task=2 source=frontier overlap=0
+Can't find a path. Map fully explored.
+DYehNKdT76V_12_2:  91%|█████████ | 453/500 [24:12<00:24,  1.94it/s]DYehNKdT76V_12_2:  91%|█████████ | 454/500 [24:12<00:28,  1.59it/s][GOAL_MAP_RECOVERY] task=2 source=frontier overlap=0
+Can't find a path. Map fully explored.
+[TRAPPED] {"type": "trapped", "scene": "DYehNKdT76V", "episode": "12", "task": 2, "step": 455, "window": 25, "radius_m": 0.05, "position": [-0.6003340482711792, 2.924410104751587], "action": "DiscreteNavigationAction.MOVE_FORWARD"}
+[NAVMESH_OVERRIDE] task=2 mode=escape goal=[-9.378225326538086, 0.13650700449943542, -3.8532538414001465]
+[TRAPPED_RECOVERY] {"type": "trapped", "scene": "DYehNKdT76V", "episode": "12", "task": 2, "step": 455, "window": 25, "radius_m": 0.05, "position": [-0.6003340482711792, 2.924410104751587], "action": "DiscreteNavigationAction.MOVE_FORWARD", "escape": {"mode": "escape", "sample_count": 32, "accepted": 9, "vertical_rejections": 21, "island_rejections": 0, "max_vertical_delta": 0.35, "stairs_suspected": true, "goal": [-9.378225326538086, 0.13650700449943542, -3.8532538414001465]}}
+DYehNKdT76V_12_2:  91%|█████████ | 454/500 [24:13<00:28,  1.59it/s]DYehNKdT76V_12_2:  91%|█████████ | 455/500 [24:13<00:26,  1.72it/s]Can't find a path. Map fully explored.
+DYehNKdT76V_12_2:  91%|█████████ | 455/500 [24:13<00:26,  1.72it/s]DYehNKdT76V_12_2:  91%|█████████ | 456/500 [24:13<00:26,  1.69it/s]Can't find a path. Map fully explored.
+DYehNKdT76V_12_2:  91%|█████████ | 456/500 [24:14<00:26,  1.69it/s]DYehNKdT76V_12_2:  91%|█████████▏| 457/500 [24:14<00:24,  1.79it/s]Can't find a path. Map fully explored.
+DYehNKdT76V_12_2:  91%|█████████▏| 457/500 [24:14<00:24,  1.79it/s]DYehNKdT76V_12_2:  92%|█████████▏| 458/500 [24:14<00:21,  1.94it/s]Can't find a path. Map fully explored.
+DYehNKdT76V_12_2:  92%|█████████▏| 458/500 [24:15<00:21,  1.94it/s]DYehNKdT76V_12_2:  92%|█████████▏| 459/500 [24:15<00:20,  2.03it/s]Can't find a path. Map fully explored.
+DYehNKdT76V_12_2:  92%|█████████▏| 459/500 [24:15<00:20,  2.03it/s]DYehNKdT76V_12_2:  92%|█████████▏| 460/500 [24:15<00:19,  2.09it/s]Can't find a path. Map fully explored.
+DYehNKdT76V_12_2:  92%|█████████▏| 460/500 [24:16<00:19,  2.09it/s]DYehNKdT76V_12_2:  92%|█████████▏| 461/500 [24:16<00:17,  2.18it/s]Can't find a path. Map fully explored.
+DYehNKdT76V_12_2:  92%|█████████▏| 461/500 [24:16<00:17,  2.18it/s]DYehNKdT76V_12_2:  92%|█████████▏| 462/500 [24:16<00:16,  2.26it/s]Can't find a path. Map fully explored.
+DYehNKdT76V_12_2:  92%|█████████▏| 462/500 [24:16<00:16,  2.26it/s]DYehNKdT76V_12_2:  93%|█████████▎| 463/500 [24:16<00:16,  2.29it/s][OnlineESProvider] get_all_goals: batch querying 1 unique categories (3 tasks)...
+  task 2 [chair]: 10 candidates [[-6.035, -0.26, -4.765], [-4.144, -0.376, -5.048], [-5.034, -0.641, -5.552], [-1.004, -0.547, -5.153], [0.069, -0.859, -5.17], [-2.168, -0.125, -5.142], [-3.426, -0.824, -6.328], [-3.25, -0.64, -4.535], [-8.976, -0.698, -5.196], [-5.741, -0.235, -2.42]]
+[SCSP_PROVIDER] {"batch_validation_reason": null, "batch_validation_status": "valid", "current_task": 2, "phase": "periodic_refresh", "version_gate": {"batch_map_revision": 120, "episode_id": "12", "query_serial": 1046, "reason": "none", "scene_id": "DYehNKdT76V", "status_last_fused_keyframes": 120, "status_rebuilding": false, "would_invalidate": false}}
+[CANDIDATE_PROJECTION] task=0 input=0 accepted=0
+[CANDIDATE_PROJECTION] task=1 input=0 accepted=0
+[CANDIDATE_PROJECTION] task=2 input=10 accepted=10
+[CANDIDATE_TRACK] spatial_refresh counts={0: 0, 1: 0, 2: 10} evidence={0: {'candidates': 0, 'max_observations': 0, 'promoted': 0}, 1: {'candidates': 0, 'max_observations': 0, 'promoted': 0}, 2: {'candidates': 10, 'max_observations': 48, 'promoted': 0}} external_ranking={'mode': 'blp_eq13', 'source': 'blp', 'task_idx': 2, 'externally_ranked': True, 'suffix_eligible': False, 'suffix_intervention': False, 'reason': 'version_valid_blp', 'dispatch_version_gate': {'would_invalidate': False, 'reason': 'none', 'scene_id': 'DYehNKdT76V', 'episode_id': '12', 'query_serial': 1046, 'batch_map_revision': 120, 'status_last_fused_keyframes': 120, 'status_rebuilding': False}, 'stale_suffix_dispatch': 0, 'ordered_raw_ranks': [0, 278, 55, 328, 331, 566, 2459, 4536, 9039, 9177], 'version_token': {'scene_id': 'DYehNKdT76V', 'episode_id': '12', 'map_revision': 120, 'last_fused_keyframes': 120, 'query_serial': 1046}, 'pre_cooldown_selected_raw_rank': 0, 'post_cooldown_selected_raw_rank': 0, 'cooldown_vetoed': False}
+[CATEGORY_COOLDOWN] {"category": "chair", "cooldown_steps": 10, "elapsed_since_switch": 463, "held": 0, "proposed_active_position": [-5.835909366607666, 0.13650700449943542, -5.0768303871154785], "proposed_switch": 0, "realized_active_position": [-5.835909366607666, 0.13650700449943542, -5.0768303871154785], "realized_switch": 0, "reason": "LATEST_UNCHANGED", "refresh_applied": 1, "subtask_step": 463, "task_idx": 2}
+[SCSP_RUNTIME] {"current_task": 2, "dispatched_selected": 0, "fallback_reason": null, "idea1_selected": null, "legacy_selected": null, "phase": "periodic_refresh", "status": "planned", "suffix_selected": null}
+Can't find a path. Map fully explored.
+DYehNKdT76V_12_2:  93%|█████████▎| 463/500 [24:17<00:16,  2.29it/s]DYehNKdT76V_12_2:  93%|█████████▎| 464/500 [24:17<00:20,  1.74it/s]Can't find a path. Map fully explored.
+DYehNKdT76V_12_2:  93%|█████████▎| 464/500 [24:18<00:20,  1.74it/s]DYehNKdT76V_12_2:  93%|█████████▎| 465/500 [24:18<00:18,  1.91it/s]Can't find a path. Map fully explored.
+DYehNKdT76V_12_2:  93%|█████████▎| 465/500 [24:18<00:18,  1.91it/s]DYehNKdT76V_12_2:  93%|█████████▎| 466/500 [24:18<00:16,  2.05it/s]Can't find a path. Map fully explored.
+DYehNKdT76V_12_2:  93%|█████████▎| 466/500 [24:19<00:16,  2.05it/s]DYehNKdT76V_12_2:  93%|█████████▎| 467/500 [24:19<00:16,  1.99it/s]Can't find a path. Map fully explored.
+DYehNKdT76V_12_2:  93%|█████████▎| 467/500 [24:19<00:16,  1.99it/s]DYehNKdT76V_12_2:  94%|█████████▎| 468/500 [24:19<00:16,  1.89it/s]Can't find a path. Map fully explored.
+DYehNKdT76V_12_2:  94%|█████████▎| 468/500 [24:20<00:16,  1.89it/s]DYehNKdT76V_12_2:  94%|█████████▍| 469/500 [24:20<00:17,  1.80it/s]Can't find a path. Map fully explored.
+DYehNKdT76V_12_2:  94%|█████████▍| 469/500 [24:20<00:17,  1.80it/s]DYehNKdT76V_12_2:  94%|█████████▍| 470/500 [24:20<00:17,  1.73it/s]Can't find a path. Map fully explored.
+DYehNKdT76V_12_2:  94%|█████████▍| 470/500 [24:21<00:17,  1.73it/s]DYehNKdT76V_12_2:  94%|█████████▍| 471/500 [24:21<00:17,  1.62it/s]Can't find a path. Map fully explored.
+DYehNKdT76V_12_2:  94%|█████████▍| 471/500 [24:22<00:17,  1.62it/s]DYehNKdT76V_12_2:  94%|█████████▍| 472/500 [24:22<00:15,  1.76it/s]Can't find a path. Map fully explored.
+DYehNKdT76V_12_2:  94%|█████████▍| 472/500 [24:22<00:15,  1.76it/s]DYehNKdT76V_12_2:  95%|█████████▍| 473/500 [24:22<00:14,  1.90it/s][OnlineESProvider] get_all_goals: batch querying 1 unique categories (3 tasks)...
+  task 2 [chair]: 10 candidates [[-6.035, -0.26, -4.765], [-4.144, -0.376, -5.048], [-5.034, -0.641, -5.552], [-1.004, -0.547, -5.153], [0.069, -0.859, -5.17], [-2.168, -0.125, -5.142], [-3.426, -0.824, -6.328], [-3.25, -0.64, -4.535], [-8.976, -0.698, -5.196], [-5.741, -0.235, -2.42]]
+[SCSP_PROVIDER] {"batch_validation_reason": null, "batch_validation_status": "valid", "current_task": 2, "phase": "periodic_refresh", "version_gate": {"batch_map_revision": 120, "episode_id": "12", "query_serial": 1047, "reason": "none", "scene_id": "DYehNKdT76V", "status_last_fused_keyframes": 120, "status_rebuilding": false, "would_invalidate": false}}
+[CANDIDATE_PROJECTION] task=0 input=0 accepted=0
+[CANDIDATE_PROJECTION] task=1 input=0 accepted=0
+[CANDIDATE_PROJECTION] task=2 input=10 accepted=10
+[CANDIDATE_TRACK] spatial_refresh counts={0: 0, 1: 0, 2: 10} evidence={0: {'candidates': 0, 'max_observations': 0, 'promoted': 0}, 1: {'candidates': 0, 'max_observations': 0, 'promoted': 0}, 2: {'candidates': 10, 'max_observations': 49, 'promoted': 0}} external_ranking={'mode': 'blp_eq13', 'source': 'blp', 'task_idx': 2, 'externally_ranked': True, 'suffix_eligible': False, 'suffix_intervention': False, 'reason': 'version_valid_blp', 'dispatch_version_gate': {'would_invalidate': False, 'reason': 'none', 'scene_id': 'DYehNKdT76V', 'episode_id': '12', 'query_serial': 1047, 'batch_map_revision': 120, 'status_last_fused_keyframes': 120, 'status_rebuilding': False}, 'stale_suffix_dispatch': 0, 'ordered_raw_ranks': [0, 278, 55, 328, 331, 566, 2459, 4536, 9039, 9177], 'version_token': {'scene_id': 'DYehNKdT76V', 'episode_id': '12', 'map_revision': 120, 'last_fused_keyframes': 120, 'query_serial': 1047}, 'pre_cooldown_selected_raw_rank': 0, 'post_cooldown_selected_raw_rank': 0, 'cooldown_vetoed': False}
+[CATEGORY_COOLDOWN] {"category": "chair", "cooldown_steps": 10, "elapsed_since_switch": 473, "held": 0, "proposed_active_position": [-5.835909366607666, 0.13650700449943542, -5.0768303871154785], "proposed_switch": 0, "realized_active_position": [-5.835909366607666, 0.13650700449943542, -5.0768303871154785], "realized_switch": 0, "reason": "LATEST_UNCHANGED", "refresh_applied": 1, "subtask_step": 473, "task_idx": 2}
+[SCSP_RUNTIME] {"current_task": 2, "dispatched_selected": 0, "fallback_reason": null, "idea1_selected": null, "legacy_selected": null, "phase": "periodic_refresh", "status": "planned", "suffix_selected": null}
+Can't find a path. Map fully explored.
+DYehNKdT76V_12_2:  95%|█████████▍| 473/500 [24:23<00:14,  1.90it/s]DYehNKdT76V_12_2:  95%|█████████▍| 474/500 [24:23<00:17,  1.49it/s]Can't find a path. Map fully explored.
+DYehNKdT76V_12_2:  95%|█████████▍| 474/500 [24:23<00:17,  1.49it/s]DYehNKdT76V_12_2:  95%|█████████▌| 475/500 [24:23<00:15,  1.65it/s]Can't find a path. Map fully explored.
+DYehNKdT76V_12_2:  95%|█████████▌| 475/500 [24:24<00:15,  1.65it/s]DYehNKdT76V_12_2:  95%|█████████▌| 476/500 [24:24<00:13,  1.81it/s]The agent is stuck, delete current frontier
+Can't find a path. Map fully explored.
+DYehNKdT76V_12_2:  95%|█████████▌| 476/500 [24:24<00:13,  1.81it/s]DYehNKdT76V_12_2:  95%|█████████▌| 477/500 [24:24<00:11,  1.96it/s]Can't find a path. Map fully explored.
+DYehNKdT76V_12_2:  95%|█████████▌| 477/500 [24:25<00:11,  1.96it/s]DYehNKdT76V_12_2:  96%|█████████▌| 478/500 [24:25<00:11,  1.98it/s]Can't find a path. Map fully explored.
+DYehNKdT76V_12_2:  96%|█████████▌| 478/500 [24:25<00:11,  1.98it/s]DYehNKdT76V_12_2:  96%|█████████▌| 479/500 [24:25<00:10,  1.98it/s]Can't find a path. Map fully explored.
+[TRAPPED] {"type": "trapped", "scene": "DYehNKdT76V", "episode": "12", "task": 2, "step": 480, "window": 25, "radius_m": 0.05, "position": [-0.6003340482711792, 2.924410104751587], "action": "DiscreteNavigationAction.MOVE_FORWARD"}
+[NAVMESH_OVERRIDE] task=2 mode=escape goal=[-4.110014915466309, 0.13650700449943542, -3.6474509239196777]
+[TRAPPED_RECOVERY] {"type": "trapped", "scene": "DYehNKdT76V", "episode": "12", "task": 2, "step": 480, "window": 25, "radius_m": 0.05, "position": [-0.6003340482711792, 2.924410104751587], "action": "DiscreteNavigationAction.MOVE_FORWARD", "escape": {"mode": "escape", "sample_count": 32, "accepted": 9, "vertical_rejections": 17, "island_rejections": 0, "max_vertical_delta": 0.35, "stairs_suspected": true, "goal": [-4.110014915466309, 0.13650700449943542, -3.6474509239196777]}}
+DYehNKdT76V_12_2:  96%|█████████▌| 479/500 [24:26<00:10,  1.98it/s]DYehNKdT76V_12_2:  96%|█████████▌| 480/500 [24:26<00:10,  1.97it/s][GOAL_MAP_RECOVERY] task=2 source=frontier overlap=0
+Can't find a path. Map fully explored.
+DYehNKdT76V_12_2:  96%|█████████▌| 480/500 [24:26<00:10,  1.97it/s]DYehNKdT76V_12_2:  96%|█████████▌| 481/500 [24:26<00:10,  1.83it/s][GOAL_MAP_RECOVERY] task=2 source=frontier overlap=0
+Can't find a path. Map fully explored.
+DYehNKdT76V_12_2:  96%|█████████▌| 481/500 [24:27<00:10,  1.83it/s]DYehNKdT76V_12_2:  96%|█████████▋| 482/500 [24:27<00:09,  1.89it/s][GOAL_MAP_RECOVERY] task=2 source=frontier overlap=0
+Can't find a path. Map fully explored.
+DYehNKdT76V_12_2:  96%|█████████▋| 482/500 [24:27<00:09,  1.89it/s]DYehNKdT76V_12_2:  97%|█████████▋| 483/500 [24:27<00:09,  1.89it/s][OnlineESProvider] get_all_goals: batch querying 1 unique categories (3 tasks)...
+  task 2 [chair]: 10 candidates [[-6.035, -0.26, -4.765], [-4.144, -0.376, -5.048], [-5.034, -0.641, -5.552], [-1.004, -0.547, -5.153], [0.069, -0.859, -5.17], [-2.168, -0.125, -5.142], [-3.426, -0.824, -6.328], [-3.25, -0.64, -4.535], [-8.976, -0.698, -5.196], [-5.741, -0.235, -2.42]]
+[SCSP_PROVIDER] {"batch_validation_reason": null, "batch_validation_status": "valid", "current_task": 2, "phase": "periodic_refresh", "version_gate": {"batch_map_revision": 120, "episode_id": "12", "query_serial": 1048, "reason": "none", "scene_id": "DYehNKdT76V", "status_last_fused_keyframes": 120, "status_rebuilding": false, "would_invalidate": false}}
+[CANDIDATE_PROJECTION] task=0 input=0 accepted=0
+[CANDIDATE_PROJECTION] task=1 input=0 accepted=0
+[CANDIDATE_PROJECTION] task=2 input=10 accepted=10
+[CANDIDATE_TRACK] spatial_refresh counts={0: 0, 1: 0, 2: 10} evidence={0: {'candidates': 0, 'max_observations': 0, 'promoted': 0}, 1: {'candidates': 0, 'max_observations': 0, 'promoted': 0}, 2: {'candidates': 10, 'max_observations': 50, 'promoted': 0}} external_ranking={'mode': 'blp_eq13', 'source': 'blp', 'task_idx': 2, 'externally_ranked': True, 'suffix_eligible': False, 'suffix_intervention': False, 'reason': 'version_valid_blp', 'dispatch_version_gate': {'would_invalidate': False, 'reason': 'none', 'scene_id': 'DYehNKdT76V', 'episode_id': '12', 'query_serial': 1048, 'batch_map_revision': 120, 'status_last_fused_keyframes': 120, 'status_rebuilding': False}, 'stale_suffix_dispatch': 0, 'ordered_raw_ranks': [0, 278, 55, 328, 331, 566, 2459, 4536, 9039, 9177], 'version_token': {'scene_id': 'DYehNKdT76V', 'episode_id': '12', 'map_revision': 120, 'last_fused_keyframes': 120, 'query_serial': 1048}, 'pre_cooldown_selected_raw_rank': 0, 'post_cooldown_selected_raw_rank': 0, 'cooldown_vetoed': False}
+[CATEGORY_COOLDOWN] {"category": "chair", "cooldown_steps": 10, "elapsed_since_switch": 483, "held": 0, "proposed_active_position": [-5.835909366607666, 0.13650700449943542, -5.0768303871154785], "proposed_switch": 0, "realized_active_position": [-5.835909366607666, 0.13650700449943542, -5.0768303871154785], "realized_switch": 0, "reason": "LATEST_UNCHANGED", "refresh_applied": 1, "subtask_step": 483, "task_idx": 2}
+[SCSP_RUNTIME] {"current_task": 2, "dispatched_selected": 0, "fallback_reason": null, "idea1_selected": null, "legacy_selected": null, "phase": "periodic_refresh", "status": "planned", "suffix_selected": null}
+[GOAL_MAP_RECOVERY] task=2 source=frontier overlap=0
+Can't find a path. Map fully explored.
+DYehNKdT76V_12_2:  97%|█████████▋| 483/500 [24:28<00:09,  1.89it/s]DYehNKdT76V_12_2:  97%|█████████▋| 484/500 [24:28<00:10,  1.53it/s][GOAL_MAP_RECOVERY] task=2 source=frontier overlap=0
+Can't find a path. Map fully explored.
+DYehNKdT76V_12_2:  97%|█████████▋| 484/500 [24:29<00:10,  1.53it/s]DYehNKdT76V_12_2:  97%|█████████▋| 485/500 [24:29<00:08,  1.71it/s][GOAL_MAP_RECOVERY] task=2 source=frontier overlap=0
+Can't find a path. Map fully explored.
+DYehNKdT76V_12_2:  97%|█████████▋| 485/500 [24:29<00:08,  1.71it/s]DYehNKdT76V_12_2:  97%|█████████▋| 486/500 [24:29<00:07,  1.82it/s][GOAL_MAP_RECOVERY] task=2 source=frontier overlap=0
+Can't find a path. Map fully explored.
+DYehNKdT76V_12_2:  97%|█████████▋| 486/500 [24:30<00:07,  1.82it/s]DYehNKdT76V_12_2:  97%|█████████▋| 487/500 [24:30<00:06,  1.95it/s][GOAL_MAP_RECOVERY] task=2 source=frontier overlap=0
+Can't find a path. Map fully explored.
+DYehNKdT76V_12_2:  97%|█████████▋| 487/500 [24:30<00:06,  1.95it/s]DYehNKdT76V_12_2:  98%|█████████▊| 488/500 [24:30<00:06,  1.95it/s][GOAL_MAP_RECOVERY] task=2 source=frontier overlap=0
+Can't find a path. Map fully explored.
+DYehNKdT76V_12_2:  98%|█████████▊| 488/500 [24:31<00:06,  1.95it/s]DYehNKdT76V_12_2:  98%|█████████▊| 489/500 [24:31<00:05,  1.84it/s][GOAL_MAP_RECOVERY] task=2 source=frontier overlap=0
+Can't find a path. Map fully explored.
+DYehNKdT76V_12_2:  98%|█████████▊| 489/500 [24:32<00:05,  1.84it/s]DYehNKdT76V_12_2:  98%|█████████▊| 490/500 [24:32<00:05,  1.68it/s][GOAL_MAP_RECOVERY] task=2 source=frontier overlap=0
+Can't find a path. Map fully explored.
+DYehNKdT76V_12_2:  98%|█████████▊| 490/500 [24:32<00:05,  1.68it/s]DYehNKdT76V_12_2:  98%|█████████▊| 491/500 [24:32<00:04,  1.86it/s][GOAL_MAP_RECOVERY] task=2 source=frontier overlap=0
+Can't find a path. Map fully explored.
+DYehNKdT76V_12_2:  98%|█████████▊| 491/500 [24:32<00:04,  1.86it/s]DYehNKdT76V_12_2:  98%|█████████▊| 492/500 [24:32<00:04,  1.96it/s][GOAL_MAP_RECOVERY] task=2 source=frontier overlap=0
+Can't find a path. Map fully explored.
+DYehNKdT76V_12_2:  98%|█████████▊| 492/500 [24:33<00:04,  1.96it/s]DYehNKdT76V_12_2:  99%|█████████▊| 493/500 [24:33<00:03,  2.06it/s][OnlineESProvider] get_all_goals: batch querying 1 unique categories (3 tasks)...
+  task 2 [chair]: 10 candidates [[-6.035, -0.26, -4.765], [-4.144, -0.376, -5.048], [-5.034, -0.641, -5.552], [-1.004, -0.547, -5.153], [0.069, -0.859, -5.17], [-2.168, -0.125, -5.142], [-3.426, -0.824, -6.328], [-3.25, -0.64, -4.535], [-8.976, -0.698, -5.196], [-5.741, -0.235, -2.42]]
+[SCSP_PROVIDER] {"batch_validation_reason": null, "batch_validation_status": "valid", "current_task": 2, "phase": "periodic_refresh", "version_gate": {"batch_map_revision": 120, "episode_id": "12", "query_serial": 1049, "reason": "none", "scene_id": "DYehNKdT76V", "status_last_fused_keyframes": 120, "status_rebuilding": false, "would_invalidate": false}}
+[CANDIDATE_PROJECTION] task=0 input=0 accepted=0
+[CANDIDATE_PROJECTION] task=1 input=0 accepted=0
+[CANDIDATE_PROJECTION] task=2 input=10 accepted=10
+[CANDIDATE_TRACK] spatial_refresh counts={0: 0, 1: 0, 2: 10} evidence={0: {'candidates': 0, 'max_observations': 0, 'promoted': 0}, 1: {'candidates': 0, 'max_observations': 0, 'promoted': 0}, 2: {'candidates': 10, 'max_observations': 51, 'promoted': 0}} external_ranking={'mode': 'blp_eq13', 'source': 'blp', 'task_idx': 2, 'externally_ranked': True, 'suffix_eligible': False, 'suffix_intervention': False, 'reason': 'version_valid_blp', 'dispatch_version_gate': {'would_invalidate': False, 'reason': 'none', 'scene_id': 'DYehNKdT76V', 'episode_id': '12', 'query_serial': 1049, 'batch_map_revision': 120, 'status_last_fused_keyframes': 120, 'status_rebuilding': False}, 'stale_suffix_dispatch': 0, 'ordered_raw_ranks': [0, 278, 55, 328, 331, 566, 2459, 4536, 9039, 9177], 'version_token': {'scene_id': 'DYehNKdT76V', 'episode_id': '12', 'map_revision': 120, 'last_fused_keyframes': 120, 'query_serial': 1049}, 'pre_cooldown_selected_raw_rank': 0, 'post_cooldown_selected_raw_rank': 0, 'cooldown_vetoed': False}
+[CATEGORY_COOLDOWN] {"category": "chair", "cooldown_steps": 10, "elapsed_since_switch": 493, "held": 0, "proposed_active_position": [-5.835909366607666, 0.13650700449943542, -5.0768303871154785], "proposed_switch": 0, "realized_active_position": [-5.835909366607666, 0.13650700449943542, -5.0768303871154785], "realized_switch": 0, "reason": "LATEST_UNCHANGED", "refresh_applied": 1, "subtask_step": 493, "task_idx": 2}
+[SCSP_RUNTIME] {"current_task": 2, "dispatched_selected": 0, "fallback_reason": null, "idea1_selected": null, "legacy_selected": null, "phase": "periodic_refresh", "status": "planned", "suffix_selected": null}
+[GOAL_MAP_RECOVERY] task=2 source=frontier overlap=0
+Can't find a path. Map fully explored.
+DYehNKdT76V_12_2:  99%|█████████▊| 493/500 [24:34<00:03,  2.06it/s]DYehNKdT76V_12_2:  99%|█████████▉| 494/500 [24:34<00:03,  1.65it/s][GOAL_MAP_RECOVERY] task=2 source=frontier overlap=0
+Can't find a path. Map fully explored.
+DYehNKdT76V_12_2:  99%|█████████▉| 494/500 [24:34<00:03,  1.65it/s]DYehNKdT76V_12_2:  99%|█████████▉| 495/500 [24:34<00:02,  1.84it/s][GOAL_MAP_RECOVERY] task=2 source=frontier overlap=0
+Can't find a path. Map fully explored.
+DYehNKdT76V_12_2:  99%|█████████▉| 495/500 [24:35<00:02,  1.84it/s]DYehNKdT76V_12_2:  99%|█████████▉| 496/500 [24:35<00:02,  1.89it/s][GOAL_MAP_RECOVERY] task=2 source=frontier overlap=0
+Can't find a path. Map fully explored.
+DYehNKdT76V_12_2:  99%|█████████▉| 496/500 [24:35<00:02,  1.89it/s]DYehNKdT76V_12_2:  99%|█████████▉| 497/500 [24:35<00:01,  1.99it/s][GOAL_MAP_RECOVERY] task=2 source=frontier overlap=0
+Can't find a path. Map fully explored.
+DYehNKdT76V_12_2:  99%|█████████▉| 497/500 [24:36<00:01,  1.99it/s]DYehNKdT76V_12_2: 100%|█████████▉| 498/500 [24:36<00:00,  2.05it/s][GOAL_MAP_RECOVERY] task=2 source=frontier overlap=0
+Can't find a path. Map fully explored.
+DYehNKdT76V_12_2: 100%|█████████▉| 498/500 [24:36<00:00,  2.05it/s]DYehNKdT76V_12_2: 100%|█████████▉| 499/500 [24:36<00:00,  2.10it/s][GOAL_MAP_RECOVERY] task=2 source=frontier overlap=0
+Reached max number of steps for subgoal, calling STOP
+[STOP_REASON] task=2 reason=max_steps
+DYehNKdT76V_12_2: 100%|█████████▉| 499/500 [24:37<00:00,  2.10it/s]DYehNKdT76V_12_2: 100%|██████████| 500/500 [24:37<00:00,  2.00it/s][STOP_REASON] scene=DYehNKdT76V episode=12 task=2 reason=max_steps
+----
+DYehNKdT76V_12_2 {'goat_distance_to_sub-goal': 2.5358259677886963, 'goat_sub-task_success': 0.0, 'goat_sub-task_spl': 0.0, 'goat_sub-task_spl_raw_nonfinite_zero_length': False, 'goat_sub-task_spl_raw_nonfinite_unreachable': False, 'goat_sub-task_path_length_m': 0.0, 'goat_sub-task_shortest_path_length_m': 2.5358259677886963, 'goat_sub-task_shortest_path_status': 'finite', 'goat_sub-task_path_efficiency': 1.0, 'goat_sub-task_path_stretch': 0.0, 'goat_sub-task_excess_path_length_m': 0.0, 'goat_sub-task_num_steps': 500, 'goat_sub-task_frame_count': 500, 'goat_sub-task_frame_time_sum_ms': 1476751.442062785, 'goat_sub-task_mean_frame_time_ms': 2953.50288412557, 'goat_sub-task_median_frame_time_ms': 581.8492150283419, 'goat_sub-task_p95_frame_time_ms': 13867.15755257173, 'goat_sub-task_fps': 0.33858101353981424, 'goat_distance_to_sub-goal_status': 'finite'}
+----
+DYehNKdT76V_12_2: 100%|██████████| 500/500 [24:41<00:00,  2.96s/it]
+DYehNKdT76V_12 goat_distance_to_sub-goal_mean: 2.4653
+DYehNKdT76V_12 goat_sub-task_success_mean: 0.3333
+DYehNKdT76V_12 goat_sub-task_spl_mean: 0.1821
+------------------------------------------------------------
+Traceback (most recent call last):
+  File "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/nvme/khy/ForesightNav_exp4_depthfix/pbsp/runtime/navigation_worker.py", line 429, in <module>
+    main()
+  File "/nvme/khy/ForesightNav_exp4_depthfix/pbsp/runtime/navigation_worker.py", line 422, in main
+    return run_navigation(request)
+  File "/nvme/khy/ForesightNav_exp4_depthfix/pbsp/runtime/navigation_worker.py", line 354, in run_navigation
+    run_episodes(
+  File "/nvme/khy/ForesightNav_exp4_depthfix/experiments/runner.py", line 150, in run_episodes
+    candidate_provider.reset_episode(scene_id, episode_id)
+  File "/nvme/khy/ForesightNav_exp4_depthfix/pbsp/runtime/mapping_client.py", line 109, in reset_episode
+    raise RuntimeError(f'reset_episode failed: {resp}')
+RuntimeError: reset_episode failed: {'ok': False, 'message': "Mapping rebuild failed; incomplete maps cannot be used: OutOfMemoryError('CUDA out of memory. Tried to allocate 40.00 MiB. GPU 0 has a total capacity of 44.34 GiB of which 137.44 MiB is free. Process 1858673 has 1.96 GiB memory in use. Process 2017666 has 1.50 GiB memory in use. Process 2018701 has 1.50 GiB memory in use. Process 2017127 has 1.50 GiB memory in use. Process 2019810 has 1.50 GiB memory in use. Process 2019081 has 1.50 GiB memory in use. Process 2016964 has 1.79 GiB memory in use. Process 2018881 has 1.50 GiB memory in use. Process 2018543 has 1.96 GiB memory in use. Process 2019251 has 1.50 GiB memory in use. Including non-PyTorch memory, this process has 3.54 GiB memory in use. Process 2236607 has 15.72 GiB memory in use. Process 2284560 has 2.02 GiB memory in use. Process 2281722 has 2.02 GiB memory in use. Process 2286080 has 1.54 GiB memory in use. Of the allocated memory 2.99 GiB is allocated by PyTorch, and 51.14 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)')", 'traceback': 'Traceback (most recent call last):\n  File "/nvme/khy/ForesightNav_exp4_depthfix/pbsp/runtime/protocol.py", line 78, in handle_connection\n    response = server.handle_reset_episode(**message)\n  File "/nvme/khy/ForesightNav_exp4_depthfix/pbsp/runtime/mapping_worker.py", line 29, in handle_reset_episode\n    self._live_mapper.reset_episode(scene_id, episode_id)\n  File "/nvme/khy/ForesightNav_exp4_depthfix/pbsp/mapping/mapper.py", line 114, in reset_episode\n    self.flush_episode()\n  File "/nvme/khy/ForesightNav_exp4_depthfix/pbsp/mapping/mapper.py", line 100, in flush_episode\n    self._check_rebuild_error()\n  File "/nvme/khy/ForesightNav_exp4_depthfix/pbsp/mapping/mapper.py", line 423, in _check_rebuild_error\n    raise RuntimeError(\'Mapping rebuild failed; incomplete maps cannot be used: \'\nRuntimeError: Mapping rebuild failed; incomplete maps cannot be used: OutOfMemoryError(\'CUDA out of memory. Tried to allocate 40.00 MiB. GPU 0 has a total capacity of 44.34 GiB of which 137.44 MiB is free. Process 1858673 has 1.96 GiB memory in use. Process 2017666 has 1.50 GiB memory in use. Process 2018701 has 1.50 GiB memory in use. Process 2017127 has 1.50 GiB memory in use. Process 2019810 has 1.50 GiB memory in use. Process 2019081 has 1.50 GiB memory in use. Process 2016964 has 1.79 GiB memory in use. Process 2018881 has 1.50 GiB memory in use. Process 2018543 has 1.96 GiB memory in use. Process 2019251 has 1.50 GiB memory in use. Including non-PyTorch memory, this process has 3.54 GiB memory in use. Process 2236607 has 15.72 GiB memory in use. Process 2284560 has 2.02 GiB memory in use. Process 2281722 has 2.02 GiB memory in use. Process 2286080 has 1.54 GiB memory in use. Of the allocated memory 2.99 GiB is allocated by PyTorch, and 51.14 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)\')\n', 'protocol_version': 1}

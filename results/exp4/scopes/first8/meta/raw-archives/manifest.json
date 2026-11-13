@@ -1,13 +1,13 @@
 {
   "scope": "first8",
-  "at_utc": "2026-11-13T07:15:09.624100+00:00",
-  "archived_runs": 18,
+  "at_utc": "2026-11-13T08:28:25.926735+00:00",
+  "archived_runs": 21,
   "target_runs": 32,
   "complete": false,
   "by_stage": {
     "full": 8,
     "nearest": 8,
-    "myopic": 2,
+    "myopic": 5,
     "suffix_only": 0
   },
   "source_fingerprint": {
@@ -7105,6 +7105,439 @@
       "checked_at_utc": "2026-11-13T05:52:10.213879+00:00"
     },
     {
+      "native_run": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261113_123900_080282_exp4_myopic_exp4-myopic-a3-first8-4ok3usBNeis",
+      "archive": "scopes/first8/logs/native/myopic/4ok3usBNeis.tar.gz",
+      "archive_sha256": "33593465e0425d37756f52d9ffa89788b118edc2ada2dcb10f858e4afcc1e96c",
+      "archive_bytes": 2105790,
+      "raw_bytes": 27798703,
+      "files": [
+        {
+          "path": "launch.json",
+          "bytes": 13315,
+          "sha256": "361234207ddcd3cf75147993602c77b79f15374d1c4c90ebed69402c7914623c"
+        },
+        {
+          "path": "mapping_environment.json",
+          "bytes": 20719,
+          "sha256": "016bc842192a61d90eae0973b7a47a75e5174b4b3855974f744dd881a27319ca"
+        },
+        {
+          "path": "navigation_environment_0.json",
+          "bytes": 30668,
+          "sha256": "9e5efb1f6c8673738c6345dd9509fb405b0be4e2667f6b36b3c7fa1d3a74087e"
+        },
+        {
+          "path": "results_4ok3usBNeis/openvocab_v0.1.1_gt_semantics_600_0/blp_decisions.jsonl",
+          "bytes": 1874996,
+          "sha256": "474d5a6e83272d8bf41a01036d200724d63f063670022e73e89ecee4c8087bbb"
+        },
+        {
+          "path": "results_4ok3usBNeis/openvocab_v0.1.1_gt_semantics_600_0/blp_events.jsonl",
+          "bytes": 964530,
+          "sha256": "0ce3520cee4dcea32cc36ecc6a40b52049274f23dab6e2b95a83538846d9a045"
+        },
+        {
+          "path": "results_4ok3usBNeis/openvocab_v0.1.1_gt_semantics_600_0/blp_snapshots.jsonl",
+          "bytes": 3057530,
+          "sha256": "a7cbca3eb92b28daf0a1dc5b3d401fb7c9dc76d782ba03479ddeae9f204018b0"
+        },
+        {
+          "path": "results_4ok3usBNeis/openvocab_v0.1.1_gt_semantics_600_0/episodes/4ok3usBNeis/0/identity.json",
+          "bytes": 863,
+          "sha256": "bdb14e546b4c7a775825aa46b73564d9e8168ceba50515a153cbfb45877fb23e"
+        },
+        {
+          "path": "results_4ok3usBNeis/openvocab_v0.1.1_gt_semantics_600_0/episodes/4ok3usBNeis/0/trajectory.jsonl",
+          "bytes": 314424,
+          "sha256": "b013789956ed4247c0d9c58f30c6b17614aef7a394c8781dd6ff37f6466f47cd"
+        },
+        {
+          "path": "results_4ok3usBNeis/openvocab_v0.1.1_gt_semantics_600_0/episodes/4ok3usBNeis/1/identity.json",
+          "bytes": 864,
+          "sha256": "21a8d58e531526e134b9cdcd7ee5f208a4a546f3c3d0150d290413617858e47c"
+        },
+        {
+          "path": "results_4ok3usBNeis/openvocab_v0.1.1_gt_semantics_600_0/episodes/4ok3usBNeis/1/trajectory.jsonl",
+          "bytes": 187841,
+          "sha256": "99e05bd6c79e874f356d6ccde6c862f5fdfc7f7fba0aab46d52c797ed114ebf3"
+        },
+        {
+          "path": "results_4ok3usBNeis/openvocab_v0.1.1_gt_semantics_600_0/episodes/4ok3usBNeis/10/identity.json",
+          "bytes": 862,
+          "sha256": "43986ee7a1131d850a5286b0bca598dff9cd90165b626a0eae487ff4b1135d74"
+        },
+        {
+          "path": "results_4ok3usBNeis/openvocab_v0.1.1_gt_semantics_600_0/episodes/4ok3usBNeis/10/trajectory.jsonl",
+          "bytes": 186040,
+          "sha256": "f98a0d6e4cc5453fc49e5431c44605bd7d7eed5cd311b9629c077b6f554f76be"
+        },
+        {
+          "path": "results_4ok3usBNeis/openvocab_v0.1.1_gt_semantics_600_0/episodes/4ok3usBNeis/11/identity.json",
+          "bytes": 862,
+          "sha256": "9ea0b21b42fdb1f4a6653d48a4c5319aa390aac67b731175b8af80d1e0dc23d0"
+        },
+        {
+          "path": "results_4ok3usBNeis/openvocab_v0.1.1_gt_semantics_600_0/episodes/4ok3usBNeis/11/trajectory.jsonl",
+          "bytes": 475692,
+          "sha256": "06e92c9a76ef5f003174028dfd125e1f714a28f5a56e6e991ecfc78d6f06ee35"
+        },
+        {
+          "path": "results_4ok3usBNeis/openvocab_v0.1.1_gt_semantics_600_0/episodes/4ok3usBNeis/12/identity.json",
+          "bytes": 864,
+          "sha256": "eb7fe6da74cb47ce93d8b9f23fe0d9994aea0c3a2aab4fda46941ba1872df29c"
+        },
+        {
+          "path": "results_4ok3usBNeis/openvocab_v0.1.1_gt_semantics_600_0/episodes/4ok3usBNeis/12/trajectory.jsonl",
+          "bytes": 207187,
+          "sha256": "5612e1b102253a6268d4271a5032dcfe5cfacd366d53440e4e0a44debb60ff73"
+        },
+        {
+          "path": "results_4ok3usBNeis/openvocab_v0.1.1_gt_semantics_600_0/episodes/4ok3usBNeis/13/identity.json",
+          "bytes": 864,
+          "sha256": "846201d2cb25f7a790624335393d8a11ad02ec511a733a98aefc750e67c319a6"
+        },
+        {
+          "path": "results_4ok3usBNeis/openvocab_v0.1.1_gt_semantics_600_0/episodes/4ok3usBNeis/13/trajectory.jsonl",
+          "bytes": 743730,
+          "sha256": "791aae60441cf92c92a8e011b0b4eed1f696e248b1fa47e000951b885228f502"
+        },
+        {
+          "path": "results_4ok3usBNeis/openvocab_v0.1.1_gt_semantics_600_0/episodes/4ok3usBNeis/14/identity.json",
+          "bytes": 865,
+          "sha256": "08963528af42f860a20f4e2258b2795d93605c6c5f7b398dc9722789634cb3af"
+        },
+        {
+          "path": "results_4ok3usBNeis/openvocab_v0.1.1_gt_semantics_600_0/episodes/4ok3usBNeis/14/trajectory.jsonl",
+          "bytes": 302745,
+          "sha256": "d850bfb3a20a116b23e26b7c236644a1919c3be9637876e0bab0aa5ed5c0ea6e"
+        },
+        {
+          "path": "results_4ok3usBNeis/openvocab_v0.1.1_gt_semantics_600_0/episodes/4ok3usBNeis/15/identity.json",
+          "bytes": 864,
+          "sha256": "7f01f63afabb5463dc0e08cc1d445aafb1002bf4e7d657ea4c70d6a0d11b6565"
+        },
+        {
+          "path": "results_4ok3usBNeis/openvocab_v0.1.1_gt_semantics_600_0/episodes/4ok3usBNeis/15/trajectory.jsonl",
+          "bytes": 400858,
+          "sha256": "4c02bd038c06aa795b1cb5bcc32b87d9cdc9a9d3f13be082d280afe420c97657"
+        },
+        {
+          "path": "results_4ok3usBNeis/openvocab_v0.1.1_gt_semantics_600_0/episodes/4ok3usBNeis/16/identity.json",
+          "bytes": 867,
+          "sha256": "fdfabb2c149d38c2bc09c5ab03d18be0b2b6b26715cc36ddce1b668a34d3c1dc"
+        },
+        {
+          "path": "results_4ok3usBNeis/openvocab_v0.1.1_gt_semantics_600_0/episodes/4ok3usBNeis/16/trajectory.jsonl",
+          "bytes": 324587,
+          "sha256": "75244a784bf911a8083b2be3e180ec4ac75cde97a2cf35485f43929483eb2641"
+        },
+        {
+          "path": "results_4ok3usBNeis/openvocab_v0.1.1_gt_semantics_600_0/episodes/4ok3usBNeis/17/identity.json",
+          "bytes": 862,
+          "sha256": "15da95fb1d6b1d48bcc225f7a1fe4cfd45420484017788870619cbf14f2a2681"
+        },
+        {
+          "path": "results_4ok3usBNeis/openvocab_v0.1.1_gt_semantics_600_0/episodes/4ok3usBNeis/17/trajectory.jsonl",
+          "bytes": 322025,
+          "sha256": "fb5146eacf8048e239890531f90bc5cbbd64b998d28bd2dc255ce876e66745d2"
+        },
+        {
+          "path": "results_4ok3usBNeis/openvocab_v0.1.1_gt_semantics_600_0/episodes/4ok3usBNeis/18/identity.json",
+          "bytes": 861,
+          "sha256": "1218f19b6a6abb1fc3ea5be4be561cac5c18f50dbdbf1c9465b2074944188ad8"
+        },
+        {
+          "path": "results_4ok3usBNeis/openvocab_v0.1.1_gt_semantics_600_0/episodes/4ok3usBNeis/18/trajectory.jsonl",
+          "bytes": 524587,
+          "sha256": "53b43a2cdc3f01d98122d8bba5dd6af5735dab5a4f9db051fe0af6aa530e0d4f"
+        },
+        {
+          "path": "results_4ok3usBNeis/openvocab_v0.1.1_gt_semantics_600_0/episodes/4ok3usBNeis/19/identity.json",
+          "bytes": 865,
+          "sha256": "6b9bf297110aa1dba5d4ad3866fb8ebdfde1cd09216b63a77c03946a40e6cc20"
+        },
+        {
+          "path": "results_4ok3usBNeis/openvocab_v0.1.1_gt_semantics_600_0/episodes/4ok3usBNeis/19/trajectory.jsonl",
+          "bytes": 452087,
+          "sha256": "7955e9b90391f9e5bd12081e3890ab5d4cbb6ef6718f84f4140bb6db77a189ca"
+        },
+        {
+          "path": "results_4ok3usBNeis/openvocab_v0.1.1_gt_semantics_600_0/episodes/4ok3usBNeis/2/identity.json",
+          "bytes": 862,
+          "sha256": "56b872768e8ad786859f7e398c5d3a86c2eaba7fa01713d680c188e3f119ad2d"
+        },
+        {
+          "path": "results_4ok3usBNeis/openvocab_v0.1.1_gt_semantics_600_0/episodes/4ok3usBNeis/2/trajectory.jsonl",
+          "bytes": 555990,
+          "sha256": "b5f1054cad9097b7072c6df176250de9b34850d669288f9fd74815bd9bd46e3a"
+        },
+        {
+          "path": "results_4ok3usBNeis/openvocab_v0.1.1_gt_semantics_600_0/episodes/4ok3usBNeis/3/identity.json",
+          "bytes": 866,
+          "sha256": "11ba2e69ccd1fa8f10c01cbb59d7b7f7efad3f3026a26c8a1570051d7b2d388e"
+        },
+        {
+          "path": "results_4ok3usBNeis/openvocab_v0.1.1_gt_semantics_600_0/episodes/4ok3usBNeis/3/trajectory.jsonl",
+          "bytes": 673539,
+          "sha256": "860f2d41b33d46c374bd300003e4f65fc7519d0dfbe2c4253be599623f9b45f5"
+        },
+        {
+          "path": "results_4ok3usBNeis/openvocab_v0.1.1_gt_semantics_600_0/episodes/4ok3usBNeis/4/identity.json",
+          "bytes": 860,
+          "sha256": "f08b5e5f26346e8b2477e70f7b55a64af5f90045fb8a067859983f8f673129dc"
+        },
+        {
+          "path": "results_4ok3usBNeis/openvocab_v0.1.1_gt_semantics_600_0/episodes/4ok3usBNeis/4/trajectory.jsonl",
+          "bytes": 312247,
+          "sha256": "5f0c3077fe80397d5c28801a1fbfb2aa204a3f0818b119d625ed57cc627984ce"
+        },
+        {
+          "path": "results_4ok3usBNeis/openvocab_v0.1.1_gt_semantics_600_0/episodes/4ok3usBNeis/5/identity.json",
+          "bytes": 861,
+          "sha256": "6fdb669424e1990e5205c2f86f1f0111c2331384596f57668e40b909b1335040"
+        },
+        {
+          "path": "results_4ok3usBNeis/openvocab_v0.1.1_gt_semantics_600_0/episodes/4ok3usBNeis/5/trajectory.jsonl",
+          "bytes": 430488,
+          "sha256": "aeb365f1fef6e61fea15c47c10b66144017e73bca84f0fe32589a5011776fa54"
+        },
+        {
+          "path": "results_4ok3usBNeis/openvocab_v0.1.1_gt_semantics_600_0/episodes/4ok3usBNeis/6/identity.json",
+          "bytes": 863,
+          "sha256": "8c25e9f488eeca2f41e10f3a58a07bbcb216a182ce5b33ad977366c2f148aafd"
+        },
+        {
+          "path": "results_4ok3usBNeis/openvocab_v0.1.1_gt_semantics_600_0/episodes/4ok3usBNeis/6/trajectory.jsonl",
+          "bytes": 171815,
+          "sha256": "cc4a3693e7549e3f9383a4ddc7a98af188070104a330c5e11067f0a7417e74e9"
+        },
+        {
+          "path": "results_4ok3usBNeis/openvocab_v0.1.1_gt_semantics_600_0/episodes/4ok3usBNeis/7/identity.json",
+          "bytes": 866,
+          "sha256": "4783e6c600b066da287c60a7076cf53e25dd2de267e743a356cfdc1daa3a22a0"
+        },
+        {
+          "path": "results_4ok3usBNeis/openvocab_v0.1.1_gt_semantics_600_0/episodes/4ok3usBNeis/7/trajectory.jsonl",
+          "bytes": 360351,
+          "sha256": "17b1757fde4f9849927b89440b75206ef0b2dc3397a119d46ffaa210fb603568"
+        },
+        {
+          "path": "results_4ok3usBNeis/openvocab_v0.1.1_gt_semantics_600_0/episodes/4ok3usBNeis/8/identity.json",
+          "bytes": 861,
+          "sha256": "fe78163335a2f0b65772382d17049b05e3ed8bab94429af37883e3c1fc0cf41a"
+        },
+        {
+          "path": "results_4ok3usBNeis/openvocab_v0.1.1_gt_semantics_600_0/episodes/4ok3usBNeis/8/trajectory.jsonl",
+          "bytes": 290296,
+          "sha256": "3013f0f02b52f92fd2a5291b6002a5ab5bfe15a54f6777ddcd1b0179749dfd46"
+        },
+        {
+          "path": "results_4ok3usBNeis/openvocab_v0.1.1_gt_semantics_600_0/episodes/4ok3usBNeis/9/identity.json",
+          "bytes": 863,
+          "sha256": "ed4f7d559dcac1f322a3b9dd802e795117a150d209334d50bff1f4ff1bb48f53"
+        },
+        {
+          "path": "results_4ok3usBNeis/openvocab_v0.1.1_gt_semantics_600_0/episodes/4ok3usBNeis/9/trajectory.jsonl",
+          "bytes": 170202,
+          "sha256": "2d4f2c3a81692a2bb4a28b7fe6054e874fdd53a1cdd4270fe48b3fbe25f474f2"
+        },
+        {
+          "path": "results_4ok3usBNeis/openvocab_v0.1.1_gt_semantics_600_0/per_episode_metrics.json",
+          "bytes": 997558,
+          "sha256": "f5dbcc5b6e18b0b9c69cb28761dd3cc98469e1cf16b147f1b9766a6ac56976d5"
+        },
+        {
+          "path": "results_4ok3usBNeis/openvocab_v0.1.1_gt_semantics_600_0/scsp_decisions.jsonl",
+          "bytes": 13413481,
+          "sha256": "cbcc79d8983b5740284a11791023f50819033ed3fe5e0c76b25d3c9f43e2713f"
+        },
+        {
+          "path": "source_snapshot.json",
+          "bytes": 1803,
+          "sha256": "d436136659338ec7998cb3a876970780a7478ff26a86295bf3900cb386841d33"
+        },
+        {
+          "path": "status.json",
+          "bytes": 107,
+          "sha256": "5faf4441e24a6ddbe93f58d5b68071f72eab8c581a3943a1240dd4a496b663ff"
+        }
+      ],
+      "all_round_trip_sha256_match": true,
+      "scope": "first8",
+      "stage": "myopic",
+      "scene_id": "4ok3usBNeis",
+      "n_episodes": 20,
+      "launch_sha256": "361234207ddcd3cf75147993602c77b79f15374d1c4c90ebed69402c7914623c",
+      "status_sha256": "5faf4441e24a6ddbe93f58d5b68071f72eab8c581a3943a1240dd4a496b663ff",
+      "source_fingerprint": {
+        "pbsp/__init__.py": "204a77e8c809c9b8f38114173d35f5bcf7585e9893383c3eef5b2dca30aeb619",
+        "pbsp/adapters/__init__.py": "9da64df015e12dd3130227acc397bd90bf58d5cd5f4c52108dfb9fc48830e12d",
+        "pbsp/adapters/detic.py": "46eb4c882bf3c28a72c15b2daa5b3657e9231674098bb5f57a68b1c0970f5f81",
+        "pbsp/adapters/detic_perception.py": "9e4bba49cf509fc1475ad3c853a857a76557412b2d8ca6aa34d80fb3542297e3",
+        "pbsp/adapters/embodied_splat.py": "e7c8d3d17e002cd4138b84dda63dce1d93f082d08692f45f7df2acbf420cd42c",
+        "pbsp/adapters/embodied_splat_config.py": "de4b1ff0bba5038edd83dfb3abf12ea51d9b432d32593aea49b967eb18682bda",
+        "pbsp/adapters/embodied_splat_model.py": "4e1523322682695d0044ae1330a11563645a8c1612cb2a6c6e83ace2fced9f96",
+        "pbsp/adapters/embodied_splat_query.py": "633d74c8faff8780c01a0d8bee183cb3ada55ae2907a235e8f302ec07813b034",
+        "pbsp/adapters/embodied_splat_semantics.py": "60ba26ecfe9a50acab3fc5c6161a734efcad6e335a39564d970604de490e8c4a",
+        "pbsp/adapters/frontier_runtime.py": "167752c785efd34811ad6de36d8d75869b5550b0293a54ffb8e024ef3e1bec15",
+        "pbsp/adapters/geometry.py": "ca53f5c893e79069329ffd1a46e9f892834390aae284fe7c8a9854df571a8be6",
+        "pbsp/adapters/goat.py": "5263ebab4c71a4f219eb0748025985b08a86f21bc5cafe490dcfccd808f44fd8",
+        "pbsp/adapters/habitat.py": "337e53043f93e041f980e63f0472ba5d448dc3cd8d04c15a223975e16fde740c",
+        "pbsp/adapters/habitat_config.py": "c406a6644561e06e9ee36132d90a5463851ef2fdacbfc978538b47f5d409116d",
+        "pbsp/adapters/lagmemo_agent.py": "0748f8f8df5b464d051502476e6f98f1fc5c4801199fa201c388527b10853992",
+        "pbsp/adapters/model_resources.py": "560697e24cef3a764fb27ae76b42ba2942ef8ddc2b23025fd9a092f4fc3c9cf1",
+        "pbsp/adapters/objectnav.py": "41a3266bec982b2401708602b379f1c4cf0a8cf2a0c44b875cdd84afc9b7a911",
+        "pbsp/adapters/openseg.py": "0d437cd2546c92cea07382acfd68f6790bf06dac21cf630e27513f69db2fc136",
+        "pbsp/adapters/perception.py": "dffaa6ab8a8052e5184bb8a25da74279ff8c81b747a9faa98325a8bd7f6b5fd5",
+        "pbsp/agent.py": "3341421bae243179f14ba34d337c7ffb1c4d5b0e7d97b3a462de44e3a5ceff2f",
+        "pbsp/mapping/__init__.py": "7daf7c588784be377fec79a1afc7136a18a02f2b4a7891801e601368edfc99c2",
+        "pbsp/mapping/encoder.py": "ce6cadcb4f0eee4045bbd40e090123319a54915ba9eb1772323155988470eddf",
+        "pbsp/mapping/fusion.py": "85428de5b8a67a1359222be4696daf28b6824454b27e39842786663c304aee94",
+        "pbsp/mapping/gaussians.py": "273f2b4d2f59bce4b54b73caa3697e76c12e23001a9ac0d67a0b3a90b34a0a8a",
+        "pbsp/mapping/geometry.py": "20c327cde4e2c6b066e79bc352770cf4fd2e27a50411ddf021878c32c9d58386",
+        "pbsp/mapping/keyframes.py": "91c4ad0c8a42ea2d57ba44589d5788bf0bf62c2f31d2bb344f96934e45da4fe3",
+        "pbsp/mapping/mapper.py": "fe7f8f804d74c92b43ace226a7ad846886891bb60f9e0b5327e95acf47d4e088",
+        "pbsp/mapping/memory.py": "9451198207e688be233ec4a28424eea55201d73e9403b558df01e4573b82d5d2",
+        "pbsp/mapping/model.py": "d6fe0fdd4ce3cbe6421d508eba97d2b45af314cfd0f490d8300c30c91421bfa6",
+        "pbsp/mapping/resources.py": "0bf26a582b0cd96cf6b7965f33abba2dcea6c38d06f136a2997178441c8543d8",
+        "pbsp/mapping/spec.py": "3c2d7f684bfa53508e64c9de3ae601c30169da55e27b6e898c67b98737bca894",
+        "pbsp/mapping/types.py": "967b1e81b5859265d0c677c619f94b6f13c59f1043bd50adaba57790850b9bf3",
+        "pbsp/navigation/__init__.py": "5daf8f4b4d7e1691e4ac582bf69e14ab0281c58a07859944f70cf8fcca2ed1c8",
+        "pbsp/navigation/backends.py": "5822dc3df44896050b66dc11b546ed9715f1563313076339434402cbc582360a",
+        "pbsp/navigation/blp.py": "fedf1b03677d45e4ce0860af85b86f6a05faf024489250d2c437b59f25a2cd50",
+        "pbsp/navigation/blp_parameters.py": "039c6a660ab2a7cf2b6e9e78e810bfb44f32731e6c52a9194dc20f82daa63bad",
+        "pbsp/navigation/candidates.py": "7dab0a30a1933c6b1d1e3b033dc38704aa05ee6fc6adf0858b76d91bc686dfef",
+        "pbsp/navigation/cooldown.py": "aca6aed0fe4b14fe1d38486a4e29d905adf84dfc3edecd636d36bbaff48f0d55",
+        "pbsp/navigation/distance_cache.py": "4dda0827c060c63ffc6f0519a16c4a089d5333f3bf3ed6ade0dee2abf2ff821a",
+        "pbsp/navigation/evidence.py": "18346a1a823adb1f01263b846b301a4a58ff2c2c1fccf2c6fce101799336c8d0",
+        "pbsp/navigation/geometry.py": "993e4e1f6447c565fdc6a421f60e7c17b87421fd3f641962131e80a626e47b46",
+        "pbsp/navigation/local_map.py": "574442e85e4a526ae942e7e1749cd44edba62b51d6b47521ee5730285b575e39",
+        "pbsp/navigation/navigator.py": "c3e7794ae1c6e9017cf412c69dc73e8804cbea9fc35b4a32bc9a131265913125",
+        "pbsp/navigation/planning.py": "4fcaa2712dd19d61942a1a165ca9a462f37e0fcc4b678613de32f33346ad7268",
+        "pbsp/navigation/policy.py": "ec6b491a21950eb240c31acbc8fa145c1201cd3de2ac47db8ebf2ff070ed1250",
+        "pbsp/navigation/ranking.py": "35cf5a77645167e50278b432d4bd4763e898c2c41b1150e42b0d8f7f9d11e956",
+        "pbsp/navigation/recovery.py": "90c9e6905c1d80fc59d9811a345b871d5a02de82f44a5708b493af30749420d7",
+        "pbsp/navigation/suffix.py": "75b39c40026035e4b84172313d4cce4dddbbda89fb94fe7216c4d34ea7e01366",
+        "pbsp/navigation/types.py": "132954dac1c4a0c9051fd7beda6be56b77b95767152ca0252f57c5c494468cad",
+        "pbsp/navigation/verification.py": "a2592b9d4540445aa1a19b04f68305645a2290145a93b7b3ef38079f9bee2dd6",
+        "pbsp/query/__init__.py": "d4f3edd763859261248576b36d9fa0a739e734781444d117898cdac3c8442cff",
+        "pbsp/query/engine.py": "2a7bf07ac1ffea1797c33b45a708c3ce9d8bef94d5581642370e64acd85c7f57",
+        "pbsp/query/service.py": "dd113a97f1c948960612aa8f678e73bdf9f59ec2fdf7d6b5da41b3e88c77dbf9",
+        "pbsp/query/types.py": "e02fd98fb98b0f56b36df8d42b48ca7305dcd832af62526bf8586565472f60df",
+        "pbsp/runtime/__init__.py": "692e3c967f13c099aad4c47b0e118d3a9cba418b412ea2507f3e95f2230947d9",
+        "pbsp/runtime/bootstrap.py": "9cf48e1ff6742f138e4732e21bc0fbce334a838cfb6fa8061b6afbdd7f3b1028",
+        "pbsp/runtime/config.py": "e97c62f8d3d55bed716dc80f226ca6ceae10773a6d11059d14f5c2f6e6e4dbec",
+        "pbsp/runtime/detic_bootstrap.py": "ab5f73a7381a1116a47cf23da04d21eb1dff301fad2afa0d82d626e70b0d6a66",
+        "pbsp/runtime/environment.py": "770a7db9c1f66db2a3527c300f575d6b9dba902244359299a50d8e3ee1f9fb1e",
+        "pbsp/runtime/external_sources.py": "a86d8c91086a0c5c859c10902ecd97b517768ec8230366fbef38880f776c7b29",
+        "pbsp/runtime/factories.py": "c019f84f887539948e69f386902fd2bb03240fab21a97042eaadcf2226696f3f",
+        "pbsp/runtime/launch.py": "987c42b2021439b22d7b23209eaa22c068efe9ed71f98108cd1246c9cda4c444",
+        "pbsp/runtime/mapping_client.py": "aabad2585d94350d27a93db2325ee4a5f390dd85c3624720972b24912fcc6651",
+        "pbsp/runtime/mapping_worker.py": "769d3c0504f27f82f5c97bedeea1de2eea61daf7a5d4ec107eb9b4412ecf597f",
+        "pbsp/runtime/model_assets.py": "b2b224827550ec24359cae84b4e4474c754125e025104dfe5a6189bf7035d1a2",
+        "pbsp/runtime/monitor.py": "68624b329253dcebb6fb698811666fce6550df3c9ad684d8e60c1f515a7ede47",
+        "pbsp/runtime/navigation_worker.py": "4db3707c83de4b9a643a863d020f25fc8551e158ce68a0482b4d079223ee092b",
+        "pbsp/runtime/plan.py": "026654a099c329cbc578ef560e0b0db5f0413ede5dd657a8f2d3c40122eb3be0",
+        "pbsp/runtime/protocol.py": "a0651334ff8ced502f28282e44edf0117b7eaca82b086dc6f423b55349a221a5",
+        "pbsp/runtime/resources.py": "cd593452dfbb7d3e2984b6490a5ef8d50c32e51c4375a138f70b3399f5a0b13a",
+        "pbsp/runtime/source_provenance.py": "4b3ec3f14f1784756b74e8002a09ab4674a55c4d56048d0f24b3e7dac80e14a1",
+        "pbsp/runtime/source_snapshot.py": "682e2725d0039d1f837e3cebee38676963f5bdc08e75b7879d13443b0d0675a4",
+        "pbsp/semantics/__init__.py": "c4149e1cb17463ba4e13907373aaebb70690a8f3a8c9c305d402c3f8689cf234",
+        "pbsp/semantics/features.py": "74ea56f1b06a0cd7f60b979ddff702617c788ba29bef3254df9bffd6dd7ab4ae",
+        "pbsp/semantics/types.py": "51194de8c13c46e807727c0e7d982b4da535234b21590200dbddd395f6811088",
+        "pbsp/settings.py": "90d613c453f547e209478b9d62892ba09052a92c8e4e1c1c151faba543867535",
+        "pbsp/types.py": "6d10753a90d4f69ff01aa9f0d98b15e90abeffe5ed47f724b74019b8d2f58520",
+        "experiments/__init__.py": "816019945af208d4e795df1adc9776580427112752b2e9665c3e5e37f18ec628",
+        "experiments/_environment.py": "9a46732dc33c800f1d577b257b9915094f187228b2e34fe920bfc418b27c9a82",
+        "experiments/_episode_sources.py": "beaf2b1cb2ff975fdd462383785cbb28490e90357b510c8ec5abb7ee69a4a9ba",
+        "experiments/_sources.py": "c1c3d216fa0c3d6ef672fd6838dec22586c155ccf57187773032afc80f517732",
+        "experiments/blp_calibration.py": "3b45c5c5376501712e5d4394eabbeeb400b8690177512be43357d3644ebfe141",
+        "experiments/blp_observer.py": "12dd680b3f4d102fd70277a193d1c85ad5deb219dfb04846e3060df9304af9fb",
+        "experiments/check_install.py": "6cfc0243e1ce4ff3a97eb8b4473d1ac4bdeadab75a0b43dbaf3778cc94462d01",
+        "experiments/dataset.py": "57e1300a6aa788f9ab42469ba6ee274c2fe73b704a39a2af5c6f16dabeba6f2a",
+        "experiments/evaluator.py": "314f72098aeac31b49c2ba8798464bf00a9113204af096aa174da5d0b0e5c6f8",
+        "experiments/exp4_collect.py": "7d5a35c03a4c962f1d47881db306af3c8c6a515491ae26c71de057f43a6ac6a5",
+        "experiments/exp4_fit.py": "8c0300b362394b0042373b4ae2450e20cfd6a0172584d6d9805c41607117ad12",
+        "experiments/exp4_prepare.py": "91ebd3c5d571fbffe16af73d629861999f757247f891fe9798923a40e1565693",
+        "experiments/exp4_regression.py": "e95a3f9e9f8d6bcbc63478ce0bab5f5b791555f569de0c3bf7ec2d8dde52450c",
+        "experiments/export_offline.py": "e09eb4001a7540f65729c54042cd1bd909bda6135e5549ed84cab0edc3cd8989",
+        "experiments/identities.py": "863283a9f7b8f881ac1b676888638160974da62258f6ea9bfc005647e437d2fc",
+        "experiments/manage.py": "8741e76407e456f19dcba0b9c8ee48f7bdaef850d13b2c581780164b20092a64",
+        "experiments/metric_protocol.py": "c27d45e28b67b108d3bb899bf2d9ac9a2fe4979cfe911ed515d71bec69eca7c6",
+        "experiments/metrics.py": "e34ddd5a34f6405833cf2bc84de3db5b51cb3fac02bcbfdbf356d7c1604fafd3",
+        "experiments/mfmon.py": "612a9f7564a020852749e3f1cf6c84a280274fab6f3e406c14497b8844a94cc8",
+        "experiments/mfmon_audit.py": "3e6e20da7046976139b3163717f61349b3b6188571e9c46f4fd6e8d1c852c10d",
+        "experiments/mfmon_categories.py": "a29254c69e49212c616ab27c140ae06e67673883b7da9d0ee11756767d904b74",
+        "experiments/mfmon_protocol.py": "79149deeec09b3324919efb9642ee0778ede2b30796ce3a78d82d373aeadb6e8",
+        "experiments/objectnav.py": "6d5466f809dce5cb96144d808b9ffbea8a7c476911f504b45573a0928b95134c",
+        "experiments/objectnav_data.py": "7a4aa6815ec9610003d16fbe3dfb062aa3605155c4fc11e73935c54f5c7fed7f",
+        "experiments/objectnav_results.py": "550f98ae0319b9e5c8f603cfc1a43e9a210c5b0f0276af370477687d51c85de4",
+        "experiments/planning.py": "daf6c078d59ac88110e827778eefea6a863b2e1be76ddc6d09f6238f3031f528",
+        "experiments/prepare_data.py": "305f739e1584b67029d5c290693fb8fbb263d67dba6fdcd8ab82b6738ca6caa4",
+        "experiments/prepare_dependencies.py": "9d98391ed62a5cc51234bf6542b96883c1e936fa79df988dfe9c150b9a2e491b",
+        "experiments/prepare_models.py": "19b794270e3d1c11643a33193d3a29dac6cda76f60b90e369d07a021b9a0be44",
+        "experiments/prepare_objectnav.py": "f7c880464a58a6f77f7cd1e8db2bb0165a2f49ebbae576fcd0d95b9d2e9b2941",
+        "experiments/prepare_runtime.py": "8eeba33f227cd5052f8774db3c4fbc97b464fe006fa668e39673c78685ca4642",
+        "experiments/recorder.py": "734c34f6b84701b4cee07492e8efdb92978d75fb1e6271f779fa22302ed9b432",
+        "experiments/run_records.py": "d8e32a9c4ae3e1db09061216ccbbcf978223d457f3d5341e2f82266030b7ed9a",
+        "experiments/runner.py": "13fb31e3ad79e20671dc80ae0521130a510410abce92496690a381df3788bca3",
+        "experiments/setup_envs.py": "8118feac7ae184ae3f4604f45c208dde005aa5c1ed488661e2194c29f2dbdd22",
+        "experiments/setup_mapping.py": "6980de18ac0bbc870cb39c9c9a76747e321d4b5a716de61b2c38897a30403f8c",
+        "experiments/setup_navigation.py": "0019a8575433cbec906a2ee5bb9e8957f63557e8d0e6334e9523e05d2a365525",
+        "experiments/summarize.py": "9ed185509a91ba51b5fc3536e7b8b9cb50b27e43ca9121dd1275793809ca14c0",
+        "experiments/telemetry.py": "17d197446a87b2dd12b6a5f55e0ff9a2d2053dd60567b176eab5306d41f13235",
+        "experiments/test_blp.py": "04f4013de3e42c4b1dfdef8c2eea5716d1de1b78bbdfa0db8299bd32e5e8e5ee",
+        "experiments/test_blp_depth.py": "d736a49110c73a04d347980f58200a75c46e26bc6e0561f15a13a7f6360562aa",
+        "experiments/test_blp_identity.py": "e7b6de94d6ed893ef53a4930f2f7ddd8a88c788abd7735ecfc2e88d1b9237d7b",
+        "experiments/test_blp_parameters.py": "c8579f7bc4fe31d7d4720e836219b4009150f90facce0b0430e8d9a47c3a6544",
+        "experiments/trajectory.py": "9f3e93c9a93466a290384b943d92f606d52cef6d2334aa74f8c8fac3c0106efe",
+        "experiments/visualization.py": "81da6adc588613130aa8cf65ec3439a33696c07c43bdbb719f0141ff579f947f",
+        "configs/categories.json": "30a17d48fa4926fa2cfbf91cf509f95f0c39544b2df20b068b8393732398935b",
+        "configs/datasets/hm3d_2mon.yaml": "0d39eb01e38a0c523f12191c69d4b11297befb1c4e7750e325a38523e00b2c32",
+        "configs/datasets/hm3d_3mon.yaml": "03b0fd29f72f19e3f97606b5866993511ae7564a2261fabef8f7e1d25c3b24d0",
+        "configs/datasets/hm3d_4mon.yaml": "b9ca9c30a86fd4f21a2c96f0d0d32c358e447db17f3b6c39d2e2ae617d05bea9",
+        "configs/datasets/hm3d_mfmon.yaml": "1e0b6b9bb61b375c4a79082fdf86251d70113b001e865bd7d78b65fba9a15e7c",
+        "configs/environments/mapping/linux-64.lock.json": "eff5e7d28ad212aa6f2a7784ff4f972af3d160bc6caf288af74ea87ad1414eb8",
+        "configs/environments/navigation/linux-64.lock.json": "9a5835cfdb3aee1f148d1aedbc228a7d861936725cf171bbde2b28e01ab8f180",
+        "configs/evaluation/mfmon.yaml": "ab30b6c6b6c252802b42e8223b7bd6f3a0e2094f15adf96ab75ce4347b87a318",
+        "configs/evaluation/standard.yaml": "209b714fd79dc9429fc5587452c26fdcfc9377a56ecf09647ba48089eb6d1019",
+        "configs/experiments/exp4_calibration.yaml": "f17d97779b23e60716518ca7b43c3b72e921bbeda9ac5639cb8693f256b57387",
+        "configs/experiments/exp4_full.yaml": "7697ad382193f4a929858a72b8f451371a3682f5ccb8c2a090a85df2dfa56e37",
+        "configs/experiments/exp4_myopic.yaml": "2ffe78de63e194b98858ff9da17b828ac38e5051f88ff9cce06ae63ec33c090d",
+        "configs/experiments/exp4_nearest.yaml": "70c0c83cd7c00b1eb4655bcea7aa0fc370045bb4e29dd477f43bcc38cdc3589d",
+        "configs/experiments/exp4_suffix_only.yaml": "1fd713eb5bd335d93f68a014b12d9fd28e81a2e07e35f10bd025df9931a70ced",
+        "configs/experiments/hm3d_2mon.yaml": "b49212f7b8a6139bf9e6c51ac3f035eeec454f021a7d32cff454177de36985ef",
+        "configs/experiments/hm3d_3mon.yaml": "28cc32f1691c1d805f6f416b6bdc86a1b387766fbe95616f574916351d773309",
+        "configs/experiments/hm3d_4mon.yaml": "ebfaf6e2a963700e5d7013211b2bd777ffe4a59e4feb2c1ae55ce5dbdd85fbd5",
+        "configs/experiments/hm3d_mfmon.yaml": "9791ebcfb17d4681927a37e6ec7103dbeb398e848eeed00c06c38254d11b4c4c",
+        "configs/habitat.yaml": "968d892eda8b5379209c546fd5cab816c1f9f3e61442992170c4bece3250a2e8",
+        "configs/habitat_objectnav.yaml": "3eb0871ba35b481a3280984d478a8b2265716235d6ff6d4d3d3f009d5adf4e1b",
+        "configs/methods/exp4_calibration.yaml": "3f544437bc4b67dcedf103709bce4baac4c3483429aeeacdcadd537630d842b2",
+        "configs/methods/exp4_full.yaml": "c7629726203cfa58ecadf15019e0101595bbf0dada9912e9205551e808575d2c",
+        "configs/methods/exp4_myopic.yaml": "593f9203db9932f179bc546454a52c513dea90d5e59c26aeb9fd9baf53b978d2",
+        "configs/methods/exp4_nearest.yaml": "e6a371707d1744455a8c253ca3cec7549f75d983c5f2af643f88e58a21f3dfa6",
+        "configs/methods/exp4_suffix_only.yaml": "55efe0475021171cac1796ee2333be2fb38c73a7e680230e75db22c5b1a08f33",
+        "configs/methods/full_pbsp.yaml": "9f051bc88d6f8dc0f99549a80ca4eb2ab364aad0fc912ac6d827926cdcffd20a",
+        "configs/models/embodied_splat.yaml": "cf4f716471801d9605b64bf8edb99a6bd91ef74c65876f9e68b25ae488d801d7",
+        "configs/models/network.yaml": "de452ad0cc80764dd0f828dae09f263ea4ca16d5a5c6565af7b350cd5d17f272",
+        "configs/navigation.yaml": "f373b8d1dd2c37c8ba89330c2b91ddfe422d63ee01fb6e021f41e587d8905110",
+        "configs/resources/datasets.json": "cf30b942450d05e4425c0854a969a13c739a771be074c4b58e1d61941914b6a9",
+        "configs/resources/models.json": "f21ffdc59735aaf84fe5a0a4ebe99f35261f6dd45a643387900d003b6b7ac4a6",
+        "configs/resources/superglue.json": "d98535e089344b72408937ef2bb133eaead425f261e7db2ee75d5e72c9f4ce3c",
+        "configs/runtime.example.yaml": "0757cbb0615ef6cbb51791215db1b8b6cc88284ec28f9a6a51deb956f37875bd",
+        "runtime.exp4.local.yaml": "ed47810f08afd80d5059cfff4c437b91ffa92d653abaa1949e920e8e7041854b",
+        "results/exp4/meta/folds.json": "e5984774614e3eef936728637c494a88f11269bf1508d719e87cf17879f2590b",
+        "results/exp4/meta/2mon-identities.json": "0f1bdd3404e6fb59d7723d703aa2a478e3bca115a58566972835315c0f0a1ead",
+        "results/exp4/meta/3mon-identities.json": "98baa13355e8dd223eaefdeec7f48964bb23f44d2b02cdba4261add62b594ac1",
+        "results/exp4/meta/smoke-20-identities.json": "30bf91b382a918be8359d66b63fcdece026462c703fd04b868fd355b56aeb921",
+        "results/exp4/meta/protocol_decisions.json": "c4596befc6337dab5a9963c69f4416992f7b0108f8d0c69c9e77cfa8f39c69ed"
+      },
+      "parameter_sha256": "e1d75f3c9503c7439467748fc97be6ae2ad450c429f40dc7235b1564ff7852ae",
+      "archive_helper_sha256": "8e7ca89e1260feede3dfe676303a28a20fa954bcd1f7bed8077b8cad69387f80",
+      "reused_original_full_archive": false,
+      "checked_at_utc": "2026-11-13T08:26:54.611157+00:00"
+    },
+    {
       "native_run": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261113_123900_254026_exp4_myopic_exp4-myopic-a3-first8-5cdEh9F2hJL",
       "archive": "scopes/first8/logs/native/myopic/5cdEh9F2hJL.tar.gz",
       "archive_sha256": "81b61f84461f6bd2c80787ff0146c0f9afc25c46fa0f03511d7e764ec5acdc8d",
@@ -7536,6 +7969,872 @@
       "archive_helper_sha256": "8e7ca89e1260feede3dfe676303a28a20fa954bcd1f7bed8077b8cad69387f80",
       "reused_original_full_archive": false,
       "checked_at_utc": "2026-11-13T06:56:32.654711+00:00"
+    },
+    {
+      "native_run": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261113_134511_731598_exp4_myopic_exp4-myopic-a3-first8-Dd4bFSTQ8gi",
+      "archive": "scopes/first8/logs/native/myopic/Dd4bFSTQ8gi.tar.gz",
+      "archive_sha256": "46ad612ff693bac4a8f6dd386e967594af8a62c863b63e270e2438dfc7598e83",
+      "archive_bytes": 1934183,
+      "raw_bytes": 24022607,
+      "files": [
+        {
+          "path": "launch.json",
+          "bytes": 13340,
+          "sha256": "ad76e5ee244f820c4b15f2f5011c640701b98f391a738de39d44c836c682eacc"
+        },
+        {
+          "path": "mapping_environment.json",
+          "bytes": 20719,
+          "sha256": "256b7bdd4e266434dddab49a98eae221f2fcc51b85294534450da02043468cc6"
+        },
+        {
+          "path": "navigation_environment_4.json",
+          "bytes": 30668,
+          "sha256": "76746f6d111e6dd3d8d0f389f4be2f4d793b12471f38453621175fab5ad237a2"
+        },
+        {
+          "path": "results_Dd4bFSTQ8gi/openvocab_v0.1.1_gt_semantics_600_4/blp_decisions.jsonl",
+          "bytes": 1576769,
+          "sha256": "dbfbddbfa252ce46f795fa058cd1a675d7b0da1a25a0e26956bbab41ddb64906"
+        },
+        {
+          "path": "results_Dd4bFSTQ8gi/openvocab_v0.1.1_gt_semantics_600_4/blp_events.jsonl",
+          "bytes": 851853,
+          "sha256": "46b614bc639b54877ec268cb64777c554c0a50e2477f9a3327367a132c8089ba"
+        },
+        {
+          "path": "results_Dd4bFSTQ8gi/openvocab_v0.1.1_gt_semantics_600_4/blp_snapshots.jsonl",
+          "bytes": 2832108,
+          "sha256": "aa460cf6ab9aee25e3fb201b7fcb65c1b271388dc92c970d6c1b7b3034ddb609"
+        },
+        {
+          "path": "results_Dd4bFSTQ8gi/openvocab_v0.1.1_gt_semantics_600_4/episodes/Dd4bFSTQ8gi/0/identity.json",
+          "bytes": 864,
+          "sha256": "86068c625b1f9203dae22d890e009db09316b7bf665acf9d1ea14f366d325e3c"
+        },
+        {
+          "path": "results_Dd4bFSTQ8gi/openvocab_v0.1.1_gt_semantics_600_4/episodes/Dd4bFSTQ8gi/0/trajectory.jsonl",
+          "bytes": 381203,
+          "sha256": "87b54840759134e86650b2eb256d01d9ffa8a70acdf4aea8818c4b7c3c6014b0"
+        },
+        {
+          "path": "results_Dd4bFSTQ8gi/openvocab_v0.1.1_gt_semantics_600_4/episodes/Dd4bFSTQ8gi/1/identity.json",
+          "bytes": 864,
+          "sha256": "a0f2e7457b3d09473eeee3786b279f5827a6227bc63d38613d0b63123094b0e7"
+        },
+        {
+          "path": "results_Dd4bFSTQ8gi/openvocab_v0.1.1_gt_semantics_600_4/episodes/Dd4bFSTQ8gi/1/trajectory.jsonl",
+          "bytes": 328012,
+          "sha256": "610f4307083096dc75d04b8c985a09aa49fcd314b9561db76da2ad77921922e5"
+        },
+        {
+          "path": "results_Dd4bFSTQ8gi/openvocab_v0.1.1_gt_semantics_600_4/episodes/Dd4bFSTQ8gi/10/identity.json",
+          "bytes": 865,
+          "sha256": "17e1bb3dac16599a485aadd274000d4b96778e63d40443967566809773346db8"
+        },
+        {
+          "path": "results_Dd4bFSTQ8gi/openvocab_v0.1.1_gt_semantics_600_4/episodes/Dd4bFSTQ8gi/10/trajectory.jsonl",
+          "bytes": 390027,
+          "sha256": "d62a7df459db32e05ff2a9eb4d25c7329be84907c958b0e4e364e7255698e078"
+        },
+        {
+          "path": "results_Dd4bFSTQ8gi/openvocab_v0.1.1_gt_semantics_600_4/episodes/Dd4bFSTQ8gi/11/identity.json",
+          "bytes": 867,
+          "sha256": "024b8a38ff947c11e4598981b1fdd66c5a76c5d2a6cc16a488b8e2a74991f407"
+        },
+        {
+          "path": "results_Dd4bFSTQ8gi/openvocab_v0.1.1_gt_semantics_600_4/episodes/Dd4bFSTQ8gi/11/trajectory.jsonl",
+          "bytes": 321492,
+          "sha256": "60b94c30f15b9a1c0a7affc6c9448d1edad6f0ba92c89976f92b6840d18ffd31"
+        },
+        {
+          "path": "results_Dd4bFSTQ8gi/openvocab_v0.1.1_gt_semantics_600_4/episodes/Dd4bFSTQ8gi/12/identity.json",
+          "bytes": 867,
+          "sha256": "131a2c0fc19adcf471eb1c29a499e49d717b01aa81df37bacd6146f28de7ee13"
+        },
+        {
+          "path": "results_Dd4bFSTQ8gi/openvocab_v0.1.1_gt_semantics_600_4/episodes/Dd4bFSTQ8gi/12/trajectory.jsonl",
+          "bytes": 474488,
+          "sha256": "ea3f796ad3bc496d75e9b662d010a505cbf39be8d72deb603f3bf139b3a4d356"
+        },
+        {
+          "path": "results_Dd4bFSTQ8gi/openvocab_v0.1.1_gt_semantics_600_4/episodes/Dd4bFSTQ8gi/13/identity.json",
+          "bytes": 864,
+          "sha256": "d9ffd1a8ab786caf4f56657d23ae21243bc29b3fb5a370c910c4c6765e782fc7"
+        },
+        {
+          "path": "results_Dd4bFSTQ8gi/openvocab_v0.1.1_gt_semantics_600_4/episodes/Dd4bFSTQ8gi/13/trajectory.jsonl",
+          "bytes": 196262,
+          "sha256": "a16fad7e1397f5a39812de50eb13ae65ca86d8dfb09dc4b15a0304485e519546"
+        },
+        {
+          "path": "results_Dd4bFSTQ8gi/openvocab_v0.1.1_gt_semantics_600_4/episodes/Dd4bFSTQ8gi/14/identity.json",
+          "bytes": 865,
+          "sha256": "330f3139ea55c32c0ff68b0ad72dcae82a12085c4e6fe8cf6e0e0c210ca4598d"
+        },
+        {
+          "path": "results_Dd4bFSTQ8gi/openvocab_v0.1.1_gt_semantics_600_4/episodes/Dd4bFSTQ8gi/14/trajectory.jsonl",
+          "bytes": 344851,
+          "sha256": "5c7c8e012fbcfb82942eeb2d38b7551141056b3ad5ca34ad39418fa8e43826b4"
+        },
+        {
+          "path": "results_Dd4bFSTQ8gi/openvocab_v0.1.1_gt_semantics_600_4/episodes/Dd4bFSTQ8gi/15/identity.json",
+          "bytes": 865,
+          "sha256": "f930a8ed216a9d5fcbcc2d7edeb95452a011f472e175079365e141b0ed8b7c7d"
+        },
+        {
+          "path": "results_Dd4bFSTQ8gi/openvocab_v0.1.1_gt_semantics_600_4/episodes/Dd4bFSTQ8gi/15/trajectory.jsonl",
+          "bytes": 371304,
+          "sha256": "e219142d9e13c9c2848ff4992e89d238433cbab33175fbfbdd8648b83a15239e"
+        },
+        {
+          "path": "results_Dd4bFSTQ8gi/openvocab_v0.1.1_gt_semantics_600_4/episodes/Dd4bFSTQ8gi/16/identity.json",
+          "bytes": 862,
+          "sha256": "cc40a593aaee09b8d9e5ed184b104cfe5051e01260de7cd0f838b8b312ddaf67"
+        },
+        {
+          "path": "results_Dd4bFSTQ8gi/openvocab_v0.1.1_gt_semantics_600_4/episodes/Dd4bFSTQ8gi/16/trajectory.jsonl",
+          "bytes": 187262,
+          "sha256": "f40a7932bc931e4169314c9ada99bc2e5f4570db33dd18fc6c3b4afaf3c06135"
+        },
+        {
+          "path": "results_Dd4bFSTQ8gi/openvocab_v0.1.1_gt_semantics_600_4/episodes/Dd4bFSTQ8gi/17/identity.json",
+          "bytes": 865,
+          "sha256": "1958ba1c110e705c22879fb94c3ce9e9f8f6a04786a564e9052e79262fdd5fc9"
+        },
+        {
+          "path": "results_Dd4bFSTQ8gi/openvocab_v0.1.1_gt_semantics_600_4/episodes/Dd4bFSTQ8gi/17/trajectory.jsonl",
+          "bytes": 355734,
+          "sha256": "8f57f9ce9e00bf24ba88f7568058e3bb2e5d7aef341358935933dc49c6365660"
+        },
+        {
+          "path": "results_Dd4bFSTQ8gi/openvocab_v0.1.1_gt_semantics_600_4/episodes/Dd4bFSTQ8gi/18/identity.json",
+          "bytes": 865,
+          "sha256": "166bc4250c452bda140219d5be25b2fd00ed085ad3c53550b7975c54698cf52d"
+        },
+        {
+          "path": "results_Dd4bFSTQ8gi/openvocab_v0.1.1_gt_semantics_600_4/episodes/Dd4bFSTQ8gi/18/trajectory.jsonl",
+          "bytes": 289528,
+          "sha256": "dd7bfc6b10eea2bd91b3c9a870337756760b4ca2d4ce012f8d2001c6b9245f39"
+        },
+        {
+          "path": "results_Dd4bFSTQ8gi/openvocab_v0.1.1_gt_semantics_600_4/episodes/Dd4bFSTQ8gi/19/identity.json",
+          "bytes": 865,
+          "sha256": "1989e246a82578caaa9a74e745343ff5662b9c5c8384ae878ca6077fc0571c6a"
+        },
+        {
+          "path": "results_Dd4bFSTQ8gi/openvocab_v0.1.1_gt_semantics_600_4/episodes/Dd4bFSTQ8gi/19/trajectory.jsonl",
+          "bytes": 329849,
+          "sha256": "5c43cac635a7ccee10d37815fb32dbfdaee31466e24037c4248f896d2124644c"
+        },
+        {
+          "path": "results_Dd4bFSTQ8gi/openvocab_v0.1.1_gt_semantics_600_4/episodes/Dd4bFSTQ8gi/2/identity.json",
+          "bytes": 864,
+          "sha256": "e63af921b15da364651e66558a80d7de6a128cf96cd8126b0f0cd482f57d9daf"
+        },
+        {
+          "path": "results_Dd4bFSTQ8gi/openvocab_v0.1.1_gt_semantics_600_4/episodes/Dd4bFSTQ8gi/2/trajectory.jsonl",
+          "bytes": 352559,
+          "sha256": "b0b82056270ce38f7f7645fff25ad94eca3ec4de7451e7af47042931afefa8e6"
+        },
+        {
+          "path": "results_Dd4bFSTQ8gi/openvocab_v0.1.1_gt_semantics_600_4/episodes/Dd4bFSTQ8gi/3/identity.json",
+          "bytes": 864,
+          "sha256": "387e81efc786f29653400c8847758e8783caf229470db3a1d813d9e370e8ea6d"
+        },
+        {
+          "path": "results_Dd4bFSTQ8gi/openvocab_v0.1.1_gt_semantics_600_4/episodes/Dd4bFSTQ8gi/3/trajectory.jsonl",
+          "bytes": 334786,
+          "sha256": "a04bf88b538b3189034b544b579f706d4c5aeb64883b6e1d28b2ae52d9acf60f"
+        },
+        {
+          "path": "results_Dd4bFSTQ8gi/openvocab_v0.1.1_gt_semantics_600_4/episodes/Dd4bFSTQ8gi/4/identity.json",
+          "bytes": 864,
+          "sha256": "2e47bfa84d36fc427ec2ae0174447d543853c7d1cd9af0a4be006951425334bd"
+        },
+        {
+          "path": "results_Dd4bFSTQ8gi/openvocab_v0.1.1_gt_semantics_600_4/episodes/Dd4bFSTQ8gi/4/trajectory.jsonl",
+          "bytes": 328874,
+          "sha256": "4104dcef6393e41b4ed809db0f3c70500195a139d293c2861271839ba608e2a1"
+        },
+        {
+          "path": "results_Dd4bFSTQ8gi/openvocab_v0.1.1_gt_semantics_600_4/episodes/Dd4bFSTQ8gi/5/identity.json",
+          "bytes": 865,
+          "sha256": "8ad9d67556078395ddc09b2a017206b421021d676f39758381954f230061cf0c"
+        },
+        {
+          "path": "results_Dd4bFSTQ8gi/openvocab_v0.1.1_gt_semantics_600_4/episodes/Dd4bFSTQ8gi/5/trajectory.jsonl",
+          "bytes": 21944,
+          "sha256": "845a984e6920455ffeec54df9e9cfa1b647337c2c38e31c83efc376c99f5c507"
+        },
+        {
+          "path": "results_Dd4bFSTQ8gi/openvocab_v0.1.1_gt_semantics_600_4/episodes/Dd4bFSTQ8gi/6/identity.json",
+          "bytes": 864,
+          "sha256": "d029e7629affb6beb0941578a895d15afba2b2eff41c552509d99153c108dd8d"
+        },
+        {
+          "path": "results_Dd4bFSTQ8gi/openvocab_v0.1.1_gt_semantics_600_4/episodes/Dd4bFSTQ8gi/6/trajectory.jsonl",
+          "bytes": 360257,
+          "sha256": "63fe4e1159d8042020521f8618a3db2d105b5aea5aa3b97d2de8a1c8f339e301"
+        },
+        {
+          "path": "results_Dd4bFSTQ8gi/openvocab_v0.1.1_gt_semantics_600_4/episodes/Dd4bFSTQ8gi/7/identity.json",
+          "bytes": 864,
+          "sha256": "0f5124fb73bc5da0c4f04b6cbc4b00e79e7f6d84f553c78f47eee51e7caf11fc"
+        },
+        {
+          "path": "results_Dd4bFSTQ8gi/openvocab_v0.1.1_gt_semantics_600_4/episodes/Dd4bFSTQ8gi/7/trajectory.jsonl",
+          "bytes": 189345,
+          "sha256": "c429b95e77c21409a8fe9c4393cf1527374e1740517eb5371e291de2a69ba8a3"
+        },
+        {
+          "path": "results_Dd4bFSTQ8gi/openvocab_v0.1.1_gt_semantics_600_4/episodes/Dd4bFSTQ8gi/8/identity.json",
+          "bytes": 863,
+          "sha256": "77c0e6e6f2323ec16e1145c2d2d6184ab474777a5e29e542ac56cee24145c06d"
+        },
+        {
+          "path": "results_Dd4bFSTQ8gi/openvocab_v0.1.1_gt_semantics_600_4/episodes/Dd4bFSTQ8gi/8/trajectory.jsonl",
+          "bytes": 140431,
+          "sha256": "1aae2a0c779e1125755b9d07a65d703847c3ef3268b1b4b47be69183038fbfaf"
+        },
+        {
+          "path": "results_Dd4bFSTQ8gi/openvocab_v0.1.1_gt_semantics_600_4/episodes/Dd4bFSTQ8gi/9/identity.json",
+          "bytes": 864,
+          "sha256": "54ae6c5e272f299adb216f530e5d0eda74d6c4f230af73efc1c135f7f084b134"
+        },
+        {
+          "path": "results_Dd4bFSTQ8gi/openvocab_v0.1.1_gt_semantics_600_4/episodes/Dd4bFSTQ8gi/9/trajectory.jsonl",
+          "bytes": 331681,
+          "sha256": "0aa096688141db3a4f548b0a6289405334a4837e32cbcf218205475dcfef507d"
+        },
+        {
+          "path": "results_Dd4bFSTQ8gi/openvocab_v0.1.1_gt_semantics_600_4/per_episode_metrics.json",
+          "bytes": 847462,
+          "sha256": "8d8584ec64614666dd5f06bc61d14ef20f131c5941ddd24a9b23894991e13d55"
+        },
+        {
+          "path": "results_Dd4bFSTQ8gi/openvocab_v0.1.1_gt_semantics_600_4/scsp_decisions.jsonl",
+          "bytes": 11800599,
+          "sha256": "e90e0506ad4d4a4d0af88e202abc5d9072cb747263da19cbddf8601f6cf057fb"
+        },
+        {
+          "path": "source_snapshot.json",
+          "bytes": 1803,
+          "sha256": "d436136659338ec7998cb3a876970780a7478ff26a86295bf3900cb386841d33"
+        },
+        {
+          "path": "status.json",
+          "bytes": 107,
+          "sha256": "61b983e2100928b21290ff076af0cfbb20e3cea5182871ff9c18258e653828bc"
+        }
+      ],
+      "all_round_trip_sha256_match": true,
+      "scope": "first8",
+      "stage": "myopic",
+      "scene_id": "Dd4bFSTQ8gi",
+      "n_episodes": 20,
+      "launch_sha256": "ad76e5ee244f820c4b15f2f5011c640701b98f391a738de39d44c836c682eacc",
+      "status_sha256": "61b983e2100928b21290ff076af0cfbb20e3cea5182871ff9c18258e653828bc",
+      "source_fingerprint": {
+        "pbsp/__init__.py": "204a77e8c809c9b8f38114173d35f5bcf7585e9893383c3eef5b2dca30aeb619",
+        "pbsp/adapters/__init__.py": "9da64df015e12dd3130227acc397bd90bf58d5cd5f4c52108dfb9fc48830e12d",
+        "pbsp/adapters/detic.py": "46eb4c882bf3c28a72c15b2daa5b3657e9231674098bb5f57a68b1c0970f5f81",
+        "pbsp/adapters/detic_perception.py": "9e4bba49cf509fc1475ad3c853a857a76557412b2d8ca6aa34d80fb3542297e3",
+        "pbsp/adapters/embodied_splat.py": "e7c8d3d17e002cd4138b84dda63dce1d93f082d08692f45f7df2acbf420cd42c",
+        "pbsp/adapters/embodied_splat_config.py": "de4b1ff0bba5038edd83dfb3abf12ea51d9b432d32593aea49b967eb18682bda",
+        "pbsp/adapters/embodied_splat_model.py": "4e1523322682695d0044ae1330a11563645a8c1612cb2a6c6e83ace2fced9f96",
+        "pbsp/adapters/embodied_splat_query.py": "633d74c8faff8780c01a0d8bee183cb3ada55ae2907a235e8f302ec07813b034",
+        "pbsp/adapters/embodied_splat_semantics.py": "60ba26ecfe9a50acab3fc5c6161a734efcad6e335a39564d970604de490e8c4a",
+        "pbsp/adapters/frontier_runtime.py": "167752c785efd34811ad6de36d8d75869b5550b0293a54ffb8e024ef3e1bec15",
+        "pbsp/adapters/geometry.py": "ca53f5c893e79069329ffd1a46e9f892834390aae284fe7c8a9854df571a8be6",
+        "pbsp/adapters/goat.py": "5263ebab4c71a4f219eb0748025985b08a86f21bc5cafe490dcfccd808f44fd8",
+        "pbsp/adapters/habitat.py": "337e53043f93e041f980e63f0472ba5d448dc3cd8d04c15a223975e16fde740c",
+        "pbsp/adapters/habitat_config.py": "c406a6644561e06e9ee36132d90a5463851ef2fdacbfc978538b47f5d409116d",
+        "pbsp/adapters/lagmemo_agent.py": "0748f8f8df5b464d051502476e6f98f1fc5c4801199fa201c388527b10853992",
+        "pbsp/adapters/model_resources.py": "560697e24cef3a764fb27ae76b42ba2942ef8ddc2b23025fd9a092f4fc3c9cf1",
+        "pbsp/adapters/objectnav.py": "41a3266bec982b2401708602b379f1c4cf0a8cf2a0c44b875cdd84afc9b7a911",
+        "pbsp/adapters/openseg.py": "0d437cd2546c92cea07382acfd68f6790bf06dac21cf630e27513f69db2fc136",
+        "pbsp/adapters/perception.py": "dffaa6ab8a8052e5184bb8a25da74279ff8c81b747a9faa98325a8bd7f6b5fd5",
+        "pbsp/agent.py": "3341421bae243179f14ba34d337c7ffb1c4d5b0e7d97b3a462de44e3a5ceff2f",
+        "pbsp/mapping/__init__.py": "7daf7c588784be377fec79a1afc7136a18a02f2b4a7891801e601368edfc99c2",
+        "pbsp/mapping/encoder.py": "ce6cadcb4f0eee4045bbd40e090123319a54915ba9eb1772323155988470eddf",
+        "pbsp/mapping/fusion.py": "85428de5b8a67a1359222be4696daf28b6824454b27e39842786663c304aee94",
+        "pbsp/mapping/gaussians.py": "273f2b4d2f59bce4b54b73caa3697e76c12e23001a9ac0d67a0b3a90b34a0a8a",
+        "pbsp/mapping/geometry.py": "20c327cde4e2c6b066e79bc352770cf4fd2e27a50411ddf021878c32c9d58386",
+        "pbsp/mapping/keyframes.py": "91c4ad0c8a42ea2d57ba44589d5788bf0bf62c2f31d2bb344f96934e45da4fe3",
+        "pbsp/mapping/mapper.py": "fe7f8f804d74c92b43ace226a7ad846886891bb60f9e0b5327e95acf47d4e088",
+        "pbsp/mapping/memory.py": "9451198207e688be233ec4a28424eea55201d73e9403b558df01e4573b82d5d2",
+        "pbsp/mapping/model.py": "d6fe0fdd4ce3cbe6421d508eba97d2b45af314cfd0f490d8300c30c91421bfa6",
+        "pbsp/mapping/resources.py": "0bf26a582b0cd96cf6b7965f33abba2dcea6c38d06f136a2997178441c8543d8",
+        "pbsp/mapping/spec.py": "3c2d7f684bfa53508e64c9de3ae601c30169da55e27b6e898c67b98737bca894",
+        "pbsp/mapping/types.py": "967b1e81b5859265d0c677c619f94b6f13c59f1043bd50adaba57790850b9bf3",
+        "pbsp/navigation/__init__.py": "5daf8f4b4d7e1691e4ac582bf69e14ab0281c58a07859944f70cf8fcca2ed1c8",
+        "pbsp/navigation/backends.py": "5822dc3df44896050b66dc11b546ed9715f1563313076339434402cbc582360a",
+        "pbsp/navigation/blp.py": "fedf1b03677d45e4ce0860af85b86f6a05faf024489250d2c437b59f25a2cd50",
+        "pbsp/navigation/blp_parameters.py": "039c6a660ab2a7cf2b6e9e78e810bfb44f32731e6c52a9194dc20f82daa63bad",
+        "pbsp/navigation/candidates.py": "7dab0a30a1933c6b1d1e3b033dc38704aa05ee6fc6adf0858b76d91bc686dfef",
+        "pbsp/navigation/cooldown.py": "aca6aed0fe4b14fe1d38486a4e29d905adf84dfc3edecd636d36bbaff48f0d55",
+        "pbsp/navigation/distance_cache.py": "4dda0827c060c63ffc6f0519a16c4a089d5333f3bf3ed6ade0dee2abf2ff821a",
+        "pbsp/navigation/evidence.py": "18346a1a823adb1f01263b846b301a4a58ff2c2c1fccf2c6fce101799336c8d0",
+        "pbsp/navigation/geometry.py": "993e4e1f6447c565fdc6a421f60e7c17b87421fd3f641962131e80a626e47b46",
+        "pbsp/navigation/local_map.py": "574442e85e4a526ae942e7e1749cd44edba62b51d6b47521ee5730285b575e39",
+        "pbsp/navigation/navigator.py": "c3e7794ae1c6e9017cf412c69dc73e8804cbea9fc35b4a32bc9a131265913125",
+        "pbsp/navigation/planning.py": "4fcaa2712dd19d61942a1a165ca9a462f37e0fcc4b678613de32f33346ad7268",
+        "pbsp/navigation/policy.py": "ec6b491a21950eb240c31acbc8fa145c1201cd3de2ac47db8ebf2ff070ed1250",
+        "pbsp/navigation/ranking.py": "35cf5a77645167e50278b432d4bd4763e898c2c41b1150e42b0d8f7f9d11e956",
+        "pbsp/navigation/recovery.py": "90c9e6905c1d80fc59d9811a345b871d5a02de82f44a5708b493af30749420d7",
+        "pbsp/navigation/suffix.py": "75b39c40026035e4b84172313d4cce4dddbbda89fb94fe7216c4d34ea7e01366",
+        "pbsp/navigation/types.py": "132954dac1c4a0c9051fd7beda6be56b77b95767152ca0252f57c5c494468cad",
+        "pbsp/navigation/verification.py": "a2592b9d4540445aa1a19b04f68305645a2290145a93b7b3ef38079f9bee2dd6",
+        "pbsp/query/__init__.py": "d4f3edd763859261248576b36d9fa0a739e734781444d117898cdac3c8442cff",
+        "pbsp/query/engine.py": "2a7bf07ac1ffea1797c33b45a708c3ce9d8bef94d5581642370e64acd85c7f57",
+        "pbsp/query/service.py": "dd113a97f1c948960612aa8f678e73bdf9f59ec2fdf7d6b5da41b3e88c77dbf9",
+        "pbsp/query/types.py": "e02fd98fb98b0f56b36df8d42b48ca7305dcd832af62526bf8586565472f60df",
+        "pbsp/runtime/__init__.py": "692e3c967f13c099aad4c47b0e118d3a9cba418b412ea2507f3e95f2230947d9",
+        "pbsp/runtime/bootstrap.py": "9cf48e1ff6742f138e4732e21bc0fbce334a838cfb6fa8061b6afbdd7f3b1028",
+        "pbsp/runtime/config.py": "e97c62f8d3d55bed716dc80f226ca6ceae10773a6d11059d14f5c2f6e6e4dbec",
+        "pbsp/runtime/detic_bootstrap.py": "ab5f73a7381a1116a47cf23da04d21eb1dff301fad2afa0d82d626e70b0d6a66",
+        "pbsp/runtime/environment.py": "770a7db9c1f66db2a3527c300f575d6b9dba902244359299a50d8e3ee1f9fb1e",
+        "pbsp/runtime/external_sources.py": "a86d8c91086a0c5c859c10902ecd97b517768ec8230366fbef38880f776c7b29",
+        "pbsp/runtime/factories.py": "c019f84f887539948e69f386902fd2bb03240fab21a97042eaadcf2226696f3f",
+        "pbsp/runtime/launch.py": "987c42b2021439b22d7b23209eaa22c068efe9ed71f98108cd1246c9cda4c444",
+        "pbsp/runtime/mapping_client.py": "aabad2585d94350d27a93db2325ee4a5f390dd85c3624720972b24912fcc6651",
+        "pbsp/runtime/mapping_worker.py": "769d3c0504f27f82f5c97bedeea1de2eea61daf7a5d4ec107eb9b4412ecf597f",
+        "pbsp/runtime/model_assets.py": "b2b224827550ec24359cae84b4e4474c754125e025104dfe5a6189bf7035d1a2",
+        "pbsp/runtime/monitor.py": "68624b329253dcebb6fb698811666fce6550df3c9ad684d8e60c1f515a7ede47",
+        "pbsp/runtime/navigation_worker.py": "4db3707c83de4b9a643a863d020f25fc8551e158ce68a0482b4d079223ee092b",
+        "pbsp/runtime/plan.py": "026654a099c329cbc578ef560e0b0db5f0413ede5dd657a8f2d3c40122eb3be0",
+        "pbsp/runtime/protocol.py": "a0651334ff8ced502f28282e44edf0117b7eaca82b086dc6f423b55349a221a5",
+        "pbsp/runtime/resources.py": "cd593452dfbb7d3e2984b6490a5ef8d50c32e51c4375a138f70b3399f5a0b13a",
+        "pbsp/runtime/source_provenance.py": "4b3ec3f14f1784756b74e8002a09ab4674a55c4d56048d0f24b3e7dac80e14a1",
+        "pbsp/runtime/source_snapshot.py": "682e2725d0039d1f837e3cebee38676963f5bdc08e75b7879d13443b0d0675a4",
+        "pbsp/semantics/__init__.py": "c4149e1cb17463ba4e13907373aaebb70690a8f3a8c9c305d402c3f8689cf234",
+        "pbsp/semantics/features.py": "74ea56f1b06a0cd7f60b979ddff702617c788ba29bef3254df9bffd6dd7ab4ae",
+        "pbsp/semantics/types.py": "51194de8c13c46e807727c0e7d982b4da535234b21590200dbddd395f6811088",
+        "pbsp/settings.py": "90d613c453f547e209478b9d62892ba09052a92c8e4e1c1c151faba543867535",
+        "pbsp/types.py": "6d10753a90d4f69ff01aa9f0d98b15e90abeffe5ed47f724b74019b8d2f58520",
+        "experiments/__init__.py": "816019945af208d4e795df1adc9776580427112752b2e9665c3e5e37f18ec628",
+        "experiments/_environment.py": "9a46732dc33c800f1d577b257b9915094f187228b2e34fe920bfc418b27c9a82",
+        "experiments/_episode_sources.py": "beaf2b1cb2ff975fdd462383785cbb28490e90357b510c8ec5abb7ee69a4a9ba",
+        "experiments/_sources.py": "c1c3d216fa0c3d6ef672fd6838dec22586c155ccf57187773032afc80f517732",
+        "experiments/blp_calibration.py": "3b45c5c5376501712e5d4394eabbeeb400b8690177512be43357d3644ebfe141",
+        "experiments/blp_observer.py": "12dd680b3f4d102fd70277a193d1c85ad5deb219dfb04846e3060df9304af9fb",
+        "experiments/check_install.py": "6cfc0243e1ce4ff3a97eb8b4473d1ac4bdeadab75a0b43dbaf3778cc94462d01",
+        "experiments/dataset.py": "57e1300a6aa788f9ab42469ba6ee274c2fe73b704a39a2af5c6f16dabeba6f2a",
+        "experiments/evaluator.py": "314f72098aeac31b49c2ba8798464bf00a9113204af096aa174da5d0b0e5c6f8",
+        "experiments/exp4_collect.py": "7d5a35c03a4c962f1d47881db306af3c8c6a515491ae26c71de057f43a6ac6a5",
+        "experiments/exp4_fit.py": "8c0300b362394b0042373b4ae2450e20cfd6a0172584d6d9805c41607117ad12",
+        "experiments/exp4_prepare.py": "91ebd3c5d571fbffe16af73d629861999f757247f891fe9798923a40e1565693",
+        "experiments/exp4_regression.py": "e95a3f9e9f8d6bcbc63478ce0bab5f5b791555f569de0c3bf7ec2d8dde52450c",
+        "experiments/export_offline.py": "e09eb4001a7540f65729c54042cd1bd909bda6135e5549ed84cab0edc3cd8989",
+        "experiments/identities.py": "863283a9f7b8f881ac1b676888638160974da62258f6ea9bfc005647e437d2fc",
+        "experiments/manage.py": "8741e76407e456f19dcba0b9c8ee48f7bdaef850d13b2c581780164b20092a64",
+        "experiments/metric_protocol.py": "c27d45e28b67b108d3bb899bf2d9ac9a2fe4979cfe911ed515d71bec69eca7c6",
+        "experiments/metrics.py": "e34ddd5a34f6405833cf2bc84de3db5b51cb3fac02bcbfdbf356d7c1604fafd3",
+        "experiments/mfmon.py": "612a9f7564a020852749e3f1cf6c84a280274fab6f3e406c14497b8844a94cc8",
+        "experiments/mfmon_audit.py": "3e6e20da7046976139b3163717f61349b3b6188571e9c46f4fd6e8d1c852c10d",
+        "experiments/mfmon_categories.py": "a29254c69e49212c616ab27c140ae06e67673883b7da9d0ee11756767d904b74",
+        "experiments/mfmon_protocol.py": "79149deeec09b3324919efb9642ee0778ede2b30796ce3a78d82d373aeadb6e8",
+        "experiments/objectnav.py": "6d5466f809dce5cb96144d808b9ffbea8a7c476911f504b45573a0928b95134c",
+        "experiments/objectnav_data.py": "7a4aa6815ec9610003d16fbe3dfb062aa3605155c4fc11e73935c54f5c7fed7f",
+        "experiments/objectnav_results.py": "550f98ae0319b9e5c8f603cfc1a43e9a210c5b0f0276af370477687d51c85de4",
+        "experiments/planning.py": "daf6c078d59ac88110e827778eefea6a863b2e1be76ddc6d09f6238f3031f528",
+        "experiments/prepare_data.py": "305f739e1584b67029d5c290693fb8fbb263d67dba6fdcd8ab82b6738ca6caa4",
+        "experiments/prepare_dependencies.py": "9d98391ed62a5cc51234bf6542b96883c1e936fa79df988dfe9c150b9a2e491b",
+        "experiments/prepare_models.py": "19b794270e3d1c11643a33193d3a29dac6cda76f60b90e369d07a021b9a0be44",
+        "experiments/prepare_objectnav.py": "f7c880464a58a6f77f7cd1e8db2bb0165a2f49ebbae576fcd0d95b9d2e9b2941",
+        "experiments/prepare_runtime.py": "8eeba33f227cd5052f8774db3c4fbc97b464fe006fa668e39673c78685ca4642",
+        "experiments/recorder.py": "734c34f6b84701b4cee07492e8efdb92978d75fb1e6271f779fa22302ed9b432",
+        "experiments/run_records.py": "d8e32a9c4ae3e1db09061216ccbbcf978223d457f3d5341e2f82266030b7ed9a",
+        "experiments/runner.py": "13fb31e3ad79e20671dc80ae0521130a510410abce92496690a381df3788bca3",
+        "experiments/setup_envs.py": "8118feac7ae184ae3f4604f45c208dde005aa5c1ed488661e2194c29f2dbdd22",
+        "experiments/setup_mapping.py": "6980de18ac0bbc870cb39c9c9a76747e321d4b5a716de61b2c38897a30403f8c",
+        "experiments/setup_navigation.py": "0019a8575433cbec906a2ee5bb9e8957f63557e8d0e6334e9523e05d2a365525",
+        "experiments/summarize.py": "9ed185509a91ba51b5fc3536e7b8b9cb50b27e43ca9121dd1275793809ca14c0",
+        "experiments/telemetry.py": "17d197446a87b2dd12b6a5f55e0ff9a2d2053dd60567b176eab5306d41f13235",
+        "experiments/test_blp.py": "04f4013de3e42c4b1dfdef8c2eea5716d1de1b78bbdfa0db8299bd32e5e8e5ee",
+        "experiments/test_blp_depth.py": "d736a49110c73a04d347980f58200a75c46e26bc6e0561f15a13a7f6360562aa",
+        "experiments/test_blp_identity.py": "e7b6de94d6ed893ef53a4930f2f7ddd8a88c788abd7735ecfc2e88d1b9237d7b",
+        "experiments/test_blp_parameters.py": "c8579f7bc4fe31d7d4720e836219b4009150f90facce0b0430e8d9a47c3a6544",
+        "experiments/trajectory.py": "9f3e93c9a93466a290384b943d92f606d52cef6d2334aa74f8c8fac3c0106efe",
+        "experiments/visualization.py": "81da6adc588613130aa8cf65ec3439a33696c07c43bdbb719f0141ff579f947f",
+        "configs/categories.json": "30a17d48fa4926fa2cfbf91cf509f95f0c39544b2df20b068b8393732398935b",
+        "configs/datasets/hm3d_2mon.yaml": "0d39eb01e38a0c523f12191c69d4b11297befb1c4e7750e325a38523e00b2c32",
+        "configs/datasets/hm3d_3mon.yaml": "03b0fd29f72f19e3f97606b5866993511ae7564a2261fabef8f7e1d25c3b24d0",
+        "configs/datasets/hm3d_4mon.yaml": "b9ca9c30a86fd4f21a2c96f0d0d32c358e447db17f3b6c39d2e2ae617d05bea9",
+        "configs/datasets/hm3d_mfmon.yaml": "1e0b6b9bb61b375c4a79082fdf86251d70113b001e865bd7d78b65fba9a15e7c",
+        "configs/environments/mapping/linux-64.lock.json": "eff5e7d28ad212aa6f2a7784ff4f972af3d160bc6caf288af74ea87ad1414eb8",
+        "configs/environments/navigation/linux-64.lock.json": "9a5835cfdb3aee1f148d1aedbc228a7d861936725cf171bbde2b28e01ab8f180",
+        "configs/evaluation/mfmon.yaml": "ab30b6c6b6c252802b42e8223b7bd6f3a0e2094f15adf96ab75ce4347b87a318",
+        "configs/evaluation/standard.yaml": "209b714fd79dc9429fc5587452c26fdcfc9377a56ecf09647ba48089eb6d1019",
+        "configs/experiments/exp4_calibration.yaml": "f17d97779b23e60716518ca7b43c3b72e921bbeda9ac5639cb8693f256b57387",
+        "configs/experiments/exp4_full.yaml": "7697ad382193f4a929858a72b8f451371a3682f5ccb8c2a090a85df2dfa56e37",
+        "configs/experiments/exp4_myopic.yaml": "2ffe78de63e194b98858ff9da17b828ac38e5051f88ff9cce06ae63ec33c090d",
+        "configs/experiments/exp4_nearest.yaml": "70c0c83cd7c00b1eb4655bcea7aa0fc370045bb4e29dd477f43bcc38cdc3589d",
+        "configs/experiments/exp4_suffix_only.yaml": "1fd713eb5bd335d93f68a014b12d9fd28e81a2e07e35f10bd025df9931a70ced",
+        "configs/experiments/hm3d_2mon.yaml": "b49212f7b8a6139bf9e6c51ac3f035eeec454f021a7d32cff454177de36985ef",
+        "configs/experiments/hm3d_3mon.yaml": "28cc32f1691c1d805f6f416b6bdc86a1b387766fbe95616f574916351d773309",
+        "configs/experiments/hm3d_4mon.yaml": "ebfaf6e2a963700e5d7013211b2bd777ffe4a59e4feb2c1ae55ce5dbdd85fbd5",
+        "configs/experiments/hm3d_mfmon.yaml": "9791ebcfb17d4681927a37e6ec7103dbeb398e848eeed00c06c38254d11b4c4c",
+        "configs/habitat.yaml": "968d892eda8b5379209c546fd5cab816c1f9f3e61442992170c4bece3250a2e8",
+        "configs/habitat_objectnav.yaml": "3eb0871ba35b481a3280984d478a8b2265716235d6ff6d4d3d3f009d5adf4e1b",
+        "configs/methods/exp4_calibration.yaml": "3f544437bc4b67dcedf103709bce4baac4c3483429aeeacdcadd537630d842b2",
+        "configs/methods/exp4_full.yaml": "c7629726203cfa58ecadf15019e0101595bbf0dada9912e9205551e808575d2c",
+        "configs/methods/exp4_myopic.yaml": "593f9203db9932f179bc546454a52c513dea90d5e59c26aeb9fd9baf53b978d2",
+        "configs/methods/exp4_nearest.yaml": "e6a371707d1744455a8c253ca3cec7549f75d983c5f2af643f88e58a21f3dfa6",
+        "configs/methods/exp4_suffix_only.yaml": "55efe0475021171cac1796ee2333be2fb38c73a7e680230e75db22c5b1a08f33",
+        "configs/methods/full_pbsp.yaml": "9f051bc88d6f8dc0f99549a80ca4eb2ab364aad0fc912ac6d827926cdcffd20a",
+        "configs/models/embodied_splat.yaml": "cf4f716471801d9605b64bf8edb99a6bd91ef74c65876f9e68b25ae488d801d7",
+        "configs/models/network.yaml": "de452ad0cc80764dd0f828dae09f263ea4ca16d5a5c6565af7b350cd5d17f272",
+        "configs/navigation.yaml": "f373b8d1dd2c37c8ba89330c2b91ddfe422d63ee01fb6e021f41e587d8905110",
+        "configs/resources/datasets.json": "cf30b942450d05e4425c0854a969a13c739a771be074c4b58e1d61941914b6a9",
+        "configs/resources/models.json": "f21ffdc59735aaf84fe5a0a4ebe99f35261f6dd45a643387900d003b6b7ac4a6",
+        "configs/resources/superglue.json": "d98535e089344b72408937ef2bb133eaead425f261e7db2ee75d5e72c9f4ce3c",
+        "configs/runtime.example.yaml": "0757cbb0615ef6cbb51791215db1b8b6cc88284ec28f9a6a51deb956f37875bd",
+        "runtime.exp4.local.yaml": "ed47810f08afd80d5059cfff4c437b91ffa92d653abaa1949e920e8e7041854b",
+        "results/exp4/meta/folds.json": "e5984774614e3eef936728637c494a88f11269bf1508d719e87cf17879f2590b",
+        "results/exp4/meta/2mon-identities.json": "0f1bdd3404e6fb59d7723d703aa2a478e3bca115a58566972835315c0f0a1ead",
+        "results/exp4/meta/3mon-identities.json": "98baa13355e8dd223eaefdeec7f48964bb23f44d2b02cdba4261add62b594ac1",
+        "results/exp4/meta/smoke-20-identities.json": "30bf91b382a918be8359d66b63fcdece026462c703fd04b868fd355b56aeb921",
+        "results/exp4/meta/protocol_decisions.json": "c4596befc6337dab5a9963c69f4416992f7b0108f8d0c69c9e77cfa8f39c69ed"
+      },
+      "parameter_sha256": "e1d75f3c9503c7439467748fc97be6ae2ad450c429f40dc7235b1564ff7852ae",
+      "archive_helper_sha256": "8e7ca89e1260feede3dfe676303a28a20fa954bcd1f7bed8077b8cad69387f80",
+      "reused_original_full_archive": false,
+      "checked_at_utc": "2026-11-13T08:26:54.335243+00:00"
+    },
+    {
+      "native_run": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261113_134511_813073_exp4_myopic_exp4-myopic-a3-first8-Nfvxx8J5NCo",
+      "archive": "scopes/first8/logs/native/myopic/Nfvxx8J5NCo.tar.gz",
+      "archive_sha256": "83e4998b6bfd4d62d06905f10230f83cd6216c0eff0cccb64f7d0f676226f64a",
+      "archive_bytes": 1749852,
+      "raw_bytes": 24433800,
+      "files": [
+        {
+          "path": "launch.json",
+          "bytes": 13304,
+          "sha256": "7f888cb60d889fb7a3c6cae375e037e5cda149dd678076ba6395057ad6a0193b"
+        },
+        {
+          "path": "mapping_environment.json",
+          "bytes": 20719,
+          "sha256": "02bc1e1ae79d60b4d07eee4ee3ae4ce801a378ac268eb588b33f7a4e2681c6bb"
+        },
+        {
+          "path": "navigation_environment_5.json",
+          "bytes": 30668,
+          "sha256": "0e5682cb15ee085c59b3ba939206775cd6e1b617589005a774fc790ce7eee84a"
+        },
+        {
+          "path": "results_Nfvxx8J5NCo/openvocab_v0.1.1_gt_semantics_600_5/blp_decisions.jsonl",
+          "bytes": 1703808,
+          "sha256": "20275fb83f5a081e50fb85935f958a90841dc279e6b6533b86dcfbd249eab77d"
+        },
+        {
+          "path": "results_Nfvxx8J5NCo/openvocab_v0.1.1_gt_semantics_600_5/blp_events.jsonl",
+          "bytes": 726632,
+          "sha256": "b5490bbc8f948a0fadbcb303cf06371ddd8508a2db73dc44b68ba17ad8dc2e0d"
+        },
+        {
+          "path": "results_Nfvxx8J5NCo/openvocab_v0.1.1_gt_semantics_600_5/blp_snapshots.jsonl",
+          "bytes": 2787980,
+          "sha256": "ac798e4dc7e725a16aa94130fb64a8624d6eba87e46681fd71e29f8b66c5ebe6"
+        },
+        {
+          "path": "results_Nfvxx8J5NCo/openvocab_v0.1.1_gt_semantics_600_5/episodes/Nfvxx8J5NCo/0/identity.json",
+          "bytes": 860,
+          "sha256": "07abd49b2b5308e200f12e473a73e022723e5c3b1b8ca52ccbd172cd53ae20b8"
+        },
+        {
+          "path": "results_Nfvxx8J5NCo/openvocab_v0.1.1_gt_semantics_600_5/episodes/Nfvxx8J5NCo/0/trajectory.jsonl",
+          "bytes": 445927,
+          "sha256": "1c764c4564f388923f5ede0d5916a65a5c4d2ea5307ee0d3077dbef2ae652087"
+        },
+        {
+          "path": "results_Nfvxx8J5NCo/openvocab_v0.1.1_gt_semantics_600_5/episodes/Nfvxx8J5NCo/1/identity.json",
+          "bytes": 857,
+          "sha256": "37535edd07bc397a21717bdd492f5cc4d7c7a43371cf544d2da1ecfdc02f07b1"
+        },
+        {
+          "path": "results_Nfvxx8J5NCo/openvocab_v0.1.1_gt_semantics_600_5/episodes/Nfvxx8J5NCo/1/trajectory.jsonl",
+          "bytes": 185820,
+          "sha256": "311f24bedbdb5b064a5478abf540265a69c6823613e790fddd2073dc12cdd831"
+        },
+        {
+          "path": "results_Nfvxx8J5NCo/openvocab_v0.1.1_gt_semantics_600_5/episodes/Nfvxx8J5NCo/10/identity.json",
+          "bytes": 864,
+          "sha256": "827ad2ceb39e4f1a4f28743bddab8e357840a0762d73a81aad3046bb423be1a3"
+        },
+        {
+          "path": "results_Nfvxx8J5NCo/openvocab_v0.1.1_gt_semantics_600_5/episodes/Nfvxx8J5NCo/10/trajectory.jsonl",
+          "bytes": 391044,
+          "sha256": "d1c24224a60af9f68198b8a0da9ef874fd2cd79d8ac616ac7e5cac434b94aae0"
+        },
+        {
+          "path": "results_Nfvxx8J5NCo/openvocab_v0.1.1_gt_semantics_600_5/episodes/Nfvxx8J5NCo/11/identity.json",
+          "bytes": 866,
+          "sha256": "8e28146fc23f97df4c4457fb086bba10f0b616d8d710abe5fd1dedc18881b15a"
+        },
+        {
+          "path": "results_Nfvxx8J5NCo/openvocab_v0.1.1_gt_semantics_600_5/episodes/Nfvxx8J5NCo/11/trajectory.jsonl",
+          "bytes": 246562,
+          "sha256": "32ac654b275dc02635ac778be2baa961793be66e83636f2deae853908d4f453e"
+        },
+        {
+          "path": "results_Nfvxx8J5NCo/openvocab_v0.1.1_gt_semantics_600_5/episodes/Nfvxx8J5NCo/12/identity.json",
+          "bytes": 864,
+          "sha256": "6c4383dd187a61123a00cefa24b0d202aad191f23b95c8e050e2babf1a5c4302"
+        },
+        {
+          "path": "results_Nfvxx8J5NCo/openvocab_v0.1.1_gt_semantics_600_5/episodes/Nfvxx8J5NCo/12/trajectory.jsonl",
+          "bytes": 211192,
+          "sha256": "ccd05fac99ad55468a6f476395da6bd04cf84c7db54840d5afd4087b247ffe27"
+        },
+        {
+          "path": "results_Nfvxx8J5NCo/openvocab_v0.1.1_gt_semantics_600_5/episodes/Nfvxx8J5NCo/13/identity.json",
+          "bytes": 862,
+          "sha256": "f6b37f0c0aa2f5a3dbd67221bc2a27fdda02f7fbf4e91829ce0b6a66c1949a2e"
+        },
+        {
+          "path": "results_Nfvxx8J5NCo/openvocab_v0.1.1_gt_semantics_600_5/episodes/Nfvxx8J5NCo/13/trajectory.jsonl",
+          "bytes": 326145,
+          "sha256": "2815828075ddb55e1a7fe525cad3750b4215e002e2d0bcc47077a17e71420d9d"
+        },
+        {
+          "path": "results_Nfvxx8J5NCo/openvocab_v0.1.1_gt_semantics_600_5/episodes/Nfvxx8J5NCo/14/identity.json",
+          "bytes": 865,
+          "sha256": "d54ec7e852e59b6bfec435a5a5fa2b3954cde2954c92d7787d0d383690e9a648"
+        },
+        {
+          "path": "results_Nfvxx8J5NCo/openvocab_v0.1.1_gt_semantics_600_5/episodes/Nfvxx8J5NCo/14/trajectory.jsonl",
+          "bytes": 401419,
+          "sha256": "2330864166842a2e4882018a89b8b2d6089d8742a3f4f342a12d4a41f0f1875a"
+        },
+        {
+          "path": "results_Nfvxx8J5NCo/openvocab_v0.1.1_gt_semantics_600_5/episodes/Nfvxx8J5NCo/15/identity.json",
+          "bytes": 864,
+          "sha256": "cb89c621f4853dc0b22a3763c1190dc974e1ebec879b5a72dcf2c9e8a69b9abc"
+        },
+        {
+          "path": "results_Nfvxx8J5NCo/openvocab_v0.1.1_gt_semantics_600_5/episodes/Nfvxx8J5NCo/15/trajectory.jsonl",
+          "bytes": 421430,
+          "sha256": "513f13871acfd8871e4a731f7f3a0b440657d5d834673fa952ef329f543998d4"
+        },
+        {
+          "path": "results_Nfvxx8J5NCo/openvocab_v0.1.1_gt_semantics_600_5/episodes/Nfvxx8J5NCo/16/identity.json",
+          "bytes": 861,
+          "sha256": "b82e514743a0cbc241b311dff5ba8988a493c2a6c0a4ba0ae708805e022749fe"
+        },
+        {
+          "path": "results_Nfvxx8J5NCo/openvocab_v0.1.1_gt_semantics_600_5/episodes/Nfvxx8J5NCo/16/trajectory.jsonl",
+          "bytes": 321166,
+          "sha256": "00b4af074c64fc0af0bd82a922a076a4a32bdb87a9c0904053323070ebd92951"
+        },
+        {
+          "path": "results_Nfvxx8J5NCo/openvocab_v0.1.1_gt_semantics_600_5/episodes/Nfvxx8J5NCo/17/identity.json",
+          "bytes": 861,
+          "sha256": "67bde97d4c48fb213afc300e42562644181f475b3cdb97bdc67871299c175485"
+        },
+        {
+          "path": "results_Nfvxx8J5NCo/openvocab_v0.1.1_gt_semantics_600_5/episodes/Nfvxx8J5NCo/17/trajectory.jsonl",
+          "bytes": 83041,
+          "sha256": "e37fabf71d66cdf54715812704d68330256e50e5c7580500f599e53a1be70764"
+        },
+        {
+          "path": "results_Nfvxx8J5NCo/openvocab_v0.1.1_gt_semantics_600_5/episodes/Nfvxx8J5NCo/18/identity.json",
+          "bytes": 863,
+          "sha256": "22f97d4703f5d08caf1a2e59e0b9755c121c8b8c8d5fd003907342659ba950b5"
+        },
+        {
+          "path": "results_Nfvxx8J5NCo/openvocab_v0.1.1_gt_semantics_600_5/episodes/Nfvxx8J5NCo/18/trajectory.jsonl",
+          "bytes": 335474,
+          "sha256": "06c032f7c87d5f28b0116d1a527dc52cfb6ee02f885b1029b281ce722dfcc258"
+        },
+        {
+          "path": "results_Nfvxx8J5NCo/openvocab_v0.1.1_gt_semantics_600_5/episodes/Nfvxx8J5NCo/19/identity.json",
+          "bytes": 865,
+          "sha256": "3e398327a2e1a4553380f1ecffceba10797adc0b3f4745f3b6808db56548fc74"
+        },
+        {
+          "path": "results_Nfvxx8J5NCo/openvocab_v0.1.1_gt_semantics_600_5/episodes/Nfvxx8J5NCo/19/trajectory.jsonl",
+          "bytes": 371815,
+          "sha256": "aa546f07363e972925aa9b1d87acc7c2d981f8225d2abb613f99a2121d65a3a5"
+        },
+        {
+          "path": "results_Nfvxx8J5NCo/openvocab_v0.1.1_gt_semantics_600_5/episodes/Nfvxx8J5NCo/2/identity.json",
+          "bytes": 866,
+          "sha256": "0e3b827cbf196d6e879be49b9f99100ebabe199df55b79d2b9a068db0f515366"
+        },
+        {
+          "path": "results_Nfvxx8J5NCo/openvocab_v0.1.1_gt_semantics_600_5/episodes/Nfvxx8J5NCo/2/trajectory.jsonl",
+          "bytes": 323874,
+          "sha256": "e958372fe2c3567d4fd67510fa0711f59b9d8bb89632e50588839e073101a1e4"
+        },
+        {
+          "path": "results_Nfvxx8J5NCo/openvocab_v0.1.1_gt_semantics_600_5/episodes/Nfvxx8J5NCo/3/identity.json",
+          "bytes": 863,
+          "sha256": "ddd2ee0c46429e2919ade462c30750477955b8de1a54b5b4f4e8b108587804a3"
+        },
+        {
+          "path": "results_Nfvxx8J5NCo/openvocab_v0.1.1_gt_semantics_600_5/episodes/Nfvxx8J5NCo/3/trajectory.jsonl",
+          "bytes": 485111,
+          "sha256": "826b313964d60ecd0f439d25d8ea022049a409bbfc3c74bee6135fbc8cc429c4"
+        },
+        {
+          "path": "results_Nfvxx8J5NCo/openvocab_v0.1.1_gt_semantics_600_5/episodes/Nfvxx8J5NCo/4/identity.json",
+          "bytes": 862,
+          "sha256": "4c72ae53ccfde1fec465b67fc96ac30102992574ce9b339a370355053685e464"
+        },
+        {
+          "path": "results_Nfvxx8J5NCo/openvocab_v0.1.1_gt_semantics_600_5/episodes/Nfvxx8J5NCo/4/trajectory.jsonl",
+          "bytes": 623772,
+          "sha256": "230f372b8fbd81ec4444d879b2bb68cd94e6541d5d917fc3d53b92458e281ea7"
+        },
+        {
+          "path": "results_Nfvxx8J5NCo/openvocab_v0.1.1_gt_semantics_600_5/episodes/Nfvxx8J5NCo/5/identity.json",
+          "bytes": 860,
+          "sha256": "6f1c10f7f15289e21f5e78d5869ca1077f855bbf4bd86d4e5e2f2ece3453fc3b"
+        },
+        {
+          "path": "results_Nfvxx8J5NCo/openvocab_v0.1.1_gt_semantics_600_5/episodes/Nfvxx8J5NCo/5/trajectory.jsonl",
+          "bytes": 212038,
+          "sha256": "189a6335f1472985f88372eb408d5321493503857d8ffecd6a5e1fbdfb523b71"
+        },
+        {
+          "path": "results_Nfvxx8J5NCo/openvocab_v0.1.1_gt_semantics_600_5/episodes/Nfvxx8J5NCo/6/identity.json",
+          "bytes": 864,
+          "sha256": "8199effbee217db7df63059d66a90fe3f44594eaa6528aff2284b6da2eee8386"
+        },
+        {
+          "path": "results_Nfvxx8J5NCo/openvocab_v0.1.1_gt_semantics_600_5/episodes/Nfvxx8J5NCo/6/trajectory.jsonl",
+          "bytes": 367383,
+          "sha256": "316b64e7f89c3e532a2099700373df3dcc9e2cae837cb7d596245e249e1f8565"
+        },
+        {
+          "path": "results_Nfvxx8J5NCo/openvocab_v0.1.1_gt_semantics_600_5/episodes/Nfvxx8J5NCo/7/identity.json",
+          "bytes": 862,
+          "sha256": "d6fb4deb20cf013130a248e061853dddec59cc2c97dfe70078e47a5f976088b0"
+        },
+        {
+          "path": "results_Nfvxx8J5NCo/openvocab_v0.1.1_gt_semantics_600_5/episodes/Nfvxx8J5NCo/7/trajectory.jsonl",
+          "bytes": 149154,
+          "sha256": "1e36c1e1a8dd353e5a0c380c0cd8502917714d6dd155da1a55881a0deedb01e4"
+        },
+        {
+          "path": "results_Nfvxx8J5NCo/openvocab_v0.1.1_gt_semantics_600_5/episodes/Nfvxx8J5NCo/8/identity.json",
+          "bytes": 863,
+          "sha256": "a606d7f5dfa2cb71fa47b998bace1823acbd0f430b84dbd6ca0c29584d1f0e5e"
+        },
+        {
+          "path": "results_Nfvxx8J5NCo/openvocab_v0.1.1_gt_semantics_600_5/episodes/Nfvxx8J5NCo/8/trajectory.jsonl",
+          "bytes": 298304,
+          "sha256": "b4a9cf423a49e5b0ba847f05507ee0cf78c976b5c04060da7458b7136c12a795"
+        },
+        {
+          "path": "results_Nfvxx8J5NCo/openvocab_v0.1.1_gt_semantics_600_5/episodes/Nfvxx8J5NCo/9/identity.json",
+          "bytes": 862,
+          "sha256": "57a91f7ae1e3cc8ed984b96bb87adc9e2bb1150b27ef846f35a41154c3c18077"
+        },
+        {
+          "path": "results_Nfvxx8J5NCo/openvocab_v0.1.1_gt_semantics_600_5/episodes/Nfvxx8J5NCo/9/trajectory.jsonl",
+          "bytes": 248806,
+          "sha256": "59827058d5b426dbdb6e359a27fac439aed656eceb5504982de5315d46f17c98"
+        },
+        {
+          "path": "results_Nfvxx8J5NCo/openvocab_v0.1.1_gt_semantics_600_5/per_episode_metrics.json",
+          "bytes": 870736,
+          "sha256": "41b17488e421e789b56346ca736f4fed9dbcda816936aa81d4ab86b771eb3cee"
+        },
+        {
+          "path": "results_Nfvxx8J5NCo/openvocab_v0.1.1_gt_semantics_600_5/scsp_decisions.jsonl",
+          "bytes": 11811312,
+          "sha256": "7774333c51b17df56cb5f189b97cf3d404819d976ec519e68ebf2065c6c7a85c"
+        },
+        {
+          "path": "source_snapshot.json",
+          "bytes": 1803,
+          "sha256": "d436136659338ec7998cb3a876970780a7478ff26a86295bf3900cb386841d33"
+        },
+        {
+          "path": "status.json",
+          "bytes": 107,
+          "sha256": "103b25d24aea3d6ed5dbbbb399aea06e781b1db1f724d30916b472452a23c7a5"
+        }
+      ],
+      "all_round_trip_sha256_match": true,
+      "scope": "first8",
+      "stage": "myopic",
+      "scene_id": "Nfvxx8J5NCo",
+      "n_episodes": 20,
+      "launch_sha256": "7f888cb60d889fb7a3c6cae375e037e5cda149dd678076ba6395057ad6a0193b",
+      "status_sha256": "103b25d24aea3d6ed5dbbbb399aea06e781b1db1f724d30916b472452a23c7a5",
+      "source_fingerprint": {
+        "pbsp/__init__.py": "204a77e8c809c9b8f38114173d35f5bcf7585e9893383c3eef5b2dca30aeb619",
+        "pbsp/adapters/__init__.py": "9da64df015e12dd3130227acc397bd90bf58d5cd5f4c52108dfb9fc48830e12d",
+        "pbsp/adapters/detic.py": "46eb4c882bf3c28a72c15b2daa5b3657e9231674098bb5f57a68b1c0970f5f81",
+        "pbsp/adapters/detic_perception.py": "9e4bba49cf509fc1475ad3c853a857a76557412b2d8ca6aa34d80fb3542297e3",
+        "pbsp/adapters/embodied_splat.py": "e7c8d3d17e002cd4138b84dda63dce1d93f082d08692f45f7df2acbf420cd42c",
+        "pbsp/adapters/embodied_splat_config.py": "de4b1ff0bba5038edd83dfb3abf12ea51d9b432d32593aea49b967eb18682bda",
+        "pbsp/adapters/embodied_splat_model.py": "4e1523322682695d0044ae1330a11563645a8c1612cb2a6c6e83ace2fced9f96",
+        "pbsp/adapters/embodied_splat_query.py": "633d74c8faff8780c01a0d8bee183cb3ada55ae2907a235e8f302ec07813b034",
+        "pbsp/adapters/embodied_splat_semantics.py": "60ba26ecfe9a50acab3fc5c6161a734efcad6e335a39564d970604de490e8c4a",
+        "pbsp/adapters/frontier_runtime.py": "167752c785efd34811ad6de36d8d75869b5550b0293a54ffb8e024ef3e1bec15",
+        "pbsp/adapters/geometry.py": "ca53f5c893e79069329ffd1a46e9f892834390aae284fe7c8a9854df571a8be6",
+        "pbsp/adapters/goat.py": "5263ebab4c71a4f219eb0748025985b08a86f21bc5cafe490dcfccd808f44fd8",
+        "pbsp/adapters/habitat.py": "337e53043f93e041f980e63f0472ba5d448dc3cd8d04c15a223975e16fde740c",
+        "pbsp/adapters/habitat_config.py": "c406a6644561e06e9ee36132d90a5463851ef2fdacbfc978538b47f5d409116d",
+        "pbsp/adapters/lagmemo_agent.py": "0748f8f8df5b464d051502476e6f98f1fc5c4801199fa201c388527b10853992",
+        "pbsp/adapters/model_resources.py": "560697e24cef3a764fb27ae76b42ba2942ef8ddc2b23025fd9a092f4fc3c9cf1",
+        "pbsp/adapters/objectnav.py": "41a3266bec982b2401708602b379f1c4cf0a8cf2a0c44b875cdd84afc9b7a911",
+        "pbsp/adapters/openseg.py": "0d437cd2546c92cea07382acfd68f6790bf06dac21cf630e27513f69db2fc136",
+        "pbsp/adapters/perception.py": "dffaa6ab8a8052e5184bb8a25da74279ff8c81b747a9faa98325a8bd7f6b5fd5",
+        "pbsp/agent.py": "3341421bae243179f14ba34d337c7ffb1c4d5b0e7d97b3a462de44e3a5ceff2f",
+        "pbsp/mapping/__init__.py": "7daf7c588784be377fec79a1afc7136a18a02f2b4a7891801e601368edfc99c2",
+        "pbsp/mapping/encoder.py": "ce6cadcb4f0eee4045bbd40e090123319a54915ba9eb1772323155988470eddf",
+        "pbsp/mapping/fusion.py": "85428de5b8a67a1359222be4696daf28b6824454b27e39842786663c304aee94",
+        "pbsp/mapping/gaussians.py": "273f2b4d2f59bce4b54b73caa3697e76c12e23001a9ac0d67a0b3a90b34a0a8a",
+        "pbsp/mapping/geometry.py": "20c327cde4e2c6b066e79bc352770cf4fd2e27a50411ddf021878c32c9d58386",
+        "pbsp/mapping/keyframes.py": "91c4ad0c8a42ea2d57ba44589d5788bf0bf62c2f31d2bb344f96934e45da4fe3",
+        "pbsp/mapping/mapper.py": "fe7f8f804d74c92b43ace226a7ad846886891bb60f9e0b5327e95acf47d4e088",
+        "pbsp/mapping/memory.py": "9451198207e688be233ec4a28424eea55201d73e9403b558df01e4573b82d5d2",
+        "pbsp/mapping/model.py": "d6fe0fdd4ce3cbe6421d508eba97d2b45af314cfd0f490d8300c30c91421bfa6",
+        "pbsp/mapping/resources.py": "0bf26a582b0cd96cf6b7965f33abba2dcea6c38d06f136a2997178441c8543d8",
+        "pbsp/mapping/spec.py": "3c2d7f684bfa53508e64c9de3ae601c30169da55e27b6e898c67b98737bca894",
+        "pbsp/mapping/types.py": "967b1e81b5859265d0c677c619f94b6f13c59f1043bd50adaba57790850b9bf3",
+        "pbsp/navigation/__init__.py": "5daf8f4b4d7e1691e4ac582bf69e14ab0281c58a07859944f70cf8fcca2ed1c8",
+        "pbsp/navigation/backends.py": "5822dc3df44896050b66dc11b546ed9715f1563313076339434402cbc582360a",
+        "pbsp/navigation/blp.py": "fedf1b03677d45e4ce0860af85b86f6a05faf024489250d2c437b59f25a2cd50",
+        "pbsp/navigation/blp_parameters.py": "039c6a660ab2a7cf2b6e9e78e810bfb44f32731e6c52a9194dc20f82daa63bad",
+        "pbsp/navigation/candidates.py": "7dab0a30a1933c6b1d1e3b033dc38704aa05ee6fc6adf0858b76d91bc686dfef",
+        "pbsp/navigation/cooldown.py": "aca6aed0fe4b14fe1d38486a4e29d905adf84dfc3edecd636d36bbaff48f0d55",
+        "pbsp/navigation/distance_cache.py": "4dda0827c060c63ffc6f0519a16c4a089d5333f3bf3ed6ade0dee2abf2ff821a",
+        "pbsp/navigation/evidence.py": "18346a1a823adb1f01263b846b301a4a58ff2c2c1fccf2c6fce101799336c8d0",
+        "pbsp/navigation/geometry.py": "993e4e1f6447c565fdc6a421f60e7c17b87421fd3f641962131e80a626e47b46",
+        "pbsp/navigation/local_map.py": "574442e85e4a526ae942e7e1749cd44edba62b51d6b47521ee5730285b575e39",
+        "pbsp/navigation/navigator.py": "c3e7794ae1c6e9017cf412c69dc73e8804cbea9fc35b4a32bc9a131265913125",
+        "pbsp/navigation/planning.py": "4fcaa2712dd19d61942a1a165ca9a462f37e0fcc4b678613de32f33346ad7268",
+        "pbsp/navigation/policy.py": "ec6b491a21950eb240c31acbc8fa145c1201cd3de2ac47db8ebf2ff070ed1250",
+        "pbsp/navigation/ranking.py": "35cf5a77645167e50278b432d4bd4763e898c2c41b1150e42b0d8f7f9d11e956",
+        "pbsp/navigation/recovery.py": "90c9e6905c1d80fc59d9811a345b871d5a02de82f44a5708b493af30749420d7",
+        "pbsp/navigation/suffix.py": "75b39c40026035e4b84172313d4cce4dddbbda89fb94fe7216c4d34ea7e01366",
+        "pbsp/navigation/types.py": "132954dac1c4a0c9051fd7beda6be56b77b95767152ca0252f57c5c494468cad",
+        "pbsp/navigation/verification.py": "a2592b9d4540445aa1a19b04f68305645a2290145a93b7b3ef38079f9bee2dd6",
+        "pbsp/query/__init__.py": "d4f3edd763859261248576b36d9fa0a739e734781444d117898cdac3c8442cff",
+        "pbsp/query/engine.py": "2a7bf07ac1ffea1797c33b45a708c3ce9d8bef94d5581642370e64acd85c7f57",
+        "pbsp/query/service.py": "dd113a97f1c948960612aa8f678e73bdf9f59ec2fdf7d6b5da41b3e88c77dbf9",
+        "pbsp/query/types.py": "e02fd98fb98b0f56b36df8d42b48ca7305dcd832af62526bf8586565472f60df",
+        "pbsp/runtime/__init__.py": "692e3c967f13c099aad4c47b0e118d3a9cba418b412ea2507f3e95f2230947d9",
+        "pbsp/runtime/bootstrap.py": "9cf48e1ff6742f138e4732e21bc0fbce334a838cfb6fa8061b6afbdd7f3b1028",
+        "pbsp/runtime/config.py": "e97c62f8d3d55bed716dc80f226ca6ceae10773a6d11059d14f5c2f6e6e4dbec",
+        "pbsp/runtime/detic_bootstrap.py": "ab5f73a7381a1116a47cf23da04d21eb1dff301fad2afa0d82d626e70b0d6a66",
+        "pbsp/runtime/environment.py": "770a7db9c1f66db2a3527c300f575d6b9dba902244359299a50d8e3ee1f9fb1e",
+        "pbsp/runtime/external_sources.py": "a86d8c91086a0c5c859c10902ecd97b517768ec8230366fbef38880f776c7b29",
+        "pbsp/runtime/factories.py": "c019f84f887539948e69f386902fd2bb03240fab21a97042eaadcf2226696f3f",
+        "pbsp/runtime/launch.py": "987c42b2021439b22d7b23209eaa22c068efe9ed71f98108cd1246c9cda4c444",
+        "pbsp/runtime/mapping_client.py": "aabad2585d94350d27a93db2325ee4a5f390dd85c3624720972b24912fcc6651",
+        "pbsp/runtime/mapping_worker.py": "769d3c0504f27f82f5c97bedeea1de2eea61daf7a5d4ec107eb9b4412ecf597f",
+        "pbsp/runtime/model_assets.py": "b2b224827550ec24359cae84b4e4474c754125e025104dfe5a6189bf7035d1a2",
+        "pbsp/runtime/monitor.py": "68624b329253dcebb6fb698811666fce6550df3c9ad684d8e60c1f515a7ede47",
+        "pbsp/runtime/navigation_worker.py": "4db3707c83de4b9a643a863d020f25fc8551e158ce68a0482b4d079223ee092b",
+        "pbsp/runtime/plan.py": "026654a099c329cbc578ef560e0b0db5f0413ede5dd657a8f2d3c40122eb3be0",
+        "pbsp/runtime/protocol.py": "a0651334ff8ced502f28282e44edf0117b7eaca82b086dc6f423b55349a221a5",
+        "pbsp/runtime/resources.py": "cd593452dfbb7d3e2984b6490a5ef8d50c32e51c4375a138f70b3399f5a0b13a",
+        "pbsp/runtime/source_provenance.py": "4b3ec3f14f1784756b74e8002a09ab4674a55c4d56048d0f24b3e7dac80e14a1",
+        "pbsp/runtime/source_snapshot.py": "682e2725d0039d1f837e3cebee38676963f5bdc08e75b7879d13443b0d0675a4",
+        "pbsp/semantics/__init__.py": "c4149e1cb17463ba4e13907373aaebb70690a8f3a8c9c305d402c3f8689cf234",
+        "pbsp/semantics/features.py": "74ea56f1b06a0cd7f60b979ddff702617c788ba29bef3254df9bffd6dd7ab4ae",
+        "pbsp/semantics/types.py": "51194de8c13c46e807727c0e7d982b4da535234b21590200dbddd395f6811088",
+        "pbsp/settings.py": "90d613c453f547e209478b9d62892ba09052a92c8e4e1c1c151faba543867535",
+        "pbsp/types.py": "6d10753a90d4f69ff01aa9f0d98b15e90abeffe5ed47f724b74019b8d2f58520",
+        "experiments/__init__.py": "816019945af208d4e795df1adc9776580427112752b2e9665c3e5e37f18ec628",
+        "experiments/_environment.py": "9a46732dc33c800f1d577b257b9915094f187228b2e34fe920bfc418b27c9a82",
+        "experiments/_episode_sources.py": "beaf2b1cb2ff975fdd462383785cbb28490e90357b510c8ec5abb7ee69a4a9ba",
+        "experiments/_sources.py": "c1c3d216fa0c3d6ef672fd6838dec22586c155ccf57187773032afc80f517732",
+        "experiments/blp_calibration.py": "3b45c5c5376501712e5d4394eabbeeb400b8690177512be43357d3644ebfe141",
+        "experiments/blp_observer.py": "12dd680b3f4d102fd70277a193d1c85ad5deb219dfb04846e3060df9304af9fb",
+        "experiments/check_install.py": "6cfc0243e1ce4ff3a97eb8b4473d1ac4bdeadab75a0b43dbaf3778cc94462d01",
+        "experiments/dataset.py": "57e1300a6aa788f9ab42469ba6ee274c2fe73b704a39a2af5c6f16dabeba6f2a",
+        "experiments/evaluator.py": "314f72098aeac31b49c2ba8798464bf00a9113204af096aa174da5d0b0e5c6f8",
+        "experiments/exp4_collect.py": "7d5a35c03a4c962f1d47881db306af3c8c6a515491ae26c71de057f43a6ac6a5",
+        "experiments/exp4_fit.py": "8c0300b362394b0042373b4ae2450e20cfd6a0172584d6d9805c41607117ad12",
+        "experiments/exp4_prepare.py": "91ebd3c5d571fbffe16af73d629861999f757247f891fe9798923a40e1565693",
+        "experiments/exp4_regression.py": "e95a3f9e9f8d6bcbc63478ce0bab5f5b791555f569de0c3bf7ec2d8dde52450c",
+        "experiments/export_offline.py": "e09eb4001a7540f65729c54042cd1bd909bda6135e5549ed84cab0edc3cd8989",
+        "experiments/identities.py": "863283a9f7b8f881ac1b676888638160974da62258f6ea9bfc005647e437d2fc",
+        "experiments/manage.py": "8741e76407e456f19dcba0b9c8ee48f7bdaef850d13b2c581780164b20092a64",
+        "experiments/metric_protocol.py": "c27d45e28b67b108d3bb899bf2d9ac9a2fe4979cfe911ed515d71bec69eca7c6",
+        "experiments/metrics.py": "e34ddd5a34f6405833cf2bc84de3db5b51cb3fac02bcbfdbf356d7c1604fafd3",
+        "experiments/mfmon.py": "612a9f7564a020852749e3f1cf6c84a280274fab6f3e406c14497b8844a94cc8",
+        "experiments/mfmon_audit.py": "3e6e20da7046976139b3163717f61349b3b6188571e9c46f4fd6e8d1c852c10d",
+        "experiments/mfmon_categories.py": "a29254c69e49212c616ab27c140ae06e67673883b7da9d0ee11756767d904b74",
+        "experiments/mfmon_protocol.py": "79149deeec09b3324919efb9642ee0778ede2b30796ce3a78d82d373aeadb6e8",
+        "experiments/objectnav.py": "6d5466f809dce5cb96144d808b9ffbea8a7c476911f504b45573a0928b95134c",
+        "experiments/objectnav_data.py": "7a4aa6815ec9610003d16fbe3dfb062aa3605155c4fc11e73935c54f5c7fed7f",
+        "experiments/objectnav_results.py": "550f98ae0319b9e5c8f603cfc1a43e9a210c5b0f0276af370477687d51c85de4",
+        "experiments/planning.py": "daf6c078d59ac88110e827778eefea6a863b2e1be76ddc6d09f6238f3031f528",
+        "experiments/prepare_data.py": "305f739e1584b67029d5c290693fb8fbb263d67dba6fdcd8ab82b6738ca6caa4",
+        "experiments/prepare_dependencies.py": "9d98391ed62a5cc51234bf6542b96883c1e936fa79df988dfe9c150b9a2e491b",
+        "experiments/prepare_models.py": "19b794270e3d1c11643a33193d3a29dac6cda76f60b90e369d07a021b9a0be44",
+        "experiments/prepare_objectnav.py": "f7c880464a58a6f77f7cd1e8db2bb0165a2f49ebbae576fcd0d95b9d2e9b2941",
+        "experiments/prepare_runtime.py": "8eeba33f227cd5052f8774db3c4fbc97b464fe006fa668e39673c78685ca4642",
+        "experiments/recorder.py": "734c34f6b84701b4cee07492e8efdb92978d75fb1e6271f779fa22302ed9b432",
+        "experiments/run_records.py": "d8e32a9c4ae3e1db09061216ccbbcf978223d457f3d5341e2f82266030b7ed9a",
+        "experiments/runner.py": "13fb31e3ad79e20671dc80ae0521130a510410abce92496690a381df3788bca3",
+        "experiments/setup_envs.py": "8118feac7ae184ae3f4604f45c208dde005aa5c1ed488661e2194c29f2dbdd22",
+        "experiments/setup_mapping.py": "6980de18ac0bbc870cb39c9c9a76747e321d4b5a716de61b2c38897a30403f8c",
+        "experiments/setup_navigation.py": "0019a8575433cbec906a2ee5bb9e8957f63557e8d0e6334e9523e05d2a365525",
+        "experiments/summarize.py": "9ed185509a91ba51b5fc3536e7b8b9cb50b27e43ca9121dd1275793809ca14c0",
+        "experiments/telemetry.py": "17d197446a87b2dd12b6a5f55e0ff9a2d2053dd60567b176eab5306d41f13235",
+        "experiments/test_blp.py": "04f4013de3e42c4b1dfdef8c2eea5716d1de1b78bbdfa0db8299bd32e5e8e5ee",
+        "experiments/test_blp_depth.py": "d736a49110c73a04d347980f58200a75c46e26bc6e0561f15a13a7f6360562aa",
+        "experiments/test_blp_identity.py": "e7b6de94d6ed893ef53a4930f2f7ddd8a88c788abd7735ecfc2e88d1b9237d7b",
+        "experiments/test_blp_parameters.py": "c8579f7bc4fe31d7d4720e836219b4009150f90facce0b0430e8d9a47c3a6544",
+        "experiments/trajectory.py": "9f3e93c9a93466a290384b943d92f606d52cef6d2334aa74f8c8fac3c0106efe",
+        "experiments/visualization.py": "81da6adc588613130aa8cf65ec3439a33696c07c43bdbb719f0141ff579f947f",
+        "configs/categories.json": "30a17d48fa4926fa2cfbf91cf509f95f0c39544b2df20b068b8393732398935b",
+        "configs/datasets/hm3d_2mon.yaml": "0d39eb01e38a0c523f12191c69d4b11297befb1c4e7750e325a38523e00b2c32",
+        "configs/datasets/hm3d_3mon.yaml": "03b0fd29f72f19e3f97606b5866993511ae7564a2261fabef8f7e1d25c3b24d0",
+        "configs/datasets/hm3d_4mon.yaml": "b9ca9c30a86fd4f21a2c96f0d0d32c358e447db17f3b6c39d2e2ae617d05bea9",
+        "configs/datasets/hm3d_mfmon.yaml": "1e0b6b9bb61b375c4a79082fdf86251d70113b001e865bd7d78b65fba9a15e7c",
+        "configs/environments/mapping/linux-64.lock.json": "eff5e7d28ad212aa6f2a7784ff4f972af3d160bc6caf288af74ea87ad1414eb8",
+        "configs/environments/navigation/linux-64.lock.json": "9a5835cfdb3aee1f148d1aedbc228a7d861936725cf171bbde2b28e01ab8f180",
+        "configs/evaluation/mfmon.yaml": "ab30b6c6b6c252802b42e8223b7bd6f3a0e2094f15adf96ab75ce4347b87a318",
+        "configs/evaluation/standard.yaml": "209b714fd79dc9429fc5587452c26fdcfc9377a56ecf09647ba48089eb6d1019",
+        "configs/experiments/exp4_calibration.yaml": "f17d97779b23e60716518ca7b43c3b72e921bbeda9ac5639cb8693f256b57387",
+        "configs/experiments/exp4_full.yaml": "7697ad382193f4a929858a72b8f451371a3682f5ccb8c2a090a85df2dfa56e37",
+        "configs/experiments/exp4_myopic.yaml": "2ffe78de63e194b98858ff9da17b828ac38e5051f88ff9cce06ae63ec33c090d",
+        "configs/experiments/exp4_nearest.yaml": "70c0c83cd7c00b1eb4655bcea7aa0fc370045bb4e29dd477f43bcc38cdc3589d",
+        "configs/experiments/exp4_suffix_only.yaml": "1fd713eb5bd335d93f68a014b12d9fd28e81a2e07e35f10bd025df9931a70ced",
+        "configs/experiments/hm3d_2mon.yaml": "b49212f7b8a6139bf9e6c51ac3f035eeec454f021a7d32cff454177de36985ef",
+        "configs/experiments/hm3d_3mon.yaml": "28cc32f1691c1d805f6f416b6bdc86a1b387766fbe95616f574916351d773309",
+        "configs/experiments/hm3d_4mon.yaml": "ebfaf6e2a963700e5d7013211b2bd777ffe4a59e4feb2c1ae55ce5dbdd85fbd5",
+        "configs/experiments/hm3d_mfmon.yaml": "9791ebcfb17d4681927a37e6ec7103dbeb398e848eeed00c06c38254d11b4c4c",
+        "configs/habitat.yaml": "968d892eda8b5379209c546fd5cab816c1f9f3e61442992170c4bece3250a2e8",
+        "configs/habitat_objectnav.yaml": "3eb0871ba35b481a3280984d478a8b2265716235d6ff6d4d3d3f009d5adf4e1b",
+        "configs/methods/exp4_calibration.yaml": "3f544437bc4b67dcedf103709bce4baac4c3483429aeeacdcadd537630d842b2",
+        "configs/methods/exp4_full.yaml": "c7629726203cfa58ecadf15019e0101595bbf0dada9912e9205551e808575d2c",
+        "configs/methods/exp4_myopic.yaml": "593f9203db9932f179bc546454a52c513dea90d5e59c26aeb9fd9baf53b978d2",
+        "configs/methods/exp4_nearest.yaml": "e6a371707d1744455a8c253ca3cec7549f75d983c5f2af643f88e58a21f3dfa6",
+        "configs/methods/exp4_suffix_only.yaml": "55efe0475021171cac1796ee2333be2fb38c73a7e680230e75db22c5b1a08f33",
+        "configs/methods/full_pbsp.yaml": "9f051bc88d6f8dc0f99549a80ca4eb2ab364aad0fc912ac6d827926cdcffd20a",
+        "configs/models/embodied_splat.yaml": "cf4f716471801d9605b64bf8edb99a6bd91ef74c65876f9e68b25ae488d801d7",
+        "configs/models/network.yaml": "de452ad0cc80764dd0f828dae09f263ea4ca16d5a5c6565af7b350cd5d17f272",
+        "configs/navigation.yaml": "f373b8d1dd2c37c8ba89330c2b91ddfe422d63ee01fb6e021f41e587d8905110",
+        "configs/resources/datasets.json": "cf30b942450d05e4425c0854a969a13c739a771be074c4b58e1d61941914b6a9",
+        "configs/resources/models.json": "f21ffdc59735aaf84fe5a0a4ebe99f35261f6dd45a643387900d003b6b7ac4a6",
+        "configs/resources/superglue.json": "d98535e089344b72408937ef2bb133eaead425f261e7db2ee75d5e72c9f4ce3c",
+        "configs/runtime.example.yaml": "0757cbb0615ef6cbb51791215db1b8b6cc88284ec28f9a6a51deb956f37875bd",
+        "runtime.exp4.local.yaml": "ed47810f08afd80d5059cfff4c437b91ffa92d653abaa1949e920e8e7041854b",
+        "results/exp4/meta/folds.json": "e5984774614e3eef936728637c494a88f11269bf1508d719e87cf17879f2590b",
+        "results/exp4/meta/2mon-identities.json": "0f1bdd3404e6fb59d7723d703aa2a478e3bca115a58566972835315c0f0a1ead",
+        "results/exp4/meta/3mon-identities.json": "98baa13355e8dd223eaefdeec7f48964bb23f44d2b02cdba4261add62b594ac1",
+        "results/exp4/meta/smoke-20-identities.json": "30bf91b382a918be8359d66b63fcdece026462c703fd04b868fd355b56aeb921",
+        "results/exp4/meta/protocol_decisions.json": "c4596befc6337dab5a9963c69f4416992f7b0108f8d0c69c9e77cfa8f39c69ed"
+      },
+      "parameter_sha256": "e1d75f3c9503c7439467748fc97be6ae2ad450c429f40dc7235b1564ff7852ae",
+      "archive_helper_sha256": "8e7ca89e1260feede3dfe676303a28a20fa954bcd1f7bed8077b8cad69387f80",
+      "reused_original_full_archive": false,
+      "checked_at_utc": "2026-11-13T08:26:55.058871+00:00"
     },
     {
       "native_run": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261113_134511_954267_exp4_myopic_exp4-myopic-a3-first8-QaLdnwvtxbs",

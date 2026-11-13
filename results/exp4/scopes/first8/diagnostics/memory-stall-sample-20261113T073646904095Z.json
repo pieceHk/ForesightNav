@@ -1,0 +1,87 @@
+{
+  "at_utc": "2026-11-13T07:36:46.903277+00:00",
+  "elapsed_seconds": 20.021297317987774,
+  "before": {
+    "at_utc": "2026-11-13T07:36:26.883190+00:00",
+    "available_gib": 39.47581481933594,
+    "pressure": {
+      "cpu": "some avg10=0.00 avg60=0.12 avg300=0.16 total=41059620262\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=0\n",
+      "memory": "some avg10=26.63 avg60=26.37 avg300=20.51 total=2949290475\nfull avg10=25.31 avg60=25.59 avg300=20.24 total=2848408060\n",
+      "io": "some avg10=24.55 avg60=17.89 avg300=6.55 total=1405048138\nfull avg10=23.25 avg60=17.04 avg300=6.24 total=1347079784\n"
+    },
+    "THP_defrag": "always defer defer+madvise [madvise] never",
+    "vmstat": {
+      "pswpin": 3762682,
+      "pswpout": 22512146,
+      "allocstall_dma": 0,
+      "allocstall_dma32": 0,
+      "allocstall_normal": 25477,
+      "allocstall_movable": 7457434,
+      "pgsteal_direct": 142189594,
+      "pgscan_direct": 3858760644,
+      "pgscan_direct_throttle": 12784,
+      "compact_migrate_scanned": 23031251351,
+      "compact_free_scanned": 96112216210,
+      "compact_isolated": 5276751975,
+      "compact_stall": 12965074,
+      "compact_fail": 12633905,
+      "compact_success": 331169,
+      "compact_daemon_wake": 7897,
+      "compact_daemon_migrate_scanned": 117211707,
+      "compact_daemon_free_scanned": 1569979140
+    }
+  },
+  "after": {
+    "at_utc": "2026-11-13T07:36:46.903277+00:00",
+    "available_gib": 39.30808639526367,
+    "pressure": {
+      "cpu": "some avg10=0.00 avg60=0.09 avg300=0.15 total=41059680651\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=0\n",
+      "memory": "some avg10=26.32 avg60=26.39 avg300=20.91 total=2954758821\nfull avg10=24.82 avg60=25.38 avg300=20.55 total=2853576279\n",
+      "io": "some avg10=25.64 avg60=20.15 avg300=7.83 total=1410417321\nfull avg10=24.04 avg60=19.11 avg300=7.45 total=1352137886\n"
+    },
+    "THP_defrag": "always defer defer+madvise [madvise] never",
+    "vmstat": {
+      "pswpin": 3774431,
+      "pswpout": 22533584,
+      "allocstall_dma": 0,
+      "allocstall_dma32": 0,
+      "allocstall_normal": 25477,
+      "allocstall_movable": 7457437,
+      "pgsteal_direct": 142193702,
+      "pgscan_direct": 3858792099,
+      "pgscan_direct_throttle": 12784,
+      "compact_migrate_scanned": 23031648402,
+      "compact_free_scanned": 96112227282,
+      "compact_isolated": 5277346556,
+      "compact_stall": 12965083,
+      "compact_fail": 12633914,
+      "compact_success": 331169,
+      "compact_daemon_wake": 7897,
+      "compact_daemon_migrate_scanned": 117211707,
+      "compact_daemon_free_scanned": 1569979140
+    }
+  },
+  "counter_delta": {
+    "pswpin": 11749,
+    "pswpout": 21438,
+    "allocstall_dma": 0,
+    "allocstall_dma32": 0,
+    "allocstall_normal": 0,
+    "allocstall_movable": 3,
+    "pgsteal_direct": 4108,
+    "pgscan_direct": 31455,
+    "pgscan_direct_throttle": 0,
+    "compact_migrate_scanned": 397051,
+    "compact_free_scanned": 11072,
+    "compact_isolated": 594581,
+    "compact_stall": 9,
+    "compact_fail": 9,
+    "compact_success": 0,
+    "compact_daemon_wake": 0,
+    "compact_daemon_migrate_scanned": 0,
+    "compact_daemon_free_scanned": 0
+  },
+  "settings_changed": false,
+  "signals_sent": false,
+  "native_states_modified": false
+}

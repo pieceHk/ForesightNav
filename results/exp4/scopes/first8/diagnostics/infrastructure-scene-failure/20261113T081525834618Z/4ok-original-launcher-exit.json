@@ -1,0 +1,8 @@
+{
+  "pid": 2197428,
+  "start_ticks": "35305272",
+  "wait_status": 0,
+  "returncode": 0,
+  "stat_sha256": "4b8670fd8dcb5685e4deaa660b84c472c47a33604f627d10f9247d4e3d2815c1",
+  "source": "/proc/PID/stat field52; original parent remains stopped"
+}

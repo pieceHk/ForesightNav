@@ -1,0 +1,688 @@
+{
+  "created_at_utc": "2026-11-13T07:53:58.149111+00:00",
+  "boot_id": "23443655-6f2f-4063-a412-e255f3a91e62",
+  "target_user": "qtl",
+  "target_uid": 1008,
+  "target_pgid": 2281367,
+  "leader": {
+    "pid": 2281367,
+    "ppid": 2266901,
+    "pgid": 2281367,
+    "start_ticks": "36290054",
+    "uid": 1008,
+    "state": "S",
+    "comm": "Rearrange Tasks",
+    "command_sha256": "bdf19510f5f1adab8ae1bb53100a96efcffc936e739fb9f684bbe930540257eb"
+  },
+  "members": [
+    {
+      "pid": 2281367,
+      "ppid": 2266901,
+      "pgid": 2281367,
+      "start_ticks": "36290054",
+      "uid": 1008,
+      "state": "S",
+      "comm": "Rearrange Tasks",
+      "command_sha256": "bdf19510f5f1adab8ae1bb53100a96efcffc936e739fb9f684bbe930540257eb"
+    },
+    {
+      "pid": 2281696,
+      "ppid": 2281367,
+      "pgid": 2281367,
+      "start_ticks": "36292341",
+      "uid": 1008,
+      "state": "S",
+      "comm": "python",
+      "command_sha256": "0fa2ad448036bb6d0d7dec00864a304acda7bdc1af9979e2296fd8158575db5b"
+    },
+    {
+      "pid": 2281722,
+      "ppid": 2281367,
+      "pgid": 2281367,
+      "start_ticks": "36292585",
+      "uid": 1008,
+      "state": "R",
+      "comm": "python",
+      "command_sha256": "8e122dedbc80a07a19840dbfcd9c9335478b3c12e114f414f5c4c4c2dff84b01"
+    },
+    {
+      "pid": 2281764,
+      "ppid": 2281722,
+      "pgid": 2281367,
+      "start_ticks": "36292908",
+      "uid": 1008,
+      "state": "S",
+      "comm": "thor-Linux64-f0",
+      "command_sha256": "bf1f9864efb582b21018e96a0fa21c74a753fbed120295ec1915950f5230310a"
+    },
+    {
+      "pid": 2281769,
+      "ppid": 2281367,
+      "pgid": 2281367,
+      "start_ticks": "36292972",
+      "uid": 1008,
+      "state": "R",
+      "comm": "python",
+      "command_sha256": "167d741bf849c61291290dd6298448dbd80f37bfaf630d49eb0c97d754069768"
+    },
+    {
+      "pid": 2281927,
+      "ppid": 2281769,
+      "pgid": 2281367,
+      "start_ticks": "36293265",
+      "uid": 1008,
+      "state": "S",
+      "comm": "thor-Linux64-f0",
+      "command_sha256": "bf1f9864efb582b21018e96a0fa21c74a753fbed120295ec1915950f5230310a"
+    },
+    {
+      "pid": 2282063,
+      "ppid": 2281367,
+      "pgid": 2281367,
+      "start_ticks": "36293339",
+      "uid": 1008,
+      "state": "R",
+      "comm": "python",
+      "command_sha256": "0f9e2cf3dec92249638f1ce03cd1540c9ddd5d5b8ef890dd675198ae0a257d04"
+    },
+    {
+      "pid": 2282095,
+      "ppid": 2282063,
+      "pgid": 2281367,
+      "start_ticks": "36293624",
+      "uid": 1008,
+      "state": "S",
+      "comm": "thor-Linux64-f0",
+      "command_sha256": "bf1f9864efb582b21018e96a0fa21c74a753fbed120295ec1915950f5230310a"
+    },
+    {
+      "pid": 2282231,
+      "ppid": 2281367,
+      "pgid": 2281367,
+      "start_ticks": "36293708",
+      "uid": 1008,
+      "state": "R",
+      "comm": "python",
+      "command_sha256": "848c3ba44725a452a713cb2936c4921dde682249935d81d4537ff45dc466c167"
+    },
+    {
+      "pid": 2282298,
+      "ppid": 2282231,
+      "pgid": 2281367,
+      "start_ticks": "36293991",
+      "uid": 1008,
+      "state": "S",
+      "comm": "thor-Linux64-f0",
+      "command_sha256": "bf1f9864efb582b21018e96a0fa21c74a753fbed120295ec1915950f5230310a"
+    },
+    {
+      "pid": 2282448,
+      "ppid": 2281367,
+      "pgid": 2281367,
+      "start_ticks": "36294073",
+      "uid": 1008,
+      "state": "R",
+      "comm": "python",
+      "command_sha256": "09d9899a0e8af7d781c27128226e5423bddc82cfe92d744b9361020bc9565448"
+    },
+    {
+      "pid": 2282487,
+      "ppid": 2282448,
+      "pgid": 2281367,
+      "start_ticks": "36294399",
+      "uid": 1008,
+      "state": "S",
+      "comm": "thor-Linux64-f0",
+      "command_sha256": "bf1f9864efb582b21018e96a0fa21c74a753fbed120295ec1915950f5230310a"
+    },
+    {
+      "pid": 2282628,
+      "ppid": 2281367,
+      "pgid": 2281367,
+      "start_ticks": "36294468",
+      "uid": 1008,
+      "state": "R",
+      "comm": "python",
+      "command_sha256": "23a6cac2a648d699eabf57ddaedd584f50a919cd5ac0fd9b57d849ffecaf723a"
+    },
+    {
+      "pid": 2282644,
+      "ppid": 2282628,
+      "pgid": 2281367,
+      "start_ticks": "36294784",
+      "uid": 1008,
+      "state": "S",
+      "comm": "thor-Linux64-f0",
+      "command_sha256": "bf1f9864efb582b21018e96a0fa21c74a753fbed120295ec1915950f5230310a"
+    },
+    {
+      "pid": 2282841,
+      "ppid": 2281367,
+      "pgid": 2281367,
+      "start_ticks": "36294866",
+      "uid": 1008,
+      "state": "R",
+      "comm": "python",
+      "command_sha256": "7a3b8c82270fdbe0e5cb37af9a652f7807a7ecf981d8ade2b498b577f645dfd4"
+    },
+    {
+      "pid": 2282873,
+      "ppid": 2282841,
+      "pgid": 2281367,
+      "start_ticks": "36295179",
+      "uid": 1008,
+      "state": "S",
+      "comm": "thor-Linux64-f0",
+      "command_sha256": "bf1f9864efb582b21018e96a0fa21c74a753fbed120295ec1915950f5230310a"
+    },
+    {
+      "pid": 2283011,
+      "ppid": 2281367,
+      "pgid": 2281367,
+      "start_ticks": "36295255",
+      "uid": 1008,
+      "state": "R",
+      "comm": "python",
+      "command_sha256": "7be046a552b3b0e9db6531ef17af3bf2d4e95291fc4294f813b65f103573558b"
+    },
+    {
+      "pid": 2283041,
+      "ppid": 2283011,
+      "pgid": 2281367,
+      "start_ticks": "36295569",
+      "uid": 1008,
+      "state": "S",
+      "comm": "thor-Linux64-f0",
+      "command_sha256": "bf1f9864efb582b21018e96a0fa21c74a753fbed120295ec1915950f5230310a"
+    },
+    {
+      "pid": 2283182,
+      "ppid": 2281367,
+      "pgid": 2281367,
+      "start_ticks": "36295645",
+      "uid": 1008,
+      "state": "R",
+      "comm": "python",
+      "command_sha256": "fc4eb431d472a59f17a970785dcf8fbf802adcd5e4709dd75073ad4ad238289b"
+    },
+    {
+      "pid": 2283197,
+      "ppid": 2283182,
+      "pgid": 2281367,
+      "start_ticks": "36295963",
+      "uid": 1008,
+      "state": "S",
+      "comm": "thor-Linux64-f0",
+      "command_sha256": "bf1f9864efb582b21018e96a0fa21c74a753fbed120295ec1915950f5230310a"
+    },
+    {
+      "pid": 2283352,
+      "ppid": 2281367,
+      "pgid": 2281367,
+      "start_ticks": "36296049",
+      "uid": 1008,
+      "state": "R",
+      "comm": "python",
+      "command_sha256": "207598a7b86fb2696de5794c083371d5a87b7bd26140f1b63ad79ce5e03acb0a"
+    },
+    {
+      "pid": 2283394,
+      "ppid": 2283352,
+      "pgid": 2281367,
+      "start_ticks": "36296371",
+      "uid": 1008,
+      "state": "S",
+      "comm": "thor-Linux64-f0",
+      "command_sha256": "bf1f9864efb582b21018e96a0fa21c74a753fbed120295ec1915950f5230310a"
+    },
+    {
+      "pid": 2283537,
+      "ppid": 2281367,
+      "pgid": 2281367,
+      "start_ticks": "36296450",
+      "uid": 1008,
+      "state": "R",
+      "comm": "python",
+      "command_sha256": "9a5627c9ee08bd3215c60ed8ff6b530a7b3aa33267d1e0c40ebb2a9db52a1d5e"
+    },
+    {
+      "pid": 2283581,
+      "ppid": 2283537,
+      "pgid": 2281367,
+      "start_ticks": "36296773",
+      "uid": 1008,
+      "state": "S",
+      "comm": "thor-Linux64-f0",
+      "command_sha256": "bf1f9864efb582b21018e96a0fa21c74a753fbed120295ec1915950f5230310a"
+    },
+    {
+      "pid": 2283717,
+      "ppid": 2281367,
+      "pgid": 2281367,
+      "start_ticks": "36296849",
+      "uid": 1008,
+      "state": "R",
+      "comm": "python",
+      "command_sha256": "59f715ac34a57e52c70ac65aa3a45b86c8f260ae7d7126c5f54555201b9f9fd0"
+    },
+    {
+      "pid": 2283761,
+      "ppid": 2283717,
+      "pgid": 2281367,
+      "start_ticks": "36297200",
+      "uid": 1008,
+      "state": "S",
+      "comm": "thor-Linux64-f0",
+      "command_sha256": "bf1f9864efb582b21018e96a0fa21c74a753fbed120295ec1915950f5230310a"
+    },
+    {
+      "pid": 2283900,
+      "ppid": 2281367,
+      "pgid": 2281367,
+      "start_ticks": "36297280",
+      "uid": 1008,
+      "state": "R",
+      "comm": "python",
+      "command_sha256": "4254ea6d84a0624d725b95df42c41ee7d078b73e9d88e7ec27753a954f73c694"
+    },
+    {
+      "pid": 2283940,
+      "ppid": 2283900,
+      "pgid": 2281367,
+      "start_ticks": "36297606",
+      "uid": 1008,
+      "state": "S",
+      "comm": "thor-Linux64-f0",
+      "command_sha256": "bf1f9864efb582b21018e96a0fa21c74a753fbed120295ec1915950f5230310a"
+    },
+    {
+      "pid": 2284073,
+      "ppid": 2281367,
+      "pgid": 2281367,
+      "start_ticks": "36297681",
+      "uid": 1008,
+      "state": "R",
+      "comm": "python",
+      "command_sha256": "a2695ff04bed25be207f08f2ef8ca1363846957e5a90462996034efd211e43f2"
+    },
+    {
+      "pid": 2284102,
+      "ppid": 2284073,
+      "pgid": 2281367,
+      "start_ticks": "36298015",
+      "uid": 1008,
+      "state": "S",
+      "comm": "thor-Linux64-f0",
+      "command_sha256": "bf1f9864efb582b21018e96a0fa21c74a753fbed120295ec1915950f5230310a"
+    },
+    {
+      "pid": 2284237,
+      "ppid": 2281367,
+      "pgid": 2281367,
+      "start_ticks": "36298109",
+      "uid": 1008,
+      "state": "R",
+      "comm": "python",
+      "command_sha256": "dc703d8f0416bc58783673494f59f8877ababbbafb9f4dac92f958d39db80ed7"
+    },
+    {
+      "pid": 2284262,
+      "ppid": 2284237,
+      "pgid": 2281367,
+      "start_ticks": "36298470",
+      "uid": 1008,
+      "state": "S",
+      "comm": "thor-Linux64-f0",
+      "command_sha256": "bf1f9864efb582b21018e96a0fa21c74a753fbed120295ec1915950f5230310a"
+    },
+    {
+      "pid": 2284401,
+      "ppid": 2281367,
+      "pgid": 2281367,
+      "start_ticks": "36298542",
+      "uid": 1008,
+      "state": "R",
+      "comm": "python",
+      "command_sha256": "d2d3e9c3157961d828b252defa60b411d424abb82ae68bbd6328a27fa07c9558"
+    },
+    {
+      "pid": 2284418,
+      "ppid": 2284401,
+      "pgid": 2281367,
+      "start_ticks": "36298888",
+      "uid": 1008,
+      "state": "S",
+      "comm": "thor-Linux64-f0",
+      "command_sha256": "bf1f9864efb582b21018e96a0fa21c74a753fbed120295ec1915950f5230310a"
+    },
+    {
+      "pid": 2284560,
+      "ppid": 2281367,
+      "pgid": 2281367,
+      "start_ticks": "36298978",
+      "uid": 1008,
+      "state": "R",
+      "comm": "python",
+      "command_sha256": "3b4ac9b8a574da8ab188b98b5113cce134b42c0e5dc51d4814587d2c385fa16a"
+    },
+    {
+      "pid": 2284580,
+      "ppid": 2284560,
+      "pgid": 2281367,
+      "start_ticks": "36299319",
+      "uid": 1008,
+      "state": "S",
+      "comm": "thor-Linux64-f0",
+      "command_sha256": "bf1f9864efb582b21018e96a0fa21c74a753fbed120295ec1915950f5230310a"
+    },
+    {
+      "pid": 2284722,
+      "ppid": 2281367,
+      "pgid": 2281367,
+      "start_ticks": "36299395",
+      "uid": 1008,
+      "state": "R",
+      "comm": "python",
+      "command_sha256": "8b688e55ab583120cb5ac2cf15d917ace99997f7a99baa074ac30915eac96f53"
+    },
+    {
+      "pid": 2284839,
+      "ppid": 2284722,
+      "pgid": 2281367,
+      "start_ticks": "36299805",
+      "uid": 1008,
+      "state": "S",
+      "comm": "thor-Linux64-f0",
+      "command_sha256": "bf1f9864efb582b21018e96a0fa21c74a753fbed120295ec1915950f5230310a"
+    },
+    {
+      "pid": 2284974,
+      "ppid": 2281367,
+      "pgid": 2281367,
+      "start_ticks": "36299895",
+      "uid": 1008,
+      "state": "R",
+      "comm": "python",
+      "command_sha256": "e253c91860ab64fbe88a0dbb5a89d5607db90d314042284e457396ab36b703fc"
+    },
+    {
+      "pid": 2285079,
+      "ppid": 2284974,
+      "pgid": 2281367,
+      "start_ticks": "36300381",
+      "uid": 1008,
+      "state": "S",
+      "comm": "thor-Linux64-f0",
+      "command_sha256": "bf1f9864efb582b21018e96a0fa21c74a753fbed120295ec1915950f5230310a"
+    },
+    {
+      "pid": 2285220,
+      "ppid": 2281367,
+      "pgid": 2281367,
+      "start_ticks": "36300470",
+      "uid": 1008,
+      "state": "S",
+      "comm": "python",
+      "command_sha256": "989541c6d9d2e83803cbb76c4cf6c096026fc6fb11b0c3ebff338e0caa0e5bc6"
+    },
+    {
+      "pid": 2285263,
+      "ppid": 2285220,
+      "pgid": 2281367,
+      "start_ticks": "36300823",
+      "uid": 1008,
+      "state": "R",
+      "comm": "thor-Linux64-f0",
+      "command_sha256": "bf1f9864efb582b21018e96a0fa21c74a753fbed120295ec1915950f5230310a"
+    },
+    {
+      "pid": 2285407,
+      "ppid": 2281367,
+      "pgid": 2281367,
+      "start_ticks": "36300901",
+      "uid": 1008,
+      "state": "R",
+      "comm": "python",
+      "command_sha256": "d747d985d86ee398e2f2a8c3e3f0d723b51932c2d8a8417a82f4afb0f48e56fa"
+    },
+    {
+      "pid": 2285432,
+      "ppid": 2285407,
+      "pgid": 2281367,
+      "start_ticks": "36301272",
+      "uid": 1008,
+      "state": "S",
+      "comm": "thor-Linux64-f0",
+      "command_sha256": "bf1f9864efb582b21018e96a0fa21c74a753fbed120295ec1915950f5230310a"
+    },
+    {
+      "pid": 2285573,
+      "ppid": 2281367,
+      "pgid": 2281367,
+      "start_ticks": "36301363",
+      "uid": 1008,
+      "state": "R",
+      "comm": "python",
+      "command_sha256": "d6951218f207e1ac5d3517525dd4f530394b4a33547a1bbfd5067c0b69786435"
+    },
+    {
+      "pid": 2285594,
+      "ppid": 2285573,
+      "pgid": 2281367,
+      "start_ticks": "36301756",
+      "uid": 1008,
+      "state": "S",
+      "comm": "thor-Linux64-f0",
+      "command_sha256": "bf1f9864efb582b21018e96a0fa21c74a753fbed120295ec1915950f5230310a"
+    },
+    {
+      "pid": 2285739,
+      "ppid": 2281367,
+      "pgid": 2281367,
+      "start_ticks": "36301847",
+      "uid": 1008,
+      "state": "D",
+      "comm": "python",
+      "command_sha256": "98d0e0a903b350ae097b72c90c05081af3831b009c439c3e864c2580dab0f8f6"
+    },
+    {
+      "pid": 2285758,
+      "ppid": 2285739,
+      "pgid": 2281367,
+      "start_ticks": "36302223",
+      "uid": 1008,
+      "state": "S",
+      "comm": "thor-Linux64-f0",
+      "command_sha256": "bf1f9864efb582b21018e96a0fa21c74a753fbed120295ec1915950f5230310a"
+    },
+    {
+      "pid": 2285904,
+      "ppid": 2281367,
+      "pgid": 2281367,
+      "start_ticks": "36302304",
+      "uid": 1008,
+      "state": "R",
+      "comm": "python",
+      "command_sha256": "fabd6ac0bc25e9a262d7780048bd8c28dc8e7d1783f83bb8e42153a98802ba71"
+    },
+    {
+      "pid": 2285929,
+      "ppid": 2285904,
+      "pgid": 2281367,
+      "start_ticks": "36302699",
+      "uid": 1008,
+      "state": "S",
+      "comm": "thor-Linux64-f0",
+      "command_sha256": "bf1f9864efb582b21018e96a0fa21c74a753fbed120295ec1915950f5230310a"
+    },
+    {
+      "pid": 2286080,
+      "ppid": 2281367,
+      "pgid": 2281367,
+      "start_ticks": "36302792",
+      "uid": 1008,
+      "state": "R",
+      "comm": "python",
+      "command_sha256": "b345858013bc68a138e6f7a6dd7d7531ceb09ba50b11ea850fd677065a98ffc2"
+    },
+    {
+      "pid": 2286111,
+      "ppid": 2286080,
+      "pgid": 2281367,
+      "start_ticks": "36303187",
+      "uid": 1008,
+      "state": "S",
+      "comm": "thor-Linux64-f0",
+      "command_sha256": "bf1f9864efb582b21018e96a0fa21c74a753fbed120295ec1915950f5230310a"
+    },
+    {
+      "pid": 2286254,
+      "ppid": 2281367,
+      "pgid": 2281367,
+      "start_ticks": "36303269",
+      "uid": 1008,
+      "state": "R",
+      "comm": "python",
+      "command_sha256": "e8a80bbc1818c7ee0c4b7019e0f2fd3d04b4ed2be1712be0bd9ba41d3936316c"
+    },
+    {
+      "pid": 2286273,
+      "ppid": 2286254,
+      "pgid": 2281367,
+      "start_ticks": "36303636",
+      "uid": 1008,
+      "state": "S",
+      "comm": "thor-Linux64-f0",
+      "command_sha256": "bf1f9864efb582b21018e96a0fa21c74a753fbed120295ec1915950f5230310a"
+    },
+    {
+      "pid": 2286420,
+      "ppid": 2281367,
+      "pgid": 2281367,
+      "start_ticks": "36303719",
+      "uid": 1008,
+      "state": "S",
+      "comm": "python",
+      "command_sha256": "2f23d8125a8a14642f5beac58d5a8bea20554f71a3aacce8457ac7ca68310ed2"
+    },
+    {
+      "pid": 2286451,
+      "ppid": 2286420,
+      "pgid": 2281367,
+      "start_ticks": "36304124",
+      "uid": 1008,
+      "state": "R",
+      "comm": "thor-Linux64-f0",
+      "command_sha256": "bf1f9864efb582b21018e96a0fa21c74a753fbed120295ec1915950f5230310a"
+    },
+    {
+      "pid": 2286599,
+      "ppid": 2281367,
+      "pgid": 2281367,
+      "start_ticks": "36304213",
+      "uid": 1008,
+      "state": "R",
+      "comm": "python",
+      "command_sha256": "4b9c62cdc995092c85b3f1a0750a701ecd8990d2557b891eb642b6e03e0b6723"
+    },
+    {
+      "pid": 2286726,
+      "ppid": 2286599,
+      "pgid": 2281367,
+      "start_ticks": "36304826",
+      "uid": 1008,
+      "state": "S",
+      "comm": "thor-Linux64-f0",
+      "command_sha256": "bf1f9864efb582b21018e96a0fa21c74a753fbed120295ec1915950f5230310a"
+    },
+    {
+      "pid": 2286870,
+      "ppid": 2281367,
+      "pgid": 2281367,
+      "start_ticks": "36304914",
+      "uid": 1008,
+      "state": "R",
+      "comm": "python",
+      "command_sha256": "d82b2450cdbb70436423d274c3690c9f5747ac1f36e03c23f81977f582cec35a"
+    },
+    {
+      "pid": 2286905,
+      "ppid": 2286870,
+      "pgid": 2281367,
+      "start_ticks": "36305352",
+      "uid": 1008,
+      "state": "S",
+      "comm": "thor-Linux64-f0",
+      "command_sha256": "bf1f9864efb582b21018e96a0fa21c74a753fbed120295ec1915950f5230310a"
+    },
+    {
+      "pid": 2287024,
+      "ppid": 2281367,
+      "pgid": 2281367,
+      "start_ticks": "36305425",
+      "uid": 1008,
+      "state": "R",
+      "comm": "python",
+      "command_sha256": "88bf26e4ace6c99256145c8f8feef4f0a9b1238955234f6114f310f534a02601"
+    },
+    {
+      "pid": 2287078,
+      "ppid": 2287024,
+      "pgid": 2281367,
+      "start_ticks": "36305884",
+      "uid": 1008,
+      "state": "S",
+      "comm": "thor-Linux64-f0",
+      "command_sha256": "bf1f9864efb582b21018e96a0fa21c74a753fbed120295ec1915950f5230310a"
+    },
+    {
+      "pid": 2287225,
+      "ppid": 2281367,
+      "pgid": 2281367,
+      "start_ticks": "36305969",
+      "uid": 1008,
+      "state": "R",
+      "comm": "python",
+      "command_sha256": "102ec45f5cf4337a9687a6d61af5035b7c1c1199723a83eb0e3314d0e0852c38"
+    },
+    {
+      "pid": 2287255,
+      "ppid": 2287225,
+      "pgid": 2281367,
+      "start_ticks": "36306392",
+      "uid": 1008,
+      "state": "S",
+      "comm": "thor-Linux64-f0",
+      "command_sha256": "bf1f9864efb582b21018e96a0fa21c74a753fbed120295ec1915950f5230310a"
+    },
+    {
+      "pid": 2287389,
+      "ppid": 2281367,
+      "pgid": 2281367,
+      "start_ticks": "36306471",
+      "uid": 1008,
+      "state": "R",
+      "comm": "python",
+      "command_sha256": "8d21e997b37e716e6844dc536de98ed0a8c579605cc04c7505f3449eaa6c67e6"
+    },
+    {
+      "pid": 2287422,
+      "ppid": 2287389,
+      "pgid": 2281367,
+      "start_ticks": "36306986",
+      "uid": 1008,
+      "state": "S",
+      "comm": "thor-Linux64-f0",
+      "command_sha256": "bf1f9864efb582b21018e96a0fa21c74a753fbed120295ec1915950f5230310a"
+    }
+  ],
+  "planned_action": "Only after explicit user approval: revalidate leader birth, UID and group; SIGTERM this group; after30sec SIGKILL only surviving matching members if necessary",
+  "approval_required": true,
+  "approved": false,
+  "available_memory_gib": 24.5037841796875,
+  "memory_pressure": "some avg10=0.00 avg60=11.42 avg300=34.66 total=3321995252\nfull avg10=0.00 avg60=11.35 avg300=34.42 total=3218541380\n",
+  "io_pressure": "some avg10=0.30 avg60=3.42 avg300=11.05 total=1493873928\nfull avg10=0.07 avg60=3.15 avg300=10.66 total=1432453415\n",
+  "protected": "Exp4, Exp2, old lsq tasks, login sessions and parent Codex agent are outside this group",
+  "signals_sent": false,
+  "native_states_modified": false
+}

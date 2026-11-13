@@ -1,0 +1,27 @@
+{
+  "at_utc": "2026-11-13T08:28:00.048950+00:00",
+  "recovery_metadata": "scopes/first8/meta/infrastructure-recovery-20261113.json",
+  "recovery_plan": "scopes/first8/diagnostics/infrastructure-recovery/20261113T082617366060Z/plan.json",
+  "recovery_plan_sha256": "8eb3b7f38a0df4b43a5fcee801b7a8ef328a3262dfcdf89eb9de60d0f3b4804a",
+  "controller_pid": 2304501,
+  "controller_start_ticks": "36672358",
+  "controller_live_matching": true,
+  "controller_source_sha256": "a3a6d638c76f8953a09ae705437e4b03bb185ebe21c1d9e31d7b4226098362df",
+  "failed_prefix_13_all_excluded": true,
+  "full_scene_fixed_retry_20": true,
+  "failure_archive_roundtrip_verified": true,
+  "five_completed_scenes_preserved": true,
+  "two_living_Native_restarted": false,
+  "scientific_sources_and_parameters_unchanged": true,
+  "THP_current": "always defer defer+madvise [madvise] never",
+  "THP_trial_applied_and_actually_restored": true,
+  "THP_benefit_demonstrated": false,
+  "THP_actual_restore_log": "scopes/first8/diagnostics/thp-first8-actual-automatic-restore.jsonl",
+  "THP_restore_log_sha256": "6dfac66e090ffc1ab65a0f4982779ab0d26a3ac9fbe6f0e0d8525f09b04b3564",
+  "other_user_signals_sent": false,
+  "resource_gates_lowered": false,
+  "deviations_sha256": {
+    "deviations.md": "b167dfa0f3d4776d77d4a8caa5daea13b19475de2568ebb3634cda725e342ba6",
+    "scopes/first8/deviations.md": "3e5ee89abf096504e389178961edf5c7794b66d8fc74522fbb888da50bc5eb2b"
+  }
+}

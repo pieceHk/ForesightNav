@@ -1,0 +1,21 @@
+{
+  "recorded_at_utc": "2026-11-13T07:45:37.855002+00:00",
+  "plan": "/tmp/exp4-first8-thp-plan-20261113T074448Z.json",
+  "result": {
+    "status": "applied",
+    "action": "apply",
+    "at_utc": "2026-11-13T07:45:37.841865+00:00",
+    "before": "madvise",
+    "after": "defer",
+    "boot_id": "23443655-6f2f-4063-a412-e255f3a91e62",
+    "only_one_sysfs_setting_written": true,
+    "settings_changed": true,
+    "signals_sent": false,
+    "native_sources_changed": false,
+    "native_parameters_changed": false,
+    "automatic_restore_seconds": 150,
+    "automatic_restore_pid": 2294137,
+    "automatic_restore_log": "/tmp/exp4-first8-thp-plan-20261113T074448Z-automatic-restore.jsonl"
+  },
+  "automatic_restore_armed": true
+}

@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/code/first8_evaluate8.py", line 297, in <module>
+    else:control(args.run_plan)
+  File "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/code/first8_evaluate8.py", line 276, in control
+    run_stage('myopic',scope,plan,directory)
+  File "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/code/first8_evaluate8.py", line 232, in run_stage
+    if code!=0 or run is None:raise base.GateError(f'Native scene failed: {job["scene"]}, returncode={code}')
+evaluate_sequence.GateError: Native scene failed: DYehNKdT76V, returncode=1

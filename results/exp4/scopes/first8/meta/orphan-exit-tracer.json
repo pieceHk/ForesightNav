@@ -1,0 +1,37 @@
+{
+  "directory": "/tmp/exp4-orphan-exits-0oub4ub7",
+  "tracer_pid": 2302479,
+  "ready": {
+    "at_utc": "2026-11-13T08:11:02.756774+00:00",
+    "tracer_pid": 2302479,
+    "attached": {
+      "2236372": "35702460",
+      "2236373": "35702460",
+      "2236375": "35702462"
+    },
+    "unavailable": {},
+    "method": "PTRACE_SEIZE + TRACEEXIT on launcher only; live execution not stopped; EXITKILL option absent",
+    "foreign_tasks_traced": false,
+    "runtime_code_or_parameters_changed": false
+  },
+  "selftest": {
+    "at_utc": "2026-11-13T08:11:02.755439+00:00",
+    "passed": true,
+    "tests": [
+      {
+        "expected": 0,
+        "actual": 0,
+        "real_wait_status": 0,
+        "exit_event_status": 0
+      },
+      {
+        "expected": 7,
+        "actual": 7,
+        "real_wait_status": 1792,
+        "exit_event_status": 1792
+      }
+    ],
+    "Native_workers_tested": false
+  },
+  "log_tail": ""
+}

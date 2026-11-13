@@ -1,0 +1,58 @@
+{
+  "at_utc": "2026-11-13T08:15:25.836280+00:00",
+  "actual_error": {
+    "at_utc": "2026-11-13T07:52:51.368562+00:00",
+    "error": "GateError: Native scene failed: DYehNKdT76V, returncode=1",
+    "native_workers_left_running_for_inspection": true,
+    "no_outcome_selected_retry": true
+  },
+  "scene": "DYehNKdT76V",
+  "failed_run": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261113_134511_831506_exp4_myopic_exp4-myopic-a3-first8-DYehNKdT76V",
+  "native_status": {
+    "error": "RuntimeError('navigation_DYehNKdT76V worker exited with 1')",
+    "status": "failed",
+    "timestamp": "2026-11-13T07:52:50.654451+00:00"
+  },
+  "controller_log_tail": "{\n  \"experiment\": \"exp4_myopic\",\n  \"dataset\": \"hm3dv1_3mon_balanced1200\",\n  \"scenes\": [\n    \"DYehNKdT76V\"\n  ],\n  \"complete_episodes\": 20,\n  \"targets_per_episode\": 3,\n  \"gpus\": {\n    \"mapping\": 0,\n    \"navigation\": 0\n  },\n  \"configuration_sha256\": \"0c4ce0e7ea1e0d5d5d1dc6dad0394fbe21142bdae254c7221a5300d975c49bd6\",\n  \"identity_sha256\": \"8e99b6e7cc3712c43d4b335027a26c95c08f0bd08e9456f3b8a51c4e016bd2a4\",\n  \"habitat_revision\": \"8df2661e5b2203c0ddc47798d5da0132d5686bbe\",\n  \"models\": {\n    \"status\": \"passed\",\n    \"files\": 22,\n    \"bytes\": 5631339793,\n    \"manifest_sha256\": \"f21ffdc59735aaf84fe5a0a4ebe99f35261f6dd45a643387900d003b6b7ac4a6\"\n  }\n}\nRun: /nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261113_134511_831506_exp4_myopic_exp4-myopic-a3-first8-DYehNKdT76V\n/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261113_134511_831506_exp4_myopic_exp4-myopic-a3-first8-DYehNKdT76V\nTraceback (most recent call last):\n  File \"/nvme/khy/ForesightNav_exp4_depthfix/run.py\", line 97, in <module>\n    main()\n  File \"/nvme/khy/ForesightNav_exp4_depthfix/run.py\", line 93, in main\n    launch(plan, tag=args.tag, resource_checks=resources)\n  File \"/nvme/khy/ForesightNav_exp4_depthfix/pbsp/runtime/launch.py\", line 275, in launch\n    navigation.wait()\n  File \"/nvme/khy/conda_envs/pbsp/navigation/lib/python3.9/contextlib.py\", line 126, in __exit__\n    next(self.gen)\n  File \"/nvme/khy/ForesightNav_exp4_depthfix/pbsp/runtime/launch.py\", line 163, in managed_process\n    raise RuntimeError(f\"{label} worker exited with {process.returncode}\")\nRuntimeError: navigation_DYehNKdT76V worker exited with 1\n",
+  "preserved_log_files": {
+    "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/scopes/first8/logs/myopic-DYehNKdT76V.controller.log": "scopes/first8/diagnostics/infrastructure-scene-failure/20261113T081525834618Z/myopic-DYehNKdT76V.controller.log",
+    "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261113_134511_831506_exp4_myopic_exp4-myopic-a3-first8-DYehNKdT76V/status.json": "scopes/first8/diagnostics/infrastructure-scene-failure/20261113T081525834618Z/status.json"
+  },
+  "original_4ok_actual_exit": {
+    "pid": 2197428,
+    "start_ticks": "35305272",
+    "wait_status": 0,
+    "returncode": 0,
+    "stat_sha256": "4b8670fd8dcb5685e4deaa660b84c472c47a33604f627d10f9247d4e3d2815c1",
+    "source": "/proc/PID/stat field52; original parent remains stopped"
+  },
+  "orphan_exit_receipts": {
+    "pid-2236372-exit.json": {
+      "at_utc": "2026-11-13T08:12:04.913140+00:00",
+      "pid": 2236372,
+      "start_ticks": "35702460",
+      "uid": 1001,
+      "returncode": 0,
+      "actual_wait_status": 0,
+      "exit_event_status": 0,
+      "source": "real os.waitpid of traced launcher after PTRACE_EVENT_EXIT",
+      "code_or_parameters_changed": false,
+      "Native_restarted": false
+    },
+    "pid-2236373-exit.json": {
+      "at_utc": "2026-11-13T08:12:09.838429+00:00",
+      "pid": 2236373,
+      "start_ticks": "35702460",
+      "uid": 1001,
+      "returncode": 0,
+      "actual_wait_status": 0,
+      "exit_event_status": 0,
+      "source": "real os.waitpid of traced launcher after PTRACE_EVENT_EXIT",
+      "code_or_parameters_changed": false,
+      "Native_restarted": false
+    }
+  },
+  "native_restarted": false,
+  "signals_sent": false,
+  "outcome_selected_retry": false
+}
