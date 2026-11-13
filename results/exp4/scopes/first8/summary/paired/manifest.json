@@ -1,0 +1,36 @@
+{
+  "scope": "first8",
+  "n_episodes_each_pair": 160,
+  "pairs": [
+    {
+      "path": "summary/paired/nearest_vs_suffix_only.csv",
+      "n_paired": 160,
+      "sha256": "c3ff6a0c757ed10658cdabd721ea8a46c48088941aaca242a3d37615a56d7eab"
+    },
+    {
+      "path": "summary/paired/nearest_vs_myopic.csv",
+      "n_paired": 160,
+      "sha256": "319cfdd0d026f9388f4c75bf70fb3bc1caf602288a7b3d403971f4e54d30a7f0"
+    },
+    {
+      "path": "summary/paired/nearest_vs_full.csv",
+      "n_paired": 160,
+      "sha256": "bfa26f03bd4384101bbc5d5000ea5f5fb8912fd94aafeefe2b24354922f8207f"
+    },
+    {
+      "path": "summary/paired/suffix_only_vs_myopic.csv",
+      "n_paired": 160,
+      "sha256": "b8347e924453a46332706aeeaa808ec14795c976e98e10b84c12f1ea41101d1d"
+    },
+    {
+      "path": "summary/paired/suffix_only_vs_full.csv",
+      "n_paired": 160,
+      "sha256": "40ac1b6bb4f8214dd5b6e2bf0ce66c6d948ff77fc2f9ab6f5e299954b58b39a6"
+    },
+    {
+      "path": "summary/paired/myopic_vs_full.csv",
+      "n_paired": 160,
+      "sha256": "ff77eccb809f1b8e0189f966e428ff5576f41cc8f035c2bc7b92a0412855c7da"
+    }
+  ]
+}

@@ -1,8 +1,10 @@
 {
-  "at_utc": "2026-11-13T11:42:52.045786+00:00",
-  "status": "waiting_for_complete_evidence",
-  "environment_pairs": 24,
-  "archived_runs": 23,
-  "evaluation_status": "running",
+  "at_utc": "2026-11-13T17:43:52.002086+00:00",
+  "status": "report_prepared_pending_actual_visual_QA",
+  "report_sha256": "89c9995f71eb1a52078664076b08d5f50a5d21d53a2bdc1307b8a64f98816e6c",
+  "figure_sha256": {
+    "figures/SR_SPL.png": "067990b7a72b6be8ea753cca4662ba17938917fd464fd1d41b550a151352e7ea",
+    "figures/effects.png": "1b02f457722ccf2a33b71e1092a3138016afa01f3d59aa66e78de07abceeacf1"
+  },
   "native_states_modified": false
 }

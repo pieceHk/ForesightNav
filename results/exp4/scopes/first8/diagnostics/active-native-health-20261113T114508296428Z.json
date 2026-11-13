@@ -1,0 +1,107 @@
+{
+  "at_utc": "2026-11-13T11:45:08.296402+00:00",
+  "active_native_jobs": [
+    {
+      "scene": "6s7QHgap2fW",
+      "gpu": 3,
+      "launcher_pid": 2316356,
+      "worker_logs": {
+        "monitor.log": {
+          "tail_error_matches": 0,
+          "recent_errors": [],
+          "log_age_seconds": 10312.101023435593
+        },
+        "navigation_6s7QHgap2fW.log": {
+          "tail_error_matches": 0,
+          "recent_errors": [],
+          "log_age_seconds": 0.08022022247314453
+        },
+        "mapping.log": {
+          "tail_error_matches": 0,
+          "recent_errors": [],
+          "log_age_seconds": 0.434861421585083
+        }
+      },
+      "native_status": {
+        "episode_ids": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16",
+          "17",
+          "18",
+          "19"
+        ],
+        "scene": "6s7QHgap2fW",
+        "status": "running",
+        "timestamp": "2026-11-13T08:53:38.847854+00:00"
+      }
+    }
+  ],
+  "gpu_ownership": [
+    {
+      "gpu": 0,
+      "free_mib": 39715,
+      "Exp4_compute_mib": 0,
+      "other_compute_mib": 4016
+    },
+    {
+      "gpu": 1,
+      "free_mib": 39695,
+      "Exp4_compute_mib": 0,
+      "other_compute_mib": 4016
+    },
+    {
+      "gpu": 2,
+      "free_mib": 39702,
+      "Exp4_compute_mib": 0,
+      "other_compute_mib": 4016
+    },
+    {
+      "gpu": 3,
+      "free_mib": 19979,
+      "Exp4_compute_mib": 19629,
+      "other_compute_mib": 4016
+    },
+    {
+      "gpu": 4,
+      "free_mib": 39887,
+      "Exp4_compute_mib": 0,
+      "other_compute_mib": 4016
+    },
+    {
+      "gpu": 5,
+      "free_mib": 39744,
+      "Exp4_compute_mib": 0,
+      "other_compute_mib": 4016
+    },
+    {
+      "gpu": 6,
+      "free_mib": 39696,
+      "Exp4_compute_mib": 0,
+      "other_compute_mib": 4016
+    },
+    {
+      "gpu": 7,
+      "free_mib": 39683,
+      "Exp4_compute_mib": 0,
+      "other_compute_mib": 4016
+    }
+  ],
+  "available_memory_gib": 348.4525375366211,
+  "signals_sent": false,
+  "settings_changed": false
+}

@@ -1,0 +1,450 @@
+{
+  "at_utc": "2026-11-13T15:29:28.504918+00:00",
+  "active_native_jobs": [
+    {
+      "scene": "4ok3usBNeis",
+      "gpu": 0,
+      "launcher_pid": 2439685,
+      "worker_logs": {
+        "navigation_4ok3usBNeis.log": {
+          "tail_error_matches": 0,
+          "recent_errors": [],
+          "log_age_seconds": 1.8975961208343506
+        },
+        "monitor.log": {
+          "tail_error_matches": 0,
+          "recent_errors": [],
+          "log_age_seconds": 9745.245313167572
+        },
+        "mapping.log": {
+          "tail_error_matches": 0,
+          "recent_errors": [],
+          "log_age_seconds": 7.736364126205444
+        }
+      },
+      "native_status": {
+        "episode_ids": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16",
+          "17",
+          "18",
+          "19"
+        ],
+        "scene": "4ok3usBNeis",
+        "status": "running",
+        "timestamp": "2026-11-13T12:47:24.872305+00:00"
+      }
+    },
+    {
+      "scene": "5cdEh9F2hJL",
+      "gpu": 1,
+      "launcher_pid": 2439699,
+      "worker_logs": {
+        "monitor.log": {
+          "tail_error_matches": 0,
+          "recent_errors": [],
+          "log_age_seconds": 9744.800215482712
+        },
+        "navigation_5cdEh9F2hJL.log": {
+          "tail_error_matches": 0,
+          "recent_errors": [],
+          "log_age_seconds": 6.071254253387451
+        },
+        "mapping.log": {
+          "tail_error_matches": 0,
+          "recent_errors": [],
+          "log_age_seconds": 0.269942045211792
+        }
+      },
+      "native_status": {
+        "episode_ids": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16",
+          "17",
+          "18",
+          "19"
+        ],
+        "scene": "5cdEh9F2hJL",
+        "status": "running",
+        "timestamp": "2026-11-13T12:47:24.918580+00:00"
+      }
+    },
+    {
+      "scene": "6s7QHgap2fW",
+      "gpu": 2,
+      "launcher_pid": 2439720,
+      "worker_logs": {
+        "monitor.log": {
+          "tail_error_matches": 0,
+          "recent_errors": [],
+          "log_age_seconds": 9744.233711004257
+        },
+        "navigation_6s7QHgap2fW.log": {
+          "tail_error_matches": 0,
+          "recent_errors": [],
+          "log_age_seconds": 0.1248469352722168
+        },
+        "mapping.log": {
+          "tail_error_matches": 0,
+          "recent_errors": [],
+          "log_age_seconds": 4.275457143783569
+        }
+      },
+      "native_status": {
+        "episode_ids": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16",
+          "17",
+          "18",
+          "19"
+        ],
+        "scene": "6s7QHgap2fW",
+        "status": "running",
+        "timestamp": "2026-11-13T12:47:26.697897+00:00"
+      }
+    },
+    {
+      "scene": "DYehNKdT76V",
+      "gpu": 3,
+      "launcher_pid": 2439736,
+      "worker_logs": {
+        "navigation_DYehNKdT76V.log": {
+          "tail_error_matches": 0,
+          "recent_errors": [],
+          "log_age_seconds": 0.4104268550872803
+        },
+        "monitor.log": {
+          "tail_error_matches": 0,
+          "recent_errors": [],
+          "log_age_seconds": 9743.730125188828
+        },
+        "mapping.log": {
+          "tail_error_matches": 0,
+          "recent_errors": [],
+          "log_age_seconds": 1.8571631908416748
+        }
+      },
+      "native_status": {
+        "episode_ids": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16",
+          "17",
+          "18",
+          "19"
+        ],
+        "scene": "DYehNKdT76V",
+        "status": "running",
+        "timestamp": "2026-11-13T12:47:26.606648+00:00"
+      }
+    },
+    {
+      "scene": "Dd4bFSTQ8gi",
+      "gpu": 4,
+      "launcher_pid": 2439750,
+      "worker_logs": {
+        "monitor.log": {
+          "tail_error_matches": 0,
+          "recent_errors": [],
+          "log_age_seconds": 9742.800925254822
+        },
+        "navigation_Dd4bFSTQ8gi.log": {
+          "tail_error_matches": 0,
+          "recent_errors": [],
+          "log_age_seconds": 0.4320199489593506
+        },
+        "mapping.log": {
+          "tail_error_matches": 0,
+          "recent_errors": [],
+          "log_age_seconds": 1.890648365020752
+        }
+      },
+      "native_status": {
+        "episode_ids": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16",
+          "17",
+          "18",
+          "19"
+        ],
+        "scene": "Dd4bFSTQ8gi",
+        "status": "running",
+        "timestamp": "2026-11-13T12:47:27.740011+00:00"
+      }
+    },
+    {
+      "scene": "Nfvxx8J5NCo",
+      "gpu": 5,
+      "launcher_pid": 2439767,
+      "worker_logs": {
+        "monitor.log": {
+          "tail_error_matches": 0,
+          "recent_errors": [],
+          "log_age_seconds": 9742.326399326324
+        },
+        "navigation_Nfvxx8J5NCo.log": {
+          "tail_error_matches": 0,
+          "recent_errors": [],
+          "log_age_seconds": 0.0855555534362793
+        },
+        "mapping.log": {
+          "tail_error_matches": 0,
+          "recent_errors": [],
+          "log_age_seconds": 1.2722444534301758
+        }
+      },
+      "native_status": {
+        "episode_ids": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16",
+          "17",
+          "18",
+          "19"
+        ],
+        "scene": "Nfvxx8J5NCo",
+        "status": "running",
+        "timestamp": "2026-11-13T12:47:27.817916+00:00"
+      }
+    },
+    {
+      "scene": "QaLdnwvtxbs",
+      "gpu": 6,
+      "launcher_pid": 2439920,
+      "worker_logs": {
+        "monitor.log": {
+          "tail_error_matches": 0,
+          "recent_errors": [],
+          "log_age_seconds": 9741.884024381638
+        },
+        "navigation_QaLdnwvtxbs.log": {
+          "tail_error_matches": 0,
+          "recent_errors": [],
+          "log_age_seconds": 1.8232316970825195
+        },
+        "mapping.log": {
+          "tail_error_matches": 0,
+          "recent_errors": [],
+          "log_age_seconds": 3.802037477493286
+        }
+      },
+      "native_status": {
+        "episode_ids": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16",
+          "17",
+          "18",
+          "19"
+        ],
+        "scene": "QaLdnwvtxbs",
+        "status": "running",
+        "timestamp": "2026-11-13T12:47:29.867859+00:00"
+      }
+    },
+    {
+      "scene": "TEEsavR23oF",
+      "gpu": 7,
+      "launcher_pid": 2439936,
+      "worker_logs": {
+        "monitor.log": {
+          "tail_error_matches": 0,
+          "recent_errors": [],
+          "log_age_seconds": 9741.141829252243
+        },
+        "navigation_TEEsavR23oF.log": {
+          "tail_error_matches": 0,
+          "recent_errors": [],
+          "log_age_seconds": 1.4011011123657227
+        },
+        "mapping.log": {
+          "tail_error_matches": 0,
+          "recent_errors": [],
+          "log_age_seconds": 0.16792774200439453
+        }
+      },
+      "native_status": {
+        "episode_ids": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16",
+          "17",
+          "18",
+          "19"
+        ],
+        "scene": "TEEsavR23oF",
+        "status": "running",
+        "timestamp": "2026-11-13T12:47:30.219061+00:00"
+      }
+    }
+  ],
+  "gpu_ownership": [
+    {
+      "gpu": 0,
+      "free_mib": 12577,
+      "Exp4_compute_mib": 18737,
+      "other_compute_mib": 10288
+    },
+    {
+      "gpu": 1,
+      "free_mib": 12469,
+      "Exp4_compute_mib": 24579,
+      "other_compute_mib": 6148
+    },
+    {
+      "gpu": 2,
+      "free_mib": 10189,
+      "Exp4_compute_mib": 18671,
+      "other_compute_mib": 12296
+    },
+    {
+      "gpu": 3,
+      "free_mib": 12019,
+      "Exp4_compute_mib": 18654,
+      "other_compute_mib": 10288
+    },
+    {
+      "gpu": 4,
+      "free_mib": 5315,
+      "Exp4_compute_mib": 23233,
+      "other_compute_mib": 12296
+    },
+    {
+      "gpu": 5,
+      "free_mib": 9959,
+      "Exp4_compute_mib": 18753,
+      "other_compute_mib": 12296
+    },
+    {
+      "gpu": 6,
+      "free_mib": 6900,
+      "Exp4_compute_mib": 21807,
+      "other_compute_mib": 12296
+    },
+    {
+      "gpu": 7,
+      "free_mib": 9651,
+      "Exp4_compute_mib": 18811,
+      "other_compute_mib": 12296
+    }
+  ],
+  "available_memory_gib": 26.746295928955078,
+  "signals_sent": false,
+  "settings_changed": false
+}

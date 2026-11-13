@@ -1,0 +1,84 @@
+{
+  "at_utc": "2026-11-13T18:09:24.539299+00:00",
+  "controller": {
+    "pid": 2311693,
+    "live": false,
+    "birth_matches": false
+  },
+  "active_jobs": [],
+  "controller_process_tree": [],
+  "progress": {
+    "scope": "first8",
+    "status": "completed_pending_delivery",
+    "at_utc": "2026-11-13T17:43:40.757055+00:00",
+    "n_episodes_by_variant": {
+      "full": 160,
+      "nearest": 160,
+      "myopic": 160,
+      "suffix_only": 160
+    },
+    "allowed_gpus": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "remaining": "32 scoped raw/config archives, actual figure QA, report and GitHub completion audit"
+  },
+  "error": null,
+  "controller_source_matches": true,
+  "parameter_sha256": "e1d75f3c9503c7439467748fc97be6ae2ad450c429f40dc7235b1564ff7852ae",
+  "THP_defrag": "always defer defer+madvise [madvise] never",
+  "available_memory_gib": 335.74423599243164,
+  "pressure": {
+    "cpu": "some avg10=1.43 avg60=0.93 avg300=0.25 total=41320403867\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=0\n",
+    "memory": "some avg10=0.00 avg60=0.00 avg300=0.00 total=4531473514\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=4422551003\n",
+    "io": "some avg10=5.85 avg60=4.19 avg300=1.43 total=1632947189\nfull avg10=5.84 avg60=4.12 avg300=1.39 total=1561549726\n"
+  },
+  "THP_operation": {
+    "recorded_at_utc": "2026-11-13T07:45:37.855002+00:00",
+    "plan": "/tmp/exp4-first8-thp-plan-20261113T074448Z.json",
+    "result": {
+      "status": "applied",
+      "action": "apply",
+      "at_utc": "2026-11-13T07:45:37.841865+00:00",
+      "before": "madvise",
+      "after": "defer",
+      "boot_id": "23443655-6f2f-4063-a412-e255f3a91e62",
+      "only_one_sysfs_setting_written": true,
+      "settings_changed": true,
+      "signals_sent": false,
+      "native_sources_changed": false,
+      "native_parameters_changed": false,
+      "automatic_restore_seconds": 150,
+      "automatic_restore_pid": 2294137,
+      "automatic_restore_log": "/tmp/exp4-first8-thp-plan-20261113T074448Z-automatic-restore.jsonl"
+    },
+    "automatic_restore_armed": true
+  },
+  "automatic_restore_log": {
+    "file": "/tmp/exp4-first8-thp-plan-20261113T074448Z-automatic-restore.jsonl",
+    "owner_uid": 0,
+    "records": [
+      {
+        "status": "automatic_restore_armed",
+        "at_utc": "2026-11-13T07:45:37.867968+00:00",
+        "seconds": 150
+      },
+      {
+        "status": "automatic_restore_finished",
+        "at_utc": "2026-11-13T07:48:49.180572+00:00",
+        "before": "defer",
+        "after": "madvise",
+        "settings_changed": true,
+        "signals_sent": false
+      }
+    ]
+  },
+  "settings_changed": false,
+  "signals_sent": false
+}

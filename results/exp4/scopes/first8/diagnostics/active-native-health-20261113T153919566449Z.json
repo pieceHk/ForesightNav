@@ -1,0 +1,401 @@
+{
+  "at_utc": "2026-11-13T15:39:19.566423+00:00",
+  "active_native_jobs": [
+    {
+      "scene": "4ok3usBNeis",
+      "gpu": 0,
+      "launcher_pid": 2439685,
+      "worker_logs": {
+        "navigation_4ok3usBNeis.log": {
+          "tail_error_matches": 0,
+          "recent_errors": [],
+          "log_age_seconds": 0.03761029243469238
+        },
+        "monitor.log": {
+          "tail_error_matches": 0,
+          "recent_errors": [],
+          "log_age_seconds": 10336.301296710968
+        },
+        "mapping.log": {
+          "tail_error_matches": 0,
+          "recent_errors": [],
+          "log_age_seconds": 2.189175844192505
+        }
+      },
+      "native_status": {
+        "episode_ids": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16",
+          "17",
+          "18",
+          "19"
+        ],
+        "scene": "4ok3usBNeis",
+        "status": "running",
+        "timestamp": "2026-11-13T12:47:24.872305+00:00"
+      }
+    },
+    {
+      "scene": "5cdEh9F2hJL",
+      "gpu": 1,
+      "launcher_pid": 2439699,
+      "worker_logs": {
+        "monitor.log": {
+          "tail_error_matches": 0,
+          "recent_errors": [],
+          "log_age_seconds": 10335.856989145279
+        },
+        "navigation_5cdEh9F2hJL.log": {
+          "tail_error_matches": 0,
+          "recent_errors": [],
+          "log_age_seconds": 0.02122640609741211
+        },
+        "mapping.log": {
+          "tail_error_matches": 0,
+          "recent_errors": [],
+          "log_age_seconds": 1.7527186870574951
+        }
+      },
+      "native_status": {
+        "episode_ids": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16",
+          "17",
+          "18",
+          "19"
+        ],
+        "scene": "5cdEh9F2hJL",
+        "status": "running",
+        "timestamp": "2026-11-13T12:47:24.918580+00:00"
+      }
+    },
+    {
+      "scene": "6s7QHgap2fW",
+      "gpu": 2,
+      "launcher_pid": 2439720,
+      "worker_logs": {
+        "monitor.log": {
+          "tail_error_matches": 0,
+          "recent_errors": [],
+          "log_age_seconds": 10335.292463302612
+        },
+        "navigation_6s7QHgap2fW.log": {
+          "tail_error_matches": 0,
+          "recent_errors": [],
+          "log_age_seconds": 0.1525864601135254
+        },
+        "mapping.log": {
+          "tail_error_matches": 0,
+          "recent_errors": [],
+          "log_age_seconds": 0.6600637435913086
+        }
+      },
+      "native_status": {
+        "episode_ids": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16",
+          "17",
+          "18",
+          "19"
+        ],
+        "scene": "6s7QHgap2fW",
+        "status": "running",
+        "timestamp": "2026-11-13T12:47:26.697897+00:00"
+      }
+    },
+    {
+      "scene": "DYehNKdT76V",
+      "gpu": 3,
+      "launcher_pid": 2439736,
+      "worker_logs": {
+        "navigation_DYehNKdT76V.log": {
+          "tail_error_matches": 0,
+          "recent_errors": [],
+          "log_age_seconds": 0.027977466583251953
+        },
+        "monitor.log": {
+          "tail_error_matches": 0,
+          "recent_errors": [],
+          "log_age_seconds": 10334.79167675972
+        },
+        "mapping.log": {
+          "tail_error_matches": 0,
+          "recent_errors": [],
+          "log_age_seconds": 2.887531042098999
+        }
+      },
+      "native_status": {
+        "episode_ids": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16",
+          "17",
+          "18",
+          "19"
+        ],
+        "scene": "DYehNKdT76V",
+        "status": "running",
+        "timestamp": "2026-11-13T12:47:26.606648+00:00"
+      }
+    },
+    {
+      "scene": "Dd4bFSTQ8gi",
+      "gpu": 4,
+      "launcher_pid": 2439750,
+      "worker_logs": {
+        "monitor.log": {
+          "tail_error_matches": 0,
+          "recent_errors": [],
+          "log_age_seconds": 10333.863267421722
+        },
+        "navigation_Dd4bFSTQ8gi.log": {
+          "tail_error_matches": 0,
+          "recent_errors": [],
+          "log_age_seconds": 0.19137191772460938
+        },
+        "mapping.log": {
+          "tail_error_matches": 0,
+          "recent_errors": [],
+          "log_age_seconds": 1.982842206954956
+        }
+      },
+      "native_status": {
+        "episode_ids": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16",
+          "17",
+          "18",
+          "19"
+        ],
+        "scene": "Dd4bFSTQ8gi",
+        "status": "running",
+        "timestamp": "2026-11-13T12:47:27.740011+00:00"
+      }
+    },
+    {
+      "scene": "Nfvxx8J5NCo",
+      "gpu": 5,
+      "launcher_pid": 2439767,
+      "worker_logs": {
+        "monitor.log": {
+          "tail_error_matches": 0,
+          "recent_errors": [],
+          "log_age_seconds": 10333.390582561493
+        },
+        "navigation_Nfvxx8J5NCo.log": {
+          "tail_error_matches": 0,
+          "recent_errors": [],
+          "log_age_seconds": 0.10663771629333496
+        },
+        "mapping.log": {
+          "tail_error_matches": 0,
+          "recent_errors": [],
+          "log_age_seconds": 0.01407623291015625
+        }
+      },
+      "native_status": {
+        "episode_ids": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16",
+          "17",
+          "18",
+          "19"
+        ],
+        "scene": "Nfvxx8J5NCo",
+        "status": "running",
+        "timestamp": "2026-11-13T12:47:27.817916+00:00"
+      }
+    },
+    {
+      "scene": "TEEsavR23oF",
+      "gpu": 7,
+      "launcher_pid": 2439936,
+      "worker_logs": {
+        "monitor.log": {
+          "tail_error_matches": 0,
+          "recent_errors": [],
+          "log_age_seconds": 10332.201817512512
+        },
+        "navigation_TEEsavR23oF.log": {
+          "tail_error_matches": 0,
+          "recent_errors": [],
+          "log_age_seconds": 0.05398154258728027
+        },
+        "mapping.log": {
+          "tail_error_matches": 0,
+          "recent_errors": [],
+          "log_age_seconds": 0.20943689346313477
+        }
+      },
+      "native_status": {
+        "episode_ids": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16",
+          "17",
+          "18",
+          "19"
+        ],
+        "scene": "TEEsavR23oF",
+        "status": "running",
+        "timestamp": "2026-11-13T12:47:30.219061+00:00"
+      }
+    }
+  ],
+  "gpu_ownership": [
+    {
+      "gpu": 0,
+      "free_mib": 21115,
+      "Exp4_compute_mib": 18735,
+      "other_compute_mib": 4078
+    },
+    {
+      "gpu": 1,
+      "free_mib": 23930,
+      "Exp4_compute_mib": 18791,
+      "other_compute_mib": 2008
+    },
+    {
+      "gpu": 2,
+      "free_mib": 15376,
+      "Exp4_compute_mib": 19089,
+      "other_compute_mib": 8156
+    },
+    {
+      "gpu": 3,
+      "free_mib": 20500,
+      "Exp4_compute_mib": 18655,
+      "other_compute_mib": 4078
+    },
+    {
+      "gpu": 4,
+      "free_mib": 18463,
+      "Exp4_compute_mib": 18639,
+      "other_compute_mib": 6086
+    },
+    {
+      "gpu": 5,
+      "free_mib": 15564,
+      "Exp4_compute_mib": 18755,
+      "other_compute_mib": 8156
+    },
+    {
+      "gpu": 6,
+      "free_mib": 37248,
+      "Exp4_compute_mib": 0,
+      "other_compute_mib": 6086
+    },
+    {
+      "gpu": 7,
+      "free_mib": 18176,
+      "Exp4_compute_mib": 18815,
+      "other_compute_mib": 6086
+    }
+  ],
+  "available_memory_gib": 276.03531646728516,
+  "signals_sent": false,
+  "settings_changed": false
+}

@@ -1,0 +1,470 @@
+{
+  "at_utc": "2026-11-13T14:49:27.372578+00:00",
+  "rows": [
+    {
+      "stage": "nearest",
+      "scene": "4ok3usBNeis",
+      "status": "completed",
+      "completed": 20,
+      "steps": 15807,
+      "launch_times": {},
+      "status_times": {
+        "timestamp": "2026-11-12T17:53:53.219378+00:00"
+      }
+    },
+    {
+      "stage": "nearest",
+      "scene": "5cdEh9F2hJL",
+      "status": "completed",
+      "completed": 20,
+      "steps": 9310,
+      "launch_times": {},
+      "status_times": {
+        "timestamp": "2026-11-12T15:42:41.682403+00:00"
+      }
+    },
+    {
+      "stage": "nearest",
+      "scene": "6s7QHgap2fW",
+      "status": "completed",
+      "completed": 20,
+      "steps": 16030,
+      "launch_times": {},
+      "status_times": {
+        "timestamp": "2026-11-12T19:06:55.207206+00:00"
+      }
+    },
+    {
+      "stage": "nearest",
+      "scene": "DYehNKdT76V",
+      "status": "completed",
+      "completed": 20,
+      "steps": 14788,
+      "launch_times": {},
+      "status_times": {
+        "timestamp": "2026-11-12T21:18:52.171391+00:00"
+      }
+    },
+    {
+      "stage": "nearest",
+      "scene": "Dd4bFSTQ8gi",
+      "status": "completed",
+      "completed": 20,
+      "steps": 12033,
+      "launch_times": {},
+      "status_times": {
+        "timestamp": "2026-11-12T21:43:32.976967+00:00"
+      }
+    },
+    {
+      "stage": "nearest",
+      "scene": "Nfvxx8J5NCo",
+      "status": "completed",
+      "completed": 20,
+      "steps": 11162,
+      "launch_times": {},
+      "status_times": {
+        "timestamp": "2026-11-12T21:36:12.132892+00:00"
+      }
+    },
+    {
+      "stage": "nearest",
+      "scene": "QaLdnwvtxbs",
+      "status": "completed",
+      "completed": 20,
+      "steps": 6907,
+      "launch_times": {},
+      "status_times": {
+        "timestamp": "2026-11-12T23:23:47.968974+00:00"
+      }
+    },
+    {
+      "stage": "nearest",
+      "scene": "TEEsavR23oF",
+      "status": "completed",
+      "completed": 20,
+      "steps": 16925,
+      "launch_times": {},
+      "status_times": {
+        "timestamp": "2026-11-13T01:55:04.445987+00:00"
+      }
+    },
+    {
+      "stage": "myopic",
+      "scene": "4ok3usBNeis",
+      "status": "completed",
+      "completed": 20,
+      "steps": 13094,
+      "launch_times": {},
+      "status_times": {
+        "timestamp": "2026-11-13T07:55:57.433805+00:00"
+      }
+    },
+    {
+      "stage": "myopic",
+      "scene": "5cdEh9F2hJL",
+      "status": "completed",
+      "completed": 20,
+      "steps": 10665,
+      "launch_times": {},
+      "status_times": {
+        "timestamp": "2026-11-13T06:56:09.425689+00:00"
+      }
+    },
+    {
+      "stage": "myopic",
+      "scene": "Dd4bFSTQ8gi",
+      "status": "completed",
+      "completed": 20,
+      "steps": 10618,
+      "launch_times": {},
+      "status_times": {
+        "timestamp": "2026-11-13T08:12:04.793988+00:00"
+      }
+    },
+    {
+      "stage": "myopic",
+      "scene": "Nfvxx8J5NCo",
+      "status": "completed",
+      "completed": 20,
+      "steps": 11209,
+      "launch_times": {},
+      "status_times": {
+        "timestamp": "2026-11-13T08:12:09.780002+00:00"
+      }
+    },
+    {
+      "stage": "myopic",
+      "scene": "QaLdnwvtxbs",
+      "status": "completed",
+      "completed": 20,
+      "steps": 7395,
+      "launch_times": {},
+      "status_times": {
+        "timestamp": "2026-11-13T07:14:41.331556+00:00"
+      }
+    },
+    {
+      "stage": "myopic",
+      "scene": "TEEsavR23oF",
+      "status": "completed",
+      "completed": 20,
+      "steps": 17283,
+      "launch_times": {},
+      "status_times": {
+        "timestamp": "2026-11-13T09:41:16.545411+00:00"
+      }
+    },
+    {
+      "stage": "myopic",
+      "scene": "6s7QHgap2fW",
+      "status": "completed",
+      "completed": 20,
+      "steps": 17660,
+      "launch_times": {},
+      "status_times": {
+        "timestamp": "2026-11-13T12:46:08.556352+00:00"
+      }
+    },
+    {
+      "stage": "myopic",
+      "scene": "DYehNKdT76V",
+      "status": "completed",
+      "completed": 20,
+      "steps": 15388,
+      "launch_times": {},
+      "status_times": {
+        "timestamp": "2026-11-13T11:35:32.255662+00:00"
+      }
+    },
+    {
+      "stage": "suffix_only",
+      "scene": "4ok3usBNeis",
+      "status": "running",
+      "completed": 7,
+      "steps": 5015,
+      "launch_times": {},
+      "status_times": {
+        "timestamp": "2026-11-13T12:47:24.872305+00:00"
+      },
+      "elapsed_seconds": 7349.260000000009,
+      "episode": "7",
+      "last_trajectory": {
+        "frame_index": 196
+      },
+      "timing_samples": [
+        {
+          "fps": 1.0934094630059161,
+          "frame_count": 796,
+          "frame_time_sum_ms": 727998.089399829,
+          "mean_frame_time_ms": 914.570464070137,
+          "median_frame_time_ms": 600.0734679982997,
+          "p95_frame_time_ms": 3211.0093030059943
+        },
+        {
+          "fps": 1.144985087482609,
+          "frame_count": 261,
+          "frame_time_sum_ms": 227950.5670889048,
+          "mean_frame_time_ms": 873.373820264003,
+          "median_frame_time_ms": 644.0552200074308,
+          "p95_frame_time_ms": 2044.5393819827586
+        }
+      ]
+    },
+    {
+      "stage": "suffix_only",
+      "scene": "5cdEh9F2hJL",
+      "status": "running",
+      "completed": 11,
+      "steps": 5124,
+      "launch_times": {},
+      "status_times": {
+        "timestamp": "2026-11-13T12:47:24.918580+00:00"
+      },
+      "elapsed_seconds": 7348.700000000012,
+      "episode": "11",
+      "last_trajectory": {
+        "frame_index": 151
+      },
+      "timing_samples": [
+        {
+          "fps": 1.264439612396421,
+          "frame_count": 766,
+          "frame_time_sum_ms": 605801.9635656965,
+          "mean_frame_time_ms": 790.8641822006482,
+          "median_frame_time_ms": 552.5299495202489,
+          "p95_frame_time_ms": 2752.299225976458
+        },
+        {
+          "fps": 1.1395616815743226,
+          "frame_count": 483,
+          "frame_time_sum_ms": 423847.1754619968,
+          "mean_frame_time_ms": 877.5303839792895,
+          "median_frame_time_ms": 605.7938360027038,
+          "p95_frame_time_ms": 3069.2396421101816
+        }
+      ]
+    },
+    {
+      "stage": "suffix_only",
+      "scene": "6s7QHgap2fW",
+      "status": "running",
+      "completed": 6,
+      "steps": 4772,
+      "launch_times": {},
+      "status_times": {
+        "timestamp": "2026-11-13T12:47:26.697897+00:00"
+      },
+      "elapsed_seconds": 7348.119999999995,
+      "episode": "6",
+      "last_trajectory": {
+        "frame_index": 48
+      },
+      "timing_samples": [
+        {
+          "fps": 1.1676061653511098,
+          "frame_count": 437,
+          "frame_time_sum_ms": 374270.03468124894,
+          "mean_frame_time_ms": 856.453168606977,
+          "median_frame_time_ms": 715.148227987811,
+          "p95_frame_time_ms": 1852.922730031423
+        },
+        {
+          "fps": 1.1172912525549157,
+          "frame_count": 567,
+          "frame_time_sum_ms": 507477.3463977617,
+          "mean_frame_time_ms": 895.0217749519607,
+          "median_frame_time_ms": 659.6582279889844,
+          "p95_frame_time_ms": 2114.7800732986016
+        }
+      ]
+    },
+    {
+      "stage": "suffix_only",
+      "scene": "DYehNKdT76V",
+      "status": "running",
+      "completed": 6,
+      "steps": 4785,
+      "launch_times": {},
+      "status_times": {
+        "timestamp": "2026-11-13T12:47:26.606648+00:00"
+      },
+      "elapsed_seconds": 7347.5,
+      "episode": "6",
+      "last_trajectory": {
+        "frame_index": 669
+      },
+      "timing_samples": [
+        {
+          "fps": 1.4099227455210845,
+          "frame_count": 1500,
+          "frame_time_sum_ms": 1063888.078098651,
+          "mean_frame_time_ms": 709.258718732434,
+          "median_frame_time_ms": 456.6541039966978,
+          "p95_frame_time_ms": 2349.002750657382
+        },
+        {
+          "fps": 1.0956514697211441,
+          "frame_count": 580,
+          "frame_time_sum_ms": 529365.4195960844,
+          "mean_frame_time_ms": 912.6989993035938,
+          "median_frame_time_ms": 626.0966760164592,
+          "p95_frame_time_ms": 2883.2878861139748
+        }
+      ]
+    },
+    {
+      "stage": "suffix_only",
+      "scene": "Dd4bFSTQ8gi",
+      "status": "running",
+      "completed": 9,
+      "steps": 5233,
+      "launch_times": {},
+      "status_times": {
+        "timestamp": "2026-11-13T12:47:27.740011+00:00"
+      },
+      "elapsed_seconds": 7346.929999999993,
+      "episode": "9",
+      "last_trajectory": {
+        "frame_index": 425
+      },
+      "timing_samples": [
+        {
+          "fps": 1.326971458285841,
+          "frame_count": 512,
+          "frame_time_sum_ms": 385841.0041926545,
+          "mean_frame_time_ms": 753.5957113137783,
+          "median_frame_time_ms": 587.4353569815867,
+          "p95_frame_time_ms": 1615.9695837413892
+        },
+        {
+          "fps": 1.422855468167487,
+          "frame_count": 138,
+          "frame_time_sum_ms": 96988.0659612827,
+          "mean_frame_time_ms": 702.812072183208,
+          "median_frame_time_ms": 578.0573240190279,
+          "p95_frame_time_ms": 1175.4939455975546
+        }
+      ]
+    },
+    {
+      "stage": "suffix_only",
+      "scene": "Nfvxx8J5NCo",
+      "status": "running",
+      "completed": 8,
+      "steps": 6072,
+      "launch_times": {},
+      "status_times": {
+        "timestamp": "2026-11-13T12:47:27.817916+00:00"
+      },
+      "elapsed_seconds": 7346.350000000035,
+      "episode": "7",
+      "last_trajectory": {
+        "frame_index": 134
+      },
+      "timing_samples": [
+        {
+          "fps": 1.2975751640974493,
+          "frame_count": 715,
+          "frame_time_sum_ms": 551027.8092424269,
+          "mean_frame_time_ms": 770.6682646747229,
+          "median_frame_time_ms": 613.8594009680673,
+          "p95_frame_time_ms": 1715.7326244225246
+        },
+        {
+          "fps": 1.5076947905277893,
+          "frame_count": 134,
+          "frame_time_sum_ms": 88877.40465899697,
+          "mean_frame_time_ms": 663.2642138731117,
+          "median_frame_time_ms": 572.1200809930451,
+          "p95_frame_time_ms": 1097.4720956000958
+        }
+      ]
+    },
+    {
+      "stage": "suffix_only",
+      "scene": "QaLdnwvtxbs",
+      "status": "running",
+      "completed": 13,
+      "steps": 5088,
+      "launch_times": {},
+      "status_times": {
+        "timestamp": "2026-11-13T12:47:29.867859+00:00"
+      },
+      "elapsed_seconds": 7345.679999999993,
+      "episode": "13",
+      "last_trajectory": {
+        "frame_index": 452
+      },
+      "timing_samples": [
+        {
+          "fps": 1.504631177909192,
+          "frame_count": 129,
+          "frame_time_sum_ms": 85735.29639287153,
+          "mean_frame_time_ms": 664.6147007199344,
+          "median_frame_time_ms": 577.9725869651884,
+          "p95_frame_time_ms": 1124.4424538104793
+        },
+        {
+          "fps": 1.2836243764235853,
+          "frame_count": 758,
+          "frame_time_sum_ms": 590515.4295308166,
+          "mean_frame_time_ms": 779.0441022833992,
+          "median_frame_time_ms": 464.7158479783684,
+          "p95_frame_time_ms": 3370.9511583292597
+        }
+      ]
+    },
+    {
+      "stage": "suffix_only",
+      "scene": "TEEsavR23oF",
+      "status": "running",
+      "completed": 5,
+      "steps": 4386,
+      "launch_times": {},
+      "status_times": {
+        "timestamp": "2026-11-13T12:47:30.219061+00:00"
+      },
+      "elapsed_seconds": 7345.020000000019,
+      "episode": "5",
+      "last_trajectory": {
+        "frame_index": 489
+      },
+      "timing_samples": [
+        {
+          "fps": 1.1496392122777712,
+          "frame_count": 1079,
+          "frame_time_sum_ms": 938555.3210751968,
+          "mean_frame_time_ms": 869.8381103569943,
+          "median_frame_time_ms": 557.3617300251499,
+          "p95_frame_time_ms": 2956.7687541653854
+        },
+        {
+          "fps": 1.1692581799624802,
+          "frame_count": 685,
+          "frame_time_sum_ms": 585841.5290470584,
+          "mean_frame_time_ms": 855.2431080978955,
+          "median_frame_time_ms": 598.1985669932328,
+          "p95_frame_time_ms": 2380.7889646035615
+        }
+      ]
+    }
+  ],
+  "pipeline_CPU_test": {
+    "passed": true,
+    "scheduled_suffix_CPU_jobs": 8,
+    "interleaving_exercised": true,
+    "real_adopted_child_wait_statuses": [
+      0,
+      0
+    ],
+    "synthetic_resource_and_GT_fixture": true,
+    "Native_or_GPU_workers_started": false,
+    "source_sha256": "9ac0ccce54e0e75502ae49bc13e736ba7ea3fdd51d1a16076a230d9425a67147",
+    "at_utc": "2026-11-13T09:56:29.991857+00:00",
+    "real_scientific_sources_and_parameters_unchanged": true,
+    "test_kind": "Real Linux CPU processes with synthetic episode/GT/resource fixtures; does not certify navigation or GPU performance"
+  },
+  "scene_pipeline_approval_exists": false,
+  "read_only": true
+}

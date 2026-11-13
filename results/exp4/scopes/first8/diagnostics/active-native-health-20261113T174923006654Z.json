@@ -1,0 +1,57 @@
+{
+  "at_utc": "2026-11-13T17:49:23.006593+00:00",
+  "active_native_jobs": [],
+  "gpu_ownership": [
+    {
+      "gpu": 0,
+      "free_mib": 42614,
+      "Exp4_compute_mib": 0,
+      "other_compute_mib": 2008
+    },
+    {
+      "gpu": 1,
+      "free_mib": 42642,
+      "Exp4_compute_mib": 0,
+      "other_compute_mib": 2008
+    },
+    {
+      "gpu": 2,
+      "free_mib": 40008,
+      "Exp4_compute_mib": 0,
+      "other_compute_mib": 4016
+    },
+    {
+      "gpu": 3,
+      "free_mib": 39750,
+      "Exp4_compute_mib": 0,
+      "other_compute_mib": 4016
+    },
+    {
+      "gpu": 4,
+      "free_mib": 39787,
+      "Exp4_compute_mib": 0,
+      "other_compute_mib": 4016
+    },
+    {
+      "gpu": 5,
+      "free_mib": 39731,
+      "Exp4_compute_mib": 0,
+      "other_compute_mib": 4016
+    },
+    {
+      "gpu": 6,
+      "free_mib": 39813,
+      "Exp4_compute_mib": 0,
+      "other_compute_mib": 4016
+    },
+    {
+      "gpu": 7,
+      "free_mib": 39813,
+      "Exp4_compute_mib": 0,
+      "other_compute_mib": 4016
+    }
+  ],
+  "available_memory_gib": 348.81797790527344,
+  "signals_sent": false,
+  "settings_changed": false
+}

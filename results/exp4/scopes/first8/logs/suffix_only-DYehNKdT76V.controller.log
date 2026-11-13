@@ -1,0 +1,24 @@
+{
+  "experiment": "exp4_suffix_only",
+  "dataset": "hm3dv1_3mon_balanced1200",
+  "scenes": [
+    "DYehNKdT76V"
+  ],
+  "complete_episodes": 20,
+  "targets_per_episode": 3,
+  "gpus": {
+    "mapping": 3,
+    "navigation": 3
+  },
+  "configuration_sha256": "58979c55f01e4189496a70e4cfaee4c27f520ec825fe36e435d3d76f81d2bcd7",
+  "identity_sha256": "8e99b6e7cc3712c43d4b335027a26c95c08f0bd08e9456f3b8a51c4e016bd2a4",
+  "habitat_revision": "8df2661e5b2203c0ddc47798d5da0132d5686bbe",
+  "models": {
+    "status": "passed",
+    "files": 22,
+    "bytes": 5631339793,
+    "manifest_sha256": "f21ffdc59735aaf84fe5a0a4ebe99f35261f6dd45a643387900d003b6b7ac4a6"
+  }
+}
+Run: /nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261113_204704_644672_exp4_suffix_only_exp4-suffix_only-a3-first8-DYehNKdT76V
+/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261113_204704_644672_exp4_suffix_only_exp4-suffix_only-a3-first8-DYehNKdT76V

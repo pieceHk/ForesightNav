@@ -1,0 +1,15 @@
+{
+  "reviewed_at_utc": "2026-11-13T19:19:45.841020+00:00",
+  "actual_visual_inspection": true,
+  "method": "Downloaded SHA-verified CP5 and PNGs and viewed both figures individually with view_image.",
+  "report_sha256": "89c9995f71eb1a52078664076b08d5f50a5d21d53a2bdc1307b8a64f98816e6c",
+  "figure_sha256": {
+    "figures/SR_SPL.png": "067990b7a72b6be8ea753cca4662ba17938917fd464fd1d41b550a151352e7ea",
+    "figures/effects.png": "1b02f457722ccf2a33b71e1092a3138016afa01f3d59aa66e78de07abceeacf1"
+  },
+  "observations": [
+    "SR_SPL.png: both panels have readable axes, variant labels, percentage units, and bar values; no visible clipping or overlap. Values match CP5 table.",
+    "effects.png: SR and SPL contrast panels show zero baselines, labeled effects, readable values, and no visible clipping; signs and magnitudes match CP5 table."
+  ],
+  "review_scope": "Final fixed-first-eight-scene CP5 figures; visual QA only, no data changes."
+}

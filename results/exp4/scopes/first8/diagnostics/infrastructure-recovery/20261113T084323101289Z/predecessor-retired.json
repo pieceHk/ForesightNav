@@ -1,0 +1,7 @@
+{
+  "at_utc": "2026-11-13T12:46:11.702905+00:00",
+  "pid": 2196875,
+  "start_ticks": "35297197",
+  "reason": "All original native launcher OS exit statuses captured0; stopped CPU has no living children",
+  "native_processes_signaled": false
+}

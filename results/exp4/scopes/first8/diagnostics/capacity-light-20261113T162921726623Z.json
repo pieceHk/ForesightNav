@@ -1,0 +1,72 @@
+{
+  "at_utc": "2026-11-13T16:29:21.726577+00:00",
+  "gpus": [
+    {
+      "gpu": 0,
+      "free_mib": 23866,
+      "all_compute_mib": 20745,
+      "utilization_percent": 3,
+      "gpu_admission": false,
+      "processes": 3
+    },
+    {
+      "gpu": 1,
+      "free_mib": 42691,
+      "all_compute_mib": 2008,
+      "utilization_percent": 0,
+      "gpu_admission": true,
+      "processes": 1
+    },
+    {
+      "gpu": 2,
+      "free_mib": 21403,
+      "all_compute_mib": 22685,
+      "utilization_percent": 65,
+      "gpu_admission": false,
+      "processes": 4
+    },
+    {
+      "gpu": 3,
+      "free_mib": 21232,
+      "all_compute_mib": 22675,
+      "utilization_percent": 61,
+      "gpu_admission": false,
+      "processes": 4
+    },
+    {
+      "gpu": 4,
+      "free_mib": 16079,
+      "all_compute_mib": 27861,
+      "utilization_percent": 54,
+      "gpu_admission": false,
+      "processes": 4
+    },
+    {
+      "gpu": 5,
+      "free_mib": 17059,
+      "all_compute_mib": 26839,
+      "utilization_percent": 60,
+      "gpu_admission": false,
+      "processes": 4
+    },
+    {
+      "gpu": 6,
+      "free_mib": 39919,
+      "all_compute_mib": 4016,
+      "utilization_percent": 10,
+      "gpu_admission": true,
+      "processes": 2
+    },
+    {
+      "gpu": 7,
+      "free_mib": 19451,
+      "all_compute_mib": 24411,
+      "utilization_percent": 64,
+      "gpu_admission": false,
+      "processes": 4
+    }
+  ],
+  "available_memory_gib": 332.7465362548828,
+  "host_admission": true,
+  "signals_sent": false
+}

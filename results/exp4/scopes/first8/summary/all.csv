@@ -1,0 +1,5 @@
+method,variant,task,n_episodes,n_error,future_suffix,validity_belief,SR,SPL,PR,PPL,P_C1,P_C2_given_C1,P_C3_given_C1C2,P_C4_given_C1C2C3,Joint,Invalid_visits_per_ep,deviation_from_nearest_proposal_pct,deviation_from_nearest_after_hysteresis_pct,deviation_from_nearest_realized_pct
+ForesightNav,nearest,3-MON,160,0,False,False,22.50,9.05,56.46,15.15,50.62,66.67,66.67,,22.50,11.49,0.00,7.05,13.49
+ForesightNav,suffix_only,3-MON,160,0,True,False,20.62,7.75,55.62,14.94,50.00,63.75,64.71,,20.62,12.00,11.68,14.80,20.17
+ForesightNav,myopic,3-MON,160,0,False,True,18.12,7.08,56.67,14.75,52.50,51.19,67.44,,18.12,11.74,15.36,18.74,24.33
+ForesightNav,full,3-MON,160,0,True,True,20.62,7.04,56.25,15.18,52.50,59.52,66.00,,20.62,11.48,13.46,16.66,21.58

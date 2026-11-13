@@ -1,0 +1,370 @@
+{
+  "at_utc": "2026-11-13T13:19:37.571985+00:00",
+  "rows": [
+    {
+      "stage": "nearest",
+      "scene": "4ok3usBNeis",
+      "status": "completed",
+      "completed": 20,
+      "steps": 15807,
+      "launch_times": {},
+      "status_times": {
+        "timestamp": "2026-11-12T17:53:53.219378+00:00"
+      }
+    },
+    {
+      "stage": "nearest",
+      "scene": "5cdEh9F2hJL",
+      "status": "completed",
+      "completed": 20,
+      "steps": 9310,
+      "launch_times": {},
+      "status_times": {
+        "timestamp": "2026-11-12T15:42:41.682403+00:00"
+      }
+    },
+    {
+      "stage": "nearest",
+      "scene": "6s7QHgap2fW",
+      "status": "completed",
+      "completed": 20,
+      "steps": 16030,
+      "launch_times": {},
+      "status_times": {
+        "timestamp": "2026-11-12T19:06:55.207206+00:00"
+      }
+    },
+    {
+      "stage": "nearest",
+      "scene": "DYehNKdT76V",
+      "status": "completed",
+      "completed": 20,
+      "steps": 14788,
+      "launch_times": {},
+      "status_times": {
+        "timestamp": "2026-11-12T21:18:52.171391+00:00"
+      }
+    },
+    {
+      "stage": "nearest",
+      "scene": "Dd4bFSTQ8gi",
+      "status": "completed",
+      "completed": 20,
+      "steps": 12033,
+      "launch_times": {},
+      "status_times": {
+        "timestamp": "2026-11-12T21:43:32.976967+00:00"
+      }
+    },
+    {
+      "stage": "nearest",
+      "scene": "Nfvxx8J5NCo",
+      "status": "completed",
+      "completed": 20,
+      "steps": 11162,
+      "launch_times": {},
+      "status_times": {
+        "timestamp": "2026-11-12T21:36:12.132892+00:00"
+      }
+    },
+    {
+      "stage": "nearest",
+      "scene": "QaLdnwvtxbs",
+      "status": "completed",
+      "completed": 20,
+      "steps": 6907,
+      "launch_times": {},
+      "status_times": {
+        "timestamp": "2026-11-12T23:23:47.968974+00:00"
+      }
+    },
+    {
+      "stage": "nearest",
+      "scene": "TEEsavR23oF",
+      "status": "completed",
+      "completed": 20,
+      "steps": 16925,
+      "launch_times": {},
+      "status_times": {
+        "timestamp": "2026-11-13T01:55:04.445987+00:00"
+      }
+    },
+    {
+      "stage": "myopic",
+      "scene": "4ok3usBNeis",
+      "status": "completed",
+      "completed": 20,
+      "steps": 13094,
+      "launch_times": {},
+      "status_times": {
+        "timestamp": "2026-11-13T07:55:57.433805+00:00"
+      }
+    },
+    {
+      "stage": "myopic",
+      "scene": "5cdEh9F2hJL",
+      "status": "completed",
+      "completed": 20,
+      "steps": 10665,
+      "launch_times": {},
+      "status_times": {
+        "timestamp": "2026-11-13T06:56:09.425689+00:00"
+      }
+    },
+    {
+      "stage": "myopic",
+      "scene": "Dd4bFSTQ8gi",
+      "status": "completed",
+      "completed": 20,
+      "steps": 10618,
+      "launch_times": {},
+      "status_times": {
+        "timestamp": "2026-11-13T08:12:04.793988+00:00"
+      }
+    },
+    {
+      "stage": "myopic",
+      "scene": "Nfvxx8J5NCo",
+      "status": "completed",
+      "completed": 20,
+      "steps": 11209,
+      "launch_times": {},
+      "status_times": {
+        "timestamp": "2026-11-13T08:12:09.780002+00:00"
+      }
+    },
+    {
+      "stage": "myopic",
+      "scene": "QaLdnwvtxbs",
+      "status": "completed",
+      "completed": 20,
+      "steps": 7395,
+      "launch_times": {},
+      "status_times": {
+        "timestamp": "2026-11-13T07:14:41.331556+00:00"
+      }
+    },
+    {
+      "stage": "myopic",
+      "scene": "TEEsavR23oF",
+      "status": "completed",
+      "completed": 20,
+      "steps": 17283,
+      "launch_times": {},
+      "status_times": {
+        "timestamp": "2026-11-13T09:41:16.545411+00:00"
+      }
+    },
+    {
+      "stage": "myopic",
+      "scene": "6s7QHgap2fW",
+      "status": "completed",
+      "completed": 20,
+      "steps": 17660,
+      "launch_times": {},
+      "status_times": {
+        "timestamp": "2026-11-13T12:46:08.556352+00:00"
+      }
+    },
+    {
+      "stage": "myopic",
+      "scene": "DYehNKdT76V",
+      "status": "completed",
+      "completed": 20,
+      "steps": 15388,
+      "launch_times": {},
+      "status_times": {
+        "timestamp": "2026-11-13T11:35:32.255662+00:00"
+      }
+    },
+    {
+      "stage": "suffix_only",
+      "scene": "4ok3usBNeis",
+      "status": "running",
+      "completed": 0,
+      "steps": 0,
+      "launch_times": {},
+      "status_times": {
+        "timestamp": "2026-11-13T12:47:24.872305+00:00"
+      },
+      "elapsed_seconds": 1959.4899999999907,
+      "episode": "0",
+      "last_trajectory": {
+        "frame_index": 515
+      },
+      "timing_samples": []
+    },
+    {
+      "stage": "suffix_only",
+      "scene": "5cdEh9F2hJL",
+      "status": "running",
+      "completed": 1,
+      "steps": 264,
+      "launch_times": {},
+      "status_times": {
+        "timestamp": "2026-11-13T12:47:24.918580+00:00"
+      },
+      "elapsed_seconds": 1958.929999999993,
+      "episode": "1",
+      "last_trajectory": {
+        "frame_index": 314
+      },
+      "timing_samples": [
+        {
+          "fps": 1.016395672719745,
+          "frame_count": 264,
+          "frame_time_sum_ms": 259741.3655782002,
+          "mean_frame_time_ms": 983.8688090083341,
+          "median_frame_time_ms": 626.1402915115468,
+          "p95_frame_time_ms": 2987.888556631515
+        }
+      ]
+    },
+    {
+      "stage": "suffix_only",
+      "scene": "6s7QHgap2fW",
+      "status": "running",
+      "completed": 0,
+      "steps": 0,
+      "launch_times": {},
+      "status_times": {
+        "timestamp": "2026-11-13T12:47:26.697897+00:00"
+      },
+      "elapsed_seconds": 1958.3499999999767,
+      "episode": "0",
+      "last_trajectory": {
+        "frame_index": 529
+      },
+      "timing_samples": []
+    },
+    {
+      "stage": "suffix_only",
+      "scene": "DYehNKdT76V",
+      "status": "running",
+      "completed": 1,
+      "steps": 288,
+      "launch_times": {},
+      "status_times": {
+        "timestamp": "2026-11-13T12:47:26.606648+00:00"
+      },
+      "elapsed_seconds": 1957.7299999999814,
+      "episode": "1",
+      "last_trajectory": {
+        "frame_index": 179
+      },
+      "timing_samples": [
+        {
+          "fps": 0.7084558061457652,
+          "frame_count": 288,
+          "frame_time_sum_ms": 406517.94720522594,
+          "mean_frame_time_ms": 1411.5206500181457,
+          "median_frame_time_ms": 680.2154595206957,
+          "p95_frame_time_ms": 5181.967162151702
+        }
+      ]
+    },
+    {
+      "stage": "suffix_only",
+      "scene": "Dd4bFSTQ8gi",
+      "status": "running",
+      "completed": 1,
+      "steps": 311,
+      "launch_times": {},
+      "status_times": {
+        "timestamp": "2026-11-13T12:47:27.740011+00:00"
+      },
+      "elapsed_seconds": 1957.1599999999744,
+      "episode": "1",
+      "last_trajectory": {
+        "frame_index": 316
+      },
+      "timing_samples": [
+        {
+          "fps": 0.9017661380154944,
+          "frame_count": 311,
+          "frame_time_sum_ms": 344878.77387413755,
+          "mean_frame_time_ms": 1108.9349642255227,
+          "median_frame_time_ms": 673.0063149589114,
+          "p95_frame_time_ms": 2869.273349031573
+        }
+      ]
+    },
+    {
+      "stage": "suffix_only",
+      "scene": "Nfvxx8J5NCo",
+      "status": "running",
+      "completed": 1,
+      "steps": 659,
+      "launch_times": {},
+      "status_times": {
+        "timestamp": "2026-11-13T12:47:27.817916+00:00"
+      },
+      "elapsed_seconds": 1956.5800000000163,
+      "episode": "1",
+      "last_trajectory": {
+        "frame_index": 69
+      },
+      "timing_samples": [
+        {
+          "fps": 0.4578756228025003,
+          "frame_count": 659,
+          "frame_time_sum_ms": 1439255.4815792246,
+          "mean_frame_time_ms": 2183.9992133220403,
+          "median_frame_time_ms": 608.6150369956158,
+          "p95_frame_time_ms": 6325.610766501634
+        }
+      ]
+    },
+    {
+      "stage": "suffix_only",
+      "scene": "QaLdnwvtxbs",
+      "status": "running",
+      "completed": 0,
+      "steps": 0,
+      "launch_times": {},
+      "status_times": {
+        "timestamp": "2026-11-13T12:47:29.867859+00:00"
+      },
+      "elapsed_seconds": 1955.9099999999744,
+      "episode": "0",
+      "last_trajectory": {
+        "frame_index": 622
+      },
+      "timing_samples": []
+    },
+    {
+      "stage": "suffix_only",
+      "scene": "TEEsavR23oF",
+      "status": "running",
+      "completed": 0,
+      "steps": 0,
+      "launch_times": {},
+      "status_times": {
+        "timestamp": "2026-11-13T12:47:30.219061+00:00"
+      },
+      "elapsed_seconds": 1955.25,
+      "episode": "0",
+      "last_trajectory": {
+        "frame_index": 469
+      },
+      "timing_samples": []
+    }
+  ],
+  "pipeline_CPU_test": {
+    "passed": true,
+    "scheduled_suffix_CPU_jobs": 8,
+    "interleaving_exercised": true,
+    "real_adopted_child_wait_statuses": [
+      0,
+      0
+    ],
+    "synthetic_resource_and_GT_fixture": true,
+    "Native_or_GPU_workers_started": false,
+    "source_sha256": "9ac0ccce54e0e75502ae49bc13e736ba7ea3fdd51d1a16076a230d9425a67147",
+    "at_utc": "2026-11-13T09:56:29.991857+00:00",
+    "real_scientific_sources_and_parameters_unchanged": true,
+    "test_kind": "Real Linux CPU processes with synthetic episode/GT/resource fixtures; does not certify navigation or GPU performance"
+  },
+  "scene_pipeline_approval_exists": false,
+  "read_only": true
+}

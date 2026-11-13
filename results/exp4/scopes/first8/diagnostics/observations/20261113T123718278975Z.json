@@ -1,0 +1,386 @@
+{
+  "checked_at_utc": "2026-11-13T12:37:18.277212+00:00",
+  "scope": "first8",
+  "n_scenes": 8,
+  "episodes_per_variant": 160,
+  "controller_pid": 2311693,
+  "controller_start_ticks": "36789196",
+  "controller_live_matching": true,
+  "controller_source_sha256": "9d16337ef903a0a0e46de102c7eb2c02f1a44bceb973289b0406e23ed8f7cc40",
+  "status": "running",
+  "error": null,
+  "stages": {
+    "full": {
+      "status": "completed",
+      "completed_native": 160,
+      "audited": 160,
+      "jobs": [
+        {
+          "stage": "full",
+          "scene": "4ok3usBNeis",
+          "gpu": 2,
+          "status": "completed",
+          "completed_native": 20
+        },
+        {
+          "stage": "full",
+          "scene": "5cdEh9F2hJL",
+          "gpu": 3,
+          "status": "completed",
+          "completed_native": 20
+        },
+        {
+          "stage": "full",
+          "scene": "6s7QHgap2fW",
+          "gpu": 3,
+          "status": "completed",
+          "completed_native": 20
+        },
+        {
+          "stage": "full",
+          "scene": "DYehNKdT76V",
+          "gpu": 2,
+          "status": "completed",
+          "completed_native": 20
+        },
+        {
+          "stage": "full",
+          "scene": "Dd4bFSTQ8gi",
+          "gpu": 3,
+          "status": "completed",
+          "completed_native": 20
+        },
+        {
+          "stage": "full",
+          "scene": "Nfvxx8J5NCo",
+          "gpu": 2,
+          "status": "completed",
+          "completed_native": 20
+        },
+        {
+          "stage": "full",
+          "scene": "QaLdnwvtxbs",
+          "gpu": 3,
+          "status": "completed",
+          "completed_native": 20
+        },
+        {
+          "stage": "full",
+          "scene": "TEEsavR23oF",
+          "gpu": 2,
+          "status": "completed",
+          "completed_native": 20
+        }
+      ],
+      "metrics": {
+        "SR": 20.62,
+        "SPL": 7.04,
+        "PR": 56.25,
+        "PPL": 15.18,
+        "P_C1": 52.5,
+        "P_C2_given_C1": 59.52,
+        "P_C3_given_C1C2": 66.0
+      }
+    },
+    "nearest": {
+      "status": "completed",
+      "completed_native": 160,
+      "audited": 160,
+      "jobs": [
+        {
+          "stage": "nearest",
+          "scene": "4ok3usBNeis",
+          "gpu": 5,
+          "status": "completed",
+          "completed_native": 20
+        },
+        {
+          "stage": "nearest",
+          "scene": "5cdEh9F2hJL",
+          "gpu": 6,
+          "status": "completed",
+          "completed_native": 20
+        },
+        {
+          "stage": "nearest",
+          "scene": "6s7QHgap2fW",
+          "gpu": 7,
+          "status": "completed",
+          "completed_native": 20
+        },
+        {
+          "stage": "nearest",
+          "scene": "DYehNKdT76V",
+          "gpu": 6,
+          "status": "completed",
+          "completed_native": 20
+        },
+        {
+          "stage": "nearest",
+          "scene": "Dd4bFSTQ8gi",
+          "gpu": 5,
+          "status": "completed",
+          "completed_native": 20
+        },
+        {
+          "stage": "nearest",
+          "scene": "Nfvxx8J5NCo",
+          "gpu": 7,
+          "status": "completed",
+          "completed_native": 20
+        },
+        {
+          "stage": "nearest",
+          "scene": "QaLdnwvtxbs",
+          "gpu": 5,
+          "status": "completed",
+          "completed_native": 20
+        },
+        {
+          "stage": "nearest",
+          "scene": "TEEsavR23oF",
+          "gpu": 6,
+          "status": "completed",
+          "completed_native": 20
+        }
+      ],
+      "metrics": {
+        "SR": 22.5,
+        "SPL": 9.05,
+        "PR": 56.46,
+        "PPL": 15.15,
+        "P_C1": 50.62,
+        "P_C2_given_C1": 66.67,
+        "P_C3_given_C1C2": 66.67
+      }
+    },
+    "myopic": {
+      "status": "running",
+      "completed_native": 159,
+      "audited": 0,
+      "jobs": [
+        {
+          "stage": "myopic",
+          "scene": "4ok3usBNeis",
+          "gpu": 5,
+          "status": "completed",
+          "completed_native": 20
+        },
+        {
+          "stage": "myopic",
+          "scene": "5cdEh9F2hJL",
+          "gpu": 6,
+          "status": "completed",
+          "completed_native": 20
+        },
+        {
+          "stage": "myopic",
+          "scene": "Dd4bFSTQ8gi",
+          "gpu": 1,
+          "status": "completed",
+          "completed_native": 20
+        },
+        {
+          "stage": "myopic",
+          "scene": "Nfvxx8J5NCo",
+          "gpu": 2,
+          "status": "completed",
+          "completed_native": 20
+        },
+        {
+          "stage": "myopic",
+          "scene": "QaLdnwvtxbs",
+          "gpu": 3,
+          "status": "completed",
+          "completed_native": 20
+        },
+        {
+          "stage": "myopic",
+          "scene": "TEEsavR23oF",
+          "gpu": 4,
+          "status": "completed",
+          "completed_native": 20
+        },
+        {
+          "stage": "myopic",
+          "scene": "6s7QHgap2fW",
+          "gpu": 3,
+          "status": "running",
+          "completed_native": 19,
+          "pid": 2316356,
+          "launcher_live": true,
+          "launcher_birth_matches": true,
+          "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261113_165316_081484_exp4_myopic_exp4-myopic-a5-first8-infrastructure-20261113-6s7QHgap2fW",
+          "current_episode": "19",
+          "last_frame": 177,
+          "trajectory_age_seconds": 0.10149359703063965
+        },
+        {
+          "stage": "myopic",
+          "scene": "DYehNKdT76V",
+          "gpu": 1,
+          "status": "completed",
+          "completed_native": 20
+        }
+      ]
+    },
+    "suffix_only": {
+      "status": "not_started",
+      "completed_native": 0,
+      "audited": 0
+    }
+  },
+  "allowed_gpus": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "gpu_inventory": {
+    "checked_at_utc": "2026-11-13T12:37:18.277133+00:00",
+    "gpus": [
+      {
+        "index": "0",
+        "uuid": "GPU-b1f2b8f6-fe40-f074-7206-f73cf6e08738",
+        "name": "NVIDIA A40",
+        "memory.total": "46068",
+        "memory.free": "38146"
+      },
+      {
+        "index": "1",
+        "uuid": "GPU-6f6d0a9f-b84c-a94d-37ee-1ce29f66ba1f",
+        "name": "NVIDIA A40",
+        "memory.total": "46068",
+        "memory.free": "39562"
+      },
+      {
+        "index": "2",
+        "uuid": "GPU-e578717e-9e11-1464-269b-d5a17e564c8a",
+        "name": "NVIDIA A40",
+        "memory.total": "46068",
+        "memory.free": "39572"
+      },
+      {
+        "index": "3",
+        "uuid": "GPU-e345e195-e565-805c-b913-dc9a023ef37d",
+        "name": "NVIDIA A40",
+        "memory.total": "46068",
+        "memory.free": "19884"
+      },
+      {
+        "index": "4",
+        "uuid": "GPU-7e03cc60-2c77-01c4-3bb8-d0bfe70657be",
+        "name": "NVIDIA A40",
+        "memory.total": "46068",
+        "memory.free": "39797"
+      },
+      {
+        "index": "5",
+        "uuid": "GPU-875134a3-1b53-1712-a56d-a4192edb9728",
+        "name": "NVIDIA A40",
+        "memory.total": "46068",
+        "memory.free": "39672"
+      },
+      {
+        "index": "6",
+        "uuid": "GPU-c4579e9e-eb6e-0eda-0430-9b78b62c51b4",
+        "name": "NVIDIA A40",
+        "memory.total": "46068",
+        "memory.free": "39609"
+      },
+      {
+        "index": "7",
+        "uuid": "GPU-7ba3fcb6-cd24-e4eb-9fef-e2f8c32afae3",
+        "name": "NVIDIA A40",
+        "memory.total": "46068",
+        "memory.free": "39630"
+      }
+    ],
+    "compute_apps": [
+      {
+        "gpu_uuid": "GPU-b1f2b8f6-fe40-f074-7206-f73cf6e08738",
+        "used_gpu_memory": "1540"
+      },
+      {
+        "gpu_uuid": "GPU-b1f2b8f6-fe40-f074-7206-f73cf6e08738",
+        "used_gpu_memory": "2008"
+      },
+      {
+        "gpu_uuid": "GPU-b1f2b8f6-fe40-f074-7206-f73cf6e08738",
+        "used_gpu_memory": "2008"
+      },
+      {
+        "gpu_uuid": "GPU-6f6d0a9f-b84c-a94d-37ee-1ce29f66ba1f",
+        "used_gpu_memory": "2008"
+      },
+      {
+        "gpu_uuid": "GPU-6f6d0a9f-b84c-a94d-37ee-1ce29f66ba1f",
+        "used_gpu_memory": "2008"
+      },
+      {
+        "gpu_uuid": "GPU-e578717e-9e11-1464-269b-d5a17e564c8a",
+        "used_gpu_memory": "2008"
+      },
+      {
+        "gpu_uuid": "GPU-e578717e-9e11-1464-269b-d5a17e564c8a",
+        "used_gpu_memory": "2008"
+      },
+      {
+        "gpu_uuid": "GPU-e345e195-e565-805c-b913-dc9a023ef37d",
+        "used_gpu_memory": "2562"
+      },
+      {
+        "gpu_uuid": "GPU-e345e195-e565-805c-b913-dc9a023ef37d",
+        "used_gpu_memory": "17067"
+      },
+      {
+        "gpu_uuid": "GPU-e345e195-e565-805c-b913-dc9a023ef37d",
+        "used_gpu_memory": "2008"
+      },
+      {
+        "gpu_uuid": "GPU-e345e195-e565-805c-b913-dc9a023ef37d",
+        "used_gpu_memory": "2008"
+      },
+      {
+        "gpu_uuid": "GPU-7e03cc60-2c77-01c4-3bb8-d0bfe70657be",
+        "used_gpu_memory": "2008"
+      },
+      {
+        "gpu_uuid": "GPU-7e03cc60-2c77-01c4-3bb8-d0bfe70657be",
+        "used_gpu_memory": "2008"
+      },
+      {
+        "gpu_uuid": "GPU-875134a3-1b53-1712-a56d-a4192edb9728",
+        "used_gpu_memory": "2008"
+      },
+      {
+        "gpu_uuid": "GPU-875134a3-1b53-1712-a56d-a4192edb9728",
+        "used_gpu_memory": "2008"
+      },
+      {
+        "gpu_uuid": "GPU-c4579e9e-eb6e-0eda-0430-9b78b62c51b4",
+        "used_gpu_memory": "2008"
+      },
+      {
+        "gpu_uuid": "GPU-c4579e9e-eb6e-0eda-0430-9b78b62c51b4",
+        "used_gpu_memory": "2008"
+      },
+      {
+        "gpu_uuid": "GPU-7ba3fcb6-cd24-e4eb-9fef-e2f8c32afae3",
+        "used_gpu_memory": "2008"
+      },
+      {
+        "gpu_uuid": "GPU-7ba3fcb6-cd24-e4eb-9fef-e2f8c32afae3",
+        "used_gpu_memory": "2008"
+      }
+    ],
+    "external_process_names_and_PIDs_omitted": true
+  },
+  "THP_defrag": "always defer defer+madvise [madvise] never",
+  "memory_pressure": "some avg10=0.00 avg60=0.00 avg300=0.00 total=3358277881\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=3253435727\n",
+  "source_and_parameters_unchanged": true
+}

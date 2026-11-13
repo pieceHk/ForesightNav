@@ -1,8 +1,9 @@
 {
   "scope": "first8",
   "stage": "myopic",
-  "status": "running",
-  "at_utc": "2026-11-13T11:42:54.400263+00:00",
+  "status": "completed",
+  "n_episodes": 160,
+  "n_error": 0,
   "jobs": [
     {
       "scene": "4ok3usBNeis",
@@ -2368,10 +2369,19 @@
         "exp4-myopic-a5-first8-infrastructure-20261113-6s7QHgap2fW"
       ],
       "log": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/scopes/first8/diagnostics/infrastructure-recovery/20261113T084323101289Z/6s7QHgap2fW-full20-retry.controller.log",
-      "status": "running",
+      "status": "completed",
       "infrastructure_retry_plan": "scopes/first8/diagnostics/infrastructure-recovery/20261113T084323101289Z/plan.json",
       "excluded_failed_run": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261113_123900_372052_exp4_myopic_exp4-myopic-a3-first8-6s7QHgap2fW",
-      "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261113_165316_081484_exp4_myopic_exp4-myopic-a5-first8-infrastructure-20261113-6s7QHgap2fW"
+      "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261113_165316_081484_exp4_myopic_exp4-myopic-a5-first8-infrastructure-20261113-6s7QHgap2fW",
+      "returncode": 0,
+      "audit": {
+        "completed_episodes": 20,
+        "identity_count": 20
+      },
+      "exit_status_proof": {
+        "source": "subprocess.Popen.poll",
+        "at_utc": "2026-11-13T12:46:11.589407+00:00"
+      }
     },
     {
       "scene": "DYehNKdT76V",
@@ -2710,19 +2720,6 @@
       }
     }
   ],
-  "controller_pid": 2311693,
-  "n_scenes": 8,
-  "episodes_per_variant": 160,
-  "allowed_gpus": [
-    0,
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7
-  ],
   "source_fingerprint": {
     "pbsp/__init__.py": "204a77e8c809c9b8f38114173d35f5bcf7585e9893383c3eef5b2dca30aeb619",
     "pbsp/adapters/__init__.py": "9da64df015e12dd3130227acc397bd90bf58d5cd5f4c52108dfb9fc48830e12d",
@@ -2887,141 +2884,10 @@
     "results/exp4/meta/protocol_decisions.json": "c4596befc6337dab5a9963c69f4416992f7b0108f8d0c69c9e77cfa8f39c69ed"
   },
   "parameter_sha256": "e1d75f3c9503c7439467748fc97be6ae2ad450c429f40dc7235b1564ff7852ae",
-  "gpu_inventory": {
-    "checked_at_utc": "2026-11-13T11:42:52.367075+00:00",
-    "gpus": [
-      {
-        "index": "0",
-        "uuid": "GPU-b1f2b8f6-fe40-f074-7206-f73cf6e08738",
-        "name": "NVIDIA A40",
-        "memory.total": "46068",
-        "memory.free": "39734"
-      },
-      {
-        "index": "1",
-        "uuid": "GPU-6f6d0a9f-b84c-a94d-37ee-1ce29f66ba1f",
-        "name": "NVIDIA A40",
-        "memory.total": "46068",
-        "memory.free": "39714"
-      },
-      {
-        "index": "2",
-        "uuid": "GPU-e578717e-9e11-1464-269b-d5a17e564c8a",
-        "name": "NVIDIA A40",
-        "memory.total": "46068",
-        "memory.free": "39720"
-      },
-      {
-        "index": "3",
-        "uuid": "GPU-e345e195-e565-805c-b913-dc9a023ef37d",
-        "name": "NVIDIA A40",
-        "memory.total": "46068",
-        "memory.free": "19977"
-      },
-      {
-        "index": "4",
-        "uuid": "GPU-7e03cc60-2c77-01c4-3bb8-d0bfe70657be",
-        "name": "NVIDIA A40",
-        "memory.total": "46068",
-        "memory.free": "39885"
-      },
-      {
-        "index": "5",
-        "uuid": "GPU-875134a3-1b53-1712-a56d-a4192edb9728",
-        "name": "NVIDIA A40",
-        "memory.total": "46068",
-        "memory.free": "39769"
-      },
-      {
-        "index": "6",
-        "uuid": "GPU-c4579e9e-eb6e-0eda-0430-9b78b62c51b4",
-        "name": "NVIDIA A40",
-        "memory.total": "46068",
-        "memory.free": "39722"
-      },
-      {
-        "index": "7",
-        "uuid": "GPU-7ba3fcb6-cd24-e4eb-9fef-e2f8c32afae3",
-        "name": "NVIDIA A40",
-        "memory.total": "46068",
-        "memory.free": "39689"
-      }
-    ],
-    "compute_apps": [
-      {
-        "gpu_uuid": "GPU-b1f2b8f6-fe40-f074-7206-f73cf6e08738",
-        "used_gpu_memory": "2008"
-      },
-      {
-        "gpu_uuid": "GPU-b1f2b8f6-fe40-f074-7206-f73cf6e08738",
-        "used_gpu_memory": "2008"
-      },
-      {
-        "gpu_uuid": "GPU-6f6d0a9f-b84c-a94d-37ee-1ce29f66ba1f",
-        "used_gpu_memory": "2008"
-      },
-      {
-        "gpu_uuid": "GPU-6f6d0a9f-b84c-a94d-37ee-1ce29f66ba1f",
-        "used_gpu_memory": "2008"
-      },
-      {
-        "gpu_uuid": "GPU-e578717e-9e11-1464-269b-d5a17e564c8a",
-        "used_gpu_memory": "2008"
-      },
-      {
-        "gpu_uuid": "GPU-e578717e-9e11-1464-269b-d5a17e564c8a",
-        "used_gpu_memory": "2008"
-      },
-      {
-        "gpu_uuid": "GPU-e345e195-e565-805c-b913-dc9a023ef37d",
-        "used_gpu_memory": "2564"
-      },
-      {
-        "gpu_uuid": "GPU-e345e195-e565-805c-b913-dc9a023ef37d",
-        "used_gpu_memory": "17067"
-      },
-      {
-        "gpu_uuid": "GPU-e345e195-e565-805c-b913-dc9a023ef37d",
-        "used_gpu_memory": "2008"
-      },
-      {
-        "gpu_uuid": "GPU-e345e195-e565-805c-b913-dc9a023ef37d",
-        "used_gpu_memory": "2008"
-      },
-      {
-        "gpu_uuid": "GPU-7e03cc60-2c77-01c4-3bb8-d0bfe70657be",
-        "used_gpu_memory": "2008"
-      },
-      {
-        "gpu_uuid": "GPU-7e03cc60-2c77-01c4-3bb8-d0bfe70657be",
-        "used_gpu_memory": "2008"
-      },
-      {
-        "gpu_uuid": "GPU-875134a3-1b53-1712-a56d-a4192edb9728",
-        "used_gpu_memory": "2008"
-      },
-      {
-        "gpu_uuid": "GPU-875134a3-1b53-1712-a56d-a4192edb9728",
-        "used_gpu_memory": "2008"
-      },
-      {
-        "gpu_uuid": "GPU-c4579e9e-eb6e-0eda-0430-9b78b62c51b4",
-        "used_gpu_memory": "2008"
-      },
-      {
-        "gpu_uuid": "GPU-c4579e9e-eb6e-0eda-0430-9b78b62c51b4",
-        "used_gpu_memory": "2008"
-      },
-      {
-        "gpu_uuid": "GPU-7ba3fcb6-cd24-e4eb-9fef-e2f8c32afae3",
-        "used_gpu_memory": "2008"
-      },
-      {
-        "gpu_uuid": "GPU-7ba3fcb6-cd24-e4eb-9fef-e2f8c32afae3",
-        "used_gpu_memory": "2008"
-      }
-    ],
-    "external_process_names_and_PIDs_omitted": true
-  },
-  "pending_scenes": []
+  "completed_at_utc": "2026-11-13T12:46:56.694125+00:00",
+  "artifact_sha256": {
+    "summary/myopic.json": "74e77385f11c68975cb766852edac74e535297f9f5c2cf21d4e928fff866299c",
+    "logs/myopic_episodes.jsonl": "d5ba9aaca7a39a715686f0cd42c0c37406bfa3e4b7d6276f1e46b3b3068ca818",
+    "logs/myopic_decisions.jsonl": "a8c90b2718c498550deef6168d5e1dc64b6ec4d798703e803b50df01be8de169"
+  }
 }

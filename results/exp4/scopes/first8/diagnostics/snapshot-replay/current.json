@@ -1,5 +1,5 @@
 {
-  "at_utc": "2026-11-13T11:40:22.244572+00:00",
+  "at_utc": "2026-11-13T19:20:56.164561+00:00",
   "helper_sha256": "a626e32667f9beb9408f8a304edf8228857906c12e49767d5234efb7b26bcefb",
   "audits": [
     {
@@ -201,6 +201,15 @@
       "max_float_abs_error": 0.0
     },
     {
+      "proof": "scopes/first8/diagnostics/snapshot-replay/myopic/6s7QHgap2fW.json",
+      "proof_sha256": "d4ed2f3528d469da8da73fe34912cbf300a18f0cca27b656970da5e7722568f3",
+      "variant": "myopic",
+      "scene": "6s7QHgap2fW",
+      "n_snapshots": 1814,
+      "n_candidates": 4716,
+      "max_float_abs_error": 0.0
+    },
+    {
       "proof": "scopes/first8/diagnostics/snapshot-replay/myopic/DYehNKdT76V.json",
       "proof_sha256": "3982fc8b8c76e1ccd78ae75f02fa193baaeda49ab275d126661fca150f0b4786",
       "variant": "myopic",
@@ -208,15 +217,84 @@
       "n_snapshots": 1588,
       "n_candidates": 5165,
       "max_float_abs_error": 0.0
+    },
+    {
+      "proof": "scopes/first8/diagnostics/snapshot-replay/suffix_only/4ok3usBNeis.json",
+      "proof_sha256": "da44c3e80bffdebf8bd59e680cea6f79b53d54743807a9cef7c8951980a0c5af",
+      "variant": "suffix_only",
+      "scene": "4ok3usBNeis",
+      "n_snapshots": 1545,
+      "n_candidates": 4385,
+      "max_float_abs_error": 0.0
+    },
+    {
+      "proof": "scopes/first8/diagnostics/snapshot-replay/suffix_only/5cdEh9F2hJL.json",
+      "proof_sha256": "dde7dcd9a451f320919619d4bfa4cc3a385d070985f6d44ccb12d8fe717b28ab",
+      "variant": "suffix_only",
+      "scene": "5cdEh9F2hJL",
+      "n_snapshots": 1176,
+      "n_candidates": 3613,
+      "max_float_abs_error": 0.0
+    },
+    {
+      "proof": "scopes/first8/diagnostics/snapshot-replay/suffix_only/6s7QHgap2fW.json",
+      "proof_sha256": "759a67318716b9a7bb6309598c2f667ee332053464876a18b27fb9e5b9099db5",
+      "variant": "suffix_only",
+      "scene": "6s7QHgap2fW",
+      "n_snapshots": 1772,
+      "n_candidates": 5197,
+      "max_float_abs_error": 0.0
+    },
+    {
+      "proof": "scopes/first8/diagnostics/snapshot-replay/suffix_only/DYehNKdT76V.json",
+      "proof_sha256": "3bf9a75f93b5596a4ec725bdc5b9441118ae3ececc657bb23b20f625e523142f",
+      "variant": "suffix_only",
+      "scene": "DYehNKdT76V",
+      "n_snapshots": 1510,
+      "n_candidates": 4554,
+      "max_float_abs_error": 0.0
+    },
+    {
+      "proof": "scopes/first8/diagnostics/snapshot-replay/suffix_only/Dd4bFSTQ8gi.json",
+      "proof_sha256": "14196a128569a6864168cbe91923290192def3b32d077ff3fa6354e7b5361dea",
+      "variant": "suffix_only",
+      "scene": "Dd4bFSTQ8gi",
+      "n_snapshots": 1382,
+      "n_candidates": 4567,
+      "max_float_abs_error": 0.0
+    },
+    {
+      "proof": "scopes/first8/diagnostics/snapshot-replay/suffix_only/Nfvxx8J5NCo.json",
+      "proof_sha256": "50acdd10100f0c615ea7468dde7e111e68dece0e41775c8864cae67117257a67",
+      "variant": "suffix_only",
+      "scene": "Nfvxx8J5NCo",
+      "n_snapshots": 1542,
+      "n_candidates": 4387,
+      "max_float_abs_error": 0.0
+    },
+    {
+      "proof": "scopes/first8/diagnostics/snapshot-replay/suffix_only/QaLdnwvtxbs.json",
+      "proof_sha256": "45250c20c06f5673ee91085c8c599d9f61d25afe0202b0f407bc98cb663c2396",
+      "variant": "suffix_only",
+      "scene": "QaLdnwvtxbs",
+      "n_snapshots": 829,
+      "n_candidates": 3136,
+      "max_float_abs_error": 0.0
+    },
+    {
+      "proof": "scopes/first8/diagnostics/snapshot-replay/suffix_only/TEEsavR23oF.json",
+      "proof_sha256": "10d168ce5add40394175ddd3f145b4ca19040e83f02b5b7dd3798edb3b2b00e0",
+      "variant": "suffix_only",
+      "scene": "TEEsavR23oF",
+      "n_snapshots": 1797,
+      "n_candidates": 5761,
+      "max_float_abs_error": 0.0
     }
   ],
-  "pending_whole_variants": [
-    "myopic",
-    "suffix_only"
-  ],
-  "all_four_complete": false,
-  "episodes_verified": 460,
-  "snapshots_verified": 30328,
+  "pending_whole_variants": [],
+  "all_four_complete": true,
+  "episodes_verified": 640,
+  "snapshots_verified": 43695,
   "source_fingerprint": {
     "pbsp/__init__.py": "204a77e8c809c9b8f38114173d35f5bcf7585e9893383c3eef5b2dca30aeb619",
     "pbsp/adapters/__init__.py": "9da64df015e12dd3130227acc397bd90bf58d5cd5f4c52108dfb9fc48830e12d",
