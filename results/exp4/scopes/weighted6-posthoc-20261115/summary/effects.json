@@ -1,0 +1,114 @@
+{
+  "units": "percentage points",
+  "analysis_type": "posthoc_scene_weighted",
+  "effects": {
+    "SR": {
+      "future_main_effect_pp": 3.125,
+      "belief_main_effect_pp": -0.625,
+      "interaction_pp": 7.5
+    },
+    "SPL": {
+      "future_main_effect_pp": 0.3580806600595685,
+      "belief_main_effect_pp": -0.12265398839699726,
+      "interaction_pp": 2.6818995297389288
+    }
+  },
+  "paired_success": {
+    "nearest_vs_suffix_only": {
+      "n_unique_pairs": 120,
+      "pair_weight_sum": 160,
+      "unique_counts": {
+        "both_success": 17,
+        "both_failure": 84,
+        "right_only_success": 9,
+        "left_only_success": 10
+      },
+      "weighted_counts": {
+        "both_success": 20,
+        "both_failure": 113,
+        "right_only_success": 13,
+        "left_only_success": 14
+      }
+    },
+    "nearest_vs_myopic": {
+      "n_unique_pairs": 120,
+      "pair_weight_sum": 160,
+      "unique_counts": {
+        "both_success": 14,
+        "both_failure": 86,
+        "right_only_success": 7,
+        "left_only_success": 13
+      },
+      "weighted_counts": {
+        "both_success": 16,
+        "both_failure": 115,
+        "right_only_success": 11,
+        "left_only_success": 18
+      }
+    },
+    "nearest_vs_full": {
+      "n_unique_pairs": 120,
+      "pair_weight_sum": 160,
+      "unique_counts": {
+        "both_success": 16,
+        "both_failure": 81,
+        "right_only_success": 12,
+        "left_only_success": 11
+      },
+      "weighted_counts": {
+        "both_success": 19,
+        "both_failure": 107,
+        "right_only_success": 19,
+        "left_only_success": 15
+      }
+    },
+    "suffix_only_vs_myopic": {
+      "n_unique_pairs": 120,
+      "pair_weight_sum": 160,
+      "unique_counts": {
+        "both_success": 13,
+        "both_failure": 86,
+        "left_only_success": 13,
+        "right_only_success": 8
+      },
+      "weighted_counts": {
+        "both_success": 15,
+        "both_failure": 115,
+        "left_only_success": 18,
+        "right_only_success": 12
+      }
+    },
+    "suffix_only_vs_full": {
+      "n_unique_pairs": 120,
+      "pair_weight_sum": 160,
+      "unique_counts": {
+        "both_success": 18,
+        "both_failure": 84,
+        "left_only_success": 8,
+        "right_only_success": 10
+      },
+      "weighted_counts": {
+        "both_success": 21,
+        "both_failure": 110,
+        "left_only_success": 12,
+        "right_only_success": 17
+      }
+    },
+    "myopic_vs_full": {
+      "n_unique_pairs": 120,
+      "pair_weight_sum": 160,
+      "unique_counts": {
+        "both_success": 14,
+        "both_failure": 85,
+        "right_only_success": 14,
+        "left_only_success": 7
+      },
+      "weighted_counts": {
+        "both_success": 18,
+        "both_failure": 113,
+        "right_only_success": 20,
+        "left_only_success": 9
+      }
+    }
+  }
+}

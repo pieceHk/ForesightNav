@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "created_at_utc": "2026-11-14T17:29:49.269681+00:00",
+  "unique_episode_identities_per_variant": 120,
+  "all_variants_same_task_source_identities": true,
+  "paired_rows_each": 120,
+  "pair_weight_sum_each": 160,
+  "originals_modified": false,
+  "new_native_runs": 0,
+  "native_metric_values_reused_exactly": true,
+  "extra_scenes_process_metrics_CPU_recomputed": 8,
+  "source_fingerprint_unchanged": true,
+  "parameter_sha256": "e1d75f3c9503c7439467748fc97be6ae2ad450c429f40dc7235b1564ff7852ae"
+}

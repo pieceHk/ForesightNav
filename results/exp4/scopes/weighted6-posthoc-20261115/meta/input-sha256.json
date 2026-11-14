@@ -1,0 +1,16 @@
+{
+  "logs/suffix_only_episodes.jsonl": "3985096a9883ad82f94d36a8ba7711178f8b6cde9ca0ad05247725d8a52b4125",
+  "logs/nearest_episodes.jsonl": "d2ac3d39d4f381299e180c542b62a36011b9715d97736a07bca25cccf0f98d3c",
+  "logs/full_episodes.jsonl": "df3d8cb6c6a442d89d9e586350e24ac9255538aee80cee0b6e016230b4e61bdf",
+  "logs/myopic_episodes.jsonl": "f844cb48aa42cb71598fc81712b24e536026d08c3a2a1e86c5b093b1c272a810",
+  "logs/suffix_only_decisions.jsonl": "9e5c8d05e2240fb7e2a5be6990ca1ae3003fc92eecacc944646052156402b897",
+  "logs/nearest_decisions.jsonl": "be96556c35980f37db272441ea8a8785cf11428687ec8f53f06ce208c109fff9",
+  "logs/myopic_decisions.jsonl": "a9a5dc32bd2c8d40bae1c44d693f64cf8a60db5708dca00f9f4992e7b17be66b",
+  "logs/full_decisions.jsonl": "224e0641c162b41bc14e813f93326408770460a12417d3de9ad64e59409b88ee",
+  "summary/effects.json": "1cd07bcc3d0e67119e4dd298ffd9ae6fbf41efce39794e0b2dc80bbb99b07e41",
+  "summary/nearest.json": "2c497bda93c0517de92ca95bc3d3b47c331941cc63fa8cf723d97ac90cb10fc2",
+  "summary/myopic.json": "923f1cd8e41c769fd80fddcf35626aee1c8e95b63b74a960bccb6608ba987a7a",
+  "summary/suffix_only.json": "481e9a3ca6478373b200980dbf817a8a78b8296abfe531e38c35655b027106b7",
+  "summary/full.json": "5150f0031f4876e82489cf0f11936b2f7f5029ce27b77b15ac99c432c7840f0f",
+  "meta/calibration.json": "e1d75f3c9503c7439467748fc97be6ae2ad450c429f40dc7235b1564ff7852ae"
+}

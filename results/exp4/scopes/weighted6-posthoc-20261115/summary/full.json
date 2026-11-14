@@ -1,0 +1,65 @@
+{
+  "variant": "full",
+  "analysis_type": "POST_HOC_SCENE_WEIGHTED_DESCRIPTIVE_ANALYSIS",
+  "n_unique_episodes": 120,
+  "episode_weight_sum": 160,
+  "scores_pct_unrounded": {
+    "SR": 23.75,
+    "SPL": 8.146583751900073,
+    "PR": 60.625,
+    "PPL": 16.06335847414713
+  },
+  "scores_pct_display": {
+    "SR": 23.75,
+    "SPL": 8.15,
+    "PR": 60.62,
+    "PPL": 16.06
+  },
+  "conditional_counts_weighted": {
+    "denominators": [
+      160,
+      90,
+      56
+    ],
+    "successes": [
+      90,
+      56,
+      38
+    ],
+    "rates": [
+      0.5625,
+      0.6222222222222222,
+      0.6785714285714286
+    ]
+  },
+  "weighted_sequence_success_sum": 38,
+  "unique_sequence_successes": 28,
+  "process_weighted": {
+    "Invalid_visits_per_weight_unit": 11.4,
+    "invalid_path_m_per_weight_unit": 20.233748970294734,
+    "identity_path_upper_m_per_weight_unit": 20.235311469203833,
+    "eligible_proposal_weight_sum": 8183,
+    "eligible_dispatch_weight_sum": 8183,
+    "deviation_proposal_pct": 14.187950629353537,
+    "deviation_after_hysteresis_pct": 17.291946718807285,
+    "deviation_applied_pct": 22.412318220701454,
+    "planning_ms_frequency_weighted": {
+      "n": 10266,
+      "median": 10.618988497299142,
+      "p95": 23.21000400115736
+    },
+    "actual_unique_decision_rows": 8042,
+    "weighted_quantile_definition": "Linear empirical percentile of integer-frequency-weighted original planning times; no new timings.",
+    "fallback_root_weighted": {
+      "empty_candidates": 2083
+    },
+    "fallback_incidence_weighted": {
+      "empty_candidates": 8183,
+      "no_reachable_frontier": 935
+    },
+    "fallback_memo_states_weighted": {
+      "empty_candidates": 72062,
+      "no_reachable_frontier": 5960
+    }
+  }
+}

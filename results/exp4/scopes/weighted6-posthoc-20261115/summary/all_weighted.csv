@@ -1,0 +1,5 @@
+variant,n_unique_episodes,episode_weight_sum,SR,SPL,PR,PPL
+nearest,120,160,21.25,7.91,56.67,14.17
+suffix_only,120,160,20.62,6.93,55.42,13.17
+myopic,120,160,16.88,6.45,56.88,13.70
+full,120,160,23.75,8.15,60.62,16.06

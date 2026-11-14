@@ -1,0 +1,10 @@
+{
+  "reviewed_at_utc": "2026-11-14T17:32:30.810848+00:00",
+  "actual_visual_inspection": true,
+  "report_sha256": "cb3689ea97b97ea0aa889207b601b1383d463b6ac7ed9241105727155a5199f0",
+  "figure_sha256": {
+    "weighted_SR_SPL.png": "9d623ec886445872e4a510b52bd719c649e11a03dc05860520e2e67526a3aac8",
+    "weighted_effects.png": "aca4ae2cb0bc07b03018c5ab2814fd502609e8c6b52e9104244213efd90c4e5b"
+  },
+  "observations": "Read and viewed both final charts; values agree with summaries, post-hoc weighting and unique120/weight160 are visible. Enlarged negative-effect plot lower margin to avoid label/axis crowding."
+}

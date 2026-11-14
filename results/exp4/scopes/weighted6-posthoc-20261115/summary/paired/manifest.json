@@ -1,0 +1,12 @@
+{
+  "unique_rows_per_csv": 120,
+  "weight_sum_per_csv": 160,
+  "files": {
+    "suffix_only_vs_full.csv": "98134d48d6b14ef9c56b81a9acc980f76e2524e64d90b2bb999b85a9ae1cd8cd",
+    "nearest_vs_suffix_only.csv": "7fc6f7d73d4c1e463e30277bd265a81d6799c9b5c211f37bd40a1c5ea37fc341",
+    "myopic_vs_full.csv": "8c06cdc9c72e4222e9bb6f8057dcfe7a2c7101cd20920f5857fd248eed0a52d1",
+    "suffix_only_vs_myopic.csv": "29a26769752cb6ca716fb049b538932ee59cccadd81d6123a59c8555ab28f07b",
+    "nearest_vs_myopic.csv": "132baba9e5707a6c900bcb08e03a7b69af85e4856b7ff4a6fe327a0701169783",
+    "nearest_vs_full.csv": "53e3436ac0bb04c1549d13ab5e3185a7feca4b26ee47240cf68d1db530d36a8b"
+  }
+}
