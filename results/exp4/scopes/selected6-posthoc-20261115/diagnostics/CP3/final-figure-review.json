@@ -1,0 +1,12 @@
+{
+  "checked_at_utc": "2026-11-10T06:36:10.064714+00:00",
+  "visual_qa_passed": true,
+  "method": "Generated PNG downloaded byte-for-byte and visually inspected with view_image",
+  "figure": "figures/CP3/planning_latency.png",
+  "png_sha256": "87c806ef5492954bbcd982e91980ba985f978f2f4d1cdf66e4366bae6f179355",
+  "width": 1800,
+  "height": 648,
+  "report_sha256": "88534e6f6e61c6b18cf8d0259b654ed84306faf88a879c43bc21d7a616c8ce2d",
+  "observed_layout": "Full-range linear histogram is dominated by the largest tail value; logarithmic CDF shows the main distribution and retains the tail. Labels and axes are readable.",
+  "scope": "Latency histogram and empirical CDF, axes, labels, and title; native run and metric values unchanged"
+}

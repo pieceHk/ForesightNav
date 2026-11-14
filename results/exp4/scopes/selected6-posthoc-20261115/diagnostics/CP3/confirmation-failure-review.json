@@ -1,0 +1,213 @@
+{
+  "checked_at_utc": "2026-11-10T06:35:52.101717+00:00",
+  "source_sha256": "4c7651289615567aadc7d22fa03081bfbcab2aa7804099d6394b9c741f37389a",
+  "definition": "Last recorded v=1 candidate check in each confirmed-stop/native-failure stage; coordinate GT at check is distinct from final agent success or moving candidate location",
+  "confirmed_stop_native_failure_stages": 10,
+  "last_confirmed_candidate_y_at_check_counts": {
+    "0": 10
+  },
+  "stages": [
+    {
+      "scene_id": "5cdEh9F2hJL",
+      "episode_id": "0",
+      "stage": 2,
+      "native_success": false,
+      "last_observed_confirmation": {
+        "t": 207,
+        "last_t": 208,
+        "candidate_id": "1:23",
+        "E": 0.24400660395622253,
+        "S": 0.486582880967408,
+        "v": 1,
+        "y": 0,
+        "position": [
+          4.955345630645752,
+          0.018402770161628723,
+          3.057255268096924
+        ]
+      }
+    },
+    {
+      "scene_id": "Dd4bFSTQ8gi",
+      "episode_id": "0",
+      "stage": 1,
+      "native_success": false,
+      "last_observed_confirmation": {
+        "t": 135,
+        "last_t": 136,
+        "candidate_id": "0:10",
+        "E": 0.18739524483680725,
+        "S": 0.28346868942621073,
+        "v": 1,
+        "y": 0,
+        "position": [
+          3.216630220413208,
+          0.06882420182228088,
+          2.414174795150757
+        ]
+      }
+    },
+    {
+      "scene_id": "Dd4bFSTQ8gi",
+      "episode_id": "0",
+      "stage": 3,
+      "native_success": false,
+      "last_observed_confirmation": {
+        "t": 661,
+        "last_t": 662,
+        "candidate_id": "2:13",
+        "E": 0.2725284993648529,
+        "S": 0.903028032135595,
+        "v": 1,
+        "y": 0,
+        "position": [
+          3.53554368019104,
+          0.06882420182228088,
+          0.8046014904975891
+        ]
+      }
+    },
+    {
+      "scene_id": "QaLdnwvtxbs",
+      "episode_id": "0",
+      "stage": 1,
+      "native_success": false,
+      "last_observed_confirmation": {
+        "t": 154,
+        "last_t": 156,
+        "candidate_id": "0:1",
+        "E": 0.22076541185379028,
+        "S": 0.6321205588285577,
+        "v": 1,
+        "y": 0,
+        "position": [
+          -2.4120774269104004,
+          0.1357390433549881,
+          0.31944435834884644
+        ]
+      }
+    },
+    {
+      "scene_id": "QaLdnwvtxbs",
+      "episode_id": "0",
+      "stage": 3,
+      "native_success": false,
+      "last_observed_confirmation": {
+        "t": 421,
+        "last_t": 424,
+        "candidate_id": "2:22",
+        "E": 0.2186659872531891,
+        "S": 0.6321205588285577,
+        "v": 1,
+        "y": 0,
+        "position": [
+          0.519875168800354,
+          0.1357390433549881,
+          0.6326696276664734
+        ]
+      }
+    },
+    {
+      "scene_id": "bxsVRursffK",
+      "episode_id": "0",
+      "stage": 1,
+      "native_success": false,
+      "last_observed_confirmation": {
+        "t": 40,
+        "last_t": 42,
+        "candidate_id": "0:4",
+        "E": 0.1904987096786499,
+        "S": -0.0,
+        "v": 1,
+        "y": 0,
+        "position": [
+          -8.09947681427002,
+          -2.9753239154815674,
+          -3.5274925231933594
+        ]
+      }
+    },
+    {
+      "scene_id": "bxsVRursffK",
+      "episode_id": "0",
+      "stage": 2,
+      "native_success": false,
+      "last_observed_confirmation": {
+        "t": 200,
+        "last_t": 202,
+        "candidate_id": "1:18",
+        "E": 0.23075881600379944,
+        "S": 0.486582880967408,
+        "v": 1,
+        "y": 0,
+        "position": [
+          -8.29011058807373,
+          -2.9753239154815674,
+          -0.8739091157913208
+        ]
+      }
+    },
+    {
+      "scene_id": "mv2HUxq3B53",
+      "episode_id": "0",
+      "stage": 1,
+      "native_success": false,
+      "last_observed_confirmation": {
+        "t": 210,
+        "last_t": 210,
+        "candidate_id": "0:13",
+        "E": 0.2804535925388336,
+        "S": 0.6321205588285577,
+        "v": 1,
+        "y": 0,
+        "position": [
+          -2.124096632003784,
+          0.05035419762134552,
+          14.430238723754883
+        ]
+      }
+    },
+    {
+      "scene_id": "mv2HUxq3B53",
+      "episode_id": "0",
+      "stage": 3,
+      "native_success": false,
+      "last_observed_confirmation": {
+        "t": 459,
+        "last_t": 462,
+        "candidate_id": "2:18",
+        "E": 0.23672501742839813,
+        "S": 0.486582880967408,
+        "v": 1,
+        "y": 0,
+        "position": [
+          -10.088460922241211,
+          0.05035419762134552,
+          12.754603385925293
+        ]
+      }
+    },
+    {
+      "scene_id": "ziup5kvtCCR",
+      "episode_id": "0",
+      "stage": 3,
+      "native_success": false,
+      "last_observed_confirmation": {
+        "t": 824,
+        "last_t": 826,
+        "candidate_id": "2:35",
+        "E": 0.26048436760902405,
+        "S": 0.486582880967408,
+        "v": 1,
+        "y": 0,
+        "position": [
+          2.7669191360473633,
+          0.021222904324531555,
+          6.88006067276001
+        ]
+      }
+    }
+  ],
+  "evaluation_used_for_fitting_or_selection": false,
+  "native_data_source_or_parameters_changed": false
+}

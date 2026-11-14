@@ -1,0 +1,10 @@
+{
+  "reviewed_at_utc": "2026-11-14T17:02:50.284177+00:00",
+  "actual_visual_inspection": true,
+  "method": "Both downloaded final PNGs viewed individually with view_image; bar values match the120 summaries and effects; readable labels with no visible clipping. Titles explicitly disclose post-hoc selection.",
+  "report_sha256": "6d547d0ab65cd3e4a770a3879077db897cee6b598acc79d8074f3e4cd585e9b2",
+  "figure_sha256": {
+    "SR_SPL.png": "7f972f8f1fdc84f2fe51a666a10e53d6484171adeffb1aed1a0dafc62dc59982",
+    "effects.png": "e292fe256795ede38da19f54959282dc25cb9381e041a1318a1e0d1e97959563"
+  }
+}

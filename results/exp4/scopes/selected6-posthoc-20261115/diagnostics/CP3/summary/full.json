@@ -1,0 +1,1148 @@
+{
+  "method": "ForesightNav",
+  "variant": "full",
+  "task": "3-MON",
+  "n_episodes": 20,
+  "n_error": 0,
+  "SR": 15.0,
+  "SPL": 6.67,
+  "PR": 35.0,
+  "PSR": 35.0,
+  "PeSPL": 19.03,
+  "PPL": 10.88,
+  "P_C1": 35.0,
+  "P_C2_given_C1": 57.14,
+  "P_C3_given_C1C2": 75.0,
+  "P_C4_given_C1C2C3": null,
+  "Joint": 15.0,
+  "PPL_implementation": "new supplementary implementation: all-stage PR times successful-prefix path efficiency",
+  "conditional_counts": {
+    "rates": [
+      0.35,
+      0.5714285714285714,
+      0.75
+    ],
+    "successes": [
+      7,
+      4,
+      3
+    ],
+    "conditioned_episodes": [
+      20,
+      7,
+      4
+    ],
+    "Joint": 0.15,
+    "definition": "conditioned on prior successes, not prior execution"
+  },
+  "native_aggregate": {
+    "schema_version": "mon_metrics_v3",
+    "counts": {
+      "completed_episodes": 20,
+      "completed_subtasks": 60,
+      "targets_per_episode": 3,
+      "successful_episodes": 3,
+      "successful_subtasks": 21,
+      "finite_shortest_path_episodes": 18,
+      "episodes_with_unreachable": 2,
+      "finite_shortest_path_subtasks": 57,
+      "unreachable_subtasks": 3
+    },
+    "mon_metrics": {
+      "sr": 0.15,
+      "spl": 0.06668198375071725,
+      "pespl": 0.19033543947223425,
+      "psr": 0.35,
+      "pespl_numerator": 11.420126368334055,
+      "pespl_denominator": 60,
+      "psr_numerator": 21,
+      "psr_denominator": 60,
+      "psr_by_category": {
+        "bed": {
+          "targets": 12,
+          "successes": 4,
+          "success_rate": 0.3333333333333333,
+          "psr_contribution": 0.06666666666666667
+        },
+        "chair": {
+          "targets": 14,
+          "successes": 7,
+          "success_rate": 0.5,
+          "psr_contribution": 0.11666666666666667
+        },
+        "couch": {
+          "targets": 11,
+          "successes": 5,
+          "success_rate": 0.45454545454545453,
+          "psr_contribution": 0.08333333333333333
+        },
+        "tv": {
+          "targets": 5,
+          "successes": 2,
+          "success_rate": 0.4,
+          "psr_contribution": 0.03333333333333333
+        },
+        "plant": {
+          "targets": 4,
+          "successes": 1,
+          "success_rate": 0.25,
+          "psr_contribution": 0.016666666666666666
+        },
+        "toilet": {
+          "targets": 14,
+          "successes": 2,
+          "success_rate": 0.14285714285714285,
+          "psr_contribution": 0.03333333333333333
+        }
+      }
+    },
+    "navigation_efficiency": {
+      "total_actual_path_length_m": 838.7980282544097,
+      "total_shortest_path_length_m": null,
+      "shortest_path_status": "contains_unreachable",
+      "aggregate_path_efficiency": null,
+      "mean_episode_path_efficiency": null,
+      "mean_subtask_path_efficiency": null,
+      "finite_actual_path_length_m": 838.7980282544097,
+      "finite_shortest_path_length_m": 382.3539351373911,
+      "finite_aggregate_path_efficiency": 0.45583551970561154,
+      "mean_finite_episode_path_efficiency": 0.5732445434900468,
+      "mean_finite_subtask_path_efficiency": 0.6163040771655472,
+      "finite_shortest_path_subtask_count": 57,
+      "unreachable_subtask_count": 3,
+      "finite_shortest_path_episode_count": 18,
+      "episodes_with_unreachable": 2,
+      "finite_shortest_path_coverage": 0.95,
+      "mean_episode_steps": 973.2,
+      "mean_subtask_steps": 324.4,
+      "successful_subtasks_per_100_steps": 0.10789149198520345,
+      "max_steps_rate": 0.5
+    },
+    "frame_timing": {
+      "frame_count": 19464,
+      "frame_time_sum_ms": 13792913.100870924,
+      "mean_frame_time_ms": 708.6371301310586,
+      "median_frame_time_ms": null,
+      "p95_frame_time_ms": null,
+      "fps": 1.4111594742644313
+    }
+  },
+  "process": {
+    "Invalid_visits_per_ep": 10.65,
+    "invalid_visit_events_per_ep": 12.9,
+    "checked_distinct_candidates": 242,
+    "invalid_approach_and_verification_path_m": 315.89782814922535,
+    "invalid_confirmed_approach_tail_m": 76.29685991495273,
+    "invalid_visit_path_m": 392.1946880641791,
+    "invalid_visit_path_m_per_ep": 19.609734403208954,
+    "invalid_path_association_gaps": [],
+    "invalid_path_complete": true,
+    "invalid_path_definition": "accepted displacement pursuing a checked-invalid query identity while its recorded target coordinate is native-GT-invalid; confirmed visual continuation retains the parent; recovery/frontier excluded",
+    "invalid_visit_definition": "distinct checked (episode, task, persistent spatial identity) with GT-invalid verification; event count also retained",
+    "nonquery_recovery_verification_frames": 432,
+    "deviation_from_nearest_proposal_pct": 17.87287602265576,
+    "deviation_from_nearest_after_hysteresis_pct": 20.075519194461926,
+    "deviation_from_nearest_realized_pct": 23.28508495909377,
+    "eligible_proposals": 1589,
+    "eligible_realized_dispatches": 1589,
+    "planning_ms": {
+      "n": 1999,
+      "median": 8.747606989345513,
+      "p95": 22.413515692460333
+    },
+    "fallback_root_decisions": {
+      "empty_candidates": 410
+    },
+    "fallback_decision_incidence": {
+      "empty_candidates": 1589,
+      "no_reachable_frontier": 710
+    },
+    "fallback_memo_state_counts": {
+      "empty_candidates": 12823,
+      "frontier_coordinates_unavailable": 0,
+      "no_reachable_frontier": 4795
+    },
+    "fallback_count_definition": "root decisions and per-decision incidence are separate from recursion-state counts",
+    "n_computed_snapshots": 1999,
+    "n_recorded_dispatch_events": 1999,
+    "legacy_interval_diagnostics": {
+      "invalid_visit_path_m": 415.64091811808396,
+      "invalid_path_complete": false,
+      "invalid_path_association_gaps": [
+        {
+          "scene_id": "DYehNKdT76V",
+          "episode_id": "0",
+          "k": 0,
+          "reason": "confirmed_invalid_visit_followed_by_further_checks"
+        },
+        {
+          "scene_id": "mv2HUxq3B53",
+          "episode_id": "0",
+          "k": 2,
+          "reason": "confirmed_invalid_visit_followed_by_further_checks"
+        }
+      ],
+      "invalid_path_definition": "union of recorded active-candidate approach/check path intervals plus an unambiguous final confirmation-to-STOP tail"
+    },
+    "invalid_path_source": "blp_action_target_v1_native_gt",
+    "invalid_identity_pursuit_path_m": 393.40475429885987,
+    "invalid_identity_pursuit_path_m_per_ep": 19.670237714942992,
+    "checked_invalid_identity_but_current_target_GT_valid_path_m": 1.2100662346807627,
+    "checked_invalid_identities_with_current_valid_targets": 1,
+    "mixed_GT_checked_identities": [
+      [
+        "svBbv1Pavdk",
+        "0",
+        0,
+        "0:3"
+      ]
+    ],
+    "invalid_identity_pursuit_definition": "all accepted displacement pursuing identities that had at least one GT-invalid check; explicit upper bound, including any later GT-valid coordinates",
+    "accepted_action_path_m": 838.7980424935406,
+    "accepted_action_path_partition_m": {
+      "invalid_identity_upper": 393.40475429885987,
+      "checked_valid": 80.61158403166861,
+      "unchecked_query": 80.09886422525909,
+      "unresolved_query": 0.0,
+      "recovery": 141.2592466577726,
+      "frontier": 143.4235932799791
+    },
+    "accepted_action_rows_by_source": {
+      "frontier": 2394,
+      "query_candidate": 14472,
+      "navmesh_override": 2598
+    },
+    "native_target_GT_labelled_action_rows": 7651,
+    "native_stage_path_max_abs_error_m": 1.5278605403068468e-06,
+    "native_stage_path_check_count": 60,
+    "native_stage_path_check_tolerance": {
+      "abs_m": 0.001,
+      "relative": 1e-06
+    },
+    "last_STOP_without_after_pose_assumed_stationary": 20,
+    "verification_then_effective_recovery_actions": 19,
+    "checked_candidate_identity": {
+      "definition": "recorded registry identity, merging checked IDs sharing an exact full-XYZ final-check coordinate within one scene/episode/task/resample; unchecked first-appearance IDs alias a checked group only at that exact XYZ",
+      "source_sha256": "a311b37d45d59f379ce00b58d1350b5eb308da0b9a24d34ad2facdb495d9991d",
+      "raw_checked_registry_identities": 243,
+      "canonical_checked_identities": 242,
+      "identities_merged": 1,
+      "verification_rows_retained": 289,
+      "unchecked_first_appearance_aliases": 0,
+      "GT_or_labels_used_to_group": false,
+      "raw_events_modified": false
+    },
+    "native_target_gt_provenance": [
+      {
+        "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_120628_209258_exp4_full_exp4-smoke-a3-4ok3usBNeis",
+        "recorded_label_verification": {
+          "candidate_verifications": 13,
+          "recovery_verifications": 0,
+          "max_distance_error_m": 0.0
+        },
+        "method": "native GOAT measures and geodesic wrapper on CPU PathFinder",
+        "habitat_source": {
+          "revision": "8df2661e5b2203c0ddc47798d5da0132d5686bbe",
+          "kind": "archive",
+          "files": 550,
+          "content_sha256": "31226fdca10c6ea69c23b6c3dbf707745210f7df5785c1c7116eda98c6dfc77c"
+        },
+        "measurements": {
+          "distance": {
+            "type": "GOATDistanceToSubGoal",
+            "distance_to": "VIEW_POINTS",
+            "goals_attr": "goals",
+            "distance_from": "BASE"
+          },
+          "success": {
+            "type": "GOATSubTaskSuccess",
+            "success_distance": 1.0
+          }
+        },
+        "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+        "queries": 169,
+        "cache_hits": 153,
+        "distinct_positions": 16,
+        "scenes": {
+          "4ok3usBNeis": {
+            "content_sha256": "8a4c249756975de888f0c66771de5b77fbda8b267c8f152e8d7225bca2e546bb",
+            "navmesh": "/nvme/khy/PBSP-open-source/data/scenes/hm3dv1/hm3d/val/00877-4ok3usBNeis/4ok3usBNeis.basis.navmesh",
+            "navmesh_sha256": "dcb05c92ba7339c2fa5c4d60346d335b4b2d92063ccbb2aab0f369264e575087"
+          }
+        }
+      },
+      {
+        "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_120628_206944_exp4_full_exp4-smoke-a3-5cdEh9F2hJL",
+        "recorded_label_verification": {
+          "candidate_verifications": 17,
+          "recovery_verifications": 13,
+          "max_distance_error_m": 0.0
+        },
+        "method": "native GOAT measures and geodesic wrapper on CPU PathFinder",
+        "habitat_source": {
+          "revision": "8df2661e5b2203c0ddc47798d5da0132d5686bbe",
+          "kind": "archive",
+          "files": 550,
+          "content_sha256": "31226fdca10c6ea69c23b6c3dbf707745210f7df5785c1c7116eda98c6dfc77c"
+        },
+        "measurements": {
+          "distance": {
+            "type": "GOATDistanceToSubGoal",
+            "distance_to": "VIEW_POINTS",
+            "goals_attr": "goals",
+            "distance_from": "BASE"
+          },
+          "success": {
+            "type": "GOATSubTaskSuccess",
+            "success_distance": 1.0
+          }
+        },
+        "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+        "queries": 364,
+        "cache_hits": 341,
+        "distinct_positions": 23,
+        "scenes": {
+          "5cdEh9F2hJL": {
+            "content_sha256": "f6ed2fa0071eda648acbcc7a65bc6d2bfe677c2b9cdc784e8d109a0a167ec681",
+            "navmesh": "/nvme/khy/PBSP-open-source/data/scenes/hm3dv1/hm3d/val/00853-5cdEh9F2hJL/5cdEh9F2hJL.basis.navmesh",
+            "navmesh_sha256": "38ef7c6911bf284e6fc5b17cc3fd16f418a116d559d36fe1f706b5d1a42287f6"
+          }
+        }
+      },
+      {
+        "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_122105_671138_exp4_full_exp4-smoke-a3-6s7QHgap2fW",
+        "recorded_label_verification": {
+          "candidate_verifications": 30,
+          "recovery_verifications": 39,
+          "max_distance_error_m": 0.0
+        },
+        "method": "native GOAT measures and geodesic wrapper on CPU PathFinder",
+        "habitat_source": {
+          "revision": "8df2661e5b2203c0ddc47798d5da0132d5686bbe",
+          "kind": "archive",
+          "files": 550,
+          "content_sha256": "31226fdca10c6ea69c23b6c3dbf707745210f7df5785c1c7116eda98c6dfc77c"
+        },
+        "measurements": {
+          "distance": {
+            "type": "GOATDistanceToSubGoal",
+            "distance_to": "VIEW_POINTS",
+            "goals_attr": "goals",
+            "distance_from": "BASE"
+          },
+          "success": {
+            "type": "GOATSubTaskSuccess",
+            "success_distance": 1.0
+          }
+        },
+        "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+        "queries": 685,
+        "cache_hits": 637,
+        "distinct_positions": 48,
+        "scenes": {
+          "6s7QHgap2fW": {
+            "content_sha256": "194d2833eff5688c8a62eed50cd4856d6eb9514fa1a5578daa31e961a0e91108",
+            "navmesh": "/nvme/khy/PBSP-open-source/data/scenes/hm3dv1/hm3d/val/00890-6s7QHgap2fW/6s7QHgap2fW.basis.navmesh",
+            "navmesh_sha256": "127c2fa57e01105442bb7019bca4692ed12aba6fae3b1bc13c2a557d3095ffe0"
+          }
+        }
+      },
+      {
+        "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_122646_978272_exp4_full_exp4-smoke-a3-DYehNKdT76V",
+        "recorded_label_verification": {
+          "candidate_verifications": 14,
+          "recovery_verifications": 81,
+          "max_distance_error_m": 0.0
+        },
+        "method": "native GOAT measures and geodesic wrapper on CPU PathFinder",
+        "habitat_source": {
+          "revision": "8df2661e5b2203c0ddc47798d5da0132d5686bbe",
+          "kind": "archive",
+          "files": 550,
+          "content_sha256": "31226fdca10c6ea69c23b6c3dbf707745210f7df5785c1c7116eda98c6dfc77c"
+        },
+        "measurements": {
+          "distance": {
+            "type": "GOATDistanceToSubGoal",
+            "distance_to": "VIEW_POINTS",
+            "goals_attr": "goals",
+            "distance_from": "BASE"
+          },
+          "success": {
+            "type": "GOATSubTaskSuccess",
+            "success_distance": 1.0
+          }
+        },
+        "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+        "queries": 286,
+        "cache_hits": 260,
+        "distinct_positions": 26,
+        "scenes": {
+          "DYehNKdT76V": {
+            "content_sha256": "ed4c940d5071839ffa32504f6aa338537a7bbf46dc9cd0db7ee53b4cffed0734",
+            "navmesh": "/nvme/khy/PBSP-open-source/data/scenes/hm3dv1/hm3d/val/00843-DYehNKdT76V/DYehNKdT76V.basis.navmesh",
+            "navmesh_sha256": "edc491ececc4ea5a9ffb40b5bb9dc98c7da188794ddb59023ac00d5816d11cb0"
+          }
+        }
+      },
+      {
+        "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_124138_969462_exp4_full_exp4-smoke-a3-Dd4bFSTQ8gi",
+        "recorded_label_verification": {
+          "candidate_verifications": 28,
+          "recovery_verifications": 39,
+          "max_distance_error_m": 0.0
+        },
+        "method": "native GOAT measures and geodesic wrapper on CPU PathFinder",
+        "habitat_source": {
+          "revision": "8df2661e5b2203c0ddc47798d5da0132d5686bbe",
+          "kind": "archive",
+          "files": 550,
+          "content_sha256": "31226fdca10c6ea69c23b6c3dbf707745210f7df5785c1c7116eda98c6dfc77c"
+        },
+        "measurements": {
+          "distance": {
+            "type": "GOATDistanceToSubGoal",
+            "distance_to": "VIEW_POINTS",
+            "goals_attr": "goals",
+            "distance_from": "BASE"
+          },
+          "success": {
+            "type": "GOATSubTaskSuccess",
+            "success_distance": 1.0
+          }
+        },
+        "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+        "queries": 575,
+        "cache_hits": 532,
+        "distinct_positions": 43,
+        "scenes": {
+          "Dd4bFSTQ8gi": {
+            "content_sha256": "662d8a2866cacce3b334344fa6ca2dc934bbe91ab9e66d71b302b2e036b772e8",
+            "navmesh": "/nvme/khy/PBSP-open-source/data/scenes/hm3dv1/hm3d/val/00824-Dd4bFSTQ8gi/Dd4bFSTQ8gi.basis.navmesh",
+            "navmesh_sha256": "a535551324574681743fb542a6b7c0207953774ea25dfd264141fb49bb418c63"
+          }
+        }
+      },
+      {
+        "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_124216_420027_exp4_full_exp4-smoke-a3-Nfvxx8J5NCo",
+        "recorded_label_verification": {
+          "candidate_verifications": 9,
+          "recovery_verifications": 0,
+          "max_distance_error_m": 0.0
+        },
+        "method": "native GOAT measures and geodesic wrapper on CPU PathFinder",
+        "habitat_source": {
+          "revision": "8df2661e5b2203c0ddc47798d5da0132d5686bbe",
+          "kind": "archive",
+          "files": 550,
+          "content_sha256": "31226fdca10c6ea69c23b6c3dbf707745210f7df5785c1c7116eda98c6dfc77c"
+        },
+        "measurements": {
+          "distance": {
+            "type": "GOATDistanceToSubGoal",
+            "distance_to": "VIEW_POINTS",
+            "goals_attr": "goals",
+            "distance_from": "BASE"
+          },
+          "success": {
+            "type": "GOATSubTaskSuccess",
+            "success_distance": 1.0
+          }
+        },
+        "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+        "queries": 572,
+        "cache_hits": 558,
+        "distinct_positions": 14,
+        "scenes": {
+          "Nfvxx8J5NCo": {
+            "content_sha256": "a96e9a2cb314a28f6f87f14ac873ab4c10b8026652c940e96a054f1f86e3f8f4",
+            "navmesh": "/nvme/khy/PBSP-open-source/data/scenes/hm3dv1/hm3d/val/00880-Nfvxx8J5NCo/Nfvxx8J5NCo.basis.navmesh",
+            "navmesh_sha256": "9cf25dac3daa97a2792d7edb2272d0c6e9351a95c379b27521094b3be0a013c1"
+          }
+        }
+      },
+      {
+        "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_125039_066607_exp4_full_exp4-smoke-a3-QaLdnwvtxbs",
+        "recorded_label_verification": {
+          "candidate_verifications": 14,
+          "recovery_verifications": 13,
+          "max_distance_error_m": 0.0
+        },
+        "method": "native GOAT measures and geodesic wrapper on CPU PathFinder",
+        "habitat_source": {
+          "revision": "8df2661e5b2203c0ddc47798d5da0132d5686bbe",
+          "kind": "archive",
+          "files": 550,
+          "content_sha256": "31226fdca10c6ea69c23b6c3dbf707745210f7df5785c1c7116eda98c6dfc77c"
+        },
+        "measurements": {
+          "distance": {
+            "type": "GOATDistanceToSubGoal",
+            "distance_to": "VIEW_POINTS",
+            "goals_attr": "goals",
+            "distance_from": "BASE"
+          },
+          "success": {
+            "type": "GOATSubTaskSuccess",
+            "success_distance": 1.0
+          }
+        },
+        "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+        "queries": 376,
+        "cache_hits": 348,
+        "distinct_positions": 28,
+        "scenes": {
+          "QaLdnwvtxbs": {
+            "content_sha256": "f4368e14805ae394cce82f0145a3c8bcf4b5427e7ebd2f194b7164b683a46f1a",
+            "navmesh": "/nvme/khy/PBSP-open-source/data/scenes/hm3dv1/hm3d/val/00829-QaLdnwvtxbs/QaLdnwvtxbs.basis.navmesh",
+            "navmesh_sha256": "9dbbfcd516ddd1da9ccadf0efd0a7e0ff89e6d3bc794d5bc6f2515e2d7742d97"
+          }
+        }
+      },
+      {
+        "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_125217_654105_exp4_full_exp4-smoke-a3-TEEsavR23oF",
+        "recorded_label_verification": {
+          "candidate_verifications": 25,
+          "recovery_verifications": 72,
+          "max_distance_error_m": 0.0
+        },
+        "method": "native GOAT measures and geodesic wrapper on CPU PathFinder",
+        "habitat_source": {
+          "revision": "8df2661e5b2203c0ddc47798d5da0132d5686bbe",
+          "kind": "archive",
+          "files": 550,
+          "content_sha256": "31226fdca10c6ea69c23b6c3dbf707745210f7df5785c1c7116eda98c6dfc77c"
+        },
+        "measurements": {
+          "distance": {
+            "type": "GOATDistanceToSubGoal",
+            "distance_to": "VIEW_POINTS",
+            "goals_attr": "goals",
+            "distance_from": "BASE"
+          },
+          "success": {
+            "type": "GOATSubTaskSuccess",
+            "success_distance": 1.0
+          }
+        },
+        "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+        "queries": 774,
+        "cache_hits": 727,
+        "distinct_positions": 47,
+        "scenes": {
+          "TEEsavR23oF": {
+            "content_sha256": "99b5d7443f6ec8d0f8500f9465848e4fdf7839b13691109ad7e30fb8532b10ec",
+            "navmesh": "/nvme/khy/PBSP-open-source/data/scenes/hm3dv1/hm3d/val/00800-TEEsavR23oF/TEEsavR23oF.basis.navmesh",
+            "navmesh_sha256": "954b52bde8437a7180d2743584f287c9283bb5c9aaac9111fccf8992cb96bbd6"
+          }
+        }
+      },
+      {
+        "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_125749_112622_exp4_full_exp4-smoke-a3-XB4GS9ShBRE",
+        "recorded_label_verification": {
+          "candidate_verifications": 18,
+          "recovery_verifications": 13,
+          "max_distance_error_m": 0.0
+        },
+        "method": "native GOAT measures and geodesic wrapper on CPU PathFinder",
+        "habitat_source": {
+          "revision": "8df2661e5b2203c0ddc47798d5da0132d5686bbe",
+          "kind": "archive",
+          "files": 550,
+          "content_sha256": "31226fdca10c6ea69c23b6c3dbf707745210f7df5785c1c7116eda98c6dfc77c"
+        },
+        "measurements": {
+          "distance": {
+            "type": "GOATDistanceToSubGoal",
+            "distance_to": "VIEW_POINTS",
+            "goals_attr": "goals",
+            "distance_from": "BASE"
+          },
+          "success": {
+            "type": "GOATSubTaskSuccess",
+            "success_distance": 1.0
+          }
+        },
+        "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+        "queries": 694,
+        "cache_hits": 672,
+        "distinct_positions": 22,
+        "scenes": {
+          "XB4GS9ShBRE": {
+            "content_sha256": "ed299d8e5409f79583838f22eb634e0d255e3e72a2425d051d4d180d147dbb21",
+            "navmesh": "/nvme/khy/PBSP-open-source/data/scenes/hm3dv1/hm3d/val/00878-XB4GS9ShBRE/XB4GS9ShBRE.basis.navmesh",
+            "navmesh_sha256": "44c6f2f74ea09dd033c248474128513d6446c5bfb289e44a0af14518d9aa6f6f"
+          }
+        }
+      },
+      {
+        "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_131947_400419_exp4_full_exp4-smoke-a3-bxsVRursffK",
+        "recorded_label_verification": {
+          "candidate_verifications": 9,
+          "recovery_verifications": 0,
+          "max_distance_error_m": 0.0
+        },
+        "method": "native GOAT measures and geodesic wrapper on CPU PathFinder",
+        "habitat_source": {
+          "revision": "8df2661e5b2203c0ddc47798d5da0132d5686bbe",
+          "kind": "archive",
+          "files": 550,
+          "content_sha256": "31226fdca10c6ea69c23b6c3dbf707745210f7df5785c1c7116eda98c6dfc77c"
+        },
+        "measurements": {
+          "distance": {
+            "type": "GOATDistanceToSubGoal",
+            "distance_to": "VIEW_POINTS",
+            "goals_attr": "goals",
+            "distance_from": "BASE"
+          },
+          "success": {
+            "type": "GOATSubTaskSuccess",
+            "success_distance": 1.0
+          }
+        },
+        "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+        "queries": 151,
+        "cache_hits": 135,
+        "distinct_positions": 16,
+        "scenes": {
+          "bxsVRursffK": {
+            "content_sha256": "ce436bbd2bf1fe27c1ee567338e28bd64aab2b54b37b0eda0dde75592bd7b8c1",
+            "navmesh": "/nvme/khy/PBSP-open-source/data/scenes/hm3dv1/hm3d/val/00873-bxsVRursffK/bxsVRursffK.basis.navmesh",
+            "navmesh_sha256": "aa75a0db80cc0736c70cc5b24fbdec723c4f88a889bb2de3c15c36348e570c17"
+          }
+        }
+      },
+      {
+        "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_132534_914613_exp4_full_exp4-smoke-a3-cvZr5TUy5C5",
+        "recorded_label_verification": {
+          "candidate_verifications": 15,
+          "recovery_verifications": 39,
+          "max_distance_error_m": 0.0
+        },
+        "method": "native GOAT measures and geodesic wrapper on CPU PathFinder",
+        "habitat_source": {
+          "revision": "8df2661e5b2203c0ddc47798d5da0132d5686bbe",
+          "kind": "archive",
+          "files": 550,
+          "content_sha256": "31226fdca10c6ea69c23b6c3dbf707745210f7df5785c1c7116eda98c6dfc77c"
+        },
+        "measurements": {
+          "distance": {
+            "type": "GOATDistanceToSubGoal",
+            "distance_to": "VIEW_POINTS",
+            "goals_attr": "goals",
+            "distance_from": "BASE"
+          },
+          "success": {
+            "type": "GOATSubTaskSuccess",
+            "success_distance": 1.0
+          }
+        },
+        "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+        "queries": 242,
+        "cache_hits": 215,
+        "distinct_positions": 27,
+        "scenes": {
+          "cvZr5TUy5C5": {
+            "content_sha256": "f6dfa078630573a4b00501f2ba017561c41f892661b41bc996ea2d14d840919e",
+            "navmesh": "/nvme/khy/PBSP-open-source/data/scenes/hm3dv1/hm3d/val/00891-cvZr5TUy5C5/cvZr5TUy5C5.basis.navmesh",
+            "navmesh_sha256": "6e7850404f3859c5c6c1bc141773db020960f9214989c04eef662d99d823c63c"
+          }
+        }
+      },
+      {
+        "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_132745_084300_exp4_full_exp4-smoke-a3-mL8ThkuaVTM",
+        "recorded_label_verification": {
+          "candidate_verifications": 10,
+          "recovery_verifications": 0,
+          "max_distance_error_m": 0.0
+        },
+        "method": "native GOAT measures and geodesic wrapper on CPU PathFinder",
+        "habitat_source": {
+          "revision": "8df2661e5b2203c0ddc47798d5da0132d5686bbe",
+          "kind": "archive",
+          "files": 550,
+          "content_sha256": "31226fdca10c6ea69c23b6c3dbf707745210f7df5785c1c7116eda98c6dfc77c"
+        },
+        "measurements": {
+          "distance": {
+            "type": "GOATDistanceToSubGoal",
+            "distance_to": "VIEW_POINTS",
+            "goals_attr": "goals",
+            "distance_from": "BASE"
+          },
+          "success": {
+            "type": "GOATSubTaskSuccess",
+            "success_distance": 1.0
+          }
+        },
+        "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+        "queries": 129,
+        "cache_hits": 117,
+        "distinct_positions": 12,
+        "scenes": {
+          "mL8ThkuaVTM": {
+            "content_sha256": "e2ea6c2099f2f223886eef92834925b3c34ccc81523154f266f01709bb24ec35",
+            "navmesh": "/nvme/khy/PBSP-open-source/data/scenes/hm3dv1/hm3d/val/00820-mL8ThkuaVTM/mL8ThkuaVTM.basis.navmesh",
+            "navmesh_sha256": "fe1170c13939667f4386ee3da2edc62412b24696ddb7870653dc16a19d92eef5"
+          }
+        }
+      },
+      {
+        "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_133926_546690_exp4_full_exp4-smoke-a3-mv2HUxq3B53",
+        "recorded_label_verification": {
+          "candidate_verifications": 18,
+          "recovery_verifications": 0,
+          "max_distance_error_m": 0.0
+        },
+        "method": "native GOAT measures and geodesic wrapper on CPU PathFinder",
+        "habitat_source": {
+          "revision": "8df2661e5b2203c0ddc47798d5da0132d5686bbe",
+          "kind": "archive",
+          "files": 550,
+          "content_sha256": "31226fdca10c6ea69c23b6c3dbf707745210f7df5785c1c7116eda98c6dfc77c"
+        },
+        "measurements": {
+          "distance": {
+            "type": "GOATDistanceToSubGoal",
+            "distance_to": "VIEW_POINTS",
+            "goals_attr": "goals",
+            "distance_from": "BASE"
+          },
+          "success": {
+            "type": "GOATSubTaskSuccess",
+            "success_distance": 1.0
+          }
+        },
+        "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+        "queries": 347,
+        "cache_hits": 321,
+        "distinct_positions": 26,
+        "scenes": {
+          "mv2HUxq3B53": {
+            "content_sha256": "61a7e0470356509749cf9ed5075d6b64605bd74009090d2b45cc3fc09ead4020",
+            "navmesh": "/nvme/khy/PBSP-open-source/data/scenes/hm3dv1/hm3d/val/00876-mv2HUxq3B53/mv2HUxq3B53.basis.navmesh",
+            "navmesh_sha256": "43e194db6ba92c2bd09ff5de201b1e6076dbc2b1c6492e309814d9ad18717e42"
+          }
+        }
+      },
+      {
+        "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_134247_034312_exp4_full_exp4-smoke-a3-p53SfW6mjZe",
+        "recorded_label_verification": {
+          "candidate_verifications": 27,
+          "recovery_verifications": 52,
+          "max_distance_error_m": 0.0
+        },
+        "method": "native GOAT measures and geodesic wrapper on CPU PathFinder",
+        "habitat_source": {
+          "revision": "8df2661e5b2203c0ddc47798d5da0132d5686bbe",
+          "kind": "archive",
+          "files": 550,
+          "content_sha256": "31226fdca10c6ea69c23b6c3dbf707745210f7df5785c1c7116eda98c6dfc77c"
+        },
+        "measurements": {
+          "distance": {
+            "type": "GOATDistanceToSubGoal",
+            "distance_to": "VIEW_POINTS",
+            "goals_attr": "goals",
+            "distance_from": "BASE"
+          },
+          "success": {
+            "type": "GOATSubTaskSuccess",
+            "success_distance": 1.0
+          }
+        },
+        "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+        "queries": 464,
+        "cache_hits": 419,
+        "distinct_positions": 45,
+        "scenes": {
+          "p53SfW6mjZe": {
+            "content_sha256": "0e2b156c374a21c21d783661414d183d487203dab4023bb9bfbe43855dc45423",
+            "navmesh": "/nvme/khy/PBSP-open-source/data/scenes/hm3dv1/hm3d/val/00814-p53SfW6mjZe/p53SfW6mjZe.basis.navmesh",
+            "navmesh_sha256": "659c79fccfe7b2c1c13aa39b5bf178bdd5723d15d73cca5c69e387b3e8e90ec3"
+          }
+        }
+      },
+      {
+        "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_134627_704560_exp4_full_exp4-smoke-a3-q3zU7Yy5E5s",
+        "recorded_label_verification": {
+          "candidate_verifications": 3,
+          "recovery_verifications": 0,
+          "max_distance_error_m": 0.0
+        },
+        "method": "native GOAT measures and geodesic wrapper on CPU PathFinder",
+        "habitat_source": {
+          "revision": "8df2661e5b2203c0ddc47798d5da0132d5686bbe",
+          "kind": "archive",
+          "files": 550,
+          "content_sha256": "31226fdca10c6ea69c23b6c3dbf707745210f7df5785c1c7116eda98c6dfc77c"
+        },
+        "measurements": {
+          "distance": {
+            "type": "GOATDistanceToSubGoal",
+            "distance_to": "VIEW_POINTS",
+            "goals_attr": "goals",
+            "distance_from": "BASE"
+          },
+          "success": {
+            "type": "GOATSubTaskSuccess",
+            "success_distance": 1.0
+          }
+        },
+        "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+        "queries": 1016,
+        "cache_hits": 1012,
+        "distinct_positions": 4,
+        "scenes": {
+          "q3zU7Yy5E5s": {
+            "content_sha256": "2b324f9d6de0c72c4cf2ee0a90865f1994e9241ca7906459a9e8b59e039ee42d",
+            "navmesh": "/nvme/khy/PBSP-open-source/data/scenes/hm3dv1/hm3d/val/00835-q3zU7Yy5E5s/q3zU7Yy5E5s.basis.navmesh",
+            "navmesh_sha256": "00a5db5fb4d82ec676b9b312537cd6d3b84195fa7123db2c5691553f932e83be"
+          }
+        }
+      },
+      {
+        "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_135408_722543_exp4_full_exp4-smoke-a3-qyAac8rV8Zk",
+        "recorded_label_verification": {
+          "candidate_verifications": 6,
+          "recovery_verifications": 13,
+          "max_distance_error_m": 0.0
+        },
+        "method": "native GOAT measures and geodesic wrapper on CPU PathFinder",
+        "habitat_source": {
+          "revision": "8df2661e5b2203c0ddc47798d5da0132d5686bbe",
+          "kind": "archive",
+          "files": 550,
+          "content_sha256": "31226fdca10c6ea69c23b6c3dbf707745210f7df5785c1c7116eda98c6dfc77c"
+        },
+        "measurements": {
+          "distance": {
+            "type": "GOATDistanceToSubGoal",
+            "distance_to": "VIEW_POINTS",
+            "goals_attr": "goals",
+            "distance_from": "BASE"
+          },
+          "success": {
+            "type": "GOATSubTaskSuccess",
+            "success_distance": 1.0
+          }
+        },
+        "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+        "queries": 125,
+        "cache_hits": 116,
+        "distinct_positions": 9,
+        "scenes": {
+          "qyAac8rV8Zk": {
+            "content_sha256": "172940cc936299af2119ae3f8dddf4866da7adfd7374206550698a8489234248",
+            "navmesh": "/nvme/khy/PBSP-open-source/data/scenes/hm3dv1/hm3d/val/00832-qyAac8rV8Zk/qyAac8rV8Zk.basis.navmesh",
+            "navmesh_sha256": "0b262b155c9a981c3409bd5319d0a8e7e5c21f614eb4dd7dee03cfacbe047b49"
+          }
+        }
+      },
+      {
+        "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_140319_830579_exp4_full_exp4-smoke-a3-svBbv1Pavdk",
+        "recorded_label_verification": {
+          "candidate_verifications": 5,
+          "recovery_verifications": 19,
+          "max_distance_error_m": 0.0
+        },
+        "method": "native GOAT measures and geodesic wrapper on CPU PathFinder",
+        "habitat_source": {
+          "revision": "8df2661e5b2203c0ddc47798d5da0132d5686bbe",
+          "kind": "archive",
+          "files": 550,
+          "content_sha256": "31226fdca10c6ea69c23b6c3dbf707745210f7df5785c1c7116eda98c6dfc77c"
+        },
+        "measurements": {
+          "distance": {
+            "type": "GOATDistanceToSubGoal",
+            "distance_to": "VIEW_POINTS",
+            "goals_attr": "goals",
+            "distance_from": "BASE"
+          },
+          "success": {
+            "type": "GOATSubTaskSuccess",
+            "success_distance": 1.0
+          }
+        },
+        "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+        "queries": 547,
+        "cache_hits": 537,
+        "distinct_positions": 10,
+        "scenes": {
+          "svBbv1Pavdk": {
+            "content_sha256": "76d55de093d152d7eabb220769ad9d9a876f5ac723cbe1f0ce9c65ad791ea3f2",
+            "navmesh": "/nvme/khy/PBSP-open-source/data/scenes/hm3dv1/hm3d/val/00813-svBbv1Pavdk/svBbv1Pavdk.basis.navmesh",
+            "navmesh_sha256": "ecc1cc7561f04b2aef3c0be1a951a2cbf2e06a1a1e99d7aface658ff7f9ee4db"
+          }
+        }
+      },
+      {
+        "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_141110_886498_exp4_full_exp4-smoke-a3-wcojb4TFT35",
+        "recorded_label_verification": {
+          "candidate_verifications": 3,
+          "recovery_verifications": 0,
+          "max_distance_error_m": 0.0
+        },
+        "method": "native GOAT measures and geodesic wrapper on CPU PathFinder",
+        "habitat_source": {
+          "revision": "8df2661e5b2203c0ddc47798d5da0132d5686bbe",
+          "kind": "archive",
+          "files": 550,
+          "content_sha256": "31226fdca10c6ea69c23b6c3dbf707745210f7df5785c1c7116eda98c6dfc77c"
+        },
+        "measurements": {
+          "distance": {
+            "type": "GOATDistanceToSubGoal",
+            "distance_to": "VIEW_POINTS",
+            "goals_attr": "goals",
+            "distance_from": "BASE"
+          },
+          "success": {
+            "type": "GOATSubTaskSuccess",
+            "success_distance": 1.0
+          }
+        },
+        "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+        "queries": 42,
+        "cache_hits": 38,
+        "distinct_positions": 4,
+        "scenes": {
+          "wcojb4TFT35": {
+            "content_sha256": "a84ce1c64cb13512a176f66e6f5088ccddebba3bcecb72e3abd94a77a31d61be",
+            "navmesh": "/nvme/khy/PBSP-open-source/data/scenes/hm3dv1/hm3d/val/00802-wcojb4TFT35/wcojb4TFT35.basis.navmesh",
+            "navmesh_sha256": "016ba3ac41020b2f1b5c66fa8a6164c69b97cec03a0dbcf5ef8349f2200f8725"
+          }
+        }
+      },
+      {
+        "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_141852_029193_exp4_full_exp4-smoke-a3-ziup5kvtCCR",
+        "recorded_label_verification": {
+          "candidate_verifications": 17,
+          "recovery_verifications": 39,
+          "max_distance_error_m": 0.0
+        },
+        "method": "native GOAT measures and geodesic wrapper on CPU PathFinder",
+        "habitat_source": {
+          "revision": "8df2661e5b2203c0ddc47798d5da0132d5686bbe",
+          "kind": "archive",
+          "files": 550,
+          "content_sha256": "31226fdca10c6ea69c23b6c3dbf707745210f7df5785c1c7116eda98c6dfc77c"
+        },
+        "measurements": {
+          "distance": {
+            "type": "GOATDistanceToSubGoal",
+            "distance_to": "VIEW_POINTS",
+            "goals_attr": "goals",
+            "distance_from": "BASE"
+          },
+          "success": {
+            "type": "GOATSubTaskSuccess",
+            "success_distance": 1.0
+          }
+        },
+        "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+        "queries": 698,
+        "cache_hits": 674,
+        "distinct_positions": 24,
+        "scenes": {
+          "ziup5kvtCCR": {
+            "content_sha256": "b6c14ae61cf6be7a7f4de1fa5b645230b87946c5ca777bec6de5fa8a829892d7",
+            "navmesh": "/nvme/khy/PBSP-open-source/data/scenes/hm3dv1/hm3d/val/00848-ziup5kvtCCR/ziup5kvtCCR.basis.navmesh",
+            "navmesh_sha256": "5503972a293fc6210caad1967a55afae62421f943e9c98c98525820d995f7cd2"
+          }
+        }
+      },
+      {
+        "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_142703_176144_exp4_full_exp4-smoke-a3-zt1RVoi7PcG",
+        "recorded_label_verification": {
+          "candidate_verifications": 8,
+          "recovery_verifications": 0,
+          "max_distance_error_m": 0.0
+        },
+        "method": "native GOAT measures and geodesic wrapper on CPU PathFinder",
+        "habitat_source": {
+          "revision": "8df2661e5b2203c0ddc47798d5da0132d5686bbe",
+          "kind": "archive",
+          "files": 550,
+          "content_sha256": "31226fdca10c6ea69c23b6c3dbf707745210f7df5785c1c7116eda98c6dfc77c"
+        },
+        "measurements": {
+          "distance": {
+            "type": "GOATDistanceToSubGoal",
+            "distance_to": "VIEW_POINTS",
+            "goals_attr": "goals",
+            "distance_from": "BASE"
+          },
+          "success": {
+            "type": "GOATSubTaskSuccess",
+            "success_distance": 1.0
+          }
+        },
+        "dataset_manifest_sha256": "c3245c4bc0322d618b12e2845f138842c5a2553c2b0f4bfbdfffba641c415165",
+        "queries": 116,
+        "cache_hits": 104,
+        "distinct_positions": 12,
+        "scenes": {
+          "zt1RVoi7PcG": {
+            "content_sha256": "2f30b796a68c037c04525b2acaca2e849cded809449afc40d10ee47719883200",
+            "navmesh": "/nvme/khy/PBSP-open-source/data/scenes/hm3dv1/hm3d/val/00839-zt1RVoi7PcG/zt1RVoi7PcG.basis.navmesh",
+            "navmesh_sha256": "39d413cd6513830a0ae002e3fe5371e7861f532e7e65778fc30a739783d89d5c"
+          }
+        }
+      }
+    ]
+  },
+  "analysis_sources_sha256": {
+    "report_variants.py": "d3d8617a83ccbd1ccebf18cf2b4149fd745be23c962e3dabeb42b057ad7626c3",
+    "action_path_metrics.py": "a89afc6504fcb5520bb8c227928961b3d7814bcfcc98c23c6311e35254089f1e",
+    "native_candidate_gt.py": "e2620454fe45d54933294286a518440ef16ec961c0eb0ca5aafe5ec2587a21a3",
+    "blp_parameters.py": "039c6a660ab2a7cf2b6e9e78e810bfb44f32731e6c52a9194dc20f82daa63bad",
+    "candidate_identities.py": "a311b37d45d59f379ce00b58d1350b5eb308da0b9a24d34ad2facdb495d9991d"
+  },
+  "source_commits": [
+    "03242fda76fd6a631596a7269c8e7990c657ea30"
+  ],
+  "diagnostic_only": false,
+  "calibration_binding": {
+    "selection": "cross_fit",
+    "parameter_sha256": "e1d75f3c9503c7439467748fc97be6ae2ad450c429f40dc7235b1564ff7852ae",
+    "parameters_by_scene": {
+      "4ok3usBNeis": {
+        "a": 44.269786779387815,
+        "b0": -12.012253606335642,
+        "pi": 0.14802149487054225,
+        "c_exp": 0.9337494521752285
+      },
+      "5cdEh9F2hJL": {
+        "a": 45.247046846062844,
+        "b0": -12.236784283062185,
+        "pi": 0.15287028227085317,
+        "c_exp": 1.1948893036836603
+      },
+      "6s7QHgap2fW": {
+        "a": 48.11459908252667,
+        "b0": -12.856439210146924,
+        "pi": 0.16010230179028134,
+        "c_exp": 1.2759422599453465
+      },
+      "DYehNKdT76V": {
+        "a": 43.68026071330188,
+        "b0": -11.910765740252264,
+        "pi": 0.15104166666666666,
+        "c_exp": 1.3757265609939344
+      },
+      "Dd4bFSTQ8gi": {
+        "a": 45.247046846062844,
+        "b0": -12.236784283062185,
+        "pi": 0.15287028227085317,
+        "c_exp": 1.1948893036836603
+      },
+      "Nfvxx8J5NCo": {
+        "a": 44.269786779387815,
+        "b0": -12.012253606335642,
+        "pi": 0.14802149487054225,
+        "c_exp": 0.9337494521752285
+      },
+      "QaLdnwvtxbs": {
+        "a": 48.11459908252667,
+        "b0": -12.856439210146924,
+        "pi": 0.16010230179028134,
+        "c_exp": 1.2759422599453465
+      },
+      "TEEsavR23oF": {
+        "a": 48.11459908252667,
+        "b0": -12.856439210146924,
+        "pi": 0.16010230179028134,
+        "c_exp": 1.2759422599453465
+      },
+      "XB4GS9ShBRE": {
+        "a": 43.68026071330188,
+        "b0": -11.910765740252264,
+        "pi": 0.15104166666666666,
+        "c_exp": 1.3757265609939344
+      },
+      "bxsVRursffK": {
+        "a": 45.247046846062844,
+        "b0": -12.236784283062185,
+        "pi": 0.15287028227085317,
+        "c_exp": 1.1948893036836603
+      },
+      "cvZr5TUy5C5": {
+        "a": 48.11459908252667,
+        "b0": -12.856439210146924,
+        "pi": 0.16010230179028134,
+        "c_exp": 1.2759422599453465
+      },
+      "mL8ThkuaVTM": {
+        "a": 45.247046846062844,
+        "b0": -12.236784283062185,
+        "pi": 0.15287028227085317,
+        "c_exp": 1.1948893036836603
+      },
+      "mv2HUxq3B53": {
+        "a": 45.247046846062844,
+        "b0": -12.236784283062185,
+        "pi": 0.15287028227085317,
+        "c_exp": 1.1948893036836603
+      },
+      "p53SfW6mjZe": {
+        "a": 44.269786779387815,
+        "b0": -12.012253606335642,
+        "pi": 0.14802149487054225,
+        "c_exp": 0.9337494521752285
+      },
+      "q3zU7Yy5E5s": {
+        "a": 45.247046846062844,
+        "b0": -12.236784283062185,
+        "pi": 0.15287028227085317,
+        "c_exp": 1.1948893036836603
+      },
+      "qyAac8rV8Zk": {
+        "a": 45.247046846062844,
+        "b0": -12.236784283062185,
+        "pi": 0.15287028227085317,
+        "c_exp": 1.1948893036836603
+      },
+      "svBbv1Pavdk": {
+        "a": 43.68026071330188,
+        "b0": -11.910765740252264,
+        "pi": 0.15104166666666666,
+        "c_exp": 1.3757265609939344
+      },
+      "wcojb4TFT35": {
+        "a": 43.68026071330188,
+        "b0": -11.910765740252264,
+        "pi": 0.15104166666666666,
+        "c_exp": 1.3757265609939344
+      },
+      "ziup5kvtCCR": {
+        "a": 45.247046846062844,
+        "b0": -12.236784283062185,
+        "pi": 0.15287028227085317,
+        "c_exp": 1.1948893036836603
+      },
+      "zt1RVoi7PcG": {
+        "a": 44.269786779387815,
+        "b0": -12.012253606335642,
+        "pi": 0.14802149487054225,
+        "c_exp": 0.9337494521752285
+      }
+    }
+  },
+  "rates_pct_unrounded": {
+    "SR": 15.0,
+    "SPL": 6.668198375071725,
+    "PR": 35.0,
+    "PPL": 10.877512641573345,
+    "PSR": 35.0,
+    "PeSPL": 19.033543947223425,
+    "P_C1": 35.0,
+    "P_C2_given_C1": 57.14285714285714,
+    "P_C3_given_C1C2": 75.0,
+    "P_C4_given_C1C2C3": null,
+    "Joint": 15.0
+  }
+}

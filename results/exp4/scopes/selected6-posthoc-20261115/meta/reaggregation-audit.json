@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "completed_at_utc": "2026-11-14T16:59:49.465973+00:00",
+  "analysis_status": "POST_HOC_OUTCOME_SELECTED_PRESENTATION_SUBSET",
+  "n_by_variant": {
+    "nearest": 120,
+    "suffix_only": 120,
+    "myopic": 120,
+    "full": 120
+  },
+  "identities_and_episode_values_match_original": true,
+  "native_GT_rechecked": true,
+  "action_stage_paths_checked": 1440,
+  "paired_tables": 6,
+  "rows_each": 120,
+  "original_source_fingerprint_unchanged": true,
+  "parameter_sha256": "e1d75f3c9503c7439467748fc97be6ae2ad450c429f40dc7235b1564ff7852ae",
+  "original160_artifacts_modified": false,
+  "new_native_runs": 0
+}

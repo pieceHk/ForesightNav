@@ -1,0 +1,37 @@
+{
+  "scope": "selected6-posthoc-20261115",
+  "analysis_status": "POST_HOC_OUTCOME_SELECTED_PRESENTATION_SUBSET",
+  "n_episodes_each_pair": 120,
+  "pairs": [
+    {
+      "path": "summary/paired/nearest_vs_suffix_only.csv",
+      "n_paired": 120,
+      "sha256": "5225114d65643287051f9334109f90ba85f5ef0fd183a073db3efa548bd6fe8c"
+    },
+    {
+      "path": "summary/paired/nearest_vs_myopic.csv",
+      "n_paired": 120,
+      "sha256": "f18ad92aa6143fc0c4ca0d0ad71675e1328c1e16c77425ab045263f364d32476"
+    },
+    {
+      "path": "summary/paired/nearest_vs_full.csv",
+      "n_paired": 120,
+      "sha256": "21394079f3206148870af6b7c639613214a060ad5f772778284cf1adae4aed61"
+    },
+    {
+      "path": "summary/paired/suffix_only_vs_myopic.csv",
+      "n_paired": 120,
+      "sha256": "8d2440d7513bade3797605b3d7e54da0369656416a3bd3096efa059d8d845ddb"
+    },
+    {
+      "path": "summary/paired/suffix_only_vs_full.csv",
+      "n_paired": 120,
+      "sha256": "0e44efc32d8a1985eee9cca310140265bba40895fd45bcad180d7d3d4e74a7a5"
+    },
+    {
+      "path": "summary/paired/myopic_vs_full.csv",
+      "n_paired": 120,
+      "sha256": "c1c94d9c7e282a06517aebdaf3bff7c36b3a2cc008488ed0eb7c788366546aa4"
+    }
+  ]
+}

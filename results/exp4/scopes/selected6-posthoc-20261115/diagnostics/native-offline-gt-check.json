@@ -1,0 +1,541 @@
+{
+  "scope": "native offline GT reproducibility, no fitting or policy execution",
+  "analysis_source_sha256": "e2620454fe45d54933294286a518440ef16ec961c0eb0ca5aafe5ec2587a21a3",
+  "candidate_verifications": 3880,
+  "recovery_verifications": 7246,
+  "max_distance_error_m": 0.0,
+  "checks": [
+    {
+      "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261109_125701_865475_exp4_calibration_calibration-a3-fold0-6s7QHgap2fW",
+      "candidate_verifications": 425,
+      "recovery_verifications": 596,
+      "max_distance_error_m": 0.0,
+      "native_gt_provenance": {
+        "method": "native GOAT measures and geodesic wrapper on CPU PathFinder",
+        "habitat_source": {
+          "revision": "8df2661e5b2203c0ddc47798d5da0132d5686bbe",
+          "kind": "archive",
+          "files": 550,
+          "content_sha256": "31226fdca10c6ea69c23b6c3dbf707745210f7df5785c1c7116eda98c6dfc77c"
+        },
+        "measurements": {
+          "distance": {
+            "type": "GOATDistanceToSubGoal",
+            "distance_to": "VIEW_POINTS",
+            "goals_attr": "goals",
+            "distance_from": "BASE"
+          },
+          "success": {
+            "type": "GOATSubTaskSuccess",
+            "success_distance": 1.0
+          }
+        },
+        "dataset_manifest_sha256": "dfcf14d1fe7edef9c9d7bd8286dfe8067c91f56ef46ca2be4524d7e01461ac62",
+        "queries": 1021,
+        "cache_hits": 572,
+        "distinct_positions": 449,
+        "scenes": {
+          "6s7QHgap2fW": {
+            "content_sha256": "9840a55a003c4dbe19b99be558f79d26b41bfd87b049c4f3c2cf79683fca84f0",
+            "navmesh": "/nvme/khy/PBSP-open-source/data/scenes/hm3dv1/hm3d/val/00890-6s7QHgap2fW/6s7QHgap2fW.basis.navmesh",
+            "navmesh_sha256": "127c2fa57e01105442bb7019bca4692ed12aba6fae3b1bc13c2a557d3095ffe0"
+          }
+        }
+      }
+    },
+    {
+      "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261109_125701_924956_exp4_calibration_calibration-a3-fold0-TEEsavR23oF",
+      "candidate_verifications": 377,
+      "recovery_verifications": 473,
+      "max_distance_error_m": 0.0,
+      "native_gt_provenance": {
+        "method": "native GOAT measures and geodesic wrapper on CPU PathFinder",
+        "habitat_source": {
+          "revision": "8df2661e5b2203c0ddc47798d5da0132d5686bbe",
+          "kind": "archive",
+          "files": 550,
+          "content_sha256": "31226fdca10c6ea69c23b6c3dbf707745210f7df5785c1c7116eda98c6dfc77c"
+        },
+        "measurements": {
+          "distance": {
+            "type": "GOATDistanceToSubGoal",
+            "distance_to": "VIEW_POINTS",
+            "goals_attr": "goals",
+            "distance_from": "BASE"
+          },
+          "success": {
+            "type": "GOATSubTaskSuccess",
+            "success_distance": 1.0
+          }
+        },
+        "dataset_manifest_sha256": "dfcf14d1fe7edef9c9d7bd8286dfe8067c91f56ef46ca2be4524d7e01461ac62",
+        "queries": 850,
+        "cache_hits": 459,
+        "distinct_positions": 391,
+        "scenes": {
+          "TEEsavR23oF": {
+            "content_sha256": "bdaad88d1e23ba53c2619c75eaa66c543f2497153d3f91333aed4f7c62d48927",
+            "navmesh": "/nvme/khy/PBSP-open-source/data/scenes/hm3dv1/hm3d/val/00800-TEEsavR23oF/TEEsavR23oF.basis.navmesh",
+            "navmesh_sha256": "954b52bde8437a7180d2743584f287c9283bb5c9aaac9111fccf8992cb96bbd6"
+          }
+        }
+      }
+    },
+    {
+      "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261109_160731_469662_exp4_calibration_calibration-a3-fold0-QaLdnwvtxbs",
+      "candidate_verifications": 231,
+      "recovery_verifications": 309,
+      "max_distance_error_m": 0.0,
+      "native_gt_provenance": {
+        "method": "native GOAT measures and geodesic wrapper on CPU PathFinder",
+        "habitat_source": {
+          "revision": "8df2661e5b2203c0ddc47798d5da0132d5686bbe",
+          "kind": "archive",
+          "files": 550,
+          "content_sha256": "31226fdca10c6ea69c23b6c3dbf707745210f7df5785c1c7116eda98c6dfc77c"
+        },
+        "measurements": {
+          "distance": {
+            "type": "GOATDistanceToSubGoal",
+            "distance_to": "VIEW_POINTS",
+            "goals_attr": "goals",
+            "distance_from": "BASE"
+          },
+          "success": {
+            "type": "GOATSubTaskSuccess",
+            "success_distance": 1.0
+          }
+        },
+        "dataset_manifest_sha256": "dfcf14d1fe7edef9c9d7bd8286dfe8067c91f56ef46ca2be4524d7e01461ac62",
+        "queries": 540,
+        "cache_hits": 300,
+        "distinct_positions": 240,
+        "scenes": {
+          "QaLdnwvtxbs": {
+            "content_sha256": "12bf29f15c9a85b1afd53bf518d8a79521c63c2d3d84e4ac6439d44d285a5c61",
+            "navmesh": "/nvme/khy/PBSP-open-source/data/scenes/hm3dv1/hm3d/val/00829-QaLdnwvtxbs/QaLdnwvtxbs.basis.navmesh",
+            "navmesh_sha256": "9dbbfcd516ddd1da9ccadf0efd0a7e0ff89e6d3bc794d5bc6f2515e2d7742d97"
+          }
+        }
+      }
+    },
+    {
+      "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261109_161312_340221_exp4_calibration_calibration-a3-fold0-cvZr5TUy5C5",
+      "candidate_verifications": 413,
+      "recovery_verifications": 701,
+      "max_distance_error_m": 0.0,
+      "native_gt_provenance": {
+        "method": "native GOAT measures and geodesic wrapper on CPU PathFinder",
+        "habitat_source": {
+          "revision": "8df2661e5b2203c0ddc47798d5da0132d5686bbe",
+          "kind": "archive",
+          "files": 550,
+          "content_sha256": "31226fdca10c6ea69c23b6c3dbf707745210f7df5785c1c7116eda98c6dfc77c"
+        },
+        "measurements": {
+          "distance": {
+            "type": "GOATDistanceToSubGoal",
+            "distance_to": "VIEW_POINTS",
+            "goals_attr": "goals",
+            "distance_from": "BASE"
+          },
+          "success": {
+            "type": "GOATSubTaskSuccess",
+            "success_distance": 1.0
+          }
+        },
+        "dataset_manifest_sha256": "dfcf14d1fe7edef9c9d7bd8286dfe8067c91f56ef46ca2be4524d7e01461ac62",
+        "queries": 1114,
+        "cache_hits": 668,
+        "distinct_positions": 446,
+        "scenes": {
+          "cvZr5TUy5C5": {
+            "content_sha256": "a5404f82dbb5abadb3358065fb876318b5dce91afed2acf0ab7c341611047c3c",
+            "navmesh": "/nvme/khy/PBSP-open-source/data/scenes/hm3dv1/hm3d/val/00891-cvZr5TUy5C5/cvZr5TUy5C5.basis.navmesh",
+            "navmesh_sha256": "6e7850404f3859c5c6c1bc141773db020960f9214989c04eef662d99d823c63c"
+          }
+        }
+      }
+    },
+    {
+      "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261109_212445_531074_exp4_calibration_calibration-a3-fold1-Nfvxx8J5NCo",
+      "candidate_verifications": 329,
+      "recovery_verifications": 516,
+      "max_distance_error_m": 0.0,
+      "native_gt_provenance": {
+        "method": "native GOAT measures and geodesic wrapper on CPU PathFinder",
+        "habitat_source": {
+          "revision": "8df2661e5b2203c0ddc47798d5da0132d5686bbe",
+          "kind": "archive",
+          "files": 550,
+          "content_sha256": "31226fdca10c6ea69c23b6c3dbf707745210f7df5785c1c7116eda98c6dfc77c"
+        },
+        "measurements": {
+          "distance": {
+            "type": "GOATDistanceToSubGoal",
+            "distance_to": "VIEW_POINTS",
+            "goals_attr": "goals",
+            "distance_from": "BASE"
+          },
+          "success": {
+            "type": "GOATSubTaskSuccess",
+            "success_distance": 1.0
+          }
+        },
+        "dataset_manifest_sha256": "dfcf14d1fe7edef9c9d7bd8286dfe8067c91f56ef46ca2be4524d7e01461ac62",
+        "queries": 845,
+        "cache_hits": 497,
+        "distinct_positions": 348,
+        "scenes": {
+          "Nfvxx8J5NCo": {
+            "content_sha256": "bb2d092b098a8fa947d046e480286a55a332c4a14d6b0f3ac1cca77eb0dd9954",
+            "navmesh": "/nvme/khy/PBSP-open-source/data/scenes/hm3dv1/hm3d/val/00880-Nfvxx8J5NCo/Nfvxx8J5NCo.basis.navmesh",
+            "navmesh_sha256": "9cf25dac3daa97a2792d7edb2272d0c6e9351a95c379b27521094b3be0a013c1"
+          }
+        }
+      }
+    },
+    {
+      "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261109_212445_531110_exp4_calibration_calibration-a3-fold1-p53SfW6mjZe",
+      "candidate_verifications": 349,
+      "recovery_verifications": 532,
+      "max_distance_error_m": 0.0,
+      "native_gt_provenance": {
+        "method": "native GOAT measures and geodesic wrapper on CPU PathFinder",
+        "habitat_source": {
+          "revision": "8df2661e5b2203c0ddc47798d5da0132d5686bbe",
+          "kind": "archive",
+          "files": 550,
+          "content_sha256": "31226fdca10c6ea69c23b6c3dbf707745210f7df5785c1c7116eda98c6dfc77c"
+        },
+        "measurements": {
+          "distance": {
+            "type": "GOATDistanceToSubGoal",
+            "distance_to": "VIEW_POINTS",
+            "goals_attr": "goals",
+            "distance_from": "BASE"
+          },
+          "success": {
+            "type": "GOATSubTaskSuccess",
+            "success_distance": 1.0
+          }
+        },
+        "dataset_manifest_sha256": "dfcf14d1fe7edef9c9d7bd8286dfe8067c91f56ef46ca2be4524d7e01461ac62",
+        "queries": 881,
+        "cache_hits": 520,
+        "distinct_positions": 361,
+        "scenes": {
+          "p53SfW6mjZe": {
+            "content_sha256": "c5b558c5bab5c05bdca23d39abf53ca7e4850b8d414d8a69cb35e6e9da3bdafe",
+            "navmesh": "/nvme/khy/PBSP-open-source/data/scenes/hm3dv1/hm3d/val/00814-p53SfW6mjZe/p53SfW6mjZe.basis.navmesh",
+            "navmesh_sha256": "659c79fccfe7b2c1c13aa39b5bf178bdd5723d15d73cca5c69e387b3e8e90ec3"
+          }
+        }
+      }
+    },
+    {
+      "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_001439_570210_exp4_calibration_calibration-a3-fold1-4ok3usBNeis",
+      "candidate_verifications": 363,
+      "recovery_verifications": 846,
+      "max_distance_error_m": 0.0,
+      "native_gt_provenance": {
+        "method": "native GOAT measures and geodesic wrapper on CPU PathFinder",
+        "habitat_source": {
+          "revision": "8df2661e5b2203c0ddc47798d5da0132d5686bbe",
+          "kind": "archive",
+          "files": 550,
+          "content_sha256": "31226fdca10c6ea69c23b6c3dbf707745210f7df5785c1c7116eda98c6dfc77c"
+        },
+        "measurements": {
+          "distance": {
+            "type": "GOATDistanceToSubGoal",
+            "distance_to": "VIEW_POINTS",
+            "goals_attr": "goals",
+            "distance_from": "BASE"
+          },
+          "success": {
+            "type": "GOATSubTaskSuccess",
+            "success_distance": 1.0
+          }
+        },
+        "dataset_manifest_sha256": "dfcf14d1fe7edef9c9d7bd8286dfe8067c91f56ef46ca2be4524d7e01461ac62",
+        "queries": 1209,
+        "cache_hits": 801,
+        "distinct_positions": 408,
+        "scenes": {
+          "4ok3usBNeis": {
+            "content_sha256": "7a266897a34f1fab9013c1c455385501858e8a9c84bbfd0c357afcbb516d6328",
+            "navmesh": "/nvme/khy/PBSP-open-source/data/scenes/hm3dv1/hm3d/val/00877-4ok3usBNeis/4ok3usBNeis.basis.navmesh",
+            "navmesh_sha256": "dcb05c92ba7339c2fa5c4d60346d335b4b2d92063ccbb2aab0f369264e575087"
+          }
+        }
+      }
+    },
+    {
+      "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_002431_095619_exp4_calibration_calibration-a3-fold1-zt1RVoi7PcG",
+      "candidate_verifications": 316,
+      "recovery_verifications": 474,
+      "max_distance_error_m": 0.0,
+      "native_gt_provenance": {
+        "method": "native GOAT measures and geodesic wrapper on CPU PathFinder",
+        "habitat_source": {
+          "revision": "8df2661e5b2203c0ddc47798d5da0132d5686bbe",
+          "kind": "archive",
+          "files": 550,
+          "content_sha256": "31226fdca10c6ea69c23b6c3dbf707745210f7df5785c1c7116eda98c6dfc77c"
+        },
+        "measurements": {
+          "distance": {
+            "type": "GOATDistanceToSubGoal",
+            "distance_to": "VIEW_POINTS",
+            "goals_attr": "goals",
+            "distance_from": "BASE"
+          },
+          "success": {
+            "type": "GOATSubTaskSuccess",
+            "success_distance": 1.0
+          }
+        },
+        "dataset_manifest_sha256": "dfcf14d1fe7edef9c9d7bd8286dfe8067c91f56ef46ca2be4524d7e01461ac62",
+        "queries": 790,
+        "cache_hits": 456,
+        "distinct_positions": 334,
+        "scenes": {
+          "zt1RVoi7PcG": {
+            "content_sha256": "91a15c6c19d2567e1fbcbdc800581cdcbfc4ff9ca519cfb5f94c0a85e52431c3",
+            "navmesh": "/nvme/khy/PBSP-open-source/data/scenes/hm3dv1/hm3d/val/00839-zt1RVoi7PcG/zt1RVoi7PcG.basis.navmesh",
+            "navmesh_sha256": "39d413cd6513830a0ae002e3fe5371e7861f532e7e65778fc30a739783d89d5c"
+          }
+        }
+      }
+    },
+    {
+      "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_030707_420805_exp4_calibration_calibration-a3-fold2-XB4GS9ShBRE",
+      "candidate_verifications": 282,
+      "recovery_verifications": 1050,
+      "max_distance_error_m": 0.0,
+      "native_gt_provenance": {
+        "method": "native GOAT measures and geodesic wrapper on CPU PathFinder",
+        "habitat_source": {
+          "revision": "8df2661e5b2203c0ddc47798d5da0132d5686bbe",
+          "kind": "archive",
+          "files": 550,
+          "content_sha256": "31226fdca10c6ea69c23b6c3dbf707745210f7df5785c1c7116eda98c6dfc77c"
+        },
+        "measurements": {
+          "distance": {
+            "type": "GOATDistanceToSubGoal",
+            "distance_to": "VIEW_POINTS",
+            "goals_attr": "goals",
+            "distance_from": "BASE"
+          },
+          "success": {
+            "type": "GOATSubTaskSuccess",
+            "success_distance": 1.0
+          }
+        },
+        "dataset_manifest_sha256": "dfcf14d1fe7edef9c9d7bd8286dfe8067c91f56ef46ca2be4524d7e01461ac62",
+        "queries": 1332,
+        "cache_hits": 984,
+        "distinct_positions": 348,
+        "scenes": {
+          "XB4GS9ShBRE": {
+            "content_sha256": "b1bea368520a1e6c35f548f3feb1e9307eea434bbe569e7ceca5fcc878fb4e37",
+            "navmesh": "/nvme/khy/PBSP-open-source/data/scenes/hm3dv1/hm3d/val/00878-XB4GS9ShBRE/XB4GS9ShBRE.basis.navmesh",
+            "navmesh_sha256": "44c6f2f74ea09dd033c248474128513d6446c5bfb289e44a0af14518d9aa6f6f"
+          }
+        }
+      }
+    },
+    {
+      "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_030707_404622_exp4_calibration_calibration-a3-fold2-svBbv1Pavdk",
+      "candidate_verifications": 202,
+      "recovery_verifications": 301,
+      "max_distance_error_m": 0.0,
+      "native_gt_provenance": {
+        "method": "native GOAT measures and geodesic wrapper on CPU PathFinder",
+        "habitat_source": {
+          "revision": "8df2661e5b2203c0ddc47798d5da0132d5686bbe",
+          "kind": "archive",
+          "files": 550,
+          "content_sha256": "31226fdca10c6ea69c23b6c3dbf707745210f7df5785c1c7116eda98c6dfc77c"
+        },
+        "measurements": {
+          "distance": {
+            "type": "GOATDistanceToSubGoal",
+            "distance_to": "VIEW_POINTS",
+            "goals_attr": "goals",
+            "distance_from": "BASE"
+          },
+          "success": {
+            "type": "GOATSubTaskSuccess",
+            "success_distance": 1.0
+          }
+        },
+        "dataset_manifest_sha256": "dfcf14d1fe7edef9c9d7bd8286dfe8067c91f56ef46ca2be4524d7e01461ac62",
+        "queries": 503,
+        "cache_hits": 288,
+        "distinct_positions": 215,
+        "scenes": {
+          "svBbv1Pavdk": {
+            "content_sha256": "2b6ebfea5fa69a9d5283803ab876c272550657a59be9e89f81b7633a563ccdc5",
+            "navmesh": "/nvme/khy/PBSP-open-source/data/scenes/hm3dv1/hm3d/val/00813-svBbv1Pavdk/svBbv1Pavdk.basis.navmesh",
+            "navmesh_sha256": "ecc1cc7561f04b2aef3c0be1a951a2cbf2e06a1a1e99d7aface658ff7f9ee4db"
+          }
+        }
+      }
+    },
+    {
+      "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_052133_559552_exp4_calibration_calibration-a3-fold2-wcojb4TFT35",
+      "candidate_verifications": 270,
+      "recovery_verifications": 854,
+      "max_distance_error_m": 0.0,
+      "native_gt_provenance": {
+        "method": "native GOAT measures and geodesic wrapper on CPU PathFinder",
+        "habitat_source": {
+          "revision": "8df2661e5b2203c0ddc47798d5da0132d5686bbe",
+          "kind": "archive",
+          "files": 550,
+          "content_sha256": "31226fdca10c6ea69c23b6c3dbf707745210f7df5785c1c7116eda98c6dfc77c"
+        },
+        "measurements": {
+          "distance": {
+            "type": "GOATDistanceToSubGoal",
+            "distance_to": "VIEW_POINTS",
+            "goals_attr": "goals",
+            "distance_from": "BASE"
+          },
+          "success": {
+            "type": "GOATSubTaskSuccess",
+            "success_distance": 1.0
+          }
+        },
+        "dataset_manifest_sha256": "dfcf14d1fe7edef9c9d7bd8286dfe8067c91f56ef46ca2be4524d7e01461ac62",
+        "queries": 1124,
+        "cache_hits": 810,
+        "distinct_positions": 314,
+        "scenes": {
+          "wcojb4TFT35": {
+            "content_sha256": "1e9dfa183f4c612afffacb7452b1b765045db4653a703c9e180e962c3b880baf",
+            "navmesh": "/nvme/khy/PBSP-open-source/data/scenes/hm3dv1/hm3d/val/00802-wcojb4TFT35/wcojb4TFT35.basis.navmesh",
+            "navmesh_sha256": "016ba3ac41020b2f1b5c66fa8a6164c69b97cec03a0dbcf5ef8349f2200f8725"
+          }
+        }
+      }
+    },
+    {
+      "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_065156_646270_exp4_calibration_calibration-a3-fold2-DYehNKdT76V",
+      "candidate_verifications": 292,
+      "recovery_verifications": 568,
+      "max_distance_error_m": 0.0,
+      "native_gt_provenance": {
+        "method": "native GOAT measures and geodesic wrapper on CPU PathFinder",
+        "habitat_source": {
+          "revision": "8df2661e5b2203c0ddc47798d5da0132d5686bbe",
+          "kind": "archive",
+          "files": 550,
+          "content_sha256": "31226fdca10c6ea69c23b6c3dbf707745210f7df5785c1c7116eda98c6dfc77c"
+        },
+        "measurements": {
+          "distance": {
+            "type": "GOATDistanceToSubGoal",
+            "distance_to": "VIEW_POINTS",
+            "goals_attr": "goals",
+            "distance_from": "BASE"
+          },
+          "success": {
+            "type": "GOATSubTaskSuccess",
+            "success_distance": 1.0
+          }
+        },
+        "dataset_manifest_sha256": "dfcf14d1fe7edef9c9d7bd8286dfe8067c91f56ef46ca2be4524d7e01461ac62",
+        "queries": 860,
+        "cache_hits": 540,
+        "distinct_positions": 320,
+        "scenes": {
+          "DYehNKdT76V": {
+            "content_sha256": "abe37d6ccaa9017eb238079e57926060aaf5343b264fb3dfccc9723c2fe85dae",
+            "navmesh": "/nvme/khy/PBSP-open-source/data/scenes/hm3dv1/hm3d/val/00843-DYehNKdT76V/DYehNKdT76V.basis.navmesh",
+            "navmesh_sha256": "edc491ececc4ea5a9ffb40b5bb9dc98c7da188794ddb59023ac00d5816d11cb0"
+          }
+        }
+      }
+    },
+    {
+      "run_directory": "/nvme/khy/ForesightNav_exp4/results/exp4/diagnostics/action-trace-plumbing/runs/20261108_043756_578726_exp4_calibration_action-trace-plumbing",
+      "candidate_verifications": 2,
+      "recovery_verifications": 0,
+      "max_distance_error_m": 0.0,
+      "native_gt_provenance": {
+        "method": "native GOAT measures and geodesic wrapper on CPU PathFinder",
+        "habitat_source": {
+          "revision": "8df2661e5b2203c0ddc47798d5da0132d5686bbe",
+          "kind": "archive",
+          "files": 550,
+          "content_sha256": "31226fdca10c6ea69c23b6c3dbf707745210f7df5785c1c7116eda98c6dfc77c"
+        },
+        "measurements": {
+          "distance": {
+            "type": "GOATDistanceToSubGoal",
+            "distance_to": "VIEW_POINTS",
+            "goals_attr": "goals",
+            "distance_from": "BASE"
+          },
+          "success": {
+            "type": "GOATSubTaskSuccess",
+            "success_distance": 1.0
+          }
+        },
+        "dataset_manifest_sha256": "dfcf14d1fe7edef9c9d7bd8286dfe8067c91f56ef46ca2be4524d7e01461ac62",
+        "queries": 2,
+        "cache_hits": 0,
+        "distinct_positions": 2,
+        "scenes": {
+          "6s7QHgap2fW": {
+            "content_sha256": "9840a55a003c4dbe19b99be558f79d26b41bfd87b049c4f3c2cf79683fca84f0",
+            "navmesh": "/nvme/khy/PBSP-open-source/data/scenes/hm3dv1/hm3d/val/00890-6s7QHgap2fW/6s7QHgap2fW.basis.navmesh",
+            "navmesh_sha256": "127c2fa57e01105442bb7019bca4692ed12aba6fae3b1bc13c2a557d3095ffe0"
+          }
+        }
+      }
+    },
+    {
+      "run_directory": "/nvme/khy/ForesightNav_exp4/results/exp4/diagnostics/action-trace-confirmation-switch/runs/20261108_044225_726193_exp4_calibration_action-trace-confirmation-switch",
+      "candidate_verifications": 29,
+      "recovery_verifications": 26,
+      "max_distance_error_m": 0.0,
+      "native_gt_provenance": {
+        "method": "native GOAT measures and geodesic wrapper on CPU PathFinder",
+        "habitat_source": {
+          "revision": "8df2661e5b2203c0ddc47798d5da0132d5686bbe",
+          "kind": "archive",
+          "files": 550,
+          "content_sha256": "31226fdca10c6ea69c23b6c3dbf707745210f7df5785c1c7116eda98c6dfc77c"
+        },
+        "measurements": {
+          "distance": {
+            "type": "GOATDistanceToSubGoal",
+            "distance_to": "VIEW_POINTS",
+            "goals_attr": "goals",
+            "distance_from": "BASE"
+          },
+          "success": {
+            "type": "GOATSubTaskSuccess",
+            "success_distance": 1.0
+          }
+        },
+        "dataset_manifest_sha256": "dfcf14d1fe7edef9c9d7bd8286dfe8067c91f56ef46ca2be4524d7e01461ac62",
+        "queries": 55,
+        "cache_hits": 25,
+        "distinct_positions": 30,
+        "scenes": {
+          "TEEsavR23oF": {
+            "content_sha256": "bdaad88d1e23ba53c2619c75eaa66c543f2497153d3f91333aed4f7c62d48927",
+            "navmesh": "/nvme/khy/PBSP-open-source/data/scenes/hm3dv1/hm3d/val/00800-TEEsavR23oF/TEEsavR23oF.basis.navmesh",
+            "navmesh_sha256": "954b52bde8437a7180d2743584f287c9283bb5c9aaac9111fccf8992cb96bbd6"
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "units": "percentage points",
+  "effects": {
+    "SR": {
+      "future_main_effect_pp": 2.5,
+      "belief_main_effect_pp": -1.6666666666666679,
+      "interaction_pp": 6.666666666666664
+    },
+    "SPL": {
+      "future_main_effect_pp": 0.03782299847540749,
+      "belief_main_effect_pp": -0.642362161050654,
+      "interaction_pp": 2.30988937698557
+    }
+  },
+  "paired_episode_success": {
+    "nearest_vs_suffix_only": {
+      "both_success": 17,
+      "left_only_success": 10,
+      "right_only_success": 9,
+      "both_failure": 84,
+      "n_paired": 120
+    },
+    "nearest_vs_myopic": {
+      "both_success": 14,
+      "left_only_success": 13,
+      "right_only_success": 7,
+      "both_failure": 86,
+      "n_paired": 120
+    },
+    "nearest_vs_full": {
+      "both_success": 16,
+      "left_only_success": 11,
+      "right_only_success": 12,
+      "both_failure": 81,
+      "n_paired": 120
+    },
+    "suffix_only_vs_myopic": {
+      "both_success": 13,
+      "left_only_success": 13,
+      "right_only_success": 8,
+      "both_failure": 86,
+      "n_paired": 120
+    },
+    "suffix_only_vs_full": {
+      "both_success": 18,
+      "left_only_success": 8,
+      "right_only_success": 10,
+      "both_failure": 84,
+      "n_paired": 120
+    },
+    "myopic_vs_full": {
+      "both_success": 14,
+      "left_only_success": 7,
+      "right_only_success": 14,
+      "both_failure": 85,
+      "n_paired": 120
+    }
+  }
+}

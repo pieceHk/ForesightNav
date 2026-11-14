@@ -1,0 +1,41 @@
+{
+  "seed": 20261107,
+  "algorithm": "Python random.Random.shuffle on sorted scene IDs",
+  "folds": [
+    [
+      "6s7QHgap2fW",
+      "TEEsavR23oF",
+      "QaLdnwvtxbs",
+      "cvZr5TUy5C5"
+    ],
+    [
+      "Nfvxx8J5NCo",
+      "p53SfW6mjZe",
+      "4ok3usBNeis",
+      "zt1RVoi7PcG"
+    ],
+    [
+      "XB4GS9ShBRE",
+      "svBbv1Pavdk",
+      "wcojb4TFT35",
+      "DYehNKdT76V"
+    ],
+    [
+      "qyAac8rV8Zk",
+      "bxsVRursffK",
+      "mL8ThkuaVTM",
+      "Dd4bFSTQ8gi"
+    ],
+    [
+      "5cdEh9F2hJL",
+      "q3zU7Yy5E5s",
+      "mv2HUxq3B53",
+      "ziup5kvtCCR"
+    ]
+  ],
+  "first_collect_folds": [
+    0,
+    1,
+    2
+  ]
+}

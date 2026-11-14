@@ -1,0 +1,42 @@
+{
+  "collection_attempt": "a3",
+  "collection_source_commit": "eaa29e5f8f46782554d31226a8d619ec2534c34a",
+  "run_directories": [
+    "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261109_125701_865475_exp4_calibration_calibration-a3-fold0-6s7QHgap2fW",
+    "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261109_125701_924956_exp4_calibration_calibration-a3-fold0-TEEsavR23oF",
+    "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261109_160731_469662_exp4_calibration_calibration-a3-fold0-QaLdnwvtxbs",
+    "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261109_161312_340221_exp4_calibration_calibration-a3-fold0-cvZr5TUy5C5",
+    "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261109_212445_531074_exp4_calibration_calibration-a3-fold1-Nfvxx8J5NCo",
+    "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261109_212445_531110_exp4_calibration_calibration-a3-fold1-p53SfW6mjZe",
+    "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_001439_570210_exp4_calibration_calibration-a3-fold1-4ok3usBNeis",
+    "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_002431_095619_exp4_calibration_calibration-a3-fold1-zt1RVoi7PcG",
+    "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_030707_404622_exp4_calibration_calibration-a3-fold2-svBbv1Pavdk",
+    "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_030707_420805_exp4_calibration_calibration-a3-fold2-XB4GS9ShBRE",
+    "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_052133_559552_exp4_calibration_calibration-a3-fold2-wcojb4TFT35",
+    "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261110_065156_646270_exp4_calibration_calibration-a3-fold2-DYehNKdT76V"
+  ],
+  "input_sha256": {
+    "meta/calibration_runs.json": "f9e128a9fb4afe3a22e9371e09fe3c91b3945345c07789cb3903132016042939",
+    "meta/calibration-start-a3.json": "d2f6a0d98032f459013aa6af30163e760420f58596a6683de84e781b469d2776",
+    "meta/completed-calibration-scene-audits.json": "99e9483c508e9f140390bf958a01e5ad0505b61f1b883e4c13ed72f8faf12b4f",
+    "meta/folds.json": "e5984774614e3eef936728637c494a88f11269bf1508d719e87cf17879f2590b",
+    "meta/CP1_acceptance.json": "92dcdc9ad7560ab2b8f2ffe048d12b73a12cc98123b4770297a688c4a92eac0e",
+    "code/fit_calibration_reviewed.py": "c6511269a6de44ec2177ce633615a8845598575e00e94394a2bc84063c86033a",
+    "code/candidate_identities.py": "a311b37d45d59f379ce00b58d1350b5eb308da0b9a24d34ad2facdb495d9991d",
+    "logs/calibration_fold0_events.jsonl": "ab16c924ed646d5481f67a8154b74e37dfc207378335461fe08d256cc38170ec",
+    "logs/calibration_fold0_snapshots.jsonl": "7610d9d560bfe7936dad77e70dda71d10fb69d858ebac57494e83cfc08bc00fc",
+    "logs/calibration_fold1_events.jsonl": "e82c7d8deda6bc2cf3bb20f5df46c7b12916556ec51c0814ae5ff53e6d43cb06",
+    "logs/calibration_fold1_snapshots.jsonl": "b936ffe9e4e1ca320480d7ff7a0e80d0bf4f2432259760bb2c8a1130d911b08a",
+    "logs/calibration_fold2_events.jsonl": "13afb1cc8bfba3f5896f939b69cfdfae1b230d89a769dab51e7e1a34ea6ea65e",
+    "logs/calibration_fold2_snapshots.jsonl": "b79cf3045a452c02119e59284007621866f4984f16a4e2b4b5269242eb831e6c"
+  },
+  "fitted_at_utc": "2026-11-10T01:54:26.176692+00:00",
+  "output_sha256": {
+    "meta/calibration_per_fold.json": "88bd43083c73f4af1482abd4aa74fdc95fddf183817ede7475b5a5356735ab5f",
+    "meta/calibration.proposed.json": "7881e884cc639ce00b8c43d91c204e2b6dd068baebc625f80cbb846bc70b539e",
+    "figures/calibration_evidence.png": "613939533299e64d2ef7f3f615311d07300004a2f91e4e42b82fac881f465354",
+    "figures/calibration_reliability.png": "6deac3fdb7a9d9cb48c2993bcbe15989df0fd202ec8c499a498ba69e152d953e"
+  },
+  "optimizer_objective_unchanged": true,
+  "runtime_source_modified": false
+}

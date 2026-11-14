@@ -1,0 +1,15 @@
+{
+  "returncode": 0,
+  "stdout": "{\n  \"experiment\": \"exp4_calibration\",\n  \"dataset\": \"hm3dv1_2mon_balanced1200\",\n  \"scenes\": [\n    \"6s7QHgap2fW\"\n  ],\n  \"complete_episodes\": 1,\n  \"targets_per_episode\": 2,\n  \"gpus\": {\n    \"mapping\": 2,\n    \"navigation\": 2\n  },\n  \"configuration_sha256\": \"a71bb3ee60c832a53fbac29c9c17e45f277d1862fc1ae02a64dc640f2c34ca89\",\n  \"identity_sha256\": \"1878d328147b178546a9abcfe328d2d67a0c30dc77fbddbd4399dd2a8100a7b4\",\n  \"habitat_revision\": \"8df2661e5b2203c0ddc47798d5da0132d5686bbe\",\n  \"models\": {\n    \"status\": \"passed\",\n    \"files\": 22,\n    \"bytes\": 5631339793,\n    \"manifest_sha256\": \"f21ffdc59735aaf84fe5a0a4ebe99f35261f6dd45a643387900d003b6b7ac4a6\"\n  }\n}\n",
+  "stderr": "",
+  "source_files": 160,
+  "archive_files": 38,
+  "linked_dependencies": [
+    "habitat-lab",
+    "weights",
+    "superglue"
+  ],
+  "only_changed_input_since_CPU_tests": [
+    "runtime.exp4.local.yaml"
+  ]
+}

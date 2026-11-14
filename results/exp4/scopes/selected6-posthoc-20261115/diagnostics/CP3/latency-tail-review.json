@@ -1,0 +1,102 @@
+{
+  "checked_at_utc": "2026-11-10T06:34:17.797584+00:00",
+  "source_decisions_sha256": "2b577d580943824b9d716458d8e5f8c943e9ab76f77767dc5560840ee84e9d0f",
+  "snapshots": 1999,
+  "over_100ms": 8,
+  "over_1000ms": 1,
+  "max_ms": 9257.667664001929,
+  "largest_ten": [
+    {
+      "scene_id": "5cdEh9F2hJL",
+      "episode_id": "0",
+      "k": 2,
+      "t": 480,
+      "plan_ms": 9257.667664001929,
+      "nearest_raw_rank": null,
+      "chosen_raw_rank": null
+    },
+    {
+      "scene_id": "6s7QHgap2fW",
+      "episode_id": "0",
+      "k": 0,
+      "t": 340,
+      "plan_ms": 552.3141309968196,
+      "nearest_raw_rank": null,
+      "chosen_raw_rank": null
+    },
+    {
+      "scene_id": "Nfvxx8J5NCo",
+      "episode_id": "0",
+      "k": 0,
+      "t": 440,
+      "plan_ms": 523.0372090009041,
+      "nearest_raw_rank": 19153,
+      "chosen_raw_rank": 0
+    },
+    {
+      "scene_id": "p53SfW6mjZe",
+      "episode_id": "0",
+      "k": 0,
+      "t": 50,
+      "plan_ms": 388.11585800431203,
+      "nearest_raw_rank": 768,
+      "chosen_raw_rank": 768
+    },
+    {
+      "scene_id": "ziup5kvtCCR",
+      "episode_id": "0",
+      "k": 0,
+      "t": 310,
+      "plan_ms": 374.61066599644255,
+      "nearest_raw_rank": 7242,
+      "chosen_raw_rank": 0
+    },
+    {
+      "scene_id": "mv2HUxq3B53",
+      "episode_id": "0",
+      "k": 0,
+      "t": 130,
+      "plan_ms": 371.77745799999684,
+      "nearest_raw_rank": 3904,
+      "chosen_raw_rank": 3904
+    },
+    {
+      "scene_id": "cvZr5TUy5C5",
+      "episode_id": "0",
+      "k": 0,
+      "t": 30,
+      "plan_ms": 370.57417299365625,
+      "nearest_raw_rank": null,
+      "chosen_raw_rank": null
+    },
+    {
+      "scene_id": "q3zU7Yy5E5s",
+      "episode_id": "0",
+      "k": 1,
+      "t": 510,
+      "plan_ms": 355.5988270090893,
+      "nearest_raw_rank": 0,
+      "chosen_raw_rank": 0
+    },
+    {
+      "scene_id": "5cdEh9F2hJL",
+      "episode_id": "0",
+      "k": 0,
+      "t": 100,
+      "plan_ms": 41.49883901118301,
+      "nearest_raw_rank": 0,
+      "chosen_raw_rank": 0
+    },
+    {
+      "scene_id": "DYehNKdT76V",
+      "episode_id": "0",
+      "k": 0,
+      "t": 10,
+      "plan_ms": 40.17231101170182,
+      "nearest_raw_rank": 0,
+      "chosen_raw_rank": 0
+    }
+  ],
+  "interpretation": "Actual observed tail, retained in full. No outlier exclusion or causal attribution.",
+  "native_source_data_or_parameters_changed": false
+}

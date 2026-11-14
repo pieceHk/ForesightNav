@@ -1,0 +1,47 @@
+{
+  "analysis_status": "POST_HOC_OUTCOME_SELECTED_PRESENTATION_SUBSET",
+  "generated_at_utc": "2026-11-14T17:02:48.258545+00:00",
+  "inherited_checkpoints": [
+    {
+      "checkpoint": "CP1",
+      "path": "reports/CP1.md",
+      "sha256": "d8730badd74f792ca195a52317abc37dc88c1a247c845859d062cf369032fa7b",
+      "status": "inherited original evidence; not a new120 run"
+    },
+    {
+      "checkpoint": "CP2a",
+      "path": "reports/CP2a.md",
+      "sha256": "2932216c4f942f57a7d91516f13bd892451c06f299b626c62d034648ca2cba33",
+      "status": "inherited original evidence; not a new120 run"
+    },
+    {
+      "checkpoint": "CP2b",
+      "path": "reports/CP2b.md",
+      "sha256": "4a737c52bfa6d1a4f27ead09a85dc02fd75e74cc9dd4d139081fb2208aff7da1",
+      "status": "inherited original evidence; not a new120 run"
+    },
+    {
+      "checkpoint": "CP3",
+      "path": "reports/CP3.md",
+      "sha256": "88534e6f6e61c6b18cf8d0259b654ed84306faf88a879c43bc21d7a616c8ce2d",
+      "status": "inherited original evidence; not a new120 run"
+    },
+    {
+      "checkpoint": "CP4",
+      "path": "reports/CP4.md",
+      "sha256": "28ce8888ecec1029c53af8624c52b557fdc75026828d9cdc6e7f378418883dbf",
+      "status": "inherited original evidence; not a new120 run"
+    }
+  ],
+  "report_sha256": "6d547d0ab65cd3e4a770a3879077db897cee6b598acc79d8074f3e4cd585e9b2",
+  "figures": {
+    "SR_SPL.png": "7f972f8f1fdc84f2fe51a666a10e53d6484171adeffb1aed1a0dafc62dc59982",
+    "calibration_evidence.png": "613939533299e64d2ef7f3f615311d07300004a2f91e4e42b82fac881f465354",
+    "calibration_evidence_common_bins.png": "a58aa5a21371264678f35d4fa2144fb7682146dc8caf21938b7393a01dc0ca58",
+    "calibration_reliability.png": "6deac3fdb7a9d9cb48c2993bcbe15989df0fd202ec8c499a498ba69e152d953e",
+    "effects.png": "e292fe256795ede38da19f54959282dc25cb9381e041a1318a1e0d1e97959563",
+    "calibration_bootstrap_intervals.png": "ac3e6195733cba9e0f44919e0ac13d63b170699d1fc3b323c243975f2018b979"
+  },
+  "actual_visual_QA_pending": false,
+  "visual_review": "meta/figure-visual-review.json"
+}

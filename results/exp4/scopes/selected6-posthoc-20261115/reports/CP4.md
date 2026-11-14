@@ -1,0 +1,49 @@
+# Exp4 CP4：Full完整评估
+
+> 历史阶段报告：正文保留原阶段范围与结果；文内证据链接固定到原始提交391d7e2，不指向当前120条派生数据。
+
+以下数字来自固定20场景、每场景20条3-MON的完整在线评估。原生完成状态、400条有序身份、冻结参数与实际动作路径均已核对。
+
+固定任务池经过历史1-MON配对结果筛选，属于该筛选池内的受控消融，不能据此声称独立盲测、未见场景或未见底层任务泛化。本次3-MON在线成绩未用于拟合、选参数或删选回合。原始manifest/source trace、标定重用和高度/navmesh静态检查见[数据来源与适用范围](https://github.com/pieceHk/ForesightNav/blob/391d7e25b12171144a77cfbc41f220efe11294fb/results/exp4/reports/dataset_scope.md)。高度相近及navmesh连通性不证明当前策略可达，也不能直接解释某一回合成败。
+
+SR、SPL、PR调用原PBSP评估结果；PPL为新增补充实现，等于全部阶段PR乘以成功前缀的路径效率。原生失败后继续执行后续阶段，条件成功率仅在前序全成功子集计算，分母为0时留为未定义。
+
+| 变体 | Future | Belief | SR (%) | SPL (%) | PR (%) | PPL (%) | P_C1 (%) | P_C2_given_C1 (%) | P_C3_given_C1C2 (%) | Joint (%) |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Full BLP | True | True | 15.50 | 5.26 | 48.17 | 12.46 | 45.00 | 58.89 | 58.49 | 15.50 |
+
+所有比率以百分数表示，展示保留两位；计算主效应使用未舍入值。
+
+Full BLP条件成功分母：
+
+| 阶段 | 前序全成功episode数 | 本阶段成功数 | 条件成功率 (%) |
+| --- | --- | --- | --- |
+| 1 | 400 | 180 | 45.00 |
+| 2 | 180 | 106 | 58.89 |
+| 3 | 106 | 62 | 58.49 |
+
+运行提交：`03242fda76fd6a631596a7269c8e7990c657ea30`。
+
+| 变体 | 无效访问/ep | 无效访问路径/ep (m) | 无效身份路径上界/ep (m) | proposal偏离 (%) | 滞回后偏离 (%) | 实际下发偏离 (%) | 规划中位数 (ms) | 规划P95 (ms) |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Full BLP | 10.77 | 17.78 | 17.80 | 15.09 | 18.30 | 22.50 | 8.47 | 27.52 |
+
+无效访问以检查时的候选坐标GT标注；路径按每个已接受动作的实际目标坐标分配，同一位移只计一次。身份全部追逐路径另列上界。三个偏离率使用各自适用分母；共享1米滞回和类别冷却继续生效。
+
+Full BLP回退记录：
+
+| 类型 | 根决策数 | 涉及该边界的决策数 | 递归状态命中数 |
+| --- | --- | --- | --- |
+| empty_candidates | 6286 | 25600 | 214709 |
+| frontier_coordinates_unavailable | 0 | 0 | 0 |
+| no_reachable_frontier | 0 | 8280 | 56384 |
+
+非空实际下发分母：25600；逐动作/原生阶段路径核对1200项，最大绝对误差3.14272025e-06米。
+
+Full的400条完整评估已汇总，其他三个变体的在线对比尚待完成。按设计，汇报CP4后依次运行Nearest、Belief-myopic、Suffix-only各400条。此工具没有将CP4标为已汇报，也没有启动下一阶段。
+
+[Full BLP汇总](https://github.com/pieceHk/ForesightNav/blob/391d7e25b12171144a77cfbc41f220efe11294fb/results/exp4/summary/full.json)、[逐episode](https://github.com/pieceHk/ForesightNav/blob/391d7e25b12171144a77cfbc41f220efe11294fb/results/exp4/logs/full_episodes.jsonl)、[逐决策](https://github.com/pieceHk/ForesightNav/blob/391d7e25b12171144a77cfbc41f220efe11294fb/results/exp4/logs/full_decisions.jsonl)。
+
+[冻结参数](https://github.com/pieceHk/ForesightNav/blob/391d7e25b12171144a77cfbc41f220efe11294fb/results/exp4/meta/calibration.json)、[差异与处理](https://github.com/pieceHk/ForesightNav/blob/391d7e25b12171144a77cfbc41f220efe11294fb/results/exp4/deviations.md)。
+
+本次运行期间的GPU调度、共享占用、CPU拥堵与恢复记录见[资源记录](https://github.com/pieceHk/ForesightNav/blob/391d7e25b12171144a77cfbc41f220efe11294fb/results/exp4/reports/gpu_scheduling.md)。完整保留这些阶段的回合结果与规划时延。规划耗时按实际经过时间记录，比较各变体时需同时考虑运行条件；本次差异和2×2效应不额外作为已经隔离资源影响的独立因果证据。

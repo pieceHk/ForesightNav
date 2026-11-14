@@ -1,0 +1,44 @@
+{
+  "analysis_status": "POST_HOC_OUTCOME_SELECTED_PRESENTATION_SUBSET",
+  "n_per_variant": 120,
+  "required_reports": [
+    "reports/CP1.md",
+    "reports/CP2a.md",
+    "reports/CP2b.md",
+    "reports/CP3.md",
+    "reports/CP4.md",
+    "reports/CP5.md"
+  ],
+  "historical_checkpoint_scope_preserved": true,
+  "original160_checked_unchanged": [
+    "scopes/first8/summary/full.json",
+    "scopes/first8/summary/nearest.json",
+    "scopes/first8/summary/myopic.json",
+    "scopes/first8/summary/suffix_only.json",
+    "scopes/first8/logs/full_episodes.jsonl",
+    "scopes/first8/logs/nearest_episodes.jsonl",
+    "scopes/first8/logs/myopic_episodes.jsonl",
+    "scopes/first8/logs/suffix_only_episodes.jsonl",
+    "scopes/first8/logs/full_decisions.jsonl",
+    "scopes/first8/logs/nearest_decisions.jsonl",
+    "scopes/first8/logs/myopic_decisions.jsonl",
+    "scopes/first8/logs/suffix_only_decisions.jsonl"
+  ],
+  "required_current_outputs": [
+    "summary/all.csv",
+    "summary/effects.json",
+    "summary/paired/manifest.json",
+    "meta/scope.json",
+    "meta/calibration.json",
+    "meta/calibration_per_fold.json",
+    "meta/folds.json",
+    "meta/env.txt",
+    "deviations.md",
+    "meta/figure-visual-review.json"
+  ],
+  "referenced_large_raw_evidence": [
+    "meta/raw-archives-references.json",
+    "meta/historical-raw-archive-references.json"
+  ],
+  "native_runs_added": 0
+}

@@ -1,0 +1,16 @@
+{
+  "checked_at_utc": "2026-11-09T04:53:07.456508+00:00",
+  "run_directory": "/nvme/khy/ForesightNav_exp4_depthfix/results/exp4/runs/20261109_124714_158913_exp4_calibration_depth-unit-plumbing-v1",
+  "excluded_from_fitting": true,
+  "completed_episodes": 1,
+  "targets_per_episode": 2,
+  "accepted_actions": 48,
+  "shadow_snapshots": 6,
+  "invalid_path_complete": true,
+  "native_path_max_abs_error_m": 2.5993269980872924e-08,
+  "old_same_case_action_pose_match": true,
+  "old_case_actions": 48,
+  "source_fingerprint_unchanged": true,
+  "diagnostic_only": true,
+  "summary_sha256": "3e4ebac7ed42d0c0346acf616d6eb12c3fe4ae2389c4e631b2e589218a41fcbb"
+}
